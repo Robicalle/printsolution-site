@@ -3,8 +3,52 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "EDM-650X — Stampante Single-Pass Grande Formato | Print Solution",
-  description: "EDM-650X: stampante digitale inkjet single-pass per carta e cartone a fogli stesi. Da 2 a 6 teste HP, fino a 30m/min. Inchiostri a base acqua certificati Low Migration.",
+  title: "EDM-650X — Stampante Single-Pass per Cartone Ondulato",
+  description:
+    "EDM-650X: stampante cartone ondulato inkjet single-pass, da 2 a 6 teste HP, fino a 30m/min. Stampa digitale cartone ondulato con inchiostri a base acqua.",
+  keywords: [
+    "stampante cartone ondulato",
+    "stampa inkjet cartone",
+    "stampa digitale cartone ondulato",
+    "EDM-650X",
+    "stampante single-pass",
+  ],
+  openGraph: {
+    title: "EDM-650X — Stampante Single-Pass per Cartone Ondulato | Print Solution",
+    description:
+      "Stampante digitale inkjet single-pass per cartone ondulato. Da 2 a 6 teste HP, fino a 30m/min.",
+    images: ["/images/products/edm-650x-photo.avif"],
+    type: "website",
+    locale: "it_IT",
+  },
+  twitter: { card: "summary_large_image" },
+  alternates: { canonical: "/prodotti/edm-650x" },
+};
+
+const edm650xJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: "EDM-650X",
+  brand: { "@type": "Brand", name: "Print Solution" },
+  description:
+    "Stampante digitale inkjet single-pass per carta e cartone ondulato. Da 2 a 6 teste HP, fino a 30m/min, 1200x1200 dpi. Inchiostri a base acqua.",
+  image: "https://www.printsolutionsrl.it/images/products/edm-650x-photo.avif",
+  offers: {
+    "@type": "Offer",
+    availability: "https://schema.org/InStock",
+    priceCurrency: "EUR",
+    seller: { "@type": "Organization", name: "Print Solution S.r.l." },
+  },
+};
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.printsolutionsrl.it" },
+    { "@type": "ListItem", position: 2, name: "Prodotti", item: "https://www.printsolutionsrl.it/soluzioni/packaging" },
+    { "@type": "ListItem", position: 3, name: "EDM-650X", item: "https://www.printsolutionsrl.it/prodotti/edm-650x" },
+  ],
 };
 
 const specs = [
@@ -82,6 +126,8 @@ const features = [
 export default function EDM650XPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(edm650xJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       {/* Hero */}
       <section className="relative bg-hero-gradient text-white pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
         <div className="absolute top-20 right-0 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl" />

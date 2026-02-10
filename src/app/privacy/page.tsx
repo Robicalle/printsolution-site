@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy",
+  description: "Informativa sulla privacy di Print Solution S.r.l. — Trattamento dei dati personali ai sensi del GDPR.",
+  alternates: { canonical: "/privacy" },
+};
 
 export default function PrivacyPage() {
   return (

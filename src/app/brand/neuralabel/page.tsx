@@ -4,8 +4,19 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "NeurALabel",
-  description: "NeurALabel: stampanti per etichette industriali ad alta velocità. Distributore ufficiale Italia — Print Solution S.r.l.",
+  title: "NeurALabel — Distributore Ufficiale Italia",
+  description:
+    "NeurALabel: stampanti per etichette industriali ad alta velocità. Distributore ufficiale Italia — Print Solution S.r.l.",
+  keywords: ["NeurALabel", "stampante etichette industriale", "etichette alta velocità", "distributore NeurALabel Italia"],
+  openGraph: {
+    title: "NeurALabel — Distributore Ufficiale Italia | Print Solution",
+    description: "Stampanti per etichette industriali ad alta velocità NeurALabel.",
+    images: ["/images/brands/neuralabel.avif"],
+    type: "website",
+    locale: "it_IT",
+  },
+  twitter: { card: "summary_large_image" },
+  alternates: { canonical: "/brand/neuralabel" },
 };
 
 export default function NeurALabelPage() {

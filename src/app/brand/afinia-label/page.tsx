@@ -4,8 +4,19 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Afinia Label",
-  description: "Afinia Label: stampanti per etichette a colori in bobina, fustellatori digitali e sistemi completi. Distributore ufficiale Italia — Print Solution.",
+  title: "Afinia Label — Distributore Ufficiale Italia",
+  description:
+    "Afinia Label: stampanti per etichette a colori in bobina, fustellatori digitali e sistemi completi. Distributore ufficiale Italia — Print Solution.",
+  keywords: ["Afinia Label", "stampante etichette bobina", "fustellatore digitale etichette", "distributore Afinia Italia"],
+  openGraph: {
+    title: "Afinia Label — Distributore Ufficiale Italia | Print Solution",
+    description: "Stampanti per etichette a colori in bobina e fustellatori digitali Afinia Label.",
+    images: ["/images/brands/afinia-label.avif"],
+    type: "website",
+    locale: "it_IT",
+  },
+  twitter: { card: "summary_large_image" },
+  alternates: { canonical: "/brand/afinia-label" },
 };
 
 const products = [

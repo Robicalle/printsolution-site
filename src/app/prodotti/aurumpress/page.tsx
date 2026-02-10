@@ -3,8 +3,52 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "AurumPress — Stampatrice Termica ad Impressione Idraulica | Print Solution",
-  description: "AurumPress: stampatrice termica per foil metallizzati, argentati, colori pastello e trasparente lucido. Stampa loghi e scritte su packaging.",
+  title: "AurumPress — Stampa a Caldo Digitale per Packaging",
+  description:
+    "AurumPress: stampa a caldo digitale con foil metallizzati, argentati e colori pastello. Hot foil digitale per nobilitazione packaging e etichette.",
+  keywords: [
+    "stampa a caldo digitale",
+    "hot foil digitale",
+    "nobilitazione digitale",
+    "AurumPress",
+    "stampa foil packaging",
+  ],
+  openGraph: {
+    title: "AurumPress — Stampa a Caldo Digitale | Print Solution",
+    description:
+      "Stampa a caldo digitale con foil metallizzati per nobilitazione packaging. Hot foil digitale professionale.",
+    images: ["/images/products/aurumpress.jpg"],
+    type: "website",
+    locale: "it_IT",
+  },
+  twitter: { card: "summary_large_image" },
+  alternates: { canonical: "/prodotti/aurumpress" },
+};
+
+const aurumpressJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: "AurumPress",
+  brand: { "@type": "Brand", name: "Print Solution" },
+  description:
+    "Stampatrice termica per foil metallizzati, argentati, colori pastello e trasparente lucido. Stampa a caldo digitale per nobilitazione packaging.",
+  image: "https://www.printsolutionsrl.it/images/products/aurumpress.jpg",
+  offers: {
+    "@type": "Offer",
+    availability: "https://schema.org/InStock",
+    priceCurrency: "EUR",
+    seller: { "@type": "Organization", name: "Print Solution S.r.l." },
+  },
+};
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.printsolutionsrl.it" },
+    { "@type": "ListItem", position: 2, name: "Prodotti", item: "https://www.printsolutionsrl.it/soluzioni/packaging" },
+    { "@type": "ListItem", position: 3, name: "AurumPress", item: "https://www.printsolutionsrl.it/prodotti/aurumpress" },
+  ],
 };
 
 const specs = [
@@ -57,6 +101,8 @@ const features = [
 export default function AurumPressPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(aurumpressJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       {/* Hero */}
       <section className="relative bg-hero-gradient text-white pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
         <div className="absolute top-20 right-0 w-96 h-96 bg-yellow-500/20 rounded-full blur-3xl" />

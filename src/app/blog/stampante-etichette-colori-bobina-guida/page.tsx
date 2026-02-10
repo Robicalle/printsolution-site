@@ -4,12 +4,57 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Stampante Etichette a Colori in Bobina: Guida alla Scelta",
-  description: "Come scegliere la stampante per etichette a colori in bobina: confronto Afinia L701, L901, X350, LT5C. Tecnologie, velocità, costi e applicazioni.",
+  description:
+    "Come scegliere la stampante per etichette a colori in bobina: confronto Afinia L701, L901, X350, LT5C. Tecnologie, velocità, costi e applicazioni.",
+  keywords: [
+    "stampante etichette colori bobina",
+    "stampante etichette industriale",
+    "Afinia Label confronto",
+    "guida stampante etichette",
+  ],
+  openGraph: {
+    title: "Guida alla Scelta: Stampante Etichette a Colori in Bobina | Print Solution",
+    description:
+      "Come scegliere la stampante per etichette a colori in bobina. Confronto modelli Afinia Label.",
+    images: ["/images/hero-labels.webp"],
+    type: "article",
+    locale: "it_IT",
+  },
+  twitter: { card: "summary_large_image" },
+  alternates: { canonical: "/blog/stampante-etichette-colori-bobina-guida" },
+};
+
+const articleJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "Stampante Etichette a Colori in Bobina: Guida alla Scelta",
+  description: "Come scegliere la stampante per etichette a colori in bobina: confronto Afinia L701, L901, X350, LT5C.",
+  author: { "@type": "Organization", name: "Print Solution S.r.l." },
+  publisher: {
+    "@type": "Organization",
+    name: "Print Solution S.r.l.",
+    logo: { "@type": "ImageObject", url: "https://www.printsolutionsrl.it/logo.png" },
+  },
+  datePublished: "2026-02-01",
+  dateModified: "2026-02-10",
+  mainEntityOfPage: "https://www.printsolutionsrl.it/blog/stampante-etichette-colori-bobina-guida",
+};
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.printsolutionsrl.it" },
+    { "@type": "ListItem", position: 2, name: "Blog", item: "https://www.printsolutionsrl.it/blog" },
+    { "@type": "ListItem", position: 3, name: "Stampante Etichette a Colori in Bobina", item: "https://www.printsolutionsrl.it/blog/stampante-etichette-colori-bobina-guida" },
+  ],
 };
 
 export default function ArticleEtichette() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <PageHero
         title="Stampante Etichette a Colori in Bobina"
         subtitle="Guida alla scelta: tecnologie, modelli e criteri per trovare la soluzione perfetta"

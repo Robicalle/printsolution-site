@@ -3,8 +3,26 @@ import PageHero from "@/components/PageHero";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Consumabili e Ricambi",
-  description: "Inchiostri, testine di stampa, cartucce e materiali di consumo originali per stampanti packaging ed etichette. GreenBox EVO, EDM-650X, Afinia Label.",
+  title: "Consumabili e Ricambi Stampa Digitale",
+  description:
+    "Cartucce stampante etichette, inchiostri stampa digitale, testine e ricambi originali per GreenBox EVO, EDM-650X e Afinia Label. Spedizione rapida.",
+  keywords: [
+    "cartucce stampante etichette",
+    "inchiostri stampa digitale",
+    "consumabili stampante packaging",
+    "testine stampa HP",
+    "ricambi stampante etichette",
+  ],
+  openGraph: {
+    title: "Consumabili e Ricambi Stampa Digitale | Print Solution",
+    description:
+      "Inchiostri, cartucce, testine e materiali di consumo originali per stampanti packaging ed etichette.",
+    images: ["/images/hero-boxes.webp"],
+    type: "website",
+    locale: "it_IT",
+  },
+  twitter: { card: "summary_large_image" },
+  alternates: { canonical: "/soluzioni/consumabili" },
 };
 
 const categories = [

@@ -4,12 +4,57 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Stampa Digitale su Cartone Ondulato: Vantaggi vs Flessografia",
-  description: "Confronto tra stampa digitale single-pass e flessografia tradizionale per il packaging in cartone ondulato. Costi, qualità, flessibilità e sostenibilità.",
+  description:
+    "Confronto tra stampa digitale single-pass e flessografia tradizionale per il packaging in cartone ondulato. Costi, qualità, flessibilità e sostenibilità.",
+  keywords: [
+    "stampa digitale cartone ondulato",
+    "flessografia vs digitale",
+    "stampa single-pass cartone",
+    "packaging cartone ondulato",
+  ],
+  openGraph: {
+    title: "Stampa Digitale vs Flessografia per Cartone Ondulato | Print Solution",
+    description:
+      "Confronto tra stampa digitale single-pass e flessografia per packaging in cartone ondulato.",
+    images: ["/images/products/edm-650x-photo.avif"],
+    type: "article",
+    locale: "it_IT",
+  },
+  twitter: { card: "summary_large_image" },
+  alternates: { canonical: "/blog/stampa-digitale-cartone-ondulato-vs-flessografia" },
+};
+
+const articleJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "Stampa Digitale su Cartone Ondulato: Vantaggi vs Flessografia",
+  description: "Confronto tra stampa digitale single-pass e flessografia tradizionale per il packaging in cartone ondulato.",
+  author: { "@type": "Organization", name: "Print Solution S.r.l." },
+  publisher: {
+    "@type": "Organization",
+    name: "Print Solution S.r.l.",
+    logo: { "@type": "ImageObject", url: "https://www.printsolutionsrl.it/logo.png" },
+  },
+  datePublished: "2026-02-03",
+  dateModified: "2026-02-10",
+  mainEntityOfPage: "https://www.printsolutionsrl.it/blog/stampa-digitale-cartone-ondulato-vs-flessografia",
+};
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.printsolutionsrl.it" },
+    { "@type": "ListItem", position: 2, name: "Blog", item: "https://www.printsolutionsrl.it/blog" },
+    { "@type": "ListItem", position: 3, name: "Stampa Digitale vs Flessografia", item: "https://www.printsolutionsrl.it/blog/stampa-digitale-cartone-ondulato-vs-flessografia" },
+  ],
 };
 
 export default function ArticleDigitaleVsFlessoPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <PageHero
         title="Stampa Digitale vs Flessografia"
         subtitle="Perché la stampa digitale single-pass sta rivoluzionando il packaging in cartone ondulato"

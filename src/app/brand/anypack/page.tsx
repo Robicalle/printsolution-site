@@ -4,8 +4,19 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Anypack",
-  description: "Anypack: box maker automatici per scatole in cartone ondulato. AB1800 PRO, AB2500, AB3000. Distributore ufficiale Italia — Print Solution.",
+  title: "Anypack — Distributore Ufficiale Italia",
+  description:
+    "Anypack: box maker automatici per scatole in cartone ondulato. AB1800 PRO, AB2500, AB3000. Distributore ufficiale Italia — Print Solution.",
+  keywords: ["Anypack", "box maker automatico", "macchina scatole cartone", "distributore Anypack Italia"],
+  openGraph: {
+    title: "Anypack — Distributore Ufficiale Italia | Print Solution",
+    description: "Box maker automatici per scatole in cartone ondulato. Distributore ufficiale Anypack.",
+    images: ["/images/brands/anypack.avif"],
+    type: "website",
+    locale: "it_IT",
+  },
+  twitter: { card: "summary_large_image" },
+  alternates: { canonical: "/brand/anypack" },
 };
 
 export default function AnypackPage() {

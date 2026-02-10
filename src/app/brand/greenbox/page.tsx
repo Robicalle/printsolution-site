@@ -4,8 +4,19 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "GreenBox",
-  description: "GreenBox EVO: stampante digitale single-pass per packaging, shopper e scatole. Entry-level per il packaging digitale. Distributore Print Solution.",
+  title: "GreenBox — Stampanti Digitali per Packaging",
+  description:
+    "GreenBox EVO: stampante digitale single-pass per packaging, shopper e scatole. Entry-level per il packaging digitale. Distributore Print Solution.",
+  keywords: ["GreenBox", "GreenBox EVO", "stampante packaging digitale", "stampa single-pass"],
+  openGraph: {
+    title: "GreenBox — Stampanti Digitali per Packaging | Print Solution",
+    description: "Stampanti digitali single-pass per packaging, shopper e scatole.",
+    images: ["/images/brands/greenbox.png"],
+    type: "website",
+    locale: "it_IT",
+  },
+  twitter: { card: "summary_large_image" },
+  alternates: { canonical: "/brand/greenbox" },
 };
 
 export default function GreenBoxPage() {

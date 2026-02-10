@@ -4,8 +4,26 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Soluzioni Etichette",
-  description: "Stampanti per etichette a colori in bobina e foglio Afinia Label: L701, L901, X350, LT5C, DLP-2200, fustellatori DLF e applicatore AF200.",
+  title: "Stampanti Etichette Industriali",
+  description:
+    "Stampante etichette industriale: etichettatura in bobina con Afinia Label L701, L901, X350, LT5C e DLP-2200. Soluzioni complete per etichette a colori.",
+  keywords: [
+    "stampante etichette industriale",
+    "etichettatura in bobina",
+    "stampante etichette colori",
+    "Afinia Label",
+    "stampa etichette bobina",
+  ],
+  openGraph: {
+    title: "Stampanti Etichette Industriali | Print Solution",
+    description:
+      "Stampanti per etichette a colori in bobina e foglio. Soluzioni complete per etichettatura industriale.",
+    images: ["/images/hero-labels.webp"],
+    type: "website",
+    locale: "it_IT",
+  },
+  twitter: { card: "summary_large_image" },
+  alternates: { canonical: "/soluzioni/etichette" },
 };
 
 const printers = [

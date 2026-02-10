@@ -3,8 +3,52 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Anypack AB2500 — Box Maker Automatico All-in-One | Print Solution",
-  description: "Anypack AB2500: box maker automatico per taglio, scanalatura, cordonatura e incollaggio. 500-600 scatole/ora, cambio formato in 3 secondi. Cartone da 1 a 7mm.",
+  title: "Anypack AB2500 — Box Maker Automatico All-in-One",
+  description:
+    "Anypack AB2500: box maker automatico per taglio, scanalatura, cordonatura e incollaggio. 500-600 scatole/ora, cambio formato in 3 secondi.",
+  keywords: [
+    "box maker automatico",
+    "macchina produzione scatole",
+    "Anypack AB2500",
+    "scatole cartone ondulato",
+    "box maker on-demand",
+  ],
+  openGraph: {
+    title: "Anypack AB2500 — Box Maker Automatico All-in-One | Print Solution",
+    description:
+      "Box maker automatico per taglio, scanalatura, cordonatura e incollaggio. 500-600 scatole/ora.",
+    images: ["/images/products/ab2500.png"],
+    type: "website",
+    locale: "it_IT",
+  },
+  twitter: { card: "summary_large_image" },
+  alternates: { canonical: "/prodotti/ab2500" },
+};
+
+const ab2500JsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: "Anypack AB2500",
+  brand: { "@type": "Brand", name: "Print Solution" },
+  description:
+    "Box maker automatico all-in-one per taglio, scanalatura, cordonatura e incollaggio di scatole in cartone ondulato. 500-600 scatole/ora.",
+  image: "https://www.printsolutionsrl.it/images/products/ab2500.png",
+  offers: {
+    "@type": "Offer",
+    availability: "https://schema.org/InStock",
+    priceCurrency: "EUR",
+    seller: { "@type": "Organization", name: "Print Solution S.r.l." },
+  },
+};
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.printsolutionsrl.it" },
+    { "@type": "ListItem", position: 2, name: "Prodotti", item: "https://www.printsolutionsrl.it/soluzioni/packaging" },
+    { "@type": "ListItem", position: 3, name: "Anypack AB2500", item: "https://www.printsolutionsrl.it/prodotti/ab2500" },
+  ],
 };
 
 const specs = [
@@ -78,6 +122,8 @@ const features = [
 export default function AB2500Page() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ab2500JsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       {/* Hero */}
       <section className="relative bg-hero-gradient text-white pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
         <div className="absolute top-20 right-0 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl" />

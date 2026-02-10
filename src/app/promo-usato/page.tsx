@@ -6,7 +6,23 @@ import Image from "next/image";
 export const metadata: Metadata = {
   title: "Promozioni & Usato Garantito",
   description:
-    "Macchine da stampa e packaging usate, revisionate e garantite 12 mesi. Occasioni imperdibili su stampanti digitali per cartone, etichette e packaging.",
+    "Macchine da stampa e packaging usate, revisionate e garantite 12 mesi. Occasioni su stampanti digitali per cartone, etichette e packaging.",
+  keywords: [
+    "stampanti usate garantite",
+    "macchine packaging usate",
+    "stampante etichette usata",
+    "promozioni stampa digitale",
+  ],
+  openGraph: {
+    title: "Promozioni & Usato Garantito | Print Solution",
+    description:
+      "Macchine da stampa e packaging usate, revisionate e garantite 12 mesi.",
+    images: ["/images/hero-boxes.webp"],
+    type: "website",
+    locale: "it_IT",
+  },
+  twitter: { card: "summary_large_image" },
+  alternates: { canonical: "/promo-usato" },
 };
 
 const products = [

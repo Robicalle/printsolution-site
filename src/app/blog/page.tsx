@@ -4,7 +4,24 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Blog",
-  description: "Articoli e guide sulla stampa digitale per packaging, etichette a colori e cartone ondulato. Approfondimenti tecnici da Print Solution.",
+  description:
+    "Articoli e guide sulla stampa digitale per packaging, etichette a colori e cartone ondulato. Approfondimenti tecnici da Print Solution.",
+  keywords: [
+    "blog stampa digitale",
+    "guida packaging digitale",
+    "stampa etichette guida",
+    "cartone ondulato stampa",
+  ],
+  openGraph: {
+    title: "Blog | Print Solution",
+    description:
+      "Articoli e guide sulla stampa digitale per packaging, etichette e cartone ondulato.",
+    images: ["/images/hero-boxes.webp"],
+    type: "website",
+    locale: "it_IT",
+  },
+  twitter: { card: "summary_large_image" },
+  alternates: { canonical: "/blog" },
 };
 
 const articles = [

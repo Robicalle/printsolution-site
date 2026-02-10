@@ -3,8 +3,52 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "GreenBox EVO — Stampante Digitale Single-Pass per Packaging | Print Solution",
-  description: "GreenBox EVO: stampante inkjet CMYK single-pass per cartone, carta e juta. Testina HP Pagewide, 30m/min, 1200x1200 dpi. Inchiostri pigmentati a base acqua.",
+  title: "GreenBox EVO — Stampante Etichette e Packaging Single-Pass",
+  description:
+    "GreenBox EVO: stampante etichette colori e packaging single-pass CMYK. Testina HP Pagewide, 30m/min, 1200x1200 dpi. Stampa etichette in bobina e packaging.",
+  keywords: [
+    "stampante etichette colori",
+    "stampa etichette bobina",
+    "stampante etichette industriale",
+    "GreenBox EVO",
+    "stampante single-pass packaging",
+  ],
+  openGraph: {
+    title: "GreenBox EVO — Stampante Single-Pass per Packaging | Print Solution",
+    description:
+      "Stampante inkjet CMYK single-pass per cartone, carta e juta. 30m/min, 1200x1200 dpi.",
+    images: ["/images/products/greenbox-evo.jpeg"],
+    type: "website",
+    locale: "it_IT",
+  },
+  twitter: { card: "summary_large_image" },
+  alternates: { canonical: "/prodotti/greenbox-evo" },
+};
+
+const greenboxJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: "GreenBox EVO",
+  brand: { "@type": "Brand", name: "Print Solution" },
+  description:
+    "Stampante digitale inkjet single-pass CMYK per packaging, shopper e scatole. Testina HP Pagewide, 30m/min, 1200x1200 dpi. Inchiostri pigmentati a base acqua.",
+  image: "https://www.printsolutionsrl.it/images/products/greenbox-evo.jpeg",
+  offers: {
+    "@type": "Offer",
+    availability: "https://schema.org/InStock",
+    priceCurrency: "EUR",
+    seller: { "@type": "Organization", name: "Print Solution S.r.l." },
+  },
+};
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.printsolutionsrl.it" },
+    { "@type": "ListItem", position: 2, name: "Prodotti", item: "https://www.printsolutionsrl.it/soluzioni/packaging" },
+    { "@type": "ListItem", position: 3, name: "GreenBox EVO", item: "https://www.printsolutionsrl.it/prodotti/greenbox-evo" },
+  ],
 };
 
 const specs = [
@@ -83,6 +127,8 @@ const features = [
 export default function GreenBoxEvoPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(greenboxJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       {/* Hero */}
       <section className="relative bg-hero-gradient text-white pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
         <div className="absolute top-20 right-0 w-96 h-96 bg-green-500/20 rounded-full blur-3xl" />

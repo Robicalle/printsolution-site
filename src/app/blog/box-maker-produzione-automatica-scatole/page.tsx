@@ -4,12 +4,57 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Box Maker: Cos'è e Come Funziona la Produzione Automatica di Scatole",
-  description: "Guida completa al box maker automatico: come funziona, vantaggi, applicazioni e confronto con i metodi tradizionali di produzione scatole in cartone ondulato.",
+  description:
+    "Guida completa al box maker automatico: come funziona, vantaggi, applicazioni e confronto con i metodi tradizionali di produzione scatole in cartone ondulato.",
+  keywords: [
+    "box maker",
+    "produzione automatica scatole",
+    "box maker automatico",
+    "macchina scatole cartone",
+  ],
+  openGraph: {
+    title: "Box Maker: Produzione Automatica di Scatole | Print Solution",
+    description:
+      "Guida completa al box maker automatico: come funziona, vantaggi e applicazioni.",
+    images: ["/images/products/ab2500.png"],
+    type: "article",
+    locale: "it_IT",
+  },
+  twitter: { card: "summary_large_image" },
+  alternates: { canonical: "/blog/box-maker-produzione-automatica-scatole" },
+};
+
+const articleJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "Box Maker: Cos'è e Come Funziona la Produzione Automatica di Scatole",
+  description: "Guida completa al box maker automatico: come funziona, vantaggi, applicazioni e confronto con i metodi tradizionali.",
+  author: { "@type": "Organization", name: "Print Solution S.r.l." },
+  publisher: {
+    "@type": "Organization",
+    name: "Print Solution S.r.l.",
+    logo: { "@type": "ImageObject", url: "https://www.printsolutionsrl.it/logo.png" },
+  },
+  datePublished: "2026-02-05",
+  dateModified: "2026-02-10",
+  mainEntityOfPage: "https://www.printsolutionsrl.it/blog/box-maker-produzione-automatica-scatole",
+};
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.printsolutionsrl.it" },
+    { "@type": "ListItem", position: 2, name: "Blog", item: "https://www.printsolutionsrl.it/blog" },
+    { "@type": "ListItem", position: 3, name: "Box Maker: Produzione Automatica Scatole", item: "https://www.printsolutionsrl.it/blog/box-maker-produzione-automatica-scatole" },
+  ],
 };
 
 export default function ArticleBoxMaker() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <PageHero
         title="Box Maker: Cos'è e Come Funziona"
         subtitle="Guida completa alla produzione automatica di scatole in cartone ondulato"

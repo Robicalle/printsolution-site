@@ -4,7 +4,24 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "News & Eventi",
-  description: "Le ultime novità, eventi e fiere di Print Solution S.r.l.",
+  description:
+    "Le ultime novità, eventi e fiere di Print Solution S.r.l. Aggiornamenti su stampa digitale packaging, etichettatura industriale e nuovi prodotti.",
+  keywords: [
+    "news stampa digitale",
+    "fiere packaging Italia",
+    "Print Solution eventi",
+    "IPACK-IMA",
+  ],
+  openGraph: {
+    title: "News & Eventi | Print Solution",
+    description:
+      "Le ultime novità, eventi e fiere di Print Solution. Aggiornamenti su stampa digitale e packaging.",
+    images: ["/images/hero-boxes.webp"],
+    type: "website",
+    locale: "it_IT",
+  },
+  twitter: { card: "summary_large_image" },
+  alternates: { canonical: "/news" },
 };
 
 const news = [

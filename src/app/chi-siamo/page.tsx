@@ -4,7 +4,24 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Chi Siamo",
-  description: "Print Solution S.r.l. — Dal 2010, distributore italiano di soluzioni digitali per stampa packaging, etichette e consumabili. Sesto San Giovanni (MI).",
+  description:
+    "Print Solution S.r.l. — Dal 2010, distributore italiano di soluzioni digitali per stampa packaging, etichette e consumabili. Sesto San Giovanni (MI).",
+  keywords: [
+    "Print Solution",
+    "stampa digitale Italia",
+    "distributore stampanti packaging",
+    "Sesto San Giovanni",
+  ],
+  openGraph: {
+    title: "Chi Siamo | Print Solution",
+    description:
+      "Dal 2010, distributore italiano di soluzioni digitali per stampa packaging, etichette e consumabili.",
+    images: ["/images/hero-boxes.webp"],
+    type: "website",
+    locale: "it_IT",
+  },
+  twitter: { card: "summary_large_image" },
+  alternates: { canonical: "/chi-siamo" },
 };
 
 export default function ChiSiamoPage() {

@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
+
+export const metadata: Metadata = {
+  title: "Cookie Policy",
+  description: "Informativa sui cookie di Print Solution S.r.l. — Utilizzo dei cookie e tecnologie di tracciamento.",
+  alternates: { canonical: "/cookie" },
+};
 
 export default function CookiePage() {
   return (

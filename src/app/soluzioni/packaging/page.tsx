@@ -4,8 +4,26 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Soluzioni Packaging",
-  description: "Box maker automatici, stampanti single-pass per cartone ondulato, stampa UV, hot foil stamping e soluzioni digitali per packaging personalizzato.",
+  title: "Soluzioni Packaging On-Demand",
+  description:
+    "Soluzioni packaging on-demand: box maker automatici, stampanti single-pass per cartone ondulato, stampa UV e hot foil. Packaging digitale personalizzato.",
+  keywords: [
+    "soluzioni packaging on-demand",
+    "packaging digitale",
+    "box maker automatico",
+    "stampa cartone ondulato",
+    "packaging personalizzato",
+  ],
+  openGraph: {
+    title: "Soluzioni Packaging On-Demand | Print Solution",
+    description:
+      "Box maker automatici, stampanti single-pass e soluzioni digitali per packaging personalizzato on-demand.",
+    images: ["/images/hero-packaging.webp"],
+    type: "website",
+    locale: "it_IT",
+  },
+  twitter: { card: "summary_large_image" },
+  alternates: { canonical: "/soluzioni/packaging" },
 };
 
 const products = [

@@ -4,8 +4,19 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "DTM Print",
-  description: "DTM Print: soluzioni di stampa specializzate per etichette e packaging. Distributore ufficiale Italia — Print Solution S.r.l.",
+  title: "DTM Print — Distributore Ufficiale Italia",
+  description:
+    "DTM Print: soluzioni di stampa specializzate per etichette e packaging. Distributore ufficiale Italia — Print Solution S.r.l.",
+  keywords: ["DTM Print", "stampa etichette DTM", "distributore DTM Print Italia"],
+  openGraph: {
+    title: "DTM Print — Distributore Ufficiale Italia | Print Solution",
+    description: "Soluzioni di stampa specializzate per etichette e packaging DTM Print.",
+    images: ["/images/brands/dtm-print.jpg"],
+    type: "website",
+    locale: "it_IT",
+  },
+  twitter: { card: "summary_large_image" },
+  alternates: { canonical: "/brand/dtm-print" },
 };
 
 export default function DTMPrintPage() {

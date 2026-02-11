@@ -101,12 +101,7 @@ function Hero() {
           <div className="hidden lg:block" />
         </div>
 
-        {/* Mobile: single featured machine image */}
-        <div className="lg:hidden mt-6 flex justify-center">
-          <Link href="/prodotti/edm-650x" className="block w-[85%] max-w-[320px]">
-            <Image src="/images/products/edm-650x-real-nobg.png" alt="EDM-650X" width={680} height={393} className="w-full h-auto drop-shadow-[0_8px_24px_rgba(0,200,200,0.15)]" priority />
-          </Link>
-        </div>
+        {/* Mobile: no machines here, shown in sections below */}
       </div>
 
       {/* Bottom fade */}

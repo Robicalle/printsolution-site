@@ -43,10 +43,10 @@ function Counter({ target, suffix = "" }: { target: number; suffix?: string }) {
 /* ───── Hero ───── */
 function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center text-white overflow-hidden">
+    <section className="relative min-h-[85vh] lg:min-h-screen flex items-center text-white overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-hero-gradient" />
-      <div className="absolute inset-0 bg-gradient-to-r from-dark-900/95 via-dark-900/70 to-dark-900/20 z-[2]" />
+      <div className="absolute inset-0 bg-gradient-to-b lg:bg-gradient-to-r from-dark-900/95 via-dark-900/80 to-dark-900/40 z-[2]" />
 
       {/* Machine images — desktop: absolutely positioned */}
       <div className="absolute inset-0 z-[11] hidden lg:block pointer-events-none">
@@ -64,22 +64,22 @@ function Hero() {
         </Link>
       </div>
 
-      {/* Floating orbs — CMYK colors */}
-      <div className="absolute top-20 right-[10%] w-[500px] h-[500px] bg-cyan-500/20 rounded-full blur-[120px] animate-float" />
-      <div className="absolute bottom-20 left-[5%] w-[400px] h-[400px] bg-magenta-500/15 rounded-full blur-[100px]" />
-      <div className="absolute top-1/3 right-[30%] w-[300px] h-[300px] bg-yellow-500/10 rounded-full blur-[100px]" />
+      {/* Floating orbs — hidden on mobile for performance */}
+      <div className="absolute top-20 right-[10%] w-[500px] h-[500px] bg-cyan-500/20 rounded-full blur-[120px] animate-float hidden md:block" />
+      <div className="absolute bottom-20 left-[5%] w-[400px] h-[400px] bg-magenta-500/15 rounded-full blur-[100px] hidden md:block" />
+      <div className="absolute top-1/3 right-[30%] w-[300px] h-[300px] bg-yellow-500/10 rounded-full blur-[100px] hidden md:block" />
 
       {/* Grid pattern */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:60px_60px]" />
 
-      <div className="container-custom relative z-10 pt-32 pb-20 lg:pb-32 px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="container-custom relative z-10 pt-24 pb-8 lg:pt-32 lg:pb-32 px-5 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           <div>
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 text-sm text-cyan-200 mb-8 opacity-0 animate-fade-up">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 text-sm text-cyan-200 mb-6 lg:mb-8 opacity-0 animate-fade-up">
               <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
               Print Solution S.r.l. — Dal 2010
             </div>
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[0.95] tracking-tight mb-8 opacity-0 animate-fade-up-delay">
+            <h1 className="text-3xl sm:text-5xl lg:text-7xl xl:text-8xl font-bold leading-[1] sm:leading-[0.95] tracking-tight mb-5 lg:mb-8 opacity-0 animate-fade-up-delay">
               Soluzioni Digitali
               <br />
               per{" "}
@@ -87,38 +87,43 @@ function Hero() {
                 Stampa e Packaging
               </span>
             </h1>
-            <p className="text-lg sm:text-xl text-gray-300/90 mb-10 leading-relaxed opacity-0 animate-fade-up-delay-2">
+            <p className="text-base sm:text-lg lg:text-xl text-gray-300/90 mb-8 lg:mb-10 leading-relaxed opacity-0 animate-fade-up-delay-2">
               Dalla produzione di scatole personalizzate alla stampa di etichette professionali:
               tecnologia, competenza e assistenza dedicata per la tua azienda.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-up-delay-2">
-              <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Print%20Solution&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">
-                Richiedi una Demo
-                <svg className="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 opacity-0 animate-fade-up-delay-2">
+              <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Print%20Solution&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo.%0A%0AGrazie" className="btn-primary text-base sm:text-lg !px-6 sm:!px-8 !py-3.5 sm:!py-4 !rounded-full text-center">
+                Richiedi una Demo →
               </a>
-              <Link href="/soluzioni/packaging" className="btn-secondary text-lg !px-8 !py-4">
+              <Link href="/soluzioni/packaging" className="btn-secondary text-base sm:text-lg !px-6 sm:!px-8 !py-3.5 sm:!py-4 text-center">
                 Scopri le Soluzioni
               </Link>
             </div>
           </div>
-          {/* Right column - empty on desktop, machines on mobile */}
+          {/* Right column - empty on desktop */}
           <div className="hidden lg:block" />
         </div>
 
-        {/* Mobile machines carousel */}
-        <div className="lg:hidden mt-8 -mx-4 px-4">
-          <div className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory" style={{ WebkitOverflowScrolling: 'touch', scrollbarWidth: 'none' }}>
-            <Link href="/prodotti/edm-650x" className="flex-shrink-0 w-[180px] snap-center bg-white/10 backdrop-blur-sm rounded-2xl p-3 border border-white/10">
-              <Image src="/images/products/edm-650x-real-nobg.png" alt="EDM-650X" width={680} height={393} className="w-full h-auto" priority />
-              <p className="text-white/80 text-sm font-semibold text-center mt-2">EDM-650X</p>
+        {/* Mobile machines — vertical stack, large and clear */}
+        <div className="lg:hidden mt-10">
+          <div className="grid grid-cols-3 gap-3">
+            <Link href="/prodotti/edm-650x" className="bg-white/10 backdrop-blur-sm rounded-2xl p-3 border border-white/10 flex flex-col items-center hover:bg-white/20 transition-colors active:scale-95">
+              <div className="h-20 flex items-center justify-center">
+                <Image src="/images/products/edm-650x-real-nobg.png" alt="EDM-650X" width={680} height={393} className="w-full h-full object-contain" priority />
+              </div>
+              <p className="text-white text-xs font-bold text-center mt-2">EDM-650X</p>
             </Link>
-            <Link href="/prodotti/ab2500" className="flex-shrink-0 w-[180px] snap-center bg-white/10 backdrop-blur-sm rounded-2xl p-3 border border-white/10">
-              <Image src="/images/products/ab2500-hero-nobg.png" alt="AB2500" width={460} height={212} className="w-full h-auto" priority />
-              <p className="text-white/80 text-sm font-semibold text-center mt-2">AB2500</p>
+            <Link href="/prodotti/ab2500" className="bg-white/10 backdrop-blur-sm rounded-2xl p-3 border border-white/10 flex flex-col items-center hover:bg-white/20 transition-colors active:scale-95">
+              <div className="h-20 flex items-center justify-center">
+                <Image src="/images/products/ab2500-hero-nobg.png" alt="AB2500" width={460} height={212} className="w-full h-full object-contain" priority />
+              </div>
+              <p className="text-white text-xs font-bold text-center mt-2">AB2500</p>
             </Link>
-            <Link href="/prodotti/greenbox-evo" className="flex-shrink-0 w-[180px] snap-center bg-white/10 backdrop-blur-sm rounded-2xl p-3 border border-white/10">
-              <Image src="/images/products/greenbox-evo-front-nobg.png" alt="GreenBox EVO" width={340} height={306} className="w-full h-auto" priority />
-              <p className="text-white/80 text-sm font-semibold text-center mt-2">GreenBox EVO</p>
+            <Link href="/prodotti/greenbox-evo" className="bg-white/10 backdrop-blur-sm rounded-2xl p-3 border border-white/10 flex flex-col items-center hover:bg-white/20 transition-colors active:scale-95">
+              <div className="h-20 flex items-center justify-center">
+                <Image src="/images/products/greenbox-evo-front-nobg.png" alt="GreenBox EVO" width={340} height={306} className="w-full h-full object-contain" priority />
+              </div>
+              <p className="text-white text-xs font-bold text-center mt-2">GreenBox EVO</p>
             </Link>
           </div>
         </div>

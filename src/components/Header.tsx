@@ -37,10 +37,12 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled
-          ? "bg-white/80 backdrop-blur-xl shadow-[0_1px_3px_rgba(0,0,0,0.05)] border-b border-gray-200/50"
-          : "bg-dark-900/70 backdrop-blur-sm"
+      className={`fixed top-0 left-0 right-0 z-[9999] transition-all duration-500 ${
+        mobileOpen
+          ? "bg-white shadow-lg"
+          : scrolled
+            ? "bg-white/80 backdrop-blur-xl shadow-[0_1px_3px_rgba(0,0,0,0.05)] border-b border-gray-200/50"
+            : "bg-dark-900/70 backdrop-blur-sm"
       }`}
     >
       <div className="container-custom flex items-center justify-between h-20 px-4 sm:px-6 lg:px-8">
@@ -113,7 +115,7 @@ export default function Header() {
 
         {/* Mobile toggle */}
         <button
-          className={`lg:hidden p-2 min-w-[44px] min-h-[44px] flex items-center justify-center relative z-10 ${scrolled ? "text-dark-900" : "text-white"}`}
+          className={`lg:hidden p-2 min-w-[44px] min-h-[44px] flex items-center justify-center relative z-10 ${mobileOpen || scrolled ? "text-dark-900" : "text-white"}`}
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Menu"
         >
@@ -129,7 +131,7 @@ export default function Header() {
 
       {/* Mobile menu */}
       <div
-        className={`lg:hidden fixed inset-0 top-[72px] z-[9999] bg-white transition-all duration-300 overflow-y-auto ${
+        className={`lg:hidden fixed inset-0 top-[80px] z-[9998] bg-white transition-all duration-300 overflow-y-auto ${
           mobileOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
       >

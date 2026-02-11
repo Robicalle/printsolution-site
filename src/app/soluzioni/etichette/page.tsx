@@ -191,12 +191,12 @@ export default function EtichettePage() {
           <div className="grid md:grid-cols-2 gap-8">
             {printers.map((p) => (
               <Link key={p.name} href={p.href} className="card-modern overflow-hidden hover:-translate-y-1 transition-transform duration-300 group">
-                <div className="relative h-72 bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center overflow-hidden">
+                <div className="relative h-56 sm:h-72 bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center overflow-hidden">
                   <Image
                     src={p.image}
                     alt={p.name}
                     fill
-                    className="object-contain p-2 group-hover:scale-105 transition-transform duration-500"
+                    className="object-contain p-4 group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
                 <div className="p-8 lg:p-10">
@@ -288,8 +288,8 @@ export default function EtichettePage() {
             </p>
           </div>
 
-          <div className="overflow-x-auto">
-            <table className="w-full text-left">
+          <div className="overflow-x-auto -mx-4 px-4 sm:mx-0 sm:px-0">
+            <table className="w-full text-left min-w-[500px]">
               <thead>
                 <tr className="border-b-2 border-gray-100">
                   <th className="py-4 px-4 text-sm font-bold text-dark-800">Modello</th>

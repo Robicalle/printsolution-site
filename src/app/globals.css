@@ -72,6 +72,10 @@
   pointer-events: none;
 }
 
+/* Hide scrollbar for mobile carousels */
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
 /* Counter animation */
 @property --num {
   syntax: '<integer>';

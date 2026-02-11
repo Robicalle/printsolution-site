@@ -130,7 +130,7 @@ export default function ContattiClient() {
                   <button
                     type="submit"
                     disabled={status === "sending"}
-                    className="btn-primary w-full text-center disabled:opacity-60"
+                    className="btn-primary w-full text-center disabled:opacity-60 min-h-[48px] text-base"
                   >
                     {status === "sending" ? (
                       <>Invio in corso...</>
@@ -222,7 +222,7 @@ export default function ContattiClient() {
                     title="Print Solution — Via Pisa 200, Sesto San Giovanni"
                   />
                 </div>
-                <p className="text-gray-400 text-xs mt-2">
+                <p className="text-gray-400 text-sm mt-2">
                   Via Pisa 200, int. 23 — 20099 Sesto San Giovanni (MI) — Parcheggio disponibile
                 </p>
               </div>
@@ -239,7 +239,7 @@ export default function ContattiClient() {
                     <span className="text-gray-500">Sabato — Domenica</span>
                     <span className="text-gray-400">Chiuso</span>
                   </div>
-                  <p className="text-gray-400 text-xs mt-2">Demo su appuntamento</p>
+                  <p className="text-gray-400 text-sm mt-2">Demo su appuntamento</p>
                 </div>
               </div>
             </div>

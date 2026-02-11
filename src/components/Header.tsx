@@ -113,11 +113,11 @@ export default function Header() {
 
         {/* Mobile toggle */}
         <button
-          className={`lg:hidden p-2 relative z-10 ${scrolled ? "text-dark-900" : "text-white"}`}
+          className={`lg:hidden p-2 min-w-[44px] min-h-[44px] flex items-center justify-center relative z-10 ${scrolled ? "text-dark-900" : "text-white"}`}
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Menu"
         >
-          <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             {mobileOpen ? (
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             ) : (
@@ -137,14 +137,14 @@ export default function Header() {
           {navigation.filter((item) => !('homeOnly' in item && item.homeOnly && isHome)).map((item) =>
             item.children ? (
               <div key={item.label}>
-                <p className="py-2 font-semibold text-gray-400 text-xs uppercase tracking-wider mt-4">
+                <p className="py-2 font-semibold text-gray-400 text-sm uppercase tracking-wider mt-4">
                   {item.label}
                 </p>
                 {item.children.map((child) => (
                   <Link
                     key={child.href}
                     href={child.href}
-                    className="block py-3 pl-4 text-gray-700 hover:text-cyan-500 text-lg border-b border-gray-50"
+                    className="block py-3 pl-4 min-h-[44px] flex items-center text-gray-700 hover:text-cyan-500 text-lg border-b border-gray-50"
                     onClick={() => setMobileOpen(false)}
                   >
                     {child.label}
@@ -155,14 +155,14 @@ export default function Header() {
               <Link
                 key={item.label}
                 href={item.href!}
-                className="block py-3 text-gray-700 hover:text-cyan-500 text-lg border-b border-gray-50"
+                className="block py-3 min-h-[44px] flex items-center text-gray-700 hover:text-cyan-500 text-lg border-b border-gray-50"
                 onClick={() => setMobileOpen(false)}
               >
                 {item.label}
               </Link>
             )
           )}
-          <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Informazioni%20Print%20Solution&body=Buongiorno%2C%0A%0AVorrei%20ricevere%20informazioni.%0A%0AGrazie" className="btn-primary mt-8 w-full text-center" onClick={() => setMobileOpen(false)}>
+          <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Informazioni%20Print%20Solution&body=Buongiorno%2C%0A%0AVorrei%20ricevere%20informazioni.%0A%0AGrazie" className="btn-primary mt-8 w-full text-center min-h-[48px] flex items-center justify-center text-lg" onClick={() => setMobileOpen(false)}>
             Richiedi Demo
           </a>
         </nav>

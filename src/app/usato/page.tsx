@@ -175,7 +175,7 @@ export default function UsatoPage() {
                   </div>
 
                   {/* Specs */}
-                  <ul className="grid grid-cols-2 gap-3 mb-8">
+                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
                     {p.specs.map((spec) => (
                       <li key={spec} className="flex items-start text-sm text-gray-600">
                         <svg className="w-5 h-5 text-cyan-500 mr-2 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">

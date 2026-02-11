@@ -48,7 +48,7 @@ function Hero() {
       <div className="absolute inset-0 bg-hero-gradient" />
       <div className="absolute inset-0 bg-gradient-to-r from-dark-900/95 via-dark-900/70 to-dark-900/20 z-[2]" />
 
-      {/* Machine images — independently positioned */}
+      {/* Machine images — desktop: absolutely positioned */}
       <div className="absolute inset-0 z-[11] hidden lg:block pointer-events-none">
         {/* EDM-650X */}
         <Link href="/prodotti/edm-650x" className="absolute opacity-40 hover:opacity-100 hover:scale-105 transition-all duration-300 pointer-events-auto" style={{ top: 'calc(5% + 100px)', left: 'calc(30% + 400px)', width: '21%' }}>
@@ -101,8 +101,26 @@ function Hero() {
               </Link>
             </div>
           </div>
-          {/* Right column - empty, keeps text aligned left */}
+          {/* Right column - empty on desktop, machines on mobile */}
           <div className="hidden lg:block" />
+        </div>
+
+        {/* Mobile machines carousel */}
+        <div className="lg:hidden mt-8 -mx-4 px-4">
+          <div className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory" style={{ WebkitOverflowScrolling: 'touch', scrollbarWidth: 'none' }}>
+            <Link href="/prodotti/edm-650x" className="flex-shrink-0 w-[180px] snap-center bg-white/10 backdrop-blur-sm rounded-2xl p-3 border border-white/10">
+              <Image src="/images/products/edm-650x-real-nobg.png" alt="EDM-650X" width={680} height={393} className="w-full h-auto" priority />
+              <p className="text-white/80 text-sm font-semibold text-center mt-2">EDM-650X</p>
+            </Link>
+            <Link href="/prodotti/ab2500" className="flex-shrink-0 w-[180px] snap-center bg-white/10 backdrop-blur-sm rounded-2xl p-3 border border-white/10">
+              <Image src="/images/products/ab2500-hero-nobg.png" alt="AB2500" width={460} height={212} className="w-full h-auto" priority />
+              <p className="text-white/80 text-sm font-semibold text-center mt-2">AB2500</p>
+            </Link>
+            <Link href="/prodotti/greenbox-evo" className="flex-shrink-0 w-[180px] snap-center bg-white/10 backdrop-blur-sm rounded-2xl p-3 border border-white/10">
+              <Image src="/images/products/greenbox-evo-front-nobg.png" alt="GreenBox EVO" width={340} height={306} className="w-full h-auto" priority />
+              <p className="text-white/80 text-sm font-semibold text-center mt-2">GreenBox EVO</p>
+            </Link>
+          </div>
         </div>
       </div>
 
@@ -124,7 +142,7 @@ function BrandBar() {
   return (
     <section ref={ref} className={`py-16 bg-white border-b border-gray-100 transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
       <div className="container-custom px-4 sm:px-6 lg:px-8">
-        <p className="text-center text-xs uppercase tracking-[0.2em] text-gray-400 font-medium mb-10">
+        <p className="text-center text-sm uppercase tracking-[0.2em] text-gray-400 font-medium mb-10">
           Distributore ufficiale dei marchi leader
         </p>
         <div className="flex flex-wrap items-center justify-center gap-x-16 gap-y-8">
@@ -279,7 +297,7 @@ function FeaturedProducts() {
               <div className="p-8 lg:p-10">
                 <h3 className="text-2xl font-bold text-dark-800 mb-4">{p.name}</h3>
                 <p className="text-gray-500 text-[15px] leading-relaxed mb-6">{p.desc}</p>
-                <ul className="grid grid-cols-2 gap-3 mb-8">
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
                   {p.specs.map((spec) => (
                     <li key={spec} className="flex items-start text-sm text-gray-600">
                       <svg className="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">

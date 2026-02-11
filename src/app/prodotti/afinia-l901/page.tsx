@@ -208,7 +208,7 @@ export default function AfiniaL901Page() {
           <h2 className="text-3xl font-bold text-dark-800 mb-10 text-center">Specifiche Tecniche</h2>
           <div className="space-y-3">
             {specs.map(([label, value]) => (
-              <div key={label} className="flex justify-between bg-white rounded-xl px-5 py-4 shadow-sm">
+              <div key={label} className="flex flex-col sm:flex-row sm:justify-between gap-1 bg-white rounded-xl px-5 py-4 shadow-sm">
                 <span className="text-sm font-medium text-gray-600">{label}</span>
                 <span className="text-sm font-bold text-dark-800">{value}</span>
               </div>

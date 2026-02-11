@@ -64,7 +64,7 @@ export default function ChiSiamoPage() {
                   ].map((s) => (
                     <div key={s.label} className="bg-white rounded-2xl p-5 shadow-card">
                       <p className="text-2xl font-bold text-cyan-500">{s.value}</p>
-                      <p className="text-gray-400 text-xs mt-1">{s.label}</p>
+                      <p className="text-gray-400 text-sm mt-1">{s.label}</p>
                     </div>
                   ))}
                 </div>

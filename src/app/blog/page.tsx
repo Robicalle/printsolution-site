@@ -95,14 +95,14 @@ export default function BlogPage() {
                     <span className={`inline-block px-2.5 py-0.5 rounded-full text-xs font-bold text-white bg-gradient-to-r ${a.gradient}`}>
                       {a.category}
                     </span>
-                    <span className="text-gray-400 text-xs">{a.readTime}</span>
+                    <span className="text-gray-400 text-sm">{a.readTime}</span>
                   </div>
                   <h3 className="text-lg font-bold text-dark-800 mb-2 group-hover:text-cyan-500 transition-colors leading-snug">
                     {a.title}
                   </h3>
                   <p className="text-gray-500 text-sm leading-relaxed mb-4">{a.excerpt}</p>
                   <div className="flex items-center justify-between">
-                    <span className="text-gray-400 text-xs">{a.date}</span>
+                    <span className="text-gray-400 text-sm">{a.date}</span>
                     <span className="text-cyan-500 text-sm font-semibold group-hover:underline">Leggi →</span>
                   </div>
                 </div>

@@ -80,7 +80,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-white/5 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-600">
+        <div className="border-t border-white/5 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center text-sm md:text-xs text-gray-600">
           <p>&copy; {new Date().getFullYear()} Print Solution S.r.l. — Tutti i diritti riservati.</p>
           <div className="flex gap-6 mt-4 md:mt-0">
             <Link href="/privacy" className="hover:text-white transition-colors duration-200">Privacy Policy</Link>

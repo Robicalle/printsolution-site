@@ -141,7 +141,7 @@ export default function ConsumabiliPage() {
                       {cat.items.map((item) => (
                         <li key={item.name} className="bg-surface-50 rounded-xl p-4">
                           <p className="font-semibold text-dark-800 text-sm">{item.name}</p>
-                          <p className="text-gray-400 text-xs mt-1">{item.detail}</p>
+                          <p className="text-gray-400 text-sm mt-1">{item.detail}</p>
                         </li>
                       ))}
                     </ul>
@@ -188,8 +188,8 @@ export default function ConsumabiliPage() {
                 </div>
                 <h3 className="text-lg font-bold text-dark-800 mb-2">{pack.name}</h3>
                 <p className="text-gray-500 text-sm mb-4">{pack.hours} supporto remoto</p>
-                <p className="text-gray-400 text-xs">Sconto ricambi: {pack.discount}</p>
-                <p className="text-gray-400 text-xs mt-1">+ Aggiornamenti SW inclusi</p>
+                <p className="text-gray-400 text-sm">Sconto ricambi: {pack.discount}</p>
+                <p className="text-gray-400 text-sm mt-1">+ Aggiornamenti SW inclusi</p>
               </div>
             ))}
           </div>

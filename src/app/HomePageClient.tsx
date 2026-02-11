@@ -75,28 +75,25 @@ function Hero() {
       <div className="container-custom relative z-10 pt-24 pb-8 lg:pt-32 lg:pb-32 px-5 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           <div>
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 text-sm text-cyan-200 mb-6 lg:mb-8 opacity-0 animate-fade-up">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 text-xs sm:text-sm text-cyan-200 mb-5 lg:mb-8 opacity-0 animate-fade-up">
               <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-              Print Solution S.r.l. — Dal 2010
+              Print Solution — Dal 2010
             </div>
-            <h1 className="text-3xl sm:text-5xl lg:text-7xl xl:text-8xl font-bold leading-[1] sm:leading-[0.95] tracking-tight mb-5 lg:mb-8 opacity-0 animate-fade-up-delay">
-              Soluzioni Digitali
-              <br />
-              per{" "}
+            <h1 className="text-[1.75rem] sm:text-5xl lg:text-7xl xl:text-8xl font-bold leading-[1.1] sm:leading-[0.95] tracking-tight mb-4 lg:mb-8 opacity-0 animate-fade-up-delay">
+              Soluzioni Digitali per{" "}
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-emerald-400 to-lime-400">
                 Stampa e Packaging
               </span>
             </h1>
-            <p className="text-base sm:text-lg lg:text-xl text-gray-300/90 mb-8 lg:mb-10 leading-relaxed opacity-0 animate-fade-up-delay-2">
-              Dalla produzione di scatole personalizzate alla stampa di etichette professionali:
-              tecnologia, competenza e assistenza dedicata per la tua azienda.
+            <p className="text-sm sm:text-lg lg:text-xl text-gray-300/90 mb-6 lg:mb-10 leading-relaxed opacity-0 animate-fade-up-delay-2">
+              Scatole personalizzate, etichette professionali: tecnologia, competenza e assistenza per la tua azienda.
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 opacity-0 animate-fade-up-delay-2">
-              <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Print%20Solution&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo.%0A%0AGrazie" className="btn-primary text-base sm:text-lg !px-6 sm:!px-8 !py-3.5 sm:!py-4 !rounded-full text-center">
-                Richiedi una Demo →
+            <div className="flex flex-row gap-3 sm:gap-4 opacity-0 animate-fade-up-delay-2">
+              <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Print%20Solution&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo.%0A%0AGrazie" className="inline-flex items-center justify-center px-5 sm:px-8 py-3 sm:py-4 bg-cyan-500 hover:bg-cyan-400 text-white font-semibold rounded-full transition-all text-sm sm:text-lg">
+                Richiedi Demo →
               </a>
-              <Link href="/soluzioni/packaging" className="btn-secondary text-base sm:text-lg !px-6 sm:!px-8 !py-3.5 sm:!py-4 text-center">
-                Scopri le Soluzioni
+              <Link href="/soluzioni/packaging" className="inline-flex items-center justify-center px-5 sm:px-8 py-3 sm:py-4 border border-white/30 text-white font-semibold rounded-full hover:bg-white/10 transition-all text-sm sm:text-lg">
+                Le Soluzioni
               </Link>
             </div>
           </div>
@@ -104,23 +101,19 @@ function Hero() {
           <div className="hidden lg:block" />
         </div>
 
-        {/* Mobile machines — swipeable full-width cards */}
+        {/* Mobile machines — 3 compact cards in a row */}
         <div className="lg:hidden mt-8">
-          <p className="text-cyan-300/80 text-xs uppercase tracking-widest font-medium mb-3">Le nostre macchine di punta</p>
-          <div className="flex gap-3 overflow-x-auto pb-3 -mx-5 px-5 snap-x snap-mandatory scrollbar-hide" style={{ WebkitOverflowScrolling: 'touch' }}>
+          <div className="grid grid-cols-3 gap-2">
             {[
-              { href: "/prodotti/edm-650x", img: "/images/products/edm-650x-real-nobg.png", name: "EDM-650X", desc: "Stampa single-pass", w: 680, h: 393 },
-              { href: "/prodotti/ab2500", img: "/images/products/ab2500-hero-nobg.png", name: "AB2500", desc: "Cambio formato 20s", w: 460, h: 212 },
-              { href: "/prodotti/greenbox-evo", img: "/images/products/greenbox-evo-front-nobg.png", name: "GreenBox EVO", desc: "Box maker digitale", w: 340, h: 306 },
+              { href: "/prodotti/edm-650x", img: "/images/products/edm-650x-real-nobg.png", name: "EDM-650X", w: 680, h: 393 },
+              { href: "/prodotti/ab2500", img: "/images/products/ab2500-hero-nobg.png", name: "AB2500", w: 460, h: 212 },
+              { href: "/prodotti/greenbox-evo", img: "/images/products/greenbox-evo-front-nobg.png", name: "GreenBox EVO", w: 340, h: 306 },
             ].map((m) => (
-              <Link key={m.name} href={m.href} className="flex-shrink-0 w-[75vw] sm:w-[50vw] snap-start bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/20 flex flex-col items-center hover:bg-white/20 transition-all active:scale-[0.97]">
-                <div className="h-28 sm:h-36 w-full flex items-center justify-center">
-                  <Image src={m.img} alt={m.name} width={m.w} height={m.h} className="max-h-full w-auto object-contain drop-shadow-[0_4px_12px_rgba(0,0,0,0.3)]" priority />
+              <Link key={m.name} href={m.href} className="bg-white/10 backdrop-blur-sm rounded-xl p-2 border border-white/15 flex flex-col items-center active:scale-95 transition-transform">
+                <div className="h-16 w-full flex items-center justify-center">
+                  <Image src={m.img} alt={m.name} width={m.w} height={m.h} className="max-h-full w-auto object-contain" priority />
                 </div>
-                <div className="mt-3 text-center">
-                  <p className="text-white font-bold text-base">{m.name}</p>
-                  <p className="text-cyan-200/70 text-sm">{m.desc}</p>
-                </div>
+                <p className="text-white/90 text-[11px] font-semibold text-center mt-1.5 leading-tight">{m.name}</p>
               </Link>
             ))}
           </div>

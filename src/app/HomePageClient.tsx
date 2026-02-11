@@ -79,20 +79,20 @@ function Hero() {
               <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
               Print Solution — Dal 2010
             </div>
-            <h1 className="text-[1.75rem] sm:text-5xl lg:text-7xl xl:text-8xl font-bold leading-[1.1] sm:leading-[0.95] tracking-tight mb-4 lg:mb-8 opacity-0 animate-fade-up-delay">
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl xl:text-8xl font-bold leading-[1.05] sm:leading-[0.95] tracking-tight mb-5 lg:mb-8 opacity-0 animate-fade-up-delay">
               Soluzioni Digitali per{" "}
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-emerald-400 to-lime-400">
                 Stampa e Packaging
               </span>
             </h1>
-            <p className="text-sm sm:text-lg lg:text-xl text-gray-300/90 mb-6 lg:mb-10 leading-relaxed opacity-0 animate-fade-up-delay-2">
+            <p className="text-base sm:text-lg lg:text-xl text-gray-300/90 mb-7 lg:mb-10 leading-relaxed opacity-0 animate-fade-up-delay-2">
               Scatole personalizzate, etichette professionali: tecnologia, competenza e assistenza per la tua azienda.
             </p>
             <div className="flex flex-row gap-3 sm:gap-4 opacity-0 animate-fade-up-delay-2">
-              <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Print%20Solution&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo.%0A%0AGrazie" className="inline-flex items-center justify-center px-5 sm:px-8 py-3 sm:py-4 bg-cyan-500 hover:bg-cyan-400 text-white font-semibold rounded-full transition-all text-sm sm:text-lg">
+              <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Print%20Solution&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo.%0A%0AGrazie" className="inline-flex items-center justify-center px-6 sm:px-8 py-3.5 sm:py-4 bg-cyan-500 hover:bg-cyan-400 text-white font-semibold rounded-full transition-all text-base sm:text-lg">
                 Richiedi Demo →
               </a>
-              <Link href="/soluzioni/packaging" className="inline-flex items-center justify-center px-5 sm:px-8 py-3 sm:py-4 border border-white/30 text-white font-semibold rounded-full hover:bg-white/10 transition-all text-sm sm:text-lg">
+              <Link href="/soluzioni/packaging" className="inline-flex items-center justify-center px-6 sm:px-8 py-3.5 sm:py-4 border border-white/30 text-white font-semibold rounded-full hover:bg-white/10 transition-all text-base sm:text-lg">
                 Le Soluzioni
               </Link>
             </div>

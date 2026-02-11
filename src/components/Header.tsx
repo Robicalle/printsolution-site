@@ -146,7 +146,7 @@ export default function Header() {
                   <Link
                     key={child.href}
                     href={child.href}
-                    className="block py-3 pl-4 min-h-[44px] flex items-center text-gray-700 hover:text-cyan-500 text-lg border-b border-gray-50"
+                    className="block py-3 pl-0 min-h-[44px] flex items-center text-gray-700 hover:text-cyan-500 text-lg border-b border-gray-50"
                     onClick={() => setMobileOpen(false)}
                   >
                     {child.label}
@@ -164,9 +164,7 @@ export default function Header() {
               </Link>
             )
           )}
-          <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Informazioni%20Print%20Solution&body=Buongiorno%2C%0A%0AVorrei%20ricevere%20informazioni.%0A%0AGrazie" className="btn-primary mt-8 w-full text-center min-h-[48px] flex items-center justify-center text-lg" onClick={() => setMobileOpen(false)}>
-            Richiedi Demo
-          </a>
+          {/* CTA removed from mobile menu */}
         </nav>
       </div>
     </header>

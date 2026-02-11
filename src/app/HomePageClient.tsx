@@ -101,22 +101,11 @@ function Hero() {
           <div className="hidden lg:block" />
         </div>
 
-        {/* Mobile machines — 3 compact cards in a row */}
-        <div className="lg:hidden mt-8">
-          <div className="grid grid-cols-3 gap-2">
-            {[
-              { href: "/prodotti/edm-650x", img: "/images/products/edm-650x-real-nobg.png", name: "EDM-650X", w: 680, h: 393 },
-              { href: "/prodotti/ab2500", img: "/images/products/ab2500-hero-nobg.png", name: "AB2500", w: 460, h: 212 },
-              { href: "/prodotti/greenbox-evo", img: "/images/products/greenbox-evo-front-nobg.png", name: "GreenBox EVO", w: 340, h: 306 },
-            ].map((m) => (
-              <Link key={m.name} href={m.href} className="bg-white/10 backdrop-blur-sm rounded-xl p-2 border border-white/15 flex flex-col items-center active:scale-95 transition-transform">
-                <div className="h-16 w-full flex items-center justify-center">
-                  <Image src={m.img} alt={m.name} width={m.w} height={m.h} className="max-h-full w-auto object-contain" priority />
-                </div>
-                <p className="text-white/90 text-[11px] font-semibold text-center mt-1.5 leading-tight">{m.name}</p>
-              </Link>
-            ))}
-          </div>
+        {/* Mobile: single featured machine image */}
+        <div className="lg:hidden mt-6 flex justify-center">
+          <Link href="/prodotti/edm-650x" className="block w-[85%] max-w-[320px]">
+            <Image src="/images/products/edm-650x-real-nobg.png" alt="EDM-650X" width={680} height={393} className="w-full h-auto drop-shadow-[0_8px_24px_rgba(0,200,200,0.15)]" priority />
+          </Link>
         </div>
       </div>
 

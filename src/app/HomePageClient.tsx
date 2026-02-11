@@ -104,27 +104,25 @@ function Hero() {
           <div className="hidden lg:block" />
         </div>
 
-        {/* Mobile machines — vertical stack, large and clear */}
-        <div className="lg:hidden mt-10">
-          <div className="grid grid-cols-3 gap-3">
-            <Link href="/prodotti/edm-650x" className="bg-white/10 backdrop-blur-sm rounded-2xl p-3 border border-white/10 flex flex-col items-center hover:bg-white/20 transition-colors active:scale-95">
-              <div className="h-20 flex items-center justify-center">
-                <Image src="/images/products/edm-650x-real-nobg.png" alt="EDM-650X" width={680} height={393} className="w-full h-full object-contain" priority />
-              </div>
-              <p className="text-white text-xs font-bold text-center mt-2">EDM-650X</p>
-            </Link>
-            <Link href="/prodotti/ab2500" className="bg-white/10 backdrop-blur-sm rounded-2xl p-3 border border-white/10 flex flex-col items-center hover:bg-white/20 transition-colors active:scale-95">
-              <div className="h-20 flex items-center justify-center">
-                <Image src="/images/products/ab2500-hero-nobg.png" alt="AB2500" width={460} height={212} className="w-full h-full object-contain" priority />
-              </div>
-              <p className="text-white text-xs font-bold text-center mt-2">AB2500</p>
-            </Link>
-            <Link href="/prodotti/greenbox-evo" className="bg-white/10 backdrop-blur-sm rounded-2xl p-3 border border-white/10 flex flex-col items-center hover:bg-white/20 transition-colors active:scale-95">
-              <div className="h-20 flex items-center justify-center">
-                <Image src="/images/products/greenbox-evo-front-nobg.png" alt="GreenBox EVO" width={340} height={306} className="w-full h-full object-contain" priority />
-              </div>
-              <p className="text-white text-xs font-bold text-center mt-2">GreenBox EVO</p>
-            </Link>
+        {/* Mobile machines — swipeable full-width cards */}
+        <div className="lg:hidden mt-8">
+          <p className="text-cyan-300/80 text-xs uppercase tracking-widest font-medium mb-3">Le nostre macchine di punta</p>
+          <div className="flex gap-3 overflow-x-auto pb-3 -mx-5 px-5 snap-x snap-mandatory scrollbar-hide" style={{ WebkitOverflowScrolling: 'touch' }}>
+            {[
+              { href: "/prodotti/edm-650x", img: "/images/products/edm-650x-real-nobg.png", name: "EDM-650X", desc: "Stampa single-pass", w: 680, h: 393 },
+              { href: "/prodotti/ab2500", img: "/images/products/ab2500-hero-nobg.png", name: "AB2500", desc: "Cambio formato 20s", w: 460, h: 212 },
+              { href: "/prodotti/greenbox-evo", img: "/images/products/greenbox-evo-front-nobg.png", name: "GreenBox EVO", desc: "Box maker digitale", w: 340, h: 306 },
+            ].map((m) => (
+              <Link key={m.name} href={m.href} className="flex-shrink-0 w-[75vw] sm:w-[50vw] snap-start bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/20 flex flex-col items-center hover:bg-white/20 transition-all active:scale-[0.97]">
+                <div className="h-28 sm:h-36 w-full flex items-center justify-center">
+                  <Image src={m.img} alt={m.name} width={m.w} height={m.h} className="max-h-full w-auto object-contain drop-shadow-[0_4px_12px_rgba(0,0,0,0.3)]" priority />
+                </div>
+                <div className="mt-3 text-center">
+                  <p className="text-white font-bold text-base">{m.name}</p>
+                  <p className="text-cyan-200/70 text-sm">{m.desc}</p>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </div>
@@ -145,7 +143,7 @@ function BrandBar() {
     { name: "DTM Print", logo: "/images/brands/dtm-print.jpg", href: "#" },
   ];
   return (
-    <section ref={ref} className={`py-16 bg-white border-b border-gray-100 transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+    <section ref={ref} className={`py-16 bg-white border-b border-gray-100 transition-all duration-700 hidden md:block ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
       <div className="container-custom px-4 sm:px-6 lg:px-8">
         <p className="text-center text-sm uppercase tracking-[0.2em] text-gray-400 font-medium mb-10">
           Distributore ufficiale dei marchi leader

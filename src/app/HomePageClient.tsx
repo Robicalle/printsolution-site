@@ -250,8 +250,8 @@ function FeaturedProducts() {
     <section className="section-padding bg-white">
       <div className="container-custom" ref={ref}>
         <div className={`text-center mb-16 transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <p className="text-cyan-500 font-semibold text-sm uppercase tracking-widest mb-4">In evidenza</p>
-          <h2 className="text-4xl sm:text-5xl font-bold text-dark-800 tracking-tight">Tecnologie in Evidenza</h2>
+          <p className="text-cyan-500 font-semibold text-sm uppercase tracking-widest mb-4">I nostri prodotti</p>
+          <h2 className="text-4xl sm:text-5xl font-bold text-dark-800 tracking-tight">Tecnologie di Punta</h2>
         </div>
         <div className="grid lg:grid-cols-2 gap-8">
           {products.map((p, i) => (

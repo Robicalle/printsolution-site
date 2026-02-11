@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
-import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "News & Eventi",

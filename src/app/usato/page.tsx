@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
-import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {

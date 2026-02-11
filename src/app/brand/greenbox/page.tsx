@@ -130,7 +130,6 @@ export default function GreenBoxPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/prodotti/greenbox-evo" className="btn-primary text-lg">Scheda Prodotto GreenBox EVO</Link>
-            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20GreenBox&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20GreenBox.%0A%0AGrazie" className="btn-outline text-lg">Prenota una Demo</a>
           </div>
         </div>
       </section>

@@ -170,7 +170,7 @@ export default function ArticleEtichette() {
 
           <div className="mt-12 pt-8 border-t border-gray-100 flex flex-col sm:flex-row gap-4 justify-between items-center">
             <Link href="/blog" className="text-cyan-500 font-semibold text-sm hover:underline">← Torna al Blog</Link>
-            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Soluzioni%20Print%20Solution&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20Soluzioni%20Print%20Solution.%0A%0AGrazie" className="btn-primary text-sm">Prenota una Demo Gratuita</a>
+            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Soluzioni%20Print%20Solution&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20Soluzioni%20Print%20Solution.%0A%0AGrazie" className="btn-primary text-sm">Richiedi Demo →</a>
           </div>
         </div>
       </article>

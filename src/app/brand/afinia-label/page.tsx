@@ -123,7 +123,6 @@ export default function AfiniaLabelPage() {
           <p className="text-gray-500 max-w-xl mx-auto mb-8">
             Prenota una visita nella nostra sala demo a Sesto San Giovanni. Porta le tue etichette e testa la qualità.
           </p>
-          <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Afinia%20Label&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20Afinia%20Label.%0A%0AGrazie" className="btn-primary text-lg">Prenota una Demo</a>
         </div>
       </section>
     </>

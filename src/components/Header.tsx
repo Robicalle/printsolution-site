@@ -129,11 +129,11 @@ export default function Header() {
 
       {/* Mobile menu */}
       <div
-        className={`lg:hidden fixed inset-0 top-20 bg-white/95 backdrop-blur-xl transition-all duration-300 ${
+        className={`lg:hidden fixed inset-0 top-[72px] z-[9999] bg-white transition-all duration-300 overflow-y-auto ${
           mobileOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
       >
-        <nav className="container-custom px-6 py-8 space-y-2">
+        <nav className="px-6 py-6 space-y-1">
           {navigation.filter((item) => !('homeOnly' in item && item.homeOnly && isHome)).map((item) =>
             item.children ? (
               <div key={item.label}>

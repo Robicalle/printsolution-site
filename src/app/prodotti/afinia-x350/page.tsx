@@ -147,7 +147,7 @@ export default function AfiniaX350Page() {
                 da circa 1 m² di ingombro.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Afinia%20X350&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20Afinia%20X350.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">Richiedi Demo ?</a>
+                <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Afinia%20X350&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20Afinia%20X350.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">Richiedi Demo →</a>
               </div>
             </div>
             <div className="relative h-72 lg:h-96 rounded-3xl overflow-hidden">
@@ -233,7 +233,7 @@ export default function AfiniaX350Page() {
             Scopri come la X350 può rivoluzionare la tua produzione di etichette. Contattaci per una consulenza o prenota una demo.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Afinia%20X350&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20Afinia%20X350.%0A%0AGrazie" className="btn-primary text-lg">Richiedi Demo ?</a>
+            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Afinia%20X350&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20Afinia%20X350.%0A%0AGrazie" className="btn-primary text-lg">Richiedi Demo →</a>
           </div>
         </div>
       </section>

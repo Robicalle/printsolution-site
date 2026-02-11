@@ -146,7 +146,7 @@ export default function RobotjetPage() {
                 400 pezzi/ora, CMYK single-pass con teste HP A3, risoluzione fino a 1200 dpi.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Robotjet&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20Robotjet.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">Richiedi Demo ?</a>
+                <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Robotjet&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20Robotjet.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">Richiedi Demo →</a>
               </div>
             </div>
             <div className="relative h-72 lg:h-96 rounded-3xl overflow-hidden">

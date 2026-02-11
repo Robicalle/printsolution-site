@@ -143,7 +143,7 @@ export default function AfiniaL901Page() {
                 di integrazione in linea con la DLP-2200.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Afinia%20L901&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20Afinia%20L901.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">Richiedi Demo ?</a>
+                <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Afinia%20L901&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20Afinia%20L901.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">Richiedi Demo →</a>
               </div>
             </div>
             <div className="relative h-72 lg:h-96 rounded-3xl overflow-hidden">
@@ -226,7 +226,7 @@ export default function AfiniaL901Page() {
             Scopri come la L901 può trasformare la tua produzione di etichette. Contattaci per una consulenza o vieni a provarla.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Afinia%20L901&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20Afinia%20L901.%0A%0AGrazie" className="btn-primary text-lg">Richiedi Demo ?</a>
+            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Afinia%20L901&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20Afinia%20L901.%0A%0AGrazie" className="btn-primary text-lg">Richiedi Demo →</a>
           </div>
         </div>
       </section>

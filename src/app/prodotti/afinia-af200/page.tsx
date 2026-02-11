@@ -139,7 +139,7 @@ export default function AfiniaAF200Page() {
                 3D-printed custom disponibili per ogni formato di contenitore.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Afinia%20AF200&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20Afinia%20AF200.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">Richiedi Demo ?</a>
+                <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Afinia%20AF200&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20Afinia%20AF200.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">Richiedi Demo →</a>
               </div>
             </div>
             <div className="relative h-72 lg:h-96 rounded-3xl overflow-hidden">
@@ -222,7 +222,7 @@ export default function AfiniaAF200Page() {
             Scopri come l&apos;AF200 può velocizzare e rendere più precisa l&apos;applicazione delle etichette. Contattaci per una demo.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Afinia%20AF200&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20Afinia%20AF200.%0A%0AGrazie" className="btn-primary text-lg">Richiedi Demo ?</a>
+            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Afinia%20AF200&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20Afinia%20AF200.%0A%0AGrazie" className="btn-primary text-lg">Richiedi Demo →</a>
           </div>
         </div>
       </section>

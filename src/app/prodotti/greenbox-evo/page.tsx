@@ -143,7 +143,7 @@ export default function GreenBoxEvoPage() {
                 L&apos;entry point ideale nel mondo della stampa digitale su packaging.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20GreenBox%20EVO&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20GreenBox%20EVO.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">Richiedi Demo ?</a>
+                <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20GreenBox%20EVO&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20GreenBox%20EVO.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">Richiedi Demo →</a>
               </div>
             </div>
             <div className="relative h-72 lg:h-96 rounded-3xl overflow-hidden">
@@ -237,7 +237,7 @@ export default function GreenBoxEvoPage() {
             Porta i tuoi materiali e testa la GreenBox EVO nella nostra sala demo a Sesto San Giovanni.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20GreenBox%20EVO&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20GreenBox%20EVO.%0A%0AGrazie" className="btn-primary text-lg">Richiedi Demo ?</a>
+            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20GreenBox%20EVO&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20GreenBox%20EVO.%0A%0AGrazie" className="btn-primary text-lg">Richiedi Demo →</a>
           </div>
         </div>
       </section>

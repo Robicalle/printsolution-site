@@ -41,7 +41,7 @@ export default function GreenBoxPage() {
               </p>
               <p className="text-gray-500 leading-relaxed mb-4">
                 Gli inchiostri pigmentati a base acqua sono senza solventi, inodori e resistenti ad agenti atmosferici, 
-                sfregamento e acqua. Ideali per il contatto alimentare indiretto.
+                sfregamento e acqua. Versatili e adatti a molteplici applicazioni.
               </p>
               <p className="text-gray-500 leading-relaxed">
                 Print Solution fornisce assistenza diretta, formazione e pacchetti Care Pack Silver, Golden e Platinum.
@@ -130,7 +130,7 @@ export default function GreenBoxPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/prodotti/greenbox-evo" className="btn-primary text-lg">Scheda Prodotto GreenBox EVO</Link>
-            <Link href="/contatti" className="btn-outline text-lg">Prenota una Demo</Link>
+            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20GreenBox&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20GreenBox.%0A%0AGrazie" className="btn-outline text-lg">Prenota una Demo</a>
           </div>
         </div>
       </section>

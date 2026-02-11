@@ -117,12 +117,8 @@ export default function AurumPressPage() {
                 colori pastello e trasparente lucido. Il tocco premium per il tuo packaging.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="/contatti" className="btn-primary text-lg !px-8 !py-4 !rounded-full">
-                  Richiedi Informazioni
-                </Link>
-                <Link href="/contatti" className="btn-secondary text-lg !px-8 !py-4">
-                  Prenota una Demo
-                </Link>
+                <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20AurumPress&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20AurumPress.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">Richiedi Demo ?</a>
+                <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20AurumPress&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20AurumPress.%0A%0AGrazie" className="btn-secondary text-lg !px-8 !py-4">Prenota una Demo</a>
               </div>
             </div>
             <div className="relative h-72 lg:h-96 rounded-3xl overflow-hidden">
@@ -153,21 +149,6 @@ export default function AurumPressPage() {
         </div>
       </section>
 
-      {/* Specifiche Tecniche */}
-      <section className="section-padding bg-surface-50">
-        <div className="container-custom max-w-3xl">
-          <h2 className="text-3xl font-bold text-dark-800 mb-10 text-center">Specifiche Tecniche</h2>
-          <div className="space-y-3">
-            {specs.map(([label, value]) => (
-              <div key={label} className="flex justify-between bg-white rounded-xl px-5 py-4 shadow-sm">
-                <span className="text-sm font-medium text-gray-600">{label}</span>
-                <span className="text-sm font-bold text-dark-800">{value}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Features */}
       <section className="section-padding bg-white">
         <div className="container-custom">
@@ -185,6 +166,22 @@ export default function AurumPressPage() {
           </div>
         </div>
       </section>
+      {/* Specifiche Tecniche */}
+      <section className="section-padding bg-surface-50">
+        <div className="container-custom max-w-3xl">
+          <h2 className="text-3xl font-bold text-dark-800 mb-10 text-center">Specifiche Tecniche</h2>
+          <div className="space-y-3">
+            {specs.map(([label, value]) => (
+              <div key={label} className="flex justify-between bg-white rounded-xl px-5 py-4 shadow-sm">
+                <span className="text-sm font-medium text-gray-600">{label}</span>
+                <span className="text-sm font-bold text-dark-800">{value}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+
 
       {/* CTA */}
       <section className="section-padding bg-surface-50">
@@ -194,8 +191,8 @@ export default function AurumPressPage() {
             Scopri come l&apos;AurumPress può trasformare il tuo packaging. Vieni a vederla in azione nella nostra sala demo.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contatti" className="btn-primary text-lg">Richiedi Informazioni</Link>
-            <Link href="/contatti" className="btn-outline text-lg">Prenota una Demo</Link>
+            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20AurumPress&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20AurumPress.%0A%0AGrazie" className="btn-primary text-lg">Richiedi Demo ?</a>
+            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20AurumPress&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20AurumPress.%0A%0AGrazie" className="btn-outline text-lg">Prenota una Demo</a>
           </div>
         </div>
       </section>

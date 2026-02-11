@@ -87,7 +87,7 @@ export default function ArticleEtichette() {
             <p>
               Utilizzata nelle <strong>Afinia L701 e L901</strong>, la tecnologia Memjet Waterfall offre colori 
               brillanti e risoluzione fino a 1600 dpi. Gli inchiostri dye a base acqua sono eco-friendly, 
-              privi di VOC e idonei per contatto alimentare indiretto.
+              privi di VOC e sicuri per molteplici applicazioni.
             </p>
             <ul className="list-disc pl-6 space-y-1">
               <li>Qualità eccellente su carte inkjet-coated</li>
@@ -104,7 +104,7 @@ export default function ArticleEtichette() {
             </p>
             <ul className="list-disc pl-6 space-y-1">
               <li>Resistenza nativa ad acqua e UV</li>
-              <li>Certificati per contatto alimentare indiretto</li>
+              <li>A base acqua, eco-friendly e senza solventi</li>
               <li>Velocità industriale: 45 m/min</li>
               <li>Taniche 2L per colore — meno fermi</li>
             </ul>
@@ -170,7 +170,7 @@ export default function ArticleEtichette() {
 
           <div className="mt-12 pt-8 border-t border-gray-100 flex flex-col sm:flex-row gap-4 justify-between items-center">
             <Link href="/blog" className="text-cyan-500 font-semibold text-sm hover:underline">← Torna al Blog</Link>
-            <Link href="/contatti" className="btn-primary text-sm">Prenota una Demo Gratuita</Link>
+            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Soluzioni%20Print%20Solution&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20Soluzioni%20Print%20Solution.%0A%0AGrazie" className="btn-primary text-sm">Prenota una Demo Gratuita</a>
           </div>
         </div>
       </article>

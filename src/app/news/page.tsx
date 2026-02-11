@@ -33,6 +33,13 @@ const news = [
     gradient: "from-cyan-500 to-cyan-600",
   },
   {
+    category: "Prodotto",
+    title: "Anypack AB2500: il box maker automatico che rivoluziona il packaging",
+    date: "Ottobre 2025",
+    desc: "Print Solution presenta Anypack AB2500, il box maker automatico che produce scatole su misura con cambio formato in soli 20 secondi. Fino a 600 pezzi/ora, da bobina di cartone ondulato a scatola finita. Ideale per e-commerce, logistica e produzione on-demand. Disponibile per demo nella nostra sala.",
+    gradient: "from-brand-500 to-brand-600",
+  },
+  {
     category: "Fiera",
     title: "VISCOM 2025 — Milano",
     date: "1–3 Ottobre 2025",
@@ -49,8 +56,8 @@ const news = [
   {
     category: "Azienda",
     title: "Print Solution compie 15 anni",
-    date: "2023",
-    desc: "Nel 2023 abbiamo festeggiato 15 anni di attività come distributori di soluzioni digitali per stampa packaging ed etichette. Grazie a tutti i clienti e partner che ci hanno accompagnato.",
+    date: "2025",
+    desc: "Nel 2025 festeggiamo 15 anni di attività come distributori di soluzioni digitali per stampa packaging ed etichette. Dal 2010 al fianco delle aziende italiane con tecnologia, competenza e assistenza dedicata. Grazie a tutti i clienti e partner che ci hanno accompagnato.",
     gradient: "from-green-500 to-green-600",
   },
 ];
@@ -85,7 +92,7 @@ export default function NewsPage() {
 
           <div className="mt-16 text-center">
             <p className="text-gray-400 mb-6">Vuoi restare aggiornato sulle nostre novità?</p>
-            <Link href="/contatti" className="btn-primary">Contattaci</Link>
+            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Informazioni%20Print%20Solution&body=Buongiorno%2C%0A%0AVorrei%20ricevere%20informazioni.%0A%0AGrazie" className="btn-primary">Contattaci</a>
           </div>
         </div>
       </section>

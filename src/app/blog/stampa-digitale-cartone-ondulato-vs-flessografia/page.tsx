@@ -105,7 +105,7 @@ export default function ArticleDigitaleVsFlessoPage() {
               <li><strong>Cambio lavoro istantaneo</strong> - da un file all&apos;altro in secondi</li>
               <li><strong>Qualità fotografica</strong> - 1200×1200 dpi, sfumature, foto, testi nitidi</li>
               <li><strong>Dati variabili</strong> - barcode, QR code, numerazione in linea</li>
-              <li><strong>Inchiostri a base acqua</strong> — certificati per contatto alimentare</li>
+              <li><strong>Inchiostri a base acqua</strong> — eco-friendly, senza solventi</li>
               <li><strong>Zero spreco avviamento</strong> - il primo foglio è già buono</li>
               <li><strong>Sostenibilità</strong> - niente solventi, niente cliché da smaltire</li>
             </ul>
@@ -126,7 +126,7 @@ export default function ArticleDigitaleVsFlessoPage() {
                   <tr className="border-b border-gray-100"><td className="py-2 pr-4 font-medium">Risoluzione</td><td className="py-2 px-4">1200 dpi</td><td className="py-2 pl-4">~100 lpi</td></tr>
                   <tr className="border-b border-gray-100"><td className="py-2 pr-4 font-medium">Setup</td><td className="py-2 px-4">Secondi</td><td className="py-2 pl-4">Ore</td></tr>
                   <tr className="border-b border-gray-100"><td className="py-2 pr-4 font-medium">Dati variabili</td><td className="py-2 px-4 text-green-600">Sì</td><td className="py-2 pl-4 text-red-500">No</td></tr>
-                  <tr className="border-b border-gray-100"><td className="py-2 pr-4 font-medium">Contatto alimentare</td><td className="py-2 px-4 text-green-600">Inchiostri a base acqua</td><td className="py-2 pl-4">Dipende</td></tr>
+                  <tr className="border-b border-gray-100"><td className="py-2 pr-4 font-medium">Tipo inchiostri</td><td className="py-2 px-4 text-green-600">A base acqua</td><td className="py-2 pl-4">Solvente / UV</td></tr>
                   <tr className="border-b border-gray-100"><td className="py-2 pr-4 font-medium">Spreco avviamento</td><td className="py-2 px-4 text-green-600">Zero</td><td className="py-2 pl-4 text-red-500">Centinaia fogli</td></tr>
                 </tbody>
               </table>
@@ -139,7 +139,7 @@ export default function ArticleDigitaleVsFlessoPage() {
               <li>Hai molte varianti grafiche (etichette private label, packaging personalizzato)</li>
               <li>Hai bisogno di dati variabili (barcode, QR, numerazione)</li>
               <li>La qualità fotografica è importante</li>
-              <li>Lavori nel settore alimentare e hai bisogno di inchiostri certificati</li>
+              <li>Cerchi inchiostri a base acqua, senza solventi e inodori</li>
               <li>Vuoi ridurre tempi di consegna e stock</li>
             </ul>
 
@@ -148,7 +148,7 @@ export default function ArticleDigitaleVsFlessoPage() {
               L&apos;EDM-650X, distribuito in Italia da Print Solution, è una stampante single-pass con testine
               HP Pagewide che copre una gamma da 215 mm a 2500 mm di larghezza stampa. Velocità fino a
               30 m/min, spessore fino a 80 mm (stampa diretta su scatole pre-fustellate), inchiostri
-              pigmentati a base acqua certificati per contatto alimentare.
+              pigmentati a base acqua, eco-friendly e privi di solventi.
             </p>
             <p>
               Con 7 configurazioni disponibili (da 1 a 8 testine), la macchina cresce con il tuo business.
@@ -165,7 +165,7 @@ export default function ArticleDigitaleVsFlessoPage() {
 
           <div className="mt-12 pt-8 border-t border-gray-100 flex flex-col sm:flex-row gap-4 justify-between items-center">
             <Link href="/blog" className="text-cyan-500 font-semibold text-sm hover:underline">← Torna al Blog</Link>
-            <Link href="/contatti" className="btn-primary text-sm">Richiedi Info sull&apos;EDM-650X</Link>
+            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Informazioni%20Print%20Solution&body=Buongiorno%2C%0A%0AVorrei%20ricevere%20informazioni.%0A%0AGrazie" className="btn-primary text-sm">Richiedi Info sull&apos;EDM-650X</a>
           </div>
         </div>
       </article>

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CmykCursor from "@/components/CmykCursor";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.printsolutionsrl.it"),
@@ -93,6 +94,7 @@ export default function RootLayout({
         />
       </head>
       <body>
+        <CmykCursor />
         <Header />
         <main>{children}</main>
         <Footer />

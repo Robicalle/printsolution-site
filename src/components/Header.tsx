@@ -14,7 +14,8 @@ const navigation = [
       { label: "Consumabili", href: "/soluzioni/consumabili", desc: "Inchiostri, testine e materiali" },
     ],
   },
-  { label: "Promo & Usato", href: "/promo-usato" },
+  { label: "Promozioni", href: "/promozioni" },
+  { label: "Usato", href: "/usato" },
   { label: "Chi Siamo", href: "/chi-siamo" },
   { label: "News", href: "/news" },
   { label: "Blog", href: "/blog" },
@@ -65,7 +66,7 @@ export default function Header() {
                 onMouseLeave={() => setOpenDropdown(null)}
               >
                 <button
-                  className={`px-4 py-2 text-sm font-medium transition-colors duration-200 ${
+                  className={`px-5 py-2.5 text-base font-medium transition-colors duration-200 ${
                     scrolled ? "text-gray-600 hover:text-cyan-500" : "text-white/80 hover:text-white"
                   }`}
                 >
@@ -99,7 +100,7 @@ export default function Header() {
               <Link
                 key={item.label}
                 href={item.href!}
-                className={`px-4 py-2 text-sm font-medium transition-colors duration-200 ${
+                className={`px-5 py-2.5 text-base font-medium transition-colors duration-200 ${
                   scrolled ? "text-gray-600 hover:text-cyan-500" : "text-white/80 hover:text-white"
                 }`}
               >
@@ -107,9 +108,7 @@ export default function Header() {
               </Link>
             )
           )}
-          <Link href="/contatti" className="btn-primary ml-4 text-sm !py-2.5 !px-5">
-            Richiedi Demo
-          </Link>
+          <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Informazioni%20Print%20Solution&body=Buongiorno%2C%0A%0AVorrei%20ricevere%20informazioni.%0A%0AGrazie" className="btn-primary ml-4 text-base !py-3 !px-6">Richiedi Demo</a>
         </nav>
 
         {/* Mobile toggle */}
@@ -163,13 +162,9 @@ export default function Header() {
               </Link>
             )
           )}
-          <Link
-            href="/contatti"
-            className="btn-primary mt-8 w-full text-center"
-            onClick={() => setMobileOpen(false)}
-          >
+          <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Informazioni%20Print%20Solution&body=Buongiorno%2C%0A%0AVorrei%20ricevere%20informazioni.%0A%0AGrazie" className="btn-primary mt-8 w-full text-center" onClick={() => setMobileOpen(false)}>
             Richiedi Demo
-          </Link>
+          </a>
         </nav>
       </div>
     </header>

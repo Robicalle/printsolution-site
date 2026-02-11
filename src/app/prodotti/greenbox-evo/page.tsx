@@ -143,16 +143,12 @@ export default function GreenBoxEvoPage() {
                 L&apos;entry point ideale nel mondo della stampa digitale su packaging.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="/contatti" className="btn-primary text-lg !px-8 !py-4 !rounded-full">
-                  Richiedi Informazioni
-                </Link>
-                <Link href="/contatti" className="btn-secondary text-lg !px-8 !py-4">
-                  Prenota una Demo
-                </Link>
+                <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20GreenBox%20EVO&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20GreenBox%20EVO.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">Richiedi Demo ?</a>
+                <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20GreenBox%20EVO&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20GreenBox%20EVO.%0A%0AGrazie" className="btn-secondary text-lg !px-8 !py-4">Prenota una Demo</a>
               </div>
             </div>
             <div className="relative h-72 lg:h-96 rounded-3xl overflow-hidden">
-              <Image src="/images/products/greenbox-evo.jpeg" alt="GreenBox EVO" fill className="object-contain p-4" priority />
+              <Image src="/images/products/greenbox-evo-site-nobg.png" alt="GreenBox EVO" fill className="object-contain p-4" priority />
             </div>
           </div>
         </div>
@@ -180,17 +176,20 @@ export default function GreenBoxEvoPage() {
         </div>
       </section>
 
-      {/* Specifiche Tecniche */}
-      <section className="section-padding bg-surface-50">
-        <div className="container-custom max-w-3xl">
-          <h2 className="text-3xl font-bold text-dark-800 mb-10 text-center">Specifiche Tecniche</h2>
-          <div className="space-y-3">
-            {specs.map(([label, value]) => (
-              <div key={label} className="flex justify-between bg-white rounded-xl px-5 py-4 shadow-sm">
-                <span className="text-sm font-medium text-gray-600">{label}</span>
-                <span className="text-sm font-bold text-dark-800">{value}</span>
-              </div>
-            ))}
+      {/* Video */}
+      <section className="section-padding bg-white">
+        <div className="container-custom">
+          <div className="text-center mb-12">
+            <p className="text-cyan-500 font-semibold text-sm uppercase tracking-widest mb-4">Video</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-dark-800">GreenBox EVO in Azione</h2>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="aspect-video rounded-2xl overflow-hidden shadow-lg">
+              <video controls preload="metadata" className="w-full h-full object-cover"><source src="/videos/greenbox-1.mp4" type="video/mp4" /></video>
+            </div>
+            <div className="aspect-video rounded-2xl overflow-hidden shadow-lg">
+              <video controls preload="metadata" className="w-full h-full object-cover"><source src="/videos/greenbox-2.mp4" type="video/mp4" /></video>
+            </div>
           </div>
         </div>
       </section>
@@ -212,6 +211,24 @@ export default function GreenBoxEvoPage() {
           </div>
         </div>
       </section>
+      {/* Specifiche Tecniche */}
+      <section className="section-padding bg-surface-50">
+        <div className="container-custom max-w-3xl">
+          <h2 className="text-3xl font-bold text-dark-800 mb-10 text-center">Specifiche Tecniche</h2>
+          <div className="space-y-3">
+            {specs.map(([label, value]) => (
+              <div key={label} className="flex justify-between bg-white rounded-xl px-5 py-4 shadow-sm">
+                <span className="text-sm font-medium text-gray-600">{label}</span>
+                <span className="text-sm font-bold text-dark-800">{value}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+
+
+
 
       {/* CTA */}
       <section className="section-padding bg-surface-50">
@@ -221,8 +238,8 @@ export default function GreenBoxEvoPage() {
             Porta i tuoi materiali e testa la GreenBox EVO nella nostra sala demo a Sesto San Giovanni.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contatti" className="btn-primary text-lg">Richiedi Informazioni</Link>
-            <Link href="/contatti" className="btn-outline text-lg">Prenota una Demo</Link>
+            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20GreenBox%20EVO&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20GreenBox%20EVO.%0A%0AGrazie" className="btn-primary text-lg">Richiedi Demo ?</a>
+            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20GreenBox%20EVO&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20GreenBox%20EVO.%0A%0AGrazie" className="btn-outline text-lg">Prenota una Demo</a>
           </div>
         </div>
       </section>

@@ -44,16 +44,24 @@ function Counter({ target, suffix = "" }: { target: number; suffix?: string }) {
 function Hero() {
   return (
     <section className="relative min-h-screen flex items-center text-white overflow-hidden">
-      {/* Background image */}
-      <div className="absolute inset-0">
-        <Image
-          src="/images/hero-boxes.webp"
-          alt="Scatole personalizzate stampate in digitale"
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-dark-900/95 via-dark-900/80 to-cyan-500/30" />
+      {/* Background */}
+      <div className="absolute inset-0 bg-hero-gradient" />
+      <div className="absolute inset-0 bg-gradient-to-r from-dark-900/95 via-dark-900/70 to-dark-900/20 z-[2]" />
+
+      {/* Machine images — independently positioned */}
+      <div className="absolute inset-0 z-[11] hidden lg:block pointer-events-none">
+        {/* EDM-650X */}
+        <Link href="/prodotti/edm-650x" className="absolute opacity-40 hover:opacity-100 hover:scale-105 transition-all duration-300 pointer-events-auto" style={{ top: 'calc(5% + 100px)', left: 'calc(30% + 400px)', width: '21%' }}>
+          <Image src="/images/products/edm-650x-real-nobg.png" alt="EDM-650X" width={680} height={393} className="w-full h-auto" priority />
+        </Link>
+        {/* AB2500 */}
+        <Link href="/prodotti/ab2500" className="absolute opacity-40 hover:opacity-100 hover:scale-105 transition-all duration-300 pointer-events-auto" style={{ top: 'calc(40% + 130px)', left: 'calc(45% + 200px)', width: '25%' }}>
+          <Image src="/images/products/ab2500-hero-nobg.png" alt="AB2500" width={460} height={212} className="w-full h-auto" priority />
+        </Link>
+        {/* GreenBox EVO */}
+        <Link href="/prodotti/greenbox-evo" className="absolute opacity-40 hover:opacity-100 hover:scale-105 transition-all duration-300 pointer-events-auto" style={{ top: 'calc(8% + 140px)', right: '2%', width: '18%' }}>
+          <Image src="/images/products/greenbox-evo-front-nobg.png" alt="GreenBox EVO" width={340} height={306} className="w-full h-auto" priority />
+        </Link>
       </div>
 
       {/* Floating orbs — CMYK colors */}
@@ -64,33 +72,37 @@ function Hero() {
       {/* Grid pattern */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:60px_60px]" />
 
-      <div className="container-custom section-padding relative z-10 pt-32">
-        <div className="max-w-4xl">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 text-sm text-cyan-200 mb-8 opacity-0 animate-fade-up">
-            <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-            Print Solution S.r.l. — Dal 2010
+      <div className="container-custom relative z-10 pt-32 pb-20 lg:pb-32 px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 text-sm text-cyan-200 mb-8 opacity-0 animate-fade-up">
+              <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+              Print Solution S.r.l. — Dal 2010
+            </div>
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[0.95] tracking-tight mb-8 opacity-0 animate-fade-up-delay">
+              Soluzioni Digitali
+              <br />
+              per{" "}
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-emerald-400 to-lime-400">
+                Stampa e Packaging
+              </span>
+            </h1>
+            <p className="text-lg sm:text-xl text-gray-300/90 mb-10 leading-relaxed opacity-0 animate-fade-up-delay-2">
+              Dalla produzione di scatole personalizzate alla stampa di etichette professionali:
+              tecnologia, competenza e assistenza dedicata per la tua azienda.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-up-delay-2">
+              <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Print%20Solution&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">
+                Richiedi una Demo
+                <svg className="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+              </a>
+              <Link href="/soluzioni/packaging" className="btn-secondary text-lg !px-8 !py-4">
+                Scopri le Soluzioni
+              </Link>
+            </div>
           </div>
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[0.95] tracking-tight mb-8 opacity-0 animate-fade-up-delay">
-            Soluzioni Digitali
-            <br />
-            per{" "}
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-yellow-400 to-magenta-400">
-              Stampa e Packaging
-            </span>
-          </h1>
-          <p className="text-lg sm:text-xl text-gray-300/90 mb-10 leading-relaxed max-w-2xl opacity-0 animate-fade-up-delay-2">
-            Dalla produzione di scatole personalizzate alla stampa di etichette professionali:
-            tecnologia, competenza e assistenza dedicata per la tua azienda.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-up-delay-2">
-            <Link href="/contatti" className="btn-primary text-lg !px-8 !py-4 !rounded-full">
-              Richiedi una Demo
-              <svg className="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-            </Link>
-            <Link href="/soluzioni/packaging" className="btn-secondary text-lg !px-8 !py-4">
-              Scopri le Soluzioni
-            </Link>
-          </div>
+          {/* Right column - empty, keeps text aligned left */}
+          <div className="hidden lg:block" />
         </div>
       </div>
 
@@ -105,7 +117,6 @@ function BrandBar() {
   const { ref, visible } = useInView();
   const brands = [
     { name: "Afinia Label", logo: "/images/brands/afinia-label.avif", href: "#" },
-    { name: "NeurALabel", logo: "/images/brands/neuralabel.avif", href: "#" },
     { name: "GreenBox", logo: "/images/brands/greenbox.png", href: "#" },
     { name: "Anypack", logo: "/images/brands/anypack.avif", href: "#" },
     { name: "DTM Print", logo: "/images/brands/dtm-print.jpg", href: "#" },
@@ -242,7 +253,7 @@ function FeaturedProducts() {
       <div className="container-custom" ref={ref}>
         <div className={`text-center mb-16 transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <p className="text-cyan-500 font-semibold text-sm uppercase tracking-widest mb-4">In evidenza</p>
-          <h2 className="text-4xl sm:text-5xl font-bold text-dark-800 tracking-tight">Prodotti di Punta</h2>
+          <h2 className="text-4xl sm:text-5xl font-bold text-dark-800 tracking-tight">Tecnologie in Evidenza</h2>
         </div>
         <div className="grid lg:grid-cols-2 gap-8">
           {products.map((p, i) => (
@@ -298,7 +309,7 @@ function WhyUs() {
   const { ref, visible } = useInView();
   const stats = [
     { value: 1500, suffix: "+", label: "Clienti soddisfatti", color: "from-cyan-400 to-cyan-500" },
-    { value: 20, suffix: "+", label: "Anni di esperienza", color: "from-magenta-400 to-magenta-500" },
+    { value: 15, suffix: "+", label: "Anni di esperienza", color: "from-magenta-400 to-magenta-500" },
     { value: 20, suffix: "+", label: "Paesi serviti", color: "from-yellow-400 to-yellow-500" },
     { value: 150, suffix: "+", label: "Prodotti a catalogo", color: "from-green-400 to-green-500" },
   ];
@@ -313,7 +324,7 @@ function WhyUs() {
         <div className={`text-center mb-16 transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <p className="text-cyan-400 font-semibold text-sm uppercase tracking-widest mb-4">Perché sceglierci</p>
           <h2 className="text-4xl sm:text-5xl font-bold tracking-tight">
-            Numeri che <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-magenta-400 to-yellow-400">parlano</span>
+            Numeri che <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-emerald-400 to-lime-400">parlano</span>
           </h2>
         </div>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
@@ -388,10 +399,10 @@ function DemoCTA() {
               è attrezzata con tutti i prodotti in funzione.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contatti" className="inline-flex items-center justify-center px-8 py-4 bg-white text-cyan-600 font-bold rounded-full hover:bg-yellow-400 hover:text-dark-800 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 text-lg">
+              <a href="mailto:info@printsolutionsrl.it?subject=Prenotazione%20Demo%20Print%20Solution&body=Buongiorno%2C%0A%0AVorrei%20prenotare%20una%20demo%20presso%20la%20vostra%20sala%20demo.%0A%0AGrazie" className="inline-flex items-center justify-center px-8 py-4 bg-white text-cyan-600 font-bold rounded-full hover:bg-yellow-400 hover:text-dark-800 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 text-lg">
                 Prenota una Demo
                 <svg className="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-              </Link>
+              </a>
               <a href="tel:+390236527093" className="inline-flex items-center justify-center px-8 py-4 border-2 border-white/30 text-white font-semibold rounded-full hover:bg-white/10 transition-all duration-300 text-lg">
                 <svg className="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" /></svg>
                 Chiamaci Ora

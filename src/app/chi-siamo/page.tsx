@@ -47,7 +47,7 @@ export default function ChiSiamoPage() {
                 </p>
                 <p className="text-gray-500 leading-relaxed mb-4">
                   In oltre 15 anni di attività abbiamo costruito partnership solide con i brand leader del settore 
-                  — Afinia Label, NeurALabel, GreenBox, Anypack e DTM Print — diventando il loro distributore 
+                  — Afinia Label, GreenBox, Anypack e DTM Print — diventando il loro distributore 
                   ufficiale per il mercato italiano.
                 </p>
                 <p className="text-gray-500 leading-relaxed">
@@ -119,7 +119,7 @@ export default function ChiSiamoPage() {
                   <p className="text-gray-500 leading-relaxed mb-6">
                     Le demo sono su appuntamento e completamente gratuite.
                   </p>
-                  <Link href="/contatti" className="btn-primary">Prenota una Visita</Link>
+                  <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Informazioni%20Print%20Solution&body=Buongiorno%2C%0A%0AVorrei%20ricevere%20informazioni.%0A%0AGrazie" className="btn-primary">Prenota una Visita</a>
                 </div>
                 <div className="bg-gradient-to-br from-cyan-500 to-magenta-500 rounded-2xl h-64 flex items-center justify-center">
                   <div className="text-center text-white">
@@ -193,9 +193,7 @@ export default function ChiSiamoPage() {
               <p className="text-white/80 max-w-2xl mx-auto mb-10 text-lg">
                 Contattaci per una consulenza gratuita o prenota una visita nella nostra sala demo.
               </p>
-              <Link href="/contatti" className="inline-flex items-center justify-center px-8 py-4 bg-white text-cyan-600 font-bold rounded-full hover:bg-yellow-400 hover:text-dark-800 transition-all duration-300 shadow-lg text-lg">
-                Contattaci
-              </Link>
+              <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Informazioni%20Print%20Solution&body=Buongiorno%2C%0A%0AVorrei%20ricevere%20informazioni.%0A%0AGrazie" className="inline-flex items-center justify-center px-8 py-4 bg-white text-cyan-600 font-bold rounded-full hover:bg-yellow-400 hover:text-dark-800 transition-all duration-300 shadow-lg text-lg">Contattaci</a>
             </div>
           </div>
         </div>

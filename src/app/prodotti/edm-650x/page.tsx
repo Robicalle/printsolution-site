@@ -59,7 +59,7 @@ const specs = [
   ["Larghezza stampa", "Da 60 a 180 cm"],
   ["Passaggio carta", "Da 120 a 250 cm"],
   ["Modelli disponibili", "6 configurazioni"],
-  ["Inchiostri", "A base acqua certificati Low Migration, taniche 4L/colore"],
+  ["Inchiostri", "A base acqua CMYK, taniche 4L/colore"],
   ["Piano", "Aspirato con pompa a vuoto"],
   ["Software RIP", "Incluso"],
   ["Alimentatore", "Caricatore automatico opzionale"],
@@ -91,8 +91,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
       </svg>
     ),
-    title: "Certificati Low Migration",
-    desc: "Inchiostri a base acqua certificati Low Migration, conformi alle normative per il contatto alimentare indiretto.",
+    title: "Inchiostri a Base Acqua",
+    desc: "Inchiostri CMYK a base acqua, ecologici e ad alta resa cromatica. Taniche da 4 litri per colore.",
   },
   {
     icon: (
@@ -139,15 +139,11 @@ export default function EDM650XPage() {
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">EDM-650X</h1>
               <p className="text-lg text-gray-300/90 leading-relaxed mb-8">
                 Stampante digitale inkjet single-pass per carta e cartone a fogli stesi. 
-                Grande formato, velocità industriale, inchiostri certificati Low Migration.
+                Grande formato, velocità industriale, inchiostri a base acqua CMYK.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="/contatti" className="btn-primary text-lg !px-8 !py-4 !rounded-full">
-                  Richiedi Informazioni
-                </Link>
-                <Link href="/contatti" className="btn-secondary text-lg !px-8 !py-4">
-                  Prenota una Demo
-                </Link>
+                <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20EDM-650X&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20EDM-650X.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">Richiedi Demo ?</a>
+                <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20EDM-650X&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20EDM-650X.%0A%0AGrazie" className="btn-secondary text-lg !px-8 !py-4">Prenota una Demo</a>
               </div>
             </div>
             <div className="relative h-72 lg:h-96 rounded-3xl overflow-hidden">
@@ -172,24 +168,27 @@ export default function EDM650XPage() {
             con un passaggio carta che può raggiungere i 250 cm.
           </p>
           <p className="text-gray-500 leading-relaxed">
-            Gli inchiostri a base acqua certificati Low Migration garantiscono la conformità alle normative per il 
-            contatto alimentare indiretto. Il piano aspirato e il caricatore automatico opzionale completano una 
+            Gli inchiostri a base acqua CMYK garantiscono stampe di alta qualità con colori vividi e resistenti.
+            Il piano aspirato e il caricatore automatico opzionale completano una 
             macchina pensata per la produzione continua ad alta efficienza.
           </p>
         </div>
       </section>
 
-      {/* Specifiche Tecniche */}
-      <section className="section-padding bg-surface-50">
-        <div className="container-custom max-w-3xl">
-          <h2 className="text-3xl font-bold text-dark-800 mb-10 text-center">Specifiche Tecniche</h2>
-          <div className="space-y-3">
-            {specs.map(([label, value]) => (
-              <div key={label} className="flex justify-between bg-white rounded-xl px-5 py-4 shadow-sm">
-                <span className="text-sm font-medium text-gray-600">{label}</span>
-                <span className="text-sm font-bold text-dark-800">{value}</span>
-              </div>
-            ))}
+      {/* Video */}
+      <section className="section-padding bg-white">
+        <div className="container-custom">
+          <div className="text-center mb-12">
+            <p className="text-cyan-500 font-semibold text-sm uppercase tracking-widest mb-4">Video</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-dark-800">EDM-650X in Azione</h2>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="aspect-video rounded-2xl overflow-hidden shadow-lg">
+              <video controls preload="metadata" className="w-full h-full object-cover"><source src="/videos/edm650x-2.mp4" type="video/mp4" /></video>
+            </div>
+            <div className="aspect-video rounded-2xl overflow-hidden shadow-lg">
+              <video controls preload="metadata" className="w-full h-full object-cover"><source src="/videos/edm650x-3.mp4" type="video/mp4" /></video>
+            </div>
           </div>
         </div>
       </section>
@@ -211,6 +210,24 @@ export default function EDM650XPage() {
           </div>
         </div>
       </section>
+      {/* Specifiche Tecniche */}
+      <section className="section-padding bg-surface-50">
+        <div className="container-custom max-w-3xl">
+          <h2 className="text-3xl font-bold text-dark-800 mb-10 text-center">Specifiche Tecniche</h2>
+          <div className="space-y-3">
+            {specs.map(([label, value]) => (
+              <div key={label} className="flex justify-between bg-white rounded-xl px-5 py-4 shadow-sm">
+                <span className="text-sm font-medium text-gray-600">{label}</span>
+                <span className="text-sm font-bold text-dark-800">{value}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+
+
+
 
       {/* CTA */}
       <section className="section-padding bg-surface-50">
@@ -220,8 +237,8 @@ export default function EDM650XPage() {
             Visita la nostra sala demo a Sesto San Giovanni e vedi la EDM-650X in azione sui tuoi materiali.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contatti" className="btn-primary text-lg">Richiedi Informazioni</Link>
-            <Link href="/contatti" className="btn-outline text-lg">Prenota una Demo</Link>
+            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20EDM-650X&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20EDM-650X.%0A%0AGrazie" className="btn-primary text-lg">Richiedi Demo ?</a>
+            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20EDM-650X&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20EDM-650X.%0A%0AGrazie" className="btn-outline text-lg">Prenota una Demo</a>
           </div>
         </div>
       </section>

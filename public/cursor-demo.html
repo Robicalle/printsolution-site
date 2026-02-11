@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cursor Demo - Print Solution</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: system-ui, -apple-system, sans-serif; background: #0a0a0a; color: white; overflow-x: hidden; }
+.section { height: 100vh; display: flex; align-items: center; justify-content: center; flex-direction: column; position: relative; border-bottom: 1px solid #222; }
+.section h2 { font-size: 2.5rem; font-weight: 800; margin-bottom: 0.5rem; }
+.section p { color: #888; font-size: 1.1rem; }
+.label { position: absolute; top: 30px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, #06b6d4, #10b981); padding: 8px 24px; border-radius: 50px; font-weight: 700; font-size: 0.9rem; }
+.btn-demo { margin-top: 2rem; padding: 14px 32px; background: #1a1a2e; border: 1px solid #333; border-radius: 12px; color: white; font-size: 1rem; cursor: pointer; transition: all 0.3s; }
+.btn-demo:hover { background: #06b6d4; border-color: #06b6d4; }
+
+/* === OPTION 1: Pallino colorato === */
+.s1 { cursor: none; }
+.cursor1 { width: 20px; height: 20px; background: linear-gradient(135deg, #06b6d4, #10b981); border-radius: 50%; position: fixed; pointer-events: none; z-index: 9999; transition: transform 0.15s ease; mix-blend-mode: difference; display: none; }
+.cursor1.active { transform: scale(2); }
+
+/* === OPTION 2: Logo Goccia PS === */
+.s2 { cursor: none; }
+.cursor2 { width: 32px; height: 32px; position: fixed; pointer-events: none; z-index: 9999; display: none; }
+
+/* === OPTION 3: Trail CMYK === */
+.s3 { cursor: none; }
+.trail { width: 10px; height: 10px; border-radius: 50%; position: fixed; pointer-events: none; z-index: 9998; }
+.cursor3 { width: 14px; height: 14px; background: #000; border-radius: 50%; position: fixed; pointer-events: none; z-index: 9999; display: none; box-shadow: 0 0 8px rgba(0,0,0,0.5); }
+
+/* === OPTION 4: Cerchio + punto === */
+.s4 { cursor: none; }
+.cursor4-outer { width: 40px; height: 40px; border: 2px solid #06b6d4; border-radius: 50%; position: fixed; pointer-events: none; z-index: 9999; transition: all 0.12s ease-out; display: none; }
+.cursor4-inner { width: 6px; height: 6px; background: #06b6d4; border-radius: 50%; position: fixed; pointer-events: none; z-index: 10000; display: none; }
+.cursor4-outer.active { width: 60px; height: 60px; border-color: #10b981; background: rgba(6, 182, 212, 0.1); }
+
+nav { position: fixed; top: 0; right: 20px; z-index: 10001; display: flex; gap: 10px; padding: 15px; }
+nav a { color: #888; text-decoration: none; padding: 6px 14px; border: 1px solid #333; border-radius: 8px; font-size: 0.85rem; transition: all 0.3s; }
+nav a:hover { color: white; border-color: #06b6d4; }
+</style>
+</head>
+<body>
+
+<nav>
+<a href="#s1">1</a><a href="#s2">2</a><a href="#s3">3</a><a href="#s4">4</a>
+</nav>
+
+<!-- Cursor elements -->
+<div class="cursor1" id="c1"></div>
+<div class="cursor2" id="c2">
+<img src="/images/cursor-drop.png" width="30" height="32" alt="" style="pointer-events:none; filter: drop-shadow(0 1px 3px rgba(0,0,0,0.3));" />
+</div>
+<div class="cursor3" id="c3"></div>
+<div class="cursor4-outer" id="c4o"></div>
+<div class="cursor4-inner" id="c4i"></div>
+
+<!-- SECTION 1 -->
+<div class="section s1" id="s1">
+<div class="label">Opzione 1</div>
+<h2>Pallino Colorato</h2>
+<p>Cerchio gradient che segue il mouse — effetto moderno e minimal</p>
+<button class="btn-demo">Passa qui sopra</button>
+</div>
+
+<!-- SECTION 2 -->
+<div class="section s2" id="s2">
+<div class="label">Opzione 2</div>
+<h2>Goccia Print Solution</h2>
+<p>Le 3 gocce CMY del logo che seguono il mouse — branding elegante</p>
+<button class="btn-demo" style="cursor: inherit;">Passa qui sopra</button>
+</div>
+
+<!-- SECTION 3 -->
+<div class="section s3" id="s3">
+<div class="label">Opzione 3</div>
+<h2>Scia CMYK</h2>
+<p>Pallino nero + scia gradiente in quadricromia (Cyan → Magenta → Giallo)</p>
+<button class="btn-demo">Passa qui sopra</button>
+</div>
+
+<!-- SECTION 4 -->
+<div class="section s4" id="s4">
+<div class="label">Opzione 4</div>
+<h2>Cerchio + Punto</h2>
+<p>Cerchio grande esterno + puntino interno — stile agency premium</p>
+<button class="btn-demo">Passa qui sopra</button>
+</div>
+
+<script>
+const c1 = document.getElementById('c1');
+const c2 = document.getElementById('c2');
+const c3 = document.getElementById('c3');
+const c4o = document.getElementById('c4o');
+const c4i = document.getElementById('c4i');
+
+// CMYK trail colors: Cyan → Magenta → Yellow → Key(Black)
+const cmykColors = [
+  '#06B6D4', '#0BA5C4', '#1094B4', '#1E83A4',
+  '#3B6E9E', '#6A4E9A', '#9B2F96', '#C41E8C',
+  '#D42A6E', '#E44B4B', '#EE7A2A', '#F5A623',
+  '#F7C018', '#F9DA0E', '#FDE700', '#FFE500'
+];
+let trails = [];
+for (let i = 0; i < 16; i++) {
+  const t = document.createElement('div');
+  t.className = 'trail';
+  t.style.display = 'none';
+  t.style.background = cmykColors[i];
+  t.style.boxShadow = '0 0 6px ' + cmykColors[i] + '80';
+  document.body.appendChild(t);
+  trails.push({ el: t, x: 0, y: 0 });
+}
+
+let mx = 0, my = 0;
+document.addEventListener('mousemove', (e) => {
+  mx = e.clientX; my = e.clientY;
+  const el = document.elementFromPoint(mx, my);
+  const sec = el ? el.closest('.section') : null;
+
+  // Cursor 1
+  if (sec && sec.classList.contains('s1')) {
+    c1.style.display = 'block';
+    c1.style.left = mx - 10 + 'px';
+    c1.style.top = my - 10 + 'px';
+    if (el && (el.tagName === 'BUTTON' || el.tagName === 'A')) c1.classList.add('active');
+    else c1.classList.remove('active');
+  } else { c1.style.display = 'none'; }
+
+  // Cursor 2
+  if (sec && sec.classList.contains('s2')) {
+    c2.style.display = 'flex';
+    c2.style.left = mx - 18 + 'px';
+    c2.style.top = my - 18 + 'px';
+  } else { c2.style.display = 'none'; }
+
+  // Cursor 3
+  if (sec && sec.classList.contains('s3')) {
+    c3.style.display = 'block';
+    c3.style.left = mx - 6 + 'px';
+    c3.style.top = my - 6 + 'px';
+    trails.forEach(t => t.el.style.display = 'block');
+  } else {
+    c3.style.display = 'none';
+    trails.forEach(t => t.el.style.display = 'none');
+  }
+
+  // Cursor 4
+  if (sec && sec.classList.contains('s4')) {
+    c4o.style.display = 'block';
+    c4i.style.display = 'block';
+    c4i.style.left = mx - 3 + 'px';
+    c4i.style.top = my - 3 + 'px';
+    if (el && (el.tagName === 'BUTTON' || el.tagName === 'A')) c4o.classList.add('active');
+    else c4o.classList.remove('active');
+  } else { c4o.style.display = 'none'; c4i.style.display = 'none'; }
+});
+
+// Smooth follow for cursor 4 outer
+function animateC4() {
+  const rect = c4o.getBoundingClientRect();
+  const cx = rect.left + rect.width / 2;
+  const cy = rect.top + rect.height / 2;
+  const w = c4o.classList.contains('active') ? 60 : 40;
+  c4o.style.left = cx + (mx - cx) * 0.15 - w/2 + 'px';
+  c4o.style.top = cy + (my - cy) * 0.15 - w/2 + 'px';
+  requestAnimationFrame(animateC4);
+}
+animateC4();
+
+// Trail animation — CMYK gradient
+function animateTrails() {
+  let x = mx, y = my;
+  trails.forEach((t, i) => {
+    const dx = x - t.x, dy = y - t.y;
+    const speed = 0.35 - i * 0.018;
+    t.x += dx * speed;
+    t.y += dy * speed;
+    const size = 10 - i * 0.4;
+    t.el.style.left = t.x - size/2 + 'px';
+    t.el.style.top = t.y - size/2 + 'px';
+    t.el.style.width = size + 'px';
+    t.el.style.height = size + 'px';
+    t.el.style.opacity = 0.85 - i * 0.04;
+    x = t.x; y = t.y;
+  });
+  requestAnimationFrame(animateTrails);
+}
+animateTrails();
+</script>
+</body>
+</html>

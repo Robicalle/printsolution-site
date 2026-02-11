@@ -28,9 +28,48 @@ export const metadata: Metadata = {
 
 const printers = [
   {
+    name: "Any-Press",
+    subtitle: "Laser LED 5 Colori — CMYK+Bianco",
+    image: "/images/products/any-press.avif",
+    href: "/prodotti/any-press",
+    desc: "Stampante laser LED a 5 colori (CMYK+Bianco) per etichette e packaging flessibile. Toner bianco per stampa su kraft e trasparenti, laminazione integrata opzionale.",
+    specs: [
+      "Motore Laser digitale LED",
+      "5 colori CMYKW (incluso bianco)",
+      "Risoluzione 1200 × 1200 dpi",
+      "Velocità 5 m/min",
+      "Larghezza stampa max 324 mm",
+      "Laminatore opzionale integrato",
+      "Software ANY-FLOW incluso",
+      "Design compatto",
+    ],
+    gradient: "from-orange-500 to-orange-600",
+    tag: "CMYK + Bianco",
+  },
+  {
+    name: "Afinia X350",
+    subtitle: "Alta Velocità — Pigmento",
+    image: "/images/products/afinia-x350-site.webp",
+    href: "/prodotti/afinia-x350",
+    desc: "Stampante digitale roll-to-roll ad alta velocità con inchiostri pigmentati acquosi. La più veloce della categoria, con ridondanza ugelli 2× per zero strisce. Ideale per converter e volumi medio-alti.",
+    specs: [
+      "Velocità fino a 45 m/min",
+      "Risoluzione 1600 × 1600 dpi",
+      "Larghezza stampa max 324 mm",
+      "Inchiostri pigmentati a base acqua",
+      "Taniche 2L per colore, 8L totali",
+      "Ridondanza ugelli 2×",
+      "Touchscreen 21 pollici",
+      "Compressore integrato silenzioso",
+    ],
+    gradient: "from-yellow-500 to-yellow-600",
+    tag: "Alta Produzione",
+  },
+  {
     name: "Afinia L701",
     subtitle: "Entry Level — Memjet Dye",
     image: "/images/products/afinia-l701.avif",
+    href: "/prodotti/afinia-l701",
     desc: "Stampante etichette a colori entry level con tecnologia Memjet. Costo iniziale contenuto, qualità professionale a 1600 dpi. Ideale per piccole produzioni e budget limitato.",
     specs: [
       "Risoluzione fino a 1600 × 1600 dpi",
@@ -49,6 +88,7 @@ const printers = [
     name: "Afinia L901",
     subtitle: "Professionale — Memjet Dye",
     image: "/images/products/afinia-l901.png",
+    href: "/prodotti/afinia-l901",
     desc: "Stampante etichette a colori professionale con tecnologia Memjet Waterfall. Alta produttività, doppio nero per neri più profondi, testina sostituibile dall'utente senza fermare la produzione. Usabile in linea con DLP-2200.",
     specs: [
       "Risoluzione 1600 dpi full-color",
@@ -64,27 +104,10 @@ const printers = [
     tag: "Professionale",
   },
   {
-    name: "Afinia X350",
-    subtitle: "Alta Velocità — Pigmento",
-    image: "/images/products/afinia-x350.webp",
-    desc: "Stampante digitale roll-to-roll ad alta velocità con inchiostri pigmentati acquosi. La più veloce della categoria, con ridondanza ugelli 2× per zero strisce. Ideale per converter e volumi medio-alti.",
-    specs: [
-      "Velocità fino a 45 m/min",
-      "Risoluzione 1600 × 1600 dpi",
-      "Larghezza stampa max 324 mm",
-      "Inchiostri pigmentati a base acqua",
-      "Taniche 2L per colore, 8L totali",
-      "Ridondanza ugelli 2×",
-      "Touchscreen 21 pollici",
-      "Compressore integrato silenzioso",
-    ],
-    gradient: "from-yellow-500 to-yellow-600",
-    tag: "Alta Produzione",
-  },
-  {
     name: "Afinia LT5C",
     subtitle: "Toner LED",
     image: "/images/products/afinia-lt5c.avif",
+    href: "/prodotti/afinia-lt5c",
     desc: "Stampante etichette a toner LED con tecnologia elettrofotografica. Resistenza immediata senza asciugatura, ideale per ambienti umidi e applicazioni industriali che richiedono durabilità istantanea.",
     specs: [
       "Tecnologia Toner LED CMYK",
@@ -99,11 +122,29 @@ const printers = [
     gradient: "from-green-500 to-green-600",
     tag: "Industriale",
   },
+  {
+    name: "Afinia AF200",
+    subtitle: "Applicatore Etichette",
+    image: "/images/products/afinia-af200-nobg.png",
+    href: "/prodotti/afinia-af200",
+    desc: "Applicatore etichette semiautomatico per superfici piane. Sensore ultrasonico per precisione anche su materiali sottili. Operazione con pulsante o pedale hands-free.",
+    specs: [
+      "Campo etichettatura 100 x 190 mm",
+      "Etichette 35-210 mm di lunghezza",
+      "Altezza contenitore 25-200 mm",
+      "Sensore ultrasonico di precisione",
+      "Pedale hands-free incluso",
+      "Vassoi 3D custom opzionali",
+    ],
+    gradient: "from-cyan-500 to-green-500",
+    tag: "Applicatore",
+  },
 ];
 
 const systems = [
   {
     name: "Afinia DLP-2200",
+    href: "/prodotti/afinia-dlp2200",
     subtitle: "Digital Label Press Completa",
     desc: "Sistema completo stampa + finitura: dalla bobina bianca all'etichetta finita in un unico passaggio. Integra stampante L901, laminatore, fustellatore rotativo, rimozione sfrido, slitter e doppio riavvolgitore.",
     specs: [
@@ -149,13 +190,13 @@ export default function EtichettePage() {
 
           <div className="grid md:grid-cols-2 gap-8">
             {printers.map((p) => (
-              <div key={p.name} className="card-modern overflow-hidden hover:-translate-y-1 transition-transform duration-300">
-                <div className="relative h-56 bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center overflow-hidden">
+              <Link key={p.name} href={p.href} className="card-modern overflow-hidden hover:-translate-y-1 transition-transform duration-300 group">
+                <div className="relative h-72 bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center overflow-hidden">
                   <Image
                     src={p.image}
                     alt={p.name}
                     fill
-                    className="object-contain p-4"
+                    className="object-contain p-2 group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
                 <div className="p-8 lg:p-10">
@@ -164,7 +205,7 @@ export default function EtichettePage() {
                     {p.tag}
                   </span>
                 </div>
-                <h3 className="text-2xl font-bold text-dark-800 mb-1">{p.name}</h3>
+                <h3 className="text-2xl font-bold text-dark-800 mb-1 group-hover:text-cyan-500 transition-colors">{p.name}</h3>
                 <p className="text-sm text-gray-400 mb-4">{p.subtitle}</p>
                 <p className="text-gray-500 text-[15px] leading-relaxed mb-6">{p.desc}</p>
                 <ul className="grid grid-cols-1 gap-2 mb-8">
@@ -178,11 +219,10 @@ export default function EtichettePage() {
                   ))}
                 </ul>
                 <div className="flex gap-3">
-                  <Link href="/contatti" className="btn-primary text-sm !py-2.5 !px-5">Richiedi Demo</Link>
-                  <Link href="/contatti" className="btn-outline text-sm !py-2.5 !px-5">Info</Link>
+                  <span className="btn-primary text-sm !py-2.5 !px-5">Scopri di più</span>
                 </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
@@ -199,21 +239,21 @@ export default function EtichettePage() {
           </div>
 
           {systems.map((p) => (
-            <div key={p.name} className="card-modern overflow-hidden">
+            <Link key={p.name} href={p.href} className="card-modern overflow-hidden group block">
               <div className="grid lg:grid-cols-2 gap-0">
                 <div className="relative min-h-[320px] bg-gradient-to-br from-gray-50 to-gray-100 overflow-hidden">
                   <Image
                     src="/images/products/afinia-dlp2200.avif"
                     alt="Afinia DLP-2200"
                     fill
-                    className="object-contain p-6"
+                    className="object-contain p-6 group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
                 <div className="p-8 lg:p-12 flex flex-col justify-center">
                   <span className={`inline-block px-3 py-1 rounded-full text-xs font-bold text-white bg-gradient-to-r ${p.gradient} w-fit mb-4`}>
                     {p.tag}
                   </span>
-                  <h3 className="text-2xl lg:text-3xl font-bold text-dark-800 mb-2">{p.name}</h3>
+                  <h3 className="text-2xl lg:text-3xl font-bold text-dark-800 mb-2 group-hover:text-cyan-500 transition-colors">{p.name}</h3>
                   <p className="text-gray-500 leading-relaxed mb-6">{p.desc}</p>
                   <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
                     {p.specs.map((s) => (
@@ -225,12 +265,12 @@ export default function EtichettePage() {
                       </li>
                     ))}
                   </ul>
-                  <Link href="/contatti" className="btn-primary text-sm w-fit">
-                    Richiedi Demo e Preventivo
-                  </Link>
+                  <span className="btn-primary text-sm w-fit">
+                    Scopri di più
+                  </span>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </section>
@@ -283,53 +323,7 @@ export default function EtichettePage() {
           </div>
 
           <div className="mt-8 text-center">
-            <Link href="/contatti" className="btn-outline text-sm">Richiedi Info sui Fustellatori</Link>
-          </div>
-        </div>
-      </section>
-
-      {/* AF200 Applicator */}
-      <section className="section-padding bg-surface-50">
-        <div className="container-custom">
-          <div className="card-modern p-8 lg:p-12 max-w-4xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div>
-                <span className="inline-block px-3 py-1 rounded-full text-xs font-bold text-white bg-gradient-to-r from-cyan-500 to-green-500 mb-4">
-                  Applicatore
-                </span>
-                <h3 className="text-2xl font-bold text-dark-800 mb-4">Afinia AF200</h3>
-                <p className="text-gray-500 leading-relaxed mb-6">
-                  Applicatore etichette semiautomatico per superfici piane. Sensore ultrasonico per precisione 
-                  anche su materiali sottili. Operazione con pulsante o pedale hands-free. Vassoi 3D-printed custom disponibili.
-                </p>
-                <ul className="space-y-2 mb-6">
-                  {[
-                    "Campo etichettatura 100 × 190 mm",
-                    "Etichette 35–210 mm di lunghezza",
-                    "Altezza contenitore 25–200 mm",
-                    "Sensore ultrasonico di precisione",
-                    "Pedale hands-free incluso",
-                    "Vassoi 3D custom opzionali",
-                  ].map((s) => (
-                    <li key={s} className="flex items-start text-sm text-gray-600">
-                      <svg className="w-4 h-4 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      {s}
-                    </li>
-                  ))}
-                </ul>
-                <Link href="/contatti" className="btn-primary text-sm">Richiedi Info</Link>
-              </div>
-              <div className="relative bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl h-64 overflow-hidden">
-                <Image
-                  src="/images/products/afinia-af200-nobg.png"
-                  alt="Afinia AF200"
-                  fill
-                  className="object-contain p-4"
-                />
-              </div>
-            </div>
+            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Informazioni%20Print%20Solution&body=Buongiorno%2C%0A%0AVorrei%20ricevere%20informazioni.%0A%0AGrazie" className="btn-outline text-sm">Richiedi Info sui Fustellatori</a>
           </div>
         </div>
       </section>
@@ -341,9 +335,6 @@ export default function EtichettePage() {
           <div className="flex flex-wrap justify-center gap-6">
             <span className="btn-outline text-sm !border-gray-200 !text-gray-600">
               Afinia Label
-            </span>
-            <span className="btn-outline text-sm !border-gray-200 !text-gray-600">
-              NeuraLabel
             </span>
             <span className="btn-outline text-sm !border-gray-200 !text-gray-600">
               DTM Print
@@ -365,9 +356,7 @@ export default function EtichettePage() {
                 Ti aiutiamo a trovare la soluzione perfetta per le tue esigenze. Contattaci per una consulenza gratuita 
                 o vieni a testare le macchine nella nostra sala demo.
               </p>
-              <Link href="/contatti" className="inline-flex items-center justify-center px-8 py-4 bg-white text-cyan-600 font-bold rounded-full hover:bg-yellow-400 hover:text-dark-800 transition-all duration-300 shadow-lg text-lg">
-                Contattaci Ora
-              </Link>
+              <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Informazioni%20Print%20Solution&body=Buongiorno%2C%0A%0AVorrei%20ricevere%20informazioni.%0A%0AGrazie" className="inline-flex items-center justify-center px-8 py-4 bg-white text-cyan-600 font-bold rounded-full hover:bg-yellow-400 hover:text-dark-800 transition-all duration-300 shadow-lg text-lg">Contattaci Ora</a>
             </div>
           </div>
         </div>

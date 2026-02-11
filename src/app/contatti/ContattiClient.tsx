@@ -6,17 +6,28 @@ export default function ContattiClient() {
   const [formData, setFormData] = useState({
     nome: "", azienda: "", email: "", telefono: "", messaggio: "", interesse: "generico",
   });
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Client-side: open mailto with form data
-    const subject = encodeURIComponent(`Richiesta da ${formData.nome} — ${formData.interesse}`);
-    const body = encodeURIComponent(
-      `Nome: ${formData.nome}\nAzienda: ${formData.azienda}\nEmail: ${formData.email}\nTelefono: ${formData.telefono}\nInteresse: ${formData.interesse}\n\nMessaggio:\n${formData.messaggio}`
-    );
-    window.open(`mailto:info@printsolutionsrl.it?subject=${subject}&body=${body}`);
-    setSubmitted(true);
+    setStatus("sending");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (res.ok) {
+        setStatus("success");
+        setFormData({ nome: "", azienda: "", email: "", telefono: "", messaggio: "", interesse: "generico" });
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
   };
 
   return (
@@ -33,14 +44,14 @@ export default function ContattiClient() {
             {/* Contact Form */}
             <div>
               <h2 className="text-2xl font-bold text-dark-800 mb-6">Scrivici</h2>
-              {submitted ? (
+              {status === "success" ? (
                 <div className="card-modern p-8 text-center">
                   <span className="text-5xl block mb-4">✅</span>
                   <h3 className="text-xl font-bold text-dark-800 mb-2">Messaggio Inviato!</h3>
                   <p className="text-gray-500">
                     Grazie per averci contattato. Ti risponderemo il prima possibile.
                   </p>
-                  <button onClick={() => setSubmitted(false)} className="btn-outline mt-6 text-sm">
+                  <button onClick={() => setStatus("idle")} className="btn-outline mt-6 text-sm">
                     Invia un altro messaggio
                   </button>
                 </div>
@@ -111,9 +122,24 @@ export default function ContattiClient() {
                       placeholder="Descrivi le tue esigenze..."
                     />
                   </div>
-                  <button type="submit" className="btn-primary w-full text-center">
-                    Invia Messaggio
-                    <svg className="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                  {status === "error" && (
+                    <div className="bg-red-50 text-red-600 text-sm p-3 rounded-xl">
+                      Si è verificato un errore. Riprova o scrivici a info@printsolutionsrl.it
+                    </div>
+                  )}
+                  <button
+                    type="submit"
+                    disabled={status === "sending"}
+                    className="btn-primary w-full text-center disabled:opacity-60"
+                  >
+                    {status === "sending" ? (
+                      <>Invio in corso...</>
+                    ) : (
+                      <>
+                        Invia Messaggio
+                        <svg className="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                      </>
+                    )}
                   </button>
                 </form>
               )}

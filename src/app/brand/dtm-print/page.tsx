@@ -62,7 +62,7 @@ export default function DTMPrintPage() {
               ))}
             </div>
             <div className="text-center">
-              <Link href="/contatti" className="btn-primary">Contattaci per Info</Link>
+              <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Informazioni%20Print%20Solution&body=Buongiorno%2C%0A%0AVorrei%20ricevere%20informazioni.%0A%0AGrazie" className="btn-primary">Contattaci per Info</a>
             </div>
           </div>
         </div>

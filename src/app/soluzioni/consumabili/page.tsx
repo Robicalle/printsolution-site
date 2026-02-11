@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 const categories = [
   {
     title: "Inchiostri Packaging — GreenBox EVO / EDM-650X",
-    desc: "Inchiostri pigmentati a base acqua per stampanti single-pass. Senza solventi, inodori, certificati per contatto alimentare indiretto. Resistenti ad agenti atmosferici, sfregamento e acqua.",
+    desc: "Inchiostri pigmentati a base acqua per stampanti single-pass. Senza solventi, inodori, eco-friendly. Resistenti ad agenti atmosferici, sfregamento e acqua.",
     items: [
       { name: "Inchiostro Cyan (C)", detail: "Tanica 3L — pigmentato base acqua" },
       { name: "Inchiostro Magenta (M)", detail: "Tanica 3L — pigmentato base acqua" },
@@ -36,7 +36,7 @@ const categories = [
       { name: "Inchiostro Black (K)", detail: "Tanica 3L — pigmentato base acqua" },
     ],
     features: [
-      "Certificati contatto alimentare indiretto",
+      "A base acqua, eco-friendly",
       "Senza solventi, inodori",
       "Resistenza acqua, sfregamento, UV",
       "Compatibili con testine HP Pagewide",
@@ -205,7 +205,7 @@ export default function ConsumabiliPage() {
             Contattaci per un preventivo rapido. Spedizione in tutta Italia, prezzi riservati per ordini ricorrenti.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contatti" className="btn-primary">Ordina Consumabili</Link>
+            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Informazioni%20Print%20Solution&body=Buongiorno%2C%0A%0AVorrei%20ricevere%20informazioni.%0A%0AGrazie" className="btn-primary">Ordina Consumabili</a>
             <a href="mailto:info@printsolutionsrl.it" className="btn-outline">info@printsolutionsrl.it</a>
           </div>
         </div>

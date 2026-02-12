@@ -60,10 +60,7 @@ function Hero() {
 
       <div className="container-custom relative z-10 pt-24 pb-8 lg:pt-32 lg:pb-32 px-5 sm:px-6 lg:px-8">
         <div className="max-w-4xl">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 text-sm sm:text-base text-cyan-200 mb-6 lg:mb-10 opacity-0 animate-fade-up">
-              <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-              Print Solution — Dal 2010
-            </div>
+            <div className="mb-6 lg:mb-10" />
             <h1 className="text-4xl sm:text-5xl lg:text-7xl xl:text-[5.5rem] font-bold leading-[1.05] sm:leading-[0.95] tracking-tight mb-6 lg:mb-10 opacity-0 animate-fade-up-delay">
               Soluzioni Digitali per{" "}
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-emerald-400 to-lime-400">

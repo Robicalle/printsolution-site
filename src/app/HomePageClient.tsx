@@ -51,7 +51,7 @@ function Hero() {
         muted
         playsInline
         className="absolute inset-0 w-full h-full object-cover z-0"
-        poster="/images/hero-edm.webp"
+        style={{ backgroundColor: '#0a0f1a' }}
       >
         <source src="/videos/hero-bg.mp4" type="video/mp4" />
       </video>

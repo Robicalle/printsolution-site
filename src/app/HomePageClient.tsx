@@ -59,32 +59,28 @@ function Hero() {
       <div className="absolute inset-0 bg-gradient-to-r from-dark-900/90 via-dark-900/70 to-dark-900/50 z-[2]" />
 
       <div className="container-custom relative z-10 pt-24 pb-8 lg:pt-32 lg:pb-32 px-5 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-          <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 text-xs sm:text-sm text-cyan-200 mb-5 lg:mb-8 opacity-0 animate-fade-up">
+        <div className="max-w-4xl">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 text-sm sm:text-base text-cyan-200 mb-6 lg:mb-10 opacity-0 animate-fade-up">
               <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
               Print Solution — Dal 2010
             </div>
-            <h1 className="text-4xl sm:text-5xl lg:text-7xl xl:text-8xl font-bold leading-[1.05] sm:leading-[0.95] tracking-tight mb-5 lg:mb-8 opacity-0 animate-fade-up-delay">
+            <h1 className="text-5xl sm:text-6xl lg:text-8xl xl:text-9xl font-bold leading-[1.05] sm:leading-[0.95] tracking-tight mb-6 lg:mb-10 opacity-0 animate-fade-up-delay">
               Soluzioni Digitali per{" "}
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-emerald-400 to-lime-400">
                 Stampa e Packaging
               </span>
             </h1>
-            <p className="text-base sm:text-lg lg:text-xl text-gray-300/90 mb-7 lg:mb-10 leading-relaxed opacity-0 animate-fade-up-delay-2">
+            <p className="text-lg sm:text-xl lg:text-2xl text-gray-300/90 mb-8 lg:mb-12 leading-relaxed max-w-2xl opacity-0 animate-fade-up-delay-2">
               Scatole personalizzate, etichette professionali: tecnologia, competenza e assistenza per la tua azienda.
             </p>
-            <div className="flex flex-row gap-3 sm:gap-4 opacity-0 animate-fade-up-delay-2">
-              <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Print%20Solution&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo.%0A%0AGrazie" className="inline-flex items-center justify-center px-6 sm:px-8 py-3.5 sm:py-4 bg-cyan-500 hover:bg-cyan-400 text-white font-semibold rounded-full transition-all text-base sm:text-lg">
+            <div className="flex flex-row gap-3 sm:gap-5 opacity-0 animate-fade-up-delay-2">
+              <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Print%20Solution&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo.%0A%0AGrazie" className="inline-flex items-center justify-center px-8 sm:px-10 py-4 sm:py-5 bg-cyan-500 hover:bg-cyan-400 text-white font-semibold rounded-full transition-all text-lg sm:text-xl">
                 Richiedi Demo →
               </a>
-              <Link href="/soluzioni/packaging" className="inline-flex items-center justify-center px-6 sm:px-8 py-3.5 sm:py-4 border border-white/30 text-white font-semibold rounded-full hover:bg-white/10 transition-all text-base sm:text-lg">
+              <Link href="/soluzioni/packaging" className="inline-flex items-center justify-center px-8 sm:px-10 py-4 sm:py-5 border border-white/30 text-white font-semibold rounded-full hover:bg-white/10 transition-all text-lg sm:text-xl">
                 Le Soluzioni
               </Link>
             </div>
-          </div>
-          {/* Right column - empty on desktop */}
-          <div className="hidden lg:block" />
         </div>
 
         {/* Mobile: no machines here, shown in sections below */}

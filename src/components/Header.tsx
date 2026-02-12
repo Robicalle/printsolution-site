@@ -11,6 +11,8 @@ const navigation = [
     children: [
       { label: "Packaging", href: "/soluzioni/packaging", desc: "Box maker e stampa su cartone" },
       { label: "Etichette", href: "/soluzioni/etichette", desc: "Stampa etichette in bobina e foglio" },
+      { label: "Shopper & Lusso", href: "/soluzioni#shopper", desc: "Shopper, buste e packaging premium" },
+      { label: "Labbratura Libri", href: "/soluzioni#labbratura", desc: "Stampa bordi libri e quaderni" },
       { label: "Consumabili", href: "/soluzioni/consumabili", desc: "Inchiostri, testine e materiali" },
     ],
   },

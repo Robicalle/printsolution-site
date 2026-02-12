@@ -50,6 +50,7 @@ const categories = [
     name: "Shopper & Packaging di Lusso",
     desc: "Stampa hot foil e stampa digitale per shopper, buste e packaging premium con finiture metalliche e personalizzazione.",
     href: "#shopper",
+    id: "shopper",
     image: "/images/products/aurumpress-nobg.png",
     products: [
       { name: "AurumPress", desc: "Stampa termica hot foil per packaging di lusso", href: "/prodotti/aurumpress" },
@@ -62,6 +63,7 @@ const categories = [
     name: "Labbratura Libri",
     desc: "Stampa digitale sui bordi di libri, quaderni e block notes per personalizzazioni uniche e di alta qualità.",
     href: "#labbratura",
+    id: "labbratura",
     image: "/images/products/robotjet-nobg.png",
     products: [
       { name: "RobotJet", desc: "Book edge printer — stampa bordi libri", href: "/prodotti/robotjet" },
@@ -101,7 +103,7 @@ export default function SoluzioniPage() {
         <div className="container-custom">
           <div className="space-y-20">
             {categories.map((cat, i) => (
-              <div key={cat.name} className={`grid md:grid-cols-2 gap-12 items-center ${i % 2 === 1 ? "md:flex-row-reverse" : ""}`}>
+              <div key={cat.name} id={"id" in cat ? (cat.id as string) : undefined} className={`grid md:grid-cols-2 gap-12 items-center ${i % 2 === 1 ? "md:flex-row-reverse" : ""} scroll-mt-32`}>
                 {/* Image side */}
                 <div className={`${i % 2 === 1 ? "md:order-2" : ""}`}>
                   <div className="relative h-64 lg:h-80 rounded-3xl overflow-hidden bg-surface-50">

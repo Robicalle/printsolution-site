@@ -52,7 +52,7 @@ function Hero() {
       <div className="absolute inset-0 z-[11] hidden lg:block pointer-events-none">
         {/* EDM-650X */}
         <Link href="/prodotti/edm-650x" className="absolute opacity-40 hover:opacity-100 hover:scale-105 transition-all duration-300 pointer-events-auto" style={{ top: 'calc(5% + 100px)', left: 'calc(30% + 400px)', width: '21%' }}>
-          <Image src="/images/products/edm-650x-real-nobg.png" alt="EDM-650X" width={680} height={393} className="w-full h-auto" priority />
+          <Image src="/images/products/edm-650x-2hd-nobg.png" alt="EDM-650X" width={680} height={393} className="w-full h-auto" priority />
         </Link>
         {/* AB2500 */}
         <Link href="/prodotti/ab2500" className="absolute opacity-40 hover:opacity-100 hover:scale-105 transition-all duration-300 pointer-events-auto" style={{ top: 'calc(40% + 130px)', left: 'calc(45% + 200px)', width: '25%' }}>

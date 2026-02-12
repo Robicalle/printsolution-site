@@ -219,10 +219,13 @@ export default function EDM650XPage() {
               La EDM-650X è disponibile in diverse configurazioni per adattarsi alle tue esigenze produttive.
             </p>
           </div>
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <p className="text-gray-500 mt-4 max-w-2xl mx-auto">
+            Le immagini in alto mostrano la versione da 3 teste in su. Qui sotto la versione compatta a 2 teste.
+          </p>
+          <div className="grid md:grid-cols-2 gap-12 items-center mt-8">
             <div>
               <div className="relative h-72 lg:h-96 rounded-3xl overflow-hidden bg-surface-50">
-                <Image src="/images/products/edm-650x-2hd-nobg.png" alt="EDM-650X versione 2 teste" fill className="object-contain p-4" />
+                <Image src="/images/products/edm-650x-2hd.jpg" alt="EDM-650X versione 2 teste" fill className="object-contain p-4" />
               </div>
               <p className="text-center text-sm text-gray-500 mt-3">EDM-650X — Versione 2 Teste HP</p>
             </div>

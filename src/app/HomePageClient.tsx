@@ -71,11 +71,8 @@ function Hero() {
               Scatole personalizzate, etichette professionali: tecnologia, competenza e assistenza per la tua azienda.
             </p>
             <div className="flex flex-row gap-3 sm:gap-5 opacity-0 animate-fade-up-delay-2">
-              <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Print%20Solution&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo.%0A%0AGrazie" className="inline-flex items-center justify-center px-8 sm:px-10 py-4 sm:py-5 bg-cyan-500 hover:bg-cyan-400 text-white font-semibold rounded-full transition-all text-lg sm:text-xl">
-                Richiedi Demo →
-              </a>
-              <Link href="/soluzioni/packaging" className="inline-flex items-center justify-center px-8 sm:px-10 py-4 sm:py-5 border border-white/30 text-white font-semibold rounded-full hover:bg-white/10 transition-all text-lg sm:text-xl">
-                Le Soluzioni
+              <Link href="/soluzioni/packaging" className="inline-flex items-center justify-center px-8 sm:px-10 py-4 sm:py-5 bg-cyan-500 hover:bg-cyan-400 text-white font-semibold rounded-full transition-all text-lg sm:text-xl">
+                Le Nostre Soluzioni →
               </Link>
             </div>
         </div>

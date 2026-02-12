@@ -176,6 +176,7 @@ export default function EtichettePage() {
         title="Soluzioni Etichette"
         subtitle="Stampanti per etichette a colori in bobina, fustellatori digitali, sistemi completi e applicatori. Tecnologia Memjet, pigmento e toner."
         breadcrumb="Soluzioni"
+        videoSrc="/videos/etichette-hero.mp4"
       />
 
       {/* Printers */}

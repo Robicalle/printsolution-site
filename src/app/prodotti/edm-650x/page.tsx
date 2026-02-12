@@ -174,6 +174,50 @@ export default function EDM650XPage() {
         </div>
       </section>
 
+      {/* Configurazioni */}
+      <section className="section-padding bg-white">
+        <div className="container-custom">
+          <div className="text-center mb-12">
+            <p className="text-cyan-500 font-semibold text-sm uppercase tracking-widest mb-4">Configurazioni</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-dark-800">Da 2 a 6 Teste di Stampa</h2>
+            <p className="text-gray-500 mt-4 max-w-2xl mx-auto">
+              La EDM-650X è disponibile in diverse configurazioni per adattarsi alle tue esigenze produttive.
+            </p>
+          </div>
+          <p className="text-gray-500 mt-4 max-w-2xl mx-auto text-center">
+            Le immagini in alto mostrano la versione da 3 teste in su. Qui sotto la versione compatta a 2 teste.
+          </p>
+          <div className="grid md:grid-cols-2 gap-12 items-center mt-8">
+            <div>
+              <div className="relative h-72 lg:h-96 rounded-3xl overflow-hidden bg-surface-50">
+                <Image src="/images/products/edm-650x-2hd.jpg" alt="EDM-650X versione 2 teste" fill className="object-contain p-4" />
+              </div>
+              <p className="text-center text-sm text-gray-500 mt-3">EDM-650X — Versione 2 Teste HP</p>
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold text-dark-800 mb-4">Versione 2 Teste</h3>
+              <p className="text-gray-500 leading-relaxed mb-4">
+                La configurazione entry-level con 2 teste di stampa HP è perfetta per chi si avvicina alla stampa 
+                digitale su cartone ondulato. Larghezza di stampa di 60 cm con passaggio carta fino a 120 cm.
+              </p>
+              <p className="text-gray-500 leading-relaxed mb-6">
+                Ideale per piccole e medie tirature, prototipi e campionature. Stessa qualità di stampa 
+                a 1200×1200 dpi delle versioni più grandi, in un formato compatto e accessibile.
+              </p>
+              <div className="bg-surface-50 rounded-xl p-5">
+                <p className="text-sm font-medium text-gray-600 mb-2">Le versioni da 3 a 6 teste offrono:</p>
+                <ul className="text-sm text-dark-800 space-y-1">
+                  <li>• Larghezza stampa fino a 180 cm</li>
+                  <li>• Passaggio carta fino a 250 cm</li>
+                  <li>• Velocità fino a 30 m/min</li>
+                  <li>• Configurazione personalizzabile</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Video */}
       <section className="section-padding bg-white">
         <div className="container-custom">
@@ -206,49 +250,6 @@ export default function EDM650XPage() {
                 <p className="text-gray-500 text-sm leading-relaxed">{f.desc}</p>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-      {/* Configurazioni */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="text-center mb-12">
-            <p className="text-cyan-500 font-semibold text-sm uppercase tracking-widest mb-4">Configurazioni</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-dark-800">Da 2 a 6 Teste di Stampa</h2>
-            <p className="text-gray-500 mt-4 max-w-2xl mx-auto">
-              La EDM-650X è disponibile in diverse configurazioni per adattarsi alle tue esigenze produttive.
-            </p>
-          </div>
-          <p className="text-gray-500 mt-4 max-w-2xl mx-auto">
-            Le immagini in alto mostrano la versione da 3 teste in su. Qui sotto la versione compatta a 2 teste.
-          </p>
-          <div className="grid md:grid-cols-2 gap-12 items-center mt-8">
-            <div>
-              <div className="relative h-72 lg:h-96 rounded-3xl overflow-hidden bg-surface-50">
-                <Image src="/images/products/edm-650x-2hd.jpg" alt="EDM-650X versione 2 teste" fill className="object-contain p-4" />
-              </div>
-              <p className="text-center text-sm text-gray-500 mt-3">EDM-650X — Versione 2 Teste HP</p>
-            </div>
-            <div>
-              <h3 className="text-2xl font-bold text-dark-800 mb-4">Versione 2 Teste</h3>
-              <p className="text-gray-500 leading-relaxed mb-4">
-                La configurazione entry-level con 2 teste di stampa HP è perfetta per chi si avvicina alla stampa 
-                digitale su cartone ondulato. Larghezza di stampa di 60 cm con passaggio carta fino a 120 cm.
-              </p>
-              <p className="text-gray-500 leading-relaxed mb-6">
-                Ideale per piccole e medie tirature, prototipi e campionature. Stessa qualità di stampa 
-                a 1200×1200 dpi delle versioni più grandi, in un formato compatto e accessibile.
-              </p>
-              <div className="bg-surface-50 rounded-xl p-5">
-                <p className="text-sm font-medium text-gray-600 mb-2">Le versioni da 3 a 6 teste offrono:</p>
-                <ul className="text-sm text-dark-800 space-y-1">
-                  <li>• Larghezza stampa fino a 180 cm</li>
-                  <li>• Passaggio carta fino a 250 cm</li>
-                  <li>• Velocità fino a 30 m/min</li>
-                  <li>• Configurazione personalizzabile</li>
-                </ul>
-              </div>
-            </div>
           </div>
         </div>
       </section>

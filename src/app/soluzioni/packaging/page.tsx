@@ -64,7 +64,7 @@ const products = [
     ],
     gradient: "from-magenta-500 to-magenta-600",
     icon: "🖨️",
-    image: "/images/products/edm-650x-2hd.jpg",
+    image: "/images/products/edm-650x-2hd-nobg-v4.png",
     href: "/prodotti/edm-650x",
     brand: "Print Solution",
     brandHref: null,

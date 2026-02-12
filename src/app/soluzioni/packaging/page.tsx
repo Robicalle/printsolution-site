@@ -132,8 +132,8 @@ export default function PackagingPage() {
               Tutto per il Packaging Digitale
             </h2>
             <p className="text-gray-500 text-lg leading-relaxed">
-              Dalla creazione automatica di scatole alla stampa diretta su cartone ondulato, dalla doratura a caldo 
-              alla stampa UV su qualsiasi materiale: offriamo soluzioni complete per ogni esigenza di packaging.
+              Dalla creazione automatica di scatole alla stampa diretta su cartone ondulato, 
+              fino alla stampa UV sulla maggior parte dei materiali: offriamo soluzioni complete per ogni esigenza di packaging.
             </p>
           </div>
 

@@ -189,41 +189,47 @@ export default function EtichettePage() {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {printers.map((p) => (
-              <Link key={p.name} href={p.href} className="card-modern overflow-hidden hover:-translate-y-1 transition-transform duration-300 group">
-                <div className="relative h-56 sm:h-72 bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center overflow-hidden">
-                  <Image
-                    src={p.image}
-                    alt={p.name}
-                    fill
-                    className="object-contain p-4 group-hover:scale-105 transition-transform duration-500"
-                  />
+          <div className="space-y-12">
+            {printers.map((p, i) => (
+              <div key={p.name} className="card-modern overflow-hidden">
+                <div className="grid lg:grid-cols-2 gap-0">
+                  <div className={`relative h-80 lg:h-auto min-h-[400px] bg-gray-50 ${i % 2 === 1 ? 'lg:order-2' : ''}`}>
+                    <Link href={p.href} className="block w-full h-full group/img">
+                      <Image src={p.image} alt={p.name} fill className="object-contain p-6 transition-transform duration-300 group-hover/img:scale-105" />
+                      <div className="absolute inset-0 bg-cyan-500/0 group-hover/img:bg-cyan-500/5 transition-colors duration-300 rounded-2xl flex items-end justify-center pb-6 opacity-0 group-hover/img:opacity-100">
+                        <span className="bg-white/90 backdrop-blur-sm text-cyan-600 font-semibold text-sm px-4 py-2 rounded-full shadow-lg">
+                          Scopri {p.name} →
+                        </span>
+                      </div>
+                    </Link>
+                    <div className="absolute top-4 left-4">
+                      <span className={`inline-block px-4 py-1.5 rounded-full text-xs font-bold text-white bg-gradient-to-r ${p.gradient} shadow-lg`}>
+                        {p.tag}
+                      </span>
+                    </div>
+                  </div>
+                  <div className="p-8 lg:p-12 flex flex-col justify-center">
+                    <h3 className="text-2xl lg:text-3xl font-bold text-dark-800 mb-1">{p.name}</h3>
+                    <p className="text-sm text-gray-400 mb-4">{p.subtitle}</p>
+                    <p className="text-gray-500 leading-relaxed mb-6">{p.desc}</p>
+                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+                      {p.specs.map((s) => (
+                        <li key={s} className="flex items-start text-sm text-gray-600">
+                          <svg className="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                          {s}
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="flex flex-wrap gap-3">
+                      <Link href={p.href} className="btn-primary text-sm">
+                        Scopri di più →
+                      </Link>
+                    </div>
+                  </div>
                 </div>
-                <div className="p-8 lg:p-10">
-                <div className="flex items-center gap-3 mb-4">
-                  <span className={`inline-block px-3 py-1 rounded-full text-xs font-bold text-white bg-gradient-to-r ${p.gradient}`}>
-                    {p.tag}
-                  </span>
-                </div>
-                <h3 className="text-2xl font-bold text-dark-800 mb-1 group-hover:text-cyan-500 transition-colors">{p.name}</h3>
-                <p className="text-sm text-gray-400 mb-4">{p.subtitle}</p>
-                <p className="text-gray-500 text-[15px] leading-relaxed mb-6">{p.desc}</p>
-                <ul className="grid grid-cols-1 gap-2 mb-8">
-                  {p.specs.map((s) => (
-                    <li key={s} className="flex items-start text-sm text-gray-600">
-                      <svg className="w-4 h-4 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      {s}
-                    </li>
-                  ))}
-                </ul>
-                <div className="flex gap-3">
-                  <span className="btn-primary text-sm !py-2.5 !px-5">Scopri di più</span>
-                </div>
-                </div>
-              </Link>
+              </div>
             ))}
           </div>
         </div>

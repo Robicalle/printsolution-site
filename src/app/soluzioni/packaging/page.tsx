@@ -78,7 +78,7 @@ const products = [
       "Risoluzione 1200 × 1200 dpi",
       "CMYK — inchiostri a base acqua",
       "Larghezza stampa fino a 30 cm",
-      "Supporto fino a 80 cm",
+      "Supporto fino a 70 cm",
       "Spessore fino a 15 cm",
       "Taniche 3L per colore",
       "Alimentatore automatico opzionale",

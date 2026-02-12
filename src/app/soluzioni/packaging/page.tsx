@@ -162,6 +162,7 @@ export default function PackagingPage() {
         title="Soluzioni Packaging"
         subtitle="Box maker automatici, stampa digitale su cartone ondulato, stampa UV, hot foil stamping e soluzioni speciali per packaging personalizzato."
         breadcrumb="Soluzioni"
+        videoSrc="/videos/packaging-hero.mp4"
       />
 
       {/* Intro */}

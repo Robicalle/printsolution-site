@@ -44,33 +44,19 @@ function Counter({ target, suffix = "" }: { target: number; suffix?: string }) {
 function Hero() {
   return (
     <section className="relative min-h-[85vh] lg:min-h-screen flex items-center text-white overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 bg-hero-gradient" />
-      <div className="absolute inset-0 bg-gradient-to-b lg:bg-gradient-to-r from-dark-900/95 via-dark-900/80 to-dark-900/40 z-[2]" />
-
-      {/* Machine images — desktop: absolutely positioned */}
-      <div className="absolute inset-0 z-[11] hidden lg:block pointer-events-none">
-        {/* EDM-650X */}
-        <Link href="/prodotti/edm-650x" className="absolute opacity-40 hover:opacity-100 hover:scale-105 transition-all duration-300 pointer-events-auto" style={{ top: 'calc(5% + 100px)', left: 'calc(30% + 400px)', width: '21%' }}>
-          <Image src="/images/products/edm-650x-2hd-nobg-v2.png" alt="EDM-650X" width={680} height={393} className="w-full h-auto" priority />
-        </Link>
-        {/* AB2500 */}
-        <Link href="/prodotti/ab2500" className="absolute opacity-40 hover:opacity-100 hover:scale-105 transition-all duration-300 pointer-events-auto" style={{ top: 'calc(40% + 130px)', left: 'calc(45% + 200px)', width: '25%' }}>
-          <Image src="/images/products/ab2500-hero-nobg.png" alt="AB2500" width={460} height={212} className="w-full h-auto" priority />
-        </Link>
-        {/* GreenBox EVO */}
-        <Link href="/prodotti/greenbox-evo" className="absolute opacity-40 hover:opacity-100 hover:scale-105 transition-all duration-300 pointer-events-auto" style={{ top: 'calc(8% + 140px)', right: '2%', width: '18%' }}>
-          <Image src="/images/products/greenbox-evo-front-nobg.png" alt="GreenBox EVO" width={340} height={306} className="w-full h-auto" priority />
-        </Link>
-      </div>
-
-      {/* Floating orbs — hidden on mobile for performance */}
-      <div className="absolute top-20 right-[10%] w-[500px] h-[500px] bg-cyan-500/20 rounded-full blur-[120px] animate-float hidden md:block" />
-      <div className="absolute bottom-20 left-[5%] w-[400px] h-[400px] bg-magenta-500/15 rounded-full blur-[100px] hidden md:block" />
-      <div className="absolute top-1/3 right-[30%] w-[300px] h-[300px] bg-yellow-500/10 rounded-full blur-[100px] hidden md:block" />
-
-      {/* Grid pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:60px_60px]" />
+      {/* Video Background */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover z-0"
+        poster="/images/hero-edm.webp"
+      >
+        <source src="/videos/hero-bg.mp4" type="video/mp4" />
+      </video>
+      {/* Dark overlay for readability */}
+      <div className="absolute inset-0 bg-gradient-to-r from-dark-900/90 via-dark-900/70 to-dark-900/50 z-[2]" />
 
       <div className="container-custom relative z-10 pt-24 pb-8 lg:pt-32 lg:pb-32 px-5 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">

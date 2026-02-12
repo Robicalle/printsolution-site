@@ -71,7 +71,7 @@ function Hero() {
               Scatole personalizzate, etichette professionali: tecnologia, competenza e assistenza per la tua azienda.
             </p>
             <div className="flex flex-row gap-3 sm:gap-5 opacity-0 animate-fade-up-delay-2">
-              <Link href="/soluzioni/packaging" className="inline-flex items-center justify-center px-8 sm:px-10 py-4 sm:py-5 bg-cyan-500 hover:bg-cyan-400 text-white font-semibold rounded-full transition-all text-lg sm:text-xl">
+              <Link href="/soluzioni" className="inline-flex items-center justify-center px-8 sm:px-10 py-4 sm:py-5 bg-cyan-500 hover:bg-cyan-400 text-white font-semibold rounded-full transition-all text-lg sm:text-xl">
                 Le Nostre Soluzioni →
               </Link>
             </div>

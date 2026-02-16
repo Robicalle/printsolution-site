@@ -4,6 +4,27 @@ import { Product } from "@/lib/shop-data";
 import { useCart } from "@/lib/cart-context";
 import { useState } from "react";
 
+function getProductGradient(name: string, sku: string): string {
+  const t = (name + ' ' + sku).toLowerCase();
+  // Yellow / Giallo
+  if (t.includes('yellow') || t.includes('giallo') || /-y\b/.test(t) || t.endsWith('-y'))
+    return 'linear-gradient(135deg, #f9a825 0%, #fdd835 100%)';
+  // Cyan / Cyano / Ciano
+  if (t.includes('cyan') || t.includes('ciano') || /-c\b/.test(t) || t.endsWith('-c'))
+    return 'linear-gradient(135deg, #00838f 0%, #00bcd4 100%)';
+  // Magenta
+  if (t.includes('magenta') || /-m\b/.test(t) || t.endsWith('-m'))
+    return 'linear-gradient(135deg, #ad1457 0%, #e91e63 100%)';
+  // Black / Nero
+  if (t.includes('black') || t.includes('nero') || /-k\b/.test(t) || t.endsWith('-k'))
+    return 'linear-gradient(135deg, #212121 0%, #424242 100%)';
+  // White / Bianco
+  if (t.includes('white') || t.includes('bianco') || /-w\b/.test(t) || t.endsWith('-w'))
+    return 'linear-gradient(135deg, #90a4ae 0%, #cfd8dc 100%)';
+  // Default navy-cyan
+  return 'linear-gradient(135deg, #1a237e 0%, #00bcd4 100%)';
+}
+
 export default function ProductGrid({ products, categoryName }: { products: Product[]; categoryName: string }) {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
@@ -46,8 +67,8 @@ function ProductCard({ product, categoryName }: { product: Product; categoryName
             className="object-contain max-h-full group-hover:scale-105 transition-transform duration-300"
           />
         ) : (
-          <div className="w-full h-full flex flex-col items-center justify-center rounded-xl overflow-hidden" style={{ background: 'linear-gradient(135deg, #1a237e 0%, #00bcd4 100%)' }}>
-            <span className="text-white font-bold text-2xl tracking-wide text-center px-4 leading-tight">{product.sku}</span>
+          <div className="w-full h-full flex flex-col items-center justify-center rounded-xl overflow-hidden" style={{ background: getProductGradient(product.name, product.sku) }}>
+            <span className="text-white font-bold text-2xl tracking-wide text-center px-4 leading-tight drop-shadow-sm">{product.sku}</span>
             <span className="text-white/70 text-xs mt-2 tracking-widest uppercase">Consumabili</span>
           </div>
         )}

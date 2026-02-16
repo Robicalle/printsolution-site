@@ -33,6 +33,7 @@ export default function Header() {
     { label: t("used"), href: "/usato" },
     { label: t("aboutUs"), href: "/chi-siamo" },
     { label: t("news"), href: "/news" },
+    { label: t("blog"), href: "/blog" },
     { label: t("contacts"), href: "/contatti" },
     { label: t("eShop"), href: "/shop", isShop: true },
   ];

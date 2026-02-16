@@ -139,6 +139,7 @@ export default function Footer() {
           <div className="flex gap-6 mt-4 md:mt-0">
             <Link href="/privacy" className="hover:text-white transition-colors duration-200">Privacy Policy</Link>
             <Link href="/cookie" className="hover:text-white transition-colors duration-200">Cookie Policy</Link>
+            <Link href="/condizioni-di-vendita" className="hover:text-white transition-colors duration-200">Condizioni di Vendita</Link>
           </div>
         </div>
       </div>

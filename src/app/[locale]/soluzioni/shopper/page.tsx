@@ -88,14 +88,12 @@ export default async function ShopperPage() {
       <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <p className="text-amber-500 font-semibold text-sm uppercase tracking-widest mb-4">La Nostra Gamma</p>
+            <p className="text-amber-500 font-semibold text-sm uppercase tracking-widest mb-4">{locale === 'it' ? 'La Nostra Gamma' : 'Our Range'}</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-dark-800 tracking-tight mb-6">
-              Personalizza Ogni Shopper e Packaging
+              {locale === 'it' ? 'Personalizza Ogni Shopper e Packaging' : 'Customise Every Shopper and Package'}
             </h2>
             <p className="text-gray-500 text-lg leading-relaxed">
-              Dalla nobilitazione hot foil con finiture metalliche alla stampa digitale diretta a colori:
-              soluzioni complete per creare shopper, buste e packaging di lusso personalizzati,
-              anche in tirature minime.
+              {locale === 'it' ? 'Dalla nobilitazione hot foil con finiture metalliche alla stampa digitale diretta a colori: soluzioni complete per creare shopper, buste e packaging di lusso personalizzati, anche in tirature minime.' : 'From hot foil embellishment with metallic finishes to direct full-colour digital printing: complete solutions for creating custom shoppers, bags and luxury packaging, even in very short runs.'}
             </p>
           </div>
 
@@ -115,7 +113,7 @@ export default async function ShopperPage() {
                     </Link>
                     <div className="absolute top-4 left-4">
                       <span className={`inline-block px-4 py-1.5 rounded-full text-xs font-bold text-white bg-gradient-to-r ${p.gradient} shadow-lg`}>
-                        {p.subtitle}
+                        {locale === 'it' ? p.subtitle : ((p as any).subtitleEn || p.subtitle)}
                       </span>
                     </div>
                   </div>
@@ -158,26 +156,26 @@ export default async function ShopperPage() {
       <section className="section-padding bg-surface-50">
         <div className="container-custom">
           <div className="text-center mb-16">
-            <p className="text-amber-500 font-semibold text-sm uppercase tracking-widest mb-4">Applicazioni</p>
+            <p className="text-amber-500 font-semibold text-sm uppercase tracking-widest mb-4">{locale === 'it' ? 'Applicazioni' : 'Applications'}</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-dark-800 tracking-tight">
-              Per Chi Sono Pensate
+              {locale === 'it' ? 'Per Chi Sono Pensate' : 'Who They Are Designed For'}
             </h2>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
                 title: "Boutique & Fashion",
-                desc: "Shopper personalizzati con logo in hot foil oro o argento per boutique, gioiellerie e brand moda.",
+                desc: locale === 'it' ? "Shopper personalizzati con logo in hot foil oro o argento per boutique, gioiellerie e brand moda." : "Custom shoppers with gold or silver hot foil logo for boutiques, jewellers and fashion brands.",
                 icon: "👗",
               },
               {
                 title: "Food & Wine",
-                desc: "Packaging premium per cantine, pasticcerie e food gourmet. Personalizzazione su kraft, cartone e materiali naturali.",
+                desc: locale === 'it' ? "Packaging premium per cantine, pasticcerie e food gourmet. Personalizzazione su kraft, cartone e materiali naturali." : "Premium packaging for wineries, patisseries and gourmet food. Customisation on kraft, cardboard and natural materials.",
                 icon: "🍷",
               },
               {
-                title: "Eventi & Luxury",
-                desc: "Buste e shopper per eventi, wedding, corporate gift e edizioni limitate con finiture metalliche e olografiche.",
+                title: locale === 'it' ? "Eventi & Luxury" : "Events & Luxury",
+                desc: locale === 'it' ? "Buste e shopper per eventi, wedding, corporate gift e edizioni limitate con finiture metalliche e olografiche." : "Bags and shoppers for events, weddings, corporate gifts and limited editions with metallic and holographic finishes.",
                 icon: "🎁",
               },
             ].map((u) => (
@@ -198,22 +196,21 @@ export default async function ShopperPage() {
             <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl" />
             <div className="relative">
               <h2 className="text-3xl sm:text-4xl font-bold mb-6 tracking-tight">
-                Vuoi Creare il Tuo Packaging Personalizzato?
+                {locale === 'it' ? 'Vuoi Creare il Tuo Packaging Personalizzato?' : 'Want to Create Your Custom Packaging?'}
               </h2>
               <p className="text-white/80 max-w-2xl mx-auto mb-10 text-lg leading-relaxed">
-                Contattaci per una demo dal vivo o inviaci i tuoi file per ricevere campioni stampati.
-                La nostra sala demo è a Sesto San Giovanni.
+                {locale === 'it' ? 'Contattaci per una demo dal vivo o inviaci i tuoi file per ricevere campioni stampati. La nostra sala demo è a Sesto San Giovanni.' : 'Contact us for a live demo or send us your files to receive printed samples. Our demo room is in Sesto San Giovanni.'}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
                   href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Info%20Shopper%20%26%20Packaging%20di%20Lusso&body=Buongiorno%2C%0A%0AVorrei%20ricevere%20informazioni%20sulle%20soluzioni%20per%20shopper%20e%20packaging%20di%20lusso.%0A%0AGrazie"
                   className="inline-flex items-center justify-center px-8 py-4 bg-white text-cyan-600 font-bold rounded-full hover:bg-yellow-400 hover:text-dark-800 transition-all duration-300 shadow-lg text-lg"
                 >
-                  Contattaci Ora
+                  {locale === 'it' ? 'Contattaci Ora' : 'Contact Us Now'}
                 </a>
                 <a href="tel:+390249439417" className="inline-flex items-center justify-center px-8 py-4 border-2 border-white/30 text-white font-semibold rounded-full hover:bg-white/10 transition-all duration-300 text-lg">
                   <svg className="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" /></svg>
-                  Chiamaci
+                  {locale === 'it' ? 'Chiamaci' : 'Call Us'}
                 </a>
               </div>
             </div>

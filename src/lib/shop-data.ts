@@ -92,10 +92,10 @@ export const categories: Category[] = [
       { id: "l801-m", name: "22474 - L801 Magenta", sku: "22474", price: 215.00, image: "/images/shop/l801-magenta.jpg", inStock: true },
       { id: "l801p-m", name: "30433 - L801Plus Magenta", sku: "30433", price: 220.00, image: "/images/shop/l801p-magenta.jpg", inStock: true },
       { id: "l801-c", name: "22467 - L801 Cyano", sku: "22467", price: 215.00, image: "/images/shop/l801-cyan.jpg", inStock: true },
-      { id: "l801p-c", name: "30426 - L801Plus Cyano", sku: "30426", price: 220.00, image: "/images/shop/l801p-cyan.webp", inStock: true },
+      { id: "l801p-c", name: "30426 - L801Plus Cyano", sku: "30426", price: 220.00, image: "/images/shop/l801p-cyan.jpg", inStock: true },
       { id: "l801-k", name: "22453 - L801 Black", sku: "22453", price: 215.00, image: "/images/shop/l801-black.jpg", inStock: true },
       { id: "l801p-k", name: "30412 - L801Plus Black", sku: "30412", price: 220.00, image: "/images/shop/l801p-black.jpg", inStock: true },
-      { id: "l801-head", name: "22537 - Testina di stampa L801", sku: "22537", price: 630.00, image: "/images/shop/l801-testina.jpg", inStock: true },
+      { id: "l801-head", name: "22537 - Testina di stampa L801", sku: "22537", price: 630.00, image: "/images/shop/l801-testina.png", inStock: true },
     ],
   },
   {

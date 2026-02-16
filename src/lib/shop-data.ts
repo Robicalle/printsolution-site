@@ -35,7 +35,7 @@ export const categories: Category[] = [
     slug: "consumabili-greenbox-evo",
     name: "GreenBox EVO",
     description: "Inchiostri pigmentati e dye per stampante GreenBox EVO (1 litro)",
-    image: "/images/shop/placeholder.png",
+    image: "/images/shop/categories/greenbox-evo.png",
     products: [
       { id: "gbevo-pig-y", name: "Inchiostro Pigmentato YELLOW per GreenBox EVO (1L)", sku: "GBEVO-PIG-Y", price: 0, image: "/images/shop/placeholder.png", description: "Pigmentato", inStock: true },
       { id: "gbevo-pig-c", name: "Inchiostro Pigmentato CYAN per GreenBox EVO (1L)", sku: "GBEVO-PIG-C", price: 0, image: "/images/shop/placeholder.png", description: "Pigmentato", inStock: true },
@@ -51,7 +51,7 @@ export const categories: Category[] = [
     slug: "consumabili-edm650x",
     name: "EDM-650X",
     description: "Inchiostri pigmentati e dye per stampante EDM-650X (1 litro)",
-    image: "/images/shop/placeholder.png",
+    image: "/images/shop/categories/edm-650x.png",
     products: [
       { id: "edm-pig-y", name: "Inchiostro Pigmentato YELLOW per EDM-650X (1L)", sku: "EDM-PIG-Y", price: 0, image: "/images/shop/placeholder.png", description: "Pigmentato", inStock: true },
       { id: "edm-pig-c", name: "Inchiostro Pigmentato CYAN per EDM-650X (1L)", sku: "EDM-PIG-C", price: 0, image: "/images/shop/placeholder.png", description: "Pigmentato", inStock: true },

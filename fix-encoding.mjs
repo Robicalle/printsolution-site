@@ -84,8 +84,13 @@ const contextReplacements = [
   [/pi\uFFFD\n/g, 'più\n'],
   [/pi\uFFFD"/g, 'più"'],
   [/pi\uFFFD$/gm, 'più'],
-  // Special patterns with × and °
-  [/\uFFFD/g, '×'], // fallback - might be wrong
+  // Generic à at end of words before punctuation/space
+  [/(\w)t\uFFFD/g, '$1tà'],
+  // è before consonant/article
+  [/ \uFFFD /g, ' è '],
+  [/\n\uFFFD /g, '\nè '],
+  [/^\uFFFD /gm, 'è '],
+  // Do NOT add a global fallback - it causes wrong replacements
 ];
 
 // More careful approach: log remaining replacement chars

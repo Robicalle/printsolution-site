@@ -102,7 +102,7 @@ export const categories: Category[] = [
     slug: "consumabili-cx1000",
     name: "Primera CX1000 / CX1200",
     description: "Toner e ricambi per stampanti Primera CX1000 e CX1200",
-    image: "/images/products/afinia-lt5c.avif",
+    image: "/images/shop/cx1000-category.jpg",
     products: [
       { id: "cx-k", name: "057401 - Nero per CX1000/1200", sku: "057401", price: 235.00, image: "/images/shop/placeholder.png", inStock: true },
       { id: "cx-c", name: "057402 - Ciano per CX1000/1200", sku: "057402", price: 449.00, image: "/images/shop/placeholder.png", inStock: true },
@@ -115,7 +115,7 @@ export const categories: Category[] = [
     slug: "consumabili-lx2000",
     name: "Primera LX2000",
     description: "Cartucce e kit testina per stampante Primera LX2000",
-    image: "/images/products/afinia-l901.png",
+    image: "/images/shop/lx2000-category.jpg",
     products: [
       { id: "lx2k-y", name: "PRI-53463 Cartuccia LX-2000e Giallo", sku: "53463", price: 33.00, image: "/images/shop/placeholder.png", inStock: true },
       { id: "lx2k-c", name: "PRI-53461 Cartuccia LX-2000e Ciano", sku: "53461", price: 33.00, image: "/images/shop/placeholder.png", inStock: true },

@@ -128,7 +128,7 @@ export const categories: Category[] = [
     slug: "consumabili-lx900",
     name: "Primera LX900",
     description: "Cartucce e testine per stampante Primera LX900",
-    image: "/images/products/afinia-l901.png",
+    image: "/images/shop/lx900-category.jpg",
     products: [
       { id: "lx9-c", name: "053422 - Cartuccia LX-900e Ciano", sku: "053422", price: 30.00, image: "/images/shop/placeholder.png", inStock: true },
       { id: "lx9-m", name: "053423 - Cartuccia LX-900e Magenta", sku: "053423", price: 30.00, image: "/images/shop/placeholder.png", inStock: true },
@@ -150,7 +150,7 @@ export const categories: Category[] = [
     slug: "consumabili-serie-dp41xx",
     name: "Primera serie DP41xx",
     description: "Cartucce e testine per Primera serie DP41xx",
-    image: "/images/products/afinia-dlp2200.avif",
+    image: "/images/shop/dp41xx-category.jpg",
     products: [
       { id: "dp41-head", name: "053471 - Testina DP41xxe", sku: "053471", price: 90.00, image: "/images/shop/placeholder.png", inStock: true },
       { id: "dp41-c", name: "053601 - Cartuccia DP41xxe Ciano", sku: "053601", price: 31.00, image: "/images/shop/placeholder.png", inStock: true },

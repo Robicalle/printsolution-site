@@ -441,9 +441,9 @@ function DemoCTA({ locale }: { locale: string }) {
 
           <div className="relative">
             <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold mb-6 tracking-tight">
-              {locale === 'it' ? 'Richiedi una consulenza gratuita' : 'Request a free consultation'}
+              {locale === 'it' ? 'Richiedi una' : 'Request a free'}
               <br />
-              {locale === 'it' ? 'in Sala Demo' : 'to Our Demo Room'}
+              {locale === 'it' ? 'Consulenza Gratuita' : 'Consultation'}
             </h2>
             <p className="text-white/80 max-w-2xl mx-auto mb-10 text-lg leading-relaxed">
               {locale === 'it' ? 'Vieni a toccare con mano le nostre soluzioni. La nostra sala demo a Sesto San Giovanni è attrezzata con tutti i prodotti in funzione.' : 'Come and experience our solutions first-hand. Our demo room in Sesto San Giovanni is equipped with all products up and running.'}

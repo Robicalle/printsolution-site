@@ -157,7 +157,7 @@ export default function Header() {
               </Link>
             )
           )}
-          <a href={`mailto:info@printsolutionsrl.it?subject=${emailSubject}&body=${emailBody}`} className="btn-primary ml-4 text-base !py-3 !px-6 animate-pulse-subtle">{t("requestDemo")}</a>
+          <a href={`mailto:info@printsolutionsrl.it?subject=${emailSubject}&body=${emailBody}`} className="btn-primary ml-3 text-sm !py-2 !px-5 animate-pulse-subtle whitespace-nowrap">{t("requestDemo")}</a>
           <LanguageSwitcher scrolled={scrolled} />
         </nav>
 

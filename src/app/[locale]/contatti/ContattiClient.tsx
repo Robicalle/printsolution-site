@@ -122,7 +122,7 @@ export default function ContattiClient() {
                       <option value="packaging">{locale === 'it' ? 'Soluzioni Packaging' : 'Packaging Solutions'}</option>
                       <option value="etichette">{locale === 'it' ? 'Stampanti Etichette' : 'Label Printers'}</option>
                       <option value="consumabili">{locale === 'it' ? 'Consumabili e Ricambi' : 'Consumables & Spare Parts'}</option>
-                      <option value="demo">{locale === 'it' ? 'Richiedi una consulenza gratuita' : 'Request a free consultation'}</option>
+                      <option value="demo">{locale === 'it' ? 'Consulenza gratuita' : 'Free consultation'}</option>
                       <option value="assistenza">{locale === 'it' ? 'Assistenza Tecnica' : 'Technical Support'}</option>
                       <option value="leasing">{locale === 'it' ? 'Leasing / Finanziamento' : 'Leasing / Financing'}</option>
                     </select>
@@ -239,7 +239,7 @@ export default function ContattiClient() {
 
               {/* Demo Booking CTA */}
               <div className="card-modern p-6 bg-gradient-to-r from-cyan-500/5 to-magenta-500/5">
-                <h3 className="text-lg font-bold text-dark-800 mb-2">{locale === 'it' ? '🎯 Richiedi una Consulenza Gratuita' : '🎯 Request a Free Consultation'}</h3>
+                <h3 className="text-lg font-bold text-dark-800 mb-2">{locale === 'it' ? '🎯 Consulenza gratuita' : '🎯 Free consultation'}</h3>
                 <p className="text-gray-500 text-sm mb-4">
                   {locale === 'it' ? 'Vieni nella nostra sala demo a Sesto San Giovanni. Porta i tuoi materiali e testa le macchine dal vivo. Su appuntamento, gratuita.' : 'Visit our demo room in Sesto San Giovanni. Bring your materials and test the machines live. By appointment, free of charge.'}
                 </p>

@@ -149,7 +149,7 @@ export default async function ArticleCostiPackaging() {
 
           <div className="mt-12 pt-8 border-t border-gray-100 flex flex-col sm:flex-row gap-4 justify-between items-center">
             <Link href="/blog" className="text-cyan-500 font-semibold text-sm hover:underline">{locale === 'it' ? '← Torna al Blog' : '← Back to Blog'}</Link>
-            <a href="mailto:info@printsolutionsrl.it?subject=Ottimizzazione%20Costi%20Packaging&body=Buongiorno%2C%0A%0AVorrei%20una%20consulenza%20per%20ridurre%20i%20costi%20di%20packaging.%0A%0AGrazie" className="btn-primary text-sm">{locale === 'it' ? 'Richiedi una Consulenza Gratuita' : 'Request a Free Consultation'}</a>
+            <a href="mailto:info@printsolutionsrl.it?subject=Ottimizzazione%20Costi%20Packaging&body=Buongiorno%2C%0A%0AVorrei%20una%20consulenza%20per%20ridurre%20i%20costi%20di%20packaging.%0A%0AGrazie" className="btn-primary text-sm">{locale === 'it' ? 'Consulenza gratuita' : 'Free consultation'}</a>
           </div>
         </div>
       </article>

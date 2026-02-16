@@ -160,8 +160,8 @@ export default async function AfiniaLabelPage() {
           </h2>
           <p className="text-gray-500 max-w-xl mx-auto mb-8">
             {locale === 'it'
-              ? 'Richiedi una consulenza gratuita. Vieni nella nostra sala demo a Sesto San Giovanni, porta le tue etichette e testa la qualità.'
-              : 'Request a free consultation. Visit our demo room in Sesto San Giovanni, bring your labels and test the quality.'}
+              ? 'Consulenza gratuita. Vieni nella nostra sala demo a Sesto San Giovanni, porta le tue etichette e testa la qualità.'
+              : 'Free consultation. Visit our demo room in Sesto San Giovanni, bring your labels and test the quality.'}
           </p>
         </div>
       </section>

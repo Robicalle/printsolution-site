@@ -19,7 +19,7 @@
     "blog": "Blog",
     "contacts": "Contact",
     "eShop": "E-Shop",
-    "requestDemo": "Request a free consultation",
+    "requestDemo": "Free consultation",
     "eShopConsumables": "E-Shop Consumables",
     "callUs": "Call Us Now",
     "skipToContent": "Skip to content",
@@ -69,7 +69,7 @@
     "title1": "Request",
     "title2": "a Free Consultation",
     "subtitle": "Come and see our solutions in action. Our demo room in Sesto San Giovanni is equipped with all products running.",
-    "requestDemo": "Request a free consultation â†'",
+    "requestDemo": "Free consultationâ†'",
     "callNow": "Call Us Now"
   },
   "footer": {
@@ -86,7 +86,7 @@
     "contacts": "Contact",
     "headquarterDemo": "HQ & Demo Room",
     "hours": "Hours",
-    "hoursValue": "Mon \u2013 Fri: 9:00 AM \u2013 6:00 PM",
+    "hoursValue": "Mon – Fri: 9:00 AM – 6:00 PM",
     "companyData": "Company Details",
     "allRightsReserved": "All rights reserved.",
     "privacyPolicy": "Privacy Policy",

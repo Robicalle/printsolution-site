@@ -180,7 +180,7 @@ export default async function () {
                 : 'Single-pass inkjet digital printer for paper and corrugated board sheets. Large format, industrial speed, CMYK water-based inks.'}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20EDM-650X&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20EDM-650X.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">{it ? 'Richiedi una consulenza gratuita →' : 'Request a free consultation →'}</a>
+              <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20EDM-650X&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20EDM-650X.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">{it ? 'Consulenza gratuita→' : 'Free consultation→'}</a>
             </div>
           </div>
         </div>
@@ -332,7 +332,7 @@ export default async function () {
               : 'Visit our demo room in Sesto San Giovanni and see the EDM-650X in action on your materials.'}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20EDM-650X&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20EDM-650X.%0A%0AGrazie" className="btn-primary text-lg">{it ? 'Richiedi una consulenza gratuita →' : 'Request a free consultation →'}</a>
+            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20EDM-650X&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20EDM-650X.%0A%0AGrazie" className="btn-primary text-lg">{it ? 'Consulenza gratuita→' : 'Free consultation→'}</a>
           </div>
         </div>
       </section>

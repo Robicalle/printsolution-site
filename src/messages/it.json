@@ -19,7 +19,7 @@
     "blog": "Blog",
     "contacts": "Contatti",
     "eShop": "E-Shop",
-    "requestDemo": "Richiedi una consulenza gratuita",
+    "requestDemo": "Consulenza gratuita",
     "eShopConsumables": "E-Shop Consumabili",
     "callUs": "Chiamaci Ora",
     "skipToContent": "Salta al contenuto",
@@ -69,7 +69,7 @@
     "title1": "Richiedi",
     "title2": "una Consulenza Gratuita",
     "subtitle": "Vieni a toccare con mano le nostre soluzioni. La nostra sala demo a Sesto San Giovanni Ã¨ attrezzata con tutti i prodotti in funzione.",
-    "requestDemo": "Richiedi una consulenza gratuita â†'",
+    "requestDemo": "Consulenza gratuitaâ†'",
     "callNow": "Chiamaci Ora"
   },
   "footer": {
@@ -86,7 +86,7 @@
     "contacts": "Contatti",
     "headquarterDemo": "Sede & Sala Demo",
     "hours": "Orari",
-    "hoursValue": "Lun \u2013 Ven: 9:00 \u2013 18:00",
+    "hoursValue": "Lun – Ven: 9:00 – 18:00",
     "companyData": "Dati Aziendali",
     "allRightsReserved": "Tutti i diritti riservati.",
     "privacyPolicy": "Privacy Policy",

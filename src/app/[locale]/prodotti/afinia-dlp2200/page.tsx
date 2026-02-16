@@ -166,7 +166,7 @@ export default async function AfiniaDLP2200Page() {
                 {locale === 'it' ? "Digital Label Press completa: dalla bobina bianca all'etichetta finita in un unico passaggio. Stampa, laminazione, fustellatura rotativa, rimozione sfridi, slitting e riavvolgimento su doppio mandrino. Oltre 25.000 etichette all'ora." : "Complete Digital Label Press: from blank roll to finished label in a single pass. Printing, lamination, rotary die-cutting, waste removal, slitting and dual-spindle rewinding. Over 25,000 labels per hour."}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20Afinia%20DLP-2200&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20Afinia%20DLP-2200.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">{locale === 'it' ? 'Richiedi una consulenza gratuita →' : 'Request a free consultation →'}</a>
+                <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20Afinia%20DLP-2200&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20Afinia%20DLP-2200.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">{locale === 'it' ? 'Consulenza gratuita→' : 'Free consultation→'}</a>
               </div>
           </div>
         </div>
@@ -262,7 +262,7 @@ export default async function AfiniaDLP2200Page() {
             {locale === 'it' ? "Elimina la necessità di esternalizzare. Con la DLP-2200 produci etichette finite e pronte per l'applicazione direttamente nel tuo stabilimento." : "Eliminate the need to outsource. With the DLP-2200, produce finished labels ready for application directly in your facility."}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20Afinia%20DLP-2200&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20Afinia%20DLP-2200.%0A%0AGrazie" className="btn-primary text-lg">{locale === 'it' ? 'Richiedi una consulenza gratuita →' : 'Request a free consultation →'}</a>
+            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20Afinia%20DLP-2200&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20Afinia%20DLP-2200.%0A%0AGrazie" className="btn-primary text-lg">{locale === 'it' ? 'Consulenza gratuita→' : 'Free consultation→'}</a>
           </div>
         </div>
       </section>

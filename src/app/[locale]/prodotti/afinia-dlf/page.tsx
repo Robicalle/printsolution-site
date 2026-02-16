@@ -306,7 +306,7 @@ export default async function () {
                 href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20Afinia%20DLF&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20dei%20fustellatori%20digitali%20DLF.%0A%0AGrazie"
                 className="inline-flex items-center justify-center px-8 py-4 bg-white text-cyan-600 font-bold rounded-full hover:bg-yellow-400 hover:text-dark-800 transition-all duration-300 shadow-lg text-lg"
               >
-                {locale === 'it' ? 'Richiedi una consulenza gratuita' : 'Request a free consultation'}
+                {locale === 'it' ? 'Consulenza gratuita' : 'Free consultation'}
               </a>
             </div>
           </div>

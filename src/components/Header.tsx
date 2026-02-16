@@ -1,31 +1,15 @@
 "use client";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import { usePathname } from "next/navigation";
+import { usePathname } from "@/i18n/navigation";
+import { useLocale, useTranslations } from "next-intl";
 import MegaMenu, { MegaMenuMobile } from "./MegaMenu";
-
-const navigation = [
-  { label: "Home", href: "/", homeOnly: true },
-  {
-    label: "Soluzioni",
-    children: [
-      { label: "Packaging", href: "/soluzioni/packaging", desc: "Box maker e stampa su cartone" },
-      { label: "Etichette", href: "/soluzioni/etichette", desc: "Stampa etichette in bobina e foglio" },
-      { label: "Shopper & Packaging di Lusso", href: "/soluzioni/shopper", desc: "Shopper, buste e packaging premium" },
-      { label: "Labbratura Libri", href: "/soluzioni/labbratura", desc: "Stampa bordi libri e quaderni" },
-      { label: "Confronto Prodotti", href: "/confronto-prodotti", desc: "Tutte le stampanti a confronto" },
-    ],
-  },
-  { label: "Promozioni", href: "/promozioni" },
-  { label: "Usato", href: "/usato" },
-  { label: "Chi Siamo", href: "/chi-siamo" },
-  { label: "News", href: "/news" },
-  { label: "Contatti", href: "/contatti" },
-  { label: "E-Shop", href: "/shop", isShop: true },
-];
+import LanguageSwitcher from "./LanguageSwitcher";
 
 export default function Header() {
+  const t = useTranslations("nav");
+  const locale = useLocale();
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
@@ -33,17 +17,39 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const isHome = pathname === "/";
 
+  const navigation = [
+    { label: t("home"), href: "/", homeOnly: true },
+    {
+      label: t("solutions"),
+      children: [
+        { label: t("packaging"), href: "/soluzioni/packaging", desc: t("packagingDesc") },
+        { label: t("labels"), href: "/soluzioni/etichette", desc: t("labelsDesc") },
+        { label: t("shopperLuxury"), href: "/soluzioni/shopper", desc: t("shopperLuxuryDesc") },
+        { label: t("bookEdging"), href: "/soluzioni/labbratura", desc: t("bookEdgingDesc") },
+        { label: t("productComparison"), href: "/confronto-prodotti", desc: t("productComparisonDesc") },
+      ],
+    },
+    { label: t("promotions"), href: "/promozioni" },
+    { label: t("used"), href: "/usato" },
+    { label: t("aboutUs"), href: "/chi-siamo" },
+    { label: t("news"), href: "/news" },
+    { label: t("contacts"), href: "/contatti" },
+    { label: t("eShop"), href: "/shop", isShop: true },
+  ];
+
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close dropdown on route change
   useEffect(() => {
     setOpenDropdown(null);
     setMobileOpen(false);
   }, [pathname]);
+
+  const emailSubject = locale === "it" ? "Richiesta%20Informazioni%20Print%20Solution" : "Information%20Request%20Print%20Solution";
+  const emailBody = locale === "it" ? "Buongiorno%2C%0A%0AVorrei%20ricevere%20informazioni.%0A%0AGrazie" : "Hello%2C%0A%0AI%20would%20like%20to%20receive%20information.%0A%0AThank%20you";
 
   return (
     <header
@@ -151,24 +157,28 @@ export default function Header() {
               </Link>
             )
           )}
-          <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Informazioni%20Print%20Solution&body=Buongiorno%2C%0A%0AVorrei%20ricevere%20informazioni.%0A%0AGrazie" className="btn-primary ml-2 text-sm !py-2.5 !px-5 animate-pulse-subtle">Richiedi Demo</a>
+          <LanguageSwitcher scrolled={scrolled} />
+          <a href={`mailto:info@printsolutionsrl.it?subject=${emailSubject}&body=${emailBody}`} className="btn-primary ml-2 text-sm !py-2.5 !px-5 animate-pulse-subtle">{t("requestDemo")}</a>
         </nav>
 
         {/* Mobile toggle */}
-        <button
-          className={`lg:hidden p-2 min-w-[44px] min-h-[44px] flex items-center justify-center relative z-10 ${mobileOpen || scrolled ? "text-dark-900" : "text-white"}`}
-          onClick={() => setMobileOpen(!mobileOpen)}
-          aria-expanded={mobileOpen}
-          aria-label={mobileOpen ? 'Chiudi menu' : 'Apri menu'}
-        >
-          <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            {mobileOpen ? (
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            ) : (
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            )}
-          </svg>
-        </button>
+        <div className="lg:hidden flex items-center gap-2">
+          <LanguageSwitcher scrolled={scrolled || mobileOpen} />
+          <button
+            className={`p-2 min-w-[44px] min-h-[44px] flex items-center justify-center relative z-10 ${mobileOpen || scrolled ? "text-dark-900" : "text-white"}`}
+            onClick={() => setMobileOpen(!mobileOpen)}
+            aria-expanded={mobileOpen}
+            aria-label={mobileOpen ? t("closeMenu") : t("openMenu")}
+          >
+            <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              {mobileOpen ? (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              ) : (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              )}
+            </svg>
+          </button>
+        </div>
       </div>
 
       {/* Mobile menu */}
@@ -224,17 +234,17 @@ export default function Header() {
             <Link href="/shop"
                className="block w-full text-center py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold rounded-full shadow-lg text-lg"
                onClick={() => setMobileOpen(false)}>
-              🛒 E-Shop Consumabili
+              🛒 {t("eShopConsumables")}
             </Link>
-            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Informazioni%20Print%20Solution&body=Buongiorno%2C%0A%0AVorrei%20ricevere%20informazioni.%0A%0AGrazie" 
+            <a href={`mailto:info@printsolutionsrl.it?subject=${emailSubject}&body=${emailBody}`}
                className="block w-full text-center py-4 mt-3 bg-gradient-to-r from-cyan-500 to-cyan-600 text-white font-semibold rounded-full shadow-lg text-lg"
                onClick={() => setMobileOpen(false)}>
-              Richiedi Demo →
+              {t("requestDemo")} →
             </a>
             <a href="tel:+390249439417" 
                className="block w-full text-center py-4 mt-3 border-2 border-gray-200 text-gray-700 font-semibold rounded-full text-lg"
                onClick={() => setMobileOpen(false)}>
-              📞 Chiamaci Ora
+              📞 {t("callUs")}
             </a>
           </div>
         </nav>

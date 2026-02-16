@@ -1,7 +1,10 @@
-import Link from "next/link";
+"use client";
+import { Link } from "@/i18n/navigation";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 export default function Footer() {
+  const t = useTranslations("footer");
   return (
     <footer className="bg-dark-900 text-gray-400 relative overflow-hidden">
       {/* Subtle gradient orb */}
@@ -19,7 +22,7 @@ export default function Footer() {
               className="h-9 w-auto mb-6 brightness-200"
             />
             <p className="text-sm leading-relaxed text-gray-500 max-w-xs">
-              Distributore italiano di soluzioni digitali per stampa di packaging, etichette e consumabili.
+              {t("description")}
             </p>
             <div className="flex gap-4 mt-8">
               {[
@@ -37,19 +40,19 @@ export default function Footer() {
 
           {/* Soluzioni */}
           <div>
-            <h3 className="text-white font-semibold mb-6 text-sm uppercase tracking-wider">Soluzioni</h3>
+            <h3 className="text-white font-semibold mb-6 text-sm uppercase tracking-wider">{t("solutions")}</h3>
             <ul className="space-y-3 text-sm">
-              <li><Link href="/soluzioni/packaging" className="hover:text-white transition-colors duration-200">Packaging</Link></li>
-              <li><Link href="/soluzioni/etichette" className="hover:text-white transition-colors duration-200">Etichette</Link></li>
-              <li><Link href="/soluzioni/shopper" className="hover:text-white transition-colors duration-200">Shopper & Lusso</Link></li>
-              <li><Link href="/soluzioni/labbratura" className="hover:text-white transition-colors duration-200">Labbratura Libri</Link></li>
-              <li><Link href="/soluzioni/consumabili" className="hover:text-white transition-colors duration-200">Consumabili</Link></li>
+              <li><Link href="/soluzioni/packaging" className="hover:text-white transition-colors duration-200">{t("packaging")}</Link></li>
+              <li><Link href="/soluzioni/etichette" className="hover:text-white transition-colors duration-200">{t("labels")}</Link></li>
+              <li><Link href="/soluzioni/shopper" className="hover:text-white transition-colors duration-200">{t("shopperLuxury")}</Link></li>
+              <li><Link href="/soluzioni/labbratura" className="hover:text-white transition-colors duration-200">{t("bookEdging")}</Link></li>
+              <li><Link href="/soluzioni/consumabili" className="hover:text-white transition-colors duration-200">{t("consumables")}</Link></li>
             </ul>
           </div>
 
           {/* Prodotti */}
           <div>
-            <h3 className="text-white font-semibold mb-6 text-sm uppercase tracking-wider">Prodotti</h3>
+            <h3 className="text-white font-semibold mb-6 text-sm uppercase tracking-wider">{t("products")}</h3>
             <ul className="space-y-2 text-sm columns-2 gap-x-8">
               <li><Link href="/prodotti/edm-650x" className="hover:text-white transition-colors duration-200">EDM-650X</Link></li>
               <li><Link href="/prodotti/ab2500" className="hover:text-white transition-colors duration-200">Anypack AB2500</Link></li>
@@ -68,14 +71,14 @@ export default function Footer() {
               <li><Link href="/prodotti/greenbox-print-book" className="hover:text-white transition-colors duration-200">GreenBox Print Book</Link></li>
             </ul>
             <div className="mt-4 pt-3 border-t border-white/5 space-y-2 text-sm">
-              <Link href="/promozioni" className="block hover:text-white transition-colors duration-200 text-cyan-400">🏷️ Promozioni</Link>
-              <Link href="/usato" className="block hover:text-white transition-colors duration-200 text-orange-400">♻️ Usato Garantito</Link>
+              <Link href="/promozioni" className="block hover:text-white transition-colors duration-200 text-cyan-400">🏷️ {t("promotions")}</Link>
+              <Link href="/usato" className="block hover:text-white transition-colors duration-200 text-orange-400">♻️ {t("usedGuaranteed")}</Link>
             </div>
           </div>
 
           {/* Contatti */}
           <div>
-            <h3 className="text-white font-semibold mb-6 text-sm uppercase tracking-wider">Contatti</h3>
+            <h3 className="text-white font-semibold mb-6 text-sm uppercase tracking-wider">{t("contacts")}</h3>
             <address className="not-italic text-sm space-y-3 text-gray-500">
               <p>Via Pisa 200, int. 23</p>
               <p>20099 Sesto San Giovanni (MI)</p>
@@ -104,7 +107,7 @@ export default function Footer() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
               </svg>
               <div>
-                <p className="text-white font-medium mb-1">Sede & Sala Demo</p>
+                <p className="text-white font-medium mb-1">{t("headquarterDemo")}</p>
                 <a href="https://maps.google.com/?q=Via+Pisa+200+int.+23+Sesto+San+Giovanni+MI" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
                   Via Pisa 200 int. 23, 20099 Sesto San Giovanni (MI)
                 </a>
@@ -115,8 +118,8 @@ export default function Footer() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
               </svg>
               <div>
-                <p className="text-white font-medium mb-1">Orari</p>
-                <p>Lun — Ven: 9:00 — 18:00</p>
+                <p className="text-white font-medium mb-1">{t("hours")}</p>
+                <p>{t("hoursValue")}</p>
               </div>
             </div>
             <div className="flex items-start gap-3">
@@ -124,7 +127,7 @@ export default function Footer() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
               </svg>
               <div>
-                <p className="text-white font-medium mb-1">Dati Aziendali</p>
+                <p className="text-white font-medium mb-1">{t("companyData")}</p>
                 <p>P.IVA / C.F. 07149250966</p>
                 <p>Cap. Soc. € 100.000 i.v.</p>
                 <p>PEC printsolutionsrl@pec.it</p>
@@ -135,11 +138,11 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center text-sm md:text-xs text-gray-600">
-          <p>&copy; {new Date().getFullYear()} Print Solution S.r.l. — Tutti i diritti riservati.</p>
+          <p>&copy; {new Date().getFullYear()} Print Solution S.r.l. — {t("allRightsReserved")}</p>
           <div className="flex gap-6 mt-4 md:mt-0">
-            <Link href="/privacy" className="hover:text-white transition-colors duration-200">Privacy Policy</Link>
-            <Link href="/cookie" className="hover:text-white transition-colors duration-200">Cookie Policy</Link>
-            <Link href="/condizioni-di-vendita" className="hover:text-white transition-colors duration-200">Condizioni di Vendita</Link>
+            <Link href="/privacy" className="hover:text-white transition-colors duration-200">{t("privacyPolicy")}</Link>
+            <Link href="/cookie" className="hover:text-white transition-colors duration-200">{t("cookiePolicy")}</Link>
+            <Link href="/condizioni-di-vendita" className="hover:text-white transition-colors duration-200">{t("salesConditions")}</Link>
           </div>
         </div>
       </div>

@@ -1,7 +1,7 @@
 "use client";
 import { useCart } from "@/lib/cart-context";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 
 export default function CartSidebar() {
   const { items, removeItem, updateQuantity, totalItems, totalPrice, isOpen, setIsOpen } = useCart();

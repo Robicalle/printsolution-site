@@ -1,0 +1,132 @@
+{
+  "nav": {
+    "home": "Home",
+    "solutions": "Solutions",
+    "packaging": "Packaging",
+    "packagingDesc": "Box makers and cardboard printing",
+    "labels": "Labels",
+    "labelsDesc": "Roll and sheet label printing",
+    "shopperLuxury": "Shoppers & Luxury Packaging",
+    "shopperLuxuryDesc": "Shoppers, bags and premium packaging",
+    "bookEdging": "Book Edge Printing",
+    "bookEdgingDesc": "Book and notebook edge printing",
+    "productComparison": "Product Comparison",
+    "productComparisonDesc": "Compare all our printers",
+    "promotions": "Promotions",
+    "used": "Used Equipment",
+    "aboutUs": "About Us",
+    "news": "News",
+    "contacts": "Contact",
+    "eShop": "E-Shop",
+    "requestDemo": "Request Demo",
+    "eShopConsumables": "E-Shop Consumables",
+    "callUs": "Call Us Now",
+    "skipToContent": "Skip to content",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "hero": {
+    "title1": "Digital Solutions for",
+    "title2": "Printing & Packaging",
+    "subtitle": "Custom boxes, professional labels: technology, expertise and support for your business.",
+    "cta": "Our Solutions",
+    "discover": "Discover"
+  },
+  "solutions": {
+    "sectionLabel": "What we do",
+    "sectionTitle": "Our Solutions",
+    "packaging": "Packaging",
+    "packagingDesc": "Automatic box makers, single-pass printers for corrugated cardboard, die-cutting and digital gluing systems.",
+    "labels": "Labels",
+    "labelsDesc": "Roll and sheet label printers with inkjet and colour laser technology for every production need.",
+    "shopperLuxury": "Shoppers & Luxury Packaging",
+    "shopperLuxuryDesc": "Hot foil and digital printing for shoppers and premium packaging with metallic finishes.",
+    "bookEdging": "Book Edge Printing",
+    "bookEdgingDesc": "Digital printing on book, notebook and notepad edges for unique, high-quality customisation.",
+    "consumables": "Consumables",
+    "consumablesDesc": "Inks, print heads, ribbons and original consumable materials for all distributed printers.",
+    "learnMore": "Learn more"
+  },
+  "products": {
+    "sectionLabel": "Our products",
+    "sectionTitle": "Cutting-Edge Technology",
+    "learnMore": "Learn more"
+  },
+  "whyUs": {
+    "sectionLabel": "Why choose us",
+    "sectionTitle1": "Numbers that",
+    "sectionTitle2": "speak",
+    "clients": "Satisfied customers",
+    "experience": "Years of experience",
+    "countries": "Countries served",
+    "catalog": "Products in catalogue"
+  },
+  "testimonials": {
+    "label": "Testimonial"
+  },
+  "cta": {
+    "title1": "Book a Visit",
+    "title2": "to Our Demo Room",
+    "subtitle": "Come and see our solutions in action. Our demo room in Sesto San Giovanni is equipped with all products running.",
+    "requestDemo": "Request Demo →",
+    "callNow": "Call Us Now"
+  },
+  "footer": {
+    "description": "Italian distributor of digital solutions for packaging printing, labels and consumables.",
+    "solutions": "Solutions",
+    "packaging": "Packaging",
+    "labels": "Labels",
+    "shopperLuxury": "Shoppers & Luxury",
+    "bookEdging": "Book Edge Printing",
+    "consumables": "Consumables",
+    "products": "Products",
+    "promotions": "Promotions",
+    "usedGuaranteed": "Certified Used",
+    "contacts": "Contact",
+    "headquarterDemo": "HQ & Demo Room",
+    "hours": "Hours",
+    "hoursValue": "Mon — Fri: 9:00 AM — 6:00 PM",
+    "companyData": "Company Details",
+    "allRightsReserved": "All rights reserved.",
+    "privacyPolicy": "Privacy Policy",
+    "cookiePolicy": "Cookie Policy",
+    "salesConditions": "Terms of Sale"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "We're here to help with any questions.",
+    "name": "Full Name",
+    "company": "Company",
+    "email": "Email",
+    "phone": "Phone",
+    "message": "Message",
+    "interest": "Interest",
+    "generic": "General",
+    "privacy": "I accept the Privacy Policy",
+    "send": "Send Message",
+    "sending": "Sending...",
+    "success": "Message sent successfully!",
+    "error": "Error sending message. Please try again."
+  },
+  "shop": {
+    "title": "Consumables E-Shop",
+    "addToCart": "Add to Cart",
+    "cart": "Cart",
+    "checkout": "Proceed to Checkout",
+    "emptyCart": "Your cart is empty",
+    "total": "Total",
+    "quantity": "Quantity",
+    "remove": "Remove",
+    "filters": "Filters",
+    "allCategories": "All Categories",
+    "search": "Search products...",
+    "noResults": "No results found",
+    "orderSuccess": "Order completed successfully!",
+    "backToShop": "Back to Shop"
+  },
+  "common": {
+    "readMore": "Read more",
+    "backToHome": "Back to Home",
+    "loading": "Loading..."
+  }
+}

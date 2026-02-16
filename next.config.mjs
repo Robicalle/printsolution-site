@@ -1,9 +1,11 @@
+import createNextIntlPlugin from "next-intl/plugin";
+
+const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
+
 /** @type {import('next').NextConfig} */
-const isProd = process.env.NODE_ENV === 'production';
-const isVercel = process.env.VERCEL === '1';
 const nextConfig = {
-  // Only use static export for GitHub Pages, not Vercel
-  ...(isProd && !isVercel ? { output: 'export', basePath: '/printsolution-site', assetPrefix: '/printsolution-site/' } : {}),
+  // Middleware-based i18n is incompatible with static export.
+  // Use `next start` or deploy to Vercel.
   poweredByHeader: false,
   images: {
     unoptimized: true,
@@ -43,4 +45,4 @@ const nextConfig = {
   },
 };
 
-export default nextConfig;
+export default withNextIntl(nextConfig);

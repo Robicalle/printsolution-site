@@ -1,0 +1,132 @@
+{
+  "nav": {
+    "home": "Home",
+    "solutions": "Soluzioni",
+    "packaging": "Packaging",
+    "packagingDesc": "Box maker e stampa su cartone",
+    "labels": "Etichette",
+    "labelsDesc": "Stampa etichette in bobina e foglio",
+    "shopperLuxury": "Shopper & Packaging di Lusso",
+    "shopperLuxuryDesc": "Shopper, buste e packaging premium",
+    "bookEdging": "Labbratura Libri",
+    "bookEdgingDesc": "Stampa bordi libri e quaderni",
+    "productComparison": "Confronto Prodotti",
+    "productComparisonDesc": "Tutte le stampanti a confronto",
+    "promotions": "Promozioni",
+    "used": "Usato",
+    "aboutUs": "Chi Siamo",
+    "news": "News",
+    "contacts": "Contatti",
+    "eShop": "E-Shop",
+    "requestDemo": "Richiedi Demo",
+    "eShopConsumables": "E-Shop Consumabili",
+    "callUs": "Chiamaci Ora",
+    "skipToContent": "Salta al contenuto",
+    "openMenu": "Apri menu",
+    "closeMenu": "Chiudi menu"
+  },
+  "hero": {
+    "title1": "Soluzioni Digitali per",
+    "title2": "Stampa e Packaging",
+    "subtitle": "Scatole personalizzate, etichette professionali: tecnologia, competenza e assistenza per la tua azienda.",
+    "cta": "Le Nostre Soluzioni",
+    "discover": "Scopri"
+  },
+  "solutions": {
+    "sectionLabel": "Cosa facciamo",
+    "sectionTitle": "Le Nostre Soluzioni",
+    "packaging": "Packaging",
+    "packagingDesc": "Box maker automatici, stampanti single-pass per cartone ondulato, sistemi di fustellatura e incollaggio digitale.",
+    "labels": "Etichette",
+    "labelsDesc": "Stampanti per etichette in bobina e a foglio con tecnologia inkjet e laser a colori per ogni esigenza produttiva.",
+    "shopperLuxury": "Shopper & Packaging di Lusso",
+    "shopperLuxuryDesc": "Stampa hot foil e digitale per shopper e packaging premium con finiture metalliche.",
+    "bookEdging": "Labbratura Libri",
+    "bookEdgingDesc": "Stampa digitale sui bordi di libri, quaderni e block notes per personalizzazioni uniche e di alta qualità.",
+    "consumables": "Consumabili",
+    "consumablesDesc": "Inchiostri, testine di stampa, nastri e materiali di consumo originali per tutte le stampanti distribuite.",
+    "learnMore": "Scopri di più"
+  },
+  "products": {
+    "sectionLabel": "I nostri prodotti",
+    "sectionTitle": "Tecnologie di Punta",
+    "learnMore": "Scopri di più"
+  },
+  "whyUs": {
+    "sectionLabel": "Perché sceglierci",
+    "sectionTitle1": "Numeri che",
+    "sectionTitle2": "parlano",
+    "clients": "Clienti soddisfatti",
+    "experience": "Anni di esperienza",
+    "countries": "Paesi serviti",
+    "catalog": "Prodotti a catalogo"
+  },
+  "testimonials": {
+    "label": "Testimonianza"
+  },
+  "cta": {
+    "title1": "Prenota una Visita",
+    "title2": "in Sala Demo",
+    "subtitle": "Vieni a toccare con mano le nostre soluzioni. La nostra sala demo a Sesto San Giovanni è attrezzata con tutti i prodotti in funzione.",
+    "requestDemo": "Richiedi Demo →",
+    "callNow": "Chiamaci Ora"
+  },
+  "footer": {
+    "description": "Distributore italiano di soluzioni digitali per stampa di packaging, etichette e consumabili.",
+    "solutions": "Soluzioni",
+    "packaging": "Packaging",
+    "labels": "Etichette",
+    "shopperLuxury": "Shopper & Lusso",
+    "bookEdging": "Labbratura Libri",
+    "consumables": "Consumabili",
+    "products": "Prodotti",
+    "promotions": "Promozioni",
+    "usedGuaranteed": "Usato Garantito",
+    "contacts": "Contatti",
+    "headquarterDemo": "Sede & Sala Demo",
+    "hours": "Orari",
+    "hoursValue": "Lun — Ven: 9:00 — 18:00",
+    "companyData": "Dati Aziendali",
+    "allRightsReserved": "Tutti i diritti riservati.",
+    "privacyPolicy": "Privacy Policy",
+    "cookiePolicy": "Cookie Policy",
+    "salesConditions": "Condizioni di Vendita"
+  },
+  "contact": {
+    "title": "Contattaci",
+    "subtitle": "Siamo a disposizione per qualsiasi informazione.",
+    "name": "Nome e Cognome",
+    "company": "Azienda",
+    "email": "Email",
+    "phone": "Telefono",
+    "message": "Messaggio",
+    "interest": "Interesse",
+    "generic": "Generico",
+    "privacy": "Accetto la Privacy Policy",
+    "send": "Invia Messaggio",
+    "sending": "Invio in corso...",
+    "success": "Messaggio inviato con successo!",
+    "error": "Errore nell'invio. Riprova."
+  },
+  "shop": {
+    "title": "E-Shop Consumabili",
+    "addToCart": "Aggiungi al Carrello",
+    "cart": "Carrello",
+    "checkout": "Procedi al Checkout",
+    "emptyCart": "Il carrello è vuoto",
+    "total": "Totale",
+    "quantity": "Quantità",
+    "remove": "Rimuovi",
+    "filters": "Filtri",
+    "allCategories": "Tutte le Categorie",
+    "search": "Cerca prodotti...",
+    "noResults": "Nessun risultato trovato",
+    "orderSuccess": "Ordine completato con successo!",
+    "backToShop": "Torna allo Shop"
+  },
+  "common": {
+    "readMore": "Leggi di più",
+    "backToHome": "Torna alla Home",
+    "loading": "Caricamento..."
+  }
+}

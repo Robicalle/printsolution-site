@@ -1,6 +1,6 @@
 "use client";
 import { useCart } from "@/lib/cart-context";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { useEffect, useState } from "react";
 
 export default function StickyCartBar() {

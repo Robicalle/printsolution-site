@@ -1,6 +1,8 @@
 import { MetadataRoute } from "next";
 import { categories } from "@/lib/shop-data";
 
+export const dynamic = "force-static";
+
 const BASE = "https://www.printsolutionsrl.it";
 
 export default function sitemap(): MetadataRoute.Sitemap {

@@ -181,7 +181,20 @@ export default function Header() {
       >
         <nav className="px-6 py-6 space-y-1">
           {navigation.filter((item) => !('homeOnly' in item && item.homeOnly && isHome)).map((item) =>
-            item.children ? (
+            'megaMenu' in item ? (
+              <div key={item.label}>
+                <button
+                  className="w-full flex items-center justify-between py-3 min-h-[44px] text-gray-700 hover:text-cyan-500 text-lg border-b border-gray-50"
+                  onClick={() => setMobileProductsOpen(!mobileProductsOpen)}
+                >
+                  {item.label}
+                  <svg className={`w-4 h-4 transition-transform ${mobileProductsOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <MegaMenuMobile open={mobileProductsOpen} onNavigate={() => setMobileOpen(false)} />
+              </div>
+            ) : item.children ? (
               <div key={item.label}>
                 <p className="py-2 font-semibold text-gray-400 text-sm uppercase tracking-wider mt-4">
                   {item.label}

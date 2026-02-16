@@ -66,8 +66,8 @@ export default async function ArticleTendenzePackaging() {
         <div className="container-custom max-w-3xl">
           <div className="flex items-center gap-3 mb-8">
             <span className="px-3 py-1 rounded-full text-xs font-bold text-white bg-gradient-to-r from-yellow-500 to-yellow-600">Trend</span>
-            <span className="text-gray-500 text-sm">15 Febbraio 2026</span>
-            <span className="text-gray-500 text-sm">· 9 min di lettura</span>
+            <span className="text-gray-500 text-sm">{locale === 'it' ? '15 Febbraio 2026' : 'February 15, 2026'}</span>
+            <span className="text-gray-500 text-sm">· 9 {locale === 'it' ? 'min di lettura' : 'min read'}</span>
           </div>
 
           <div className="prose prose-lg max-w-none text-gray-600 leading-relaxed">
@@ -144,8 +144,8 @@ export default async function ArticleTendenzePackaging() {
           </div>
 
           <div className="mt-12 pt-8 border-t border-gray-100 flex flex-col sm:flex-row gap-4 justify-between items-center">
-            <Link href="/blog" className="text-cyan-500 font-semibold text-sm hover:underline">← Torna al Blog</Link>
-            <a href="mailto:info@printsolutionsrl.it?subject=Soluzioni%20Packaging%20Innovativo&body=Buongiorno%2C%0A%0AVorrei%20informazioni%20sulle%20soluzioni%20di%20packaging%20innovativo.%0A%0AGrazie" className="btn-primary text-sm">Scopri le Nostre Soluzioni</a>
+            <Link href="/blog" className="text-cyan-500 font-semibold text-sm hover:underline">{locale === 'it' ? '← Torna al Blog' : '← Back to Blog'}</Link>
+            <a href="mailto:info@printsolutionsrl.it?subject=Soluzioni%20Packaging%20Innovativo&body=Buongiorno%2C%0A%0AVorrei%20informazioni%20sulle%20soluzioni%20di%20packaging%20innovativo.%0A%0AGrazie" className="btn-primary text-sm">{locale === 'it' ? 'Scopri le Nostre Soluzioni' : 'Scopri le Nostre Soluzioni'}</a>
           </div>
         </div>
       </article>

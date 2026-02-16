@@ -57,7 +57,7 @@ export default async function ArticlePackagingPMI() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <PageHero
-        title="Packaging Personalizzato: Vantaggi per le PMI"
+        title={locale === 'it' ? "Packaging Personalizzato: Vantaggi per le PMI" : "Custom Packaging: Benefits for SMEs"}
         subtitle="Come il packaging su misura può trasformare il business delle piccole e medie imprese"
         breadcrumb="Blog"
       />
@@ -66,8 +66,8 @@ export default async function ArticlePackagingPMI() {
         <div className="container-custom max-w-3xl">
           <div className="flex items-center gap-3 mb-8">
             <span className="px-3 py-1 rounded-full text-xs font-bold text-white bg-gradient-to-r from-cyan-500 to-cyan-600">Packaging</span>
-            <span className="text-gray-500 text-sm">15 Febbraio 2026</span>
-            <span className="text-gray-500 text-sm">· 8 min di lettura</span>
+            <span className="text-gray-500 text-sm">{locale === 'it' ? '15 Febbraio 2026' : 'February 15, 2026'}</span>
+            <span className="text-gray-500 text-sm">· 8 {locale === 'it' ? 'min di lettura' : 'min read'}</span>
           </div>
 
           <div className="prose prose-lg max-w-none text-gray-600 leading-relaxed">
@@ -137,8 +137,8 @@ export default async function ArticlePackagingPMI() {
           </div>
 
           <div className="mt-12 pt-8 border-t border-gray-100 flex flex-col sm:flex-row gap-4 justify-between items-center">
-            <Link href="/blog" className="text-cyan-500 font-semibold text-sm hover:underline">← Torna al Blog</Link>
-            <a href="mailto:info@printsolutionsrl.it?subject=Packaging%20Personalizzato%20per%20PMI&body=Buongiorno%2C%0A%0AVorrei%20informazioni%20sulle%20soluzioni%20di%20packaging%20personalizzato.%0A%0AGrazie" className="btn-primary text-sm">Scopri le Soluzioni per la Tua PMI</a>
+            <Link href="/blog" className="text-cyan-500 font-semibold text-sm hover:underline">{locale === 'it' ? '← Torna al Blog' : '← Back to Blog'}</Link>
+            <a href="mailto:info@printsolutionsrl.it?subject=Packaging%20Personalizzato%20per%20PMI&body=Buongiorno%2C%0A%0AVorrei%20informazioni%20sulle%20soluzioni%20di%20packaging%20personalizzato.%0A%0AGrazie" className="btn-primary text-sm">{locale === 'it' ? 'Scopri le Soluzioni per la Tua PMI' : 'Scopri le Soluzioni per la Tua PMI'}</a>
           </div>
         </div>
       </article>

@@ -219,7 +219,7 @@ export default async function BlogPage() {
     <>
       <PageHero
         title="Blog"
-        subtitle="Articoli, guide e approfondimenti sulla stampa digitale per packaging ed etichette."
+        subtitle={locale === 'it' ? "Articoli, guide e approfondimenti sulla stampa digitale per packaging ed etichette." : "Articles, guides and insights on digital printing for packaging and labels."}
         breadcrumb="Print Solution"
         imageSrc="/images/hero-blog.jpg"
       />
@@ -248,7 +248,7 @@ export default async function BlogPage() {
                   <p className="text-gray-500 text-sm leading-relaxed mb-4">{a.excerpt}</p>
                   <div className="flex items-center justify-between">
                     <span className="text-gray-500 text-sm">{a.date}</span>
-                    <span className="text-cyan-500 text-sm font-semibold group-hover:underline">Leggi →</span>
+                    <span className="text-cyan-500 text-sm font-semibold group-hover:underline">{locale === 'it' ? 'Leggi →' : 'Read →'}</span>
                   </div>
                 </div>
               </Link>
@@ -260,11 +260,11 @@ export default async function BlogPage() {
       {/* Newsletter CTA */}
       <section className="section-padding bg-surface-50">
         <div className="container-custom text-center max-w-2xl mx-auto">
-          <h2 className="text-2xl font-bold text-dark-800 mb-4">Resta Aggiornato</h2>
+          <h2 className="text-2xl font-bold text-dark-800 mb-4">{locale === 'it' ? 'Resta Aggiornato' : 'Stay Updated'}</h2>
           <p className="text-gray-500 mb-8">
             Contattaci per ricevere aggiornamenti sulle novità del settore e le nostre soluzioni.
           </p>
-          <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Informazioni%20Print%20Solution&body=Buongiorno%2C%0A%0AVorrei%20ricevere%20informazioni.%0A%0AGrazie" className="btn-primary">Contattaci</a>
+          <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Informazioni%20Print%20Solution&body=Buongiorno%2C%0A%0AVorrei%20ricevere%20informazioni.%0A%0AGrazie" className="btn-primary">{locale === 'it' ? 'Contattaci' : 'Contact Us'}</a>
         </div>
       </section>
     </>

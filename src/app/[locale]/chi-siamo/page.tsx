@@ -30,8 +30,8 @@ export default async function ChiSiamoPage() {
   return (
     <>
       <PageHero
-        title="Chi Siamo"
-        subtitle="Dal 2010, punto di riferimento in Italia per le soluzioni digitali di stampa packaging, etichette e consumabili."
+        title={locale === 'it' ? "Chi Siamo" : "About Us"}
+        subtitle={locale === 'it' ? "Dal 2010, punto di riferimento in Italia per le soluzioni digitali di stampa packaging, etichette e consumabili." : "Since 2010, Italy's reference point for digital printing solutions for packaging, labels and consumables."}
         breadcrumb="Print Solution"
         imageSrc="/images/chi-siamo-team.jpg"
       />
@@ -42,8 +42,8 @@ export default async function ChiSiamoPage() {
           <div className="max-w-4xl mx-auto">
             <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
               <div>
-                <p className="text-cyan-500 font-semibold text-sm uppercase tracking-widest mb-4">La Nostra Storia</p>
-                <h2 className="text-3xl font-bold text-dark-800 mb-6">Oltre 15 Anni di Esperienza</h2>
+                <p className="text-cyan-500 font-semibold text-sm uppercase tracking-widest mb-4">{locale === 'it' ? 'La Nostra Storia' : 'Our Story'}</p>
+                <h2 className="text-3xl font-bold text-dark-800 mb-6">{locale === 'it' ? 'Oltre 15 Anni di Esperienza' : 'Over 15 Years of Experience'}</h2>
                 <p className="text-gray-500 leading-relaxed mb-4">
                   Print Solution S.r.l. nasce nel <strong>2010</strong> a Sesto San Giovanni (MI) con una missione chiara: 
                   portare in Italia le migliori soluzioni di stampa digitale per packaging ed etichette.
@@ -61,10 +61,10 @@ export default async function ChiSiamoPage() {
               <div className="bg-gradient-to-br from-cyan-500/10 to-magenta-500/10 rounded-3xl p-10 text-center">
                 <div className="grid grid-cols-2 gap-6">
                   {[
-                    { value: "2010", label: "Anno di fondazione" },
-                    { value: "15+", label: "Anni di esperienza" },
-                    { value: "1500+", label: "Clienti serviti" },
-                    { value: "5", label: "Brand distribuiti" },
+                    { value: "2010", label: locale === 'it' ? "Anno di fondazione" : "Year Founded" },
+                    { value: "15+", label: locale === 'it' ? "Anni di esperienza" : "Years of experience" },
+                    { value: "1500+", label: locale === 'it' ? "Clienti serviti" : "Clients served" },
+                    { value: "5", label: locale === 'it' ? "Brand distribuiti" : "Brands distributed" },
                   ].map((s) => (
                     <div key={s.label} className="bg-white rounded-2xl p-5 shadow-card">
                       <p className="text-2xl font-bold text-cyan-500">{s.value}</p>
@@ -77,12 +77,12 @@ export default async function ChiSiamoPage() {
 
             {/* Values */}
             <div className="mb-20">
-              <h2 className="text-3xl font-bold text-dark-800 mb-10 text-center">I Nostri Valori</h2>
+              <h2 className="text-3xl font-bold text-dark-800 mb-10 text-center">{locale === 'it' ? 'I Nostri Valori' : 'Our Values'}</h2>
               <div className="grid md:grid-cols-3 gap-8">
                 {[
                   {
                     icon: "🎯",
-                    title: "Competenza",
+                    title: locale === 'it' ? "Competenza" : "Expertise",
                     desc: "Conosciamo ogni prodotto nel dettaglio. Il nostro team tecnico ha formazione diretta dai produttori e anni di esperienza sul campo.",
                   },
                   {
@@ -92,7 +92,7 @@ export default async function ChiSiamoPage() {
                   },
                   {
                     icon: "⚡",
-                    title: "Innovazione",
+                    title: locale === 'it' ? "Innovazione" : "Innovation",
                     desc: "Siamo sempre alla ricerca delle tecnologie più avanzate per offrire soluzioni all'avanguardia nel mercato della stampa digitale.",
                   },
                 ].map((v) => (
@@ -109,8 +109,8 @@ export default async function ChiSiamoPage() {
             <div className="card-modern p-8 lg:p-12 mb-20">
               <div className="grid md:grid-cols-2 gap-8 items-center">
                 <div>
-                  <p className="text-magenta-500 font-semibold text-sm uppercase tracking-widest mb-4">Il Nostro Spazio</p>
-                  <h2 className="text-3xl font-bold text-dark-800 mb-6">Sala Demo</h2>
+                  <p className="text-magenta-500 font-semibold text-sm uppercase tracking-widest mb-4">{locale === 'it' ? 'Il Nostro Spazio' : 'Our Space'}</p>
+                  <h2 className="text-3xl font-bold text-dark-800 mb-6">{locale === 'it' ? 'Sala Demo' : 'Demo Room'}</h2>
                   <p className="text-gray-500 leading-relaxed mb-4">
                     La nostra sede a Sesto San Giovanni ospita una <strong>sala demo completamente attrezzata</strong> dove 
                     potrai vedere e testare dal vivo tutte le nostre soluzioni.
@@ -122,12 +122,12 @@ export default async function ChiSiamoPage() {
                   <p className="text-gray-500 leading-relaxed mb-6">
                     Le demo sono su appuntamento e completamente gratuite.
                   </p>
-                  <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Informazioni%20Print%20Solution&body=Buongiorno%2C%0A%0AVorrei%20ricevere%20informazioni.%0A%0AGrazie" className="btn-primary">Prenota una Visita</a>
+                  <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Informazioni%20Print%20Solution&body=Buongiorno%2C%0A%0AVorrei%20ricevere%20informazioni.%0A%0AGrazie" className="btn-primary">{locale === 'it' ? "Prenota una Visita" : "Book a Visit"}</a>
                 </div>
                 <div className="bg-gradient-to-br from-cyan-500 to-magenta-500 rounded-2xl h-64 flex items-center justify-center">
                   <div className="text-center text-white">
                     <span className="text-6xl block mb-2 opacity-50">🏢</span>
-                    <p className="font-semibold">Sala Demo</p>
+                    <p className="font-semibold">{locale === 'it' ? 'Sala Demo' : 'Demo Room'}</p>
                     <p className="text-white/70 text-sm">Sesto San Giovanni (MI)</p>
                   </div>
                 </div>
@@ -136,7 +136,7 @@ export default async function ChiSiamoPage() {
 
             {/* Team */}
             <div className="mb-20">
-              <h2 className="text-3xl font-bold text-dark-800 mb-4 text-center">Il Nostro Team</h2>
+              <h2 className="text-3xl font-bold text-dark-800 mb-4 text-center">{locale === 'it' ? 'Il Nostro Team' : 'Our Team'}</h2>
               <p className="text-gray-500 text-center max-w-2xl mx-auto mb-10">
                 Un team compatto ma altamente specializzato: commerciale, tecnico e assistenza. 
                 Ogni membro ha formazione diretta dai produttori che distribuiamo.
@@ -152,9 +152,9 @@ export default async function ChiSiamoPage() {
               </div>
               <div className="grid md:grid-cols-3 gap-6">
                 {[
-                  { role: "Commerciale", desc: "Consulenza, demo, analisi delle esigenze del cliente" },
-                  { role: "Tecnico", desc: "Installazione, formazione, configurazione macchine" },
-                  { role: "Assistenza", desc: "Supporto post-vendita, ricambi, Care Pack" },
+                  { role: locale === 'it' ? "Commerciale" : "Sales", desc: locale === 'it' ? "Consulenza, demo, analisi delle esigenze del cliente" : "Consulting, demos, client needs analysis" },
+                  { role: locale === 'it' ? "Tecnico" : "Technical", desc: locale === 'it' ? "Installazione, formazione, configurazione macchine" : "Installation, training, machine configuration" },
+                  { role: locale === 'it' ? "Assistenza" : "Support", desc: locale === 'it' ? "Supporto post-vendita, ricambi, Care Pack" : "After-sales support, spare parts, Care Pack" },
                 ].map((t) => (
                   <div key={t.role} className="bg-surface-50 rounded-2xl p-6 text-center">
                     <div className="w-16 h-16 rounded-full bg-gradient-to-br from-cyan-500 to-magenta-500 mx-auto mb-4 flex items-center justify-center text-white text-2xl font-bold">
@@ -177,11 +177,11 @@ export default async function ChiSiamoPage() {
           <div className="relative rounded-3xl bg-cta-gradient p-12 sm:p-16 text-white text-center overflow-hidden">
             <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl" />
             <div className="relative">
-              <h2 className="text-3xl sm:text-4xl font-bold mb-6">Lavoriamo Insieme</h2>
+              <h2 className="text-3xl sm:text-4xl font-bold mb-6">{locale === 'it' ? 'Lavoriamo Insieme' : "Let's Work Together"}</h2>
               <p className="text-white/80 max-w-2xl mx-auto mb-10 text-lg">
                 Contattaci per una consulenza gratuita o prenota una visita nella nostra sala demo.
               </p>
-              <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Informazioni%20Print%20Solution&body=Buongiorno%2C%0A%0AVorrei%20ricevere%20informazioni.%0A%0AGrazie" className="inline-flex items-center justify-center px-8 py-4 bg-white text-cyan-600 font-bold rounded-full hover:bg-yellow-400 hover:text-dark-800 transition-all duration-300 shadow-lg text-lg">Contattaci</a>
+              <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Informazioni%20Print%20Solution&body=Buongiorno%2C%0A%0AVorrei%20ricevere%20informazioni.%0A%0AGrazie" className="inline-flex items-center justify-center px-8 py-4 bg-white text-cyan-600 font-bold rounded-full hover:bg-yellow-400 hover:text-dark-800 transition-all duration-300 shadow-lg text-lg">{locale === 'it' ? 'Contattaci' : 'Contact Us'}</a>
             </div>
           </div>
         </div>

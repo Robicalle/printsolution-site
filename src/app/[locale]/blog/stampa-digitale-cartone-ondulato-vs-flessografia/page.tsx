@@ -67,8 +67,8 @@ export default async function ArticleDigitaleVsFlessoPage() {
         <div className="container-custom max-w-3xl">
           <div className="flex items-center gap-3 mb-8">
             <span className="px-3 py-1 rounded-full text-xs font-bold text-white bg-gradient-to-r from-yellow-500 to-yellow-600">Packaging</span>
-            <span className="text-gray-500 text-sm">1 Febbraio 2026</span>
-            <span className="text-gray-500 text-sm">· 7 min di lettura</span>
+            <span className="text-gray-500 text-sm">{locale === 'it' ? '1 Febbraio 2026' : 'February 1, 2026'}</span>
+            <span className="text-gray-500 text-sm">· 7 {locale === 'it' ? 'min di lettura' : 'min read'}</span>
           </div>
 
           <div className="prose prose-lg max-w-none text-gray-600 leading-relaxed">
@@ -166,8 +166,8 @@ export default async function ArticleDigitaleVsFlessoPage() {
           </div>
 
           <div className="mt-12 pt-8 border-t border-gray-100 flex flex-col sm:flex-row gap-4 justify-between items-center">
-            <Link href="/blog" className="text-cyan-500 font-semibold text-sm hover:underline">← Torna al Blog</Link>
-            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Informazioni%20Print%20Solution&body=Buongiorno%2C%0A%0AVorrei%20ricevere%20informazioni.%0A%0AGrazie" className="btn-primary text-sm">Richiedi Info sull&apos;EDM-650X</a>
+            <Link href="/blog" className="text-cyan-500 font-semibold text-sm hover:underline">{locale === 'it' ? '← Torna al Blog' : '← Back to Blog'}</Link>
+            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Informazioni%20Print%20Solution&body=Buongiorno%2C%0A%0AVorrei%20ricevere%20informazioni.%0A%0AGrazie" className="btn-primary text-sm">{locale === 'it' ? 'Richiedi Info sull&apos;EDM-650X' : 'Request EDM-650X Info'}</a>
           </div>
         </div>
       </article>

@@ -11,8 +11,8 @@ export default async function CondizioniPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white pt-28 pb-20 px-4">
       <div className="container-custom max-w-4xl">
-        <h1 className="text-4xl font-bold text-gray-900 mb-2">Condizioni di Vendita</h1>
-        <p className="text-sm text-gray-400 mb-10">Data di entrata in vigore: 15 gennaio 2024</p>
+        <h1 className="text-4xl font-bold text-gray-900 mb-2">{locale === 'it' ? 'Condizioni di Vendita' : 'Terms of Sale'}</h1>
+        <p className="text-sm text-gray-400 mb-10">{locale === 'it' ? 'Data di entrata in vigore: 15 gennaio 2024' : 'Effective date: January 15, 2024'}</p>
 
         <div className="prose prose-gray max-w-none space-y-8">
           <section>

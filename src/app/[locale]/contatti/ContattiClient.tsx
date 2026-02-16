@@ -46,7 +46,7 @@ export default function ContattiClient() {
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Contact Form */}
             <div>
-              <h2 className="text-2xl font-bold text-dark-800 mb-6">Scrivici</h2>
+              <h2 className="text-2xl font-bold text-dark-800 mb-6">{locale === 'it' ? 'Scrivici' : 'Write to Us'}</h2>
               {status === "success" ? (
                 <div className="card-modern p-8 text-center">
                   <span className="text-5xl block mb-4">✅</span>
@@ -82,7 +82,7 @@ export default function ContattiClient() {
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1.5">Azienda</label>
+                      <label className="block text-sm font-medium text-gray-700 mb-1.5">{locale === 'it' ? 'Azienda' : 'Company'}</label>
                       <input
                         type="text" value={formData.azienda}
                         onChange={(e) => setFormData({ ...formData, azienda: e.target.value })}
@@ -102,7 +102,7 @@ export default function ContattiClient() {
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1.5">Telefono</label>
+                      <label className="block text-sm font-medium text-gray-700 mb-1.5">{locale === 'it' ? 'Telefono' : 'Phone'}</label>
                       <input
                         type="tel" value={formData.telefono}
                         onChange={(e) => setFormData({ ...formData, telefono: e.target.value })}
@@ -240,7 +240,7 @@ export default function ContattiClient() {
 
               {/* Google Maps */}
               <div>
-                <h3 className="text-lg font-bold text-dark-800 mb-4">Dove Siamo</h3>
+                <h3 className="text-lg font-bold text-dark-800 mb-4">{locale === 'it' ? 'Dove Siamo' : 'Where We Are'}</h3>
                 <div className="rounded-2xl overflow-hidden border border-gray-100">
                   <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2794.1!2d9.2389!3d45.5336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4786c7c89dbfffff%3A0x0!2sVia+Pisa+200%2C+20099+Sesto+San+Giovanni+MI!5e0!3m2!1sit!2sit!4v1700000000000!5m2!1sit!2sit"
@@ -260,7 +260,7 @@ export default function ContattiClient() {
 
               {/* Orari */}
               <div className="bg-surface-50 rounded-xl p-6">
-                <h3 className="font-bold text-dark-800 mb-3">Orari</h3>
+                <h3 className="font-bold text-dark-800 mb-3">{locale === 'it' ? 'Orari' : 'Hours'}</h3>
                 <div className="space-y-2 text-sm">
                   <div className="flex justify-between">
                     <span className="text-gray-500">Lunedì — Venerdì</span>

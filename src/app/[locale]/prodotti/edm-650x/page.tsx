@@ -136,14 +136,14 @@ export default async function EDM650XPage() {
         <div className="absolute inset-0 bg-gradient-to-r from-dark-800/90 via-dark-800/70 to-dark-800/40" />
         <div className="container-custom px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-2xl">
-            <p className="text-cyan-300 text-sm mb-3 uppercase tracking-widest font-medium">Prodotti</p>
+            <p className="text-cyan-300 text-sm mb-3 uppercase tracking-widest font-medium">{locale === 'it' ? 'Prodotti' : 'Products'}</p>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">EDM-650X</h1>
             <p className="text-lg text-gray-200 leading-relaxed mb-8">
               Stampante digitale inkjet single-pass per carta e cartone a fogli stesi.
               Grande formato, velocit� industriale, inchiostri a base acqua CMYK.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20EDM-650X&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20EDM-650X.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">Richiedi Demo →</a>
+              <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20EDM-650X&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20EDM-650X.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">{locale === 'it' ? 'Richiedi Demo →' : 'Request Demo →'}</a>
             </div>
           </div>
         </div>
@@ -161,7 +161,7 @@ export default async function EDM650XPage() {
       {/* Descrizione */}
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
         <div className="container-custom max-w-4xl">
-          <h2 className="text-3xl font-bold text-dark-800 mb-6">Stampa Industriale su Grande Formato</h2>
+          <h2 className="text-3xl font-bold text-dark-800 mb-6">{locale === 'it' ? 'Stampa Industriale su Grande Formato' : 'Industrial Large Format Printing'}</h2>
           <p className="text-gray-500 leading-relaxed mb-4">
             La EDM-650X � la soluzione professionale per la stampa digitale inkjet su carta e cartone a fogli stesi.
             Progettata per volumi industriali, combina la tecnologia single-pass con teste di stampa HP di ultima
@@ -184,8 +184,8 @@ export default async function EDM650XPage() {
       <section className="px-4 sm:px-6 lg:px-8 pb-10 lg:pb-16 bg-white">
         <div className="container-custom">
           <div className="text-center mb-12">
-            <p className="text-cyan-500 font-semibold text-sm uppercase tracking-widest mb-4">Configurazioni</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-dark-800">Da 2 a 6 Teste di Stampa</h2>
+            <p className="text-cyan-500 font-semibold text-sm uppercase tracking-widest mb-4">{locale === 'it' ? 'Configurazioni' : 'Configurations'}</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-dark-800">{locale === 'it' ? 'Da 2 a 6 Teste di Stampa' : 'From 2 to 6 Print Heads'}</h2>
             <p className="text-gray-500 mt-4 max-w-2xl mx-auto">
               La EDM-650X � disponibile in diverse configurazioni per adattarsi alle tue esigenze produttive.
             </p>
@@ -201,7 +201,7 @@ export default async function EDM650XPage() {
               <p className="text-center text-sm text-gray-500 mt-3">EDM-650X - Versione da 3 a 6 Teste HP</p>
             </div>
             <div>
-              <h3 className="text-2xl font-bold text-dark-800 mb-4">Versione da 3 a 6 Teste</h3>
+              <h3 className="text-2xl font-bold text-dark-800 mb-4">{locale === 'it' ? 'Versione da 3 a 6 Teste' : 'Version with 3 to 6 Heads'}</h3>
               <p className="text-gray-500 leading-relaxed mb-4">
                 Per volumi produttivi pi� elevati, la EDM-650X � disponibile con 3, 4, 5 o 6 teste di stampa HP.
                 Larghezza di stampa fino a 180 cm con passaggio carta fino a 250 cm.
@@ -229,7 +229,7 @@ export default async function EDM650XPage() {
         <div className="container-custom">
           <div className="text-center mb-12">
             <p className="text-cyan-500 font-semibold text-sm uppercase tracking-widest mb-4">Video</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-dark-800">EDM-650X in Azione</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-dark-800">{locale === 'it' ? 'EDM-650X in Azione' : 'EDM-650X in Action'}</h2>
           </div>
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             <div className="aspect-video rounded-2xl overflow-hidden shadow-lg">
@@ -254,7 +254,7 @@ export default async function EDM650XPage() {
       {/* Features */}
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
         <div className="container-custom">
-          <h2 className="text-3xl font-bold text-dark-800 mb-8 text-center">Vantaggi Principali</h2>
+          <h2 className="text-3xl font-bold text-dark-800 mb-8 text-center">{locale === 'it' ? 'Vantaggi Principali' : 'Key Benefits'}</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((f) => (
               <div key={f.title} className="card-modern p-8 hover:-translate-y-1 transition-transform duration-300">
@@ -272,7 +272,7 @@ export default async function EDM650XPage() {
       {/* Specifiche Tecniche */}
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-surface-50">
         <div className="container-custom max-w-3xl">
-          <h2 className="text-3xl font-bold text-dark-800 mb-10 text-center">Specifiche Tecniche</h2>
+          <h2 className="text-3xl font-bold text-dark-800 mb-10 text-center">{locale === 'it' ? 'Specifiche Tecniche' : 'Technical Specifications'}</h2>
           <div className="space-y-3">
             {specs.map(([label, value]) => (
               <div key={label} className="flex flex-col sm:flex-row sm:justify-between gap-1 bg-white rounded-xl px-5 py-4 shadow-sm">
@@ -287,12 +287,12 @@ export default async function EDM650XPage() {
       {/* CTA */}
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-surface-50">
         <div className="container-custom text-center">
-          <h2 className="text-3xl font-bold text-dark-800 mb-6">Scopri la EDM-650X dal Vivo</h2>
+          <h2 className="text-3xl font-bold text-dark-800 mb-6">{locale === 'it' ? 'Scopri la EDM-650X dal Vivo' : 'See the EDM-650X Live'}</h2>
           <p className="text-gray-500 max-w-xl mx-auto mb-8">
             Visita la nostra sala demo a Sesto San Giovanni e vedi la EDM-650X in azione sui tuoi materiali.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20EDM-650X&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20EDM-650X.%0A%0AGrazie" className="btn-primary text-lg">Richiedi Demo →</a>
+            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20EDM-650X&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20EDM-650X.%0A%0AGrazie" className="btn-primary text-lg">{locale === 'it' ? 'Richiedi Demo →' : 'Request Demo →'}</a>
           </div>
         </div>
       </section>
@@ -300,12 +300,12 @@ export default async function EDM650XPage() {
       {/* Prodotti Correlati */}
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
         <div className="container-custom">
-          <h2 className="text-2xl font-bold text-dark-800 mb-8 text-center">Prodotti Correlati</h2>
+          <h2 className="text-2xl font-bold text-dark-800 mb-8 text-center">{locale === 'it' ? 'Prodotti Correlati' : 'Related Products'}</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { name: "GreenBox EVO", desc: "Stampante single-pass per packaging", href: "/prodotti/greenbox-evo", image: "/images/products/greenbox-evo-site-nobg.png" },
-              { name: "AurumPress", desc: "Stampatrice termica per foil", href: "/prodotti/aurumpress", image: "/images/products/aurumpress-nobg.png" },
-              { name: "Anypack AB2500", desc: "Box maker automatico", href: "/prodotti/ab2500", image: "/images/products/ab2500-hero-nobg.png" },
+              { name: "GreenBox EVO", desc: locale === 'it' ? "Stampante single-pass per packaging" : "Single-pass printer for packaging", href: "/prodotti/greenbox-evo", image: "/images/products/greenbox-evo-site-nobg.png" },
+              { name: "AurumPress", desc: locale === 'it' ? "Stampatrice termica per foil" : "Thermal foil printer", href: "/prodotti/aurumpress", image: "/images/products/aurumpress-nobg.png" },
+              { name: "Anypack AB2500", desc: locale === 'it' ? "Box maker automatico" : "Automatic box maker", href: "/prodotti/ab2500", image: "/images/products/ab2500-hero-nobg.png" },
             ].map((p) => (
               <Link key={p.name} href={p.href} className="card-modern overflow-hidden group hover:-translate-y-1 transition-transform duration-300">
                 <div className="h-40 relative overflow-hidden">

@@ -119,8 +119,8 @@ export default async function PackagingPage() {
   return (
     <>
       <PageHero
-        title="Soluzioni Packaging"
-        subtitle="Box maker automatici, stampa digitale su cartone ondulato, stampa UV, hot foil stamping e soluzioni speciali per packaging personalizzato."
+        title={locale === 'it' ? "Soluzioni Packaging" : "Packaging Solutions"}
+        subtitle={locale === 'it' ? "Box maker automatici, stampa digitale su cartone ondulato, stampa UV, hot foil stamping e soluzioni speciali per packaging personalizzato." : "Automatic box makers, digital printing on corrugated cardboard, UV printing, hot foil stamping and special solutions for custom packaging."}
         breadcrumb="Soluzioni"
         videoSrc="/videos/packaging-hero.mp4"
       />
@@ -129,7 +129,7 @@ export default async function PackagingPage() {
       <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <p className="text-cyan-500 font-semibold text-sm uppercase tracking-widest mb-4">La Nostra Gamma</p>
+            <p className="text-cyan-500 font-semibold text-sm uppercase tracking-widest mb-4">{locale === 'it' ? 'La Nostra Gamma' : 'Our Range'}</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-dark-800 tracking-tight mb-6">
               Tutto per il Packaging Digitale
             </h2>
@@ -199,7 +199,7 @@ export default async function PackagingPage() {
 
                     <div className="flex flex-wrap gap-3">
                       <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Packaging&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo.%0A%0AGrazie" className="btn-primary text-sm">
-                        Richiedi Demo
+                        {locale === 'it' ? 'Richiedi Demo' : 'Request Demo'}
                         <svg className="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
                       </a>
                     </div>

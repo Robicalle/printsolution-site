@@ -20,7 +20,7 @@ export default async function ShopPage() {
             🛒 E-Shop Consumabili
           </span>
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Consumabili <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600">Originali</span>
+            Consumabili <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600">{locale === 'it' ? 'Originali' : 'Original'}</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-4">
             Acquista le cartucce e i ricambi originali per la tua stampante. 
@@ -39,22 +39,22 @@ export default async function ShopPage() {
             <div className="flex items-center gap-4 bg-white p-5 rounded-2xl shadow-sm border border-gray-100">
               <div className="text-3xl">🚚</div>
               <div>
-                <p className="font-semibold text-gray-900">Spedizione Rapida</p>
-                <p className="text-sm text-gray-500">Ordini entro le 12:00 → spediti oggi</p>
+                <p className="font-semibold text-gray-900">{locale === 'it' ? 'Spedizione Rapida' : 'Fast Shipping'}</p>
+                <p className="text-sm text-gray-500">{locale === 'it' ? 'Ordini entro le 12:00 → spediti oggi' : 'Orders before 12:00 → shipped today'}</p>
               </div>
             </div>
             <div className="flex items-center gap-4 bg-white p-5 rounded-2xl shadow-sm border border-gray-100">
               <div className="text-3xl">✅</div>
               <div>
-                <p className="font-semibold text-gray-900">Prodotti Originali</p>
-                <p className="text-sm text-gray-500">Garantiti dai rispettivi produttori</p>
+                <p className="font-semibold text-gray-900">{locale === 'it' ? 'Prodotti Originali' : 'Original Products'}</p>
+                <p className="text-sm text-gray-500">{locale === 'it' ? 'Garantiti dai rispettivi produttori' : 'Guaranteed by respective manufacturers'}</p>
               </div>
             </div>
             <div className="flex items-center gap-4 bg-white p-5 rounded-2xl shadow-sm border border-gray-100">
               <div className="text-3xl">🔒</div>
               <div>
-                <p className="font-semibold text-gray-900">Pagamento Sicuro</p>
-                <p className="text-sm text-gray-500">Carte di credito, PayPal, Apple Pay</p>
+                <p className="font-semibold text-gray-900">{locale === 'it' ? 'Pagamento Sicuro' : 'Secure Payment'}</p>
+                <p className="text-sm text-gray-500">{locale === 'it' ? 'Carte di credito, PayPal, Apple Pay' : 'Credit cards, PayPal, Apple Pay'}</p>
               </div>
             </div>
           </div>
@@ -64,7 +64,7 @@ export default async function ShopPage() {
       {/* Category heading */}
       <section className="pb-6 px-4">
         <div className="container-custom">
-          <h2 className="text-2xl font-bold text-gray-900">Seleziona il tuo modello di stampante</h2>
+          <h2 className="text-2xl font-bold text-gray-900">{locale === 'it' ? 'Seleziona il tuo modello di stampante' : 'Select your printer model'}</h2>
         </div>
       </section>
 

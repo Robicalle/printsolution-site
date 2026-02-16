@@ -64,10 +64,10 @@ export default function CheckoutPage() {
         <nav className="flex items-center gap-2 text-sm text-gray-500 mb-8">
           <Link href="/shop" className="hover:text-cyan-500">E-Shop</Link>
           <span>›</span>
-          <span className="text-gray-900 font-medium">Checkout</span>
+          <span className="text-gray-900 font-medium">{locale === 'it' ? 'Checkout' : 'Checkout'}</span>
         </nav>
 
-        <h1 className="text-3xl font-bold text-gray-900 mb-8">Riepilogo Ordine</h1>
+        <h1 className="text-3xl font-bold text-gray-900 mb-8">{locale === 'it' ? 'Riepilogo Ordine' : 'Order Summary'}</h1>
 
         <div className="grid lg:grid-cols-3 gap-8">
           {/* Cart items */}
@@ -96,7 +96,7 @@ export default function CheckoutPage() {
             
             <div className="space-y-3 text-sm">
               <div className="flex justify-between">
-                <span className="text-gray-500">Subtotale</span>
+                <span className="text-gray-500">{locale === 'it' ? 'Subtotale' : 'Subtotal'}</span>
                 <span className="font-medium">€{totalPrice.toFixed(2)}</span>
               </div>
               <div className="flex justify-between">
@@ -104,12 +104,12 @@ export default function CheckoutPage() {
                 <span className="font-medium">€{(totalPrice * 0.22).toFixed(2)}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-gray-500">Spedizione</span>
+                <span className="text-gray-500">{locale === 'it' ? 'Spedizione' : 'Shipping'}</span>
                 <span className="font-medium text-green-600">Calcolata al checkout</span>
               </div>
               <hr />
               <div className="flex justify-between text-lg font-bold">
-                <span>Totale</span>
+                <span>{locale === 'it' ? 'Totale' : 'Total'}</span>
                 <span>€{(totalPrice * 1.22).toFixed(2)}</span>
               </div>
             </div>

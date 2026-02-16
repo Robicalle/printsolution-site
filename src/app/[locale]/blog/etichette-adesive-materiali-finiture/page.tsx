@@ -57,7 +57,7 @@ export default async function ArticleEtichetteAdesive() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <PageHero
-        title="Etichette Adesive: Materiali e Finiture"
+        title={locale === 'it' ? "Etichette Adesive: Materiali e Finiture" : "Adhesive Labels: Materials and Finishes"}
         subtitle="Come scegliere il materiale e la finitura giusta per ogni applicazione"
         breadcrumb="Blog"
       />
@@ -66,8 +66,8 @@ export default async function ArticleEtichetteAdesive() {
         <div className="container-custom max-w-3xl">
           <div className="flex items-center gap-3 mb-8">
             <span className="px-3 py-1 rounded-full text-xs font-bold text-white bg-gradient-to-r from-magenta-500 to-magenta-600">Etichette</span>
-            <span className="text-gray-500 text-sm">15 Febbraio 2026</span>
-            <span className="text-gray-500 text-sm">· 10 min di lettura</span>
+            <span className="text-gray-500 text-sm">{locale === 'it' ? '15 Febbraio 2026' : 'February 15, 2026'}</span>
+            <span className="text-gray-500 text-sm">· 10 {locale === 'it' ? 'min di lettura' : 'min read'}</span>
           </div>
 
           <div className="prose prose-lg max-w-none text-gray-600 leading-relaxed">
@@ -147,8 +147,8 @@ export default async function ArticleEtichetteAdesive() {
           </div>
 
           <div className="mt-12 pt-8 border-t border-gray-100 flex flex-col sm:flex-row gap-4 justify-between items-center">
-            <Link href="/blog" className="text-cyan-500 font-semibold text-sm hover:underline">← Torna al Blog</Link>
-            <a href="mailto:info@printsolutionsrl.it?subject=Campioni%20Materiali%20Etichette&body=Buongiorno%2C%0A%0AVorrei%20ricevere%20campioni%20di%20materiali%20per%20etichette%20adesive.%0A%0AGrazie" className="btn-primary text-sm">Richiedi Campioni Gratuiti</a>
+            <Link href="/blog" className="text-cyan-500 font-semibold text-sm hover:underline">{locale === 'it' ? '← Torna al Blog' : '← Back to Blog'}</Link>
+            <a href="mailto:info@printsolutionsrl.it?subject=Campioni%20Materiali%20Etichette&body=Buongiorno%2C%0A%0AVorrei%20ricevere%20campioni%20di%20materiali%20per%20etichette%20adesive.%0A%0AGrazie" className="btn-primary text-sm">{locale === 'it' ? 'Richiedi Campioni Gratuiti' : 'Request Free Samples'}</a>
           </div>
         </div>
       </article>

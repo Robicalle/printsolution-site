@@ -57,7 +57,7 @@ export default async function ArticleStampanteEtichetteColori() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <PageHero
-        title="Come Scegliere una Stampante per Etichette a Colori"
+        title={locale === 'it' ? "Come Scegliere una Stampante per Etichette a Colori" : "How to Choose a Color Label Printer"}
         subtitle="Guida completa alle tecnologie, criteri di scelta e modelli per ogni esigenza"
         breadcrumb="Blog"
       />
@@ -66,8 +66,8 @@ export default async function ArticleStampanteEtichetteColori() {
         <div className="container-custom max-w-3xl">
           <div className="flex items-center gap-3 mb-8">
             <span className="px-3 py-1 rounded-full text-xs font-bold text-white bg-gradient-to-r from-magenta-500 to-magenta-600">Etichette</span>
-            <span className="text-gray-500 text-sm">15 Febbraio 2026</span>
-            <span className="text-gray-500 text-sm">· 9 min di lettura</span>
+            <span className="text-gray-500 text-sm">{locale === 'it' ? '15 Febbraio 2026' : 'February 15, 2026'}</span>
+            <span className="text-gray-500 text-sm">· 9 {locale === 'it' ? 'min di lettura' : 'min read'}</span>
           </div>
 
           <div className="prose prose-lg max-w-none text-gray-600 leading-relaxed">
@@ -153,8 +153,8 @@ export default async function ArticleStampanteEtichetteColori() {
           </div>
 
           <div className="mt-12 pt-8 border-t border-gray-100 flex flex-col sm:flex-row gap-4 justify-between items-center">
-            <Link href="/blog" className="text-cyan-500 font-semibold text-sm hover:underline">← Torna al Blog</Link>
-            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Info%20Stampante%20Etichette&body=Buongiorno%2C%0A%0AVorrei%20informazioni%20sulle%20stampanti%20per%20etichette%20a%20colori.%0A%0AGrazie" className="btn-primary text-sm">Richiedi un Test di Stampa Gratuito</a>
+            <Link href="/blog" className="text-cyan-500 font-semibold text-sm hover:underline">{locale === 'it' ? '← Torna al Blog' : '← Back to Blog'}</Link>
+            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Info%20Stampante%20Etichette&body=Buongiorno%2C%0A%0AVorrei%20informazioni%20sulle%20stampanti%20per%20etichette%20a%20colori.%0A%0AGrazie" className="btn-primary text-sm">{locale === 'it' ? 'Richiedi un Test di Stampa Gratuito' : 'Request a Free Print Test'}</a>
           </div>
         </div>
       </article>

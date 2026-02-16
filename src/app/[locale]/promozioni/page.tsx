@@ -28,7 +28,7 @@ export default async function PromozioniPage() {
   return (
     <>
       <PageHero
-        title="Promozioni"
+        title={locale === 'it' ? "Promozioni" : "Promotions"}
         subtitle="Le nostre offerte speciali su macchine da stampa e packaging."
         breadcrumb="Promozioni"
         imageSrc="/images/hero-promozioni.jpg"

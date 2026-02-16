@@ -102,7 +102,7 @@ export default async function UsatoPage() {
   return (
     <>
       <PageHero
-        title="Usato Garantito"
+        title={locale === 'it' ? "Usato Garantito" : "Certified Pre-Owned"}
         subtitle="Macchine da stampa e packaging usate, revisionate, testate e coperte da garanzia 6 mesi."
         breadcrumb="Usato Garantito"
         imageSrc="/images/hero-usato.jpg"

@@ -91,7 +91,7 @@ export default async function SoluzioniPage() {
         <div className="absolute bottom-0 left-0 w-64 h-64 bg-magenta-500/10 rounded-full blur-3xl" />
         <div className="container-custom px-4 sm:px-6 lg:px-8 relative">
           <p className="text-cyan-300 text-sm mb-3 uppercase tracking-widest font-medium">Print Solution</p>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight">Le Nostre Soluzioni</h1>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight">{locale === 'it' ? 'Le Nostre Soluzioni' : 'Our Solutions'}</h1>
           <p className="mt-6 text-lg text-gray-300/90 max-w-2xl leading-relaxed">
             Tecnologie digitali per stampa e personalizzazione: dal packaging industriale alle etichette, dalla labbratura libri allo shopper di lusso.
           </p>
@@ -119,7 +119,7 @@ export default async function SoluzioniPage() {
                   </div>
                   <p className="text-gray-500 leading-relaxed mb-6">{cat.desc}</p>
                   <Link href={cat.href} className={`inline-flex items-center px-6 py-3 bg-gradient-to-r ${cat.color} text-white font-semibold rounded-full hover:shadow-lg transition-all`}>
-                    Scopri {cat.name} →
+                    {locale === 'it' ? 'Scopri ' : 'Discover '}{cat.name} →
                   </Link>
                 </div>
               </div>
@@ -131,11 +131,11 @@ export default async function SoluzioniPage() {
       {/* CTA */}
       <section className="section-padding bg-surface-50">
         <div className="container-custom text-center">
-          <h2 className="text-3xl font-bold text-dark-800 mb-6">Non sai quale soluzione fa per te?</h2>
+          <h2 className="text-3xl font-bold text-dark-800 mb-6">{locale === 'it' ? 'Non sai quale soluzione fa per te?' : 'Not sure which solution is right for you?'}</h2>
           <p className="text-gray-500 max-w-xl mx-auto mb-8">
             Il nostro team ti aiuta a scegliere la tecnologia più adatta alle tue esigenze. Contattaci per una consulenza gratuita.
           </p>
-          <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Informazioni&body=Buongiorno%2C%0A%0AVorrei%20informazioni%20sulle%20vostre%20soluzioni.%0A%0AGrazie" className="btn-primary text-lg">Contattaci →</a>
+          <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Informazioni&body=Buongiorno%2C%0A%0AVorrei%20informazioni%20sulle%20vostre%20soluzioni.%0A%0AGrazie" className="btn-primary text-lg">{locale === 'it' ? 'Contattaci →' : 'Contact Us →'}</a>
         </div>
       </section>
     </>

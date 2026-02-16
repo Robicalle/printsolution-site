@@ -192,7 +192,7 @@ export default async function EtichettePage() {
   return (
     <>
       <PageHero
-        title="Soluzioni Etichette"
+        title={locale === 'it' ? "Soluzioni Etichette" : "Label Solutions"}
         subtitle="Stampanti per etichette a colori in bobina, fustellatori digitali, sistemi completi e applicatori. Tecnologia Memjet, pigmento e toner."
         breadcrumb="Soluzioni"
         videoSrc="/videos/etichette-hero.mp4"
@@ -243,7 +243,7 @@ export default async function EtichettePage() {
                     </ul>
                     <div className="flex flex-wrap gap-3">
                       <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Etichette&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo.%0A%0AGrazie" className="btn-primary text-sm">
-                        Richiedi Demo
+                        {locale === 'it' ? 'Richiedi Demo' : 'Request Demo'}
                         <svg className="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
                       </a>
                     </div>
@@ -300,7 +300,7 @@ export default async function EtichettePage() {
                     </ul>
                     <div className="flex flex-wrap gap-3">
                       <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Etichette&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo.%0A%0AGrazie" className="btn-primary text-sm">
-                        Richiedi Demo
+                        {locale === 'it' ? 'Richiedi Demo' : 'Request Demo'}
                         <svg className="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
                       </a>
                     </div>

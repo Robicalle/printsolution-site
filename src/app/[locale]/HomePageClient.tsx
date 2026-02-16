@@ -76,7 +76,7 @@ function Hero() {
         <div className="max-w-4xl">
             <div className="mb-6 lg:mb-10" />
             <h1 className="text-3xl sm:text-5xl lg:text-7xl xl:text-[5.5rem] font-bold leading-[1.05] sm:leading-[0.95] tracking-tight mb-6 lg:mb-10 opacity-0 animate-fade-up-delay">
-              Soluzioni Digitali per{" "}
+              {"Soluzioni Digitali per"}{" "}
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-emerald-400 to-lime-400">
                 Stampa e Packaging
               </span>
@@ -96,7 +96,7 @@ function Hero() {
 
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 opacity-70 animate-bounce flex">
-        <span className="text-white/60 text-xs uppercase tracking-widest font-medium">Scopri</span>
+        <span className="text-white/60 text-xs uppercase tracking-widest font-medium">{"Scopri"}</span>
         <svg className="w-5 h-5 text-white/60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7" />
         </svg>
@@ -181,8 +181,8 @@ function Solutions() {
     <section className="section-padding bg-surface-50">
       <div className="container-custom" ref={ref}>
         <div className={`text-center mb-16 transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <p className="text-cyan-500 font-semibold text-sm uppercase tracking-widest mb-4">Cosa facciamo</p>
-          <h2 className="text-4xl sm:text-5xl font-bold text-dark-800 tracking-tight">Le Nostre Soluzioni</h2>
+          <p className="text-cyan-500 font-semibold text-sm uppercase tracking-widest mb-4">{"Cosa facciamo"}</p>
+          <h2 className="text-4xl sm:text-5xl font-bold text-dark-800 tracking-tight">{"Le Nostre Soluzioni"}</h2>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 lg:gap-5">
           {solutions.map((s, i) => (
@@ -200,7 +200,7 @@ function Solutions() {
               </h3>
               <p className="text-gray-500 text-[15px] leading-relaxed mb-6 flex-grow">{s.desc}</p>
               <span className="inline-flex items-center text-cyan-500 text-sm font-semibold group-hover:gap-3 gap-2 transition-all mt-auto">
-                Scopri di più
+                {"Scopri di più"}
                 <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
@@ -250,8 +250,8 @@ function FeaturedProducts() {
     <section className="section-padding bg-white">
       <div className="container-custom" ref={ref}>
         <div className={`text-center mb-16 transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <p className="text-cyan-500 font-semibold text-sm uppercase tracking-widest mb-4">I nostri prodotti</p>
-          <h2 className="text-4xl sm:text-5xl font-bold text-dark-800 tracking-tight">Tecnologie di Punta</h2>
+          <p className="text-cyan-500 font-semibold text-sm uppercase tracking-widest mb-4">{"I nostri prodotti"}</p>
+          <h2 className="text-4xl sm:text-5xl font-bold text-dark-800 tracking-tight">{"Tecnologie di Punta"}</h2>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {products.map((p, i) => (
@@ -289,7 +289,7 @@ function FeaturedProducts() {
                   ))}
                 </ul>
                 <Link href={p.href} className="inline-flex items-center text-cyan-500 font-semibold text-sm hover:gap-3 gap-2 transition-all group/link">
-                  Scopri di più
+                  {"Scopri di più"}
                   <svg className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
@@ -321,9 +321,9 @@ function WhyUs() {
 
       <div className="container-custom relative" ref={ref}>
         <div className={`text-center mb-16 transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <p className="text-cyan-400 font-semibold text-sm uppercase tracking-widest mb-4">Perché sceglierci</p>
+          <p className="text-cyan-400 font-semibold text-sm uppercase tracking-widest mb-4">{"Perché sceglierci"}</p>
           <h2 className="text-4xl sm:text-5xl font-bold tracking-tight">
-            Numeri che <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-emerald-400 to-lime-400">parlano</span>
+            Numeri che <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-emerald-400 to-lime-400">{"parlano"}</span>
           </h2>
         </div>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
@@ -432,11 +432,11 @@ function DemoCTA() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Print%20Solution&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo.%0A%0AGrazie" className="inline-flex items-center justify-center px-8 py-4 bg-white text-cyan-600 font-bold rounded-full hover:bg-yellow-400 hover:text-dark-800 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 text-lg">
-                Richiedi Demo →
+                {"Richiedi Demo →"}
               </a>
               <a href="tel:+390249439417" className="inline-flex items-center justify-center px-8 py-4 border-2 border-white/30 text-white font-semibold rounded-full hover:bg-white/10 transition-all duration-300 text-lg">
                 <svg className="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" /></svg>
-                Chiamaci Ora
+                {"Chiamaci Ora"}
               </a>
             </div>
           </div>

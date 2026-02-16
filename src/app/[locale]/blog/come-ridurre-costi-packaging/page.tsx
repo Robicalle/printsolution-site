@@ -57,7 +57,7 @@ export default async function ArticleCostiPackaging() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <PageHero
-        title="Come Ridurre i Costi di Packaging"
+        title={locale === 'it' ? "Come Ridurre i Costi di Packaging" : "How to Reduce Packaging Costs"}
         subtitle="Strategie concrete per ottimizzare i costi senza compromettere qualità e immagine"
         breadcrumb="Blog"
       />
@@ -66,8 +66,8 @@ export default async function ArticleCostiPackaging() {
         <div className="container-custom max-w-3xl">
           <div className="flex items-center gap-3 mb-8">
             <span className="px-3 py-1 rounded-full text-xs font-bold text-white bg-gradient-to-r from-cyan-500 to-cyan-600">Packaging</span>
-            <span className="text-gray-500 text-sm">15 Febbraio 2026</span>
-            <span className="text-gray-500 text-sm">· 8 min di lettura</span>
+            <span className="text-gray-500 text-sm">{locale === 'it' ? '15 Febbraio 2026' : 'February 15, 2026'}</span>
+            <span className="text-gray-500 text-sm">· 8 {locale === 'it' ? 'min di lettura' : 'min read'}</span>
           </div>
 
           <div className="prose prose-lg max-w-none text-gray-600 leading-relaxed">
@@ -140,8 +140,8 @@ export default async function ArticleCostiPackaging() {
           </div>
 
           <div className="mt-12 pt-8 border-t border-gray-100 flex flex-col sm:flex-row gap-4 justify-between items-center">
-            <Link href="/blog" className="text-cyan-500 font-semibold text-sm hover:underline">← Torna al Blog</Link>
-            <a href="mailto:info@printsolutionsrl.it?subject=Ottimizzazione%20Costi%20Packaging&body=Buongiorno%2C%0A%0AVorrei%20una%20consulenza%20per%20ridurre%20i%20costi%20di%20packaging.%0A%0AGrazie" className="btn-primary text-sm">Richiedi una Consulenza Gratuita</a>
+            <Link href="/blog" className="text-cyan-500 font-semibold text-sm hover:underline">{locale === 'it' ? '← Torna al Blog' : '← Back to Blog'}</Link>
+            <a href="mailto:info@printsolutionsrl.it?subject=Ottimizzazione%20Costi%20Packaging&body=Buongiorno%2C%0A%0AVorrei%20una%20consulenza%20per%20ridurre%20i%20costi%20di%20packaging.%0A%0AGrazie" className="btn-primary text-sm">{locale === 'it' ? 'Richiedi una Consulenza Gratuita' : 'Request a Free Consultation'}</a>
           </div>
         </div>
       </article>

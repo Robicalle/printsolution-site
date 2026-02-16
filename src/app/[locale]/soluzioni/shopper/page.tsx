@@ -76,7 +76,7 @@ export default async function ShopperPage() {
   return (
     <>
       <PageHero
-        title="Shopper & Packaging di Lusso"
+        title={locale === 'it' ? "Shopper & Packaging di Lusso" : "Shoppers & Luxury Packaging"}
         subtitle="Stampa hot foil digitale e stampa diretta per shopper, buste e packaging premium. Nobilitazione e personalizzazione on-demand."
         breadcrumb="Soluzioni"
         videoSrc="/videos/shopper-hero.mp4"
@@ -140,7 +140,7 @@ export default async function ShopperPage() {
 
                     <div className="flex flex-wrap gap-3">
                       <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Shopper&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo.%0A%0AGrazie" className="btn-primary text-sm">
-                        Richiedi Demo
+                        {locale === 'it' ? 'Richiedi Demo' : 'Request Demo'}
                         <svg className="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
                       </a>
                     </div>

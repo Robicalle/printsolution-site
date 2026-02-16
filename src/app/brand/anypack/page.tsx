@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import Link from "next/link";
 import Image from "next/image";
@@ -40,7 +40,7 @@ export default function AnypackPage() {
                 giapponesi (Keyence, Panasonic) e lame in acciaio SKD11 per prestazioni industriali.
               </p>
               <p className="text-gray-500 leading-relaxed mb-4">
-                Un solo operatore, cambio formato in 3 secondi, 100+ modelli Fefco precaricati e 20.000 record 
+                Un solo operatore, cambio formato in 10 secondi, 100+ modelli Fefco precaricati e 20.000 record 
                 memorizzabili: Anypack elimina lo stock di scatole e permette la produzione on-demand.
               </p>
               <p className="text-gray-500 leading-relaxed">
@@ -71,7 +71,7 @@ export default function AnypackPage() {
                     ["Dimensioni", m.dim],
                   ].map(([label, val]) => (
                     <div key={label} className="flex justify-between">
-                      <span className="text-gray-400">{label}</span>
+                      <span className="text-gray-500">{label}</span>
                       <span className="font-medium text-dark-800">{val}</span>
                     </div>
                   ))}
@@ -84,7 +84,7 @@ export default function AnypackPage() {
             <h3 className="text-xl font-bold text-dark-800 mb-6">Perché Anypack AB2500</h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
               {[
-                "Cambio formato in 3 secondi",
+                "Cambio formato in 10 secondi",
                 "500–600 pezzi/ora",
                 "1 solo operatore necessario",
                 "100+ modelli Fefco precaricati",

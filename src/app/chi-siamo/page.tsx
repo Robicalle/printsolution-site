@@ -1,5 +1,6 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Chi Siamo",
@@ -30,6 +31,7 @@ export default function ChiSiamoPage() {
         title="Chi Siamo"
         subtitle="Dal 2010, punto di riferimento in Italia per le soluzioni digitali di stampa packaging, etichette e consumabili."
         breadcrumb="Print Solution"
+        imageSrc="/images/chi-siamo-team.jpg"
       />
 
       {/* Story */}
@@ -64,7 +66,7 @@ export default function ChiSiamoPage() {
                   ].map((s) => (
                     <div key={s.label} className="bg-white rounded-2xl p-5 shadow-card">
                       <p className="text-2xl font-bold text-cyan-500">{s.value}</p>
-                      <p className="text-gray-400 text-sm mt-1">{s.label}</p>
+                      <p className="text-gray-500 text-sm mt-1">{s.label}</p>
                     </div>
                   ))}
                 </div>
@@ -137,6 +139,15 @@ export default function ChiSiamoPage() {
                 Un team compatto ma altamente specializzato: commerciale, tecnico e assistenza. 
                 Ogni membro ha formazione diretta dai produttori che distribuiamo.
               </p>
+              <div className="relative w-full aspect-[16/9] rounded-3xl overflow-hidden mb-10">
+                <Image
+                  src="/images/team-photo.webp"
+                  alt="Il team di Print Solution"
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </div>
               <div className="grid md:grid-cols-3 gap-6">
                 {[
                   { role: "Commerciale", desc: "Consulenza, demo, analisi delle esigenze del cliente" },
@@ -148,36 +159,12 @@ export default function ChiSiamoPage() {
                       {t.role[0]}
                     </div>
                     <h4 className="font-bold text-dark-800 mb-2">{t.role}</h4>
-                    <p className="text-gray-400 text-sm">{t.desc}</p>
+                    <p className="text-gray-500 text-sm">{t.desc}</p>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Grenke */}
-            <div className="card-modern p-8 lg:p-10 bg-gradient-to-r from-cyan-500/5 to-transparent">
-              <div className="grid md:grid-cols-2 gap-8 items-center">
-                <div>
-                  <p className="text-green-500 font-semibold text-sm uppercase tracking-widest mb-4">Finanziamento</p>
-                  <h2 className="text-2xl font-bold text-dark-800 mb-4">Partnership Grenke Leasing</h2>
-                  <p className="text-gray-500 leading-relaxed mb-4">
-                    Grazie alla partnership con <strong>Grenke</strong>, leader europeo nel leasing tecnologico, 
-                    offriamo soluzioni di finanziamento flessibili per tutte le nostre macchine.
-                  </p>
-                  <p className="text-gray-500 leading-relaxed">
-                    Canoni mensili accessibili, nessun anticipo obbligatorio e la possibilità di rinnovare 
-                    la tecnologia a fine contratto. Chiedi un preventivo personalizzato.
-                  </p>
-                </div>
-                <div className="text-center">
-                  <div className="inline-block bg-white rounded-2xl p-8 shadow-card">
-                    <span className="text-5xl block mb-3">💰</span>
-                    <p className="font-bold text-dark-800 text-lg">Leasing Grenke</p>
-                    <p className="text-gray-400 text-sm mt-1">Canoni flessibili, zero anticipo</p>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>

@@ -3,9 +3,9 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "PackPrinter UV — Stampante UV Single-Pass per Packaging",
+  title: "PackPrinter UV - Stampante UV Single-Pass",
   description:
-    "PackPrinter UV: stampante digitale UV single-pass CMYK+W fino a 50 m/min. Stampa su PVC, vetro, cartone, legno, ceramica e materiali sintetici. 9 configurazioni disponibili.",
+    "PackPrinter UV: stampante UV single-pass CMYK+W fino a 50 m/min. Stampa su PVC, vetro, cartone, legno e ceramica. 9 configurazioni.",
   keywords: [
     "stampante UV single-pass",
     "stampa UV packaging",
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     "stampante materiali sintetici",
   ],
   openGraph: {
-    title: "PackPrinter UV — Stampante UV Single-Pass per Packaging | Print Solution",
+    title: "PackPrinter UV - Stampante UV Single-Pass per Packaging | Print Solution",
     description:
       "Stampante digitale UV single-pass CMYK+W fino a 50 m/min. Stampa su qualsiasi materiale.",
     images: ["/images/products/packprinter-uv.avif"],
@@ -54,12 +54,12 @@ const breadcrumbJsonLd = {
 const specs = [
   ["Modelli", "9 modelli con luce di stampa variabile"],
   ["Luce di stampa", "Da 12 cm a 118 cm"],
-  ["Risoluzione", "600 × 1200 dpi"],
-  ["Velocità di stampa", "Fino a 50 metri al minuto"],
-  ["Modalità di stampa", "4 colori + Bianco (CMYKW)"],
+  ["Risoluzione", "600 � 1200 dpi"],
+  ["Velocit� di stampa", "Fino a 50 metri al minuto"],
+  ["Modalit� di stampa", "4 colori + Bianco (CMYKW)"],
   ["Tipo di inchiostri", "UV ad alte prestazioni"],
-  ["Testine", "S3200 U3 — 3200 ugelli"],
-  ["Dimensione testina", "150,4 mm × 30 mm × 52 mm"],
+  ["Testine", "S3200 U3 - 3200 ugelli"],
+  ["Dimensione testina", "150,4 mm � 30 mm � 52 mm"],
   ["Supporti stampabili", "PVC, ABS, acrilico, cartone, legno, vetro, ceramica, metallo, gommapiuma, similpelle"],
 ];
 
@@ -71,7 +71,7 @@ const features = [
       </svg>
     ),
     title: "50 Metri al Minuto",
-    desc: "Velocità single-pass eccezionale per produzioni industriali. Grandi tirature completate in tempi record senza sacrificare la qualità.",
+    desc: "Velocit� single-pass eccezionale per produzioni industriali. Grandi tirature completate in tempi record senza sacrificare la qualit�.",
   },
   {
     icon: (
@@ -116,7 +116,7 @@ const features = [
       </svg>
     ),
     title: "ROI Rapido",
-    desc: "Alta velocità e versatilità dei materiali permettono di servire più mercati. Ritorno sull&apos;investimento in tempi brevi.",
+    desc: "Alta velocit� e versatilit� dei materiali permettono di servire pi� mercati. Ritorno sull&apos;investimento in tempi brevi.",
   },
 ];
 
@@ -126,77 +126,84 @@ export default function PackPrinterUVPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       {/* Hero */}
-      <section className="relative bg-hero-gradient text-white pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
-        <div className="absolute top-20 right-0 w-96 h-96 bg-yellow-500/20 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-64 h-64 bg-yellow-600/10 rounded-full blur-3xl" />
-        <div className="container-custom px-4 sm:px-6 lg:px-8 relative">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <p className="text-yellow-300 text-sm mb-3 uppercase tracking-widest font-medium">Prodotti</p>
+      <section className="relative text-white pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden min-h-[60vh] flex items-center">
+        <video autoPlay muted loop playsInline aria-hidden="true" className="absolute inset-0 w-full h-full object-cover">
+          <source src="/videos/packprinter-uv-hero.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-r from-dark-800/90 via-dark-800/70 to-dark-800/40" />
+        <div className="container-custom px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="max-w-2xl">
+            <p className="text-yellow-300 text-sm mb-3 uppercase tracking-widest font-medium">Prodotti</p>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">PackPrinter UV</h1>
               <p className="text-lg text-gray-300/90 leading-relaxed mb-8">
-                Stampante digitale UV single-pass CMYK + Bianco. Stampa ad alta velocità fino a 50 m/min 
+                Stampante digitale UV single-pass CMYK + Bianco. Stampa ad alta velocit� fino a 50 m/min
                 su packaging, vetro, PVC, legno, ceramica e materiali sintetici. 9 configurazioni disponibili.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20PackPrinter%20UV&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20PackPrinter%20UV.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">Richiedi Demo →</a>
+                <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20PackPrinter%20UV&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20PackPrinter%20UV.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">Richiedi Demo ?</a>
               </div>
-            </div>
-            <div className="relative h-72 lg:h-96 rounded-3xl overflow-hidden">
-              <Image src="/images/products/packprinter-uv.avif" alt="PackPrinter UV" fill className="object-contain p-4" priority />
-            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Photo */}
+      <section className="bg-white pt-8 lg:pt-10 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto">
+          <div className="relative w-full aspect-[16/9] rounded-3xl overflow-hidden">
+            <Image src="/images/products/packprinter-uv.avif" alt="Product photo" fill className="object-contain p-6" />
           </div>
         </div>
       </section>
 
       {/* Descrizione */}
-      <section className="section-padding bg-white">
+      <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
         <div className="container-custom max-w-4xl">
           <h2 className="text-3xl font-bold text-dark-800 mb-6">Stampa UV su Qualsiasi Materiale</h2>
           <p className="text-gray-500 leading-relaxed mb-4">
-            PackPrinter UV è la stampante digitale single-pass che rivoluziona la stampa su packaging e materiali 
-            sintetici. Grazie alla testina all&apos;avanguardia con inchiostri UV, stampa a 5 colori (CMYK + Bianco) 
+            PackPrinter UV � la stampante digitale single-pass che rivoluziona la stampa su packaging e materiali
+            sintetici. Grazie alla testina all&apos;avanguardia con inchiostri UV, stampa a 5 colori (CMYK + Bianco)
             su materiali porosi e non porosi con prestazioni eccezionali.
           </p>
           <p className="text-gray-500 leading-relaxed mb-4">
-            La versatilità è il suo punto di forza: PVC, ABS, acrilico, cartone patinato, Forex, shopper in 
-            materiali sintetici, vinile, similpelle, vetro, ceramica, legno e lastre metalliche. Con una velocità 
-            fino a 50 metri al minuto e risoluzione 600×1200 dpi, PackPrinter UV è la soluzione ideale per 
-            produzioni industriali e personalizzazioni di alta qualità.
+            La versatilit� � il suo punto di forza: PVC, ABS, acrilico, cartone patinato, Forex, shopper in
+            materiali sintetici, vinile, similpelle, vetro, ceramica, legno e lastre metalliche. Con una velocit�
+            fino a 50 metri al minuto e risoluzione 600�1200 dpi, PackPrinter UV � la soluzione ideale per
+            produzioni industriali e personalizzazioni di alta qualit�.
           </p>
           <p className="text-gray-500 leading-relaxed">
-            Disponibile in 9 configurazioni con luce di stampa da 12 a 118 cm, si adatta perfettamente alle 
-            esigenze di ogni azienda. Gli inchiostri UV garantiscono resistenza agli agenti atmosferici, 
+            Disponibile in 9 configurazioni con luce di stampa da 12 a 118 cm, si adatta perfettamente alle
+            esigenze di ogni azienda. Gli inchiostri UV garantiscono resistenza agli agenti atmosferici,
             all&apos;acqua e allo sfregamento per risultati brillanti e duraturi nel tempo.
           </p>
         </div>
       </section>
 
       {/* Video */}
-      <section className="section-padding bg-white">
+      <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
         <div className="container-custom">
           <div className="text-center mb-12">
             <p className="text-yellow-500 font-semibold text-sm uppercase tracking-widest mb-4">Video</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-dark-800">PackPrinter UV in Azione</h2>
           </div>
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             <div className="aspect-video rounded-2xl overflow-hidden shadow-lg">
-              <video controls preload="metadata" className="w-full h-full object-cover"><source src="/videos/packprinter-00001.mp4" type="video/mp4" /></video>
+              <video controls playsInline preload="metadata" poster="/images/posters/packprinter-uv-1.jpg" className="w-full h-full rounded-2xl">
+                <source src="/videos/packprinter-uv-1.mp4" type="video/mp4" />
+              </video>
             </div>
             <div className="aspect-video rounded-2xl overflow-hidden shadow-lg">
-              <video controls preload="metadata" className="w-full h-full object-cover"><source src="/videos/packprinter-00002.mp4" type="video/mp4" /></video>
-            </div>
-            <div className="aspect-video rounded-2xl overflow-hidden shadow-lg md:col-span-2 max-w-lg mx-auto w-full">
-              <video controls preload="metadata" className="w-full h-full object-cover"><source src="/videos/packprinter-00003.mp4" type="video/mp4" /></video>
+              <video controls playsInline preload="metadata" poster="/images/posters/packprinter-uv-3.jpg" className="w-full h-full rounded-2xl">
+                <source src="/videos/packprinter-uv-3.mp4" type="video/mp4" />
+              </video>
             </div>
           </div>
         </div>
       </section>
 
       {/* Features */}
-      <section className="section-padding bg-white">
+      <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
         <div className="container-custom">
-          <h2 className="text-3xl font-bold text-dark-800 mb-12 text-center">Vantaggi Principali</h2>
+          <h2 className="text-3xl font-bold text-dark-800 mb-8 text-center">Vantaggi Principali</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((f) => (
               <div key={f.title} className="card-modern p-8 hover:-translate-y-1 transition-transform duration-300">
@@ -211,7 +218,7 @@ export default function PackPrinterUVPage() {
         </div>
       </section>
       {/* Specifiche Tecniche */}
-      <section className="section-padding bg-surface-50">
+      <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-surface-50">
         <div className="container-custom max-w-3xl">
           <h2 className="text-3xl font-bold text-dark-800 mb-10 text-center">Specifiche Tecniche</h2>
           <div className="space-y-3">
@@ -225,17 +232,15 @@ export default function PackPrinterUVPage() {
         </div>
       </section>
 
-
-
       {/* CTA */}
-      <section className="section-padding bg-surface-50">
+      <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-surface-50">
         <div className="container-custom text-center">
           <h2 className="text-3xl font-bold text-dark-800 mb-6">Scopri PackPrinter UV dal Vivo</h2>
           <p className="text-gray-500 max-w-xl mx-auto mb-8">
-            Porta i tuoi materiali nella nostra sala demo a Sesto San Giovanni e scopri la versatilità della stampa UV single-pass.
+            Porta i tuoi materiali nella nostra sala demo a Sesto San Giovanni e scopri la versatilit� della stampa UV single-pass.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="tel:+390236527093" className="btn-outline text-lg inline-flex items-center">
+            <a href="tel:+390249439417" className="btn-outline text-lg inline-flex items-center">
               <svg className="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" /></svg>
               Chiamaci Ora
             </a>
@@ -244,13 +249,13 @@ export default function PackPrinterUVPage() {
       </section>
 
       {/* Prodotti Correlati */}
-      <section className="section-padding bg-white">
+      <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
         <div className="container-custom">
           <h2 className="text-2xl font-bold text-dark-800 mb-8 text-center">Prodotti Correlati</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { name: "GreenBox EVO", desc: "Stampante single-pass per packaging", href: "/prodotti/greenbox-evo", image: "/images/products/greenbox-evo.jpeg" },
-              { name: "EDM-650X", desc: "Stampante single-pass grande formato", href: "/prodotti/edm-650x", image: "/images/products/edm-650x-nobg.png" },
+              { name: "GreenBox EVO", desc: "Stampante single-pass per packaging", href: "/prodotti/greenbox-evo", image: "/images/products/greenbox-evo-site-nobg.png" },
+              { name: "EDM-650X", desc: "Stampante single-pass grande formato", href: "/prodotti/edm-650x", image: "/images/products/edm-650x-2hd-nobg-v4.png" },
               { name: "AurumPress", desc: "Stampatrice termica per foil", href: "/prodotti/aurumpress", image: "/images/products/aurumpress-nobg.png" },
             ].map((p) => (
               <Link key={p.name} href={p.href} className="card-modern overflow-hidden group hover:-translate-y-1 transition-transform duration-300">

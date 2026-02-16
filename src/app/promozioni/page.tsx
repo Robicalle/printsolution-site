@@ -4,7 +4,7 @@ import PageHero from "@/components/PageHero";
 export const metadata: Metadata = {
   title: "Promozioni",
   description:
-    "Promozioni su macchine da stampa digitale per packaging ed etichette. Offerte speciali Print Solution.",
+    "Scopri le promozioni Print Solution su macchine da stampa digitale per packaging ed etichette. Offerte speciali, prezzi scontati e occasioni su stampanti professionali.",
   keywords: [
     "promozioni stampa digitale",
     "offerte stampanti packaging",
@@ -29,6 +29,7 @@ export default function PromozioniPage() {
         title="Promozioni"
         subtitle="Le nostre offerte speciali su macchine da stampa e packaging."
         breadcrumb="Promozioni"
+        imageSrc="/images/hero-promozioni.jpg"
       />
 
       {/* Empty state */}

@@ -11,8 +11,8 @@ const navigation = [
     children: [
       { label: "Packaging", href: "/soluzioni/packaging", desc: "Box maker e stampa su cartone" },
       { label: "Etichette", href: "/soluzioni/etichette", desc: "Stampa etichette in bobina e foglio" },
-      { label: "Shopper & Lusso", href: "/soluzioni#shopper", desc: "Shopper, buste e packaging premium" },
-      { label: "Labbratura Libri", href: "/soluzioni#labbratura", desc: "Stampa bordi libri e quaderni" },
+      { label: "Shopper & Packaging di Lusso", href: "/soluzioni/shopper", desc: "Shopper, buste e packaging premium" },
+      { label: "Labbratura Libri", href: "/soluzioni/labbratura", desc: "Stampa bordi libri e quaderni" },
       { label: "Consumabili", href: "/soluzioni/consumabili", desc: "Inchiostri, testine e materiali" },
     ],
   },
@@ -22,6 +22,7 @@ const navigation = [
   { label: "News", href: "/news" },
   { label: "Blog", href: "/blog" },
   { label: "Contatti", href: "/contatti" },
+  { label: "E-Shop", href: "/shop", isShop: true },
 ];
 
 export default function Header() {
@@ -36,6 +37,12 @@ export default function Header() {
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Close dropdown on route change
+  useEffect(() => {
+    setOpenDropdown(null);
+    setMobileOpen(false);
+  }, [pathname]);
 
   return (
     <header
@@ -70,8 +77,10 @@ export default function Header() {
                 onMouseLeave={() => setOpenDropdown(null)}
               >
                 <button
+                  aria-haspopup="true"
+                  aria-expanded={openDropdown === 'soluzioni'}
                   className={`px-5 py-2.5 text-base font-medium transition-colors duration-200 ${
-                    scrolled ? "text-gray-600 hover:text-cyan-500" : "text-white/80 hover:text-white"
+                    scrolled ? "text-gray-600 hover:text-cyan-500" : "text-white/80 hover:text-cyan-400"
                   }`}
                 >
                   {item.label}
@@ -93,33 +102,42 @@ export default function Header() {
                       >
                         <span className="font-medium">{child.label}</span>
                         {"desc" in child && (
-                          <span className="block text-xs text-gray-400 mt-0.5">{(child as {desc?: string}).desc}</span>
+                          <span className="block text-xs text-gray-500 mt-0.5">{(child as {desc?: string}).desc}</span>
                         )}
                       </Link>
                     ))}
                   </div>
                 </div>
               </div>
+            ) : 'isShop' in item ? (
+              <Link
+                key={item.label}
+                href={item.href!}
+                className="ml-1 px-4 py-2 text-sm font-semibold rounded-full transition-all duration-300 bg-gradient-to-r from-cyan-500 to-blue-600 text-white hover:from-cyan-400 hover:to-blue-500 hover:shadow-md hover:shadow-cyan-500/25 whitespace-nowrap"
+              >
+                🛒 {item.label}
+              </Link>
             ) : (
               <Link
                 key={item.label}
                 href={item.href!}
                 className={`px-5 py-2.5 text-base font-medium transition-colors duration-200 ${
-                  scrolled ? "text-gray-600 hover:text-cyan-500" : "text-white/80 hover:text-white"
+                  scrolled ? "text-gray-600 hover:text-cyan-500" : "text-white/80 hover:text-cyan-400"
                 }`}
               >
                 {item.label}
               </Link>
             )
           )}
-          <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Informazioni%20Print%20Solution&body=Buongiorno%2C%0A%0AVorrei%20ricevere%20informazioni.%0A%0AGrazie" className="btn-primary ml-4 text-base !py-3 !px-6">Richiedi Demo</a>
+          <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Informazioni%20Print%20Solution&body=Buongiorno%2C%0A%0AVorrei%20ricevere%20informazioni.%0A%0AGrazie" className="btn-primary ml-4 text-base !py-3 !px-6 animate-pulse-subtle">Richiedi Demo</a>
         </nav>
 
         {/* Mobile toggle */}
         <button
           className={`lg:hidden p-2 min-w-[44px] min-h-[44px] flex items-center justify-center relative z-10 ${mobileOpen || scrolled ? "text-dark-900" : "text-white"}`}
           onClick={() => setMobileOpen(!mobileOpen)}
-          aria-label="Menu"
+          aria-expanded={mobileOpen}
+          aria-label={mobileOpen ? 'Chiudi menu' : 'Apri menu'}
         >
           <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             {mobileOpen ? (
@@ -166,7 +184,24 @@ export default function Header() {
               </Link>
             )
           )}
-          {/* CTA removed from mobile menu */}
+          {/* Mobile CTA buttons */}
+          <div className="mt-6 px-0">
+            <Link href="/shop"
+               className="block w-full text-center py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold rounded-full shadow-lg text-lg"
+               onClick={() => setMobileOpen(false)}>
+              🛒 E-Shop Consumabili
+            </Link>
+            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Informazioni%20Print%20Solution&body=Buongiorno%2C%0A%0AVorrei%20ricevere%20informazioni.%0A%0AGrazie" 
+               className="block w-full text-center py-4 mt-3 bg-gradient-to-r from-cyan-500 to-cyan-600 text-white font-semibold rounded-full shadow-lg text-lg"
+               onClick={() => setMobileOpen(false)}>
+              Richiedi Demo →
+            </a>
+            <a href="tel:+390249439417" 
+               className="block w-full text-center py-4 mt-3 border-2 border-gray-200 text-gray-700 font-semibold rounded-full text-lg"
+               onClick={() => setMobileOpen(false)}>
+              📞 Chiamaci Ora
+            </a>
+          </div>
         </nav>
       </div>
     </header>

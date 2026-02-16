@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Afinia L901 — Stampante Etichette Professionale Memjet",
+  title: "Afinia L901 - Stampante Etichette Memjet",
   description:
     "Afinia L901: stampante etichette a colori professionale con tecnologia Memjet Waterfall. Doppio nero, testina sostituibile, usabile in linea con DLP-2200.",
   keywords: [
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     "stampa etichette industriale",
   ],
   openGraph: {
-    title: "Afinia L901 — Stampante Etichette Professionale | Print Solution",
+    title: "Afinia L901 - Stampante Etichette Professionale | Print Solution",
     description:
       "Stampante etichette professionale Memjet con doppio nero e testina sostituibile dall'utente.",
     images: ["/images/products/afinia-l901.png"],
@@ -129,32 +129,38 @@ export default function AfiniaL901Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
 
       {/* Hero */}
-      <section className="relative bg-hero-gradient text-white pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
-        <div className="absolute top-20 right-0 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-64 h-64 bg-magenta-500/10 rounded-full blur-3xl" />
-        <div className="container-custom px-4 sm:px-6 lg:px-8 relative">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <p className="text-cyan-300 text-sm mb-3 uppercase tracking-widest font-medium">Stampanti Etichette</p>
+      <section className="relative text-white pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden min-h-[60vh] flex items-center">
+        <video autoPlay muted loop playsInline aria-hidden="true" className="absolute inset-0 w-full h-full object-cover">
+          <source src="/videos/l901-hero.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-r from-dark-800/90 via-dark-800/70 to-dark-800/40" />
+        <div className="container-custom px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="max-w-2xl">
+            <p className="text-cyan-300 text-sm mb-3 uppercase tracking-widest font-medium">Stampanti Etichette</p>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">Afinia L901</h1>
               <p className="text-lg text-gray-300/90 leading-relaxed mb-8">
-                Stampante etichette a colori professionale con tecnologia Memjet Waterfall. 
+                Stampante etichette a colori professionale con tecnologia Memjet Waterfall.
                 Doppio nero per neri più profondi, testina sostituibile dall&apos;utente e possibilità
                 di integrazione in linea con la DLP-2200.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Afinia%20L901&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20Afinia%20L901.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">Richiedi Demo →</a>
               </div>
-            </div>
-            <div className="relative h-72 lg:h-96 rounded-3xl overflow-hidden">
-              <Image src="/images/products/afinia-l901.png" alt="Afinia L901" fill className="object-contain p-4" priority />
-            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Photo */}
+      <section className="bg-white pt-8 lg:pt-10 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto">
+          <div className="relative w-full aspect-[16/9] rounded-3xl overflow-hidden">
+            <Image src="/images/products/afinia-l901.png" alt="Product photo" fill className="object-contain p-6" />
           </div>
         </div>
       </section>
 
       {/* Descrizione */}
-      <section className="section-padding bg-white">
+      <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
         <div className="container-custom max-w-4xl">
           <h2 className="text-3xl font-bold text-dark-800 mb-6">Prestazioni Professionali con Tecnologia Memjet Waterfall</h2>
           <p className="text-gray-500 leading-relaxed mb-4">
@@ -170,7 +176,7 @@ export default function AfiniaL901Page() {
       </section>
 
       {/* Video */}
-      <section className="section-padding bg-white">
+      <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
         <div className="container-custom">
           <div className="text-center mb-12">
             <p className="text-cyan-500 font-semibold text-sm uppercase tracking-widest mb-4">Video</p>
@@ -178,16 +184,18 @@ export default function AfiniaL901Page() {
           </div>
           <div className="max-w-3xl mx-auto">
             <div className="aspect-video rounded-2xl overflow-hidden shadow-lg">
-              <video controls preload="metadata" className="w-full h-full object-cover"><source src="/videos/afinia-l901.mp4" type="video/mp4" /></video>
+              <video controls playsInline preload="metadata" poster="/images/posters/afinia-l901-yt1.jpg" className="w-full h-full rounded-2xl">
+                <source src="/videos/afinia-l901-yt1.mp4" type="video/mp4" />
+              </video>
             </div>
           </div>
         </div>
       </section>
 
       {/* Vantaggi */}
-      <section className="section-padding bg-white">
+      <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
         <div className="container-custom">
-          <h2 className="text-3xl font-bold text-dark-800 mb-12 text-center">Vantaggi Principali</h2>
+          <h2 className="text-3xl font-bold text-dark-800 mb-8 text-center">Vantaggi Principali</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((f) => (
               <div key={f.title} className="card-modern p-8 hover:-translate-y-1 transition-transform duration-300">
@@ -202,7 +210,7 @@ export default function AfiniaL901Page() {
         </div>
       </section>
       {/* Specifiche Tecniche */}
-      <section className="section-padding bg-surface-50">
+      <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-surface-50">
         <div className="container-custom max-w-3xl">
           <h2 className="text-3xl font-bold text-dark-800 mb-10 text-center">Specifiche Tecniche</h2>
           <div className="space-y-3">
@@ -216,10 +224,8 @@ export default function AfiniaL901Page() {
         </div>
       </section>
 
-
-
       {/* CTA */}
-      <section className="section-padding bg-surface-50">
+      <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-surface-50">
         <div className="container-custom text-center">
           <h2 className="text-3xl font-bold text-dark-800 mb-6">Stampa Etichette Professionali In-House</h2>
           <p className="text-gray-500 max-w-xl mx-auto mb-8">
@@ -232,14 +238,14 @@ export default function AfiniaL901Page() {
       </section>
 
       {/* Prodotti Correlati */}
-      <section className="section-padding bg-white">
+      <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
         <div className="container-custom">
           <h2 className="text-2xl font-bold text-dark-800 mb-8 text-center">Prodotti Correlati</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {[
               { name: "Afinia L701", desc: "Stampante etichette entry level Memjet", href: "/prodotti/afinia-l701", image: "/images/products/afinia-l701.avif" },
               { name: "Afinia DLP-2200", desc: "Digital Label Press completa", href: "/prodotti/afinia-dlp2200", image: "/images/products/afinia-dlp2200.avif" },
-              { name: "Afinia X350", desc: "Stampante roll-to-roll alta velocità", href: "/prodotti/afinia-x350", image: "/images/products/afinia-x350.webp" },
+              { name: "Afinia X350", desc: "Stampante roll-to-roll alta velocità", href: "/prodotti/afinia-x350", image: "/images/products/afinia-x350-site.webp" },
             ].map((p) => (
               <Link key={p.name} href={p.href} className="card-modern overflow-hidden group hover:-translate-y-1 transition-transform duration-300">
                 <div className="h-40 relative overflow-hidden">

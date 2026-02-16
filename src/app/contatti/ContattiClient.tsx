@@ -4,7 +4,7 @@ import { useState } from "react";
 
 export default function ContattiClient() {
   const [formData, setFormData] = useState({
-    nome: "", azienda: "", email: "", telefono: "", messaggio: "", interesse: "generico",
+    nome: "", azienda: "", email: "", telefono: "", messaggio: "", interesse: "generico", privacy: false, _hp_field: "",
   });
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
 
@@ -21,7 +21,7 @@ export default function ContattiClient() {
 
       if (res.ok) {
         setStatus("success");
-        setFormData({ nome: "", azienda: "", email: "", telefono: "", messaggio: "", interesse: "generico" });
+        setFormData({ nome: "", azienda: "", email: "", telefono: "", messaggio: "", interesse: "generico", privacy: false, _hp_field: "" });
       } else {
         setStatus("error");
       }
@@ -34,8 +34,9 @@ export default function ContattiClient() {
     <>
       <PageHero
         title="Contatti"
-        subtitle="Richiedi informazioni, prenota una demo o visita la nostra sala demo a Sesto San Giovanni."
+        subtitle="Richiedi informazioni, prenota una demo o visita i nostri uffici a Sesto San Giovanni."
         breadcrumb="Print Solution"
+        imageSrc="/images/hero-contatti.jpg"
       />
 
       <section className="section-padding bg-white">
@@ -57,13 +58,24 @@ export default function ContattiClient() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
+                  {/* Honeypot - hidden from humans */}
+                  <div className="absolute opacity-0 -z-10" aria-hidden="true" tabIndex={-1}>
+                    <input
+                      type="text"
+                      name="_hp_field"
+                      value={formData._hp_field}
+                      onChange={(e) => setFormData({ ...formData, _hp_field: e.target.value })}
+                      tabIndex={-1}
+                      autoComplete="off"
+                    />
+                  </div>
                   <div className="grid sm:grid-cols-2 gap-5">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-1.5">Nome e Cognome *</label>
                       <input
                         type="text" required value={formData.nome}
                         onChange={(e) => setFormData({ ...formData, nome: e.target.value })}
-                        className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 outline-none transition-all text-sm"
+                        className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 transition-all text-sm"
                         placeholder="Mario Rossi"
                       />
                     </div>
@@ -72,7 +84,7 @@ export default function ContattiClient() {
                       <input
                         type="text" value={formData.azienda}
                         onChange={(e) => setFormData({ ...formData, azienda: e.target.value })}
-                        className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 outline-none transition-all text-sm"
+                        className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 transition-all text-sm"
                         placeholder="La Mia Azienda S.r.l."
                       />
                     </div>
@@ -83,7 +95,7 @@ export default function ContattiClient() {
                       <input
                         type="email" required value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 outline-none transition-all text-sm"
+                        className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 transition-all text-sm"
                         placeholder="mario@azienda.it"
                       />
                     </div>
@@ -92,7 +104,7 @@ export default function ContattiClient() {
                       <input
                         type="tel" value={formData.telefono}
                         onChange={(e) => setFormData({ ...formData, telefono: e.target.value })}
-                        className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 outline-none transition-all text-sm"
+                        className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 transition-all text-sm"
                         placeholder="+39 02 1234567"
                       />
                     </div>
@@ -102,7 +114,7 @@ export default function ContattiClient() {
                     <select
                       value={formData.interesse}
                       onChange={(e) => setFormData({ ...formData, interesse: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 outline-none transition-all text-sm bg-white"
+                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 transition-all text-sm bg-white"
                     >
                       <option value="generico">Informazioni generali</option>
                       <option value="packaging">Soluzioni Packaging</option>
@@ -118,9 +130,26 @@ export default function ContattiClient() {
                     <textarea
                       required rows={5} value={formData.messaggio}
                       onChange={(e) => setFormData({ ...formData, messaggio: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 outline-none transition-all text-sm resize-none"
+                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 transition-all text-sm resize-none"
                       placeholder="Descrivi le tue esigenze..."
                     />
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <input
+                      type="checkbox"
+                      id="privacy"
+                      required
+                      checked={formData.privacy}
+                      onChange={(e) => setFormData({ ...formData, privacy: e.target.checked })}
+                      className="mt-1 h-4 w-4 rounded border-gray-300 text-cyan-500 focus:ring-cyan-500/20"
+                    />
+                    <label htmlFor="privacy" className="text-sm text-gray-500">
+                      Ho letto e accetto la{" "}
+                      <a href="/privacy" target="_blank" className="text-cyan-500 underline hover:text-cyan-400">
+                        Privacy Policy
+                      </a>{" "}
+                      e acconsento al trattamento dei miei dati personali ai sensi del GDPR (Reg. UE 2016/679). *
+                    </label>
                   </div>
                   {status === "error" && (
                     <div className="bg-red-50 text-red-600 text-sm p-3 rounded-xl">
@@ -163,8 +192,8 @@ export default function ContattiClient() {
                         <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" /></svg>
                       ),
                       title: "Telefono",
-                      content: "+39 02 3652 7093",
-                      href: "tel:+390236527093",
+                      content: "+39 02 4943 9417",
+                      href: "tel:+390249439417",
                     },
                     {
                       icon: (
@@ -201,7 +230,7 @@ export default function ContattiClient() {
                   Vieni nella nostra sala demo a Sesto San Giovanni. Porta i tuoi materiali e testa 
                   le macchine dal vivo. Su appuntamento, gratuita.
                 </p>
-                <a href="tel:+390236527093" className="btn-primary text-sm !py-2.5">
+                <a href="tel:+390249439417" className="btn-primary text-sm !py-2.5">
                   <svg className="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" /></svg>
                   Chiama per Prenotare
                 </a>
@@ -222,7 +251,7 @@ export default function ContattiClient() {
                     title="Print Solution — Via Pisa 200, Sesto San Giovanni"
                   />
                 </div>
-                <p className="text-gray-400 text-sm mt-2">
+                <p className="text-gray-500 text-sm mt-2">
                   Via Pisa 200, int. 23 — 20099 Sesto San Giovanni (MI) — Parcheggio disponibile
                 </p>
               </div>
@@ -237,9 +266,9 @@ export default function ContattiClient() {
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-500">Sabato — Domenica</span>
-                    <span className="text-gray-400">Chiuso</span>
+                    <span className="text-gray-500">Chiuso</span>
                   </div>
-                  <p className="text-gray-400 text-sm mt-2">Demo su appuntamento</p>
+                  <p className="text-gray-500 text-sm mt-2">Demo su appuntamento</p>
                 </div>
               </div>
             </div>

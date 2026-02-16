@@ -4,7 +4,7 @@ import ContattiClient from "./ContattiClient";
 export const metadata: Metadata = {
   title: "Contatti",
   description:
-    "Contatta Print Solution: richiedi informazioni, prenota una demo gratuita o visita la sala demo a Sesto San Giovanni (MI). Tel. +39 02 3652 7093.",
+    "Contatta Print Solution: richiedi informazioni, prenota una demo gratuita o visita la sala demo a Sesto San Giovanni (MI). Tel. +39 02 4943 9417.",
   keywords: [
     "contatti Print Solution",
     "demo stampante packaging",

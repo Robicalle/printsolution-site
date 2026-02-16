@@ -1,0 +1,212 @@
+[
+  {
+    "source": "/chi-siamo",
+    "title": "Print Solution - Chi Siamo",
+    "content": "Print Solution S.r.l. è un'azienda con sede a Sesto San Giovanni (MI) specializzata nella vendita, assistenza e consulenza di macchinari per stampa digitale, etichette adesive, packaging e nobilitazione. Con oltre 20 anni di esperienza, distribuiamo in Italia marchi come Afinia Label, Anypack, DTM Print e Greenbox. Offriamo sala demo dove testare i macchinari, assistenza tecnica diretta e formazione. Il nostro team aiuta le aziende a scegliere la soluzione giusta per le proprie esigenze di stampa.",
+    "category": "azienda"
+  },
+  {
+    "source": "/contatti",
+    "title": "Contatti Print Solution",
+    "content": "Telefono: 02 4943 9417. Email: info@printsolutionsrl.it. Sede: Sesto San Giovanni (MI), Italia. Orari: Lunedì-Venerdì 9:00-18:00. È possibile prenotare una demo gratuita in sala demo per testare qualsiasi macchinario prima dell'acquisto. Per preventivi personalizzati contattare direttamente. Assistenza tecnica disponibile per tutti i prodotti distribuiti.",
+    "category": "azienda"
+  },
+  {
+    "source": "/contatti",
+    "title": "Domande Frequenti - Prezzi e Preventivi",
+    "content": "Print Solution non pubblica listini prezzi online perché ogni soluzione viene configurata su misura in base alle esigenze del cliente (volumi, materiali, formati, optional). Per ricevere un preventivo personalizzato: telefonare al 02 4943 9417 o scrivere a info@printsolutionsrl.it specificando cosa si vuole stampare, su che materiale, in che quantità e formati. La consulenza è gratuita.",
+    "category": "azienda"
+  },
+  {
+    "source": "/prodotti/greenbox-evo",
+    "title": "GreenBox EVO - Stampante per Packaging, Scatole, Sacchetti e Shopper",
+    "content": "GreenBox EVO è la soluzione ideale per stampare in quadricromia direttamente su scatole di cartone, sacchetti di carta, shopper, buste per spedizioni e juta. Tecnologia inkjet HP PageWide single-pass con inchiostri pigmentati a base acqua, senza solventi e totalmente inodore. Velocità fino a 30 m/min, risoluzione 1200x1200 dpi. Larghezza stampa fino a 30 cm su supporti larghi fino a 80 cm, spessore max 15 cm. La testa di stampa è montata su binario mobile regolabile. Industria 4.0 ready con software GreenFlow opzionale. Ideale per piccole e medie tirature di packaging personalizzato. Per chi vuole stampare su sacchetti di carta, shopper personalizzati, scatole e buste, GreenBox EVO è il prodotto consigliato. Brand: Greenbox.",
+    "category": "prodotto"
+  },
+  {
+    "source": "/prodotti/greenbox-evo",
+    "title": "GreenBox EVO - Applicazioni e Materiali Supportati",
+    "content": "GreenBox EVO stampa su: cartone ondulato, cartoncino, carta kraft, sacchetti di carta, shopper di carta, buste per spedizioni, juta, carta non trattata. Applicazioni: packaging personalizzato per e-commerce, scatole regalo, shopper per negozi e brand, buste spedizione con logo, packaging alimentare (inchiostri a base acqua), packaging cosmetica, packaging promozionale per eventi. Perfetta per chi cerca una stampante per sacchetti di carta in quadricromia CMYK. Non richiede lastre o cliché: stampa digitale diretta on-demand.",
+    "category": "prodotto"
+  },
+  {
+    "source": "/prodotti/greenbox-print-book",
+    "title": "GreenBox Print Book - Labbratura Digitale dei Libri",
+    "content": "GreenBox Print Book è una variante della GreenBox 2 dedicata alla labbratura digitale dei libri. Stampa direttamente in quadricromia sul dorso dei libri con tecnologia HP PageWide single-pass. Inchiostri a base acqua pigmentati CMYK, velocità 30 m/min, risoluzione 1200x1200 dpi. Escursione verticale testa fino a 30 cm, testa mobile su binario di 80 cm. Industria 4.0 ready con GreenFlow. Ideale per tipografie, legatorie e editori che vogliono personalizzare e impreziosire i dorsi dei libri con stampa digitale. NON è per sacchetti o packaging - per quello serve GreenBox EVO.",
+    "category": "prodotto"
+  },
+  {
+    "source": "/prodotti/robotjet",
+    "title": "RobotJet - Stampante per Labbratura Libri Industriale",
+    "content": "RobotJet è una stampante inkjet industriale specializzata nella labbratura dei libri (stampa sul dorso/taglio dei libri). Capacità produttiva circa 400 pezzi/ora (3200 al giorno). Risoluzione 1200 dpi, 4 colori CMYK, tecnologia inkjet a base acqua pigmentata. Teste di stampa HP A3 o Epson I3200. Altezza libri da 90 a 350 mm, larghezza stampa singola passata da 50 a 200 mm. Dotata di alimentazione automatica a nastro, software proprietario con dato variabile, codici a barre e QR. ATTENZIONE: RobotJet è per labbratura libri, NON per packaging, sacchetti o scatole. Per packaging usare GreenBox EVO, PackPrinter UV o ANY-002.",
+    "category": "prodotto"
+  },
+  {
+    "source": "/prodotti/packprinter-uv",
+    "title": "PackPrinter UV - Stampante UV per Cartone Ondulato e Packaging",
+    "content": "PackPrinter UV è una stampante UV single-pass per stampa diretta su materiali NON assorbenti o patinati: carta patinata, carta plastificata, materiali plastici, PVC, polipropilene, supporti rigidi, pannelli. 9 modelli disponibili con luce di stampa da 12 a 118 cm. Risoluzione 600-1200 dpi, velocità fino a 50 m/min. Stampa in 4 colori + bianco (CMYKW) con inchiostri UV ad alte prestazioni e asciugatura UV istantanea. Testine Ricoh Gen5/Gen6. Spessore materiale da 1 a 15 mm. ATTENZIONE: PackPrinter UV NON è consigliata per cartone ondulato o carta non trattata — per quelli usare GreenBox EVO o EDM-650X. PackPrinter UV è ideale quando si deve stampare su carta patinata, supporti plastificati, materiali rigidi o non assorbenti.",
+    "category": "prodotto"
+  },
+  {
+    "source": "/prodotti/any-002",
+    "title": "ANY-002 - Stampante Laser LED per Packaging e Etichette",
+    "content": "ANY-002 è una stampante laser digitale LED (toner) per stampa su packaging, sacchetti, carta e cartoncino in bobina. Risoluzione 1200 dpi, velocità fino a 9 m/min, fino a 5000 etichette in 2 ore. Lunghezza stampa max 1,2 m per pezzo, bobina fino a 200 m. VANTAGGIO TECNOLOGIA TONER: stampa sulla maggior parte dei materiali NON trattati (carta grezza, cartoncino, materiali plastici, film) senza bisogno di carte patinate o trattate. Questo la rende molto più versatile della tecnologia inkjet Memjet per applicazioni su materiali non standard. Colori: CMYK. Ideale per etichette, sleeve, packaging flessibile, piccoli lotti. Fustellatore opzionale integrato. Brand: Anypack.",
+    "category": "prodotto"
+  },
+  {
+    "source": "/prodotti/any-press",
+    "title": "ANY-PRESS - Stampante Laser LED Grande Formato per Packaging",
+    "content": "ANY-PRESS è una stampante laser digitale LED (toner) a 5 colori (CMYKW, incluso bianco coprente) per packaging e etichette in bobina. Risoluzione 1200x1200 dpi, velocità 5 m/min. Larghezza stampa max 324 mm, supporto max 330 mm. Laminatore opzionale integrato. VANTAGGIO TECNOLOGIA TONER: come ANY-002, stampa sulla maggior parte dei materiali NON trattati senza bisogno di carte patinate. Più versatile della tecnologia inkjet Memjet sui materiali non standard. In più stampa bianco coprente per fondi colorati o trasparenti. Ideale per packaging di alta qualità, etichette premium, sleeve. Brand: Anypack.",
+    "category": "prodotto"
+  },
+  {
+    "source": "/prodotti/ab2500",
+    "title": "AB2500 - Box Maker Automatico per Scatole",
+    "content": "AB2500 è un box maker automatico all-in-one che taglia, cordona, scanalatura e incolla scatole di cartone. Produttività 500-600 scatole/ora con cambio formato in 10 secondi. Spessore cartone da 1 a 7 mm, incollaggio a caldo e a freddo. Completamente automatizzato con software di progettazione scatole incluso. NOTA: AB2500 NON stampa, produce solo scatole. Per stampa + scatole, abbinare con GreenBox EVO o PackPrinter UV. Brand: Anypack.",
+    "category": "prodotto"
+  },
+  {
+    "source": "/prodotti/edm-650x",
+    "title": "EDM-650X - Sistema di Stampa Inkjet Industriale per Cartone",
+    "content": "EDM-650X è un sistema di stampa inkjet single-pass industriale per cartone ondulato e packaging di grande formato. Da 2 a 6 teste HP da 30 cm ciascuna, risoluzione 1200x1200 dpi, velocità fino a 30 m/min. Larghezza stampa da 60 a 180 cm, passaggio carta da 120 a 250 cm. 6 configurazioni disponibili. Inchiostri a base acqua. Ideale per produzione industriale di scatole stampate, display, espositori di grande formato. Integrazione in linee di produzione esistenti. Brand: Anypack.",
+    "category": "prodotto"
+  },
+  {
+    "source": "/prodotti/aurumpress",
+    "title": "AurumPress - Stampatrice Hot Foil per Nobilitazione",
+    "content": "AurumPress è una stampatrice a caldo (hot foil stamping) con impressione idraulica per la nobilitazione del packaging. Applica lamine metalliche (oro, argento, colori metallizzati, pastello, trasparente lucido) su cartone, carta e packaging rigido. Ideale per loghi, scritte decorative, finiture premium su scatole, astuccierie, packaging di lusso. NON è una stampante a colori: serve per nobilitazione con foil metallici. Per stampa in quadricromia servono GreenBox EVO, PackPrinter UV o ANY-002.",
+    "category": "prodotto"
+  },
+  {
+    "source": "/prodotti/afinia-dc350",
+    "title": "Afinia DC250 / DC350 - Fustellatori Semi-Rotativi per Etichette",
+    "content": "Afinia DC250 e DC350 sono fustellatori semi-rotativi digitali per il taglio di etichette in bobina. Tagliano qualsiasi forma di etichetta senza bisogno di fustelle fisiche. Velocità fino a 6 m/min per DC250 e fino a 9 m/min per DC350. Larghezza max materiale: 250 mm (DC250) o 350 mm (DC350). Ideali da abbinare alle stampanti etichette Afinia per un flusso completo stampa + taglio. Brand: Afinia Label.",
+    "category": "prodotto"
+  },
+  {
+    "source": "/prodotti/afinia-dlf",
+    "title": "Afinia DLF-220L / DLF-350L - Fustellatori Digitali Plotter",
+    "content": "Afinia DLF-220L e DLF-350L sono fustellatori digitali a plotter per etichette in bobina. Tagliano etichette di qualsiasi forma senza fustelle fisiche, usando una lama oscillante. DLF-220L per larghezza max 220 mm, DLF-350L per larghezza max 350 mm. Ideali per piccoli lotti e prototipazione rapida di etichette. Si abbinano alle stampanti Afinia. Brand: Afinia Label.",
+    "category": "prodotto"
+  },
+  {
+    "source": "/prodotti/afinia-dlp2200",
+    "title": "Afinia DLP-2200 - Sistema Completo Stampa + Finitura Etichette",
+    "content": "Afinia DLP-2200 è un sistema completo per la produzione di etichette: stampa, laminazione e fustellatura in un unico passaggio. Tecnologia inkjet a 5 colori, risoluzione fino a 1600 dpi, velocità fino a 18 m/min. Produce etichette finite pronte all'applicazione. Ideale per tipografie, conto terzi e aziende che vogliono internalizzare la produzione di etichette. Brand: Afinia Label.",
+    "category": "prodotto"
+  },
+  {
+    "source": "/prodotti/afinia-l901",
+    "title": "Afinia L901 - Stampante Etichette Industriale Memjet",
+    "content": "Afinia L901 è una stampante per etichette a colori in bobina con tecnologia Memjet inkjet. Risoluzione 1600x1600 dpi, velocità fino a 18 m/min. Inchiostri a base acqua pigmentati, resistenti. IMPORTANTE: essendo tecnologia inkjet a base acqua, richiede CARTE TRATTATE (patinate, con coating) per un buon risultato di stampa. Non adatta per materiali non trattati. Per etichette su materiali non trattati, considerare ANY-002 o ANY-PRESS (tecnologia toner). Ideale per produzioni medie di etichette per alimenti, bevande, cosmetica, industria. Larghezza max 216 mm. Brand: Afinia Label.",
+    "category": "prodotto"
+  },
+  {
+    "source": "/prodotti/afinia-lt5c",
+    "title": "Afinia LT5C - Stampante Desktop Etichette a 5 Colori",
+    "content": "Afinia LT5C è una stampante desktop compatta per etichette a 5 colori (CMYK + bianco). Permette di stampare etichette a colori su materiali trasparenti o scuri grazie al bianco coprente. Ideale per piccole tirature, prototipazione, etichette per prodotti artigianali, birrifici, cantine. Collegamento USB, facile da usare. Brand: Afinia Label.",
+    "category": "prodotto"
+  },
+  {
+    "source": "/prodotti/afinia-x350",
+    "title": "Afinia X350 - Stampante Etichette Professionale",
+    "content": "Afinia X350 è una stampante professionale per etichette a colori in bobina. Alta qualità di stampa con tecnologia inkjet. Ideale per produzioni di etichette in bobina per settore alimentare, cosmetico, chimico, farmaceutico. Stampa su vari materiali: carta, polipropilene, poliestere. Brand: Afinia Label.",
+    "category": "prodotto"
+  },
+  {
+    "source": "/soluzioni/etichette",
+    "title": "Soluzioni Complete per Etichette Adesive",
+    "content": "Print Solution offre soluzioni complete per la produzione di etichette adesive a colori: stampanti (Afinia L901, LT5C, X350, DLP-2200), fustellatori (DC250, DC350, DLF-220L, DLF-350L), applicatori e consumabili. Per chi vuole stampare etichette in autonomia: la soluzione entry-level è Afinia LT5C (desktop, piccoli lotti), la media è Afinia L901 (industriale, medie tirature), la top è Afinia DLP-2200 (sistema completo stampa+fustella). Per il taglio dopo la stampa: DC250/DC350 (semi-rotativo) o DLF (plotter).",
+    "category": "soluzione"
+  },
+  {
+    "source": "/soluzioni/packaging",
+    "title": "Soluzioni per Packaging, Scatole e Stampa su Cartone",
+    "content": "Print Solution offre soluzioni per la produzione e stampa di packaging: GreenBox EVO per stampa su scatole, sacchetti e shopper (piccole-medie tirature, inchiostri a base acqua); PackPrinter UV per stampa su carta patinata, materiali plastificati e supporti non assorbenti (inchiostri UV); EDM-650X per stampa industriale grande formato; AB2500 per produzione automatica scatole (senza stampa). Per chi vuole stampare su sacchetti di carta o shopper, la soluzione consigliata è GreenBox EVO. Per carta patinata o materiali non assorbenti, PackPrinter UV. Per cartone ondulato in grandi volumi, EDM-650X.",
+    "category": "soluzione"
+  },
+  {
+    "source": "/soluzioni/shopper",
+    "title": "Soluzioni per Shopper e Sacchetti Personalizzati",
+    "content": "Per stampare shopper di carta, sacchetti e buste personalizzate con logo e grafica a colori, Print Solution consiglia GreenBox EVO. Stampa digitale diretta in quadricromia CMYK su sacchetti di carta, shopper, buste kraft, buste per spedizioni. Nessun costo fisso di avviamento: ideale anche per piccoli lotti personalizzati. Inchiostri a base acqua pigmentati, senza solventi, inodori. Velocità 30 m/min. Per sacchetti di carta in quadricromia, GreenBox EVO è la scelta giusta.",
+    "category": "soluzione"
+  },
+  {
+    "source": "/soluzioni/labbratura",
+    "title": "Soluzioni per Nobilitazione e Hot Foil Stamping",
+    "content": "Per la nobilitazione del packaging con lamine metalliche (oro, argento, colori metallizzati), Print Solution propone AurumPress. Per la labbratura digitale dei libri (stampa sul dorso), le soluzioni sono RobotJet (industriale, 400 pezzi/ora) e GreenBox Print Book (compatta, versatile). La labbratura permette di stampare in quadricromia direttamente sul dorso dei libri.",
+    "category": "soluzione"
+  },
+  {
+    "source": "/soluzioni/consumabili",
+    "title": "Consumabili e Ricambi Originali",
+    "content": "Print Solution fornisce consumabili e ricambi originali per tutti i macchinari distribuiti: inchiostri (a base acqua, UV, toner), testine di stampa, lame per fustellatori, materiali per laminazione, foil per hot stamping. Assistenza tecnica diretta e supporto post-vendita. Magazzino ricambi per consegne rapide. Per ordinare consumabili: 02 4943 9417 o info@printsolutionsrl.it.",
+    "category": "soluzione"
+  },
+  {
+    "source": "/brand/afinia-label",
+    "title": "Afinia Label - Brand Stampanti Etichette",
+    "content": "Afinia Label è il brand leader per stampanti e sistemi per etichette adesive a colori in bobina. Gamma completa: stampanti desktop (LT5C), industriali (L901, X350), sistemi completi (DLP-2200), fustellatori semi-rotativi (DC250, DC350) e plotter (DLF). Distribuito in Italia da Print Solution. Ideale per settore alimentare, cosmetico, chimico, farmaceutico, vino e birra artigianale.",
+    "category": "brand"
+  },
+  {
+    "source": "/brand/anypack",
+    "title": "Anypack - Brand Macchinari Packaging",
+    "content": "Anypack produce macchinari per la produzione e stampa di packaging: ANY-002 (stampante laser LED per packaging e etichette), ANY-PRESS (stampante laser 5 colori grande formato), AB2500 (box maker automatico per scatole), EDM-650X (sistema stampa inkjet industriale per cartone). Distribuito in Italia da Print Solution.",
+    "category": "brand"
+  },
+  {
+    "source": "/brand/greenbox",
+    "title": "Greenbox - Brand Box Maker e Stampa Packaging",
+    "content": "Greenbox produce soluzioni per la stampa digitale on-demand su packaging. GreenBox EVO: stampante inkjet per scatole, sacchetti, shopper e buste (la più venduta per stampa su sacchetti di carta). GreenBox Print Book: variante per labbratura digitale dei libri. Tecnologia HP PageWide con inchiostri a base acqua. Distribuito in Italia da Print Solution.",
+    "category": "brand"
+  },
+  {
+    "source": "/brand/dtm-print",
+    "title": "DTM Print - Stampa e Nobilitazione",
+    "content": "DTM Print produce soluzioni per la stampa e nobilitazione: AurumPress per hot foil stamping (applicazione lamine metalliche su packaging). Ideale per dare una finitura premium a scatole, astuccierie, packaging di lusso. Distribuito in Italia da Print Solution.",
+    "category": "brand"
+  },
+  {
+    "source": "/soluzioni",
+    "title": "Tecnologie di Stampa - Inkjet Memjet vs Toner Laser LED",
+    "content": "DIFFERENZA FONDAMENTALE TRA TECNOLOGIE DI STAMPA:\n\n1) INKJET / MEMJET (a base acqua): richiede CARTE TRATTATE (patinate, con coating) per un buon risultato. L'inchiostro a base acqua viene assorbito dal supporto, quindi su carte non trattate il risultato può essere scarso o sbavato. Prodotti con tecnologia inkjet Memjet: Afinia L901, Afinia X350, Afinia DLP-2200. Ideali per etichette su materiali trattati/patinati.\n\n2) TONER / LASER LED: stampa sulla MAGGIOR PARTE DEI MATERIALI NON TRATTATI. Il toner si fonde termicamente sul supporto, quindi funziona bene anche su carta non trattata, cartoncino grezzo, materiali plastici, film. Prodotti con tecnologia toner laser LED: ANY-002, ANY-PRESS. Più versatili sui materiali non trattati.\n\n3) INKJET HP PAGEWIDE (a base acqua pigmentata): GreenBox EVO, GreenBox Print Book, EDM-650X, RobotJet. Inchiostri pigmentati speciali che funzionano bene anche su carte non trattate e cartone ondulato.\n\n4) UV: PackPrinter UV. Inchiostri UV con asciugatura istantanea, ideali per materiali non assorbenti (carta patinata, plastica, PVC, supporti rigidi).\n\nQUANDO CONSIGLIARE COSA:\n- Cliente con materiali NON trattati (carta grezza, cartoncino) → toner (ANY-002, ANY-PRESS) o inkjet HP PageWide (GreenBox EVO, EDM-650X)\n- Cliente con materiali TRATTATI/PATINATI per etichette → inkjet Memjet (Afinia L901, X350, DLP-2200)\n- Cliente con materiali plastici/rigidi/non assorbenti → UV (PackPrinter UV)\n- Per ETICHETTE su materiali misti (trattati e non) → ANY-002 o ANY-PRESS (toner, più versatili)",
+    "category": "soluzione"
+  },
+  {
+    "source": "/prodotti/greenbox-evo",
+    "title": "Guida alla Scelta - Cosa Stampare e Quale Prodotto Scegliere",
+    "content": "GUIDA RAPIDA ALLA SCELTA DEL PRODOTTO:\n- Stampare su SACCHETTI DI CARTA, SHOPPER, BUSTE → GreenBox EVO\n- Stampare su SCATOLE di cartone (piccoli lotti) → GreenBox EVO\n- Stampare su CARTA PATINATA, plastificata, materiali rigidi/non assorbenti → PackPrinter UV\n- Stampare su CARTONE ONDULATO (grandi volumi) → EDM-650X o GreenBox EVO\n- Stampare ETICHETTE a colori (piccoli lotti) → Afinia LT5C\n- Stampare ETICHETTE (medie tirature) → Afinia L901\n- Sistema completo ETICHETTE stampa+taglio → Afinia DLP-2200\n- FUSTELLARE etichette → Afinia DC250/DC350 o DLF\n- PRODURRE SCATOLE (senza stampa) → AB2500\n- NOBILITAZIONE con foil metallici → AurumPress\n- LABBRATURA LIBRI (stampa su dorso) → RobotJet o GreenBox Print Book\n- Stampa LASER su packaging in bobina → ANY-002 o ANY-PRESS\n- Stampare su packaging GRANDE FORMATO industriale → EDM-650X",
+    "category": "soluzione"
+  },
+  {
+    "source": "consumabili-edm650x",
+    "title": "Consumabili EDM-650X - Taniche Inchiostro e Testine",
+    "content": "Consumabili per EDM-650X (sistema stampa inkjet single-pass industriale per cartone ondulato e packaging grande formato): Taniche inchiostro a base acqua pigmentata da 3 litri ciascuna nei colori CMYK (Ciano, Magenta, Giallo, Nero). Dimensioni taniche: formato standard HP compatibile, capacità 3 litri per colore. L'EDM-650X monta da 2 a 6 teste di stampa HP PageWide da 30 cm ciascuna (A3), risoluzione 1200x1200 dpi. Le teste sono moduli sostituibili. Inchiostri pigmentati water resistant, a base acqua, inodori, ideali per cartone ondulato e packaging alimentare. Resa variabile in base alla copertura e al tipo di cartone. Brand: Anypack. Per ordini consumabili contattare Print Solution: 02 4943 9417 o info@printsolutionsrl.it oppure acquistare sull'e-shop del sito.",
+    "category": "prodotto"
+  },
+  {
+    "source": "consumabili-greenbox",
+    "title": "Consumabili GreenBox EVO - Taniche Inchiostro",
+    "content": "Consumabili per GreenBox EVO (stampante inkjet per sacchetti, shopper, packaging flessibile): Taniche inchiostro a base acqua da 3 litri ciascuna nei colori CMYK (Ciano, Magenta, Giallo, Nero). Inchiostri pigmentati water resistant. Primo kit cartucce CMYK incluso con la stampante. Testina di stampa di ricambio disponibile. Brand: New Solution. Per ordini consumabili contattare Print Solution: 02 4943 9417 o info@printsolutionsrl.it oppure acquistare direttamente sull'e-shop del sito.",
+    "category": "prodotto"
+  },
+  {
+    "source": "consumabili-any002",
+    "title": "Consumabili ANY-002 - Toner, Tamburi e Ricambi",
+    "content": "Consumabili per ANY-002 (stampante laser LED per etichette in bobina): Toner CMYK (Ciano, Magenta, Giallo 11.500 pagine; Nero 11.000 pagine). Toner Bianco disponibile. Tamburi colore CMYK (28.000 pagine ciascuno). Tamburo Bianco. Fusore disponibile in versioni 6 pollici e 8 pollici. Belt ITU (Image Transfer Unit). Brand: Anytron. Per ordini consumabili contattare Print Solution: 02 4943 9417 o info@printsolutionsrl.it oppure acquistare direttamente sull'e-shop del sito.",
+    "category": "prodotto"
+  },
+  {
+    "source": "consumabili-nspro",
+    "title": "Consumabili NS PRO / EVO - Taniche Inchiostro e Testine",
+    "content": "Consumabili per NS PRO e NS EVO (stampanti inkjet per packaging): Taniche inchiostro da 2 litri nei colori CMYK (Ciano, Magenta, Giallo, Nero). Testina di stampa di ricambio. Inchiostri pigmentati water resistant. Brand: New Solution. Per ordini consumabili contattare Print Solution: 02 4943 9417 o info@printsolutionsrl.it oppure acquistare direttamente sull'e-shop del sito.",
+    "category": "prodotto"
+  },
+  {
+    "source": "eshop-consumabili",
+    "title": "E-Shop Consumabili Print Solution - Acquisto Online",
+    "content": "Print Solution dispone di un e-shop online per l'acquisto di consumabili originali: cartucce, inchiostri, toner, testine di stampa e ricambi per tutte le stampanti distribuite. Disponibili consumabili per: GreenBox, PrintBox 42, NS PRO/EVO, NS MULTI/LG, NS ATOM, ANY-002, Afinia LT5C, L901 Plus, L801/L801+, L701, VP700, i700, i900, 300X, CX1000/CX1200, LX2000, LX900, Serie DP-SE, Serie DP41xx. Spedizione in 24/48 ore per ordini effettuati entro le 12:00. Solo prodotti originali garantiti. Pagamento online sicuro con carta di credito. Visita la sezione E-Shop del sito.",
+    "category": "azienda"
+  }
+]

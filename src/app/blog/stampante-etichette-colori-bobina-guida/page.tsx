@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import Link from "next/link";
 
@@ -65,8 +65,8 @@ export default function ArticleEtichette() {
         <div className="container-custom max-w-3xl">
           <div className="flex items-center gap-3 mb-8">
             <span className="px-3 py-1 rounded-full text-xs font-bold text-white bg-gradient-to-r from-magenta-500 to-magenta-600">Etichette</span>
-            <span className="text-gray-400 text-sm">3 Febbraio 2026</span>
-            <span className="text-gray-400 text-sm">· 10 min di lettura</span>
+            <span className="text-gray-500 text-sm">3 Febbraio 2026</span>
+            <span className="text-gray-500 text-sm">· 10 min di lettura</span>
           </div>
 
           <div className="prose prose-lg max-w-none text-gray-600 leading-relaxed">

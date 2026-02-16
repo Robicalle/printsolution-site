@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import Image from "next/image";
 
@@ -56,7 +56,7 @@ export default function DTMPrintPage() {
                 <div key={f.title} className="text-center p-4">
                   <span className="text-3xl block mb-2">{f.icon}</span>
                   <h4 className="font-bold text-dark-800 mb-1">{f.title}</h4>
-                  <p className="text-gray-400 text-sm">{f.desc}</p>
+                  <p className="text-gray-500 text-sm">{f.desc}</p>
                 </div>
               ))}
             </div>

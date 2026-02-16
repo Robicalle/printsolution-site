@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import Link from "next/link";
 import Image from "next/image";
@@ -6,7 +6,7 @@ import Image from "next/image";
 export const metadata: Metadata = {
   title: "Stampanti Etichette Industriali",
   description:
-    "Stampante etichette industriale: etichettatura in bobina con Afinia Label L701, L901, X350, LT5C e DLP-2200. Soluzioni complete per etichette a colori.",
+    "Stampante etichette industriale: etichettatura in bobina con Afinia Label L901, X350, LT5C e DLP-2200. Soluzioni complete per etichette a colori.",
   keywords: [
     "stampante etichette industriale",
     "etichettatura in bobina",
@@ -47,6 +47,25 @@ const printers = [
     tag: "CMYK + Bianco",
   },
   {
+    name: "Anytron ANY-002",
+    subtitle: "Toner LED — Stampa",
+    image: "/images/products/any-002.avif",
+    href: "/prodotti/any-002",
+    desc: "Sistema completo stampa + fustellatura per etichette on-demand. Tecnologia laser digitale a toner con stampe resistenti ad acqua, temperature e abrasioni. Fino a 5.000 etichette in 2 ore.",
+    specs: [
+      "Motore laser digitale LED",
+      "Risoluzione 1200 dpi a toner",
+      "Velocità fino a 9 m/min",
+      "Fustellatrice a coltello integrata",
+      "Bobina max Ø 370 mm (~500 m)",
+      "Supporta carta, PP, PET",
+      "RIP integrato + dato variabile",
+      "Peso: 95 kg",
+    ],
+    gradient: "from-violet-500 to-violet-600",
+    tag: "Stampa",
+  },
+  {
     name: "Afinia X350",
     subtitle: "Alta Velocità — Pigmento",
     image: "/images/products/afinia-x350-site.webp",
@@ -64,25 +83,6 @@ const printers = [
     ],
     gradient: "from-yellow-500 to-yellow-600",
     tag: "Alta Produzione",
-  },
-  {
-    name: "Afinia L701",
-    subtitle: "Entry Level — Memjet Dye",
-    image: "/images/products/afinia-l701.avif",
-    href: "/prodotti/afinia-l701",
-    desc: "Stampante etichette a colori entry level con tecnologia Memjet. Costo iniziale contenuto, qualità professionale a 1600 dpi. Ideale per piccole produzioni e budget limitato.",
-    specs: [
-      "Risoluzione fino a 1600 × 1600 dpi",
-      "Velocità fino a 8 pollici/sec (203 mm/s)",
-      "Larghezza stampa max 216 mm",
-      "Inchiostri Dye-based CMYKK",
-      "5 cartucce × 200 ml = 1000 ml totali",
-      "Taglierina motorizzata integrata",
-      "Sensori gap, continuo, black mark",
-      "Peso: 30 kg — ultra compatta",
-    ],
-    gradient: "from-cyan-500 to-cyan-600",
-    tag: "Entry Level",
   },
   {
     name: "Afinia L901",
@@ -122,22 +122,46 @@ const printers = [
     gradient: "from-green-500 to-green-600",
     tag: "Industriale",
   },
+];
+
+const finishers = [
   {
-    name: "Afinia AF200",
-    subtitle: "Applicatore Etichette",
-    image: "/images/products/afinia-af200-nobg.png",
-    href: "/prodotti/afinia-af200",
-    desc: "Applicatore etichette semiautomatico per superfici piane. Sensore ultrasonico per precisione anche su materiali sottili. Operazione con pulsante o pedale hands-free.",
+    name: "Afinia DC250 / DC350",
+    subtitle: "Fustellatori Semi-Rotativi",
+    image: "/images/products/afinia-dc350.png",
+    href: "/prodotti/afinia-dc350",
+    desc: "Fustellatori semi-rotativi professionali con laminazione, fustellatura con fustelle flessibili in acciaio, rimozione sfrido, slitting e riavvolgimento. Fino a 30 m/min. Disponibili in larghezza 250 mm e 350 mm.",
     specs: [
-      "Campo etichettatura 100 x 190 mm",
-      "Etichette 35-210 mm di lunghezza",
-      "Altezza contenitore 25-200 mm",
-      "Sensore ultrasonico di precisione",
-      "Pedale hands-free incluso",
-      "Vassoi 3D custom opzionali",
+      "Velocità fino a 30 m/min",
+      "Laminazione integrata",
+      "Fustelle flessibili in acciaio",
+      "Cilindro magnetico 18\"",
+      "Rimozione sfrido automatica",
+      "Fino a 15 lame slitting",
+      "Modulo vernice UV",
+      "Sensore registro laser",
     ],
-    gradient: "from-cyan-500 to-green-500",
-    tag: "Applicatore",
+    gradient: "from-yellow-500 to-yellow-600",
+    tag: "Semi-Rotativo",
+  },
+  {
+    name: "Afinia DLF-220L / DLF-350L",
+    subtitle: "Fustellatori Digitali Plotter",
+    image: "/images/products/afinia-dlf-220l.png",
+    href: "/prodotti/afinia-dlf",
+    desc: "Fustellatori digitali a plotter: tagliano qualsiasi forma da file digitale senza fustelle fisiche. Laminazione in linea, rimozione sfrido, slitting e riavvolgimento in un unico passaggio. Ideali per tirature brevi e on-demand.",
+    specs: [
+      "Taglio plotter da file digitale",
+      "Nessuna fustella fisica necessaria",
+      "Qualsiasi forma di etichetta",
+      "Laminazione in linea (modelli L)",
+      "Rimozione sfrido automatica",
+      "Slitting integrato",
+      "Larghezza 220 mm o 350 mm",
+      "Ideale per tirature brevi",
+    ],
+    gradient: "from-green-500 to-green-600",
+    tag: "Digitale Plotter",
   },
 ];
 
@@ -160,13 +184,6 @@ const systems = [
     gradient: "from-cyan-500 to-magenta-500",
     tag: "Sistema Completo",
   },
-];
-
-const finishers = [
-  { name: "DLF-140S", width: "122 mm", roll: "100–140 mm", lam: false, slitters: "6" },
-  { name: "DLF-220S", width: "200 mm", roll: "100–225 mm", lam: false, slitters: "8" },
-  { name: "DLF-220L", width: "200 mm", roll: "100–225 mm", lam: true, slitters: "8" },
-  { name: "DLF-350L", width: "330 mm", roll: "100–355 mm", lam: true, slitters: "13" },
 ];
 
 export default function EtichettePage() {
@@ -210,7 +227,7 @@ export default function EtichettePage() {
                   </div>
                   <div className="p-8 lg:p-12 flex flex-col justify-center">
                     <h3 className="text-2xl lg:text-3xl font-bold text-dark-800 mb-1">{p.name}</h3>
-                    <p className="text-sm text-gray-400 mb-4">{p.subtitle}</p>
+                    <p className="text-sm text-gray-500 mb-4">{p.subtitle}</p>
                     <p className="text-gray-500 leading-relaxed mb-6">{p.desc}</p>
                     <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
                       {p.specs.map((s) => (
@@ -223,9 +240,67 @@ export default function EtichettePage() {
                       ))}
                     </ul>
                     <div className="flex flex-wrap gap-3">
-                      <Link href={p.href} className="btn-primary text-sm">
-                        Scopri di più →
-                      </Link>
+                      <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Etichette&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo.%0A%0AGrazie" className="btn-primary text-sm">
+                        Richiedi Demo
+                        <svg className="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Fustellatura */}
+      <section className="section-padding bg-surface-50">
+        <div className="container-custom">
+          <div className="text-center mb-16">
+            <p className="text-cyan-500 font-semibold text-sm uppercase tracking-widest mb-4">Sistemi di Fustellatura</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-dark-800 tracking-tight">
+              Finitura e Fustellatura Etichette
+            </h2>
+          </div>
+
+          <div className="space-y-12">
+            {finishers.map((p, i) => (
+              <div key={p.name} className="card-modern overflow-hidden">
+                <div className="grid lg:grid-cols-2 gap-0">
+                  <div className={`relative h-80 lg:h-auto min-h-[400px] bg-gray-50 ${i % 2 === 1 ? 'lg:order-2' : ''}`}>
+                    <Link href={p.href} className="block w-full h-full group/img">
+                      <Image src={p.image} alt={p.name} fill className="object-contain p-6 transition-transform duration-300 group-hover/img:scale-105" />
+                      <div className="absolute inset-0 bg-cyan-500/0 group-hover/img:bg-cyan-500/5 transition-colors duration-300 rounded-2xl flex items-end justify-center pb-6 opacity-0 group-hover/img:opacity-100">
+                        <span className="bg-white/90 backdrop-blur-sm text-cyan-600 font-semibold text-sm px-4 py-2 rounded-full shadow-lg">
+                          Scopri {p.name} →
+                        </span>
+                      </div>
+                    </Link>
+                    <div className="absolute top-4 left-4">
+                      <span className={`inline-block px-4 py-1.5 rounded-full text-xs font-bold text-white bg-gradient-to-r ${p.gradient} shadow-lg`}>
+                        {p.tag}
+                      </span>
+                    </div>
+                  </div>
+                  <div className="p-8 lg:p-12 flex flex-col justify-center">
+                    <h3 className="text-2xl lg:text-3xl font-bold text-dark-800 mb-1">{p.name}</h3>
+                    <p className="text-sm text-gray-500 mb-4">{p.subtitle}</p>
+                    <p className="text-gray-500 leading-relaxed mb-6">{p.desc}</p>
+                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+                      {p.specs.map((s) => (
+                        <li key={s} className="flex items-start text-sm text-gray-600">
+                          <svg className="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                          {s}
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="flex flex-wrap gap-3">
+                      <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Etichette&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo.%0A%0AGrazie" className="btn-primary text-sm">
+                        Richiedi Demo
+                        <svg className="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -236,7 +311,7 @@ export default function EtichettePage() {
       </section>
 
       {/* DLP-2200 */}
-      <section className="section-padding bg-surface-50">
+      <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="text-center mb-16">
             <p className="text-magenta-500 font-semibold text-sm uppercase tracking-widest mb-4">Sistema Integrato</p>
@@ -279,74 +354,6 @@ export default function EtichettePage() {
               </div>
             </Link>
           ))}
-        </div>
-      </section>
-
-      {/* Finishers */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="text-center mb-16">
-            <p className="text-yellow-500 font-semibold text-sm uppercase tracking-widest mb-4">Finitura</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-dark-800 tracking-tight">
-              Fustellatori Digitali — Serie DLF
-            </h2>
-            <p className="text-gray-500 mt-4 max-w-2xl mx-auto">
-              Taglio digitale a 600 mm/sec di qualsiasi forma, senza fustelle fisiche. Laminazione in linea sui modelli &quot;L&quot;.
-            </p>
-          </div>
-
-          <div className="overflow-x-auto -mx-4 px-4 sm:mx-0 sm:px-0">
-            <table className="w-full text-left min-w-[500px]">
-              <thead>
-                <tr className="border-b-2 border-gray-100">
-                  <th className="py-4 px-4 text-sm font-bold text-dark-800">Modello</th>
-                  <th className="py-4 px-4 text-sm font-bold text-dark-800">Larghezza Taglio</th>
-                  <th className="py-4 px-4 text-sm font-bold text-dark-800">Larghezza Rotolo</th>
-                  <th className="py-4 px-4 text-sm font-bold text-dark-800">Laminazione</th>
-                  <th className="py-4 px-4 text-sm font-bold text-dark-800">Lame Slitting</th>
-                </tr>
-              </thead>
-              <tbody>
-                {finishers.map((f) => (
-                  <tr key={f.name} className="border-b border-gray-50 hover:bg-surface-50 transition-colors">
-                    <td className="py-4 px-4 font-semibold text-dark-800">{f.name}</td>
-                    <td className="py-4 px-4 text-gray-600">{f.width}</td>
-                    <td className="py-4 px-4 text-gray-600">{f.roll}</td>
-                    <td className="py-4 px-4">
-                      {f.lam ? (
-                        <span className="inline-flex items-center gap-1 text-green-600 font-medium text-sm">
-                          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-                          Inclusa
-                        </span>
-                      ) : (
-                        <span className="text-gray-400 text-sm">—</span>
-                      )}
-                    </td>
-                    <td className="py-4 px-4 text-gray-600">fino a {f.slitters}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-
-          <div className="mt-8 text-center">
-            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Informazioni%20Print%20Solution&body=Buongiorno%2C%0A%0AVorrei%20ricevere%20informazioni.%0A%0AGrazie" className="btn-outline text-sm">Richiedi Info sui Fustellatori</a>
-          </div>
-        </div>
-      </section>
-
-      {/* Brand reference */}
-      <section className="section-padding bg-white">
-        <div className="container-custom text-center">
-          <p className="text-gray-400 text-sm uppercase tracking-widest mb-6">Brand Distribuiti</p>
-          <div className="flex flex-wrap justify-center gap-6">
-            <span className="btn-outline text-sm !border-gray-200 !text-gray-600">
-              Afinia Label
-            </span>
-            <span className="btn-outline text-sm !border-gray-200 !text-gray-600">
-              DTM Print
-            </span>
-          </div>
         </div>
       </section>
 

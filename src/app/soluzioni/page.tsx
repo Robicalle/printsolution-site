@@ -3,12 +3,13 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Le Nostre Soluzioni — Print Solution",
+  title: "Le Nostre Soluzioni di Stampa Digitale",
   description:
     "Tutte le soluzioni digitali Print Solution: packaging, etichette, labbratura libri, shopper e packaging di lusso, consumabili.",
   openGraph: {
-    title: "Le Nostre Soluzioni | Print Solution",
+    title: "Le Nostre Soluzioni di Stampa Digitale | Print Solution",
     description: "Scopri tutte le soluzioni digitali per stampa e packaging di Print Solution.",
+    images: ["/images/hero-boxes.webp"],
     type: "website",
     locale: "it_IT",
   },
@@ -34,14 +35,13 @@ const categories = [
     name: "Etichette",
     desc: "Stampanti professionali per etichette in bobina e a foglio: dalla piccola tiratura alla produzione industriale.",
     href: "/soluzioni/etichette",
-    image: "/images/products/afinia-l901-nobg.png",
+    image: "/images/products/afinia-l901.png",
     products: [
       { name: "Afinia L901", desc: "Stampante etichette industriale", href: "/prodotti/afinia-l901" },
-      { name: "Afinia L701", desc: "Stampante etichette a colori", href: "/prodotti/afinia-l701" },
+      { name: "Anytron ANY-002", desc: "Stampa laser + fustellatura", href: "/prodotti/any-002" },
       { name: "Afinia LT5C", desc: "Stampante laser per etichette", href: "/prodotti/afinia-lt5c" },
       { name: "Afinia X350", desc: "Finitura etichette digitale", href: "/prodotti/afinia-x350" },
       { name: "Afinia DLP2200", desc: "Pressa digitale per etichette", href: "/prodotti/afinia-dlp2200" },
-      { name: "Afinia AF200", desc: "Applicatore etichette", href: "/prodotti/afinia-af200" },
     ],
     color: "from-emerald-500 to-emerald-600",
     icon: "🏷️",
@@ -49,8 +49,7 @@ const categories = [
   {
     name: "Shopper & Packaging di Lusso",
     desc: "Stampa hot foil e stampa digitale per shopper, buste e packaging premium con finiture metalliche e personalizzazione.",
-    href: "#shopper",
-    id: "shopper",
+    href: "/soluzioni/shopper",
     image: "/images/products/aurumpress-nobg.png",
     products: [
       { name: "AurumPress", desc: "Stampa termica hot foil per packaging di lusso", href: "/prodotti/aurumpress" },
@@ -62,9 +61,8 @@ const categories = [
   {
     name: "Labbratura Libri",
     desc: "Stampa digitale sui bordi di libri, quaderni e block notes per personalizzazioni uniche e di alta qualità.",
-    href: "#labbratura",
-    id: "labbratura",
-    image: "/images/products/robotjet-nobg.png",
+    href: "/soluzioni/labbratura",
+    image: "/images/products/book-edge-printer.png",
     products: [
       { name: "RobotJet", desc: "Book edge printer — stampa bordi libri", href: "/prodotti/robotjet" },
     ],
@@ -75,7 +73,7 @@ const categories = [
     name: "Consumabili",
     desc: "Inchiostri, testine di stampa, cartucce e materiali di consumo per tutte le nostre soluzioni.",
     href: "/soluzioni/consumabili",
-    image: "/images/products/ink-consumabili.webp",
+    image: "/images/products/afinia-x350-site.webp",
     products: [],
     color: "from-rose-500 to-rose-600",
     icon: "🖨️",
@@ -118,24 +116,9 @@ export default function SoluzioniPage() {
                     <h2 className="text-2xl sm:text-3xl font-bold text-dark-800">{cat.name}</h2>
                   </div>
                   <p className="text-gray-500 leading-relaxed mb-6">{cat.desc}</p>
-                  {cat.products.length > 0 && (
-                    <div className="space-y-3 mb-6">
-                      {cat.products.map((p) => (
-                        <Link key={p.name} href={p.href} className="flex items-center justify-between p-3 rounded-xl bg-surface-50 hover:bg-surface-100 transition-colors group">
-                          <div>
-                            <span className="font-semibold text-dark-800 group-hover:text-cyan-500 transition-colors">{p.name}</span>
-                            <span className="text-sm text-gray-500 ml-2">— {p.desc}</span>
-                          </div>
-                          <span className="text-gray-400 group-hover:text-cyan-500 transition-colors">→</span>
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                  {cat.href.startsWith("/") && (
-                    <Link href={cat.href} className={`inline-flex items-center px-6 py-3 bg-gradient-to-r ${cat.color} text-white font-semibold rounded-full hover:shadow-lg transition-all`}>
-                      Scopri {cat.name} →
-                    </Link>
-                  )}
+                  <Link href={cat.href} className={`inline-flex items-center px-6 py-3 bg-gradient-to-r ${cat.color} text-white font-semibold rounded-full hover:shadow-lg transition-all`}>
+                    Scopri {cat.name} →
+                  </Link>
                 </div>
               </div>
             ))}

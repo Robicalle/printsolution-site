@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
@@ -66,6 +66,7 @@ export default function NewsPage() {
     <>
       <PageHero
         title="News & Eventi"
+        imageSrc="/images/hero-news.jpg"
         subtitle="Le ultime novità, fiere e aggiornamenti dal mondo Print Solution."
         breadcrumb="Print Solution"
       />
@@ -80,7 +81,7 @@ export default function NewsPage() {
                     <span className={`inline-block px-3 py-1 rounded-full text-xs font-bold text-white bg-gradient-to-r ${n.gradient}`}>
                       {n.category}
                     </span>
-                    <span className="text-gray-400 text-sm">{n.date}</span>
+                    <span className="text-gray-500 text-sm">{n.date}</span>
                   </div>
                   <h3 className="text-xl font-bold text-dark-800 mb-3">{n.title}</h3>
                   <p className="text-gray-500 leading-relaxed">{n.desc}</p>
@@ -90,7 +91,7 @@ export default function NewsPage() {
           </div>
 
           <div className="mt-16 text-center">
-            <p className="text-gray-400 mb-6">Vuoi restare aggiornato sulle nostre novità?</p>
+            <p className="text-gray-500 mb-6">Vuoi restare aggiornato sulle nostre novità?</p>
             <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Informazioni%20Print%20Solution&body=Buongiorno%2C%0A%0AVorrei%20ricevere%20informazioni.%0A%0AGrazie" className="btn-primary">Contattaci</a>
           </div>
         </div>

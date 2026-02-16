@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import Link from "next/link";
 
@@ -65,8 +65,8 @@ export default function ArticleDigitaleVsFlessoPage() {
         <div className="container-custom max-w-3xl">
           <div className="flex items-center gap-3 mb-8">
             <span className="px-3 py-1 rounded-full text-xs font-bold text-white bg-gradient-to-r from-yellow-500 to-yellow-600">Packaging</span>
-            <span className="text-gray-400 text-sm">1 Febbraio 2026</span>
-            <span className="text-gray-400 text-sm">· 7 min di lettura</span>
+            <span className="text-gray-500 text-sm">1 Febbraio 2026</span>
+            <span className="text-gray-500 text-sm">· 7 min di lettura</span>
           </div>
 
           <div className="prose prose-lg max-w-none text-gray-600 leading-relaxed">

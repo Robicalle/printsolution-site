@@ -5,7 +5,12 @@ import path from "path";
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const { nome, azienda, email, telefono, interesse, messaggio } = body;
+    const { nome, azienda, email, telefono, interesse, messaggio, _hp_field } = body;
+
+    // Honeypot check
+    if (_hp_field) {
+      return NextResponse.json({ success: true });
+    }
 
     if (!nome || !email || !messaggio) {
       return NextResponse.json(

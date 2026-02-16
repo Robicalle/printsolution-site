@@ -2,7 +2,15 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import MobileCTABar from "@/components/MobileCTABar";
 import CmykCursor from "@/components/CmykCursor";
+import BackToTop from "@/components/BackToTop";
+import ScrollReveal from "@/components/ScrollReveal";
+import CookieBanner from "@/components/CookieBanner";
+import ChatWidget from "@/components/ChatWidget";
+import { CartProvider } from "@/lib/cart-context";
+import CartSidebar from "@/components/CartSidebar";
+import CartButton from "@/components/CartButton";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.printsolutionsrl.it"),
@@ -59,7 +67,7 @@ const organizationJsonLd = {
     postalCode: "20099",
     addressCountry: "IT",
   },
-  telephone: "+39 02 3652 7093",
+  telephone: "+39 02 4943 9417",
   email: "info@printsolutionsrl.it",
   sameAs: [],
 };
@@ -94,10 +102,20 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <CmykCursor />
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[9999] focus:bg-cyan-500 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:text-sm">Salta al contenuto</a>
+        <CartProvider>
+          <CmykCursor />
+          <Header />
+          <main id="main-content" className="pb-16 lg:pb-0">{children}</main>
+          <Footer />
+          <MobileCTABar />
+          <BackToTop />
+          <ScrollReveal />
+          <CookieBanner />
+          <ChatWidget />
+          <CartSidebar />
+          <CartButton />
+        </CartProvider>
       </body>
     </html>
   );

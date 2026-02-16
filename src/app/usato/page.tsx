@@ -103,6 +103,7 @@ export default function UsatoPage() {
         title="Usato Garantito"
         subtitle="Macchine da stampa e packaging usate, revisionate, testate e coperte da garanzia 6 mesi."
         breadcrumb="Usato Garantito"
+        imageSrc="/images/hero-usato.jpg"
       />
 
       {/* Intro */}

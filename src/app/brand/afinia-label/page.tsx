@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import Link from "next/link";
 import Image from "next/image";
@@ -20,13 +20,11 @@ export const metadata: Metadata = {
 };
 
 const products = [
-  { name: "Afinia L701", desc: "Entry level Memjet, 1600 dpi, compatta e accessibile", tag: "Entry Level" },
   { name: "Afinia L901", desc: "Professionale Memjet, doppio nero, alta produttività", tag: "Professionale" },
   { name: "Afinia X350", desc: "Roll-to-roll pigmentata, 45 m/min, inchiostri a base acqua", tag: "Alta Produzione" },
   { name: "Afinia LT5C", desc: "Toner LED, resistenza immediata, ambienti industriali", tag: "Industriale" },
   { name: "Afinia DLP-2200", desc: "Sistema completo: stampa, lamina, fustella, riavvolge", tag: "Sistema Completo" },
   { name: "Serie DLF", desc: "Fustellatori digitali, taglio qualsiasi forma a 600 mm/sec", tag: "Finitura" },
-  { name: "Afinia AF200", desc: "Applicatore semiautomatico per superfici piane", tag: "Applicatore" },
 ];
 
 export default function AfiniaLabelPage() {
@@ -71,7 +69,7 @@ export default function AfiniaLabelPage() {
                 ].map((s) => (
                   <div key={s.label} className="bg-white rounded-2xl p-6 shadow-card">
                     <p className="text-3xl font-bold text-cyan-500">{s.value}</p>
-                    <p className="text-gray-400 text-sm mt-1">{s.label}</p>
+                    <p className="text-gray-500 text-sm mt-1">{s.label}</p>
                   </div>
                 ))}
               </div>

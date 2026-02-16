@@ -3,9 +3,9 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Anypack AB2500 — Box Maker Automatico All-in-One",
+  title: "Anypack AB2500 - Box Maker Automatico",
   description:
-    "Anypack AB2500: box maker automatico per taglio, scanalatura, cordonatura e incollaggio. 500-600 scatole/ora, cambio formato in 3 secondi.",
+    "Anypack AB2500: box maker automatico per taglio, scanalatura, cordonatura e incollaggio. 500-600 scatole/ora, cambio formato in 10 secondi.",
   keywords: [
     "box maker automatico",
     "macchina produzione scatole",
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     "box maker on-demand",
   ],
   openGraph: {
-    title: "Anypack AB2500 — Box Maker Automatico All-in-One | Print Solution",
+    title: "Anypack AB2500 - Box Maker Automatico All-in-One | Print Solution",
     description:
       "Box maker automatico per taglio, scanalatura, cordonatura e incollaggio. 500-600 scatole/ora.",
     images: ["/images/products/ab2500.png"],
@@ -54,8 +54,8 @@ const breadcrumbJsonLd = {
 const specs = [
   ["Tipo macchina", "Box maker automatico all-in-one"],
   ["Operazioni", "Taglio, scanalatura, cordonatura, incollaggio"],
-  ["Produttività", "500–600 scatole/ora"],
-  ["Cambio formato", "3 secondi"],
+  ["Produttivit�", "500-600 scatole/ora"],
+  ["Cambio formato", "10 secondi"],
   ["Spessore cartone", "Da 1 a 7 mm"],
   ["Incollaggio", "A caldo e a freddo"],
   ["Automazione", "Completamente automatico"],
@@ -68,7 +68,7 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
       </svg>
     ),
-    title: "Alta Produttività",
+    title: "Alta Produttivit�",
     desc: "500-600 scatole all'ora: produzione industriale con un'unica macchina compatta e versatile.",
   },
   {
@@ -77,8 +77,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
       </svg>
     ),
-    title: "Cambio Formato in 3 Secondi",
-    desc: "Passaggio istantaneo tra formati diversi senza fermo macchina. Massima flessibilità produttiva.",
+    title: "Cambio Formato in 10 secondi",
+    desc: "Passaggio istantaneo tra formati diversi senza fermo macchina. Massima flessibilit� produttiva.",
   },
   {
     icon: (
@@ -115,7 +115,7 @@ const features = [
       </svg>
     ),
     title: "ROI Rapido",
-    desc: "L'automazione completa riduce i costi di manodopera e aumenta la produttività. Ritorno sull'investimento in tempi brevi.",
+    desc: "L'automazione completa riduce i costi di manodopera e aumenta la produttivit�. Ritorno sull'investimento in tempi brevi.",
   },
 ];
 
@@ -125,70 +125,78 @@ export default function AB2500Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ab2500JsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       {/* Hero */}
-      <section className="relative bg-hero-gradient text-white pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
-        <div className="absolute top-20 right-0 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-64 h-64 bg-yellow-500/10 rounded-full blur-3xl" />
-        <div className="container-custom px-4 sm:px-6 lg:px-8 relative">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <p className="text-cyan-300 text-sm mb-3 uppercase tracking-widest font-medium">Prodotti</p>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">Anypack AB2500</h1>
-              <p className="text-lg text-gray-300/90 leading-relaxed mb-8">
-                Box maker automatico all-in-one. Taglio, scanalatura, cordonatura e incollaggio 
-                in un&apos;unica macchina. 500-600 scatole/ora con cambio formato in 3 secondi.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Anypack%20AB2500&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20Anypack%20AB2500.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">Richiedi Demo →</a>
-              </div>
-            </div>
-            <div className="relative h-72 lg:h-96 rounded-3xl overflow-hidden">
-              <Image src="/images/products/ab2500.png" alt="Anypack AB2500" fill className="object-contain p-4" priority />
+      <section className="relative text-white pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden min-h-[60vh] flex items-center">
+        <video autoPlay muted loop playsInline aria-hidden="true" className="absolute inset-0 w-full h-full object-cover">
+          <source src="/videos/ab2500-hero.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-r from-dark-800/90 via-dark-800/70 to-dark-800/40" />
+        <div className="container-custom px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="max-w-2xl">
+            <p className="text-cyan-300 text-sm mb-3 uppercase tracking-widest font-medium">Prodotti</p>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">Anypack AB2500</h1>
+            <p className="text-lg text-gray-200 leading-relaxed mb-8">
+              Box maker automatico all-in-one. Taglio, scanalatura, cordonatura e incollaggio
+              in un&apos;unica macchina. 500-600 scatole/ora con cambio formato in 10 secondi.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Anypack%20AB2500&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20Anypack%20AB2500.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">Richiedi Demo ?</a>
             </div>
           </div>
         </div>
       </section>
 
+      {/* Photo */}
+      <section className="bg-white pt-8 lg:pt-10 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto">
+          <div className="relative w-full aspect-[16/9] rounded-3xl overflow-hidden">
+            <Image src="/images/products/ab2500-hero-nobg.png" alt="Anypack AB2500" fill className="object-contain p-6" />
+          </div>
+        </div>
+      </section>
+
       {/* Descrizione */}
-      <section className="section-padding bg-white">
+      <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
         <div className="container-custom max-w-4xl">
           <h2 className="text-3xl font-bold text-dark-800 mb-6">Produzione Automatica di Scatole</h2>
           <p className="text-gray-500 leading-relaxed mb-4">
-            L&apos;Anypack AB2500 è un box maker completamente automatico che esegue taglio, scanalatura, cordonatura 
-            e incollaggio in un&apos;unica operazione. Progettato per la produzione industriale di scatole in cartone 
-            ondulato, garantisce una produttività di 500-600 scatole all&apos;ora.
+            L&apos;Anypack AB2500 � un box maker completamente automatico che esegue taglio, scanalatura, cordonatura
+            e incollaggio in un&apos;unica operazione. Progettato per la produzione industriale di scatole in cartone
+            ondulato, garantisce una produttivit� di 500-600 scatole all&apos;ora.
           </p>
           <p className="text-gray-500 leading-relaxed mb-4">
-            Il cambio formato avviene in soli 3 secondi, eliminando i tempi morti e massimizzando l&apos;efficienza 
-            produttiva. La macchina lavora con cartone da 1 a 7mm di spessore, adattandosi sia a imballi leggeri 
+            Il cambio formato avviene in soli 10 secondi, eliminando i tempi morti e massimizzando l&apos;efficienza
+            produttiva. La macchina lavora con cartone da 1 a 7mm di spessore, adattandosi sia a imballi leggeri
             che a scatole per spedizioni pesanti.
           </p>
           <p className="text-gray-500 leading-relaxed">
-            Il sistema di incollaggio a caldo e a freddo consente di lavorare con ogni tipo di cartone e applicazione. 
-            L&apos;AB2500 è la soluzione ideale per scatolifici, centri di logistica e aziende che necessitano di 
+            Il sistema di incollaggio a caldo e a freddo consente di lavorare con ogni tipo di cartone e applicazione.
+            L&apos;AB2500 � la soluzione ideale per scatolifici, centri di logistica e aziende che necessitano di
             produzione on-demand di imballaggi personalizzati.
           </p>
         </div>
       </section>
 
       {/* Video */}
-      <section className="section-padding bg-white">
+      <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
         <div className="container-custom">
-          <div className="text-center mb-12">
+          <div className="text-center mb-8">
             <p className="text-cyan-500 font-semibold text-sm uppercase tracking-widest mb-4">Video</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-dark-800">AB2500 in Azione</h2>
           </div>
           <div className="max-w-3xl mx-auto">
             <div className="aspect-video rounded-2xl overflow-hidden shadow-lg">
-              <video controls preload="metadata" className="w-full h-full object-cover"><source src="/videos/ab2500-2.mp4" type="video/mp4" /></video>
+              <video controls playsInline preload="metadata" poster="/images/posters/ab2500-2.jpg" className="w-full h-full rounded-2xl">
+                <source src="/videos/ab2500-2.mp4" type="video/mp4" />
+              </video>
             </div>
           </div>
         </div>
       </section>
 
       {/* Features */}
-      <section className="section-padding bg-white">
+      <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
         <div className="container-custom">
-          <h2 className="text-3xl font-bold text-dark-800 mb-12 text-center">Vantaggi Principali</h2>
+          <h2 className="text-3xl font-bold text-dark-800 mb-8 text-center">Vantaggi Principali</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((f) => (
               <div key={f.title} className="card-modern p-8 hover:-translate-y-1 transition-transform duration-300">
@@ -203,7 +211,7 @@ export default function AB2500Page() {
         </div>
       </section>
       {/* Specifiche Tecniche */}
-      <section className="section-padding bg-surface-50">
+      <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-surface-50">
         <div className="container-custom max-w-3xl">
           <h2 className="text-3xl font-bold text-dark-800 mb-10 text-center">Specifiche Tecniche</h2>
           <div className="space-y-3">
@@ -217,29 +225,27 @@ export default function AB2500Page() {
         </div>
       </section>
 
-
-
       {/* CTA */}
-      <section className="section-padding bg-surface-50">
+      <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-surface-50">
         <div className="container-custom text-center">
           <h2 className="text-3xl font-bold text-dark-800 mb-6">Automatizza la Produzione di Scatole</h2>
           <p className="text-gray-500 max-w-xl mx-auto mb-8">
-            Scopri come l&apos;AB2500 può rivoluzionare la tua linea di produzione. Vieni a vederla nella nostra sala demo.
+            Scopri come l&apos;AB2500 pu� rivoluzionare la tua linea di produzione. Vieni a vederla nella nostra sala demo.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Anypack%20AB2500&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20Anypack%20AB2500.%0A%0AGrazie" className="btn-primary text-lg">Richiedi Demo →</a>
+            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Anypack%20AB2500&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20Anypack%20AB2500.%0A%0AGrazie" className="btn-primary text-lg">Richiedi Demo ?</a>
           </div>
         </div>
       </section>
 
       {/* Prodotti Correlati */}
-      <section className="section-padding bg-white">
+      <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
         <div className="container-custom">
           <h2 className="text-2xl font-bold text-dark-800 mb-8 text-center">Prodotti Correlati</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { name: "GreenBox EVO", desc: "Stampante single-pass per packaging", href: "/prodotti/greenbox-evo", image: "/images/products/greenbox-evo.jpeg" },
-              { name: "EDM-650X", desc: "Stampante single-pass grande formato", href: "/prodotti/edm-650x", image: "/images/products/edm-650x-nobg.png" },
+              { name: "GreenBox EVO", desc: "Stampante single-pass per packaging", href: "/prodotti/greenbox-evo", image: "/images/products/greenbox-evo-site-nobg.png" },
+              { name: "EDM-650X", desc: "Stampante single-pass grande formato", href: "/prodotti/edm-650x", image: "/images/products/edm-650x-2hd-nobg-v4.png" },
               { name: "AurumPress", desc: "Stampatrice termica per foil", href: "/prodotti/aurumpress", image: "/images/products/aurumpress-nobg.png" },
             ].map((p) => (
               <Link key={p.name} href={p.href} className="card-modern overflow-hidden group hover:-translate-y-1 transition-transform duration-300">

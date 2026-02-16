@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import Link from "next/link";
 
@@ -65,8 +65,8 @@ export default function ArticleBoxMaker() {
         <div className="container-custom max-w-3xl">
           <div className="flex items-center gap-3 mb-8">
             <span className="px-3 py-1 rounded-full text-xs font-bold text-white bg-gradient-to-r from-cyan-500 to-cyan-600">Packaging</span>
-            <span className="text-gray-400 text-sm">5 Febbraio 2026</span>
-            <span className="text-gray-400 text-sm">· 8 min di lettura</span>
+            <span className="text-gray-500 text-sm">5 Febbraio 2026</span>
+            <span className="text-gray-500 text-sm">· 8 min di lettura</span>
           </div>
 
           <div className="prose prose-lg max-w-none text-gray-600 leading-relaxed">
@@ -78,7 +78,7 @@ export default function ArticleBoxMaker() {
             </p>
             <p>
               A differenza dei sistemi tradizionali che richiedono fustelle fisiche e lunghi tempi di setup, un box maker 
-              moderno come l&apos;<strong>Anypack AB2500</strong> cambia formato in soli 3 secondi, memorizza fino a 20.000 
+              moderno come l&apos;<strong>Anypack AB2500</strong> cambia formato in soli 10 secondi, memorizza fino a 20.000 
               formati e produce 500–600 pezzi all&apos;ora con un solo operatore.
             </p>
 
@@ -96,7 +96,7 @@ export default function ArticleBoxMaker() {
             <h2 className="text-2xl font-bold text-dark-800 mt-10 mb-4">Vantaggi rispetto ai Metodi Tradizionali</h2>
             <p>I vantaggi di un box maker automatico rispetto alla produzione tradizionale con fustelle sono enormi:</p>
             <ul className="list-disc pl-6 space-y-2">
-              <li><strong>Zero fustelle fisiche</strong> — il cambio formato è digitale, in 3 secondi</li>
+              <li><strong>Zero fustelle fisiche</strong> — il cambio formato è digitale, in 10 secondi</li>
               <li><strong>Produzione on-demand</strong> — si producono solo le scatole necessarie, eliminando lo stock</li>
               <li><strong>Un solo operatore</strong> — riduzione drastica dei costi di manodopera</li>
               <li><strong>Versatilità totale</strong> — da scatole piccole a imballaggi per mobili</li>

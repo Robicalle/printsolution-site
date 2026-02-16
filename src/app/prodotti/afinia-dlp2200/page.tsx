@@ -134,13 +134,12 @@ export default function AfiniaDLP2200Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
 
       {/* Hero */}
-      <section className="relative bg-hero-gradient text-white pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
-        <div className="absolute top-20 right-0 w-96 h-96 bg-magenta-500/20 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl" />
-        <div className="container-custom px-4 sm:px-6 lg:px-8 relative">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <p className="text-cyan-300 text-sm mb-3 uppercase tracking-widest font-medium">Sistema Integrato</p>
+      <section className="relative text-white pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden min-h-[60vh] flex items-center">
+        <Image src="/images/hero-labels.webp" alt="Hero background" fill className="object-cover" priority />
+        <div className="absolute inset-0 bg-gradient-to-r from-dark-800/90 via-dark-800/70 to-dark-800/40" />
+        <div className="container-custom px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="max-w-2xl">
+            <p className="text-cyan-300 text-sm mb-3 uppercase tracking-widest font-medium">Sistema Integrato</p>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">Afinia DLP-2200</h1>
               <p className="text-lg text-gray-300/90 leading-relaxed mb-8">
                 Digital Label Press completa: dalla bobina bianca all&apos;etichetta finita in un unico 
@@ -150,16 +149,21 @@ export default function AfiniaDLP2200Page() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Afinia%20DLP-2200&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20Afinia%20DLP-2200.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">Richiedi Demo →</a>
               </div>
-            </div>
-            <div className="relative h-72 lg:h-96 rounded-3xl overflow-hidden">
-              <Image src="/images/products/afinia-dlp2200.avif" alt="Afinia DLP-2200" fill className="object-contain p-4" priority />
-            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Photo */}
+      <section className="bg-white pt-8 lg:pt-10 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto">
+          <div className="relative w-full aspect-[16/9] rounded-3xl overflow-hidden">
+            <Image src="/images/products/afinia-dlp2200.avif" alt="Product photo" fill className="object-contain p-6" />
           </div>
         </div>
       </section>
 
       {/* Descrizione */}
-      <section className="section-padding bg-white">
+      <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
         <div className="container-custom max-w-4xl">
           <h2 className="text-3xl font-bold text-dark-800 mb-6">Dalla Bobina Bianca all&apos;Etichetta Finita in Un Solo Passaggio</h2>
           <p className="text-gray-500 leading-relaxed mb-4">
@@ -175,7 +179,7 @@ export default function AfiniaDLP2200Page() {
       </section>
 
       {/* Video */}
-      <section className="section-padding bg-white">
+      <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
         <div className="container-custom">
           <div className="text-center mb-12">
             <p className="text-cyan-500 font-semibold text-sm uppercase tracking-widest mb-4">Video</p>
@@ -183,16 +187,18 @@ export default function AfiniaDLP2200Page() {
           </div>
           <div className="max-w-3xl mx-auto">
             <div className="aspect-video rounded-2xl overflow-hidden shadow-lg">
-              <video controls preload="metadata" className="w-full h-full object-cover"><source src="/videos/afinia-dlp2200.mp4" type="video/mp4" /></video>
+              <video controls playsInline preload="metadata" poster="/images/posters/afinia-dlp2200-yt1.jpg" className="w-full h-full rounded-2xl">
+                <source src="/videos/afinia-dlp2200-yt1.mp4" type="video/mp4" />
+              </video>
             </div>
           </div>
         </div>
       </section>
 
       {/* Vantaggi */}
-      <section className="section-padding bg-white">
+      <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
         <div className="container-custom">
-          <h2 className="text-3xl font-bold text-dark-800 mb-12 text-center">Vantaggi Principali</h2>
+          <h2 className="text-3xl font-bold text-dark-800 mb-8 text-center">Vantaggi Principali</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((f) => (
               <div key={f.title} className="card-modern p-8 hover:-translate-y-1 transition-transform duration-300">
@@ -207,7 +213,7 @@ export default function AfiniaDLP2200Page() {
         </div>
       </section>
       {/* Specifiche Tecniche */}
-      <section className="section-padding bg-surface-50">
+      <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-surface-50">
         <div className="container-custom max-w-3xl">
           <h2 className="text-3xl font-bold text-dark-800 mb-10 text-center">Specifiche Tecniche</h2>
           <div className="space-y-3">
@@ -221,10 +227,8 @@ export default function AfiniaDLP2200Page() {
         </div>
       </section>
 
-
-
       {/* CTA */}
-      <section className="section-padding bg-surface-50">
+      <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-surface-50">
         <div className="container-custom text-center">
           <h2 className="text-3xl font-bold text-dark-800 mb-6">Produci Etichette Complete In-House</h2>
           <p className="text-gray-500 max-w-xl mx-auto mb-8">
@@ -237,13 +241,13 @@ export default function AfiniaDLP2200Page() {
       </section>
 
       {/* Prodotti Correlati */}
-      <section className="section-padding bg-white">
+      <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
         <div className="container-custom">
           <h2 className="text-2xl font-bold text-dark-800 mb-8 text-center">Prodotti Correlati</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {[
               { name: "Afinia L901", desc: "Stampante etichette professionale (cuore della DLP-2200)", href: "/prodotti/afinia-l901", image: "/images/products/afinia-l901.png" },
-              { name: "Afinia X350", desc: "Stampante roll-to-roll alta velocità", href: "/prodotti/afinia-x350", image: "/images/products/afinia-x350.webp" },
+              { name: "Afinia X350", desc: "Stampante roll-to-roll alta velocità", href: "/prodotti/afinia-x350", image: "/images/products/afinia-x350-site.webp" },
               { name: "Afinia AF200", desc: "Applicatore etichette semiautomatico", href: "/prodotti/afinia-af200", image: "/images/products/afinia-af200-nobg.png" },
             ].map((p) => (
               <Link key={p.name} href={p.href} className="card-modern overflow-hidden group hover:-translate-y-1 transition-transform duration-300">

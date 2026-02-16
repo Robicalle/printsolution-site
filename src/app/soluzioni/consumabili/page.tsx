@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
@@ -48,7 +48,6 @@ const categories = [
     desc: "Cartucce originali per stampanti etichette Afinia. Tecnologia dye-based e pigmentata per risultati professionali su ogni supporto.",
     items: [
       { name: "Kit CMYKK per L901", detail: "5 cartucce alta capacità, doppio nero" },
-      { name: "Kit CMYKK per L701", detail: "5 cartucce × 200 ml = 1000 ml totali" },
       { name: "Kit CMYK per X350", detail: "Taniche 2L pigmentate, 8L totali" },
       { name: "Toner CMYK per LT5C", detail: "Cartucce toner ad alta resa" },
     ],
@@ -67,7 +66,6 @@ const categories = [
     items: [
       { name: "Testina HP Pagewide", detail: "Per EDM-650X e GreenBox EVO — single-pass" },
       { name: "Testina Memjet Waterfall", detail: "Per Afinia L901 — sostituibile senza fermo" },
-      { name: "Testina Memjet L701", detail: "Per Afinia L701 — 70.400 ugelli" },
       { name: "Testina Afinia X350", detail: "Ridondanza 2× ugelli, sostituibile" },
     ],
     features: [
@@ -141,7 +139,7 @@ export default function ConsumabiliPage() {
                       {cat.items.map((item) => (
                         <li key={item.name} className="bg-surface-50 rounded-xl p-4">
                           <p className="font-semibold text-dark-800 text-sm">{item.name}</p>
-                          <p className="text-gray-400 text-sm mt-1">{item.detail}</p>
+                          <p className="text-gray-500 text-sm mt-1">{item.detail}</p>
                         </li>
                       ))}
                     </ul>
@@ -188,8 +186,8 @@ export default function ConsumabiliPage() {
                 </div>
                 <h3 className="text-lg font-bold text-dark-800 mb-2">{pack.name}</h3>
                 <p className="text-gray-500 text-sm mb-4">{pack.hours} supporto remoto</p>
-                <p className="text-gray-400 text-sm">Sconto ricambi: {pack.discount}</p>
-                <p className="text-gray-400 text-sm mt-1">+ Aggiornamenti SW inclusi</p>
+                <p className="text-gray-500 text-sm">Sconto ricambi: {pack.discount}</p>
+                <p className="text-gray-500 text-sm mt-1">+ Aggiornamenti SW inclusi</p>
               </div>
             ))}
           </div>
@@ -203,9 +201,8 @@ export default function ConsumabiliPage() {
           <p className="text-gray-500 max-w-xl mx-auto mb-8">
             Contattaci per un preventivo rapido. Spedizione in tutta Italia, prezzi riservati per ordini ricorrenti.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Informazioni%20Print%20Solution&body=Buongiorno%2C%0A%0AVorrei%20ricevere%20informazioni.%0A%0AGrazie" className="btn-primary">Ordina Consumabili</a>
-            <a href="mailto:info@printsolutionsrl.it" className="btn-outline">info@printsolutionsrl.it</a>
+          <div className="flex justify-center">
+            <a href="mailto:ordini@printsolutionsrl.it?subject=Ordine%20Consumabili&body=Buongiorno%2C%0A%0AVorrei%20ordinare%20i%20seguenti%20consumabili%3A%0A%0A%0AGrazie" className="btn-primary">Ordina Consumabili</a>
           </div>
         </div>
       </section>

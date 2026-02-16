@@ -41,6 +41,8 @@ export default function Footer() {
             <ul className="space-y-3 text-sm">
               <li><Link href="/soluzioni/packaging" className="hover:text-white transition-colors duration-200">Packaging</Link></li>
               <li><Link href="/soluzioni/etichette" className="hover:text-white transition-colors duration-200">Etichette</Link></li>
+              <li><Link href="/soluzioni/shopper" className="hover:text-white transition-colors duration-200">Shopper & Lusso</Link></li>
+              <li><Link href="/soluzioni/labbratura" className="hover:text-white transition-colors duration-200">Labbratura Libri</Link></li>
               <li><Link href="/soluzioni/consumabili" className="hover:text-white transition-colors duration-200">Consumabili</Link></li>
             </ul>
           </div>
@@ -48,14 +50,27 @@ export default function Footer() {
           {/* Prodotti */}
           <div>
             <h3 className="text-white font-semibold mb-6 text-sm uppercase tracking-wider">Prodotti</h3>
-            <ul className="space-y-3 text-sm">
-              <li><Link href="/prodotti/greenbox-evo" className="hover:text-white transition-colors duration-200">GreenBox EVO</Link></li>
+            <ul className="space-y-2 text-sm columns-2 gap-x-8">
               <li><Link href="/prodotti/edm-650x" className="hover:text-white transition-colors duration-200">EDM-650X</Link></li>
-              <li><Link href="/prodotti/aurumpress" className="hover:text-white transition-colors duration-200">AurumPress</Link></li>
               <li><Link href="/prodotti/ab2500" className="hover:text-white transition-colors duration-200">Anypack AB2500</Link></li>
-              <li><Link href="/promozioni" className="hover:text-white transition-colors duration-200 text-cyan-400">Promozioni</Link></li>
-              <li><Link href="/usato" className="hover:text-white transition-colors duration-200 text-orange-400">Usato Garantito</Link></li>
+              <li><Link href="/prodotti/greenbox-evo" className="hover:text-white transition-colors duration-200">GreenBox EVO</Link></li>
+              <li><Link href="/prodotti/packprinter-uv" className="hover:text-white transition-colors duration-200">PackPrinter UV</Link></li>
+              <li><Link href="/prodotti/aurumpress" className="hover:text-white transition-colors duration-200">AurumPress</Link></li>
+              <li><Link href="/prodotti/any-002" className="hover:text-white transition-colors duration-200">Anytron ANY-002</Link></li>
+              <li><Link href="/prodotti/afinia-l901" className="hover:text-white transition-colors duration-200">Afinia L901</Link></li>
+              <li><Link href="/prodotti/afinia-x350" className="hover:text-white transition-colors duration-200">Afinia X350</Link></li>
+              <li><Link href="/prodotti/afinia-lt5c" className="hover:text-white transition-colors duration-200">Afinia LT5C</Link></li>
+              <li><Link href="/prodotti/afinia-dlp2200" className="hover:text-white transition-colors duration-200">Afinia DLP-2200</Link></li>
+              <li><Link href="/prodotti/any-press" className="hover:text-white transition-colors duration-200">Any-Press</Link></li>
+              <li><Link href="/prodotti/afinia-dc350" className="hover:text-white transition-colors duration-200">Afinia DC350</Link></li>
+              <li><Link href="/prodotti/afinia-dlf" className="hover:text-white transition-colors duration-200">Afinia DLF</Link></li>
+              <li><Link href="/prodotti/robotjet" className="hover:text-white transition-colors duration-200">RobotJet</Link></li>
+              <li><Link href="/prodotti/greenbox-print-book" className="hover:text-white transition-colors duration-200">GreenBox Print Book</Link></li>
             </ul>
+            <div className="mt-4 pt-3 border-t border-white/5 space-y-2 text-sm">
+              <Link href="/promozioni" className="block hover:text-white transition-colors duration-200 text-cyan-400">🏷️ Promozioni</Link>
+              <Link href="/usato" className="block hover:text-white transition-colors duration-200 text-orange-400">♻️ Usato Garantito</Link>
+            </div>
           </div>
 
           {/* Contatti */}
@@ -66,8 +81,8 @@ export default function Footer() {
               <p>20099 Sesto San Giovanni (MI)</p>
               <div className="pt-2 space-y-2">
                 <p>
-                  <a href="tel:+390236527093" className="hover:text-white transition-colors duration-200">
-                    +39 02 3652 7093
+                  <a href="tel:+390249439417" className="hover:text-white transition-colors duration-200">
+                    +39 02 4943 9417
                   </a>
                 </p>
                 <p>
@@ -80,7 +95,46 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-white/5 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center text-sm md:text-xs text-gray-600">
+        {/* Company info row */}
+        <div className="border-t border-white/5 mt-16 pt-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm text-gray-500 mb-8">
+            <div className="flex items-start gap-3">
+              <svg className="w-5 h-5 text-cyan-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+              </svg>
+              <div>
+                <p className="text-white font-medium mb-1">Sede & Sala Demo</p>
+                <a href="https://maps.google.com/?q=Via+Pisa+200+int.+23+Sesto+San+Giovanni+MI" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                  Via Pisa 200 int. 23, 20099 Sesto San Giovanni (MI)
+                </a>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <svg className="w-5 h-5 text-cyan-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+              </svg>
+              <div>
+                <p className="text-white font-medium mb-1">Orari</p>
+                <p>Lun — Ven: 9:00 — 18:00</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <svg className="w-5 h-5 text-cyan-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
+              </svg>
+              <div>
+                <p className="text-white font-medium mb-1">Dati Aziendali</p>
+                <p>P.IVA / C.F. 07149250966</p>
+                <p>Cap. Soc. € 100.000 i.v.</p>
+                <p>PEC printsolutionsrl@pec.it</p>
+                <p>REA MI — 1939367</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center text-sm md:text-xs text-gray-600">
           <p>&copy; {new Date().getFullYear()} Print Solution S.r.l. — Tutti i diritti riservati.</p>
           <div className="flex gap-6 mt-4 md:mt-0">
             <Link href="/privacy" className="hover:text-white transition-colors duration-200">Privacy Policy</Link>

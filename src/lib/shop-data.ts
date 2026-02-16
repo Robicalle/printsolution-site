@@ -83,19 +83,27 @@ export const categories: Category[] = [
   },
   {
     slug: "consumabili-l801",
-    name: "Afinia L801 / L801+",
-    description: "Cartucce e testine per stampanti Afinia L801 e L801 Plus",
+    name: "Afinia L801",
+    description: "Cartucce e testine per stampante Afinia L801",
     image: "/images/shop/l801-category.png",
     products: [
       { id: "l801-y", name: "22460 - L801 Yellow", sku: "22460", price: 215.00, image: "/images/shop/l801-yellow.jpg", inStock: true },
-      { id: "l801p-y", name: "30419 - L801Plus Yellow", sku: "30419", price: 220.00, image: "/images/shop/l801p-yellow.jpg", inStock: true },
       { id: "l801-m", name: "22474 - L801 Magenta", sku: "22474", price: 215.00, image: "/images/shop/l801-magenta.jpg", inStock: true },
-      { id: "l801p-m", name: "30433 - L801Plus Magenta", sku: "30433", price: 220.00, image: "/images/shop/l801p-magenta.jpg", inStock: true },
       { id: "l801-c", name: "22467 - L801 Cyano", sku: "22467", price: 215.00, image: "/images/shop/l801-cyan.jpg", inStock: true },
-      { id: "l801p-c", name: "30426 - L801Plus Cyano", sku: "30426", price: 220.00, image: "/images/shop/l801p-cyan.jpg", inStock: true },
       { id: "l801-k", name: "22453 - L801 Black", sku: "22453", price: 215.00, image: "/images/shop/l801-black.jpg", inStock: true },
-      { id: "l801p-k", name: "30412 - L801Plus Black", sku: "30412", price: 220.00, image: "/images/shop/l801p-black.jpg", inStock: true },
       { id: "l801-head", name: "22537 - Testina di stampa L801", sku: "22537", price: 630.00, image: "/images/shop/l801-testina.png", inStock: true },
+    ],
+  },
+  {
+    slug: "consumabili-l801-plus",
+    name: "Afinia L801 Plus",
+    description: "Cartucce per stampante Afinia L801 Plus",
+    image: "/images/shop/l801p-cyan.jpg",
+    products: [
+      { id: "l801p-y", name: "30419 - L801Plus Yellow", sku: "30419", price: 220.00, image: "/images/shop/l801p-yellow.jpg", inStock: true },
+      { id: "l801p-m", name: "30433 - L801Plus Magenta", sku: "30433", price: 220.00, image: "/images/shop/l801p-magenta.jpg", inStock: true },
+      { id: "l801p-c", name: "30426 - L801Plus Cyano", sku: "30426", price: 220.00, image: "/images/shop/l801p-cyan.jpg", inStock: true },
+      { id: "l801p-k", name: "30412 - L801Plus Black", sku: "30412", price: 220.00, image: "/images/shop/l801p-black.jpg", inStock: true },
     ],
   },
   {

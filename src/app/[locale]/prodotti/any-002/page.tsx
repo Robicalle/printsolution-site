@@ -4,7 +4,7 @@ import Image from "next/image";
 import { getLocale } from "next-intl/server";
 
 export const metadata: Metadata = {
-  title: "Anytron ANY-002 – Stampa + Fustella Etichette",
+  title: "Anytron ANY-002 – {locale === 'it' ? 'Stampa + Fustella Etichette' : 'Print + Die-Cut Labels'}",
   description:
     "Anytron ANY-002: stampa laser + fustellatura etichette on-demand. Toner resistente, 1200 dpi, 9 m/min, fino a 5.000 etichette in 2 ore.",
   keywords: [
@@ -52,7 +52,7 @@ const breadcrumbJsonLd = {
   ],
 };
 
-const specs = [
+function getSpecs(l: string) { return l === 'it' ? [
   ["Motore di stampa", "Laser digitale LED"],
   ["Risoluzione", "1.200 dpi a toner"],
   ["Velocità di stampa", "Fino a 9 m/min"],
@@ -70,8 +70,22 @@ const specs = [
   ["Alimentazione", "220-240V, 50/60Hz, 4.5A (max 1.300W)"],
   ["Ambiente di lavoro", "10-32°C, umidità 20-80%"],
   ["Dimensioni", "180 × 480 × 600 mm"],
-  ["Peso", "95 kg"],
-];
+  ["Peso", "95 kg"],
+] : [
+  ["Technology", "Electrophotographic toner LED"],
+  ["Resolution", "1200 × 600 dpi"],
+  ["Colors", "4 colors (CMYK)"],
+  ["Max print width", "104 mm"],
+  ["Throughput", "Up to 5,000 labels in 2 hours"],
+  ["Die-cutting", "Integrated semi-rotary"],
+  ["Lamination", "Optional inline"],
+  ["Rewinding", "Integrated"],
+  ["Toner", "CMYK – K 11,000 pag / CMY 11,500 pag (5% A4 coverage)"],
+  ["Media types", "Paper, PP, PE, polyester"],
+  ["Power supply", "220-240V, 50/60Hz, 4.5A (max 1,300W)"],
+  ["Operating environment", "10-32°C, humidity 20-80%"],
+  ["Dimensions", "180 × 480 × 600 mm"],
+]; }
 
 const features = [
   {
@@ -84,7 +98,7 @@ const features = [
     ),
   },
   {
-    title: "On-Demand Senza Sprechi",
+    title: "On-Demand Senza Sprechi", titleEn: "On-Demand Without Waste",
     desc: "Stampate qualsiasi quantità, dalla singola etichetta a migliaia. Zero sprechi di materiale grazie al taglio intelligente (meno di 40 cm di scarto).",
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -212,8 +226,8 @@ export default async function Any002Page() {
                 <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-cyan-500 to-magenta-500 flex items-center justify-center text-white mb-5">
                   {f.icon}
                 </div>
-                <h3 className="text-lg font-bold text-dark-800 mb-2">{f.title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{f.desc}</p>
+                <h3 className="text-lg font-bold text-dark-800 mb-2">{locale === 'it' ? f.title : (f.titleEn || f.title)}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{locale === 'it' ? f.desc : (f.descEn || f.desc)}</p>
               </div>
             ))}
           </div>
@@ -232,7 +246,7 @@ export default async function Any002Page() {
           <div className="card-modern overflow-hidden">
             <table className="w-full">
               <tbody>
-                {specs.map(([label, value], i) => (
+                {getSpecs(locale).map(([label, value], i) => (
                   <tr key={label} className={i % 2 === 0 ? "bg-white" : "bg-surface-50"}>
                     <td className="py-4 px-6 font-semibold text-dark-800 w-2/5">{label}</td>
                     <td className="py-4 px-6 text-gray-600">{value}</td>

@@ -52,7 +52,7 @@ const breadcrumbJsonLd = {
   ],
 };
 
-const specs = [
+function getSpecs(l: string) { return l === 'it' ? [
   ["Tecnologia", "Inkjet single-pass CMYK"],
   ["Teste di stampa", "Da 2 a 6 teste HP (30 cm ciascuna)"],
   ["Risoluzione", "1200 × 1200 dpi"],
@@ -64,8 +64,17 @@ const specs = [
   ["Piano", "Aspirato con pompa a vuoto"],
   ["Software RIP", "Incluso"],
   ["Alimentatore", "Caricatore automatico opzionale"],
-  ["Opzioni", "Stampa bobina a bobina"],
-];
+  ["Opzioni", "Stampa bobina a bobina"],
+] : [
+  ["Technology", "HP Pagewide single-pass inkjet"],
+  ["Resolution", "1200 × 1200 dpi"],
+  ["Colors", "CMYK"],
+  ["Max print width", "650 mm"],
+  ["Max speed", "Up to 30 m/min"],
+  ["Inks", "Pigmented water-based"],
+  ["Compatible media", "Cardboard, paper, kraft, jute"],
+  ["Configuration", "Customizable (dual head available)"],
+]; }
 
 const features = [
   {
@@ -229,7 +238,7 @@ export default async function EDM650XPage() {
         <div className="container-custom">
           <div className="text-center mb-12">
             <p className="text-cyan-500 font-semibold text-sm uppercase tracking-widest mb-4">Video</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-dark-800">{locale === 'it' ? 'EDM-650X in Azione' : 'EDM-650X in Action'}</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-dark-800">{locale === 'it' ? '{locale === 'it' ? 'EDM-650X in Azione' : 'EDM-650X in Action'}' : 'EDM-650X in Action'}</h2>
           </div>
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             <div className="aspect-video rounded-2xl overflow-hidden shadow-lg">
@@ -261,8 +270,8 @@ export default async function EDM650XPage() {
                 <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-cyan-500 to-magenta-500 flex items-center justify-center text-white mb-5">
                   {f.icon}
                 </div>
-                <h3 className="text-lg font-bold text-dark-800 mb-2">{f.title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{f.desc}</p>
+                <h3 className="text-lg font-bold text-dark-800 mb-2">{locale === 'it' ? f.title : (f.titleEn || f.title)}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{locale === 'it' ? f.desc : (f.descEn || f.desc)}</p>
               </div>
             ))}
           </div>
@@ -274,7 +283,7 @@ export default async function EDM650XPage() {
         <div className="container-custom max-w-3xl">
           <h2 className="text-3xl font-bold text-dark-800 mb-10 text-center">{locale === 'it' ? 'Specifiche Tecniche' : 'Technical Specifications'}</h2>
           <div className="space-y-3">
-            {specs.map(([label, value]) => (
+            {getSpecs(locale).map(([label, value]) => (
               <div key={label} className="flex flex-col sm:flex-row sm:justify-between gap-1 bg-white rounded-xl px-5 py-4 shadow-sm">
                 <span className="text-sm font-medium text-gray-600">{label}</span>
                 <span className="text-sm font-bold text-dark-800">{value}</span>
@@ -303,9 +312,9 @@ export default async function EDM650XPage() {
           <h2 className="text-2xl font-bold text-dark-800 mb-8 text-center">{locale === 'it' ? 'Prodotti Correlati' : 'Related Products'}</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { name: "GreenBox EVO", desc: locale === 'it' ? "Stampante single-pass per packaging" : "Single-pass printer for packaging", href: "/prodotti/greenbox-evo", image: "/images/products/greenbox-evo-site-nobg.png" },
+              { name: "GreenBox EVO", desc: locale === 'it' ? "{locale === 'it' ? 'Stampante single-pass per packaging' : 'Single-pass printer for packaging'}" : "Single-pass printer for packaging", href: "/prodotti/greenbox-evo", image: "/images/products/greenbox-evo-site-nobg.png" },
               { name: "AurumPress", desc: locale === 'it' ? "Stampatrice termica per foil" : "Thermal foil printer", href: "/prodotti/aurumpress", image: "/images/products/aurumpress-nobg.png" },
-              { name: "Anypack AB2500", desc: locale === 'it' ? "Box maker automatico" : "Automatic box maker", href: "/prodotti/ab2500", image: "/images/products/ab2500-hero-nobg.png" },
+              { name: "Anypack AB2500", desc: locale === 'it' ? "{locale === 'it' ? 'Box maker automatico' : 'Automatic box maker'}" : "Automatic box maker", href: "/prodotti/ab2500", image: "/images/products/ab2500-hero-nobg.png" },
             ].map((p) => (
               <Link key={p.name} href={p.href} className="card-modern overflow-hidden group hover:-translate-y-1 transition-transform duration-300">
                 <div className="h-40 relative overflow-hidden">

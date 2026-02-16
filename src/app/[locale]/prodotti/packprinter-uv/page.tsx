@@ -52,7 +52,7 @@ const breadcrumbJsonLd = {
   ],
 };
 
-const specs = [
+function getSpecs(l: string) { return l === 'it' ? [
   ["Modelli", "9 modelli con luce di stampa variabile"],
   ["Luce di stampa", "Da 12 cm a 118 cm"],
   ["Risoluzione", "600 × 1200 dpi"],
@@ -61,8 +61,17 @@ const specs = [
   ["Tipo di inchiostri", "UV ad alte prestazioni"],
   ["Testine", "S3200 U3 - 3200 ugelli"],
   ["Dimensione testina", "150,4 mm × 30 mm × 52 mm"],
-  ["Supporti stampabili", "PVC, ABS, acrilico, cartone, legno, vetro, ceramica, metallo, gommapiuma, similpelle"],
-];
+  ["Supporti stampabili", "PVC, ABS, acrilico, cartone, legno, vetro, ceramica, metallo, gommapiuma, similpelle"],
+] : [
+  ["Technology", "UV inkjet single-pass"],
+  ["Resolution", "600 × 1200 dpi"],
+  ["Colors", "CMYKW (4 colors + White)"],
+  ["Curing", "UV LED"],
+  ["Max print width", "200 mm"],
+  ["Printhead size", "150.4 mm × 30 mm × 52 mm"],
+  ["Speed", "Up to 50 m/min"],
+  ["Compatible media", "Cardboard, plastic, metal, wood"],
+]; }
 
 const features = [
   {
@@ -107,7 +116,7 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
       </svg>
     ),
-    title: "Inchiostri UV",
+    title: "Inchiostri UV", titleEn: "UV Inks",
     desc: "Resistenti agli agenti atmosferici, all&apos;acqua e allo sfregamento. Stampe brillanti e durature nel tempo.",
   },
   {
@@ -212,8 +221,8 @@ export default async function PackPrinterUVPage() {
                 <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-yellow-500 to-yellow-600 flex items-center justify-center text-white mb-5">
                   {f.icon}
                 </div>
-                <h3 className="text-lg font-bold text-dark-800 mb-2">{f.title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{f.desc}</p>
+                <h3 className="text-lg font-bold text-dark-800 mb-2">{locale === 'it' ? f.title : (f.titleEn || f.title)}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{locale === 'it' ? f.desc : (f.descEn || f.desc)}</p>
               </div>
             ))}
           </div>
@@ -224,7 +233,7 @@ export default async function PackPrinterUVPage() {
         <div className="container-custom max-w-3xl">
           <h2 className="text-3xl font-bold text-dark-800 mb-10 text-center">{locale === 'it' ? 'Specifiche Tecniche' : 'Technical Specifications'}</h2>
           <div className="space-y-3">
-            {specs.map(([label, value]) => (
+            {getSpecs(locale).map(([label, value]) => (
               <div key={label} className="flex flex-col sm:flex-row sm:justify-between gap-1 bg-white rounded-xl px-5 py-4 shadow-sm">
                 <span className="text-sm font-medium text-gray-600">{label}</span>
                 <span className="text-sm font-bold text-dark-800 text-right max-w-[60%]">{value}</span>

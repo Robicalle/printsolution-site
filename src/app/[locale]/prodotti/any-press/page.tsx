@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     "toner bianco",
   ],
   openGraph: {
-    title: "Any-Press – Stampante Laser LED CMYK+Bianco | Print Solution",
+    title: "Any-Press – {locale === 'it' ? 'Stampante Laser LED CMYK+Bianco' : 'LED Laser Printer CMYK+White'} | Print Solution",
     description:
       "Stampante laser LED a 5 colori per etichette e packaging flessibile. Toner bianco, laminazione integrata.",
     images: ["/images/products/any-press.avif"],
@@ -53,7 +53,7 @@ const breadcrumbJsonLd = {
   ],
 };
 
-const specs = [
+function getSpecs(l: string) { return l === 'it' ? [
   ["Motore di stampa", "Laser digitale LED"],
   ["Colori", "5 colori – CMYKW (incluso bianco)"],
   ["Risoluzione", "1.200 × 1.200 dpi"],
@@ -64,8 +64,19 @@ const specs = [
   ["Laminatore", "Opzionale – a freddo o a caldo"],
   ["Software", "ANY-FLOW"],
   ["Alimentazione", "Monofase 220-240V / 6A"],
-  ["Dimensioni", "L 1350 × P 1090 × H 1615 mm"],
-];
+  ["Dimensioni", "L 1350 × P 1090 × H 1615 mm"],
+] : [
+  ["Technology", "LED laser electrophotographic"],
+  ["Colors", "5 colors – CMYKW (including white)"],
+  ["Resolution", "1,200 × 1,200 dpi"],
+  ["Max media width", "330 mm"],
+  ["Speed", "Up to 5 m/min"],
+  ["Compatible media", "Roll labels, flexible packaging, pouches"],
+  ["Laminator", "Optional – cold or hot"],
+  ["White toner", "Yes – opacity adjustable"],
+  ["Power supply", "Single-phase 220-240V / 6A"],
+  ["Dimensions", "L 1350 × D 1090 × H 1615 mm"],
+]; }
 
 const features = [
   {
@@ -206,8 +217,8 @@ export default async function AnyPressPage() {
                 <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-orange-500 to-yellow-500 flex items-center justify-center text-white mb-5">
                   {f.icon}
                 </div>
-                <h3 className="text-lg font-bold text-dark-800 mb-2">{f.title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{f.desc}</p>
+                <h3 className="text-lg font-bold text-dark-800 mb-2">{locale === 'it' ? f.title : (f.titleEn || f.title)}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{locale === 'it' ? f.desc : (f.descEn || f.desc)}</p>
               </div>
             ))}
           </div>
@@ -218,7 +229,7 @@ export default async function AnyPressPage() {
         <div className="container-custom max-w-3xl">
           <h2 className="text-3xl font-bold text-dark-800 mb-10 text-center">{locale === 'it' ? 'Specifiche Tecniche' : 'Technical Specifications'}</h2>
           <div className="space-y-3">
-            {specs.map(([label, value]) => (
+            {getSpecs(locale).map(([label, value]) => (
               <div key={label} className="flex flex-col sm:flex-row sm:justify-between gap-1 bg-white rounded-xl px-5 py-4 shadow-sm">
                 <span className="text-sm font-medium text-gray-600">{label}</span>
                 <span className="text-sm font-bold text-dark-800">{value}</span>

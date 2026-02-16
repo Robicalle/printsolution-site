@@ -52,7 +52,7 @@ const breadcrumbJsonLd = {
   ],
 };
 
-const specs = [
+function getSpecs(l: string) { return l === 'it' ? [
   ["Capacità produttiva", "Circa 400 pezzi/ora, 3200 pezzi/giorno"],
   ["Risoluzione di stampa", "1200 dpi"],
   ["Colori", "4 colori CMYK"],
@@ -67,8 +67,24 @@ const specs = [
   ["Temperatura operativa", "0°-45°C, umidità 20%-80%"],
   ["Assorbimento", "480 W, AC 110V/220V, 50/60 Hz"],
   ["Dimensioni (L×A×P)", "190 × 120 × 165 cm"],
-  ["Peso", "450 kg"],
-];
+  ["Peso", "450 kg"],
+] : [
+  ["Production capacity", "Approx. 400 pcs/hour, 3200 pcs/day"],
+  ["Print resolution", "1200 dpi"],
+  ["Colors", "4 colors CMYK"],
+  ["Print technology", "Pigmented water-based inkjet"],
+  ["Printheads", "HP A3 / Epson I3200"],
+  ["Book height", "From 90 to 350 mm"],
+  ["Print width", "From 5 to 218 mm"],
+  ["Print speed", "0-15 m/min (adjustable)"],
+  ["Ink tanks", "1 liter per color"],
+  ["Image formats", "JPG, PDF"],
+  ["Operating systems", "Windows 7 / 10 / 11"],
+  ["Operating temperature", "0°-45°C, humidity 20%-80%"],
+  ["Power consumption", "480 W, AC 110V/220V, 50/60 Hz"],
+  ["Dimensions (L×W×H)", "190 × 120 × 165 cm"],
+  ["Weight", "450 kg"],
+]; }
 
 const features = [
   {
@@ -78,7 +94,7 @@ const features = [
       </svg>
     ),
     title: "400 Pezzi all\u2019Ora",
-    desc: "Produttività elevata con fino a 3200 libri personalizzati al giorno. Ideale per ordini piccoli e grandi.",
+    desc: "Produttività elevata con fino a 3200 libri personalizzati al giorno. Ideale per ordini piccoli e grandi.", descEn: "High productivity with up to 3200 personalized books per day. Ideal for both small and large orders.",
   },
   {
     icon: (
@@ -86,8 +102,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
       </svg>
     ),
-    title: "1200 DPI di Risoluzione",
-    desc: "Fondi pieni, sovrastampe e sfumature con precisione assoluta. Qualità di stampa senza eguali nel settore.",
+    title: "1200 DPI di Risoluzione", titleEn: "1200 DPI Resolution",
+    desc: "Fondi pieni, sovrastampe e sfumature con precisione assoluta. Qualità di stampa senza eguali nel settore.", descEn: "Solid fills, overprints and gradients with absolute precision. Unmatched print quality in the industry.",
   },
   {
     icon: (
@@ -95,8 +111,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75" />
       </svg>
     ),
-    title: "Adattamento Intelligente",
-    desc: "Si adatta automaticamente alla forma e allo spessore del libro. Angoli tondi e squadrati, con piastra guida per libri alti.",
+    title: "Adattamento Intelligente", titleEn: "Smart Adaptation",
+    desc: "Si adatta automaticamente alla forma e allo spessore del libro. Angoli tondi e squadrati, con piastra guida per libri alti.", descEn: "Automatically adapts to the shape and thickness of the book. Round and square corners, with guide plate for tall books.",
   },
   {
     icon: (
@@ -104,8 +120,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z" />
       </svg>
     ),
-    title: "Teste di Stampa HP A3",
-    desc: "Tecnologia inkjet a base acqua CMYK con stampa 4 colori in singolo passaggio per design complessi e vivaci.",
+    title: "Teste di Stampa HP A3", titleEn: "HP A3 Printheads",
+    desc: "Tecnologia inkjet a base acqua CMYK con stampa 4 colori in singolo passaggio per design complessi e vivaci.", descEn: "Water-based CMYK inkjet technology with 4-color single-pass printing for complex and vibrant designs.",
   },
   {
     icon: (
@@ -114,8 +130,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
       </svg>
     ),
-    title: "Pulizia Automatica",
-    desc: "Spazzola rotante e aspirapolvere integrati puliscono i libri prima della stampa. Manutenzione automatica della testina.",
+    title: "Pulizia Automatica", titleEn: "Automatic Cleaning",
+    desc: "Spazzola rotante e aspirapolvere integrati puliscono i libri prima della stampa. Manutenzione automatica della testina.", descEn: "Rotating brush and integrated vacuum cleaner clean books before printing. Automatic printhead maintenance.",
   },
   {
     icon: (
@@ -123,8 +139,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z" />
       </svg>
     ),
-    title: "Costi Stampa Ridotti",
-    desc: "Taniche da 1 litro per colore garantiscono altissime prestazioni e costi di produzione contenuti.",
+    title: "Costi Stampa Ridotti", titleEn: "Low Printing Costs",
+    desc: "Taniche da 1 litro per colore garantiscono altissime prestazioni e costi di produzione contenuti.", descEn: "1-liter tanks per color ensure excellent performance and low production costs.",
   },
 ];
 
@@ -143,8 +159,8 @@ export default async function RobotjetPage() {
             <p className="text-purple-300 text-sm mb-3 uppercase tracking-widest font-medium">{locale === 'it' ? 'Prodotti' : 'Products'}</p>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">Robotjet Book Edge Printer</h1>
               <p className="text-lg text-gray-300/90 leading-relaxed mb-8">
-                Stampante digitale rivoluzionaria per la labbratura di libri, quaderni, agende e block notes. 
-                400 pezzi/ora, CMYK single-pass con teste HP A3, risoluzione fino a 1200 dpi.
+                {locale === 'it' ? 'Stampante digitale rivoluzionaria per la labbratura di libri, quaderni, agende e block notes. 
+                400 pezzi/ora, CMYK single-pass con teste HP A3, risoluzione fino a 1200 dpi.' : 'Revolutionary digital printer for book edge printing on books, notebooks, planners and notepads. 400 pcs/hour, CMYK single-pass with HP A3 heads, resolution up to 1200 dpi.'}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Robotjet&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20Robotjet.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">{locale === 'it' ? 'Richiedi Demo →' : 'Request Demo →'}</a>
@@ -165,22 +181,22 @@ export default async function RobotjetPage() {
       {/* Descrizione */}
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
         <div className="container-custom max-w-4xl">
-          <h2 className="text-3xl font-bold text-dark-800 mb-6">La Rivoluzione nella Labbratura dei Libri</h2>
+          <h2 className="text-3xl font-bold text-dark-800 mb-6">{locale === 'it' ? 'La Rivoluzione nella Labbratura dei Libri' : 'The Revolution in Book Edge Printing'}</h2>
           <p className="text-gray-500 leading-relaxed mb-4">
-            Robotjet Book Edge Digital Printer è la stampante digitale che rende unici libri, quaderni, agende 
+            {locale === 'it' ? 'Robotjet Book Edge Digital Printer è la stampante digitale che rende unici libri, quaderni, agende 
             e block notes attraverso la tecnica della labbratura. Sfruttando la tecnologia inkjet a base acqua 
-            CMYK con teste di stampa HP A3, offre risultati di stampa mai visti prima.
+            CMYK con teste di stampa HP A3, offre risultati di stampa mai visti prima.' : 'Robotjet Book Edge Digital Printer is the digital printer that makes books, notebooks, planners and notepads unique through the book edge printing technique. Leveraging CMYK water-based inkjet technology with HP A3 printheads, it delivers printing results never seen before.'}
           </p>
           <p className="text-gray-500 leading-relaxed mb-4">
-            La sua particolarità risiede nella capacità di stampare fondi pieni, sovrastampe e sfumature con 
+            {locale === 'it' ? 'La sua particolarità risiede nella capacità di stampare fondi pieni, sovrastampe e sfumature con 
             precisione assoluta grazie alla risoluzione di 1200 dpi. Con 400 pezzi/ora e 3200 pezzi/giorno, 
-            consente di evadere ordini sia piccoli che grandi con estrema facilità.
+            consente di evadere ordini sia piccoli che grandi con estrema facilità.' : 'Its uniqueness lies in the ability to print solid fills, overprints and gradients with absolute precision thanks to 1200 dpi resolution. With 400 pcs/hour and 3200 pcs/day, it fulfills both small and large orders with extreme ease.'}
           </p>
           <p className="text-gray-500 leading-relaxed">
-            Dotata di un sistema intelligente di adattamento, si regola automaticamente alla forma (angoli tondi 
+            {locale === 'it' ? 'Dotata di un sistema intelligente di adattamento, si regola automaticamente alla forma (angoli tondi 
             o squadrati) e allo spessore del libro. La spazzola rotante e l&apos;aspirapolvere integrati puliscono 
             i libri prima della stampa, proteggendo la testina da danni accidentali e garantendo risultati 
-            sempre perfetti.
+            sempre perfetti.' : 'Equipped with an intelligent adaptation system, it automatically adjusts to the shape (round or square corners) and thickness of the book. The rotating brush and integrated vacuum clean books before printing, protecting the printhead from accidental damage and ensuring consistently perfect results.'}
           </p>
         </div>
       </section>
@@ -190,7 +206,7 @@ export default async function RobotjetPage() {
         <div className="container-custom">
           <div className="text-center mb-12">
             <p className="text-purple-500 font-semibold text-sm uppercase tracking-widest mb-4">Video</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-dark-800">Robotjet in Azione</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-dark-800">{locale === 'it' ? 'Robotjet in Azione' : 'Robotjet in Action'}</h2>
           </div>
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             <div className="aspect-video rounded-2xl overflow-hidden shadow-lg">
@@ -217,8 +233,8 @@ export default async function RobotjetPage() {
                 <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center text-white mb-5">
                   {f.icon}
                 </div>
-                <h3 className="text-lg font-bold text-dark-800 mb-2">{f.title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{f.desc}</p>
+                <h3 className="text-lg font-bold text-dark-800 mb-2">{locale === 'it' ? f.title : (f.titleEn || f.title)}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{locale === 'it' ? f.desc : (f.descEn || f.desc)}</p>
               </div>
             ))}
           </div>
@@ -229,7 +245,7 @@ export default async function RobotjetPage() {
         <div className="container-custom max-w-3xl">
           <h2 className="text-3xl font-bold text-dark-800 mb-10 text-center">{locale === 'it' ? 'Specifiche Tecniche' : 'Technical Specifications'}</h2>
           <div className="space-y-3">
-            {specs.map(([label, value]) => (
+            {getSpecs(locale).map(([label, value]) => (
               <div key={label} className="flex flex-col sm:flex-row sm:justify-between gap-1 bg-white rounded-xl px-5 py-4 shadow-sm">
                 <span className="text-sm font-medium text-gray-600">{label}</span>
                 <span className="text-sm font-bold text-dark-800 text-right max-w-[60%]">{value}</span>
@@ -242,14 +258,14 @@ export default async function RobotjetPage() {
       {/* CTA */}
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-surface-50">
         <div className="container-custom text-center">
-          <h2 className="text-3xl font-bold text-dark-800 mb-6">Scopri Robotjet dal Vivo</h2>
+          <h2 className="text-3xl font-bold text-dark-800 mb-6">{locale === 'it' ? 'Scopri Robotjet dal Vivo' : 'See Robotjet Live'}</h2>
           <p className="text-gray-500 max-w-xl mx-auto mb-8">
-            Vieni nella nostra sala demo a Sesto San Giovanni e scopri come la labbratura digitale può aprire nuove opportunità per il tuo business.
+            {locale === 'it' ? 'Vieni nella nostra sala demo a Sesto San Giovanni e scopri come la labbratura digitale può aprire nuove opportunità per il tuo business.' : 'Visit our demo room in Sesto San Giovanni and discover how digital book edge printing can open new opportunities for your business.'}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="tel:+390249439417" className="btn-outline text-lg inline-flex items-center">
               <svg className="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" /></svg>
-              Chiamaci Ora
+              {locale === 'it' ? 'Chiamaci Ora' : 'Call Us Now'}
             </a>
           </div>
         </div>
@@ -266,7 +282,7 @@ export default async function RobotjetPage() {
                 </div>
                 <div className="p-5">
                   <h3 className="font-bold text-dark-800 group-hover:text-cyan-500 transition-colors">GreenBox Print Book</h3>
-                  <p className="text-sm text-gray-500 mt-1">Labbratura digitale libri</p>
+                  <p className="text-sm text-gray-500 mt-1">{locale === 'it' ? 'Labbratura digitale libri' : 'Digital book edge printing'}</p>
                 </div>
               </Link>
           </div>

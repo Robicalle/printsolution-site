@@ -52,7 +52,7 @@ const breadcrumbJsonLd = {
   ],
 };
 
-const specs = [
+function getSpecs(l: string) { return l === 'it' ? [
   ["Tecnologia", "Toner LED elettrofotografica CMYK"],
   ["Risoluzione", "1200 × 1200 dpi"],
   ["Resistenza", "Immediata all'acqua e abrasione"],
@@ -61,8 +61,21 @@ const specs = [
   ["Cartucce toner", "Alta resa CMYK"],
   ["Fusore", "Integrato per massima resistenza"],
   ["Costo stampa", "Competitivo per volumi medi"],
-  ["Ambiente", "Ideale per ambienti umidi e industriali"],
-];
+  ["Ambiente", "Ideale per ambienti umidi e industriali"],
+] : [
+  ["Technology", "Electrophotographic LED laser, 5 colors"],
+  ["Colors", "CMYK + White"],
+  ["Resolution", "1200 × 1200 dpi"],
+  ["Print speed", "Up to 5 m/min"],
+  ["Max media width", "220 mm (8.66 inches)"],
+  ["Media thickness", "0.08-0.3 mm (with liner)"],
+  ["Compatible media", "PP, PE, PET, vinyl, paper"],
+  ["Toner cartridges", "CMYKW – individual replacement"],
+  ["Monthly duty cycle", "Up to 120,000 labels"],
+  ["Connectivity", "USB, Ethernet, Wi-Fi"],
+  ["Integrated finisher", "Optional DLF / DC die-cutters"],
+  ["Dimensions", "440 × 495 × 505 mm"],
+]; }
 
 const features = [
   {
@@ -137,7 +150,7 @@ export default async function AfiniaLT5CPage() {
         <div className="absolute inset-0 bg-gradient-to-r from-dark-800/90 via-dark-800/70 to-dark-800/40" />
         <div className="container-custom px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-2xl">
-            <p className="text-cyan-300 text-sm mb-3 uppercase tracking-widest font-medium">Stampanti Etichette</p>
+            <p className="text-cyan-300 text-sm mb-3 uppercase tracking-widest font-medium">{locale === 'it' ? 'Stampanti Etichette' : 'Label Printers'}</p>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">Afinia LT5C</h1>
               <p className="text-lg text-gray-300/90 leading-relaxed mb-8">
                 Stampante etichette a toner LED con resistenza immediata all&apos;acqua. Tecnologia 
@@ -181,7 +194,7 @@ export default async function AfiniaLT5CPage() {
         <div className="container-custom">
           <div className="text-center mb-12">
             <p className="text-cyan-500 font-semibold text-sm uppercase tracking-widest mb-4">Video</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-dark-800">LT5C in Azione</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-dark-800">{locale === 'it' ? 'LT5C in Azione' : 'LT5C in Action'}</h2>
           </div>
           <div className="max-w-3xl mx-auto">
             <div className="aspect-video rounded-2xl overflow-hidden shadow-lg">
@@ -203,8 +216,8 @@ export default async function AfiniaLT5CPage() {
                 <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-green-500 to-cyan-500 flex items-center justify-center text-white mb-5">
                   {f.icon}
                 </div>
-                <h3 className="text-lg font-bold text-dark-800 mb-2">{f.title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{f.desc}</p>
+                <h3 className="text-lg font-bold text-dark-800 mb-2">{locale === 'it' ? f.title : (f.titleEn || f.title)}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{locale === 'it' ? f.desc : (f.descEn || f.desc)}</p>
               </div>
             ))}
           </div>
@@ -215,7 +228,7 @@ export default async function AfiniaLT5CPage() {
         <div className="container-custom max-w-3xl">
           <h2 className="text-3xl font-bold text-dark-800 mb-10 text-center">{locale === 'it' ? 'Specifiche Tecniche' : 'Technical Specifications'}</h2>
           <div className="space-y-3">
-            {specs.map(([label, value]) => (
+            {getSpecs(locale).map(([label, value]) => (
               <div key={label} className="flex flex-col sm:flex-row sm:justify-between gap-1 bg-white rounded-xl px-5 py-4 shadow-sm">
                 <span className="text-sm font-medium text-gray-600">{label}</span>
                 <span className="text-sm font-bold text-dark-800">{value}</span>
@@ -244,9 +257,9 @@ export default async function AfiniaLT5CPage() {
           <h2 className="text-2xl font-bold text-dark-800 mb-8 text-center">{locale === 'it' ? 'Prodotti Correlati' : 'Related Products'}</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { name: "Afinia L901", desc: "Stampante etichette professionale Memjet", href: "/prodotti/afinia-l901", image: "/images/products/afinia-l901.png" },
+              { name: "Afinia L901", desc: "{locale === 'it' ? 'Stampante etichette professionale Memjet' : 'Professional Memjet label printer'}", href: "/prodotti/afinia-l901", image: "/images/products/afinia-l901.png" },
               { name: "Afinia X350", desc: "Stampante roll-to-roll alta velocità", href: "/prodotti/afinia-x350", image: "/images/products/afinia-x350-site.webp" },
-              { name: "Afinia DLP-2200", desc: "Digital Label Press completa", href: "/prodotti/afinia-dlp2200", image: "/images/products/afinia-dlp2200.avif" },
+              { name: "Afinia DLP-2200", desc: "{locale === 'it' ? 'Digital Label Press completa' : 'Complete Digital Label Press'}", href: "/prodotti/afinia-dlp2200", image: "/images/products/afinia-dlp2200.avif" },
             ].map((p) => (
               <Link key={p.name} href={p.href} className="card-modern overflow-hidden group hover:-translate-y-1 transition-transform duration-300">
                 <div className="h-40 relative overflow-hidden">

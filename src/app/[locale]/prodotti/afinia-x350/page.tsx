@@ -52,7 +52,7 @@ const breadcrumbJsonLd = {
   ],
 };
 
-const specs = [
+function getSpecs(l: string) { return l === 'it' ? [
   ["Tecnologia", "Inkjet pigmentato a base acqua (Memjet DuraFlex)"],
   ["Velocità di stampa", "Fino a 45 m/min"],
   ["Risoluzione", "1600 × 1600 dpi"],
@@ -67,8 +67,20 @@ const specs = [
   ["Diametro max bobina", "350 mm"],
   ["Compressore", "Ultra silenzioso, integrato"],
   ["Alimentazione", "Monofase 220V"],
-  ["Applicazioni", "Etichette, packaging flessibile"],
-];
+  ["Applicazioni", "Etichette, packaging flessibile"],
+] : [
+  ["Technology", "Memjet Waterfall Inkjet"],
+  ["Resolution", "1600 × 1600 dpi"],
+  ["Inks", "CMYK pigmented water-based"],
+  ["Max media width", "Min 50 mm × Max 350 mm"],
+  ["Media thickness", "Min 0.05 mm × Max 0.35 mm"],
+  ["Max speed", "Up to 45 m/min"],
+  ["Ink capacity", "2 liters per color × 8 liters total"],
+  ["Nozzle redundancy", "2× for zero banding"],
+  ["Display", "21" touchscreen + remote connectivity"],
+  ["Printhead", "User-replaceable"],
+  ["Dimensions", "Approx. 1 m² footprint"],
+]; }
 
 const features = [
   {
@@ -95,7 +107,7 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42" />
       </svg>
     ),
-    title: "Ridondanza Ugelli 2×",
+    title: "Ridondanza Ugelli 2×", titleEn: "2× Nozzle Redundancy",
     desc: "Doppia ridondanza degli ugelli per eliminare le strisce e garantire colori uniformi e gradazioni omogenee su ogni stampa.",
   },
   {
@@ -104,7 +116,7 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
       </svg>
     ),
-    title: "Touchscreen 21 Pollici",
+    title: "Touchscreen 21 Pollici", titleEn: "21-Inch Touchscreen",
     desc: "Display touchscreen da 21 pollici con opzioni avanzate e connettività remota per gestione della stampa da qualsiasi postazione.",
   },
   {
@@ -122,7 +134,7 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75" />
       </svg>
     ),
-    title: "Versatilità Totale",
+    title: "Versatilità Totale", titleEn: "Total Versatility",
     desc: "Stampa su bobine, etichette fustellate, materiali di imballaggio flessibili e cartoncino. Un solo metro quadro di ingombro.",
   },
 ];
@@ -145,9 +157,9 @@ export default async function AfiniaX350Page() {
             <p className="text-cyan-300 text-sm mb-3 uppercase tracking-widest font-medium">Stampanti Etichette</p>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">Afinia X350</h1>
               <p className="text-lg text-gray-300/90 leading-relaxed mb-8">
-                Stampante digitale roll-to-roll ad alta velocità con inchiostri pigmentati a base acqua.
+                {locale === 'it' ? 'Stampante digitale roll-to-roll ad alta velocità con inchiostri pigmentati a base acqua.
                 Fino a 45 m/min, 1600 dpi e ridondanza ugelli 2× per stampe perfette. Design compatto
-                da circa 1 m² di ingombro.
+                da circa 1 m² di ingombro.' : 'High-speed digital roll-to-roll printer with pigmented water-based inks. Up to 45 m/min, 1600 dpi and 2× nozzle redundancy for perfect prints. Compact design with approx. 1 m² footprint.'}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Afinia%20X350&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20Afinia%20X350.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">{locale === 'it' ? 'Richiedi Demo →' : 'Request Demo →'}</a>
@@ -186,7 +198,7 @@ export default async function AfiniaX350Page() {
         <div className="container-custom">
           <div className="text-center mb-12">
             <p className="text-cyan-500 font-semibold text-sm uppercase tracking-widest mb-4">Video</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-dark-800">X350 in Azione</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-dark-800">{locale === 'it' ? 'X350 in Azione' : 'X350 in Action'}</h2>
           </div>
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             <div className="aspect-video rounded-2xl overflow-hidden shadow-lg">
@@ -213,8 +225,8 @@ export default async function AfiniaX350Page() {
                 <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-yellow-500 to-cyan-500 flex items-center justify-center text-white mb-5">
                   {f.icon}
                 </div>
-                <h3 className="text-lg font-bold text-dark-800 mb-2">{f.title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{f.desc}</p>
+                <h3 className="text-lg font-bold text-dark-800 mb-2">{locale === 'it' ? f.title : (f.titleEn || f.title)}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{locale === 'it' ? f.desc : (f.descEn || f.desc)}</p>
               </div>
             ))}
           </div>
@@ -225,7 +237,7 @@ export default async function AfiniaX350Page() {
         <div className="container-custom max-w-3xl">
           <h2 className="text-3xl font-bold text-dark-800 mb-10 text-center">{locale === 'it' ? 'Specifiche Tecniche' : 'Technical Specifications'}</h2>
           <div className="space-y-3">
-            {specs.map(([label, value]) => (
+            {getSpecs(locale).map(([label, value]) => (
               <div key={label} className="flex flex-col sm:flex-row sm:justify-between gap-1 bg-white rounded-xl px-5 py-4 shadow-sm">
                 <span className="text-sm font-medium text-gray-600">{label}</span>
                 <span className="text-sm font-bold text-dark-800">{value}</span>
@@ -254,8 +266,8 @@ export default async function AfiniaX350Page() {
           <h2 className="text-2xl font-bold text-dark-800 mb-8 text-center">{locale === 'it' ? 'Prodotti Correlati' : 'Related Products'}</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { name: "Afinia DLP-2200", desc: "Digital Label Press completa", href: "/prodotti/afinia-dlp2200", image: "/images/products/afinia-dlp2200.avif" },
-              { name: "Afinia L901", desc: "Stampante etichette professionale Memjet", href: "/prodotti/afinia-l901", image: "/images/products/afinia-l901.png" },
+              { name: "Afinia DLP-2200", desc: "{locale === 'it' ? 'Digital Label Press completa' : 'Complete Digital Label Press'}", href: "/prodotti/afinia-dlp2200", image: "/images/products/afinia-dlp2200.avif" },
+              { name: "Afinia L901", desc: "{locale === 'it' ? 'Stampante etichette professionale Memjet' : 'Professional Memjet label printer'}", href: "/prodotti/afinia-l901", image: "/images/products/afinia-l901.png" },
               { name: "Afinia AF200", desc: "Applicatore etichette semiautomatico", href: "/prodotti/afinia-af200", image: "/images/products/afinia-af200-nobg.png" },
             ].map((p) => (
               <Link key={p.name} href={p.href} className="card-modern overflow-hidden group hover:-translate-y-1 transition-transform duration-300">

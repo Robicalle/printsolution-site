@@ -157,11 +157,11 @@ export const categories: Category[] = [
     description: "Toner e ricambi per stampanti Primera CX1000 e CX1200",
     image: "/images/shop/cx1000-category.png",
     products: [
-      { id: "cx-k", name: "057401 - Nero per CX1000/1200", sku: "057401", price: 235.00, image: "/images/shop/cx1000-nero.jpg", inStock: true },
-      { id: "cx-c", name: "057402 - Ciano per CX1000/1200", sku: "057402", price: 449.00, image: "/images/shop/cx1000-ciano.jpg", inStock: true },
-      { id: "cx-m", name: "057403 - Magenta per CX1000/1200", sku: "057403", price: 449.00, image: "/images/shop/cx1000-magenta.jpg", inStock: true },
-      { id: "cx-y", name: "057404 - Giallo per CX1000/1200", sku: "057404", price: 449.00, image: "/images/shop/cx1000-giallo.jpg", inStock: true },
-      { id: "cx-itu", name: "074214 - ITU per CX1000/1200", sku: "074214", price: 695.00, image: "/images/shop/cx1000-itu.jpg", inStock: true },
+      { id: "cx-k", name: "057401 - Nero per CX1000/1200", sku: "057401", price: 235.00, image: "/images/shop/cx1000-nero-nobg.png", inStock: true },
+      { id: "cx-c", name: "057402 - Ciano per CX1000/1200", sku: "057402", price: 449.00, image: "/images/shop/cx1000-ciano-nobg.png", inStock: true },
+      { id: "cx-m", name: "057403 - Magenta per CX1000/1200", sku: "057403", price: 449.00, image: "/images/shop/cx1000-magenta-nobg.png", inStock: true },
+      { id: "cx-y", name: "057404 - Giallo per CX1000/1200", sku: "057404", price: 449.00, image: "/images/shop/cx1000-giallo-nobg.png", inStock: true },
+      { id: "cx-itu", name: "074214 - ITU per CX1000/1200", sku: "074214", price: 695.00, image: "/images/shop/cx1000-itu-nobg.png", inStock: true },
     ],
   },
   {

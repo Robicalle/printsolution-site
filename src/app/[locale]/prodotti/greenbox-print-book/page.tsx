@@ -48,7 +48,7 @@ const breadcrumbJsonLd = {
   "@type": "BreadcrumbList",
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Home", item: "https://www.printsolutionsrl.it" },
-    { "@type": "ListItem", position: 2, name: "Labbratura Libri", item: "https://www.printsolutionsrl.it/soluzioni/labbratura" },
+    { "@type": "ListItem", position: 2, name: "{locale === 'it' ? 'Labbratura Libri' : 'Book Edge Printing'}", item: "https://www.printsolutionsrl.it/soluzioni/labbratura" },
     { "@type": "ListItem", position: 3, name: "GreenBox Print Book", item: "https://www.printsolutionsrl.it/prodotti/greenbox-print-book" },
   ],
 };
@@ -96,7 +96,7 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
       </svg>
     ),
-    title: "Inchiostri a Base Acqua",
+    title: "Inchiostri a Base Acqua", titleEn: "Water-Based Inks",
     desc: "Senza solventi e totalmente inodore. Resistenti agli agenti atmosferici, allo sfregamento e all\u2019acqua.",
   },
   {
@@ -217,8 +217,8 @@ export default async function GreenBoxPrintBookPage() {
                 <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-green-500 to-cyan-500 flex items-center justify-center text-white mb-5">
                   {f.icon}
                 </div>
-                <h3 className="text-lg font-bold text-dark-800 mb-2">{f.title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{f.desc}</p>
+                <h3 className="text-lg font-bold text-dark-800 mb-2">{locale === 'it' ? f.title : (f.titleEn || f.title)}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{locale === 'it' ? f.desc : (f.descEn || f.desc)}</p>
               </div>
             ))}
           </div>

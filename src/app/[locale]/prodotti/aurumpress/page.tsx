@@ -4,7 +4,7 @@ import Image from "next/image";
 import { getLocale } from "next-intl/server";
 
 export const metadata: Metadata = {
-  title: "AurumPress – Stampa a Caldo Digitale per Packaging",
+  title: "AurumPress – {locale === 'it' ? 'Stampa a Caldo Digitale' : 'Digital Hot Foil Stamping'} per Packaging",
   description:
     "AurumPress: stampa a caldo digitale con foil metallizzati, argentati e colori pastello. Hot foil digitale per nobilitazione packaging e etichette.",
   keywords: [
@@ -52,13 +52,21 @@ const breadcrumbJsonLd = {
   ],
 };
 
-const specs = [
+function getSpecs(l: string) { return l === 'it' ? [
   ["Tecnologia", "Stampa termica ad impressione idraulica"],
   ["Tipo stampa", "Hot foil stamping"],
   ["Materiali foil", "Argentati, metallizzati, colori pastello, trasparente lucido"],
   ["Applicazioni", "Loghi, scritte, decorazioni su packaging"],
-  ["Supporti", "Cartone, carta, packaging rigido"],
-];
+  ["Supporti", "Cartone, carta, packaging rigido"],
+] : [
+  ["Technology", "Digital thermal foil stamping"],
+  ["Resolution", "1200 × 1200 dpi"],
+  ["Max print width", "330 mm (A3+)"],
+  ["Speed", "Up to 5 m/min"],
+  ["Foils", "Gold, silver, colors, holographic"],
+  ["Compatible media", "Paper, cardboard, labels"],
+  ["Software", "Included (design + RIP)"],
+]; }
 
 const features = [
   {
@@ -188,8 +196,8 @@ export default async function AurumPressPage() {
                 <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-yellow-500 to-amber-500 flex items-center justify-center text-white mb-5">
                   {f.icon}
                 </div>
-                <h3 className="text-lg font-bold text-dark-800 mb-2">{f.title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{f.desc}</p>
+                <h3 className="text-lg font-bold text-dark-800 mb-2">{locale === 'it' ? f.title : (f.titleEn || f.title)}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{locale === 'it' ? f.desc : (f.descEn || f.desc)}</p>
               </div>
             ))}
           </div>
@@ -200,7 +208,7 @@ export default async function AurumPressPage() {
         <div className="container-custom max-w-3xl">
           <h2 className="text-3xl font-bold text-dark-800 mb-10 text-center">{locale === 'it' ? 'Specifiche Tecniche' : 'Technical Specifications'}</h2>
           <div className="space-y-3">
-            {specs.map(([label, value]) => (
+            {getSpecs(locale).map(([label, value]) => (
               <div key={label} className="flex flex-col sm:flex-row sm:justify-between gap-1 bg-white rounded-xl px-5 py-4 shadow-sm">
                 <span className="text-sm font-medium text-gray-600">{label}</span>
                 <span className="text-sm font-bold text-dark-800">{value}</span>

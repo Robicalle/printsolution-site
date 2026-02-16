@@ -7,6 +7,7 @@ import MegaMenu, { MegaMenuMobile } from "./MegaMenu";
 
 const navigation = [
   { label: "Home", href: "/", homeOnly: true },
+  { label: "Prodotti", megaMenu: true },
   {
     label: "Soluzioni",
     children: [
@@ -30,6 +31,7 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [mobileProductsOpen, setMobileProductsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const isHome = pathname === "/";
 
@@ -70,7 +72,28 @@ export default function Header() {
         {/* Desktop nav */}
         <nav className="hidden lg:flex items-center gap-1">
           {navigation.filter((item) => !('homeOnly' in item && item.homeOnly && isHome)).map((item) =>
-            item.children ? (
+            'megaMenu' in item ? (
+              <div
+                key={item.label}
+                className="relative"
+                onMouseEnter={() => setOpenDropdown(item.label)}
+                onMouseLeave={() => setOpenDropdown(null)}
+              >
+                <button
+                  aria-haspopup="true"
+                  aria-expanded={openDropdown === item.label}
+                  className={`px-5 py-2.5 text-base font-medium transition-colors duration-200 ${
+                    scrolled ? "text-gray-600 hover:text-cyan-500" : "text-white/80 hover:text-cyan-400"
+                  }`}
+                >
+                  {item.label}
+                  <svg className="inline ml-1 w-3 h-3 transition-transform" style={{ transform: openDropdown === item.label ? 'rotate(180deg)' : '' }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <MegaMenu open={openDropdown === item.label} />
+              </div>
+            ) : item.children ? (
               <div
                 key={item.label}
                 className="relative group"

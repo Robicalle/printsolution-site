@@ -16,11 +16,29 @@ export default function ChatWidget() {
   const [pulse, setPulse] = useState(true);
   const [hp] = useState("");
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const messagesContainerRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const userScrolledUp = useRef(false);
 
+  // Only auto-scroll if user hasn't scrolled up
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    if (userScrolledUp.current) return;
+    const container = messagesContainerRef.current;
+    if (!container) return;
+    // Gentle scroll: only if near the bottom already
+    const isNearBottom = container.scrollHeight - container.scrollTop - container.clientHeight < 80;
+    if (isNearBottom) {
+      messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    }
   }, [messages, loading]);
+
+  // Track if user scrolled up manually
+  const handleScroll = useCallback(() => {
+    const container = messagesContainerRef.current;
+    if (!container) return;
+    const isNearBottom = container.scrollHeight - container.scrollTop - container.clientHeight < 80;
+    userScrolledUp.current = !isNearBottom;
+  }, []);
 
   useEffect(() => {
     if (open && inputRef.current) inputRef.current.focus();
@@ -57,8 +75,32 @@ export default function ChatWidget() {
       if (!reader) throw new Error("No reader");
 
       const decoder = new TextDecoder();
-      let assistantText = "";
+      let fullText = "";
+      let displayedText = "";
+      let streamDone = false;
       setMessages((prev) => [...prev, { role: "assistant", content: "" }]);
+
+      // Reset scroll tracking for new message
+      userScrolledUp.current = false;
+
+      // Typewriter: render chars gradually (30ms per char)
+      const typewriter = setInterval(() => {
+        if (displayedText.length < fullText.length) {
+          // Add a few chars at a time for smooth feel
+          const charsToAdd = Math.min(3, fullText.length - displayedText.length);
+          displayedText = fullText.slice(0, displayedText.length + charsToAdd);
+          setMessages((prev) => {
+            const updated = [...prev];
+            updated[updated.length - 1] = {
+              role: "assistant",
+              content: displayedText,
+            };
+            return updated;
+          });
+        } else if (streamDone) {
+          clearInterval(typewriter);
+        }
+      }, 25);
 
       while (true) {
         const { done, value } = await reader.read();
@@ -74,15 +116,7 @@ export default function ChatWidget() {
             try {
               const parsed = JSON.parse(data);
               if (parsed.text) {
-                assistantText += parsed.text;
-                setMessages((prev) => {
-                  const updated = [...prev];
-                  updated[updated.length - 1] = {
-                    role: "assistant",
-                    content: assistantText,
-                  };
-                  return updated;
-                });
+                fullText += parsed.text;
               }
             } catch {
               // ignore parse errors
@@ -90,6 +124,16 @@ export default function ChatWidget() {
           }
         }
       }
+      streamDone = true;
+      // Wait for typewriter to finish
+      await new Promise<void>((resolve) => {
+        const check = setInterval(() => {
+          if (displayedText.length >= fullText.length) {
+            clearInterval(check);
+            resolve();
+          }
+        }, 50);
+      });
     } catch {
       setMessages((prev) => [
         ...prev,
@@ -143,7 +187,7 @@ export default function ChatWidget() {
           </div>
 
           {/* Messages */}
-          <div className="flex-1 overflow-y-auto px-4 py-3 space-y-3 max-h-60 lg:max-h-80 min-h-[150px] bg-gray-50">
+          <div ref={messagesContainerRef} onScroll={handleScroll} className="flex-1 overflow-y-auto px-4 py-3 space-y-3 max-h-60 lg:max-h-80 min-h-[150px] bg-gray-50">
             {messages.length === 0 && (
               <div className="text-center text-gray-400 text-sm py-8">
                 <p className="text-2xl mb-2">👋</p>

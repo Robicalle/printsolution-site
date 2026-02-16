@@ -35,7 +35,7 @@ export const categories: Category[] = [
     slug: "consumabili-any-002",
     name: "ANY-002",
     description: "Toner, tamburi e ricambi per stampante laser LED Anytron ANY-002",
-    image: "/images/shop/any-002.jpg",
+    image: "/images/products/any-002.avif",
     products: [
       { id: "any-toner-m", name: "Any-002 Cartuccia Toner MAGENTA 11.500 pag.", sku: "ANY-TN-M", price: 195.00, image: "/images/shop/placeholder.png", inStock: true },
       { id: "any-toner-c", name: "Any-002 Cartuccia Toner CIANO 11.500 pag.", sku: "ANY-TN-C", price: 195.00, image: "/images/shop/placeholder.png", inStock: true },
@@ -56,7 +56,7 @@ export const categories: Category[] = [
     slug: "consumabili-lt5c",
     name: "Afinia LT5C",
     description: "Toner e ricambi per stampante Afinia LT5C",
-    image: "/images/shop/lt5c.jpg",
+    image: "/images/products/afinia-lt5c.avif",
     products: [
       { id: "lt5c-k", name: "Toner NERO per Afinia LT5C", sku: "LT5C-TN-K", price: 190.00, image: "/images/shop/placeholder.png", inStock: true },
       { id: "lt5c-y", name: "Toner GIALLO per Afinia LT5C", sku: "LT5C-TN-Y", price: 190.00, image: "/images/shop/placeholder.png", inStock: true },
@@ -72,7 +72,7 @@ export const categories: Category[] = [
     slug: "consumabili-l901",
     name: "Afinia L901 Plus",
     description: "Cartucce e testine per stampante Afinia L901 Plus",
-    image: "/images/shop/l901.jpg",
+    image: "/images/products/afinia-l901.png",
     products: [
       { id: "l901-y", name: "30440-Y Cartuccia Inchiostro Giallo per L901Plus", sku: "30440-Y", price: 215.00, image: "/images/shop/placeholder.png", inStock: true },
       { id: "l901-m", name: "30447-M Cartuccia Inchiostro Magenta per L901Plus", sku: "30447-M", price: 215.00, image: "/images/shop/placeholder.png", inStock: true },
@@ -85,7 +85,7 @@ export const categories: Category[] = [
     slug: "consumabili-l801",
     name: "Afinia L801 / L801+",
     description: "Cartucce e testine per stampanti Afinia L801 e L801 Plus",
-    image: "/images/shop/l801.jpg",
+    image: "/images/products/afinia-l901.png",
     products: [
       { id: "l801-y", name: "22460 - L801 Yellow", sku: "22460", price: 215.00, image: "/images/shop/placeholder.png", inStock: true },
       { id: "l801p-y", name: "30419 - L801Plus Yellow", sku: "30419", price: 220.00, image: "/images/shop/placeholder.png", inStock: true },
@@ -102,7 +102,7 @@ export const categories: Category[] = [
     slug: "consumabili-cx1000",
     name: "Primera CX1000 / CX1200",
     description: "Toner e ricambi per stampanti Primera CX1000 e CX1200",
-    image: "/images/shop/cx1000.jpg",
+    image: "/images/products/afinia-lt5c.avif",
     products: [
       { id: "cx-k", name: "057401 - Nero per CX1000/1200", sku: "057401", price: 235.00, image: "/images/shop/placeholder.png", inStock: true },
       { id: "cx-c", name: "057402 - Ciano per CX1000/1200", sku: "057402", price: 449.00, image: "/images/shop/placeholder.png", inStock: true },
@@ -115,7 +115,7 @@ export const categories: Category[] = [
     slug: "consumabili-lx2000",
     name: "Primera LX2000",
     description: "Cartucce e kit testina per stampante Primera LX2000",
-    image: "/images/shop/lx2000.jpg",
+    image: "/images/products/afinia-l901.png",
     products: [
       { id: "lx2k-y", name: "PRI-53463 Cartuccia LX-2000e Giallo", sku: "53463", price: 33.00, image: "/images/shop/placeholder.png", inStock: true },
       { id: "lx2k-c", name: "PRI-53461 Cartuccia LX-2000e Ciano", sku: "53461", price: 33.00, image: "/images/shop/placeholder.png", inStock: true },
@@ -128,7 +128,7 @@ export const categories: Category[] = [
     slug: "consumabili-lx900",
     name: "Primera LX900",
     description: "Cartucce e testine per stampante Primera LX900",
-    image: "/images/shop/lx900.jpg",
+    image: "/images/products/afinia-l901.png",
     products: [
       { id: "lx9-c", name: "053422 - Cartuccia LX-900e Ciano", sku: "053422", price: 30.00, image: "/images/shop/placeholder.png", inStock: true },
       { id: "lx9-m", name: "053423 - Cartuccia LX-900e Magenta", sku: "053423", price: 30.00, image: "/images/shop/placeholder.png", inStock: true },
@@ -141,7 +141,7 @@ export const categories: Category[] = [
     slug: "consumabili-seriese",
     name: "Primera serie DP-SE",
     description: "Consumabili per Primera serie DP-SE",
-    image: "/images/shop/dp-se.jpg",
+    image: "/images/products/afinia-dlp2200.avif",
     products: [
       { id: "dpse-color", name: "PRI53332 - CMY HC per DP-SE", sku: "PRI53332", price: 49.00, image: "/images/shop/placeholder.png", inStock: true },
     ],
@@ -150,7 +150,7 @@ export const categories: Category[] = [
     slug: "consumabili-serie-dp41xx",
     name: "Primera serie DP41xx",
     description: "Cartucce e testine per Primera serie DP41xx",
-    image: "/images/shop/dp41xx.jpg",
+    image: "/images/products/afinia-dlp2200.avif",
     products: [
       { id: "dp41-head", name: "053471 - Testina DP41xxe", sku: "053471", price: 90.00, image: "/images/shop/placeholder.png", inStock: true },
       { id: "dp41-c", name: "053601 - Cartuccia DP41xxe Ciano", sku: "053601", price: 31.00, image: "/images/shop/placeholder.png", inStock: true },

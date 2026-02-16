@@ -141,7 +141,7 @@ export const categories: Category[] = [
     slug: "consumabili-seriese",
     name: "Primera serie DP-SE",
     description: "Consumabili per Primera serie DP-SE",
-    image: "/images/products/afinia-dlp2200.avif",
+    image: "/images/shop/dpse-category.jpg",
     products: [
       { id: "dpse-color", name: "PRI53332 - CMY HC per DP-SE", sku: "PRI53332", price: 49.00, image: "/images/shop/placeholder.png", inStock: true },
     ],

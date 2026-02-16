@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
+import { getLocale } from "next-intl/server";
 
 export const metadata: Metadata = {
   title: "Cookie Policy",
@@ -7,7 +8,8 @@ export const metadata: Metadata = {
   alternates: { canonical: "/cookie" },
 };
 
-export default function CookiePage() {
+export default async function CookiePage() {
+  const locale = await getLocale();
   return (
     <>
       <PageHero title="Cookie Policy" />

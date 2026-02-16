@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
+import { getLocale } from "next-intl/server";
 
 export const metadata: Metadata = {
   title: "GreenBox — Stampanti Digitali per Packaging",
@@ -19,7 +20,8 @@ export const metadata: Metadata = {
   alternates: { canonical: "/brand/greenbox" },
 };
 
-export default function GreenBoxPage() {
+export default async function GreenBoxPage() {
+  const locale = await getLocale();
   return (
     <>
       <PageHero

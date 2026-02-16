@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
+import { getLocale } from "next-intl/server";
 
 export const metadata: Metadata = {
   title: "Afinia X350 � Stampante Etichette Roll-to-Roll Alta Velocit�",
@@ -126,7 +127,8 @@ const features = [
   },
 ];
 
-export default function AfiniaX350Page() {
+export default async function AfiniaX350Page() {
+  const locale = await getLocale();
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }} />

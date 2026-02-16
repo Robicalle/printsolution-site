@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
+import { getLocale } from "next-intl/server";
 
 export const metadata: Metadata = {
   title: "Anypack — Distributore Ufficiale Italia",
@@ -19,7 +20,8 @@ export const metadata: Metadata = {
   alternates: { canonical: "/brand/anypack" },
 };
 
-export default function AnypackPage() {
+export default async function AnypackPage() {
+  const locale = await getLocale();
   return (
     <>
       <PageHero

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
+import { getLocale } from "next-intl/server";
 
 export const metadata: Metadata = {
   title: "Le Nostre Soluzioni di Stampa Digitale",
@@ -80,7 +81,8 @@ const categories = [
   },
 ];
 
-export default function SoluzioniPage() {
+export default async function SoluzioniPage() {
+  const locale = await getLocale();
   return (
     <>
       {/* Hero */}

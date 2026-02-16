@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
+import { getLocale } from "next-intl/server";
 
 export const metadata: Metadata = {
   title: "GreenBox Print Book \u2014 Labbratura Digitale Libri",
@@ -128,7 +129,8 @@ const features = [
   },
 ];
 
-export default function GreenBoxPrintBookPage() {
+export default async function GreenBoxPrintBookPage() {
+  const locale = await getLocale();
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }} />

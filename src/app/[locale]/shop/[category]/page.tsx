@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { categories, getCategoryBySlug } from "@/lib/shop-data";
 import CategoryPageClient from "@/components/shop/CategoryPageClient";
+import { getLocale } from "next-intl/server";
 
 export async function generateStaticParams() {
   return categories.map((cat) => ({ category: cat.slug }));

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
+import { getLocale } from "next-intl/server";
 
 export const metadata: Metadata = {
   title: "Stampanti Etichette Industriali",
@@ -186,7 +187,8 @@ const systems = [
   },
 ];
 
-export default function EtichettePage() {
+export default async function EtichettePage() {
+  const locale = await getLocale();
   return (
     <>
       <PageHero

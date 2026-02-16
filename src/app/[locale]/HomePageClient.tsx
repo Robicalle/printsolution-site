@@ -1,4 +1,5 @@
 "use client";
+import { useLocale } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
@@ -447,6 +448,7 @@ function DemoCTA() {
 
 /* ───── Page ───── */
 export default function HomePageClient() {
+  const locale = useLocale();
   return (
     <>
       <Hero />

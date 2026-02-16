@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
+import { getLocale } from "next-intl/server";
 
 export const metadata: Metadata = {
   title: "PackPrinter UV - Stampante UV Single-Pass",
@@ -120,7 +121,8 @@ const features = [
   },
 ];
 
-export default function PackPrinterUVPage() {
+export default async function PackPrinterUVPage() {
+  const locale = await getLocale();
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }} />

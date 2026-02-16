@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
+import { getLocale } from "next-intl/server";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
@@ -7,7 +8,8 @@ export const metadata: Metadata = {
   alternates: { canonical: "/privacy" },
 };
 
-export default function PrivacyPage() {
+export default async function PrivacyPage() {
+  const locale = await getLocale();
   return (
     <>
       <PageHero title="Privacy Policy" />

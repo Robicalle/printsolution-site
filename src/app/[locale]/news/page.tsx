@@ -1,5 +1,6 @@
 ﻿import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
+import { getLocale } from "next-intl/server";
 
 export const metadata: Metadata = {
   title: "News & Eventi",
@@ -61,7 +62,8 @@ const news = [
   },
 ];
 
-export default function NewsPage() {
+export default async function NewsPage() {
+  const locale = await getLocale();
   return (
     <>
       <PageHero

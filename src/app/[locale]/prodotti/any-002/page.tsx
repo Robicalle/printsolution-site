@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
+import { getLocale } from "next-intl/server";
 
 export const metadata: Metadata = {
   title: "Anytron ANY-002 � Stampa + Fustella Etichette",
@@ -102,7 +103,8 @@ const features = [
   },
 ];
 
-export default function Any002Page() {
+export default async function Any002Page() {
+  const locale = await getLocale();
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }} />

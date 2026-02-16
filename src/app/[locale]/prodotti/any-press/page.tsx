@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
+import { getLocale } from "next-intl/server";
 
 export const metadata: Metadata = {
   title: "Any-Press � Stampante Laser LED 5 Colori CMYK+Bianco",
@@ -124,7 +125,8 @@ const features = [
   },
 ];
 
-export default function AnyPressPage() {
+export default async function AnyPressPage() {
+  const locale = await getLocale();
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }} />

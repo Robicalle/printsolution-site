@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
+import { getLocale } from "next-intl/server";
 
 export const metadata: Metadata = {
   title: "EDM-650X - Stampante per Cartone Ondulato",
@@ -123,7 +124,8 @@ const features = [
   },
 ];
 
-export default function EDM650XPage() {
+export default async function EDM650XPage() {
+  const locale = await getLocale();
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(edm650xJsonLd) }} />

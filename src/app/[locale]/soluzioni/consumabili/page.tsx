@@ -1,5 +1,6 @@
 ﻿import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
+import { getLocale } from "next-intl/server";
 
 export const metadata: Metadata = {
   title: "Consumabili e Ricambi Stampa Digitale",
@@ -97,7 +98,8 @@ const categories = [
   },
 ];
 
-export default function ConsumabiliPage() {
+export default async function ConsumabiliPage() {
+  const locale = await getLocale();
   return (
     <>
       <PageHero

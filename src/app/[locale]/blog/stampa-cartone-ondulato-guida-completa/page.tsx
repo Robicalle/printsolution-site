@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import { Link } from "@/i18n/navigation";
+import { getLocale } from "next-intl/server";
 
 export const metadata: Metadata = {
   title: "Stampa su Cartone Ondulato: Guida Completa",
@@ -49,7 +50,8 @@ const breadcrumbJsonLd = {
   ],
 };
 
-export default function ArticleStampaCartone() {
+export default async function ArticleStampaCartone() {
+  const locale = await getLocale();
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />

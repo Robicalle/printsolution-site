@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
+import { getLocale } from "next-intl/server";
 
 export const metadata: Metadata = {
   title: "GreenBox EVO - Stampante Single-Pass",
@@ -124,7 +125,8 @@ const features = [
   },
 ];
 
-export default function GreenBoxEvoPage() {
+export default async function GreenBoxEvoPage() {
+  const locale = await getLocale();
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(greenboxJsonLd) }} />

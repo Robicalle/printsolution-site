@@ -1,11 +1,13 @@
 import { Metadata } from "next";
+import { getLocale } from "next-intl/server";
 
 export const metadata: Metadata = {
   title: "Condizioni di Vendita | Print Solution",
   description: "Condizioni generali di vendita e uso del sito Print Solution S.r.l.",
 };
 
-export default function CondizioniPage() {
+export default async function CondizioniPage() {
+  const locale = await getLocale();
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white pt-28 pb-20 px-4">
       <div className="container-custom max-w-4xl">

@@ -1,8 +1,10 @@
 "use client";
+import { useLocale } from "next-intl";
 import PageHero from "@/components/PageHero";
 import { useState } from "react";
 
 export default function ContattiClient() {
+  const locale = useLocale();
   const [formData, setFormData] = useState({
     nome: "", azienda: "", email: "", telefono: "", messaggio: "", interesse: "generico", privacy: false, _hp_field: "",
   });

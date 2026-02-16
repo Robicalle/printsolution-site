@@ -1,9 +1,11 @@
 "use client";
+import { useLocale } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { useEffect } from "react";
 import { useCart } from "@/lib/cart-context";
 
 export default function SuccessPage() {
+  const locale = useLocale();
   const { clearCart } = useCart();
 
   useEffect(() => {

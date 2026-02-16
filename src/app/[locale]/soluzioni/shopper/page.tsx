@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
+import { getLocale } from "next-intl/server";
 
 export const metadata: Metadata = {
   title: "Shopper & Packaging di Lusso - Hot Foil",
@@ -70,7 +71,8 @@ const products = [
   },
 ];
 
-export default function ShopperPage() {
+export default async function ShopperPage() {
+  const locale = await getLocale();
   return (
     <>
       <PageHero

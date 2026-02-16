@@ -1,6 +1,7 @@
 ﻿import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import Image from "next/image";
+import { getLocale } from "next-intl/server";
 
 export const metadata: Metadata = {
   title: "DTM Print — Distributore Ufficiale Italia",
@@ -18,7 +19,8 @@ export const metadata: Metadata = {
   alternates: { canonical: "/brand/dtm-print" },
 };
 
-export default function DTMPrintPage() {
+export default async function DTMPrintPage() {
+  const locale = await getLocale();
   return (
     <>
       <PageHero

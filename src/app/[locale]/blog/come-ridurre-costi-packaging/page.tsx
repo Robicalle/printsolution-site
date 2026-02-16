@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import { Link } from "@/i18n/navigation";
+import { getLocale } from "next-intl/server";
 
 export const metadata: Metadata = {
   title: "Come Ridurre i Costi di Packaging",
@@ -49,7 +50,8 @@ const breadcrumbJsonLd = {
   ],
 };
 
-export default function ArticleCostiPackaging() {
+export default async function ArticleCostiPackaging() {
+  const locale = await getLocale();
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />

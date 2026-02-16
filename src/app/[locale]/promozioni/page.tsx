@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
+import { getLocale } from "next-intl/server";
 
 export const metadata: Metadata = {
   title: "Promozioni",
@@ -22,7 +23,8 @@ export const metadata: Metadata = {
   alternates: { canonical: "/promozioni" },
 };
 
-export default function PromozioniPage() {
+export default async function PromozioniPage() {
+  const locale = await getLocale();
   return (
     <>
       <PageHero

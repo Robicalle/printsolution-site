@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
+import { getLocale } from "next-intl/server";
 
 export const metadata: Metadata = {
   title: "Confronto Prodotti — Print Solution",
@@ -220,7 +221,8 @@ const columns = [
   { key: "prezzo" as const, label: "Prezzo" },
 ];
 
-export default function ConfrontoProdottiPage() {
+export default async function ConfrontoProdottiPage() {
+  const locale = await getLocale();
   return (
     <main className="pt-28 pb-20 bg-gradient-to-b from-gray-50 to-white min-h-screen">
       <div className="container-custom px-4 sm:px-6 lg:px-8">

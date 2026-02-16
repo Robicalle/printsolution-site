@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
+import { getLocale } from "next-intl/server";
 
 export const metadata: Metadata = {
   title: "Labbratura Libri - Stampa Bordi Libri",
@@ -70,7 +71,8 @@ const product = {
   brand: "Print Solution",
 };
 
-export default function LabbraturaPage() {
+export default async function LabbraturaPage() {
+  const locale = await getLocale();
   return (
     <>
       <PageHero

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import Image from "next/image";
+import { getLocale } from "next-intl/server";
 
 export const metadata: Metadata = {
   title: "Usato Garantito",
@@ -96,7 +97,8 @@ const products = [
   },
 ];
 
-export default function UsatoPage() {
+export default async function UsatoPage() {
+  const locale = await getLocale();
   return (
     <>
       <PageHero

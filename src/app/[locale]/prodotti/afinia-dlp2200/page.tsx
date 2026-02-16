@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
+import { getLocale } from "next-intl/server";
 
 export const metadata: Metadata = {
   title: "Afinia DLP-2200 — Digital Label Press Completa",
@@ -127,7 +128,8 @@ const features = [
   },
 ];
 
-export default function AfiniaDLP2200Page() {
+export default async function AfiniaDLP2200Page() {
+  const locale = await getLocale();
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }} />

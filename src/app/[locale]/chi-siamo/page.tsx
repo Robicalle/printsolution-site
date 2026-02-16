@@ -1,6 +1,7 @@
 ﻿import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import Image from "next/image";
+import { getLocale } from "next-intl/server";
 
 export const metadata: Metadata = {
   title: "Chi Siamo",
@@ -24,7 +25,8 @@ export const metadata: Metadata = {
   alternates: { canonical: "/chi-siamo" },
 };
 
-export default function ChiSiamoPage() {
+export default async function ChiSiamoPage() {
+  const locale = await getLocale();
   return (
     <>
       <PageHero

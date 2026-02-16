@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ContattiClient from "./ContattiClient";
+import { getLocale } from "next-intl/server";
 
 export const metadata: Metadata = {
   title: "Contatti",
@@ -23,6 +24,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/contatti" },
 };
 
-export default function ContattiPage() {
+export default async function ContattiPage() {
+  const locale = await getLocale();
   return <ContattiClient />;
 }

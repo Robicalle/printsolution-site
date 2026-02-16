@@ -1,9 +1,11 @@
 "use client";
+import { useLocale } from "next-intl";
 import { useCart } from "@/lib/cart-context";
 import { Link } from "@/i18n/navigation";
 import { useState } from "react";
 
 export default function CheckoutPage() {
+  const locale = useLocale();
   const { items, totalPrice, clearCart } = useCart();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");

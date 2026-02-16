@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
+import { getLocale } from "next-intl/server";
 
 export const metadata: Metadata = {
   title: "AurumPress � Stampa a Caldo Digitale per Packaging",
@@ -98,7 +99,8 @@ const features = [
   },
 ];
 
-export default function AurumPressPage() {
+export default async function AurumPressPage() {
+  const locale = await getLocale();
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(aurumpressJsonLd) }} />

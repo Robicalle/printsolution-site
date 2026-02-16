@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
+import { getLocale } from "next-intl/server";
 
 export const metadata: Metadata = {
   title: "Afinia Label — Distributore Ufficiale Italia",
@@ -27,7 +28,8 @@ const products = [
   { name: "Serie DLF", desc: "Fustellatori digitali, taglio qualsiasi forma a 600 mm/sec", tag: "Finitura" },
 ];
 
-export default function AfiniaLabelPage() {
+export default async function AfiniaLabelPage() {
+  const locale = await getLocale();
   return (
     <>
       <PageHero

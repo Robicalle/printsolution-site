@@ -124,7 +124,7 @@ export default function ChatWidget() {
 
       {/* Chat Panel */}
       {open && (
-        <div className="fixed bottom-52 right-4 lg:bottom-24 lg:right-6 z-[9997] w-[calc(100%-2rem)] max-w-sm bg-white rounded-2xl shadow-2xl border border-gray-200 flex flex-col overflow-hidden animate-in">
+        <div className="fixed bottom-52 right-4 lg:bottom-24 lg:right-6 z-[9999] w-[calc(100%-2rem)] max-w-sm max-h-[60vh] bg-white rounded-2xl shadow-2xl border border-gray-200 flex flex-col overflow-hidden animate-in">
           {/* Header */}
           <div className="bg-gradient-to-r from-cyan-600 to-blue-700 text-white px-5 py-4 flex items-center gap-3">
             <div className="w-9 h-9 rounded-full bg-white/20 flex items-center justify-center">
@@ -141,7 +141,7 @@ export default function ChatWidget() {
           </div>
 
           {/* Messages */}
-          <div className="flex-1 overflow-y-auto px-4 py-3 space-y-3 max-h-80 min-h-[200px] bg-gray-50">
+          <div className="flex-1 overflow-y-auto px-4 py-3 space-y-3 max-h-60 lg:max-h-80 min-h-[150px] bg-gray-50">
             {messages.length === 0 && (
               <div className="text-center text-gray-400 text-sm py-8">
                 <p className="text-2xl mb-2">👋</p>

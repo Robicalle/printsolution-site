@@ -78,8 +78,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
       </svg>
     ),
-    title: "30 Metri al Minuto",
-    desc: "Velocit\u00e0 di stampa eccezionale grazie alla testina HP single-pass. Produttivit\u00e0 elevata per qualsiasi volume.",
+    title: "30 Metri al Minuto", titleEn: "30 Meters per Minute",
+    desc: "Velocit\u00e0 di stampa eccezionale grazie alla testina HP single-pass. Produttivit\u00e0 elevata per qualsiasi volume.", descEn: "Exceptional print speed thanks to the HP single-pass printhead. Full coverage in a single pass.",
   },
   {
     icon: (
@@ -87,8 +87,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
       </svg>
     ),
-    title: "1200\u00d71200 DPI",
-    desc: "Risoluzione massima per labbrature dettagliate con colori vividi e sfumature precise sul dorso dei libri.",
+    title: "1200\u00d71200 DPI", titleEn: "1200×1200 DPI",
+    desc: "Risoluzione massima per labbrature dettagliate con colori vividi e sfumature precise sul dorso dei libri.", descEn: "Maximum resolution for detailed edge printing with vivid colors and sharp text on every book.",
   },
   {
     icon: (
@@ -105,8 +105,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75" />
       </svg>
     ),
-    title: "Testa Microregolabile",
-    desc: "Regolazione micrometrica con display digitale. Escursione verticale fino a 30 cm per adattarsi a qualsiasi formato.",
+    title: "Testa Microregolabile", titleEn: "Micro-Adjustable Head",
+    desc: "Regolazione micrometrica con display digitale. Escursione verticale fino a 30 cm per adattarsi a qualsiasi formato.", descEn: "Micrometric adjustment with digital display. Vertical travel from 5 to 50 cm for any book format.",
   },
   {
     icon: (
@@ -115,8 +115,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
       </svg>
     ),
-    title: "Industria 4.0 Ready",
-    desc: "Con il software opzionale GreenFlow risponde ai requisiti per i crediti d\u2019imposta del piano Industria 4.0 del MISE.",
+    title: "Industria 4.0 Ready", titleEn: "Industry 4.0 Ready",
+    desc: "Con il software opzionale GreenFlow risponde ai requisiti per i crediti d\u2019imposta del piano Industria 4.0 del MISE.", descEn: "With the optional GreenFlow software, it meets Industry 4.0 requirements for tax credits and interconnection.",
   },
   {
     icon: (
@@ -124,8 +124,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z" />
       </svg>
     ),
-    title: "Software GreenFlow",
-    desc: "Gestione colori, dato variabile, codici a barre/QR, nesting, calcolo costi e reportistica completa per Industria 4.0.",
+    title: "Software GreenFlow", titleEn: "GreenFlow Software",
+    desc: "Gestione colori, dato variabile, codici a barre/QR, nesting, calcolo costi e reportistica completa per Industria 4.0.", descEn: "Color management, variable data, barcodes/QR codes, nesting, print preview and advanced settings.",
   },
 ];
 

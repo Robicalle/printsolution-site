@@ -80,8 +80,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
       </svg>
     ),
-    title: "50 Metri al Minuto",
-    desc: "Velocità single-pass eccezionale per produzioni industriali. Grandi tirature completate in tempi record senza sacrificare la qualità.",
+    title: "50 Metri al Minuto", titleEn: "50 Meters per Minute",
+    desc: "Velocità single-pass eccezionale per produzioni industriali. Grandi tirature completate in tempi record senza sacrificare la qualità.", descEn: "Exceptional single-pass speed for industrial production. UV curing allows immediate handling.",
   },
   {
     icon: (
@@ -89,8 +89,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15" />
       </svg>
     ),
-    title: "Stampa su Qualsiasi Materiale",
-    desc: "PVC, vetro, ceramica, legno, cartone, metallo, acrilico, similpelle e materiali sintetici. Nessun limite ai tuoi progetti.",
+    title: "Stampa su Qualsiasi Materiale", titleEn: "Print on Any Material",
+    desc: "PVC, vetro, ceramica, legno, cartone, metallo, acrilico, similpelle e materiali sintetici. Nessun limite ai tuoi progetti.", descEn: "PVC, glass, ceramic, wood, cardboard, metal, acrylic, synthetic leather and more. Total versatility.",
   },
   {
     icon: (
@@ -98,8 +98,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42" />
       </svg>
     ),
-    title: "CMYK + Bianco",
-    desc: "Stampa a 5 colori con bianco coprente per materiali trasparenti e scuri. Risultati vivaci su qualsiasi superficie.",
+    title: "CMYK + Bianco", titleEn: "CMYK + White",
+    desc: "Stampa a 5 colori con bianco coprente per materiali trasparenti e scuri. Risultati vivaci su qualsiasi superficie.", descEn: "5-color printing with opaque white for transparent and dark materials. Maximum coverage and opacity.",
   },
   {
     icon: (
@@ -107,8 +107,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75" />
       </svg>
     ),
-    title: "9 Configurazioni",
-    desc: "Luce di stampa da 12 a 118 cm. Scegli la configurazione ideale per il tuo volume e formato di produzione.",
+    title: "9 Configurazioni", titleEn: "9 Configurations",
+    desc: "Luce di stampa da 12 a 118 cm. Scegli la configurazione ideale per il tuo volume e formato di produzione.", descEn: "Print width from 12 to 118 cm. Choose the ideal configuration for your production volumes and applications.",
   },
   {
     icon: (
@@ -125,8 +125,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z" />
       </svg>
     ),
-    title: "ROI Rapido",
-    desc: "Alta velocità e versatilità dei materiali permettono di servire più mercati. Ritorno sull&apos;investimento in tempi brevi.",
+    title: "ROI Rapido", titleEn: "Quick ROI",
+    desc: "Alta velocità e versatilità dei materiali permettono di servire più mercati. Ritorno sull&apos;investimento in tempi brevi.", descEn: "High speed and material versatility allow serving multiple markets and applications. Quick return on investment.",
   },
 ];
 

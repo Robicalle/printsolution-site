@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
-import { getLocale } from "next-intl/server";
 
 export const metadata: Metadata = {
   title: "Anypack AB2500 - Box Maker Automatico",
@@ -52,23 +51,15 @@ const breadcrumbJsonLd = {
   ],
 };
 
-function getSpecs(l: string) { return l === 'it' ? [
+const specs = [
   ["Tipo macchina", "Box maker automatico all-in-one"],
   ["Operazioni", "Taglio, scanalatura, cordonatura, incollaggio"],
-  ["Produttività", "500-600 scatole/ora"],
+  ["Produttivit�", "500-600 scatole/ora"],
   ["Cambio formato", "10 secondi"],
   ["Spessore cartone", "Da 1 a 7 mm"],
   ["Incollaggio", "A caldo e a freddo"],
-  ["Automazione", "Completamente automatico"],
-] : [
-  ["Machine type", "All-in-one automatic box maker"],
-  ["Operations", "Cutting, creasing, scoring, gluing"],
-  ["Throughput", "500-600 boxes/hour"],
-  ["Format changeover", "10 seconds"],
-  ["Cardboard thickness", "From 1 to 7 mm"],
-  ["Gluing", "Hot and cold"],
-  ["Automation", "Fully automatic"],
-]; }
+  ["Automazione", "Completamente automatico"],
+];
 
 const features = [
   {
@@ -77,8 +68,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
       </svg>
     ),
-    title: "Alta Produttività", titleEn: "High Throughput",
-    desc: "500-600 scatole all'ora: produzione industriale con un'unica macchina compatta e versatile.", descEn: "500-600 boxes per hour: industrial production with a single compact and versatile machine.",
+    title: "Alta Produttivit�",
+    desc: "500-600 scatole all'ora: produzione industriale con un'unica macchina compatta e versatile.",
   },
   {
     icon: (
@@ -86,8 +77,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
       </svg>
     ),
-    title: "Cambio Formato in 10 secondi", titleEn: "Format Change in 10 Seconds",
-    desc: "Passaggio istantaneo tra formati diversi senza fermo macchina. Massima flessibilità produttiva.", descEn: "Instant switchover between different formats without downtime. Maximum production flexibility.",
+    title: "Cambio Formato in 10 secondi",
+    desc: "Passaggio istantaneo tra formati diversi senza fermo macchina. Massima flessibilit� produttiva.",
   },
   {
     icon: (
@@ -95,8 +86,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" />
       </svg>
     ),
-    title: "All-in-One", titleEn: "All-in-One",
-    desc: "Taglio, scanalatura, cordonatura e incollaggio in un'unica operazione automatica. Zero passaggi manuali.", descEn: "Cutting, creasing, scoring and gluing in a single automatic operation. Zero manual steps.",
+    title: "All-in-One",
+    desc: "Taglio, scanalatura, cordonatura e incollaggio in un'unica operazione automatica. Zero passaggi manuali.",
   },
   {
     icon: (
@@ -104,8 +95,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75" />
       </svg>
     ),
-    title: "Cartone da 1 a 7mm", titleEn: "Cardboard 1 to 7mm",
-    desc: "Lavora con un ampio range di spessori, dal cartone leggero fino a 7mm per imballi pesanti.", descEn: "Works with a wide range of thicknesses, from lightweight cardboard up to 7mm for heavy-duty packaging.",
+    title: "Cartone da 1 a 7mm",
+    desc: "Lavora con un ampio range di spessori, dal cartone leggero fino a 7mm per imballi pesanti.",
   },
   {
     icon: (
@@ -114,8 +105,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
       </svg>
     ),
-    title: "Doppio Incollaggio", titleEn: "Dual Gluing",
-    desc: "Sistema di incollaggio a caldo e a freddo per adattarsi a ogni tipo di cartone e applicazione.", descEn: "Hot and cold gluing system to adapt to any type of cardboard and application.",
+    title: "Doppio Incollaggio",
+    desc: "Sistema di incollaggio a caldo e a freddo per adattarsi a ogni tipo di cartone e applicazione.",
   },
   {
     icon: (
@@ -123,13 +114,12 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z" />
       </svg>
     ),
-    title: "ROI Rapido", titleEn: "Quick ROI",
-    desc: "L'automazione completa riduce i costi di manodopera e aumenta la produttività. Ritorno sull'investimento in tempi brevi.", descEn: "Full automation reduces labor costs and increases productivity. Quick return on investment.",
+    title: "ROI Rapido",
+    desc: "L'automazione completa riduce i costi di manodopera e aumenta la produttivit�. Ritorno sull'investimento in tempi brevi.",
   },
 ];
 
-export default async function AB2500Page() {
-  const locale = await getLocale();
+export default function AB2500Page() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ab2500JsonLd) }} />
@@ -142,14 +132,14 @@ export default async function AB2500Page() {
         <div className="absolute inset-0 bg-gradient-to-r from-dark-800/90 via-dark-800/70 to-dark-800/40" />
         <div className="container-custom px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-2xl">
-            <p className="text-cyan-300 text-sm mb-3 uppercase tracking-widest font-medium">{locale === 'it' ? 'Prodotti' : 'Products'}</p>
+            <p className="text-cyan-300 text-sm mb-3 uppercase tracking-widest font-medium">Prodotti</p>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">Anypack AB2500</h1>
             <p className="text-lg text-gray-200 leading-relaxed mb-8">
-              {locale === 'it' ? 'Box maker automatico all-in-one. Taglio, scanalatura, cordonatura e incollaggio
-              in un&apos;unica macchina. 500-600 scatole/ora con cambio formato in 10 secondi.' : 'All-in-one automatic box maker. Cutting, creasing, scoring and gluing in a single machine. 500-600 boxes/hour with format change in 10 seconds.'}
+              Box maker automatico all-in-one. Taglio, scanalatura, cordonatura e incollaggio
+              in un&apos;unica macchina. 500-600 scatole/ora con cambio formato in 10 secondi.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Anypack%20AB2500&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20Anypack%20AB2500.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">{locale === 'it' ? 'Richiedi Demo →' : 'Request Demo →'}</a>
+              <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Anypack%20AB2500&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20Anypack%20AB2500.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">Richiedi Demo →</a>
             </div>
           </div>
         </div>
@@ -167,21 +157,21 @@ export default async function AB2500Page() {
       {/* Descrizione */}
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
         <div className="container-custom max-w-4xl">
-          <h2 className="text-3xl font-bold text-dark-800 mb-6">{locale === 'it' ? 'Produzione Automatica di Scatole' : 'Automatic Box Production'}</h2>
+          <h2 className="text-3xl font-bold text-dark-800 mb-6">Produzione Automatica di Scatole</h2>
           <p className="text-gray-500 leading-relaxed mb-4">
-            {locale === 'it' ? 'L&apos;Anypack AB2500 è un box maker completamente automatico che esegue taglio, scanalatura, cordonatura
+            L&apos;Anypack AB2500 � un box maker completamente automatico che esegue taglio, scanalatura, cordonatura
             e incollaggio in un&apos;unica operazione. Progettato per la produzione industriale di scatole in cartone
-            ondulato, garantisce una produttività di 500-600 scatole all&apos;ora.' : 'The Anypack AB2500 is a fully automatic box maker that performs cutting, creasing, scoring and gluing in a single operation. Designed for industrial corrugated box production, it delivers a throughput of 500-600 boxes per hour.'}
+            ondulato, garantisce una produttivit� di 500-600 scatole all&apos;ora.
           </p>
           <p className="text-gray-500 leading-relaxed mb-4">
-            {locale === 'it' ? 'Il cambio formato avviene in soli 10 secondi, eliminando i tempi morti e massimizzando l&apos;efficienza
+            Il cambio formato avviene in soli 10 secondi, eliminando i tempi morti e massimizzando l&apos;efficienza
             produttiva. La macchina lavora con cartone da 1 a 7mm di spessore, adattandosi sia a imballi leggeri
-            che a scatole per spedizioni pesanti.' : 'Format changeover takes just 10 seconds, eliminating downtime and maximizing production efficiency. The machine handles cardboard from 1 to 7mm thick, adapting to both lightweight packaging and heavy-duty shipping boxes.'}
+            che a scatole per spedizioni pesanti.
           </p>
           <p className="text-gray-500 leading-relaxed">
-            {locale === 'it' ? 'Il sistema di incollaggio a caldo e a freddo consente di lavorare con ogni tipo di cartone e applicazione.
-            L&apos;AB2500 è la soluzione ideale per scatolifici, centri di logistica e aziende che necessitano di
-            produzione on-demand di imballaggi personalizzati.' : 'The hot and cold gluing system allows working with any type of cardboard and application. The AB2500 is the ideal solution for box manufacturers, logistics centers and companies that need on-demand customized packaging production.'}
+            Il sistema di incollaggio a caldo e a freddo consente di lavorare con ogni tipo di cartone e applicazione.
+            L&apos;AB2500 � la soluzione ideale per scatolifici, centri di logistica e aziende che necessitano di
+            produzione on-demand di imballaggi personalizzati.
           </p>
         </div>
       </section>
@@ -191,7 +181,7 @@ export default async function AB2500Page() {
         <div className="container-custom">
           <div className="text-center mb-8">
             <p className="text-cyan-500 font-semibold text-sm uppercase tracking-widest mb-4">Video</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-dark-800">{locale === 'it' ? 'AB2500 in Azione' : 'AB2500 in Action'}</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-dark-800">AB2500 in Azione</h2>
           </div>
           <div className="max-w-3xl mx-auto">
             <div className="aspect-video rounded-2xl overflow-hidden shadow-lg">
@@ -206,15 +196,15 @@ export default async function AB2500Page() {
       {/* Features */}
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
         <div className="container-custom">
-          <h2 className="text-3xl font-bold text-dark-800 mb-8 text-center">{locale === 'it' ? 'Vantaggi Principali' : 'Key Benefits'}</h2>
+          <h2 className="text-3xl font-bold text-dark-800 mb-8 text-center">Vantaggi Principali</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((f) => (
               <div key={f.title} className="card-modern p-8 hover:-translate-y-1 transition-transform duration-300">
                 <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-cyan-500 to-yellow-500 flex items-center justify-center text-white mb-5">
                   {f.icon}
                 </div>
-                <h3 className="text-lg font-bold text-dark-800 mb-2">{locale === 'it' ? f.title : (f.titleEn || f.title)}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{locale === 'it' ? f.desc : (f.descEn || f.desc)}</p>
+                <h3 className="text-lg font-bold text-dark-800 mb-2">{f.title}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{f.desc}</p>
               </div>
             ))}
           </div>
@@ -223,9 +213,9 @@ export default async function AB2500Page() {
       {/* Specifiche Tecniche */}
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-surface-50">
         <div className="container-custom max-w-3xl">
-          <h2 className="text-3xl font-bold text-dark-800 mb-10 text-center">{locale === 'it' ? 'Specifiche Tecniche' : 'Technical Specifications'}</h2>
+          <h2 className="text-3xl font-bold text-dark-800 mb-10 text-center">Specifiche Tecniche</h2>
           <div className="space-y-3">
-            {getSpecs(locale).map(([label, value]) => (
+            {specs.map(([label, value]) => (
               <div key={label} className="flex flex-col sm:flex-row sm:justify-between gap-1 bg-white rounded-xl px-5 py-4 shadow-sm">
                 <span className="text-sm font-medium text-gray-600">{label}</span>
                 <span className="text-sm font-bold text-dark-800">{value}</span>
@@ -238,12 +228,12 @@ export default async function AB2500Page() {
       {/* CTA */}
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-surface-50">
         <div className="container-custom text-center">
-          <h2 className="text-3xl font-bold text-dark-800 mb-6">{locale === 'it' ? 'Automatizza la Produzione di Scatole' : 'Automate Your Box Production'}</h2>
+          <h2 className="text-3xl font-bold text-dark-800 mb-6">Automatizza la Produzione di Scatole</h2>
           <p className="text-gray-500 max-w-xl mx-auto mb-8">
-            {locale === 'it' ? 'Scopri come l&apos;AB2500 può rivoluzionare la tua linea di produzione. Vieni a vederla nella nostra sala demo.' : 'Discover how the AB2500 can revolutionize your production line. Come see it in our demo room.'}
+            Scopri come l&apos;AB2500 pu� rivoluzionare la tua linea di produzione. Vieni a vederla nella nostra sala demo.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Anypack%20AB2500&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20Anypack%20AB2500.%0A%0AGrazie" className="btn-primary text-lg">{locale === 'it' ? 'Richiedi Demo →' : 'Request Demo →'}</a>
+            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Anypack%20AB2500&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20Anypack%20AB2500.%0A%0AGrazie" className="btn-primary text-lg">Richiedi Demo →</a>
           </div>
         </div>
       </section>
@@ -251,12 +241,12 @@ export default async function AB2500Page() {
       {/* Prodotti Correlati */}
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
         <div className="container-custom">
-          <h2 className="text-2xl font-bold text-dark-800 mb-8 text-center">{locale === 'it' ? 'Prodotti Correlati' : 'Related Products'}</h2>
+          <h2 className="text-2xl font-bold text-dark-800 mb-8 text-center">Prodotti Correlati</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { name: "GreenBox EVO", desc: locale === 'it' ? "Stampante single-pass per packaging" : "Single-pass printer for packaging", href: "/prodotti/greenbox-evo", image: "/images/products/greenbox-evo-site-nobg.png" },
-              { name: "EDM-650X", desc: locale === 'it' ? "Stampante single-pass grande formato" : "Large format single-pass printer", href: "/prodotti/edm-650x", image: "/images/products/edm-650x-2hd-nobg-v4.png" },
-              { name: "AurumPress", desc: locale === 'it' ? "Stampatrice termica per foil" : "Thermal foil printer", href: "/prodotti/aurumpress", image: "/images/products/aurumpress-nobg.png" },
+              { name: "GreenBox EVO", desc: "Stampante single-pass per packaging", href: "/prodotti/greenbox-evo", image: "/images/products/greenbox-evo-site-nobg.png" },
+              { name: "EDM-650X", desc: "Stampante single-pass grande formato", href: "/prodotti/edm-650x", image: "/images/products/edm-650x-2hd-nobg-v4.png" },
+              { name: "AurumPress", desc: "Stampatrice termica per foil", href: "/prodotti/aurumpress", image: "/images/products/aurumpress-nobg.png" },
             ].map((p) => (
               <Link key={p.name} href={p.href} className="card-modern overflow-hidden group hover:-translate-y-1 transition-transform duration-300">
                 <div className="h-40 relative overflow-hidden">

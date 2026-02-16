@@ -75,8 +75,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
       </svg>
     ),
-    title: "Finiture Premium",
-    desc: "Foil argentati, oro, metallizzati, colori pastello e trasparente lucido per un packaging d'impatto.",
+    title: "Finiture Premium", titleEn: "Premium Finishes",
+    desc: "Foil argentati, oro, metallizzati, colori pastello e trasparente lucido per un packaging d'impatto.", descEn: "Silver, gold, metallic, pastel and transparent foils for luxury finishes that enhance any product.",
   },
   {
     icon: (
@@ -84,8 +84,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
       </svg>
     ),
-    title: "Impressione Idraulica",
-    desc: "Sistema ad impressione idraulica per una pressione uniforme e risultati costanti su ogni tipo di supporto.",
+    title: "Impressione Idraulica", titleEn: "Hydraulic Impression",
+    desc: "Sistema ad impressione idraulica per una pressione uniforme e risultati costanti su ogni tipo di supporto.", descEn: "Hydraulic impression system for uniform pressure and perfect adhesion of the foil on any material.",
   },
   {
     icon: (
@@ -93,8 +93,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" />
       </svg>
     ),
-    title: "Packaging di Lusso",
-    desc: "Perfetta per valorizzare scatole, confezioni regalo, etichette e packaging premium con finiture esclusive.",
+    title: "Packaging di Lusso", titleEn: "Luxury Packaging",
+    desc: "Perfetta per valorizzare scatole, confezioni regalo, etichette e packaging premium con finiture esclusive.", descEn: "Perfect for enhancing boxes, gift packaging, labels and printed materials with metallic and holographic details.",
   },
   {
     icon: (
@@ -102,8 +102,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M4.098 19.902a3.75 3.75 0 005.304 0l6.401-6.402M6.75 21A3.75 3.75 0 013 17.25V4.125C3 3.504 3.504 3 4.125 3h5.25c.621 0 1.125.504 1.125 1.125v4.072M6.75 21a3.75 3.75 0 003.75-3.75V8.197M6.75 21h13.125c.621 0 1.125-.504 1.125-1.125v-5.25c0-.621-.504-1.125-1.125-1.125h-4.072M10.5 8.197l2.88-2.88c.438-.439 1.15-.439 1.59 0l3.712 3.713c.44.44.44 1.152 0 1.59l-2.879 2.88M6.75 17.25h.008v.008H6.75v-.008z" />
       </svg>
     ),
-    title: "Personalizzazione Totale",
-    desc: "Stampa loghi, scritte e grafiche personalizzate direttamente sul packaging per un branding unico.",
+    title: "Personalizzazione Totale", titleEn: "Total Customization",
+    desc: "Stampa loghi, scritte e grafiche personalizzate direttamente sul packaging per un branding unico.", descEn: "Print custom logos, text and graphics directly from digital file. Each piece can be unique.",
   },
 ];
 

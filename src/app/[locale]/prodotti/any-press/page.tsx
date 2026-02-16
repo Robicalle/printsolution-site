@@ -85,8 +85,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42" />
       </svg>
     ),
-    title: "Toner Bianco CMYKW",
-    desc: "Stampa a 5 colori con toner bianco per creare immagini e testi nitidi su carte colorate, kraft e supporti trasparenti.",
+    title: "Toner Bianco CMYKW", titleEn: "White Toner CMYKW",
+    desc: "Stampa a 5 colori con toner bianco per creare immagini e testi nitidi su carte colorate, kraft e supporti trasparenti.", descEn: "5-color printing with white toner to create vivid images and text on transparent, metallic and dark materials.",
   },
   {
     icon: (
@@ -94,8 +94,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" />
       </svg>
     ),
-    title: "Etichette e Packaging Flessibile",
-    desc: "Soluzione 2-in-1 per etichette e imballaggi flessibili: buste piatte, stand-up pouch e bustine fino a 13 pollici di larghezza.",
+    title: "Etichette e Packaging Flessibile", titleEn: "Labels and Flexible Packaging",
+    desc: "Soluzione 2-in-1 per etichette e imballaggi flessibili: buste piatte, stand-up pouch e bustine fino a 13 pollici di larghezza.", descEn: "2-in-1 solution for labels and flexible packaging: pouches, bags, sachets and wrappers in a single machine.",
   },
   {
     icon: (
@@ -104,8 +104,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
       </svg>
     ),
-    title: "Laminazione Integrata",
-    desc: "Plastificatrice integrata opzionale (a freddo o a caldo) per completare stampa e laminazione in un unico passaggio.",
+    title: "Laminazione Integrata", titleEn: "Integrated Lamination",
+    desc: "Plastificatrice integrata opzionale (a freddo o a caldo) per completare stampa e laminazione in un unico passaggio.", descEn: "Optional integrated laminator (cold or hot) for additional protection and premium finish on every print.",
   },
   {
     icon: (
@@ -113,8 +113,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5" />
       </svg>
     ),
-    title: "Stampe Durevoli Senza Rivestimento",
-    desc: "Il toner laser LED garantisce resistenza all'acqua, ai raggi UV, ai graffi e alle condizioni esterne senza necessità di rivestimenti aggiuntivi.",
+    title: "Stampe Durevoli Senza Rivestimento", titleEn: "Durable Prints Without Coating",
+    desc: "Il toner laser LED garantisce resistenza all'acqua, ai raggi UV, ai graffi e alle condizioni esterne senza necessità di rivestimenti aggiuntivi.", descEn: "LED laser toner ensures resistance to water, UV rays, scratches and the harshest environmental conditions.",
   },
   {
     icon: (
@@ -122,8 +122,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z" />
       </svg>
     ),
-    title: "Costi di Produzione Ridotti",
-    desc: "Toner e tamburi ad alta capacità con ampia scelta di supporti non patinati. I costi di produzione più competitivi della categoria.",
+    title: "Costi di Produzione Ridotti", titleEn: "Reduced Production Costs",
+    desc: "Toner e tamburi ad alta capacità con ampia scelta di supporti non patinati. I costi di produzione più competitivi della categoria.", descEn: "High-capacity toner and drums with a wide choice of compatible media for an optimized cost per print.",
   },
   {
     icon: (
@@ -131,8 +131,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
       </svg>
     ),
-    title: "Software ANY-FLOW",
-    desc: "Sistema operativo dedicato per gestione colori, dati variabili (codici a barre, QR code), nesting e calcolo costi di produzione.",
+    title: "Software ANY-FLOW", titleEn: "ANY-FLOW Software",
+    desc: "Sistema operativo dedicato per gestione colori, dati variabili (codici a barre, QR code), nesting e calcolo costi di produzione.", descEn: "Dedicated operating system for color management, variable data, barcodes and automated production workflow.",
   },
 ];
 

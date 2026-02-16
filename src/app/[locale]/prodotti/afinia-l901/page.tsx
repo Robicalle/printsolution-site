@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
-import { getLocale } from "next-intl/server";
 
 export const metadata: Metadata = {
   title: "Afinia L901 - Stampante Etichette Memjet",
@@ -52,7 +51,7 @@ const breadcrumbJsonLd = {
   ],
 };
 
-function getSpecs(l: string) { return l === 'it' ? [
+const specs = [
   ["Tecnologia", "Memjet Waterfall Inkjet"],
   ["Risoluzione", "1600 dpi full-color"],
   ["Inchiostri", "CMYKK (doppio nero)"],
@@ -61,18 +60,8 @@ function getSpecs(l: string) { return l === 'it' ? [
   ["Display", "Touchscreen integrato"],
   ["Cartucce", "Alta capacità"],
   ["Modalità", "Standalone o in linea con DLP-2200"],
-  ["Manutenzione", "Senza fermo macchina"],
-] : [
-  ["Technology", "Memjet Waterfall Inkjet"],
-  ["Resolution", "1600 dpi full-color"],
-  ["Inks", "CMYKK (dual black)"],
-  ["Max print width", "216 mm (8.5 inches)"],
-  ["Printhead", "User-replaceable"],
-  ["Display", "Built-in touchscreen"],
-  ["Cartridges", "High capacity"],
-  ["Mode", "Standalone or inline with DLP-2200"],
-  ["Maintenance", "Zero downtime"],
-]; }
+  ["Manutenzione", "Senza fermo macchina"],
+];
 
 const features = [
   {
@@ -81,8 +70,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
       </svg>
     ),
-    title: "Alta Produttività", titleEn: "High Productivity",
-    desc: "Motore di stampa Memjet Waterfall per produzioni professionali continue con qualità costante a 1600 dpi.", descEn: "Memjet Waterfall print engine for continuous professional production with consistent quality at 1600 dpi.",
+    title: "Alta Produttività",
+    desc: "Motore di stampa Memjet Waterfall per produzioni professionali continue con qualità costante a 1600 dpi.",
   },
   {
     icon: (
@@ -90,8 +79,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42" />
       </svg>
     ),
-    title: "Doppio Nero CMYKK", titleEn: "Dual Black CMYKK",
-    desc: "Configurazione a 5 canali con doppio nero per neri più profondi, testi più nitidi e maggiore autonomia di stampa.", descEn: "5-channel configuration with dual black for deeper blacks, sharper text and greater print autonomy.",
+    title: "Doppio Nero CMYKK",
+    desc: "Configurazione a 5 canali con doppio nero per neri più profondi, testi più nitidi e maggiore autonomia di stampa.",
   },
   {
     icon: (
@@ -100,8 +89,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M19.577 12.098l-5.385-3.079A.75.75 0 0014.157 9.75v6.362a.75.75 0 001.035.691l5.385-2.283a.75.75 0 00.034-1.42z" />
       </svg>
     ),
-    title: "Testina Sostituibile", titleEn: "Replaceable Printhead",
-    desc: "Testina di stampa sostituibile dall'utente senza fermare la produzione. Zero downtime, massima continuità operativa.", descEn: "User-replaceable printhead without stopping production. Zero downtime, maximum operational continuity.",
+    title: "Testina Sostituibile",
+    desc: "Testina di stampa sostituibile dall'utente senza fermare la produzione. Zero downtime, massima continuità operativa.",
   },
   {
     icon: (
@@ -109,8 +98,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
       </svg>
     ),
-    title: "Standalone o In Linea", titleEn: "Standalone or Inline",
-    desc: "Utilizzabile come stampante standalone o integrata nella DLP-2200 per un sistema stampa + finitura completo.", descEn: "Use as a standalone printer or integrated with the DLP-2200 for a complete print + finishing system.",
+    title: "Standalone o In Linea",
+    desc: "Utilizzabile come stampante standalone o integrata nella DLP-2200 per un sistema stampa + finitura completo.",
   },
   {
     icon: (
@@ -118,8 +107,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
       </svg>
     ),
-    title: "Touchscreen Integrato", titleEn: "Built-in Touchscreen",
-    desc: "Display touchscreen per gestione intuitiva dei lavori di stampa, monitoraggio stato e configurazione rapida.", descEn: "Touchscreen display for intuitive job management, status monitoring and quick configuration.",
+    title: "Touchscreen Integrato",
+    desc: "Display touchscreen per gestione intuitiva dei lavori di stampa, monitoraggio stato e configurazione rapida.",
   },
   {
     icon: (
@@ -128,13 +117,12 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
       </svg>
     ),
-    title: "Manutenzione Semplificata", titleEn: "Simplified Maintenance",
-    desc: "Manutenzione senza fermo macchina grazie alla testina e alle cartucce sostituibili dall'operatore in pochi secondi.", descEn: "Zero-downtime maintenance thanks to the printhead and cartridges replaceable by the operator in seconds.",
+    title: "Manutenzione Semplificata",
+    desc: "Manutenzione senza fermo macchina grazie alla testina e alle cartucce sostituibili dall'operatore in pochi secondi.",
   },
 ];
 
-export default async function AfiniaL901Page() {
-  const locale = await getLocale();
+export default function AfiniaL901Page() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }} />
@@ -148,15 +136,15 @@ export default async function AfiniaL901Page() {
         <div className="absolute inset-0 bg-gradient-to-r from-dark-800/90 via-dark-800/70 to-dark-800/40" />
         <div className="container-custom px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-2xl">
-            <p className="text-cyan-300 text-sm mb-3 uppercase tracking-widest font-medium">{locale === 'it' ? 'Stampanti Etichette' : 'Label Printers'}</p>
+            <p className="text-cyan-300 text-sm mb-3 uppercase tracking-widest font-medium">Stampanti Etichette</p>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">Afinia L901</h1>
               <p className="text-lg text-gray-300/90 leading-relaxed mb-8">
-                {locale === 'it' ? 'Stampante etichette a colori professionale con tecnologia Memjet Waterfall.
+                Stampante etichette a colori professionale con tecnologia Memjet Waterfall.
                 Doppio nero per neri più profondi, testina sostituibile dall&apos;utente e possibilità
-                di integrazione in linea con la DLP-2200.' : 'Professional color label printer with Memjet Waterfall technology. Dual black for deeper blacks, user-replaceable printhead and inline integration capability with the DLP-2200.'}
+                di integrazione in linea con la DLP-2200.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Afinia%20L901&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20Afinia%20L901.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">{locale === 'it' ? 'Richiedi Demo →' : 'Request Demo →'}</a>
+                <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Afinia%20L901&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20Afinia%20L901.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">Richiedi Demo →</a>
               </div>
           </div>
         </div>
@@ -174,15 +162,15 @@ export default async function AfiniaL901Page() {
       {/* Descrizione */}
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
         <div className="container-custom max-w-4xl">
-          <h2 className="text-3xl font-bold text-dark-800 mb-6">{locale === 'it' ? 'Prestazioni Professionali con Tecnologia Memjet Waterfall' : 'Professional Performance with Memjet Waterfall Technology'}</h2>
+          <h2 className="text-3xl font-bold text-dark-800 mb-6">Prestazioni Professionali con Tecnologia Memjet Waterfall</h2>
           <p className="text-gray-500 leading-relaxed mb-4">
-            {locale === 'it' ? 'La Afinia L901 è una stampante etichette a colori professionale progettata per produzioni continue ad alta qualità. Equipaggiata con il motore di stampa Memjet Waterfall, raggiunge una risoluzione di 1600 dpi full-color con una configurazione a 5 canali CMYKK (doppio nero) che garantisce neri più profondi, testi più nitidi e una maggiore autonomia di stampa rispetto ai sistemi CMYK tradizionali.' : 'The Afinia L901 is a professional color label printer designed for continuous high-quality production. Equipped with the Memjet Waterfall print engine, it achieves 1600 dpi full-color resolution with a 5-channel CMYKK (dual black) configuration that delivers deeper blacks, sharper text and greater print autonomy compared to traditional CMYK systems.'}
+            La Afinia L901 è una stampante etichette a colori professionale progettata per produzioni continue ad alta qualità. Equipaggiata con il motore di stampa Memjet Waterfall, raggiunge una risoluzione di 1600 dpi full-color con una configurazione a 5 canali CMYKK (doppio nero) che garantisce neri più profondi, testi più nitidi e una maggiore autonomia di stampa rispetto ai sistemi CMYK tradizionali.
           </p>
           <p className="text-gray-500 leading-relaxed mb-4">
-            {locale === 'it' ? 'La caratteristica distintiva della L901 è la testina di stampa sostituibile dall&apos;utente: in caso di necessità, l&apos;operatore può sostituirla in pochi secondi senza fermare la produzione, eliminando completamente i tempi di fermo macchina. Il display touchscreen integrato consente una gestione intuitiva dei lavori, il monitoraggio dello stato e la configurazione rapida dei parametri di stampa.' : 'The distinctive feature of the L901 is the user-replaceable printhead: when needed, the operator can replace it in seconds without stopping production, completely eliminating downtime. The built-in touchscreen display enables intuitive job management, status monitoring and quick configuration of print parameters.'}
+            La caratteristica distintiva della L901 è la testina di stampa sostituibile dall&apos;utente: in caso di necessità, l&apos;operatore può sostituirla in pochi secondi senza fermare la produzione, eliminando completamente i tempi di fermo macchina. Il display touchscreen integrato consente una gestione intuitiva dei lavori, il monitoraggio dello stato e la configurazione rapida dei parametri di stampa.
           </p>
           <p className="text-gray-500 leading-relaxed">
-            {locale === 'it' ? 'Versatile e modulare, la L901 può essere utilizzata come stampante standalone per produzioni indipendenti oppure integrata nella Afinia DLP-2200 per creare un sistema completo stampa + finitura. Questa flessibilità la rende la scelta ideale per aziende che cercano una soluzione scalabile, in grado di crescere insieme alle esigenze produttive.' : 'Versatile and modular, the L901 can be used as a standalone printer for independent production or integrated with the Afinia DLP-2200 to create a complete print + finishing system. This flexibility makes it the ideal choice for companies looking for a scalable solution that grows with their production needs.'}
+            Versatile e modulare, la L901 può essere utilizzata come stampante standalone per produzioni indipendenti oppure integrata nella Afinia DLP-2200 per creare un sistema completo stampa + finitura. Questa flessibilità la rende la scelta ideale per aziende che cercano una soluzione scalabile, in grado di crescere insieme alle esigenze produttive.
           </p>
         </div>
       </section>
@@ -192,7 +180,7 @@ export default async function AfiniaL901Page() {
         <div className="container-custom">
           <div className="text-center mb-12">
             <p className="text-cyan-500 font-semibold text-sm uppercase tracking-widest mb-4">Video</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-dark-800">{locale === 'it' ? 'L901 in Azione' : 'L901 in Action'}</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-dark-800">L901 in Azione</h2>
           </div>
           <div className="max-w-3xl mx-auto">
             <div className="aspect-video rounded-2xl overflow-hidden shadow-lg">
@@ -207,15 +195,15 @@ export default async function AfiniaL901Page() {
       {/* Vantaggi */}
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
         <div className="container-custom">
-          <h2 className="text-3xl font-bold text-dark-800 mb-8 text-center">{locale === 'it' ? 'Vantaggi Principali' : 'Key Benefits'}</h2>
+          <h2 className="text-3xl font-bold text-dark-800 mb-8 text-center">Vantaggi Principali</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((f) => (
               <div key={f.title} className="card-modern p-8 hover:-translate-y-1 transition-transform duration-300">
                 <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-magenta-500 to-cyan-500 flex items-center justify-center text-white mb-5">
                   {f.icon}
                 </div>
-                <h3 className="text-lg font-bold text-dark-800 mb-2">{locale === 'it' ? f.title : (f.titleEn || f.title)}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{locale === 'it' ? f.desc : (f.descEn || f.desc)}</p>
+                <h3 className="text-lg font-bold text-dark-800 mb-2">{f.title}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{f.desc}</p>
               </div>
             ))}
           </div>
@@ -224,9 +212,9 @@ export default async function AfiniaL901Page() {
       {/* Specifiche Tecniche */}
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-surface-50">
         <div className="container-custom max-w-3xl">
-          <h2 className="text-3xl font-bold text-dark-800 mb-10 text-center">{locale === 'it' ? 'Specifiche Tecniche' : 'Technical Specifications'}</h2>
+          <h2 className="text-3xl font-bold text-dark-800 mb-10 text-center">Specifiche Tecniche</h2>
           <div className="space-y-3">
-            {getSpecs(locale).map(([label, value]) => (
+            {specs.map(([label, value]) => (
               <div key={label} className="flex flex-col sm:flex-row sm:justify-between gap-1 bg-white rounded-xl px-5 py-4 shadow-sm">
                 <span className="text-sm font-medium text-gray-600">{label}</span>
                 <span className="text-sm font-bold text-dark-800">{value}</span>
@@ -239,12 +227,12 @@ export default async function AfiniaL901Page() {
       {/* CTA */}
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-surface-50">
         <div className="container-custom text-center">
-          <h2 className="text-3xl font-bold text-dark-800 mb-6">{locale === 'it' ? 'Stampa Etichette Professionali In-House' : 'Professional In-House Label Printing'}</h2>
+          <h2 className="text-3xl font-bold text-dark-800 mb-6">Stampa Etichette Professionali In-House</h2>
           <p className="text-gray-500 max-w-xl mx-auto mb-8">
-            {locale === 'it' ? 'Scopri come la L901 può trasformare la tua produzione di etichette. Contattaci per una consulenza o vieni a provarla.' : 'Discover how the L901 can transform your label production. Contact us for a consultation or come try it.'}
+            Scopri come la L901 può trasformare la tua produzione di etichette. Contattaci per una consulenza o vieni a provarla.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Afinia%20L901&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20Afinia%20L901.%0A%0AGrazie" className="btn-primary text-lg">{locale === 'it' ? 'Richiedi Demo →' : 'Request Demo →'}</a>
+            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Afinia%20L901&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20Afinia%20L901.%0A%0AGrazie" className="btn-primary text-lg">Richiedi Demo →</a>
           </div>
         </div>
       </section>
@@ -252,12 +240,12 @@ export default async function AfiniaL901Page() {
       {/* Prodotti Correlati */}
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
         <div className="container-custom">
-          <h2 className="text-2xl font-bold text-dark-800 mb-8 text-center">{locale === 'it' ? 'Prodotti Correlati' : 'Related Products'}</h2>
+          <h2 className="text-2xl font-bold text-dark-800 mb-8 text-center">Prodotti Correlati</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { name: "Afinia L701", desc: "{locale === 'it' ? 'Stampante etichette entry level Memjet' : 'Entry-level Memjet label printer'}", href: "/prodotti/afinia-l701", image: "/images/products/afinia-l701.avif" },
-              { name: "Afinia DLP-2200", desc: "{locale === 'it' ? 'Digital Label Press completa' : 'Complete Digital Label Press'}", href: "/prodotti/afinia-dlp2200", image: "/images/products/afinia-dlp2200.avif" },
-              { name: "Afinia X350", desc: "{locale === 'it' ? 'Stampante roll-to-roll alta velocità' : 'High-speed roll-to-roll printer'}", href: "/prodotti/afinia-x350", image: "/images/products/afinia-x350-site.webp" },
+              { name: "Afinia L701", desc: "Stampante etichette entry level Memjet", href: "/prodotti/afinia-l701", image: "/images/products/afinia-l701.avif" },
+              { name: "Afinia DLP-2200", desc: "Digital Label Press completa", href: "/prodotti/afinia-dlp2200", image: "/images/products/afinia-dlp2200.avif" },
+              { name: "Afinia X350", desc: "Stampante roll-to-roll alta velocità", href: "/prodotti/afinia-x350", image: "/images/products/afinia-x350-site.webp" },
             ].map((p) => (
               <Link key={p.name} href={p.href} className="card-modern overflow-hidden group hover:-translate-y-1 transition-transform duration-300">
                 <div className="h-40 relative overflow-hidden">

@@ -89,8 +89,8 @@ function getSpecs(l: string) { return l === 'it' ? [
 
 const features = [
   {
-    title: "Resistenza Professionale",
-    desc: "Stampe a toner resistenti all'acqua, alle temperature e alle abrasioni. qualità duratura senza necessità di laminazione aggiuntiva.",
+    title: "Resistenza Professionale", titleEn: "Professional Durability",
+    desc: "Stampe a toner resistenti all'acqua, alle temperature e alle abrasioni. qualità duratura senza necessità di laminazione aggiuntiva.", descEn: "Toner prints resistant to water, temperature and abrasion. Long-lasting quality without additional coatings.",
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
@@ -107,8 +107,8 @@ const features = [
     ),
   },
   {
-    title: "Dato Variabile Integrato",
-    desc: "Codici a barre, QR code e numeri seriali progressivi stampati direttamente in linea. RIP integrato per ottimizzazione colori.",
+    title: "Dato Variabile Integrato", titleEn: "Integrated Variable Data",
+    desc: "Codici a barre, QR code e numeri seriali progressivi stampati direttamente in linea. RIP integrato per ottimizzazione colori.", descEn: "Barcodes, QR codes and sequential serial numbers printed in real time. Perfect for traceability and identification.",
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.75 4.875c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5A1.125 1.125 0 013.75 9.375v-4.5zM3.75 14.625c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5a1.125 1.125 0 01-1.125-1.125v-4.5zM13.5 4.875c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5A1.125 1.125 0 0113.5 9.375v-4.5z" />

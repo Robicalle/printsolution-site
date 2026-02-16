@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
-import { getLocale } from "next-intl/server";
 
 export const metadata: Metadata = {
   title: "GreenBox EVO - Stampante Single-Pass",
@@ -52,11 +51,11 @@ const breadcrumbJsonLd = {
   ],
 };
 
-function getSpecs(l: string) { return l === 'it' ? [
+const specs = [
   ["Tecnologia", "Inkjet single-pass CMYK"],
   ["Testina di stampa", "HP Pagewide, 30 cm"],
-  ["Risoluzione", "1200 × 1200 dpi"],
-  ["Velocità di stampa", "Fino a 30 m/min"],
+  ["Risoluzione", "1200 � 1200 dpi"],
+  ["Velocit� di stampa", "Fino a 30 m/min"],
   ["Larghezza stampa", "Fino a 30 cm"],
   ["Larghezza supporto", "Fino a 80 cm"],
   ["Spessore max supporto", "Fino a 15 cm"],
@@ -65,17 +64,8 @@ function getSpecs(l: string) { return l === 'it' ? [
   ["Software RIP", "Flexprint incluso"],
   ["Display", "Digitale integrato"],
   ["Alimentatore", "Automatico opzionale con pompa a vuoto"],
-  ["Alimentazione", "230V AC monofase"],
-] : [
-  ["Technology", "HP Pagewide single-pass inkjet"],
-  ["Resolution", "1200 × 1200 dpi"],
-  ["Colors", "CMYK"],
-  ["Max print width", "310 mm"],
-  ["Max speed", "Up to 30 m/min"],
-  ["Inks", "Pigmented water-based"],
-  ["Compatible media", "Cardboard, paper, kraft, jute"],
-  ["Head maintenance", "Automatic"],
-]; }
+  ["Alimentazione", "230V AC monofase"],
+];
 
 const features = [
   {
@@ -84,7 +74,7 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
       </svg>
     ),
-    title: "Velocità Industriale",
+    title: "Velocit� Industriale",
     desc: "Fino a 30 metri al minuto con tecnologia single-pass: stampa senza rallentamenti, anche su tirature elevate.",
   },
   {
@@ -93,7 +83,7 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19 14.5M14.25 3.104c.251.023.501.05.75.082M19 14.5l-2.47 2.47" />
       </svg>
     ),
-    title: "Inchiostri a Base Acqua", titleEn: "Water-Based Inks",
+    title: "Inchiostri a Base Acqua",
     desc: "Pigmentati, senza solventi, inodori. Resistenti a sfregamento, acqua e agenti atmosferici. Ideali per il packaging.",
   },
   {
@@ -121,7 +111,7 @@ const features = [
       </svg>
     ),
     title: "Entry-Level Accessibile",
-    desc: "Investimento contenuto per entrare nel mondo della stampa digitale su packaging con qualità professionale.",
+    desc: "Investimento contenuto per entrare nel mondo della stampa digitale su packaging con qualit� professionale.",
   },
   {
     icon: (
@@ -134,8 +124,7 @@ const features = [
   },
 ];
 
-export default async function GreenBoxEvoPage() {
-  const locale = await getLocale();
+export default function GreenBoxEvoPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(greenboxJsonLd) }} />
@@ -148,14 +137,14 @@ export default async function GreenBoxEvoPage() {
         <div className="absolute inset-0 bg-gradient-to-r from-dark-800/90 via-dark-800/70 to-dark-800/40" />
         <div className="container-custom px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-2xl">
-            <p className="text-cyan-300 text-sm mb-3 uppercase tracking-widest font-medium">{locale === 'it' ? 'Prodotti' : 'Products'}</p>
+            <p className="text-cyan-300 text-sm mb-3 uppercase tracking-widest font-medium">Prodotti</p>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">GreenBox EVO</h1>
               <p className="text-lg text-gray-300/90 leading-relaxed mb-8">
                 Stampante digitale inkjet single-pass CMYK per cartone, carta e juta.
                 L&apos;entry point ideale nel mondo della stampa digitale su packaging.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20GreenBox%20EVO&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20GreenBox%20EVO.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">{locale === 'it' ? 'Richiedi Demo →' : 'Request Demo →'}</a>
+                <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20GreenBox%20EVO&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20GreenBox%20EVO.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">Richiedi Demo →</a>
               </div>
           </div>
         </div>
@@ -175,9 +164,9 @@ export default async function GreenBoxEvoPage() {
         <div className="container-custom max-w-4xl">
           <h2 className="text-3xl font-bold text-dark-800 mb-6">Stampa Digitale su Packaging, Senza Compromessi</h2>
           <p className="text-gray-500 leading-relaxed mb-4">
-            La GreenBox EVO è una stampante inkjet single-pass progettata per chi vuole entrare nel mercato della stampa
-            digitale su packaging con un investimento accessibile ma senza rinunciare alla qualità. Dotata di testina HP
-            Pagewide da 30 cm, raggiunge velocità fino a 30 metri al minuto con risoluzione 1200×1200 dpi.
+            La GreenBox EVO � una stampante inkjet single-pass progettata per chi vuole entrare nel mercato della stampa
+            digitale su packaging con un investimento accessibile ma senza rinunciare alla qualit�. Dotata di testina HP
+            Pagewide da 30 cm, raggiunge velocit� fino a 30 metri al minuto con risoluzione 1200�1200 dpi.
           </p>
           <p className="text-gray-500 leading-relaxed mb-4">
             Gli inchiostri pigmentati a base acqua sono privi di solventi, inodori e garantiscono un&apos;eccellente resistenza
@@ -187,7 +176,7 @@ export default async function GreenBoxEvoPage() {
           <p className="text-gray-500 leading-relaxed">
             Il piano aspirato con pompa a vuoto assicura il perfetto ancoraggio del supporto durante la stampa.
             L&apos;alimentatore automatico opzionale velocizza ulteriormente la produzione. Il software RIP Flexprint
-            è incluso, con display digitale integrato per il controllo diretto della macchina.
+            � incluso, con display digitale integrato per il controllo diretto della macchina.
           </p>
         </div>
       </section>
@@ -197,7 +186,7 @@ export default async function GreenBoxEvoPage() {
         <div className="container-custom">
           <div className="text-center mb-12">
             <p className="text-cyan-500 font-semibold text-sm uppercase tracking-widest mb-4">Video</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-dark-800">{locale === 'it' ? '{locale === 'it' ? 'GreenBox EVO in Azione' : 'GreenBox EVO in Action'}' : 'GreenBox EVO in Action'}</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-dark-800">GreenBox EVO in Azione</h2>
           </div>
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             <div className="aspect-video rounded-2xl overflow-hidden shadow-lg">
@@ -217,15 +206,15 @@ export default async function GreenBoxEvoPage() {
       {/* Features */}
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
         <div className="container-custom">
-          <h2 className="text-3xl font-bold text-dark-800 mb-8 text-center">{locale === 'it' ? 'Vantaggi Principali' : 'Key Benefits'}</h2>
+          <h2 className="text-3xl font-bold text-dark-800 mb-8 text-center">Vantaggi Principali</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((f) => (
               <div key={f.title} className="card-modern p-8 hover:-translate-y-1 transition-transform duration-300">
                 <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-green-500 to-cyan-500 flex items-center justify-center text-white mb-5">
                   {f.icon}
                 </div>
-                <h3 className="text-lg font-bold text-dark-800 mb-2">{locale === 'it' ? f.title : (f.titleEn || f.title)}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{locale === 'it' ? f.desc : (f.descEn || f.desc)}</p>
+                <h3 className="text-lg font-bold text-dark-800 mb-2">{f.title}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{f.desc}</p>
               </div>
             ))}
           </div>
@@ -234,9 +223,9 @@ export default async function GreenBoxEvoPage() {
       {/* Specifiche Tecniche */}
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-surface-50">
         <div className="container-custom max-w-3xl">
-          <h2 className="text-3xl font-bold text-dark-800 mb-10 text-center">{locale === 'it' ? 'Specifiche Tecniche' : 'Technical Specifications'}</h2>
+          <h2 className="text-3xl font-bold text-dark-800 mb-10 text-center">Specifiche Tecniche</h2>
           <div className="space-y-3">
-            {getSpecs(locale).map(([label, value]) => (
+            {specs.map(([label, value]) => (
               <div key={label} className="flex flex-col sm:flex-row sm:justify-between gap-1 bg-white rounded-xl px-5 py-4 shadow-sm">
                 <span className="text-sm font-medium text-gray-600">{label}</span>
                 <span className="text-sm font-bold text-dark-800">{value}</span>
@@ -254,7 +243,7 @@ export default async function GreenBoxEvoPage() {
             Porta i tuoi materiali e testa la GreenBox EVO nella nostra sala demo a Sesto San Giovanni.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20GreenBox%20EVO&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20GreenBox%20EVO.%0A%0AGrazie" className="btn-primary text-lg">{locale === 'it' ? 'Richiedi Demo →' : 'Request Demo →'}</a>
+            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20GreenBox%20EVO&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20GreenBox%20EVO.%0A%0AGrazie" className="btn-primary text-lg">Richiedi Demo →</a>
           </div>
         </div>
       </section>
@@ -262,12 +251,12 @@ export default async function GreenBoxEvoPage() {
       {/* Prodotti Correlati */}
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
         <div className="container-custom">
-          <h2 className="text-2xl font-bold text-dark-800 mb-8 text-center">{locale === 'it' ? 'Prodotti Correlati' : 'Related Products'}</h2>
+          <h2 className="text-2xl font-bold text-dark-800 mb-8 text-center">Prodotti Correlati</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { name: "EDM-650X", desc: locale === 'it' ? "{locale === 'it' ? 'Stampante single-pass grande formato' : 'Large format single-pass printer'}" : "Large format single-pass printer", href: "/prodotti/edm-650x", image: "/images/products/edm-650x-2hd-nobg-v4.png" },
-              { name: "AurumPress", desc: locale === 'it' ? "Stampatrice termica per foil" : "Thermal foil printer", href: "/prodotti/aurumpress", image: "/images/products/aurumpress-nobg.png" },
-              { name: "Anypack AB2500", desc: locale === 'it' ? "{locale === 'it' ? 'Box maker automatico' : 'Automatic box maker'}" : "Automatic box maker", href: "/prodotti/ab2500", image: "/images/products/ab2500-hero-nobg.png" },
+              { name: "EDM-650X", desc: "Stampante single-pass grande formato", href: "/prodotti/edm-650x", image: "/images/products/edm-650x-2hd-nobg-v4.png" },
+              { name: "AurumPress", desc: "Stampatrice termica per foil", href: "/prodotti/aurumpress", image: "/images/products/aurumpress-nobg.png" },
+              { name: "Anypack AB2500", desc: "Box maker automatico", href: "/prodotti/ab2500", image: "/images/products/ab2500-hero-nobg.png" },
             ].map((p) => (
               <Link key={p.name} href={p.href} className="card-modern overflow-hidden group hover:-translate-y-1 transition-transform duration-300">
                 <div className="h-40 relative overflow-hidden">

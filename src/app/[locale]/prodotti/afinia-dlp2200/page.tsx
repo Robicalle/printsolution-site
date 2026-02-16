@@ -108,8 +108,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42" />
       </svg>
     ),
-    title: "Laminazione In Linea",
-    desc: "Sistema di laminazione integrato silenzioso. Disponibile con film con liner o senza liner per massima durabilità delle etichette.",
+    title: "Laminazione In Linea", titleEn: "Inline Lamination",
+    desc: "Sistema di laminazione integrato silenzioso. Disponibile con film con liner o senza liner per massima durabilità delle etichette.", descEn: "Silent integrated lamination system. Available with self-wound or liner laminate for professional protection of every label.",
   },
   {
     icon: (
@@ -117,8 +117,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
       </svg>
     ),
-    title: "Cambio Supporto Rapido",
-    desc: "Tavolo di giunzione per cambio supporto veloce. Minimo downtime tra un lavoro e l'altro, massima produttività.",
+    title: "Cambio Supporto Rapido", titleEn: "Quick Media Change",
+    desc: "Tavolo di giunzione per cambio supporto veloce. Minimo downtime tra un lavoro e l'altro, massima produttività.", descEn: "Splice table for quick media changes. Minimal downtime between different label rolls.",
   },
   {
     icon: (
@@ -126,8 +126,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75" />
       </svg>
     ),
-    title: "Fustelle Flessibili Economiche",
-    desc: "Cilindro magnetico da 18 pollici per fustelle flessibili in acciaio a basso costo. Cambio rapido tra forme diverse.",
+    title: "Fustelle Flessibili Economiche", titleEn: "Economical Flexible Dies",
+    desc: "Cilindro magnetico da 18 pollici per fustelle flessibili in acciaio a basso costo. Cambio rapido tra forme diverse.", descEn: "18-inch magnetic cylinder for flexible steel dies. Economical, quick to produce and easy to change. Rapid job changeover.",
   },
   {
     icon: (
@@ -135,8 +135,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" />
       </svg>
     ),
-    title: "Bobine da 1000 Metri",
-    desc: "Capacità bobina fino a 460 mm di diametro esterno, circa 1000 metri di materiale. Produzione continua senza interruzioni frequenti.",
+    title: "Bobine da 1000 Metri", titleEn: "1000-Meter Rolls",
+    desc: "Capacità bobina fino a 460 mm di diametro esterno, circa 1000 metri di materiale. Produzione continua senza interruzioni frequenti.", descEn: "Roll capacity up to 460 mm outer diameter, approximately 1000 meters. Extended autonomous production without interruptions.",
   },
 ];
 

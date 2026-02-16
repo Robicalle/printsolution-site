@@ -11,9 +11,10 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ category: string }> }): Promise<Metadata> {
   const { category } = await params;
   const cat = getCategoryBySlug(category);
-  if (!cat) return { title: "Categoria non trovata" };
+  const locale = await getLocale();
+  if (!cat) return { title: locale === 'it' ? "Categoria non trovata" : "Category not found" };
   return {
-    title: `Consumabili ${cat.name}`,
+    title: locale === 'it' ? `Consumabili ${cat.name}` : `${cat.name} Consumables`,
     description: cat.description,
   };
 }

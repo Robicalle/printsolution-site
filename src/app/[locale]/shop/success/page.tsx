@@ -17,19 +17,25 @@ export default function SuccessPage() {
       <div className="container-custom max-w-2xl text-center">
         <div className="bg-white p-12 rounded-3xl shadow-sm border border-gray-100">
           <div className="text-7xl mb-6">✅</div>
-          <h1 className="text-3xl font-bold text-gray-900 mb-4">Ordine Confermato!</h1>
+          <h1 className="text-3xl font-bold text-gray-900 mb-4">
+            {locale === 'it' ? 'Ordine Confermato!' : 'Order Confirmed!'}
+          </h1>
           <p className="text-lg text-gray-600 mb-2">
-            Grazie per il tuo acquisto. Riceverai una conferma via email.
+            {locale === 'it'
+              ? 'Grazie per il tuo acquisto. Riceverai una conferma via email.'
+              : 'Thank you for your purchase. You will receive a confirmation by email.'}
           </p>
           <p className="text-gray-500 mb-8">
-            Gli ordini ricevuti entro le 12:00 vengono spediti lo stesso giorno con consegna in 24/48 ore.
+            {locale === 'it'
+              ? 'Gli ordini ricevuti entro le 12:00 vengono spediti lo stesso giorno con consegna in 24/48 ore.'
+              : 'Orders received by 12:00 PM are shipped the same day with delivery in 24/48 hours.'}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/shop" className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold rounded-full hover:shadow-lg transition-all">
-              Continua gli acquisti
+              {locale === 'it' ? 'Continua gli acquisti' : 'Continue Shopping'}
             </Link>
             <Link href="/" className="px-8 py-4 border-2 border-gray-200 text-gray-700 font-semibold rounded-full hover:border-gray-300 transition-all">
-              Torna alla Home
+              {locale === 'it' ? 'Torna alla Home' : 'Back to Home'}
             </Link>
           </div>
         </div>

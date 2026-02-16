@@ -7,7 +7,6 @@ import MegaMenu, { MegaMenuMobile } from "./MegaMenu";
 
 const navigation = [
   { label: "Home", href: "/", homeOnly: true },
-  { label: "Prodotti", megaMenu: true },
   {
     label: "Soluzioni",
     children: [

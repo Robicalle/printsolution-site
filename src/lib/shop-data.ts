@@ -102,7 +102,7 @@ export const categories: Category[] = [
     slug: "consumabili-cx1000",
     name: "Primera CX1000 / CX1200",
     description: "Toner e ricambi per stampanti Primera CX1000 e CX1200",
-    image: "/images/shop/cx1000-category.jpg",
+    image: "/images/shop/cx1000-category.png",
     products: [
       { id: "cx-k", name: "057401 - Nero per CX1000/1200", sku: "057401", price: 235.00, image: "/images/shop/placeholder.png", inStock: true },
       { id: "cx-c", name: "057402 - Ciano per CX1000/1200", sku: "057402", price: 449.00, image: "/images/shop/placeholder.png", inStock: true },

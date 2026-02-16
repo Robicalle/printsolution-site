@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
+import MegaMenu, { MegaMenuMobile } from "./MegaMenu";
 
 const navigation = [
   { label: "Home", href: "/", homeOnly: true },

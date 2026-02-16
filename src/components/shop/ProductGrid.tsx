@@ -65,6 +65,9 @@ function ProductCard({ product, categoryName }: { product: Product; categoryName
             width={240}
             height={240}
             className="object-contain max-h-full group-hover:scale-105 transition-transform duration-300"
+            placeholder="blur"
+            blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQwIiBoZWlnaHQ9IjI0MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjFmNWY5Ii8+PC9zdmc+"
+            loading="lazy"
           />
         ) : (
           <div className="w-full h-full flex flex-col items-center justify-center rounded-xl overflow-hidden" style={{ background: getProductGradient(product.name, product.sku) }}>

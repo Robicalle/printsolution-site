@@ -55,8 +55,8 @@ const breadcrumbJsonLd = {
 const specs = [
   ["Tecnologia", "Inkjet single-pass CMYK"],
   ["Teste di stampa", "Da 2 a 6 teste HP (30 cm ciascuna)"],
-  ["Risoluzione", "1200 � 1200 dpi"],
-  ["Velocit� di stampa", "Fino a 30 m/min"],
+  ["Risoluzione", "1200 × 1200 dpi"],
+  ["Velocità di stampa", "Fino a 30 m/min"],
   ["Larghezza stampa", "Da 60 a 180 cm"],
   ["Passaggio carta", "Da 120 a 250 cm"],
   ["Modelli disponibili", "6 configurazioni"],
@@ -83,8 +83,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
       </svg>
     ),
-    title: "Velocit� Industriale",
-    desc: "30 metri al minuto con tecnologia single-pass: produzione continua senza compromessi sulla qualit�.",
+    title: "Velocità Industriale",
+    desc: "30 metri al minuto con tecnologia single-pass: produzione continua senza compromessi sulla qualità.",
   },
   {
     icon: (
@@ -102,7 +102,7 @@ const features = [
       </svg>
     ),
     title: "6 Configurazioni",
-    desc: "Da 2 a 6 teste di stampa HP: scegli la configurazione pi� adatta al tuo volume produttivo.",
+    desc: "Da 2 a 6 teste di stampa HP: scegli la configurazione più adatta al tuo volume produttivo.",
   },
   {
     icon: (
@@ -140,7 +140,7 @@ export default async function EDM650XPage() {
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">EDM-650X</h1>
             <p className="text-lg text-gray-200 leading-relaxed mb-8">
               Stampante digitale inkjet single-pass per carta e cartone a fogli stesi.
-              Grande formato, velocit� industriale, inchiostri a base acqua CMYK.
+              Grande formato, velocità industriale, inchiostri a base acqua CMYK.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20EDM-650X&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20EDM-650X.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">{locale === 'it' ? 'Richiedi Demo →' : 'Request Demo →'}</a>
@@ -163,17 +163,17 @@ export default async function EDM650XPage() {
         <div className="container-custom max-w-4xl">
           <h2 className="text-3xl font-bold text-dark-800 mb-6">{locale === 'it' ? 'Stampa Industriale su Grande Formato' : 'Industrial Large Format Printing'}</h2>
           <p className="text-gray-500 leading-relaxed mb-4">
-            La EDM-650X � la soluzione professionale per la stampa digitale inkjet su carta e cartone a fogli stesi.
+            La EDM-650X è la soluzione professionale per la stampa digitale inkjet su carta e cartone a fogli stesi.
             Progettata per volumi industriali, combina la tecnologia single-pass con teste di stampa HP di ultima
-            generazione per garantire velocit� e qualit� senza precedenti nel settore.
+            generazione per garantire velocità e qualità senza precedenti nel settore.
           </p>
           <p className="text-gray-500 leading-relaxed mb-4">
             Disponibile in 6 configurazioni diverse, da 2 a 6 teste di stampa HP da 30 cm ciascuna, la EDM-650X
             si adatta perfettamente alle esigenze di ogni azienda. La larghezza di stampa varia da 60 a 180 cm,
-            con un passaggio carta che pu� raggiungere i 250 cm.
+            con un passaggio carta che può raggiungere i 250 cm.
           </p>
           <p className="text-gray-500 leading-relaxed">
-            Gli inchiostri a base acqua CMYK garantiscono stampe di alta qualit� con colori vividi e resistenti.
+            Gli inchiostri a base acqua CMYK garantiscono stampe di alta qualità con colori vividi e resistenti.
             Il piano aspirato e il caricatore automatico opzionale completano una
             macchina pensata per la produzione continua ad alta efficienza.
           </p>
@@ -187,7 +187,7 @@ export default async function EDM650XPage() {
             <p className="text-cyan-500 font-semibold text-sm uppercase tracking-widest mb-4">{locale === 'it' ? 'Configurazioni' : 'Configurations'}</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-dark-800">{locale === 'it' ? 'Da 2 a 6 Teste di Stampa' : 'From 2 to 6 Print Heads'}</h2>
             <p className="text-gray-500 mt-4 max-w-2xl mx-auto">
-              La EDM-650X � disponibile in diverse configurazioni per adattarsi alle tue esigenze produttive.
+              La EDM-650X è disponibile in diverse configurazioni per adattarsi alle tue esigenze produttive.
             </p>
           </div>
           <p className="text-gray-500 mt-4 max-w-2xl mx-auto text-center">
@@ -203,20 +203,20 @@ export default async function EDM650XPage() {
             <div>
               <h3 className="text-2xl font-bold text-dark-800 mb-4">{locale === 'it' ? 'Versione da 3 a 6 Teste' : 'Version with 3 to 6 Heads'}</h3>
               <p className="text-gray-500 leading-relaxed mb-4">
-                Per volumi produttivi pi� elevati, la EDM-650X � disponibile con 3, 4, 5 o 6 teste di stampa HP.
+                Per volumi produttivi più elevati, la EDM-650X è disponibile con 3, 4, 5 o 6 teste di stampa HP.
                 Larghezza di stampa fino a 180 cm con passaggio carta fino a 250 cm.
               </p>
               <p className="text-gray-500 leading-relaxed mb-6">
-                Velocit� fino a 30 m/min per produzioni industriali continue.
-                Stessa qualit� di stampa a 1200�1200 dpi in un formato pensato per grandi tirature.
+                Velocità fino a 30 m/min per produzioni industriali continue.
+                Stessa qualità di stampa a 1200×1200 dpi in un formato pensato per grandi tirature.
               </p>
               <div className="bg-surface-50 rounded-xl p-5">
                 <p className="text-sm font-medium text-gray-600 mb-2">Le versioni da 3 a 6 teste offrono:</p>
                 <ul className="text-sm text-dark-800 space-y-1">
-                  <li>� Larghezza stampa fino a 180 cm</li>
-                  <li>� Passaggio carta fino a 250 cm</li>
-                  <li>� Velocit� fino a 30 m/min</li>
-                  <li>� Configurazione personalizzabile</li>
+                  <li>× Larghezza stampa fino a 180 cm</li>
+                  <li>× Passaggio carta fino a 250 cm</li>
+                  <li>× Velocità fino a 30 m/min</li>
+                  <li>× Configurazione personalizzabile</li>
                 </ul>
               </div>
             </div>

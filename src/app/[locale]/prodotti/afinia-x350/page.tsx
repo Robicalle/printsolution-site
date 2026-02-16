@@ -4,20 +4,20 @@ import Image from "next/image";
 import { getLocale } from "next-intl/server";
 
 export const metadata: Metadata = {
-  title: "Afinia X350 � Stampante Etichette Roll-to-Roll Alta Velocit�",
+  title: "Afinia X350 × Stampante Etichette Roll-to-Roll Alta Velocità",
   description:
-    "Afinia X350: stampante digitale roll-to-roll ad alta velocit� con inchiostri pigmentati a base acqua. Fino a 45 m/min, 1600 dpi, ridondanza ugelli 2�.",
+    "Afinia X350: stampante digitale roll-to-roll ad alta velocità con inchiostri pigmentati a base acqua. Fino a 45 m/min, 1600 dpi, ridondanza ugelli 2×.",
   keywords: [
     "Afinia X350",
-    "stampante etichette alta velocit�",
+    "stampante etichette alta velocità",
     "roll to roll",
     "inchiostri pigmentati",
     "stampa etichette industriale",
   ],
   openGraph: {
-    title: "Afinia X350 � Stampante Roll-to-Roll Alta Velocit� | Print Solution",
+    title: "Afinia X350 × Stampante Roll-to-Roll Alta Velocità | Print Solution",
     description:
-      "Stampante digitale roll-to-roll fino a 45 m/min con inchiostri pigmentati a base acqua e ridondanza ugelli 2�.",
+      "Stampante digitale roll-to-roll fino a 45 m/min con inchiostri pigmentati a base acqua e ridondanza ugelli 2×.",
     images: ["/images/products/afinia-x350-full.png"],
     type: "website",
     locale: "it_IT",
@@ -32,7 +32,7 @@ const productJsonLd = {
   name: "Afinia X350",
   brand: { "@type": "Brand", name: "Afinia Label" },
   description:
-    "Stampante digitale roll-to-roll ad alta velocit�. Fino a 45 m/min, 1600 dpi, inchiostri pigmentati a base acqua.",
+    "Stampante digitale roll-to-roll ad alta velocità. Fino a 45 m/min, 1600 dpi, inchiostri pigmentati a base acqua.",
   image: "https://www.printsolutionsrl.it/images/products/afinia-x350-full.png",
   offers: {
     "@type": "Offer",
@@ -54,14 +54,14 @@ const breadcrumbJsonLd = {
 
 const specs = [
   ["Tecnologia", "Inkjet pigmentato a base acqua (Memjet DuraFlex)"],
-  ["Velocit� di stampa", "Fino a 45 m/min"],
-  ["Risoluzione", "1600 � 1600 dpi"],
+  ["Velocità di stampa", "Fino a 45 m/min"],
+  ["Risoluzione", "1600 × 1600 dpi"],
   ["Larghezza stampa max", "324,4 mm"],
-  ["Larghezza supporto", "Min 50 mm � Max 350 mm"],
-  ["Spessore supporto", "Min 0,05 mm � Max 0,35 mm"],
+  ["Larghezza supporto", "Min 50 mm × Max 350 mm"],
+  ["Spessore supporto", "Min 0,05 mm × Max 0,35 mm"],
   ["Inchiostri", "Pigmentati a base acqua CMYK"],
-  ["Capacit� inchiostro", "2 litri per colore � 8 litri totali"],
-  ["Ridondanza ugelli", "2� per zero strisce"],
+  ["Capacità inchiostro", "2 litri per colore × 8 litri totali"],
+  ["Ridondanza ugelli", "2× per zero strisce"],
   ["Display", "Touchscreen 21 pollici"],
   ["RIP Software", "RIP basico incluso, moduli opzionali"],
   ["Diametro max bobina", "350 mm"],
@@ -78,7 +78,7 @@ const features = [
       </svg>
     ),
     title: "45 Metri al Minuto",
-    desc: "La pi� veloce della sua categoria. Produzione industriale con qualit� costante a 1600 dpi anche alle massime velocit�.",
+    desc: "La più veloce della sua categoria. Produzione industriale con qualità costante a 1600 dpi anche alle massime velocità.",
   },
   {
     icon: (
@@ -95,7 +95,7 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42" />
       </svg>
     ),
-    title: "Ridondanza Ugelli 2�",
+    title: "Ridondanza Ugelli 2×",
     desc: "Doppia ridondanza degli ugelli per eliminare le strisce e garantire colori uniformi e gradazioni omogenee su ogni stampa.",
   },
   {
@@ -105,7 +105,7 @@ const features = [
       </svg>
     ),
     title: "Touchscreen 21 Pollici",
-    desc: "Display touchscreen da 21 pollici con opzioni avanzate e connettivit� remota per gestione della stampa da qualsiasi postazione.",
+    desc: "Display touchscreen da 21 pollici con opzioni avanzate e connettivit× remota per gestione della stampa da qualsiasi postazione.",
   },
   {
     icon: (
@@ -122,7 +122,7 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75" />
       </svg>
     ),
-    title: "Versatilit� Totale",
+    title: "Versatilit× Totale",
     desc: "Stampa su bobine, etichette fustellate, materiali di imballaggio flessibili e cartoncino. Un solo metro quadro di ingombro.",
   },
 ];
@@ -145,9 +145,9 @@ export default async function AfiniaX350Page() {
             <p className="text-cyan-300 text-sm mb-3 uppercase tracking-widest font-medium">Stampanti Etichette</p>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">Afinia X350</h1>
               <p className="text-lg text-gray-300/90 leading-relaxed mb-8">
-                Stampante digitale roll-to-roll ad alta velocit� con inchiostri pigmentati a base acqua.
-                Fino a 45 m/min, 1600 dpi e ridondanza ugelli 2� per stampe perfette. Design compatto
-                da circa 1 m� di ingombro.
+                Stampante digitale roll-to-roll ad alta velocità con inchiostri pigmentati a base acqua.
+                Fino a 45 m/min, 1600 dpi e ridondanza ugelli 2× per stampe perfette. Design compatto
+                da circa 1 m× di ingombro.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Afinia%20X350&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20Afinia%20X350.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">{locale === 'it' ? 'Richiedi Demo →' : 'Request Demo →'}</a>
@@ -170,13 +170,13 @@ export default async function AfiniaX350Page() {
         <div className="container-custom max-w-4xl">
           <h2 className="text-3xl font-bold text-dark-800 mb-6">Stampa Industriale Roll-to-Roll fino a 45 Metri al Minuto</h2>
           <p className="text-gray-500 leading-relaxed mb-4">
-            La Afinia X350 � una stampante digitale roll-to-roll progettata per la produzione industriale di etichette e packaging flessibile. Con una velocit� di stampa fino a 45 m/min e una risoluzione di 1600 � 1600 dpi, rappresenta la soluzione pi� veloce della sua categoria, capace di mantenere una qualit� costante anche alle massime velocit� grazie alla tecnologia Memjet DuraFlex.
+            La Afinia X350 è una stampante digitale roll-to-roll progettata per la produzione industriale di etichette e packaging flessibile. Con una velocità di stampa fino a 45 m/min e una risoluzione di 1600 × 1600 dpi, rappresenta la soluzione più veloce della sua categoria, capace di mantenere una qualità costante anche alle massime velocità grazie alla tecnologia Memjet DuraFlex.
           </p>
           <p className="text-gray-500 leading-relaxed mb-4">
-            Equipaggiata con inchiostri pigmentati a base acqua CMYK, la X350 produce stampe resistenti all&apos;acqua, ai raggi UV e alle sostanze chimiche, con un approccio eco-sostenibile. La ridondanza ugelli 2� elimina completamente il problema delle strisce, garantendo colori uniformi e gradazioni omogenee su ogni stampa. Le taniche da 2 litri per colore (8 litri totali) consentono lunghe tirature senza interruzioni con un costo stampa ridotto.
+            Equipaggiata con inchiostri pigmentati a base acqua CMYK, la X350 produce stampe resistenti all&apos;acqua, ai raggi UV e alle sostanze chimiche, con un approccio eco-sostenibile. La ridondanza ugelli 2× elimina completamente il problema delle strisce, garantendo colori uniformi e gradazioni omogenee su ogni stampa. Le taniche da 2 litri per colore (8 litri totali) consentono lunghe tirature senza interruzioni con un costo stampa ridotto.
           </p>
           <p className="text-gray-500 leading-relaxed">
-            Il display touchscreen da 21 pollici con connettivit� remota permette la gestione della stampa da qualsiasi postazione. Con un ingombro di circa 1 m�, la X350 si adatta anche a spazi produttivi compatti. Supporta bobine fino a 350 mm di larghezza e 350 mm di diametro, rendendola ideale per etichette, materiali di imballaggio flessibili e cartoncino.
+            Il display touchscreen da 21 pollici con connettivit× remota permette la gestione della stampa da qualsiasi postazione. Con un ingombro di circa 1 m×, la X350 si adatta anche a spazi produttivi compatti. Supporta bobine fino a 350 mm di larghezza e 350 mm di diametro, rendendola ideale per etichette, materiali di imballaggio flessibili e cartoncino.
           </p>
         </div>
       </section>
@@ -240,7 +240,7 @@ export default async function AfiniaX350Page() {
         <div className="container-custom text-center">
           <h2 className="text-3xl font-bold text-dark-800 mb-6">Porta la Produzione al Livello Successivo</h2>
           <p className="text-gray-500 max-w-xl mx-auto mb-8">
-            Scopri come la X350 pu� rivoluzionare la tua produzione di etichette. Contattaci per una consulenza o prenota una demo.
+            Scopri come la X350 può rivoluzionare la tua produzione di etichette. Contattaci per una consulenza o prenota una demo.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Afinia%20X350&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20Afinia%20X350.%0A%0AGrazie" className="btn-primary text-lg">{locale === 'it' ? 'Richiedi Demo →' : 'Request Demo →'}</a>

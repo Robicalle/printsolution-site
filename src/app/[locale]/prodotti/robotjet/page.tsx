@@ -4,7 +4,7 @@ import Image from "next/image";
 import { getLocale } from "next-intl/server";
 
 export const metadata: Metadata = {
-  title: "Robotjet Book Edge Printer � Stampante per Labbratura Libri",
+  title: "Robotjet Book Edge Printer × Stampante per Labbratura Libri",
   description:
     "Robotjet Book Edge Printer: stampante digitale per labbratura libri, quaderni e agende. 400 pezzi/ora, CMYK single-pass, risoluzione 1200 dpi. Teste HP A3.",
   keywords: [
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     "stampa bordo libri",
   ],
   openGraph: {
-    title: "Robotjet Book Edge Printer � Stampante per Labbratura Libri | Print Solution",
+    title: "Robotjet Book Edge Printer × Stampante per Labbratura Libri | Print Solution",
     description:
       "Stampante digitale per labbratura libri. 400 pezzi/ora, CMYK single-pass, 1200 dpi.",
     images: ["/images/products/book-edge-printer.png"],
@@ -53,20 +53,20 @@ const breadcrumbJsonLd = {
 };
 
 const specs = [
-  ["Capacit� produttiva", "Circa 400 pezzi/ora, 3200 pezzi/giorno"],
+  ["Capacità produttiva", "Circa 400 pezzi/ora, 3200 pezzi/giorno"],
   ["Risoluzione di stampa", "1200 dpi"],
   ["Colori", "4 colori CMYK"],
   ["Tecnologia di stampa", "Inkjet a base acqua pigmentata"],
   ["Teste di stampa", "HP A3 / Epson I3200"],
   ["Altezza libri", "Da 90 a 350 mm"],
   ["Larghezza di stampa", "Da 5 a 218 mm"],
-  ["Velocit� di stampa", "0�15 m/min (regolabile)"],
+  ["Velocità di stampa", "0×15 m/min (regolabile)"],
   ["Taniche inchiostro", "1 litro per colore"],
   ["Formati immagine", "JPG, PDF"],
   ["Sistemi operativi", "Windows 7 / 10 / 11"],
-  ["Temperatura operativa", "0��45�C, umidit� 20%�80%"],
+  ["Temperatura operativa", "0××45×C, umidità 20%×80%"],
   ["Assorbimento", "480 W, AC 110V/220V, 50/60 Hz"],
-  ["Dimensioni (L�A�P)", "190 � 120 � 165 cm"],
+  ["Dimensioni (L×A×P)", "190 × 120 × 165 cm"],
   ["Peso", "450 kg"],
 ];
 
@@ -78,7 +78,7 @@ const features = [
       </svg>
     ),
     title: "400 Pezzi all\u2019Ora",
-    desc: "Produttivit� elevata con fino a 3200 libri personalizzati al giorno. Ideale per ordini piccoli e grandi.",
+    desc: "Produttività elevata con fino a 3200 libri personalizzati al giorno. Ideale per ordini piccoli e grandi.",
   },
   {
     icon: (
@@ -87,7 +87,7 @@ const features = [
       </svg>
     ),
     title: "1200 DPI di Risoluzione",
-    desc: "Fondi pieni, sovrastampe e sfumature con precisione assoluta. Qualit� di stampa senza eguali nel settore.",
+    desc: "Fondi pieni, sovrastampe e sfumature con precisione assoluta. Qualità di stampa senza eguali nel settore.",
   },
   {
     icon: (
@@ -167,14 +167,14 @@ export default async function RobotjetPage() {
         <div className="container-custom max-w-4xl">
           <h2 className="text-3xl font-bold text-dark-800 mb-6">La Rivoluzione nella Labbratura dei Libri</h2>
           <p className="text-gray-500 leading-relaxed mb-4">
-            Robotjet Book Edge Digital Printer � la stampante digitale che rende unici libri, quaderni, agende 
+            Robotjet Book Edge Digital Printer è la stampante digitale che rende unici libri, quaderni, agende 
             e block notes attraverso la tecnica della labbratura. Sfruttando la tecnologia inkjet a base acqua 
             CMYK con teste di stampa HP A3, offre risultati di stampa mai visti prima.
           </p>
           <p className="text-gray-500 leading-relaxed mb-4">
-            La sua particolarit� risiede nella capacit� di stampare fondi pieni, sovrastampe e sfumature con 
+            La sua particolarit× risiede nella capacità di stampare fondi pieni, sovrastampe e sfumature con 
             precisione assoluta grazie alla risoluzione di 1200 dpi. Con 400 pezzi/ora e 3200 pezzi/giorno, 
-            consente di evadere ordini sia piccoli che grandi con estrema facilit�.
+            consente di evadere ordini sia piccoli che grandi con estrema facilit×.
           </p>
           <p className="text-gray-500 leading-relaxed">
             Dotata di un sistema intelligente di adattamento, si regola automaticamente alla forma (angoli tondi 
@@ -244,7 +244,7 @@ export default async function RobotjetPage() {
         <div className="container-custom text-center">
           <h2 className="text-3xl font-bold text-dark-800 mb-6">Scopri Robotjet dal Vivo</h2>
           <p className="text-gray-500 max-w-xl mx-auto mb-8">
-            Vieni nella nostra sala demo a Sesto San Giovanni e scopri come la labbratura digitale pu� aprire nuove opportunit� per il tuo business.
+            Vieni nella nostra sala demo a Sesto San Giovanni e scopri come la labbratura digitale può aprire nuove opportunit× per il tuo business.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="tel:+390249439417" className="btn-outline text-lg inline-flex items-center">

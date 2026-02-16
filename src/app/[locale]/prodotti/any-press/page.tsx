@@ -4,7 +4,7 @@ import Image from "next/image";
 import { getLocale } from "next-intl/server";
 
 export const metadata: Metadata = {
-  title: "Any-Press � Stampante Laser LED 5 Colori CMYK+Bianco",
+  title: "Any-Press × Stampante Laser LED 5 Colori CMYK+Bianco",
   description:
     "Any-Press: stampante laser LED a 5 colori (CMYK+Bianco) per etichette e packaging flessibile. Toner bianco per kraft e trasparenti, laminazione integrata, 1200 dpi.",
   keywords: [
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     "toner bianco",
   ],
   openGraph: {
-    title: "Any-Press � Stampante Laser LED CMYK+Bianco | Print Solution",
+    title: "Any-Press × Stampante Laser LED CMYK+Bianco | Print Solution",
     description:
       "Stampante laser LED a 5 colori per etichette e packaging flessibile. Toner bianco, laminazione integrata.",
     images: ["/images/products/any-press.avif"],
@@ -55,16 +55,16 @@ const breadcrumbJsonLd = {
 
 const specs = [
   ["Motore di stampa", "Laser digitale LED"],
-  ["Colori", "5 colori � CMYKW (incluso bianco)"],
-  ["Risoluzione", "1.200 � 1.200 dpi"],
-  ["Velocit� di stampa", "5 m/min"],
+  ["Colori", "5 colori × CMYKW (incluso bianco)"],
+  ["Risoluzione", "1.200 × 1.200 dpi"],
+  ["Velocità di stampa", "5 m/min"],
   ["Larghezza stampa max", "324 mm"],
   ["Larghezza supporto max", "330 mm"],
   ["Diametro max rotolo", "350 mm"],
-  ["Laminatore", "Opzionale � a freddo o a caldo"],
+  ["Laminatore", "Opzionale × a freddo o a caldo"],
   ["Software", "ANY-FLOW"],
-  ["Alimentazione", "Monofase 220�240V / 6A"],
-  ["Dimensioni", "L 1350 � P 1090 � H 1615 mm"],
+  ["Alimentazione", "Monofase 220×240V / 6A"],
+  ["Dimensioni", "L 1350 × P 1090 × H 1615 mm"],
 ];
 
 const features = [
@@ -103,7 +103,7 @@ const features = [
       </svg>
     ),
     title: "Stampe Durevoli Senza Rivestimento",
-    desc: "Il toner laser LED garantisce resistenza all'acqua, ai raggi UV, ai graffi e alle condizioni esterne senza necessit� di rivestimenti aggiuntivi.",
+    desc: "Il toner laser LED garantisce resistenza all'acqua, ai raggi UV, ai graffi e alle condizioni esterne senza necessit× di rivestimenti aggiuntivi.",
   },
   {
     icon: (
@@ -112,7 +112,7 @@ const features = [
       </svg>
     ),
     title: "Costi di Produzione Ridotti",
-    desc: "Toner e tamburi ad alta capacit� con ampia scelta di supporti non patinati. I costi di produzione pi� competitivi della categoria.",
+    desc: "Toner e tamburi ad alta capacità con ampia scelta di supporti non patinati. I costi di produzione più competitivi della categoria.",
   },
   {
     icon: (
@@ -168,13 +168,13 @@ export default async function AnyPressPage() {
         <div className="container-custom max-w-4xl">
           <h2 className="text-3xl font-bold text-dark-800 mb-6">Stampa Laser LED a 5 Colori con Toner Bianco</h2>
           <p className="text-gray-500 leading-relaxed mb-4">
-            La Any-Press di Anytron � una stampante laser LED a 5 colori (CMYK + Bianco) progettata per la produzione di etichette e packaging flessibile. Grazie al toner bianco, permette di stampare immagini e testi nitidi su carte colorate, kraft e supporti trasparenti, aprendo possibilit� creative impossibili con le stampanti CMYK tradizionali. La risoluzione di 1200 � 1200 dpi assicura dettagli precisi e colori vivaci su ogni supporto.
+            La Any-Press di Anytron è una stampante laser LED a 5 colori (CMYK + Bianco) progettata per la produzione di etichette e packaging flessibile. Grazie al toner bianco, permette di stampare immagini e testi nitidi su carte colorate, kraft e supporti trasparenti, aprendo possibilità creative impossibili con le stampanti CMYK tradizionali. La risoluzione di 1200 × 1200 dpi assicura dettagli precisi e colori vivaci su ogni supporto.
           </p>
           <p className="text-gray-500 leading-relaxed mb-4">
-            Soluzione 2-in-1 unica nel suo genere, la Any-Press stampa sia etichette in bobina che imballaggi flessibili come buste piatte, stand-up pouch e bustine fino a 13 pollici di larghezza. Il toner laser LED garantisce resistenza all&apos;acqua, ai raggi UV, ai graffi e alle condizioni esterne senza necessit� di rivestimenti aggiuntivi, mentre il laminatore integrato opzionale (a freddo o a caldo) completa il processo in un unico passaggio.
+            Soluzione 2-in-1 unica nel suo genere, la Any-Press stampa sia etichette in bobina che imballaggi flessibili come buste piatte, stand-up pouch e bustine fino a 13 pollici di larghezza. Il toner laser LED garantisce resistenza all&apos;acqua, ai raggi UV, ai graffi e alle condizioni esterne senza necessit× di rivestimenti aggiuntivi, mentre il laminatore integrato opzionale (a freddo o a caldo) completa il processo in un unico passaggio.
           </p>
           <p className="text-gray-500 leading-relaxed">
-            Il software dedicato ANY-FLOW gestisce la produzione con funzionalit� avanzate: gestione colori, dati variabili (codici a barre, QR code), nesting ottimizzato e calcolo dei costi di produzione. Con toner e tamburi ad alta capacit� e la possibilit� di utilizzare supporti non patinati a basso costo, la Any-Press offre i costi di produzione pi� competitivi della categoria, rendendola ideale per tirature medio-piccole e produzioni on-demand.
+            Il software dedicato ANY-FLOW gestisce la produzione con funzionalità avanzate: gestione colori, dati variabili (codici a barre, QR code), nesting ottimizzato e calcolo dei costi di produzione. Con toner e tamburi ad alta capacità e la possibilità di utilizzare supporti non patinati a basso costo, la Any-Press offre i costi di produzione più competitivi della categoria, rendendola ideale per tirature medio-piccole e produzioni on-demand.
           </p>
         </div>
       </section>
@@ -233,7 +233,7 @@ export default async function AnyPressPage() {
         <div className="container-custom text-center">
           <h2 className="text-3xl font-bold text-dark-800 mb-6">Stampa Etichette con il Bianco In-House</h2>
           <p className="text-gray-500 max-w-xl mx-auto mb-8">
-            Scopri come la Any-Press pu� trasformare la tua produzione di etichette e packaging flessibile. Contattaci per una consulenza.
+            Scopri come la Any-Press può trasformare la tua produzione di etichette e packaging flessibile. Contattaci per una consulenza.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Any-Press&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20Any-Press.%0A%0AGrazie" className="btn-primary text-lg">{locale === 'it' ? 'Richiedi Demo →' : 'Request Demo →'}</a>
@@ -248,7 +248,7 @@ export default async function AnyPressPage() {
           <div className="grid md:grid-cols-3 gap-6">
             {[
               { name: "Afinia LT5C", desc: "Stampante etichette toner LED industriale", href: "/prodotti/afinia-lt5c", image: "/images/products/afinia-lt5c.avif" },
-              { name: "Afinia X350", desc: "Stampante roll-to-roll alta velocit�", href: "/prodotti/afinia-x350", image: "/images/products/afinia-x350-site.webp" },
+              { name: "Afinia X350", desc: "Stampante roll-to-roll alta velocità", href: "/prodotti/afinia-x350", image: "/images/products/afinia-x350-site.webp" },
               { name: "Afinia DLP-2200", desc: "Digital Label Press completa", href: "/prodotti/afinia-dlp2200", image: "/images/products/afinia-dlp2200.avif" },
             ].map((p) => (
               <Link key={p.name} href={p.href} className="card-modern overflow-hidden group hover:-translate-y-1 transition-transform duration-300">

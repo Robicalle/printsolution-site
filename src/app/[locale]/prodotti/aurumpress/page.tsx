@@ -4,7 +4,7 @@ import Image from "next/image";
 import { getLocale } from "next-intl/server";
 
 export const metadata: Metadata = {
-  title: "AurumPress � Stampa a Caldo Digitale per Packaging",
+  title: "AurumPress × Stampa a Caldo Digitale per Packaging",
   description:
     "AurumPress: stampa a caldo digitale con foil metallizzati, argentati e colori pastello. Hot foil digitale per nobilitazione packaging e etichette.",
   keywords: [
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     "stampa foil packaging",
   ],
   openGraph: {
-    title: "AurumPress � Stampa a Caldo Digitale | Print Solution",
+    title: "AurumPress × Stampa a Caldo Digitale | Print Solution",
     description:
       "Stampa a caldo digitale con foil metallizzati per nobilitazione packaging. Hot foil digitale professionale.",
     images: ["/images/products/aurumpress.jpg"],
@@ -140,13 +140,13 @@ export default async function AurumPressPage() {
         <div className="container-custom max-w-4xl">
           <h2 className="text-3xl font-bold text-dark-800 mb-6">Finiture di Lusso per il Tuo Packaging</h2>
           <p className="text-gray-500 leading-relaxed mb-4">
-            L&apos;AurumPress � una stampatrice termica ad impressione idraulica progettata per aggiungere finiture 
-            premium al packaging. Grazie alla tecnologia hot foil stamping, � possibile applicare loghi, scritte 
+            L&apos;AurumPress è una stampatrice termica ad impressione idraulica progettata per aggiungere finiture 
+            premium al packaging. Grazie alla tecnologia hot foil stamping, è possibile applicare loghi, scritte 
             e decorazioni con foil argentati, metallizzati, colori pastello e trasparente lucido.
           </p>
           <p className="text-gray-500 leading-relaxed mb-4">
             Il sistema ad impressione idraulica garantisce una pressione uniforme e costante, assicurando risultati 
-            impeccabili su cartone, carta e packaging rigido. L&apos;AurumPress � la scelta ideale per chi vuole 
+            impeccabili su cartone, carta e packaging rigido. L&apos;AurumPress è la scelta ideale per chi vuole 
             differenziare il proprio prodotto con un packaging d&apos;impatto visivo e tattile.
           </p>
           <p className="text-gray-500 leading-relaxed">
@@ -215,7 +215,7 @@ export default async function AurumPressPage() {
         <div className="container-custom text-center">
           <h2 className="text-3xl font-bold text-dark-800 mb-6">Aggiungi il Tocco Premium al Tuo Packaging</h2>
           <p className="text-gray-500 max-w-xl mx-auto mb-8">
-            Scopri come l&apos;AurumPress pu� trasformare il tuo packaging. Vieni a vederla in azione nella nostra sala demo.
+            Scopri come l&apos;AurumPress può trasformare il tuo packaging. Vieni a vederla in azione nella nostra sala demo.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20AurumPress&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20AurumPress.%0A%0AGrazie" className="btn-primary text-lg">{locale === 'it' ? 'Richiedi Demo →' : 'Request Demo →'}</a>

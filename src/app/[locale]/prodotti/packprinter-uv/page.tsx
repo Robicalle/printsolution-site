@@ -55,12 +55,12 @@ const breadcrumbJsonLd = {
 const specs = [
   ["Modelli", "9 modelli con luce di stampa variabile"],
   ["Luce di stampa", "Da 12 cm a 118 cm"],
-  ["Risoluzione", "600 � 1200 dpi"],
-  ["Velocit� di stampa", "Fino a 50 metri al minuto"],
-  ["Modalit� di stampa", "4 colori + Bianco (CMYKW)"],
+  ["Risoluzione", "600 × 1200 dpi"],
+  ["Velocità di stampa", "Fino a 50 metri al minuto"],
+  ["Modalit× di stampa", "4 colori + Bianco (CMYKW)"],
   ["Tipo di inchiostri", "UV ad alte prestazioni"],
   ["Testine", "S3200 U3 - 3200 ugelli"],
-  ["Dimensione testina", "150,4 mm � 30 mm � 52 mm"],
+  ["Dimensione testina", "150,4 mm × 30 mm × 52 mm"],
   ["Supporti stampabili", "PVC, ABS, acrilico, cartone, legno, vetro, ceramica, metallo, gommapiuma, similpelle"],
 ];
 
@@ -72,7 +72,7 @@ const features = [
       </svg>
     ),
     title: "50 Metri al Minuto",
-    desc: "Velocit� single-pass eccezionale per produzioni industriali. Grandi tirature completate in tempi record senza sacrificare la qualit�.",
+    desc: "Velocità single-pass eccezionale per produzioni industriali. Grandi tirature completate in tempi record senza sacrificare la qualità.",
   },
   {
     icon: (
@@ -117,7 +117,7 @@ const features = [
       </svg>
     ),
     title: "ROI Rapido",
-    desc: "Alta velocit� e versatilit� dei materiali permettono di servire pi� mercati. Ritorno sull&apos;investimento in tempi brevi.",
+    desc: "Alta velocità e versatilità dei materiali permettono di servire più mercati. Ritorno sull&apos;investimento in tempi brevi.",
   },
 ];
 
@@ -138,7 +138,7 @@ export default async function PackPrinterUVPage() {
             <p className="text-yellow-300 text-sm mb-3 uppercase tracking-widest font-medium">{locale === 'it' ? 'Prodotti' : 'Products'}</p>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">PackPrinter UV</h1>
               <p className="text-lg text-gray-300/90 leading-relaxed mb-8">
-                Stampante digitale UV single-pass CMYK + Bianco. Stampa ad alta velocit� fino a 50 m/min
+                Stampante digitale UV single-pass CMYK + Bianco. Stampa ad alta velocità fino a 50 m/min
                 su packaging, vetro, PVC, legno, ceramica e materiali sintetici. 9 configurazioni disponibili.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
@@ -162,15 +162,15 @@ export default async function PackPrinterUVPage() {
         <div className="container-custom max-w-4xl">
           <h2 className="text-3xl font-bold text-dark-800 mb-6">Stampa UV su Qualsiasi Materiale</h2>
           <p className="text-gray-500 leading-relaxed mb-4">
-            PackPrinter UV � la stampante digitale single-pass che rivoluziona la stampa su packaging e materiali
+            PackPrinter UV è la stampante digitale single-pass che rivoluziona la stampa su packaging e materiali
             sintetici. Grazie alla testina all&apos;avanguardia con inchiostri UV, stampa a 5 colori (CMYK + Bianco)
             su materiali porosi e non porosi con prestazioni eccezionali.
           </p>
           <p className="text-gray-500 leading-relaxed mb-4">
-            La versatilit� � il suo punto di forza: PVC, ABS, acrilico, cartone patinato, Forex, shopper in
-            materiali sintetici, vinile, similpelle, vetro, ceramica, legno e lastre metalliche. Con una velocit�
-            fino a 50 metri al minuto e risoluzione 600�1200 dpi, PackPrinter UV � la soluzione ideale per
-            produzioni industriali e personalizzazioni di alta qualit�.
+            La versatilità è il suo punto di forza: PVC, ABS, acrilico, cartone patinato, Forex, shopper in
+            materiali sintetici, vinile, similpelle, vetro, ceramica, legno e lastre metalliche. Con una velocità
+            fino a 50 metri al minuto e risoluzione 600×1200 dpi, PackPrinter UV è la soluzione ideale per
+            produzioni industriali e personalizzazioni di alta qualità.
           </p>
           <p className="text-gray-500 leading-relaxed">
             Disponibile in 9 configurazioni con luce di stampa da 12 a 118 cm, si adatta perfettamente alle
@@ -239,7 +239,7 @@ export default async function PackPrinterUVPage() {
         <div className="container-custom text-center">
           <h2 className="text-3xl font-bold text-dark-800 mb-6">Scopri PackPrinter UV dal Vivo</h2>
           <p className="text-gray-500 max-w-xl mx-auto mb-8">
-            Porta i tuoi materiali nella nostra sala demo a Sesto San Giovanni e scopri la versatilit� della stampa UV single-pass.
+            Porta i tuoi materiali nella nostra sala demo a Sesto San Giovanni e scopri la versatilità della stampa UV single-pass.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="tel:+390249439417" className="btn-outline text-lg inline-flex items-center">

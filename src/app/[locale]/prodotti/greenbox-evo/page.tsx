@@ -55,8 +55,8 @@ const breadcrumbJsonLd = {
 const specs = [
   ["Tecnologia", "Inkjet single-pass CMYK"],
   ["Testina di stampa", "HP Pagewide, 30 cm"],
-  ["Risoluzione", "1200 � 1200 dpi"],
-  ["Velocit� di stampa", "Fino a 30 m/min"],
+  ["Risoluzione", "1200 × 1200 dpi"],
+  ["Velocità di stampa", "Fino a 30 m/min"],
   ["Larghezza stampa", "Fino a 30 cm"],
   ["Larghezza supporto", "Fino a 80 cm"],
   ["Spessore max supporto", "Fino a 15 cm"],
@@ -75,7 +75,7 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
       </svg>
     ),
-    title: "Velocit� Industriale",
+    title: "Velocità Industriale",
     desc: "Fino a 30 metri al minuto con tecnologia single-pass: stampa senza rallentamenti, anche su tirature elevate.",
   },
   {
@@ -112,7 +112,7 @@ const features = [
       </svg>
     ),
     title: "Entry-Level Accessibile",
-    desc: "Investimento contenuto per entrare nel mondo della stampa digitale su packaging con qualit� professionale.",
+    desc: "Investimento contenuto per entrare nel mondo della stampa digitale su packaging con qualità professionale.",
   },
   {
     icon: (
@@ -166,9 +166,9 @@ export default async function GreenBoxEvoPage() {
         <div className="container-custom max-w-4xl">
           <h2 className="text-3xl font-bold text-dark-800 mb-6">Stampa Digitale su Packaging, Senza Compromessi</h2>
           <p className="text-gray-500 leading-relaxed mb-4">
-            La GreenBox EVO � una stampante inkjet single-pass progettata per chi vuole entrare nel mercato della stampa
-            digitale su packaging con un investimento accessibile ma senza rinunciare alla qualit�. Dotata di testina HP
-            Pagewide da 30 cm, raggiunge velocit� fino a 30 metri al minuto con risoluzione 1200�1200 dpi.
+            La GreenBox EVO è una stampante inkjet single-pass progettata per chi vuole entrare nel mercato della stampa
+            digitale su packaging con un investimento accessibile ma senza rinunciare alla qualità. Dotata di testina HP
+            Pagewide da 30 cm, raggiunge velocità fino a 30 metri al minuto con risoluzione 1200×1200 dpi.
           </p>
           <p className="text-gray-500 leading-relaxed mb-4">
             Gli inchiostri pigmentati a base acqua sono privi di solventi, inodori e garantiscono un&apos;eccellente resistenza
@@ -178,7 +178,7 @@ export default async function GreenBoxEvoPage() {
           <p className="text-gray-500 leading-relaxed">
             Il piano aspirato con pompa a vuoto assicura il perfetto ancoraggio del supporto durante la stampa.
             L&apos;alimentatore automatico opzionale velocizza ulteriormente la produzione. Il software RIP Flexprint
-            � incluso, con display digitale integrato per il controllo diretto della macchina.
+            è incluso, con display digitale integrato per il controllo diretto della macchina.
           </p>
         </div>
       </section>

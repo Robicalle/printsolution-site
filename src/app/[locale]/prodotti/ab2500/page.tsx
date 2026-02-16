@@ -55,7 +55,7 @@ const breadcrumbJsonLd = {
 const specs = [
   ["Tipo macchina", "Box maker automatico all-in-one"],
   ["Operazioni", "Taglio, scanalatura, cordonatura, incollaggio"],
-  ["Produttivit�", "500-600 scatole/ora"],
+  ["Produttività", "500-600 scatole/ora"],
   ["Cambio formato", "10 secondi"],
   ["Spessore cartone", "Da 1 a 7 mm"],
   ["Incollaggio", "A caldo e a freddo"],
@@ -69,7 +69,7 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
       </svg>
     ),
-    title: "Alta Produttivit�",
+    title: "Alta Produttività",
     desc: "500-600 scatole all'ora: produzione industriale con un'unica macchina compatta e versatile.",
   },
   {
@@ -79,7 +79,7 @@ const features = [
       </svg>
     ),
     title: "Cambio Formato in 10 secondi",
-    desc: "Passaggio istantaneo tra formati diversi senza fermo macchina. Massima flessibilit� produttiva.",
+    desc: "Passaggio istantaneo tra formati diversi senza fermo macchina. Massima flessibilità produttiva.",
   },
   {
     icon: (
@@ -116,7 +116,7 @@ const features = [
       </svg>
     ),
     title: "ROI Rapido",
-    desc: "L'automazione completa riduce i costi di manodopera e aumenta la produttivit�. Ritorno sull'investimento in tempi brevi.",
+    desc: "L'automazione completa riduce i costi di manodopera e aumenta la produttivit×. Ritorno sull'investimento in tempi brevi.",
   },
 ];
 
@@ -161,9 +161,9 @@ export default async function AB2500Page() {
         <div className="container-custom max-w-4xl">
           <h2 className="text-3xl font-bold text-dark-800 mb-6">{locale === 'it' ? 'Produzione Automatica di Scatole' : 'Automatic Box Production'}</h2>
           <p className="text-gray-500 leading-relaxed mb-4">
-            L&apos;Anypack AB2500 � un box maker completamente automatico che esegue taglio, scanalatura, cordonatura
+            L&apos;Anypack AB2500 è un box maker completamente automatico che esegue taglio, scanalatura, cordonatura
             e incollaggio in un&apos;unica operazione. Progettato per la produzione industriale di scatole in cartone
-            ondulato, garantisce una produttivit� di 500-600 scatole all&apos;ora.
+            ondulato, garantisce una produttivit× di 500-600 scatole all&apos;ora.
           </p>
           <p className="text-gray-500 leading-relaxed mb-4">
             Il cambio formato avviene in soli 10 secondi, eliminando i tempi morti e massimizzando l&apos;efficienza
@@ -172,7 +172,7 @@ export default async function AB2500Page() {
           </p>
           <p className="text-gray-500 leading-relaxed">
             Il sistema di incollaggio a caldo e a freddo consente di lavorare con ogni tipo di cartone e applicazione.
-            L&apos;AB2500 � la soluzione ideale per scatolifici, centri di logistica e aziende che necessitano di
+            L&apos;AB2500 è la soluzione ideale per scatolifici, centri di logistica e aziende che necessitano di
             produzione on-demand di imballaggi personalizzati.
           </p>
         </div>
@@ -232,7 +232,7 @@ export default async function AB2500Page() {
         <div className="container-custom text-center">
           <h2 className="text-3xl font-bold text-dark-800 mb-6">{locale === 'it' ? 'Automatizza la Produzione di Scatole' : 'Automate Your Box Production'}</h2>
           <p className="text-gray-500 max-w-xl mx-auto mb-8">
-            Scopri come l&apos;AB2500 pu� rivoluzionare la tua linea di produzione. Vieni a vederla nella nostra sala demo.
+            Scopri come l&apos;AB2500 può rivoluzionare la tua linea di produzione. Vieni a vederla nella nostra sala demo.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Anypack%20AB2500&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20Anypack%20AB2500.%0A%0AGrazie" className="btn-primary text-lg">{locale === 'it' ? 'Richiedi Demo →' : 'Request Demo →'}</a>

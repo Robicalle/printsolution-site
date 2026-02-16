@@ -3,28 +3,34 @@ import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import { getLocale } from "next-intl/server";
 
-export const metadata: Metadata = {
-  title: "Afinia DLP-2200 — {locale === 'it' ? 'Digital Label Press' : 'Digital Label Press'} Completa",
-  description:
-    "Afinia DLP-2200: sistema completo stampa + finitura dalla bobina bianca all'etichetta finita. 25.000+ etichette/ora, laminazione, fustellatura e riavvolgimento in linea.",
-  keywords: [
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getLocale();
+  const isIt = locale === 'it';
+  return {
+    title: isIt ? "Afinia DLP-2200 — {locale === 'it' ? 'Digital Label Press' : 'Digital Label Press'} Completa" : "Afinia DLP-2200 - Complete Digital Label Press",
+    description: isIt
+      ? "Afinia DLP-2200: pressa digitale per etichette completa. Stampa, laminazione, fustellatura e riavvolgimento. 25.000+ etichette/ora. Print Solution"
+      : "Afinia DLP-2200: complete digital label press. Print, laminate, die-cut and rewind. 25,000+ labels/hour. Print Solution",
+    keywords: [
     "Afinia DLP-2200",
     "digital label press",
     "stampa etichette completa",
     "fustellatura in linea",
     "stampante etichette industriale",
   ],
-  openGraph: {
-    title: "Afinia DLP-2200 — Digital Label Press Completa | Print Solution",
-    description:
-      "Sistema completo dalla bobina bianca all'etichetta finita. 25.000+ etichette/ora con laminazione e fustellatura in linea.",
-    images: ["/images/products/afinia-dlp2200.avif"],
-    type: "website",
-    locale: "it_IT",
-  },
-  twitter: { card: "summary_large_image" },
-  alternates: { canonical: "/prodotti/afinia-dlp2200" },
-};
+    openGraph: {
+      title: isIt ? "Afinia DLP-2200 — {locale === 'it' ? 'Digital Label Press' : 'Digital Label Press'} Completa | Print Solution" : "Afinia DLP-2200 - Complete Digital Label Press | Print Solution",
+      description: isIt
+        ? "Afinia DLP-2200: pressa digitale per etichette completa. Stampa, laminazione, fustellatura e riavvolgimento. 25.000+ etichette/ora. Print Solution"
+        : "Afinia DLP-2200: complete digital label press. Print, laminate, die-cut and rewind. 25,000+ labels/hour. Print Solution",
+      images: ["/images/products/afinia-dlp2200.avif"],
+      type: "website",
+      locale: isIt ? "it_IT" : "en_US",
+    },
+    twitter: { card: "summary_large_image" },
+    alternates: { canonical: "/prodotti/afinia-dlp2200" },
+  };
+}
 
 const productJsonLd = {
   "@context": "https://schema.org",
@@ -160,7 +166,7 @@ export default async function AfiniaDLP2200Page() {
                 {locale === 'it' ? "Digital Label Press completa: dalla bobina bianca all'etichetta finita in un unico passaggio. Stampa, laminazione, fustellatura rotativa, rimozione sfridi, slitting e riavvolgimento su doppio mandrino. Oltre 25.000 etichette all'ora." : "Complete Digital Label Press: from blank roll to finished label in a single pass. Printing, lamination, rotary die-cutting, waste removal, slitting and dual-spindle rewinding. Over 25,000 labels per hour."}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Afinia%20DLP-2200&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20Afinia%20DLP-2200.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">{locale === 'it' ? 'Richiedi Demo →' : 'Request Demo →'}</a>
+                <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20Afinia%20DLP-2200&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20Afinia%20DLP-2200.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">{locale === 'it' ? 'Richiedi una consulenza gratuita →' : 'Request a free consultation →'}</a>
               </div>
           </div>
         </div>
@@ -256,7 +262,7 @@ export default async function AfiniaDLP2200Page() {
             {locale === 'it' ? "Elimina la necessità di esternalizzare. Con la DLP-2200 produci etichette finite e pronte per l'applicazione direttamente nel tuo stabilimento." : "Eliminate the need to outsource. With the DLP-2200, produce finished labels ready for application directly in your facility."}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Afinia%20DLP-2200&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20Afinia%20DLP-2200.%0A%0AGrazie" className="btn-primary text-lg">{locale === 'it' ? 'Richiedi Demo →' : 'Request Demo →'}</a>
+            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20Afinia%20DLP-2200&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20Afinia%20DLP-2200.%0A%0AGrazie" className="btn-primary text-lg">{locale === 'it' ? 'Richiedi una consulenza gratuita →' : 'Request a free consultation →'}</a>
           </div>
         </div>
       </section>

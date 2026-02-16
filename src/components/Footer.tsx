@@ -41,38 +41,38 @@ export default function Footer() {
           {/* Soluzioni */}
           <div>
             <h3 className="text-white font-semibold mb-6 text-sm uppercase tracking-wider">{t("solutions")}</h3>
-            <ul className="space-y-3 text-sm">
-              <li><Link href="/soluzioni/packaging" className="hover:text-white transition-colors duration-200">{t("packaging")}</Link></li>
-              <li><Link href="/soluzioni/etichette" className="hover:text-white transition-colors duration-200">{t("labels")}</Link></li>
-              <li><Link href="/soluzioni/shopper" className="hover:text-white transition-colors duration-200">{t("shopperLuxury")}</Link></li>
-              <li><Link href="/soluzioni/labbratura" className="hover:text-white transition-colors duration-200">{t("bookEdging")}</Link></li>
-              <li><Link href="/soluzioni/consumabili" className="hover:text-white transition-colors duration-200">{t("consumables")}</Link></li>
+            <ul className="space-y-1 text-sm">
+              <li><Link href="/soluzioni/packaging" className="hover:text-white transition-colors duration-200 inline-block py-2 min-h-[44px]">{t("packaging")}</Link></li>
+              <li><Link href="/soluzioni/etichette" className="hover:text-white transition-colors duration-200 inline-block py-2 min-h-[44px]">{t("labels")}</Link></li>
+              <li><Link href="/soluzioni/shopper" className="hover:text-white transition-colors duration-200 inline-block py-2 min-h-[44px]">{t("shopperLuxury")}</Link></li>
+              <li><Link href="/soluzioni/labbratura" className="hover:text-white transition-colors duration-200 inline-block py-2 min-h-[44px]">{t("bookEdging")}</Link></li>
+              <li><Link href="/soluzioni/consumabili" className="hover:text-white transition-colors duration-200 inline-block py-2 min-h-[44px]">{t("consumables")}</Link></li>
             </ul>
           </div>
 
           {/* Prodotti */}
           <div>
             <h3 className="text-white font-semibold mb-6 text-sm uppercase tracking-wider">{t("products")}</h3>
-            <ul className="space-y-2 text-sm columns-2 gap-x-8">
-              <li><Link href="/prodotti/edm-650x" className="hover:text-white transition-colors duration-200">EDM-650X</Link></li>
-              <li><Link href="/prodotti/ab2500" className="hover:text-white transition-colors duration-200">Anypack AB2500</Link></li>
-              <li><Link href="/prodotti/greenbox-evo" className="hover:text-white transition-colors duration-200">GreenBox EVO</Link></li>
-              <li><Link href="/prodotti/packprinter-uv" className="hover:text-white transition-colors duration-200">PackPrinter UV</Link></li>
-              <li><Link href="/prodotti/aurumpress" className="hover:text-white transition-colors duration-200">AurumPress</Link></li>
-              <li><Link href="/prodotti/any-002" className="hover:text-white transition-colors duration-200">Anytron ANY-002</Link></li>
-              <li><Link href="/prodotti/afinia-l901" className="hover:text-white transition-colors duration-200">Afinia L901</Link></li>
-              <li><Link href="/prodotti/afinia-x350" className="hover:text-white transition-colors duration-200">Afinia X350</Link></li>
-              <li><Link href="/prodotti/afinia-lt5c" className="hover:text-white transition-colors duration-200">Afinia LT5C</Link></li>
-              <li><Link href="/prodotti/afinia-dlp2200" className="hover:text-white transition-colors duration-200">Afinia DLP-2200</Link></li>
-              <li><Link href="/prodotti/any-press" className="hover:text-white transition-colors duration-200">Any-Press</Link></li>
-              <li><Link href="/prodotti/afinia-dc350" className="hover:text-white transition-colors duration-200">Afinia DC350</Link></li>
-              <li><Link href="/prodotti/afinia-dlf" className="hover:text-white transition-colors duration-200">Afinia DLF</Link></li>
-              <li><Link href="/prodotti/robotjet" className="hover:text-white transition-colors duration-200">RobotJet</Link></li>
-              <li><Link href="/prodotti/greenbox-print-book" className="hover:text-white transition-colors duration-200">GreenBox Print Book</Link></li>
+            <ul className="space-y-0 text-sm columns-2 gap-x-8">
+              <li><Link href="/prodotti/edm-650x" className="hover:text-white transition-colors duration-200 inline-block py-1.5">EDM-650X</Link></li>
+              <li><Link href="/prodotti/ab2500" className="hover:text-white transition-colors duration-200 inline-block py-1.5">Anypack AB2500</Link></li>
+              <li><Link href="/prodotti/greenbox-evo" className="hover:text-white transition-colors duration-200 inline-block py-1.5">GreenBox EVO</Link></li>
+              <li><Link href="/prodotti/packprinter-uv" className="hover:text-white transition-colors duration-200 inline-block py-1.5">PackPrinter UV</Link></li>
+              <li><Link href="/prodotti/aurumpress" className="hover:text-white transition-colors duration-200 inline-block py-1.5">AurumPress</Link></li>
+              <li><Link href="/prodotti/any-002" className="hover:text-white transition-colors duration-200 inline-block py-1.5">Anytron ANY-002</Link></li>
+              <li><Link href="/prodotti/afinia-l901" className="hover:text-white transition-colors duration-200 inline-block py-1.5">Afinia L901</Link></li>
+              <li><Link href="/prodotti/afinia-x350" className="hover:text-white transition-colors duration-200 inline-block py-1.5">Afinia X350</Link></li>
+              <li><Link href="/prodotti/afinia-lt5c" className="hover:text-white transition-colors duration-200 inline-block py-1.5">Afinia LT5C</Link></li>
+              <li><Link href="/prodotti/afinia-dlp2200" className="hover:text-white transition-colors duration-200 inline-block py-1.5">Afinia DLP-2200</Link></li>
+              <li><Link href="/prodotti/any-press" className="hover:text-white transition-colors duration-200 inline-block py-1.5">Any-Press</Link></li>
+              <li><Link href="/prodotti/afinia-dc350" className="hover:text-white transition-colors duration-200 inline-block py-1.5">Afinia DC350</Link></li>
+              <li><Link href="/prodotti/afinia-dlf" className="hover:text-white transition-colors duration-200 inline-block py-1.5">Afinia DLF</Link></li>
+              <li><Link href="/prodotti/robotjet" className="hover:text-white transition-colors duration-200 inline-block py-1.5">RobotJet</Link></li>
+              <li><Link href="/prodotti/greenbox-print-book" className="hover:text-white transition-colors duration-200 inline-block py-1.5">GreenBox Print Book</Link></li>
             </ul>
-            <div className="mt-4 pt-3 border-t border-white/5 space-y-2 text-sm">
-              <Link href="/promozioni" className="block hover:text-white transition-colors duration-200 text-cyan-400">🏷️ {t("promotions")}</Link>
-              <Link href="/usato" className="block hover:text-white transition-colors duration-200 text-orange-400">♻️ {t("usedGuaranteed")}</Link>
+            <div className="mt-4 pt-3 border-t border-white/5 space-y-0 text-sm">
+              <Link href="/promozioni" className="block hover:text-white transition-colors duration-200 text-cyan-400 py-2">🏷️ {t("promotions")}</Link>
+              <Link href="/usato" className="block hover:text-white transition-colors duration-200 text-orange-400 py-2">♻️ {t("usedGuaranteed")}</Link>
             </div>
           </div>
 
@@ -140,9 +140,9 @@ export default function Footer() {
         <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center text-sm md:text-xs text-gray-600">
           <p>&copy; {new Date().getFullYear()} Print Solution S.r.l. — {t("allRightsReserved")}</p>
           <div className="flex gap-6 mt-4 md:mt-0">
-            <Link href="/privacy" className="hover:text-white transition-colors duration-200">{t("privacyPolicy")}</Link>
-            <Link href="/cookie" className="hover:text-white transition-colors duration-200">{t("cookiePolicy")}</Link>
-            <Link href="/condizioni-di-vendita" className="hover:text-white transition-colors duration-200">{t("salesConditions")}</Link>
+            <Link href="/privacy" className="hover:text-white transition-colors duration-200 py-2 inline-block">{t("privacyPolicy")}</Link>
+            <Link href="/cookie" className="hover:text-white transition-colors duration-200 py-2 inline-block">{t("cookiePolicy")}</Link>
+            <Link href="/condizioni-di-vendita" className="hover:text-white transition-colors duration-200 py-2 inline-block">{t("salesConditions")}</Link>
           </div>
         </div>
       </div>

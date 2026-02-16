@@ -3,28 +3,34 @@ import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import { getLocale } from "next-intl/server";
 
-export const metadata: Metadata = {
-  title: "PackPrinter UV - Stampante UV Single-Pass",
-  description:
-    "PackPrinter UV: stampante UV single-pass CMYK+W fino a 50 m/min. Stampa su PVC, vetro, cartone, legno e ceramica. 9 configurazioni.",
-  keywords: [
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getLocale();
+  const isIt = locale === 'it';
+  return {
+    title: isIt ? "PackPrinter UV - Stampante UV Single-Pass" : "PackPrinter UV - UV Single-Pass Printer",
+    description: isIt
+      ? "PackPrinter UV: stampante UV single-pass CMYK+Bianco fino a 50 m/min. Stampa su PVC, vetro, cartone, legno. Print Solution"
+      : "PackPrinter UV: UV single-pass printer CMYK+White up to 50 m/min. Print on PVC, glass, cardboard, wood. Print Solution",
+    keywords: [
     "stampante UV single-pass",
     "stampa UV packaging",
     "PackPrinter UV",
     "stampa digitale UV",
     "stampante materiali sintetici",
   ],
-  openGraph: {
-    title: "PackPrinter UV - Stampante UV Single-Pass per Packaging | Print Solution",
-    description:
-      "Stampante digitale UV single-pass CMYK+W fino a 50 m/min. Stampa su qualsiasi materiale.",
-    images: ["/images/products/packprinter-uv.avif"],
-    type: "website",
-    locale: "it_IT",
-  },
-  twitter: { card: "summary_large_image" },
-  alternates: { canonical: "/prodotti/packprinter-uv" },
-};
+    openGraph: {
+      title: isIt ? "PackPrinter UV - Stampante UV Single-Pass | Print Solution" : "PackPrinter UV - UV Single-Pass Printer | Print Solution",
+      description: isIt
+        ? "PackPrinter UV: stampante UV single-pass CMYK+Bianco fino a 50 m/min. Stampa su PVC, vetro, cartone, legno. Print Solution"
+        : "PackPrinter UV: UV single-pass printer CMYK+White up to 50 m/min. Print on PVC, glass, cardboard, wood. Print Solution",
+      images: ["/images/products/packprinter-uv.avif"],
+      type: "website",
+      locale: isIt ? "it_IT" : "en_US",
+    },
+    twitter: { card: "summary_large_image" },
+    alternates: { canonical: "/prodotti/packprinter-uv" },
+  };
+}
 
 const productJsonLd = {
   "@context": "https://schema.org",
@@ -170,7 +176,7 @@ export default async function PackPrinterUVPage() {
                   : 'UV single-pass digital printer CMYK + White. High-speed printing up to 50 m/min on packaging, glass, PVC, wood, ceramic, and synthetic materials. 9 configurations available.'}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20PackPrinter%20UV&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20PackPrinter%20UV.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">{it ? 'Richiedi Demo →' : 'Request Demo →'}</a>
+                <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20PackPrinter%20UV&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20PackPrinter%20UV.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">{it ? 'Richiedi una consulenza gratuita →' : 'Request a free consultation →'}</a>
               </div>
           </div>
         </div>

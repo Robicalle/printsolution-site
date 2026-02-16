@@ -3,28 +3,34 @@ import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import { getLocale } from "next-intl/server";
 
-export const metadata: Metadata = {
-  title: "AurumPress – {locale === 'it' ? 'Stampa a Caldo Digitale' : 'Digital Hot Foil Stamping'} per Packaging",
-  description:
-    "AurumPress: stampa a caldo digitale con foil metallizzati, argentati e colori pastello. Hot foil digitale per nobilitazione packaging e etichette.",
-  keywords: [
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getLocale();
+  const isIt = locale === 'it';
+  return {
+    title: isIt ? "AurumPress – {locale === 'it' ? 'Stampa a Caldo Digitale' : 'Digital Hot Foil Stamping'} per Packaging" : "AurumPress - Digital Hot Foil Stamping Machine",
+    description: isIt
+      ? "AurumPress: stampa a caldo digitale con foil oro, argento e olografici. Nobilitazione on-demand per packaging di lusso. Print Solution"
+      : "AurumPress: digital hot foil stamping with gold, silver and holographic foils. On-demand luxury packaging. Print Solution",
+    keywords: [
     "stampa a caldo digitale",
     "hot foil digitale",
     "nobilitazione digitale",
     "AurumPress",
     "stampa foil packaging",
   ],
-  openGraph: {
-    title: "AurumPress – Stampa a Caldo Digitale | Print Solution",
-    description:
-      "Stampa a caldo digitale con foil metallizzati per nobilitazione packaging. Hot foil digitale professionale.",
-    images: ["/images/products/aurumpress.jpg"],
-    type: "website",
-    locale: "it_IT",
-  },
-  twitter: { card: "summary_large_image" },
-  alternates: { canonical: "/prodotti/aurumpress" },
-};
+    openGraph: {
+      title: isIt ? "AurumPress – {locale === 'it' ? 'Stampa a Caldo Digitale' : 'Digital Hot Foil Stamping'} per Packaging | Print Solution" : "AurumPress - Digital Hot Foil Stamping Machine | Print Solution",
+      description: isIt
+        ? "AurumPress: stampa a caldo digitale con foil oro, argento e olografici. Nobilitazione on-demand per packaging di lusso. Print Solution"
+        : "AurumPress: digital hot foil stamping with gold, silver and holographic foils. On-demand luxury packaging. Print Solution",
+      images: ["/images/products/aurumpress.jpg"],
+      type: "website",
+      locale: isIt ? "it_IT" : "en_US",
+    },
+    twitter: { card: "summary_large_image" },
+    alternates: { canonical: "/prodotti/aurumpress" },
+  };
+}
 
 const aurumpressJsonLd = {
   "@context": "https://schema.org",
@@ -128,7 +134,7 @@ export default async function AurumPressPage() {
                 {locale === 'it' ? 'Stampatrice termica ad impressione idraulica per foil metallizzati, argentati, colori pastello e trasparente lucido. Il tocco premium per il tuo packaging.' : 'Thermal foil printer with hydraulic impression for metallic, silver, pastel and glossy transparent foils. The premium touch for your packaging.'}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20AurumPress&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20AurumPress.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">{locale === 'it' ? 'Richiedi Demo →' : 'Request Demo →'}</a>
+                <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20AurumPress&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20AurumPress.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">{locale === 'it' ? 'Richiedi una consulenza gratuita →' : 'Request a free consultation →'}</a>
               </div>
           </div>
         </div>
@@ -234,7 +240,7 @@ export default async function AurumPressPage() {
             {locale === 'it' ? "Scopri come l'AurumPress può trasformare il tuo packaging. Vieni a vederla in azione nella nostra sala demo." : 'Discover how the AurumPress can transform your packaging. Come see it in action in our demo room.'}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20AurumPress&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20AurumPress.%0A%0AGrazie" className="btn-primary text-lg">{locale === 'it' ? 'Richiedi Demo →' : 'Request Demo →'}</a>
+            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20AurumPress&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20AurumPress.%0A%0AGrazie" className="btn-primary text-lg">{locale === 'it' ? 'Richiedi una consulenza gratuita →' : 'Request a free consultation →'}</a>
           </div>
         </div>
       </section>

@@ -3,11 +3,15 @@ import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 
-export const metadata: Metadata = {
-  title: "Afinia DC250 / DC350 — Fustellatori Semi-Rotativi per Etichette",
-  description:
-    "Afinia DC250 e DC350: fustellatori semi-rotativi con laminazione, fustellatura con fustelle flessibili in acciaio, rimozione sfrido, slitting e riavvolgimento. Fino a 30 m/min.",
-  keywords: [
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getLocale();
+  const isIt = locale === 'it';
+  return {
+    title: isIt ? "Afinia DC250 / DC350 — Fustellatori Semi-Rotativi per Etichette" : "Afinia DC350 - Semi-Rotary Die-Cutter for Labels",
+    description: isIt
+      ? "Afinia DC350: fustellatore semi-rotativo per etichette con laminazione, slitting e riavvolgimento. Fino a 30 m/min. Print Solution"
+      : "Afinia DC350: semi-rotary die-cutter for labels with lamination, slitting and rewinding. Up to 30 m/min. Print Solution",
+    keywords: [
     "Afinia DC250",
     "Afinia DC350",
     "fustellatore etichette",
@@ -15,17 +19,19 @@ export const metadata: Metadata = {
     "finitura etichette",
     "laminazione etichette",
   ],
-  openGraph: {
-    title: "Afinia DC250 / DC350 — Fustellatori Semi-Rotativi | Print Solution",
-    description:
-      "Fustellatori semi-rotativi per etichette con laminazione, fustellatura, rimozione sfrido e slitting. Fino a 30 m/min.",
-    images: ["/images/products/afinia-dc350.png"],
-    type: "website",
-    locale: "it_IT",
-  },
-  twitter: { card: "summary_large_image" },
-  alternates: { canonical: "/prodotti/afinia-dc350" },
-};
+    openGraph: {
+      title: isIt ? "Afinia DC250 / DC350 — Fustellatori Semi-Rotativi per Etichette | Print Solution" : "Afinia DC350 - Semi-Rotary Die-Cutter for Labels | Print Solution",
+      description: isIt
+        ? "Afinia DC350: fustellatore semi-rotativo per etichette con laminazione, slitting e riavvolgimento. Fino a 30 m/min. Print Solution"
+        : "Afinia DC350: semi-rotary die-cutter for labels with lamination, slitting and rewinding. Up to 30 m/min. Print Solution",
+      images: ["/images/products/afinia-dc350.png"],
+      type: "website",
+      locale: isIt ? "it_IT" : "en_US",
+    },
+    twitter: { card: "summary_large_image" },
+    alternates: { canonical: "/prodotti/afinia-dc350" },
+  };
+}
 
 const productJsonLd = {
   "@context": "https://schema.org",
@@ -320,10 +326,10 @@ export default async function () {
                 {locale === 'it' ? 'Contattaci per una demo dal vivo nella nostra sala demo a Sesto San Giovanni.' : 'Contact us for a live demo in our showroom in Sesto San Giovanni.'}
               </p>
               <a
-                href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Afinia%20DC250%20DC350&body=Buongiorno%2C%0A%0AVorrei%20prenotare%20una%20demo%20dei%20fustellatori%20DC250%2FDC350.%0A%0AGrazie"
+                href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20Afinia%20DC250%20DC350&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20dei%20fustellatori%20DC250%2FDC350.%0A%0AGrazie"
                 className="inline-flex items-center justify-center px-8 py-4 bg-white text-cyan-600 font-bold rounded-full hover:bg-yellow-400 hover:text-dark-800 transition-all duration-300 shadow-lg text-lg"
               >
-                {locale === 'it' ? 'Prenota una Demo' : 'Book a Demo'}
+                {locale === 'it' ? 'Richiedi una consulenza gratuita' : 'Request a free consultation'}
               </a>
             </div>
           </div>

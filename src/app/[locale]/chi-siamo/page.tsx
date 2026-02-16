@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import Image from "next/image";
 import { getLocale } from "next-intl/server";
@@ -152,7 +152,7 @@ export default async function ChiSiamoPage() {
                     Demos are by appointment and completely free of charge.
                   </p>
                   </>)}
-                  <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Informazioni%20Print%20Solution&body=Buongiorno%2C%0A%0AVorrei%20ricevere%20informazioni.%0A%0AGrazie" className="btn-primary">{locale === 'it' ? "Prenota una Visita" : "Book a Visit"}</a>
+                  <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Informazioni%20Print%20Solution&body=Buongiorno%2C%0A%0AVorrei%20ricevere%20informazioni.%0A%0AGrazie" className="btn-primary">{locale === 'it' ? "Richiedi una consulenza gratuita" : "Request a free consultation"}</a>
                 </div>
                 <div className="bg-gradient-to-br from-cyan-500 to-magenta-500 rounded-2xl h-64 flex items-center justify-center">
                   <div className="text-center text-white">

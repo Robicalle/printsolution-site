@@ -3,28 +3,34 @@ import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 
-export const metadata: Metadata = {
-  title: "Afinia X350 � Stampante Etichette Roll-to-Roll Alta Velocit�",
-  description:
-    "Afinia X350: stampante digitale roll-to-roll ad alta velocit� con inchiostri pigmentati a base acqua. Fino a 45 m/min, 1600 dpi, ridondanza ugelli 2�.",
-  keywords: [
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getLocale();
+  const isIt = locale === 'it';
+  return {
+    title: isIt ? "Afinia X350 � Stampante Etichette Roll-to-Roll Alta Velocit�" : "Afinia X350 - High-Speed Industrial Label Printer",
+    description: isIt
+      ? "Afinia X350: stampante etichette industriale ad alta velocità. Fino a 45 m/min, 1600 dpi, inchiostri pigmentati. Print Solution"
+      : "Afinia X350: high-speed industrial label printer. Up to 45 m/min, 1600 dpi, pigmented inks. Print Solution",
+    keywords: [
     "Afinia X350",
     "stampante etichette alta velocit�",
     "roll to roll",
     "inchiostri pigmentati",
     "stampa etichette industriale",
   ],
-  openGraph: {
-    title: "Afinia X350 � Stampante Roll-to-Roll Alta Velocit� | Print Solution",
-    description:
-      "Stampante digitale roll-to-roll fino a 45 m/min con inchiostri pigmentati a base acqua e ridondanza ugelli 2�.",
-    images: ["/images/products/afinia-x350-full.png"],
-    type: "website",
-    locale: "it_IT",
-  },
-  twitter: { card: "summary_large_image" },
-  alternates: { canonical: "/prodotti/afinia-x350" },
-};
+    openGraph: {
+      title: isIt ? "Afinia X350 � Stampante Etichette Roll-to-Roll Alta Velocit� | Print Solution" : "Afinia X350 - High-Speed Industrial Label Printer | Print Solution",
+      description: isIt
+        ? "Afinia X350: stampante etichette industriale ad alta velocità. Fino a 45 m/min, 1600 dpi, inchiostri pigmentati. Print Solution"
+        : "Afinia X350: high-speed industrial label printer. Up to 45 m/min, 1600 dpi, pigmented inks. Print Solution",
+      images: ["/images/products/afinia-x350-full.png"],
+      type: "website",
+      locale: isIt ? "it_IT" : "en_US",
+    },
+    twitter: { card: "summary_large_image" },
+    alternates: { canonical: "/prodotti/afinia-x350" },
+  };
+}
 
 const productJsonLd = {
   "@context": "https://schema.org",
@@ -161,7 +167,7 @@ export default async function () {
                 {locale === 'it' ? 'Stampante digitale roll-to-roll ad alta velocità con inchiostri pigmentati a base acqua. Fino a 45 m/min, 1600 dpi e ridondanza ugelli 2× per stampe perfette. Design compatto da circa 1 m² di ingombro.' : 'High-speed digital roll-to-roll printer with pigmented water-based inks. Up to 45 m/min, 1600 dpi and 2× nozzle redundancy for flawless prints. Compact design with approximately 1 m² footprint.'}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Afinia%20X350&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20Afinia%20X350.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">{locale === 'it' ? 'Richiedi Demo →' : 'Request Demo →'}</a>
+                <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20Afinia%20X350&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20Afinia%20X350.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">{locale === 'it' ? 'Richiedi una consulenza gratuita →' : 'Request a free consultation →'}</a>
               </div>
           </div>
         </div>
@@ -259,10 +265,10 @@ export default async function () {
         <div className="container-custom text-center">
           <h2 className="text-3xl font-bold text-dark-800 mb-6">{locale === 'it' ? 'Porta la Produzione al Livello Successivo' : 'Take Your Production to the Next Level'}</h2>
           <p className="text-gray-500 max-w-xl mx-auto mb-8">
-            {locale === 'it' ? 'Scopri come la X350 può rivoluzionare la tua produzione di etichette. Contattaci per una consulenza o prenota una demo.' : 'Discover how the X350 can revolutionise your label production. Contact us for a consultation or book a demo.'}
+            {locale === 'it' ? 'Scopri come la X350 può rivoluzionare la tua produzione di etichette. Contattaci per una consulenza gratuita.' : 'Discover how the X350 can revolutionise your label production. Contact us for a free consultation.'}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Afinia%20X350&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20Afinia%20X350.%0A%0AGrazie" className="btn-primary text-lg">{locale === 'it' ? 'Richiedi Demo →' : 'Request Demo →'}</a>
+            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20Afinia%20X350&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20Afinia%20X350.%0A%0AGrazie" className="btn-primary text-lg">{locale === 'it' ? 'Richiedi una consulenza gratuita →' : 'Request a free consultation →'}</a>
           </div>
         </div>
       </section>

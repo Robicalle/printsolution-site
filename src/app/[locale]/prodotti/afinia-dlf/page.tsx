@@ -3,11 +3,15 @@ import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 
-export const metadata: Metadata = {
-  title: "Afinia DLF-220L / DLF-350L — Fustellatori Digitali per Etichette",
-  description:
-    "Afinia DLF-220L e DLF-350L: fustellatori digitali plotter per etichette. Taglio a plotter di qualsiasi forma senza fustelle fisiche, laminazione in linea, rimozione sfrido e slitting.",
-  keywords: [
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getLocale();
+  const isIt = locale === 'it';
+  return {
+    title: isIt ? "Afinia DLF-220L / DLF-350L — Fustellatori Digitali per Etichette" : "Afinia DLF - Digital Plotter Die-Cutter",
+    description: isIt
+      ? "Afinia DLF: fustellatore digitale a plotter per etichette. Taglio da file, nessuna fustella fisica. Laminazione in linea. Print Solution"
+      : "Afinia DLF: digital plotter die-cutter for labels. Cut from file, no physical dies. Inline lamination. Print Solution",
+    keywords: [
     "Afinia DLF-220L",
     "Afinia DLF-350L",
     "fustellatore digitale etichette",
@@ -15,17 +19,19 @@ export const metadata: Metadata = {
     "finitura etichette digitale",
     "digital label finisher",
   ],
-  openGraph: {
-    title: "Afinia DLF-220L / DLF-350L — Fustellatori Digitali | Print Solution",
-    description:
-      "Fustellatori digitali plotter per etichette: taglio di qualsiasi forma senza fustelle fisiche, laminazione, slitting e riavvolgimento.",
-    images: ["/images/products/afinia-dlf-220l.png"],
-    type: "website",
-    locale: "it_IT",
-  },
-  twitter: { card: "summary_large_image" },
-  alternates: { canonical: "/prodotti/afinia-dlf" },
-};
+    openGraph: {
+      title: isIt ? "Afinia DLF-220L / DLF-350L — Fustellatori Digitali per Etichette | Print Solution" : "Afinia DLF - Digital Plotter Die-Cutter | Print Solution",
+      description: isIt
+        ? "Afinia DLF: fustellatore digitale a plotter per etichette. Taglio da file, nessuna fustella fisica. Laminazione in linea. Print Solution"
+        : "Afinia DLF: digital plotter die-cutter for labels. Cut from file, no physical dies. Inline lamination. Print Solution",
+      images: ["/images/products/afinia-dlf-220l.png"],
+      type: "website",
+      locale: isIt ? "it_IT" : "en_US",
+    },
+    twitter: { card: "summary_large_image" },
+    alternates: { canonical: "/prodotti/afinia-dlf" },
+  };
+}
 
 const productJsonLd = {
   "@context": "https://schema.org",
@@ -297,10 +303,10 @@ export default async function () {
                 {locale === 'it' ? 'Contattaci per una demo o per ricevere campioni di etichette fustellate con i tuoi file.' : 'Contact us for a demo or to receive sample labels die-cut with your own files.'}
               </p>
               <a
-                href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Afinia%20DLF&body=Buongiorno%2C%0A%0AVorrei%20prenotare%20una%20demo%20dei%20fustellatori%20digitali%20DLF.%0A%0AGrazie"
+                href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20Afinia%20DLF&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20dei%20fustellatori%20digitali%20DLF.%0A%0AGrazie"
                 className="inline-flex items-center justify-center px-8 py-4 bg-white text-cyan-600 font-bold rounded-full hover:bg-yellow-400 hover:text-dark-800 transition-all duration-300 shadow-lg text-lg"
               >
-                {locale === 'it' ? 'Prenota una Demo' : 'Book a Demo'}
+                {locale === 'it' ? 'Richiedi una consulenza gratuita' : 'Request a free consultation'}
               </a>
             </div>
           </div>

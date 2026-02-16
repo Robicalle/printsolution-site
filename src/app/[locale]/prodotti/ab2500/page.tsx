@@ -3,28 +3,34 @@ import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 
-export const metadata: Metadata = {
-  title: "Anypack AB2500 - Box Maker Automatico",
-  description:
-    "Anypack AB2500: box maker automatico per taglio, scanalatura, cordonatura e incollaggio. 500-600 scatole/ora, cambio formato in 10 secondi.",
-  keywords: [
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getLocale();
+  const isIt = locale === 'it';
+  return {
+    title: isIt ? "Anypack AB2500 - Box Maker Automatico" : "Anypack AB2500 - Automatic Box Maker",
+    description: isIt
+      ? "Anypack AB2500: box maker automatico per scatole in cartone ondulato. 500-600 pezzi/ora, cambio formato in 10 sec. Print Solution"
+      : "Anypack AB2500: automatic box maker for corrugated cardboard. 500-600 boxes/hour, format change in 10 sec. Print Solution",
+    keywords: [
     "box maker automatico",
     "macchina produzione scatole",
     "Anypack AB2500",
     "scatole cartone ondulato",
     "box maker on-demand",
   ],
-  openGraph: {
-    title: "Anypack AB2500 - Box Maker Automatico All-in-One | Print Solution",
-    description:
-      "Box maker automatico per taglio, scanalatura, cordonatura e incollaggio. 500-600 scatole/ora.",
-    images: ["/images/products/ab2500.png"],
-    type: "website",
-    locale: "it_IT",
-  },
-  twitter: { card: "summary_large_image" },
-  alternates: { canonical: "/prodotti/ab2500" },
-};
+    openGraph: {
+      title: isIt ? "Anypack AB2500 - Box Maker Automatico | Print Solution" : "Anypack AB2500 - Automatic Box Maker | Print Solution",
+      description: isIt
+        ? "Anypack AB2500: box maker automatico per scatole in cartone ondulato. 500-600 pezzi/ora, cambio formato in 10 sec. Print Solution"
+        : "Anypack AB2500: automatic box maker for corrugated cardboard. 500-600 boxes/hour, format change in 10 sec. Print Solution",
+      images: ["/images/products/ab2500.png"],
+      type: "website",
+      locale: isIt ? "it_IT" : "en_US",
+    },
+    twitter: { card: "summary_large_image" },
+    alternates: { canonical: "/prodotti/ab2500" },
+  };
+}
 
 const ab2500JsonLd = {
   "@context": "https://schema.org",
@@ -149,7 +155,7 @@ export default async function () {
               {locale === 'it' ? "Box maker automatico all-in-one. Taglio, scanalatura, cordonatura e incollaggio in un'unica macchina. 500-600 scatole/ora con cambio formato in 10 secondi." : "All-in-one automatic box maker. Cutting, creasing, scoring and gluing in a single machine. 500–600 boxes/hour with format change in 10 seconds."}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Anypack%20AB2500&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20Anypack%20AB2500.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">{locale === 'it' ? 'Richiedi Demo →' : 'Request Demo →'}</a>
+              <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20Anypack%20AB2500&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20Anypack%20AB2500.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">{locale === 'it' ? 'Richiedi una consulenza gratuita →' : 'Request a free consultation →'}</a>
             </div>
           </div>
         </div>
@@ -257,7 +263,7 @@ export default async function () {
             {locale === 'it' ? "Scopri come l'AB2500 può rivoluzionare la tua linea di produzione. Vieni a vederla nella nostra sala demo." : "Discover how the AB2500 can revolutionise your production line. Come see it in our demo room."}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Anypack%20AB2500&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20Anypack%20AB2500.%0A%0AGrazie" className="btn-primary text-lg">{locale === 'it' ? 'Richiedi Demo →' : 'Request Demo →'}</a>
+            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20Anypack%20AB2500&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20Anypack%20AB2500.%0A%0AGrazie" className="btn-primary text-lg">{locale === 'it' ? 'Richiedi una consulenza gratuita →' : 'Request a free consultation →'}</a>
           </div>
         </div>
       </section>

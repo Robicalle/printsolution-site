@@ -19,7 +19,7 @@
     "blog": "Blog",
     "contacts": "Contatti",
     "eShop": "E-Shop",
-    "requestDemo": "Richiedi Demo",
+    "requestDemo": "Richiedi una consulenza gratuita",
     "eShopConsumables": "E-Shop Consumabili",
     "callUs": "Chiamaci Ora",
     "skipToContent": "Salta al contenuto",
@@ -43,7 +43,7 @@
     "shopperLuxury": "Shopper & Packaging di Lusso",
     "shopperLuxuryDesc": "Stampa hot foil e digitale per shopper e packaging premium con finiture metalliche.",
     "bookEdging": "Labbratura Libri",
-    "bookEdgingDesc": "Stampa digitale sui bordi di libri, quaderni e block notes per personalizzazioni uniche e di alta qualitÃ .",
+    "bookEdgingDesc": "Stampa digitale sui bordi di libri, quaderni e block notes per personalizzazioni uniche e di alta qualitÃ .",
     "consumables": "Consumabili",
     "consumablesDesc": "Inchiostri, testine di stampa, nastri e materiali di consumo originali per tutte le stampanti distribuite.",
     "learnMore": "Scopri di piÃ¹"
@@ -66,10 +66,10 @@
     "label": "Testimonianza"
   },
   "cta": {
-    "title1": "Prenota una Visita",
-    "title2": "in Sala Demo",
+    "title1": "Richiedi",
+    "title2": "una Consulenza Gratuita",
     "subtitle": "Vieni a toccare con mano le nostre soluzioni. La nostra sala demo a Sesto San Giovanni Ã¨ attrezzata con tutti i prodotti in funzione.",
-    "requestDemo": "Richiedi Demo â†’",
+    "requestDemo": "Richiedi una consulenza gratuita â†'",
     "callNow": "Chiamaci Ora"
   },
   "footer": {
@@ -86,7 +86,7 @@
     "contacts": "Contatti",
     "headquarterDemo": "Sede & Sala Demo",
     "hours": "Orari",
-    "hoursValue": "Lun â€” Ven: 9:00 â€” 18:00",
+    "hoursValue": "Lun \u2013 Ven: 9:00 \u2013 18:00",
     "companyData": "Dati Aziendali",
     "allRightsReserved": "Tutti i diritti riservati.",
     "privacyPolicy": "Privacy Policy",
@@ -116,7 +116,7 @@
     "checkout": "Procedi al Checkout",
     "emptyCart": "Il carrello Ã¨ vuoto",
     "total": "Totale",
-    "quantity": "QuantitÃ ",
+    "quantity": "QuantitÃ ",
     "remove": "Rimuovi",
     "filters": "Filtri",
     "allCategories": "Tutte le Categorie",

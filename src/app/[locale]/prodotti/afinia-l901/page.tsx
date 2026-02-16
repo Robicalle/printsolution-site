@@ -3,28 +3,34 @@ import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 
-export const metadata: Metadata = {
-  title: "Afinia L901 - Stampante Etichette Memjet",
-  description:
-    "Afinia L901: stampante etichette a colori professionale con tecnologia Memjet Waterfall. Doppio nero, testina sostituibile, usabile in linea con DLP-2200.",
-  keywords: [
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getLocale();
+  const isIt = locale === 'it';
+  return {
+    title: isIt ? "Afinia L901 - Stampante Etichette Memjet" : "Afinia L901 - Professional Colour Label Printer",
+    description: isIt
+      ? "Afinia L901: stampante etichette a colori professionale Memjet. 1600 dpi, CMYKK, testina sostituibile dall\'utente. Print Solution"
+      : "Afinia L901: professional colour label printer with Memjet technology. 1600 dpi, CMYKK, user-replaceable printhead. Print Solution",
+    keywords: [
     "Afinia L901",
     "stampante etichette professionale",
     "Memjet Waterfall",
     "etichette colori",
     "stampa etichette industriale",
   ],
-  openGraph: {
-    title: "Afinia L901 - Stampante Etichette Professionale | Print Solution",
-    description:
-      "Stampante etichette professionale Memjet con doppio nero e testina sostituibile dall'utente.",
-    images: ["/images/products/afinia-l901.png"],
-    type: "website",
-    locale: "it_IT",
-  },
-  twitter: { card: "summary_large_image" },
-  alternates: { canonical: "/prodotti/afinia-l901" },
-};
+    openGraph: {
+      title: isIt ? "Afinia L901 - Stampante Etichette Memjet | Print Solution" : "Afinia L901 - Professional Colour Label Printer | Print Solution",
+      description: isIt
+        ? "Afinia L901: stampante etichette a colori professionale Memjet. 1600 dpi, CMYKK, testina sostituibile dall\'utente. Print Solution"
+        : "Afinia L901: professional colour label printer with Memjet technology. 1600 dpi, CMYKK, user-replaceable printhead. Print Solution",
+      images: ["/images/products/afinia-l901.png"],
+      type: "website",
+      locale: isIt ? "it_IT" : "en_US",
+    },
+    twitter: { card: "summary_large_image" },
+    alternates: { canonical: "/prodotti/afinia-l901" },
+  };
+}
 
 const productJsonLd = {
   "@context": "https://schema.org",
@@ -155,7 +161,7 @@ export default async function () {
                 {locale === 'it' ? "Stampante etichette a colori professionale con tecnologia Memjet Waterfall. Doppio nero per neri più profondi, testina sostituibile dall'utente e possibilità di integrazione in linea con la DLP-2200." : "Professional color label printer with Memjet Waterfall technology. Dual black for deeper blacks, user-replaceable printhead and optional inline integration with the DLP-2200."}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Afinia%20L901&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20Afinia%20L901.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">{locale === 'it' ? 'Richiedi Demo →' : 'Request Demo →'}</a>
+                <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20Afinia%20L901&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20Afinia%20L901.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">{locale === 'it' ? 'Richiedi una consulenza gratuita →' : 'Request a free consultation →'}</a>
               </div>
           </div>
         </div>
@@ -251,7 +257,7 @@ export default async function () {
             {locale === 'it' ? 'Scopri come la L901 può trasformare la tua produzione di etichette. Contattaci per una consulenza o vieni a provarla.' : 'Discover how the L901 can transform your label production. Contact us for a consultation or come try it out.'}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Afinia%20L901&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20Afinia%20L901.%0A%0AGrazie" className="btn-primary text-lg">{locale === 'it' ? 'Richiedi Demo →' : 'Request Demo →'}</a>
+            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20Afinia%20L901&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20Afinia%20L901.%0A%0AGrazie" className="btn-primary text-lg">{locale === 'it' ? 'Richiedi una consulenza gratuita →' : 'Request a free consultation →'}</a>
           </div>
         </div>
       </section>

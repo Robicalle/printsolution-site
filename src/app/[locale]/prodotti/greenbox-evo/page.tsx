@@ -3,28 +3,34 @@ import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 
-export const metadata: Metadata = {
-  title: "GreenBox EVO - Stampante Single-Pass",
-  description:
-    "GreenBox EVO: stampante etichette colori e packaging single-pass CMYK. Testina HP Pagewide, 30m/min, 1200x1200 dpi. Stampa etichette in bobina e packaging.",
-  keywords: [
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getLocale();
+  const isIt = locale === 'it';
+  return {
+    title: isIt ? "GreenBox EVO - Stampante Single-Pass" : "GreenBox EVO - Single-Pass Packaging Printer",
+    description: isIt
+      ? "GreenBox EVO: stampante single-pass per packaging. Stampa CMYK diretta su cartone e carta, 30 m/min, inchiostri eco. Print Solution"
+      : "GreenBox EVO: single-pass packaging printer. Direct CMYK on cardboard and paper, 30 m/min, eco-friendly inks. Print Solution",
+    keywords: [
     "stampante etichette colori",
     "stampa etichette bobina",
     "stampante etichette industriale",
     "GreenBox EVO",
     "stampante single-pass packaging",
   ],
-  openGraph: {
-    title: "GreenBox EVO - Stampante Single-Pass per Packaging | Print Solution",
-    description:
-      "Stampante inkjet CMYK single-pass per cartone, carta e juta. 30m/min, 1200x1200 dpi.",
-    images: ["/images/products/greenbox-evo-site-nobg.png"],
-    type: "website",
-    locale: "it_IT",
-  },
-  twitter: { card: "summary_large_image" },
-  alternates: { canonical: "/prodotti/greenbox-evo" },
-};
+    openGraph: {
+      title: isIt ? "GreenBox EVO - Stampante Single-Pass | Print Solution" : "GreenBox EVO - Single-Pass Packaging Printer | Print Solution",
+      description: isIt
+        ? "GreenBox EVO: stampante single-pass per packaging. Stampa CMYK diretta su cartone e carta, 30 m/min, inchiostri eco. Print Solution"
+        : "GreenBox EVO: single-pass packaging printer. Direct CMYK on cardboard and paper, 30 m/min, eco-friendly inks. Print Solution",
+      images: ["/images/products/greenbox-evo-site-nobg.png"],
+      type: "website",
+      locale: isIt ? "it_IT" : "en_US",
+    },
+    twitter: { card: "summary_large_image" },
+    alternates: { canonical: "/prodotti/greenbox-evo" },
+  };
+}
 
 const greenboxJsonLd = {
   "@context": "https://schema.org",
@@ -173,7 +179,7 @@ export default async function () {
                   : 'CMYK single-pass inkjet digital printer for cardboard, paper and jute. The ideal entry point into the world of digital packaging printing.'}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20GreenBox%20EVO&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20GreenBox%20EVO.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">{it ? 'Richiedi Demo →' : 'Request Demo →'}</a>
+                <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20GreenBox%20EVO&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20GreenBox%20EVO.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">{it ? 'Richiedi una consulenza gratuita →' : 'Request a free consultation →'}</a>
               </div>
           </div>
         </div>
@@ -274,7 +280,7 @@ export default async function () {
               : 'Bring your materials and test the GreenBox EVO in our demo room in Sesto San Giovanni.'}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20GreenBox%20EVO&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20GreenBox%20EVO.%0A%0AGrazie" className="btn-primary text-lg">{it ? 'Richiedi Demo →' : 'Request Demo →'}</a>
+            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20GreenBox%20EVO&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20GreenBox%20EVO.%0A%0AGrazie" className="btn-primary text-lg">{it ? 'Richiedi una consulenza gratuita →' : 'Request a free consultation →'}</a>
           </div>
         </div>
       </section>

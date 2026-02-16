@@ -3,28 +3,34 @@ import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import { getLocale } from "next-intl/server";
 
-export const metadata: Metadata = {
-  title: "Anytron ANY-002 – {locale === 'it' ? 'Stampa + Fustella Etichette' : 'Print + Die-Cut Labels'}",
-  description:
-    "Anytron ANY-002: stampa laser + fustellatura etichette on-demand. Toner resistente, 1200 dpi, 9 m/min, fino a 5.000 etichette in 2 ore.",
-  keywords: [
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getLocale();
+  const isIt = locale === 'it';
+  return {
+    title: isIt ? "Anytron ANY-002 – {locale === 'it' ? 'Stampa + Fustella Etichette' : 'Print + Die-Cut Labels'}" : "Anytron ANY-002 - Label Printer with Integrated Die-Cutter",
+    description: isIt
+      ? "Anytron ANY-002: sistema stampa laser + fustellatura per etichette on-demand. 5.000 etichette in 2 ore, 1200 dpi. Print Solution"
+      : "Anytron ANY-002: laser print + die-cut system for on-demand labels. 5,000 labels in 2 hours, 1200 dpi. Print Solution",
+    keywords: [
     "Anytron ANY-002",
     "stampante etichette laser",
     "fustellatrice etichette",
     "stampa etichette on-demand",
     "stampante toner etichette",
   ],
-  openGraph: {
-    title: "Anytron ANY-002 – Stampa + Fustella Etichette | Print Solution",
-    description:
-      "Sistema completo stampa laser + fustellatura per etichette on-demand. Fino a 5.000 etichette in 2 ore.",
-    images: ["/images/products/any-002.avif"],
-    type: "website",
-    locale: "it_IT",
-  },
-  twitter: { card: "summary_large_image" },
-  alternates: { canonical: "/prodotti/any-002" },
-};
+    openGraph: {
+      title: isIt ? "Anytron ANY-002 – {locale === 'it' ? 'Stampa + Fustella Etichette' : 'Print + Die-Cut Labels'} | Print Solution" : "Anytron ANY-002 - Label Printer with Integrated Die-Cutter | Print Solution",
+      description: isIt
+        ? "Anytron ANY-002: sistema stampa laser + fustellatura per etichette on-demand. 5.000 etichette in 2 ore, 1200 dpi. Print Solution"
+        : "Anytron ANY-002: laser print + die-cut system for on-demand labels. 5,000 labels in 2 hours, 1200 dpi. Print Solution",
+      images: ["/images/products/any-002.avif"],
+      type: "website",
+      locale: isIt ? "it_IT" : "en_US",
+    },
+    twitter: { card: "summary_large_image" },
+    alternates: { canonical: "/prodotti/any-002" },
+  };
+}
 
 const productJsonLd = {
   "@context": "https://schema.org",
@@ -304,10 +310,10 @@ export default async function Any002Page() {
                 {locale === 'it' ? 'Contattaci per una demo dal vivo o per ricevere campioni stampati con i tuoi file.' : 'Contact us for a live demo or to receive samples printed with your own files.'}
               </p>
               <a
-                href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Anytron%20ANY-002&body=Buongiorno%2C%0A%0AVorrei%20prenotare%20una%20demo%20della%20Anytron%20ANY-002.%0A%0AGrazie"
+                href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20Anytron%20ANY-002&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20della%20Anytron%20ANY-002.%0A%0AGrazie"
                 className="inline-flex items-center justify-center px-8 py-4 bg-white text-cyan-600 font-bold rounded-full hover:bg-yellow-400 hover:text-dark-800 transition-all duration-300 shadow-lg text-lg"
               >
-                {locale === 'it' ? 'Prenota una Demo' : 'Book a Demo'}
+                {locale === 'it' ? 'Richiedi una consulenza gratuita' : 'Request a free consultation'}
               </a>
             </div>
           </div>

@@ -441,7 +441,7 @@ function DemoCTA({ locale }: { locale: string }) {
 
           <div className="relative">
             <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold mb-6 tracking-tight">
-              {locale === 'it' ? 'Prenota una Visita' : 'Book a Visit'}
+              {locale === 'it' ? 'Richiedi una consulenza gratuita' : 'Request a free consultation'}
               <br />
               {locale === 'it' ? 'in Sala Demo' : 'to Our Demo Room'}
             </h2>
@@ -449,8 +449,8 @@ function DemoCTA({ locale }: { locale: string }) {
               {locale === 'it' ? 'Vieni a toccare con mano le nostre soluzioni. La nostra sala demo a Sesto San Giovanni è attrezzata con tutti i prodotti in funzione.' : 'Come and experience our solutions first-hand. Our demo room in Sesto San Giovanni is equipped with all products up and running.'}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Print%20Solution&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo.%0A%0AGrazie" className="inline-flex items-center justify-center px-8 py-4 bg-white text-cyan-600 font-bold rounded-full hover:bg-yellow-400 hover:text-dark-800 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 text-lg">
-                {locale === 'it' ? 'Richiedi Demo →' : 'Request a Demo →'}
+              <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20Print%20Solution&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita.%0A%0AGrazie" className="inline-flex items-center justify-center px-8 py-4 bg-white text-cyan-600 font-bold rounded-full hover:bg-yellow-400 hover:text-dark-800 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 text-lg">
+                {locale === 'it' ? 'Richiedi una consulenza gratuita →' : 'Request a free consultation →'}
               </a>
               <a href="tel:+390249439417" className="inline-flex items-center justify-center px-8 py-4 border-2 border-white/30 text-white font-semibold rounded-full hover:bg-white/10 transition-all duration-300 text-lg">
                 <svg className="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" /></svg>

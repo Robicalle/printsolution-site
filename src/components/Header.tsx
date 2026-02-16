@@ -184,7 +184,7 @@ export default function Header() {
 
       {/* Mobile menu */}
       <div
-        className={`lg:hidden fixed inset-0 top-[80px] z-[9998] bg-white transition-all duration-300 overflow-y-auto ${
+        className={`lg:hidden fixed inset-0 top-[80px] z-[9998] bg-white transition-all duration-300 overflow-y-auto max-h-[calc(100vh-80px)] ${
           mobileOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
       >

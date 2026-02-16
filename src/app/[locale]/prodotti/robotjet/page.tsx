@@ -3,28 +3,34 @@ import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 
-export const metadata: Metadata = {
-  title: "Robotjet Book Edge Printer � Stampante per Labbratura Libri",
-  description:
-    "Robotjet Book Edge Printer: stampante digitale per labbratura libri, quaderni e agende. 400 pezzi/ora, CMYK single-pass, risoluzione 1200 dpi. Teste HP A3.",
-  keywords: [
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getLocale();
+  const isIt = locale === 'it';
+  return {
+    title: isIt ? "Robotjet Book Edge Printer � Stampante per Labbratura Libri" : "Robotjet - Book Edge Printer",
+    description: isIt
+      ? "Robotjet: stampante per labbratura libri, quaderni e agende. 400 pezzi/ora, CMYK inkjet 1200 dpi. Print Solution"
+      : "Robotjet: book edge printer for books, notebooks and diaries. 400 pieces/hour, CMYK inkjet 1200 dpi. Print Solution",
+    keywords: [
     "labbratura libri",
     "stampante labbratura",
     "book edge printer",
     "Robotjet",
     "stampa bordo libri",
   ],
-  openGraph: {
-    title: "Robotjet Book Edge Printer � Stampante per Labbratura Libri | Print Solution",
-    description:
-      "Stampante digitale per labbratura libri. 400 pezzi/ora, CMYK single-pass, 1200 dpi.",
-    images: ["/images/products/book-edge-printer.png"],
-    type: "website",
-    locale: "it_IT",
-  },
-  twitter: { card: "summary_large_image" },
-  alternates: { canonical: "/prodotti/robotjet" },
-};
+    openGraph: {
+      title: isIt ? "Robotjet Book Edge Printer � Stampante per Labbratura Libri | Print Solution" : "Robotjet - Book Edge Printer | Print Solution",
+      description: isIt
+        ? "Robotjet: stampante per labbratura libri, quaderni e agende. 400 pezzi/ora, CMYK inkjet 1200 dpi. Print Solution"
+        : "Robotjet: book edge printer for books, notebooks and diaries. 400 pieces/hour, CMYK inkjet 1200 dpi. Print Solution",
+      images: ["/images/products/book-edge-printer.png"],
+      type: "website",
+      locale: isIt ? "it_IT" : "en_US",
+    },
+    twitter: { card: "summary_large_image" },
+    alternates: { canonical: "/prodotti/robotjet" },
+  };
+}
 
 const productJsonLd = {
   "@context": "https://schema.org",
@@ -163,7 +169,7 @@ export default async function () {
                 {locale === 'it' ? 'Stampante digitale rivoluzionaria per la labbratura di libri, quaderni, agende e block notes. 400 pezzi/ora, CMYK single-pass con teste HP A3, risoluzione fino a 1200 dpi.' : 'Revolutionary digital printer for book edge printing on books, notebooks, planners and notepads. 400 pcs/hour, CMYK single-pass with HP A3 printheads, up to 1200 dpi resolution.'}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Robotjet&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20Robotjet.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">{locale === 'it' ? 'Richiedi Demo →' : 'Request Demo →'}</a>
+                <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20Robotjet&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20Robotjet.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">{locale === 'it' ? 'Richiedi una consulenza gratuita →' : 'Request a free consultation →'}</a>
               </div>
           </div>
         </div>

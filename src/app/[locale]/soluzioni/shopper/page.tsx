@@ -44,6 +44,16 @@ const products = [
       "Supporti: carta, cartone, pelle, legno",
       "Software proprietario incluso",
     ],
+    specsEn: [
+      "Gold, silver, colour, holographic foils",
+      "Resolution 300 × 300 dpi",
+      "Print area 320 × 470 mm",
+      "No dies or clichés required",
+      "Print from 1 piece (on-demand)",
+      "Variable data: names, logos, QR codes",
+      "Substrates: paper, cardboard, leather, wood",
+      "Proprietary software included",
+    ],
     gradient: "from-amber-500 to-amber-600",
     icon: "✨",
     image: "/images/products/aurumpress-nobg.png",
@@ -64,6 +74,16 @@ const products = [
       "Spessore fino a 15 cm",
       "Stampa su kraft, juta, carta, cartone",
       "Alimentatore automatico opzionale",
+    ],
+    specsEn: [
+      "Up to 30 m/min",
+      "Resolution 1200 × 1200 dpi",
+      "CMYK – water-based inks",
+      "Print width up to 30 cm",
+      "Media up to 70 cm",
+      "Thickness up to 15 cm",
+      "Print on kraft, jute, paper, cardboard",
+      "Optional automatic feeder",
     ],
     gradient: "from-green-500 to-green-600",
     icon: "🛍️",
@@ -128,7 +148,7 @@ export default async function ShopperPage() {
                     <p className="text-gray-500 leading-relaxed mb-6">{locale === 'it' ? p.desc : ((p as any).descEn || p.desc)}</p>
 
                     <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
-                      {p.specs.map((spec) => (
+                      {(locale === 'it' ? p.specs : ((p as any).specsEn || p.specs)).map((spec: string) => (
                         <li key={spec} className="flex items-start text-sm text-gray-600">
                           <svg className="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />

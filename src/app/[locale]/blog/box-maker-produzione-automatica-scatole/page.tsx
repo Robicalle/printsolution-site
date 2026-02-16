@@ -58,8 +58,8 @@ export default async function ArticleBoxMaker() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <PageHero
-        title="Box Maker: Cos'è e Come Funziona"
-        subtitle="Guida completa alla produzione automatica di scatole in cartone ondulato"
+        title={locale === 'it' ? "Box Maker: Cos'è e Come Funziona" : "Box Maker: What It Is and How It Works"}
+        subtitle={locale === 'it' ? "Guida completa alla produzione automatica di scatole in cartone ondulato" : "Complete guide to automatic corrugated cardboard box production"}
         breadcrumb="Blog"
       />
 
@@ -72,67 +72,73 @@ export default async function ArticleBoxMaker() {
           </div>
 
           <div className="prose prose-lg max-w-none text-gray-600 leading-relaxed">
-            <h2 className="text-2xl font-bold text-dark-800 mt-10 mb-4">Cos&apos;è un Box Maker?</h2>
+            <h2 className="text-2xl font-bold text-dark-800 mt-10 mb-4">{locale === 'it' ? "Cos'è un Box Maker?" : 'What Is a Box Maker?'}</h2>
             <p>
-              Un <strong>box maker</strong> è una macchina automatica progettata per creare scatole in cartone ondulato 
-              partendo da fogli piani. In un&apos;unica operazione esegue taglio, scanalatura, cordonatura, rifilatura, 
-              fustellatura e, opzionalmente, incollaggio e stampa.
+              {locale === 'it' ? (
+                <>Un <strong>box maker</strong> è una macchina automatica progettata per creare scatole in cartone ondulato partendo da fogli piani. In un&apos;unica operazione esegue taglio, scanalatura, cordonatura, rifilatura, fustellatura e, opzionalmente, incollaggio e stampa.</>
+              ) : (
+                <>A <strong>box maker</strong> is an automatic machine designed to create corrugated cardboard boxes from flat sheets. In a single operation it performs cutting, slotting, creasing, trimming, die-cutting and, optionally, gluing and printing.</>
+              )}
             </p>
             <p>
-              A differenza dei sistemi tradizionali che richiedono fustelle fisiche e lunghi tempi di setup, un box maker 
-              moderno come l&apos;<strong>Anypack AB2500</strong> cambia formato in soli 10 secondi, memorizza fino a 20.000 
-              formati e produce 500–600 pezzi all&apos;ora con un solo operatore.
+              {locale === 'it' ? (
+                <>A differenza dei sistemi tradizionali che richiedono fustelle fisiche e lunghi tempi di setup, un box maker moderno come l&apos;<strong>Anypack AB2500</strong> cambia formato in soli 10 secondi, memorizza fino a 20.000 formati e produce 500–600 pezzi all&apos;ora con un solo operatore.</>
+              ) : (
+                <>Unlike traditional systems that require physical dies and long setup times, a modern box maker like the <strong>Anypack AB2500</strong> changes format in just 10 seconds, stores up to 20,000 formats and produces 500–600 pieces per hour with a single operator.</>
+              )}
             </p>
 
-            <h2 className="text-2xl font-bold text-dark-800 mt-10 mb-4">Come Funziona il Processo</h2>
-            <p>Il flusso di lavoro di un box maker automatico è sorprendentemente semplice:</p>
+            <h2 className="text-2xl font-bold text-dark-800 mt-10 mb-4">{locale === 'it' ? 'Come Funziona il Processo' : 'How the Process Works'}</h2>
+            <p>{locale === 'it' ? 'Il flusso di lavoro di un box maker automatico è sorprendentemente semplice:' : 'The workflow of an automatic box maker is surprisingly simple:'}</p>
             <ol className="list-decimal pl-6 space-y-2">
-              <li><strong>Accensione</strong> — la macchina esegue la ricerca automatica dello zero</li>
-              <li><strong>Input ordine</strong> — tramite touchscreen 15,6&quot; o scansione barcode</li>
-              <li><strong>Selezione tipo scatola</strong> — oltre 100 modelli Fefco precaricati</li>
-              <li><strong>Posizionamento cartone</strong> — alimentatore automatico con aspirazione a vuoto</li>
-              <li><strong>Produzione</strong> — taglio, scanalatura, cordonatura e fustellatura automatici</li>
-              <li><strong>Output</strong> — scatola pronta, opzionalmente incollata</li>
+              <li><strong>{locale === 'it' ? 'Accensione' : 'Power on'}</strong> — {locale === 'it' ? 'la macchina esegue la ricerca automatica dello zero' : 'the machine performs automatic zero-point calibration'}</li>
+              <li><strong>{locale === 'it' ? 'Input ordine' : 'Order input'}</strong> — {locale === 'it' ? 'tramite touchscreen 15,6" o scansione barcode' : 'via 15.6" touchscreen or barcode scanning'}</li>
+              <li><strong>{locale === 'it' ? 'Selezione tipo scatola' : 'Box type selection'}</strong> — {locale === 'it' ? 'oltre 100 modelli Fefco precaricati' : 'over 100 preloaded Fefco templates'}</li>
+              <li><strong>{locale === 'it' ? 'Posizionamento cartone' : 'Cardboard positioning'}</strong> — {locale === 'it' ? 'alimentatore automatico con aspirazione a vuoto' : 'automatic feeder with vacuum suction'}</li>
+              <li><strong>{locale === 'it' ? 'Produzione' : 'Production'}</strong> — {locale === 'it' ? 'taglio, scanalatura, cordonatura e fustellatura automatici' : 'automatic cutting, slotting, creasing and die-cutting'}</li>
+              <li><strong>Output</strong> — {locale === 'it' ? 'scatola pronta, opzionalmente incollata' : 'finished box, optionally glued'}</li>
             </ol>
 
-            <h2 className="text-2xl font-bold text-dark-800 mt-10 mb-4">Vantaggi rispetto ai Metodi Tradizionali</h2>
-            <p>I vantaggi di un box maker automatico rispetto alla produzione tradizionale con fustelle sono enormi:</p>
+            <h2 className="text-2xl font-bold text-dark-800 mt-10 mb-4">{locale === 'it' ? 'Vantaggi rispetto ai Metodi Tradizionali' : 'Advantages Over Traditional Methods'}</h2>
+            <p>{locale === 'it' ? 'I vantaggi di un box maker automatico rispetto alla produzione tradizionale con fustelle sono enormi:' : 'The advantages of an automatic box maker over traditional die-based production are enormous:'}</p>
             <ul className="list-disc pl-6 space-y-2">
-              <li><strong>Zero fustelle fisiche</strong> — il cambio formato è digitale, in 10 secondi</li>
-              <li><strong>Produzione on-demand</strong> — si producono solo le scatole necessarie, eliminando lo stock</li>
-              <li><strong>Un solo operatore</strong> — riduzione drastica dei costi di manodopera</li>
-              <li><strong>Versatilità totale</strong> — da scatole piccole a imballaggi per mobili</li>
-              <li><strong>Sostenibilità</strong> — il cartone ondulato è riciclabile all&apos;83%</li>
+              <li><strong>{locale === 'it' ? 'Zero fustelle fisiche' : 'Zero physical dies'}</strong> — {locale === 'it' ? 'il cambio formato è digitale, in 10 secondi' : 'format changeover is digital, in 10 seconds'}</li>
+              <li><strong>{locale === 'it' ? 'Produzione on-demand' : 'On-demand production'}</strong> — {locale === 'it' ? 'si producono solo le scatole necessarie, eliminando lo stock' : 'only the boxes needed are produced, eliminating inventory'}</li>
+              <li><strong>{locale === 'it' ? 'Un solo operatore' : 'Single operator'}</strong> — {locale === 'it' ? 'riduzione drastica dei costi di manodopera' : 'drastic reduction in labour costs'}</li>
+              <li><strong>{locale === 'it' ? 'Versatilità totale' : 'Total versatility'}</strong> — {locale === 'it' ? 'da scatole piccole a imballaggi per mobili' : 'from small boxes to furniture packaging'}</li>
+              <li><strong>{locale === 'it' ? 'Sostenibilità' : 'Sustainability'}</strong> — {locale === 'it' ? "il cartone ondulato è riciclabile all'83%" : 'corrugated cardboard is 83% recyclable'}</li>
             </ul>
 
-            <h2 className="text-2xl font-bold text-dark-800 mt-10 mb-4">Per Chi è Pensato</h2>
+            <h2 className="text-2xl font-bold text-dark-800 mt-10 mb-4">{locale === 'it' ? 'Per Chi è Pensato' : 'Who Is It For'}</h2>
             <p>
-              Il box maker è la soluzione ideale per <strong>scatolifici, aziende e-commerce, produttori di packaging, 
-              settore mobili e arredamento</strong>, e chiunque abbia bisogno di scatole personalizzate in piccoli lotti 
-              e varietà multiple.
+              {locale === 'it' ? (
+                <>Il box maker è la soluzione ideale per <strong>scatolifici, aziende e-commerce, produttori di packaging, settore mobili e arredamento</strong>, e chiunque abbia bisogno di scatole personalizzate in piccoli lotti e varietà multiple.</>
+              ) : (
+                <>The box maker is the ideal solution for <strong>box manufacturers, e-commerce companies, packaging producers, furniture and furnishing companies</strong>, and anyone who needs custom boxes in small batches with multiple variants.</>
+              )}
             </p>
             <p>
-              Con l&apos;e-commerce in crescita esponenziale, la domanda di packaging personalizzato &quot;su misura&quot; è sempre 
-              più forte. Un box maker come l&apos;AB2500 permette di creare la scatola della giusta dimensione per ogni 
-              prodotto, riducendo materiale di riempimento, costi di spedizione e danni durante il trasporto.
+              {locale === 'it' ? (
+                <>Con l&apos;e-commerce in crescita esponenziale, la domanda di packaging personalizzato &quot;su misura&quot; è sempre più forte. Un box maker come l&apos;AB2500 permette di creare la scatola della giusta dimensione per ogni prodotto, riducendo materiale di riempimento, costi di spedizione e danni durante il trasporto.</>
+              ) : (
+                <>With e-commerce growing exponentially, the demand for custom-fit packaging is ever stronger. A box maker like the AB2500 allows you to create the right-sized box for every product, reducing filler material, shipping costs and transit damage.</>
+              )}
             </p>
 
-            <h2 className="text-2xl font-bold text-dark-800 mt-10 mb-4">Specifiche Tecniche dell&apos;Anypack AB2500</h2>
-            <p>L&apos;Anypack AB2500, distribuito in Italia da Print Solution, è il modello best seller della gamma:</p>
+            <h2 className="text-2xl font-bold text-dark-800 mt-10 mb-4">{locale === 'it' ? "Specifiche Tecniche dell'Anypack AB2500" : 'Anypack AB2500 Technical Specifications'}</h2>
+            <p>{locale === 'it' ? "L'Anypack AB2500, distribuito in Italia da Print Solution, è il modello best seller della gamma:" : 'The Anypack AB2500, distributed in Italy by Print Solution, is the best-selling model in the range:'}</p>
             <ul className="list-disc pl-6 space-y-2">
-              <li>Foglio massimo: 2500 mm di larghezza</li>
-              <li>Spessore cartone: 1,5 – 10 mm (singola o doppia onda)</li>
-              <li>Produttività: 500–600 pezzi/ora</li>
-              <li>Componenti premium: PLC Keyence, servomotori Panasonic, lame SKD11</li>
-              <li>Software: touchscreen 15,6&quot;, 100+ stili Fefco, multilingua</li>
-              <li>Opzioni: incollatrice a caldo/freddo, integrazione WMS, stampa digitale</li>
+              <li>{locale === 'it' ? 'Foglio massimo: 2500 mm di larghezza' : 'Maximum sheet: 2500 mm width'}</li>
+              <li>{locale === 'it' ? 'Spessore cartone: 1,5 – 10 mm (singola o doppia onda)' : 'Cardboard thickness: 1.5 – 10 mm (single or double wall)'}</li>
+              <li>{locale === 'it' ? 'Produttività: 500–600 pezzi/ora' : 'Output: 500–600 pieces/hour'}</li>
+              <li>{locale === 'it' ? 'Componenti premium: PLC Keyence, servomotori Panasonic, lame SKD11' : 'Premium components: Keyence PLC, Panasonic servo motors, SKD11 blades'}</li>
+              <li>{locale === 'it' ? 'Software: touchscreen 15,6", 100+ stili Fefco, multilingua' : 'Software: 15.6" touchscreen, 100+ Fefco styles, multilingual'}</li>
+              <li>{locale === 'it' ? 'Opzioni: incollatrice a caldo/freddo, integrazione WMS, stampa digitale' : 'Options: hot/cold gluer, WMS integration, digital printing'}</li>
             </ul>
 
-            <h2 className="text-2xl font-bold text-dark-800 mt-10 mb-4">Conclusione</h2>
+            <h2 className="text-2xl font-bold text-dark-800 mt-10 mb-4">{locale === 'it' ? 'Conclusione' : 'Conclusion'}</h2>
             <p>
-              Il box maker automatico rappresenta una rivoluzione per il settore packaging. Elimina fustelle, stock 
-              e sprechi, permettendo la produzione on-demand di scatole personalizzate con un solo operatore. 
-              Se lavori nel packaging o nell&apos;e-commerce, è la tecnologia che può trasformare il tuo business.
+              {locale === 'it' ? "Il box maker automatico rappresenta una rivoluzione per il settore packaging. Elimina fustelle, stock e sprechi, permettendo la produzione on-demand di scatole personalizzate con un solo operatore. Se lavori nel packaging o nell'e-commerce, è la tecnologia che può trasformare il tuo business." : 'The automatic box maker represents a revolution for the packaging industry. It eliminates dies, inventory and waste, enabling on-demand production of custom boxes with a single operator. If you work in packaging or e-commerce, it is the technology that can transform your business.'}
             </p>
           </div>
 

@@ -61,7 +61,8 @@ function getSpecs(l: string) { return l === 'it' ? [
   ["Display", "Touchscreen integrato"],
   ["Cartucce", "Alta capacità"],
   ["Modalità", "Standalone o in linea con DLP-2200"],
-  ["Manutenzione", "Senza fermo macchina"],
+  ["Manutenzione", "Senza fermo macchina"],
+
 ] : [
   ["Technology", "Memjet Waterfall Inkjet"],
   ["Resolution", "1600 dpi full-color"],
@@ -148,15 +149,13 @@ export default async function () {
         <div className="absolute inset-0 bg-gradient-to-r from-dark-800/90 via-dark-800/70 to-dark-800/40" />
         <div className="container-custom px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-2xl">
-            <p className="text-cyan-300 text-sm mb-3 uppercase tracking-widest font-medium">Stampanti Etichette</p>
+            <p className="text-cyan-300 text-sm mb-3 uppercase tracking-widest font-medium">{locale === 'it' ? 'Stampanti Etichette' : 'Label Printers'}</p>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">Afinia L901</h1>
               <p className="text-lg text-gray-300/90 leading-relaxed mb-8">
-                Stampante etichette a colori professionale con tecnologia Memjet Waterfall.
-                Doppio nero per neri più profondi, testina sostituibile dall&apos;utente e possibilità
-                di integrazione in linea con la DLP-2200.
+                {locale === 'it' ? "Stampante etichette a colori professionale con tecnologia Memjet Waterfall. Doppio nero per neri più profondi, testina sostituibile dall'utente e possibilità di integrazione in linea con la DLP-2200." : "Professional color label printer with Memjet Waterfall technology. Dual black for deeper blacks, user-replaceable printhead and optional inline integration with the DLP-2200."}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Afinia%20L901&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20Afinia%20L901.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">Richiedi Demo →</a>
+                <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Afinia%20L901&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20Afinia%20L901.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">{locale === 'it' ? 'Richiedi Demo →' : 'Request Demo →'}</a>
               </div>
           </div>
         </div>
@@ -174,8 +173,8 @@ export default async function () {
       {/* Descrizione */}
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
         <div className="container-custom max-w-4xl">
-          <h2 className="text-3xl font-bold text-dark-800 mb-6">Prestazioni Professionali con Tecnologia Memjet Waterfall</h2>
-          <p className="text-gray-500 leading-relaxed mb-4">
+          <h2 className="text-3xl font-bold text-dark-800 mb-6">{locale === 'it' ? 'Prestazioni Professionali con Tecnologia Memjet Waterfall' : 'Professional Performance with Memjet Waterfall Technology'}</h2>
+          {locale === 'it' ? (<><p className="text-gray-500 leading-relaxed mb-4">
             La Afinia L901 è una stampante etichette a colori professionale progettata per produzioni continue ad alta qualità. Equipaggiata con il motore di stampa Memjet Waterfall, raggiunge una risoluzione di 1600 dpi full-color con una configurazione a 5 canali CMYKK (doppio nero) che garantisce neri più profondi, testi più nitidi e una maggiore autonomia di stampa rispetto ai sistemi CMYK tradizionali.
           </p>
           <p className="text-gray-500 leading-relaxed mb-4">
@@ -183,7 +182,15 @@ export default async function () {
           </p>
           <p className="text-gray-500 leading-relaxed">
             Versatile e modulare, la L901 può essere utilizzata come stampante standalone per produzioni indipendenti oppure integrata nella Afinia DLP-2200 per creare un sistema completo stampa + finitura. Questa flessibilità la rende la scelta ideale per aziende che cercano una soluzione scalabile, in grado di crescere insieme alle esigenze produttive.
+          </p></>) : (<><p className="text-gray-500 leading-relaxed mb-4">
+            The Afinia L901 is a professional color label printer designed for continuous high-quality production. Equipped with the Memjet Waterfall print engine, it achieves 1600 dpi full-color resolution with a 5-channel CMYKK (dual black) configuration that ensures deeper blacks, sharper text and greater print autonomy compared to traditional CMYK systems.
           </p>
+          <p className="text-gray-500 leading-relaxed mb-4">
+            The standout feature of the L901 is the user-replaceable printhead: when needed, the operator can replace it in seconds without stopping production, completely eliminating downtime. The built-in touchscreen display enables intuitive job management, status monitoring and quick configuration of print parameters.
+          </p>
+          <p className="text-gray-500 leading-relaxed">
+            Versatile and modular, the L901 can be used as a standalone printer for independent production or integrated with the Afinia DLP-2200 to create a complete print + finishing system. This flexibility makes it the ideal choice for companies seeking a scalable solution that grows with their production needs.
+          </p></>)}
         </div>
       </section>
 
@@ -192,7 +199,7 @@ export default async function () {
         <div className="container-custom">
           <div className="text-center mb-12">
             <p className="text-cyan-500 font-semibold text-sm uppercase tracking-widest mb-4">Video</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-dark-800">L901 in Azione</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-dark-800">{locale === 'it' ? 'L901 in Azione' : 'L901 in Action'}</h2>
           </div>
           <div className="max-w-3xl mx-auto">
             <div className="aspect-video rounded-2xl overflow-hidden shadow-lg">
@@ -207,7 +214,7 @@ export default async function () {
       {/* Vantaggi */}
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
         <div className="container-custom">
-          <h2 className="text-3xl font-bold text-dark-800 mb-8 text-center">Vantaggi Principali</h2>
+          <h2 className="text-3xl font-bold text-dark-800 mb-8 text-center">{locale === 'it' ? 'Vantaggi Principali' : 'Key Benefits'}</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((f) => (
               <div key={f.title} className="card-modern p-8 hover:-translate-y-1 transition-transform duration-300">
@@ -224,7 +231,7 @@ export default async function () {
       {/* Specifiche Tecniche */}
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-surface-50">
         <div className="container-custom max-w-3xl">
-          <h2 className="text-3xl font-bold text-dark-800 mb-10 text-center">Specifiche Tecniche</h2>
+          <h2 className="text-3xl font-bold text-dark-800 mb-10 text-center">{locale === 'it' ? 'Specifiche Tecniche' : 'Technical Specifications'}</h2>
           <div className="space-y-3">
             {getSpecs(locale).map(([label, value]) => (
               <div key={label} className="flex flex-col sm:flex-row sm:justify-between gap-1 bg-white rounded-xl px-5 py-4 shadow-sm">
@@ -239,12 +246,12 @@ export default async function () {
       {/* CTA */}
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-surface-50">
         <div className="container-custom text-center">
-          <h2 className="text-3xl font-bold text-dark-800 mb-6">Stampa Etichette Professionali In-House</h2>
+          <h2 className="text-3xl font-bold text-dark-800 mb-6">{locale === 'it' ? 'Stampa Etichette Professionali In-House' : 'Print Professional Labels In-House'}</h2>
           <p className="text-gray-500 max-w-xl mx-auto mb-8">
-            Scopri come la L901 può trasformare la tua produzione di etichette. Contattaci per una consulenza o vieni a provarla.
+            {locale === 'it' ? 'Scopri come la L901 può trasformare la tua produzione di etichette. Contattaci per una consulenza o vieni a provarla.' : 'Discover how the L901 can transform your label production. Contact us for a consultation or come try it out.'}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Afinia%20L901&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20Afinia%20L901.%0A%0AGrazie" className="btn-primary text-lg">Richiedi Demo →</a>
+            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Afinia%20L901&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20Afinia%20L901.%0A%0AGrazie" className="btn-primary text-lg">{locale === 'it' ? 'Richiedi Demo →' : 'Request Demo →'}</a>
           </div>
         </div>
       </section>
@@ -252,12 +259,12 @@ export default async function () {
       {/* Prodotti Correlati */}
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
         <div className="container-custom">
-          <h2 className="text-2xl font-bold text-dark-800 mb-8 text-center">Prodotti Correlati</h2>
+          <h2 className="text-2xl font-bold text-dark-800 mb-8 text-center">{locale === 'it' ? 'Prodotti Correlati' : 'Related Products'}</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { name: "Afinia L701", desc: "{locale === 'it' ? 'Stampante etichette entry level Memjet' : 'Entry-level Memjet label printer'}", href: "/prodotti/afinia-l701", image: "/images/products/afinia-l701.avif" },
-              { name: "Afinia DLP-2200", desc: "{locale === 'it' ? 'Digital Label Press completa' : 'Complete Digital Label Press'}", href: "/prodotti/afinia-dlp2200", image: "/images/products/afinia-dlp2200.avif" },
-              { name: "Afinia X350", desc: "{locale === 'it' ? 'Stampante roll-to-roll alta velocità' : 'High-speed roll-to-roll printer'}", href: "/prodotti/afinia-x350", image: "/images/products/afinia-x350-site.webp" },
+              { name: "Afinia L701", desc: locale === 'it' ? 'Stampante etichette entry level Memjet' : 'Entry-level Memjet label printer', href: "/prodotti/afinia-l701", image: "/images/products/afinia-l701.avif" },
+              { name: "Afinia DLP-2200", desc: locale === 'it' ? 'Digital Label Press completa' : 'Complete Digital Label Press', href: "/prodotti/afinia-dlp2200", image: "/images/products/afinia-dlp2200.avif" },
+              { name: "Afinia X350", desc: locale === 'it' ? 'Stampante roll-to-roll alta velocità' : 'High-speed roll-to-roll printer', href: "/prodotti/afinia-x350", image: "/images/products/afinia-x350-site.webp" },
             ].map((p) => (
               <Link key={p.name} href={p.href} className="card-modern overflow-hidden group hover:-translate-y-1 transition-transform duration-300">
                 <div className="h-40 relative overflow-hidden">

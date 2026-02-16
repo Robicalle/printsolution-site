@@ -25,12 +25,13 @@ export const metadata: Metadata = {
 
 export default async function PromozioniPage() {
   const locale = await getLocale();
+  const it = locale === 'it';
   return (
     <>
       <PageHero
-        title={locale === 'it' ? "Promozioni" : "Promotions"}
-        subtitle="Le nostre offerte speciali su macchine da stampa e packaging."
-        breadcrumb="Promozioni"
+        title={it ? "Promozioni" : "Promotions"}
+        subtitle={it ? "Le nostre offerte speciali su macchine da stampa e packaging." : "Our special offers on printing and packaging machines."}
+        breadcrumb={it ? "Promozioni" : "Promotions"}
         imageSrc="/images/hero-promozioni.jpg"
       />
 
@@ -45,17 +46,18 @@ export default async function PromozioniPage() {
               </svg>
             </div>
             <h2 className="text-3xl font-bold text-dark-800 mb-4">
-              Nessuna promozione attiva
+              {it ? 'Nessuna promozione attiva' : 'No active promotions'}
             </h2>
             <p className="text-gray-500 text-lg leading-relaxed mb-10">
-              Al momento non ci sono promozioni attive. Contattaci per scoprire le offerte riservate
-              e restare aggiornato sulle prossime opportunità.
+              {it
+                ? 'Al momento non ci sono promozioni attive. Contattaci per scoprire le offerte riservate e restare aggiornato sulle prossime opportunità.'
+                : 'There are currently no active promotions. Contact us to discover exclusive offers and stay updated on upcoming opportunities.'}
             </p>
             <a
               href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Offerte%20Riservate&body=Buongiorno%2C%0A%0AVorrei%20informazioni%20sulle%20offerte%20in%20corso.%0A%0AGrazie"
               className="btn-primary inline-flex items-center !rounded-full !px-8 !py-3 text-lg"
             >
-              Contattaci per le Offerte Riservate
+              {it ? 'Contattaci per le Offerte Riservate' : 'Contact Us for Exclusive Offers'}
               <svg className="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>

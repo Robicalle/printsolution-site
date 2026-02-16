@@ -68,7 +68,8 @@ function getSpecs(l: string) { return l === 'it' ? [
   ["Lunghezza max taglio", "360 mm"],
   ["Sensore registro", "Laser ad alta precisione"],
   ["Riavvolgimento", "Doppio mandrino, fino a 400 mm"],
-  ["Rimozione sfridi", "Automatica, fino a 300 mm"],
+  ["Rimozione sfridi", "Automatica, fino a 300 mm"],
+
 ] : [
   ["System", "L901 + DLF-220L integrated"],
   ["Technology", "Memjet Waterfall + digital plotter"],
@@ -91,7 +92,7 @@ const features = [
       </svg>
     ),
     title: "Dalla Bobina all'Etichetta Finita", titleEn: "From Roll to Finished Label",
-    desc: "Un unico sistema integrato che stampa, lamina, fustella, rimuove gli sfridi, taglia e riavvolge. Zero passaggi esterni.",
+    desc: "Un unico sistema integrato che stampa, lamina, fustella, rimuove gli sfridi, taglia e riavvolge. Zero passaggi esterni.", descEn: "A single integrated system that prints, laminates, die-cuts, removes waste, slits and rewinds. Zero external steps.",
   },
   {
     icon: (
@@ -100,7 +101,7 @@ const features = [
       </svg>
     ),
     title: "25.000+ Etichette/Ora", titleEn: "25,000+ Labels/Hour",
-    desc: "Produzione ad alta velocità fino a 18 m/min. Oltre 25.000 etichette 3×4 pollici all'ora per volumi industriali.",
+    desc: "Produzione ad alta velocità fino a 18 m/min. Oltre 25.000 etichette 3×4 pollici all'ora per volumi industriali.", descEn: "High-speed production up to 18 m/min. Over 25,000 3×4-inch labels per hour for industrial volumes.",
   },
   {
     icon: (
@@ -153,12 +154,10 @@ export default async function AfiniaDLP2200Page() {
         <div className="absolute inset-0 bg-gradient-to-r from-dark-800/90 via-dark-800/70 to-dark-800/40" />
         <div className="container-custom px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-2xl">
-            <p className="text-cyan-300 text-sm mb-3 uppercase tracking-widest font-medium">Sistema Integrato</p>
+            <p className="text-cyan-300 text-sm mb-3 uppercase tracking-widest font-medium">{locale === 'it' ? 'Sistema Integrato' : 'Integrated System'}</p>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">Afinia DLP-2200</h1>
               <p className="text-lg text-gray-300/90 leading-relaxed mb-8">
-                Digital Label Press completa: dalla bobina bianca all&apos;etichetta finita in un unico 
-                passaggio. Stampa, laminazione, fustellatura rotativa, rimozione sfridi, slitting e 
-                riavvolgimento su doppio mandrino. Oltre 25.000 etichette all&apos;ora.
+                {locale === 'it' ? "Digital Label Press completa: dalla bobina bianca all'etichetta finita in un unico passaggio. Stampa, laminazione, fustellatura rotativa, rimozione sfridi, slitting e riavvolgimento su doppio mandrino. Oltre 25.000 etichette all'ora." : "Complete Digital Label Press: from blank roll to finished label in a single pass. Printing, lamination, rotary die-cutting, waste removal, slitting and dual-spindle rewinding. Over 25,000 labels per hour."}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Afinia%20DLP-2200&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20Afinia%20DLP-2200.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">{locale === 'it' ? 'Richiedi Demo →' : 'Request Demo →'}</a>
@@ -179,8 +178,8 @@ export default async function AfiniaDLP2200Page() {
       {/* Descrizione */}
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
         <div className="container-custom max-w-4xl">
-          <h2 className="text-3xl font-bold text-dark-800 mb-6">Dalla Bobina Bianca all&apos;Etichetta Finita in Un Solo Passaggio</h2>
-          <p className="text-gray-500 leading-relaxed mb-4">
+          <h2 className="text-3xl font-bold text-dark-800 mb-6">{locale === 'it' ? "Dalla Bobina Bianca all'Etichetta Finita in Un Solo Passaggio" : 'From Blank Roll to Finished Label in a Single Pass'}</h2>
+          {locale === 'it' ? (<><p className="text-gray-500 leading-relaxed mb-4">
             La Afinia DLP-2200 è una Digital Label Press completa che integra in un unico sistema tutte le fasi della produzione di etichette: stampa a colori, laminazione, fustellatura rotativa, rimozione sfridi, slitting e riavvolgimento su doppio mandrino. Partendo da una semplice bobina bianca, si ottengono etichette finite e pronte per l&apos;applicazione senza alcun passaggio esterno.
           </p>
           <p className="text-gray-500 leading-relaxed mb-4">
@@ -188,7 +187,15 @@ export default async function AfiniaDLP2200Page() {
           </p>
           <p className="text-gray-500 leading-relaxed">
             Con bobine fino a 460 mm di diametro esterno (circa 1000 metri di materiale), il sensore laser ad alta precisione per il registro e il tavolo di giunzione per il cambio rapido del supporto, la DLP-2200 è progettata per produzioni industriali continue. Elimina la necessità di esternalizzare la produzione di etichette, riducendo drasticamente tempi di consegna e costi operativi.
+          </p></>) : (<><p className="text-gray-500 leading-relaxed mb-4">
+            The Afinia DLP-2200 is a complete Digital Label Press that integrates every stage of label production into a single system: full-color printing, lamination, rotary die-cutting, waste removal, slitting and dual-spindle rewinding. Starting from a simple blank roll, it delivers finished labels ready for application with no external steps.
           </p>
+          <p className="text-gray-500 leading-relaxed mb-4">
+            At the heart of the system is the Afinia L901 printer with Memjet Waterfall engine, delivering 1600 dpi full-color resolution in CMYKK configuration. Production speed ranges from 9 to 18 m/min, with a capacity exceeding 25,000 3×4-inch labels per hour. The silent lamination system supports self-wound and liner film, while the 18-inch magnetic cylinder accepts low-cost flexible steel dies with rapid changeover.
+          </p>
+          <p className="text-gray-500 leading-relaxed">
+            With rolls up to 460 mm outer diameter (approximately 1000 meters of material), high-precision laser registration sensor and splice table for quick media changes, the DLP-2200 is designed for continuous industrial production. It eliminates the need to outsource label production, drastically reducing lead times and operating costs.
+          </p></>)}
         </div>
       </section>
 
@@ -244,9 +251,9 @@ export default async function AfiniaDLP2200Page() {
       {/* CTA */}
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-surface-50">
         <div className="container-custom text-center">
-          <h2 className="text-3xl font-bold text-dark-800 mb-6">Produci Etichette Complete In-House</h2>
+          <h2 className="text-3xl font-bold text-dark-800 mb-6">{locale === 'it' ? 'Produci Etichette Complete In-House' : 'Produce Complete Labels In-House'}</h2>
           <p className="text-gray-500 max-w-xl mx-auto mb-8">
-            Elimina la necessità di esternalizzare. Con la DLP-2200 produci etichette finite e pronte per l&apos;applicazione direttamente nel tuo stabilimento.
+            {locale === 'it' ? "Elimina la necessità di esternalizzare. Con la DLP-2200 produci etichette finite e pronte per l'applicazione direttamente nel tuo stabilimento." : "Eliminate the need to outsource. With the DLP-2200, produce finished labels ready for application directly in your facility."}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Afinia%20DLP-2200&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20Afinia%20DLP-2200.%0A%0AGrazie" className="btn-primary text-lg">{locale === 'it' ? 'Richiedi Demo →' : 'Request Demo →'}</a>
@@ -260,9 +267,9 @@ export default async function AfiniaDLP2200Page() {
           <h2 className="text-2xl font-bold text-dark-800 mb-8 text-center">{locale === 'it' ? 'Prodotti Correlati' : 'Related Products'}</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { name: "Afinia L901", desc: "Stampante etichette professionale (cuore della DLP-2200)", href: "/prodotti/afinia-l901", image: "/images/products/afinia-l901.png" },
-              { name: "Afinia X350", desc: "{locale === 'it' ? 'Stampante roll-to-roll alta velocità' : 'High-speed roll-to-roll printer'}", href: "/prodotti/afinia-x350", image: "/images/products/afinia-x350-site.webp" },
-              { name: "Afinia AF200", desc: "Applicatore etichette semiautomatico", href: "/prodotti/afinia-af200", image: "/images/products/afinia-af200-nobg.png" },
+              { name: "Afinia L901", desc: locale === 'it' ? 'Stampante etichette professionale (cuore della DLP-2200)' : 'Professional label printer (heart of the DLP-2200)', href: "/prodotti/afinia-l901", image: "/images/products/afinia-l901.png" },
+              { name: "Afinia X350", desc: locale === 'it' ? 'Stampante roll-to-roll alta velocità' : 'High-speed roll-to-roll printer', href: "/prodotti/afinia-x350", image: "/images/products/afinia-x350-site.webp" },
+              { name: "Afinia AF200", desc: locale === 'it' ? 'Applicatore etichette semiautomatico' : 'Semi-automatic label applicator', href: "/prodotti/afinia-af200", image: "/images/products/afinia-af200-nobg.png" },
             ].map((p) => (
               <Link key={p.name} href={p.href} className="card-modern overflow-hidden group hover:-translate-y-1 transition-transform duration-300">
                 <div className="h-40 relative overflow-hidden">

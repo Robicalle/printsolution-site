@@ -53,7 +53,7 @@ const breadcrumbJsonLd = {
   ],
 };
 
-const specsData = [
+function getSpecsData(l: string) { return l === 'it' ? [
   { label: "Velocità semi-rotativa", dc250: "Fino a 30 m/min", dc350: "Fino a 30 m/min" },
   { label: "Larghezza max nastro", dc250: "250 mm (9.84\")", dc350: "350 mm (13.78\")" },
   { label: "Larghezza min nastro", dc250: "100 mm", dc350: "100 mm" },
@@ -72,7 +72,26 @@ const specsData = [
   { label: "Lame slitting", dc250: "Fino a 12", dc350: "Fino a 15" },
   { label: "Dimensioni", dc250: "283 × 72 × 165 cm", dc350: "283 × 100 × 165 cm" },
   { label: "Alimentazione", dc250: "100×240V, ~1kW, 50/60Hz", dc350: "100×240V, ~1kW, 50/60Hz" },
-];
+] : [
+  { label: "Semi-rotary speed", dc250: "Up to 30 m/min", dc350: "Up to 30 m/min" },
+  { label: "Max web width", dc250: "250 mm (9.84\")", dc350: "350 mm (13.78\")" },
+  { label: "Min web width", dc250: "100 mm", dc350: "100 mm" },
+  { label: "Max die-cut width", dc250: "230 mm", dc350: "330 mm" },
+  { label: "Max die-cut length", dc250: "360 mm", dc350: "360 mm" },
+  { label: "Input roll diameter", dc250: "500 mm", dc350: "500 mm" },
+  { label: "Roll holder", dc250: "Mechanical (3\")", dc350: "Pneumatic (3\")" },
+  { label: "Lamination", dc250: "Yes — self-wound and with liner", dc350: "Yes — self-wound and with liner" },
+  { label: "Max laminate diameter", dc250: "250 mm", dc350: "250 mm" },
+  { label: "UV varnish module", dc250: "Yes", dc350: "Yes" },
+  { label: "Dies", dc250: "Flexible steel, 130×360 mm", dc350: "Flexible steel, 130×360 mm" },
+  { label: "Magnetic cylinder", dc250: "18\" - 2144 mod. 1/8", dc350: "18\" - 2144 mod. 1/8" },
+  { label: "Registration sensor", dc250: "Laser, 4×4 mm", dc350: "Laser, 4×4 mm" },
+  { label: "Label rewind", dc250: "Max 400 mm", dc350: "Max 400 mm" },
+  { label: "Waste rewind", dc250: "Max 300 mm", dc350: "Max 300 mm" },
+  { label: "Slitting blades", dc250: "Up to 12", dc350: "Up to 15" },
+  { label: "Dimensions", dc250: "283 × 72 × 165 cm", dc350: "283 × 100 × 165 cm" },
+  { label: "Power supply", dc250: "100×240V, ~1kW, 50/60Hz", dc350: "100×240V, ~1kW, 50/60Hz" },
+]; }
 
 const features = [
   {
@@ -112,8 +131,8 @@ const features = [
     ),
   },
   {
-    title: "Velocità fino a 30 m/min",
-    desc: "Produzione ad alta velocità per gestire tirature medio-grandi con efficienza. Ideale per etichettifici che richiedono volumi costanti e tempi rapidi.",
+    title: "Velocità fino a 30 m/min", titleEn: "Speed up to 30 m/min",
+    desc: "Produzione ad alta velocità per gestire tirature medio-grandi con efficienza. Ideale per etichettifici che richiedono volumi costanti e tempi rapidi.", descEn: "High-speed production for handling medium-to-large runs efficiently. Ideal for label converters requiring consistent volumes and fast turnaround.",
     icon: (
       <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5m.75-9l3-1.5m-3 1.5l-3-1.5m6 0l3 1.5m-3-1.5v-3m3 4.5V6m-6 4.5V6" />
@@ -145,21 +164,21 @@ export default async function () {
         <div className="container-custom px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-2xl">
               <span className="inline-block px-4 py-1.5 rounded-full text-xs font-bold bg-gradient-to-r from-yellow-500 to-yellow-600 text-white mb-6">
-                Fustellatura Semi-Rotativa
+                {locale === 'it' ? 'Fustellatura Semi-Rotativa' : 'Semi-Rotary Die-Cutting'}
               </span>
               <h1 className="text-4xl lg:text-6xl font-bold tracking-tight mb-6">
                 Afinia<br />
                 <span className="bg-gradient-to-r from-yellow-400 to-cyan-400 bg-clip-text text-transparent">DC250 / DC350</span>
               </h1>
               <p className="text-xl text-gray-300 leading-relaxed mb-8 max-w-lg">
-                Fustellatori semi-rotativi professionali con laminazione, fustellatura con fustelle flessibili in acciaio, rimozione sfrido, slitting e riavvolgimento. Fino a <strong className="text-white">30 m/min</strong>.
+                {locale === 'it' ? (<>Fustellatori semi-rotativi professionali con laminazione, fustellatura con fustelle flessibili in acciaio, rimozione sfrido, slitting e riavvolgimento. Fino a <strong className="text-white">30 m/min</strong>.</>) : (<>Professional semi-rotary die-cutters with lamination, flexible steel die-cutting, waste removal, slitting and rewinding. Up to <strong className="text-white">30 m/min</strong>.</>)}
               </p>
               <div className="flex flex-wrap gap-4">
                 <a
                   href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Info%20Afinia%20DC250%20DC350&body=Buongiorno%2C%0A%0AVorrei%20ricevere%20informazioni%20sui%20fustellatori%20Afinia%20DC250%2FDC350.%0A%0AGrazie"
                   className="btn-primary text-lg"
                 >
-                  Richiedi Informazioni
+                  {locale === 'it' ? 'Richiedi Informazioni' : 'Request Information'}
                 </a>
               </div>
           </div>
@@ -180,7 +199,7 @@ export default async function () {
         <div className="container-custom">
           <div className="text-center mb-12">
             <p className="text-cyan-500 font-semibold text-sm uppercase tracking-widest mb-4">Video</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-dark-800">DC350 in Azione</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-dark-800">{locale === 'it' ? 'DC350 in Azione' : 'DC350 in Action'}</h2>
           </div>
           <div className="grid md:grid-cols-1 max-w-2xl mx-auto gap-8">
             <div className="aspect-video rounded-2xl overflow-hidden shadow-lg">
@@ -193,7 +212,7 @@ export default async function () {
       {/* Features */}
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
         <div className="container-custom">
-          <h2 className="text-3xl font-bold text-dark-800 mb-8 text-center">Vantaggi Principali</h2>
+          <h2 className="text-3xl font-bold text-dark-800 mb-8 text-center">{locale === 'it' ? 'Vantaggi Principali' : 'Key Benefits'}</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((f) => (
               <div key={f.title} className="card-modern p-8 hover:-translate-y-1 transition-transform duration-300">
@@ -212,7 +231,7 @@ export default async function () {
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-surface-50">
         <div className="container-custom max-w-5xl">
           <div className="text-center mb-16">
-            <p className="text-yellow-500 font-semibold text-sm uppercase tracking-widest mb-4">Confronto</p>
+            <p className="text-yellow-500 font-semibold text-sm uppercase tracking-widest mb-4">{locale === 'it' ? 'Confronto' : 'Comparison'}</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-dark-800 tracking-tight">
               DC250 vs DC350
             </h2>
@@ -221,13 +240,13 @@ export default async function () {
             <table className="w-full min-w-[600px]">
               <thead>
                 <tr className="border-b-2 border-gray-100">
-                  <th className="py-4 px-6 text-left text-sm font-bold text-dark-800">Specifica</th>
+                  <th className="py-4 px-6 text-left text-sm font-bold text-dark-800">{locale === 'it' ? 'Specifica' : 'Specification'}</th>
                   <th className="py-4 px-6 text-left text-sm font-bold text-dark-800">DC250</th>
                   <th className="py-4 px-6 text-left text-sm font-bold text-dark-800">DC350</th>
                 </tr>
               </thead>
               <tbody>
-                {specsData.map((row, i) => (
+                {getSpecsData(locale).map((row, i) => (
                   <tr key={row.label} className={i % 2 === 0 ? "bg-white" : "bg-surface-50"}>
                     <td className="py-3 px-6 font-semibold text-dark-800 text-sm">{row.label}</td>
                     <td className="py-3 px-6 text-gray-600 text-sm">{row.dc250}</td>
@@ -243,12 +262,12 @@ export default async function () {
       {/* Correlati */}
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
         <div className="container-custom">
-          <h2 className="text-2xl font-bold text-dark-800 mb-8 text-center">Prodotti Correlati</h2>
+          <h2 className="text-2xl font-bold text-dark-800 mb-8 text-center">{locale === 'it' ? 'Prodotti Correlati' : 'Related Products'}</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { name: "DLF-220L / DLF-350L", desc: "{locale === 'it' ? 'Fustellatori digitali plotter (senza fustelle)' : 'Digital plotter die-cutters (no physical dies)'}", href: "/prodotti/afinia-dlf", image: "/images/products/afinia-dlf-220l.png" },
-              { name: "Afinia L901", desc: "{locale === 'it' ? 'Stampante etichette professionale Memjet' : 'Professional Memjet label printer'}", href: "/prodotti/afinia-l901", image: "/images/products/afinia-l901.png" },
-              { name: "Afinia DLP-2200", desc: "{locale === 'it' ? 'Digital Label Press completa' : 'Complete Digital Label Press'}", href: "/prodotti/afinia-dlp2200", image: "/images/products/afinia-dlp2200.avif" },
+              { name: "DLF-220L / DLF-350L", desc: locale === 'it' ? 'Fustellatori digitali plotter (senza fustelle)' : 'Digital plotter die-cutters (no physical dies)', href: "/prodotti/afinia-dlf", image: "/images/products/afinia-dlf-220l.png" },
+              { name: "Afinia L901", desc: locale === 'it' ? 'Stampante etichette professionale Memjet' : 'Professional Memjet label printer', href: "/prodotti/afinia-l901", image: "/images/products/afinia-l901.png" },
+              { name: "Afinia DLP-2200", desc: locale === 'it' ? 'Digital Label Press completa' : 'Complete Digital Label Press', href: "/prodotti/afinia-dlp2200", image: "/images/products/afinia-dlp2200.avif" },
             ].map((p) => (
               <Link key={p.name} href={p.href} className="card-modern overflow-hidden group hover:-translate-y-1 transition-transform duration-300">
                 <div className="h-40 relative overflow-hidden">
@@ -271,16 +290,16 @@ export default async function () {
             <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl" />
             <div className="relative">
               <h2 className="text-3xl sm:text-4xl font-bold mb-6 tracking-tight">
-                Vuoi Vedere DC250/DC350 in Azione?
+                {locale === 'it' ? 'Vuoi Vedere DC250/DC350 in Azione?' : 'Want to See the DC250/DC350 in Action?'}
               </h2>
               <p className="text-white/80 max-w-2xl mx-auto mb-10 text-lg leading-relaxed">
-                Contattaci per una demo dal vivo nella nostra sala demo a Sesto San Giovanni.
+                {locale === 'it' ? 'Contattaci per una demo dal vivo nella nostra sala demo a Sesto San Giovanni.' : 'Contact us for a live demo in our showroom in Sesto San Giovanni.'}
               </p>
               <a
                 href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Afinia%20DC250%20DC350&body=Buongiorno%2C%0A%0AVorrei%20prenotare%20una%20demo%20dei%20fustellatori%20DC250%2FDC350.%0A%0AGrazie"
                 className="inline-flex items-center justify-center px-8 py-4 bg-white text-cyan-600 font-bold rounded-full hover:bg-yellow-400 hover:text-dark-800 transition-all duration-300 shadow-lg text-lg"
               >
-                Prenota una Demo
+                {locale === 'it' ? 'Prenota una Demo' : 'Book a Demo'}
               </a>
             </div>
           </div>

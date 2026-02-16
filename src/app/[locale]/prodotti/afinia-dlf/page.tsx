@@ -53,7 +53,7 @@ const breadcrumbJsonLd = {
   ],
 };
 
-const specs = [
+function getSpecs(l: string) { return l === 'it' ? [
   ["Tecnologia di taglio", "Plotter digitale (senza fustelle fisiche)"],
   ["Larghezza nastro (DLF-220L)", "220 mm (8.6\")"],
   ["Larghezza nastro (DLF-350L)", "350 mm (13.75\")"],
@@ -63,7 +63,17 @@ const specs = [
   ["Slitting", "Integrato"],
   ["Riavvolgimento", "Bobine finite pronte per applicazione"],
   ["Ideale per", "Tirature brevi, prototipi, on-demand"],
-];
+] : [
+  ["Cutting technology", "Digital plotter (no physical dies)"],
+  ["Web width (DLF-220L)", "220 mm (8.6\")"],
+  ["Web width (DLF-350L)", "350 mm (13.75\")"],
+  ["Inline lamination", "Yes (L models)"],
+  ["Shape cutting", "Any shape from digital file"],
+  ["Waste removal", "Automatic integrated"],
+  ["Slitting", "Integrated"],
+  ["Rewinding", "Finished rolls ready for application"],
+  ["Ideal for", "Short runs, prototypes, on-demand"],
+]; }
 
 const features = [
   {
@@ -136,21 +146,21 @@ export default async function () {
         <div className="container-custom px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-2xl">
               <span className="inline-block px-4 py-1.5 rounded-full text-xs font-bold bg-gradient-to-r from-green-500 to-green-600 text-white mb-6">
-                Fustellatura Digitale
+                {locale === 'it' ? 'Fustellatura Digitale' : 'Digital Die-Cutting'}
               </span>
               <h1 className="text-4xl lg:text-6xl font-bold tracking-tight mb-6">
                 Afinia<br />
                 <span className="bg-gradient-to-r from-green-400 to-cyan-400 bg-clip-text text-transparent">DLF-220L / DLF-350L</span>
               </h1>
               <p className="text-xl text-gray-300 leading-relaxed mb-8 max-w-lg">
-                Fustellatori digitali a plotter: tagliano <strong className="text-white">qualsiasi forma</strong> da file digitale, senza fustelle fisiche. Laminazione, rimozione sfrido, slitting e riavvolgimento in un unico passaggio.
+                {locale === 'it' ? (<>Fustellatori digitali a plotter: tagliano <strong className="text-white">qualsiasi forma</strong> da file digitale, senza fustelle fisiche. Laminazione, rimozione sfrido, slitting e riavvolgimento in un unico passaggio.</>) : (<>Digital plotter die-cutters: cut <strong className="text-white">any shape</strong> from digital file, with no physical dies. Lamination, waste removal, slitting and rewinding in a single pass.</>)}
               </p>
               <div className="flex flex-wrap gap-4">
                 <a
                   href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Info%20Afinia%20DLF-220L%20DLF-350L&body=Buongiorno%2C%0A%0AVorrei%20ricevere%20informazioni%20sui%20fustellatori%20digitali%20DLF-220L%2FDLF-350L.%0A%0AGrazie"
                   className="btn-primary text-lg"
                 >
-                  Richiedi Informazioni
+                  {locale === 'it' ? 'Richiedi Informazioni' : 'Request Information'}
                 </a>
               </div>
           </div>
@@ -171,7 +181,7 @@ export default async function () {
         <div className="container-custom">
           <div className="text-center mb-12">
             <p className="text-cyan-500 font-semibold text-sm uppercase tracking-widest mb-4">Video</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-dark-800">DLF in Azione</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-dark-800">{locale === 'it' ? 'DLF in Azione' : 'DLF in Action'}</h2>
           </div>
           <div className="grid md:grid-cols-2 gap-8">
             <div className="aspect-video rounded-2xl overflow-hidden shadow-lg">
@@ -187,7 +197,7 @@ export default async function () {
       {/* Features */}
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
         <div className="container-custom">
-          <h2 className="text-3xl font-bold text-dark-800 mb-8 text-center">Vantaggi Principali</h2>
+          <h2 className="text-3xl font-bold text-dark-800 mb-8 text-center">{locale === 'it' ? 'Vantaggi Principali' : 'Key Benefits'}</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((f) => (
               <div key={f.title} className="card-modern p-8 hover:-translate-y-1 transition-transform duration-300">
@@ -206,15 +216,15 @@ export default async function () {
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-surface-50">
         <div className="container-custom max-w-4xl">
           <div className="text-center mb-16">
-            <p className="text-green-500 font-semibold text-sm uppercase tracking-widest mb-4">Dettagli</p>
+            <p className="text-green-500 font-semibold text-sm uppercase tracking-widest mb-4">{locale === 'it' ? 'Dettagli' : 'Details'}</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-dark-800 tracking-tight">
-              Specifiche Tecniche
+              {locale === 'it' ? 'Specifiche Tecniche' : 'Technical Specifications'}
             </h2>
           </div>
           <div className="card-modern overflow-hidden">
             <table className="w-full">
               <tbody>
-                {specs.map(([label, value], i) => (
+                {getSpecs(locale).map(([label, value], i) => (
                   <tr key={label} className={i % 2 === 0 ? "bg-white" : "bg-surface-50"}>
                     <td className="py-4 px-6 font-semibold text-dark-800 w-2/5">{label}</td>
                     <td className="py-4 px-6 text-gray-600">{value}</td>
@@ -229,12 +239,12 @@ export default async function () {
       {/* Correlati */}
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
         <div className="container-custom">
-          <h2 className="text-2xl font-bold text-dark-800 mb-8 text-center">Prodotti Correlati</h2>
+          <h2 className="text-2xl font-bold text-dark-800 mb-8 text-center">{locale === 'it' ? 'Prodotti Correlati' : 'Related Products'}</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { name: "Afinia DC250 / DC350", desc: "{locale === 'it' ? 'Fustellatori semi-rotativi per alti volumi' : 'Semi-rotary die-cutters for high volumes'}", href: "/prodotti/afinia-dc350", image: "/images/products/afinia-dc350.png" },
-              { name: "Afinia L901", desc: "{locale === 'it' ? 'Stampante etichette professionale Memjet' : 'Professional Memjet label printer'}", href: "/prodotti/afinia-l901", image: "/images/products/afinia-l901.png" },
-              { name: "Afinia X350", desc: "Stampante roll-to-roll alta Velocità", href: "/prodotti/afinia-x350", image: "/images/products/afinia-x350-site.webp" },
+              { name: "Afinia DC250 / DC350", desc: locale === 'it' ? 'Fustellatori semi-rotativi per alti volumi' : 'Semi-rotary die-cutters for high volumes', href: "/prodotti/afinia-dc350", image: "/images/products/afinia-dc350.png" },
+              { name: "Afinia L901", desc: locale === 'it' ? 'Stampante etichette professionale Memjet' : 'Professional Memjet label printer', href: "/prodotti/afinia-l901", image: "/images/products/afinia-l901.png" },
+              { name: "Afinia X350", desc: locale === 'it' ? 'Stampante roll-to-roll alta velocità' : 'High-speed roll-to-roll printer', href: "/prodotti/afinia-x350", image: "/images/products/afinia-x350-site.webp" },
             ].map((p) => (
               <Link key={p.name} href={p.href} className="card-modern overflow-hidden group hover:-translate-y-1 transition-transform duration-300">
                 <div className="h-40 relative overflow-hidden">
@@ -257,16 +267,16 @@ export default async function () {
             <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl" />
             <div className="relative">
               <h2 className="text-3xl sm:text-4xl font-bold mb-6 tracking-tight">
-                Vuoi Vedere la DLF in Azione?
+                {locale === 'it' ? 'Vuoi Vedere la DLF in Azione?' : 'Want to See the DLF in Action?'}
               </h2>
               <p className="text-white/80 max-w-2xl mx-auto mb-10 text-lg leading-relaxed">
-                Contattaci per una demo o per ricevere campioni di etichette fustellate con i tuoi file.
+                {locale === 'it' ? 'Contattaci per una demo o per ricevere campioni di etichette fustellate con i tuoi file.' : 'Contact us for a demo or to receive sample labels die-cut with your own files.'}
               </p>
               <a
                 href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Afinia%20DLF&body=Buongiorno%2C%0A%0AVorrei%20prenotare%20una%20demo%20dei%20fustellatori%20digitali%20DLF.%0A%0AGrazie"
                 className="inline-flex items-center justify-center px-8 py-4 bg-white text-cyan-600 font-bold rounded-full hover:bg-yellow-400 hover:text-dark-800 transition-all duration-300 shadow-lg text-lg"
               >
-                Prenota una Demo
+                {locale === 'it' ? 'Prenota una Demo' : 'Book a Demo'}
               </a>
             </div>
           </div>

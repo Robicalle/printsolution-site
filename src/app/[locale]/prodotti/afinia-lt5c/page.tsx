@@ -61,7 +61,8 @@ function getSpecs(l: string) { return l === 'it' ? [
   ["Cartucce toner", "Alta resa CMYK"],
   ["Fusore", "Integrato per massima resistenza"],
   ["Costo stampa", "Competitivo per volumi medi"],
-  ["Ambiente", "Ideale per ambienti umidi e industriali"],
+  ["Ambiente", "Ideale per ambienti umidi e industriali"],
+
 ] : [
   ["Technology", "Electrophotographic LED laser, 5 colors"],
   ["Colors", "CMYK + White"],
@@ -153,9 +154,7 @@ export default async function AfiniaLT5CPage() {
             <p className="text-cyan-300 text-sm mb-3 uppercase tracking-widest font-medium">{locale === 'it' ? 'Stampanti Etichette' : 'Label Printers'}</p>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">Afinia LT5C</h1>
               <p className="text-lg text-gray-300/90 leading-relaxed mb-8">
-                Stampante etichette a toner LED con resistenza immediata all&apos;acqua. Tecnologia 
-                elettrofotografica CMYK con fusore integrato: le etichette escono pronte all&apos;uso,
-                senza tempi di asciugatura. Ideale per ambienti umidi e industriali.
+                {locale === 'it' ? "Stampante etichette a toner LED con resistenza immediata all'acqua. Tecnologia elettrofotografica CMYK con fusore integrato: le etichette escono pronte all'uso, senza tempi di asciugatura. Ideale per ambienti umidi e industriali." : "LED toner label printer with instant water resistance. Electrophotographic CMYK technology with integrated fuser: labels come out ready to use, with no drying time. Ideal for humid and industrial environments."}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Afinia%20LT5C&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20Afinia%20LT5C.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">{locale === 'it' ? 'Richiedi Demo →' : 'Request Demo →'}</a>
@@ -176,8 +175,8 @@ export default async function AfiniaLT5CPage() {
       {/* Descrizione */}
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
         <div className="container-custom max-w-4xl">
-          <h2 className="text-3xl font-bold text-dark-800 mb-6">Etichette Resistenti all&apos;Acqua con Tecnologia Toner LED</h2>
-          <p className="text-gray-500 leading-relaxed mb-4">
+          <h2 className="text-3xl font-bold text-dark-800 mb-6">{locale === 'it' ? "Etichette Resistenti all'Acqua con Tecnologia Toner LED" : 'Water-Resistant Labels with LED Toner Technology'}</h2>
+          {locale === 'it' ? (<><p className="text-gray-500 leading-relaxed mb-4">
             La Afinia LT5C è una stampante etichette industriale basata su tecnologia toner LED elettrofotografica CMYK. A differenza delle stampanti inkjet, il toner viene fuso direttamente sulla superficie del supporto attraverso un fusore integrato, producendo etichette immediatamente resistenti all&apos;acqua, all&apos;abrasione e agli agenti chimici senza alcun tempo di asciugatura.
           </p>
           <p className="text-gray-500 leading-relaxed mb-4">
@@ -185,7 +184,15 @@ export default async function AfiniaLT5CPage() {
           </p>
           <p className="text-gray-500 leading-relaxed">
             La LT5C è la scelta ideale per ambienti umidi e industriali dove le etichette sono esposte a condensa, liquidi o condizioni ambientali difficili. Le etichette possono essere applicate, laminate o fustellate immediatamente dopo la stampa, eliminando i colli di bottiglia nel flusso produttivo e accelerando il time-to-market dei prodotti etichettati.
+          </p></>) : (<><p className="text-gray-500 leading-relaxed mb-4">
+            The Afinia LT5C is an industrial label printer based on CMYK electrophotographic LED toner technology. Unlike inkjet printers, the toner is fused directly onto the media surface through an integrated fuser, producing labels that are immediately resistant to water, abrasion and chemicals with no drying time.
           </p>
+          <p className="text-gray-500 leading-relaxed mb-4">
+            With a resolution of 1200 × 1200 dpi and high-yield toner cartridges, the LT5C delivers a competitive cost per label, especially on medium volumes and regular production runs. Direct roll feed enables continuous production without interruptions, while electrophotographic technology ensures consistent print quality on every single label.
+          </p>
+          <p className="text-gray-500 leading-relaxed">
+            The LT5C is the ideal choice for humid and industrial environments where labels are exposed to condensation, liquids or harsh conditions. Labels can be applied, laminated or die-cut immediately after printing, eliminating bottlenecks in the production workflow and accelerating time-to-market.
+          </p></>)}
         </div>
       </section>
 
@@ -241,9 +248,9 @@ export default async function AfiniaLT5CPage() {
       {/* CTA */}
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-surface-50">
         <div className="container-custom text-center">
-          <h2 className="text-3xl font-bold text-dark-800 mb-6">Etichette Resistenti, Subito Pronte</h2>
+          <h2 className="text-3xl font-bold text-dark-800 mb-6">{locale === 'it' ? 'Etichette Resistenti, Subito Pronte' : 'Durable Labels, Instantly Ready'}</h2>
           <p className="text-gray-500 max-w-xl mx-auto mb-8">
-            Scopri come la LT5C può semplificare la tua produzione con etichette immediatamente resistenti. Contattaci per una demo.
+            {locale === 'it' ? 'Scopri come la LT5C può semplificare la tua produzione con etichette immediatamente resistenti. Contattaci per una demo.' : 'Discover how the LT5C can simplify your production with instantly durable labels. Contact us for a demo.'}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Afinia%20LT5C&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20Afinia%20LT5C.%0A%0AGrazie" className="btn-primary text-lg">{locale === 'it' ? 'Richiedi Demo →' : 'Request Demo →'}</a>
@@ -257,9 +264,9 @@ export default async function AfiniaLT5CPage() {
           <h2 className="text-2xl font-bold text-dark-800 mb-8 text-center">{locale === 'it' ? 'Prodotti Correlati' : 'Related Products'}</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { name: "Afinia L901", desc: "{locale === 'it' ? 'Stampante etichette professionale Memjet' : 'Professional Memjet label printer'}", href: "/prodotti/afinia-l901", image: "/images/products/afinia-l901.png" },
-              { name: "Afinia X350", desc: "Stampante roll-to-roll alta velocità", href: "/prodotti/afinia-x350", image: "/images/products/afinia-x350-site.webp" },
-              { name: "Afinia DLP-2200", desc: "{locale === 'it' ? 'Digital Label Press completa' : 'Complete Digital Label Press'}", href: "/prodotti/afinia-dlp2200", image: "/images/products/afinia-dlp2200.avif" },
+              { name: "Afinia L901", desc: locale === 'it' ? 'Stampante etichette professionale Memjet' : 'Professional Memjet label printer', href: "/prodotti/afinia-l901", image: "/images/products/afinia-l901.png" },
+              { name: "Afinia X350", desc: locale === 'it' ? 'Stampante roll-to-roll alta velocità' : 'High-speed roll-to-roll printer', href: "/prodotti/afinia-x350", image: "/images/products/afinia-x350-site.webp" },
+              { name: "Afinia DLP-2200", desc: locale === 'it' ? 'Digital Label Press completa' : 'Complete Digital Label Press', href: "/prodotti/afinia-dlp2200", image: "/images/products/afinia-dlp2200.avif" },
             ].map((p) => (
               <Link key={p.name} href={p.href} className="card-modern overflow-hidden group hover:-translate-y-1 transition-transform duration-300">
                 <div className="h-40 relative overflow-hidden">

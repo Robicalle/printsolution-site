@@ -115,7 +115,7 @@ export default function ChatWidget() {
         }`}
       >
         {pulse && !open && (
-          <span className="absolute inset-0 rounded-full bg-cyan-400 animate-ping opacity-40" />
+          <span className="absolute inset-0 rounded-full bg-cyan-400 animate-ping opacity-15" />
         )}
         <span className="text-white text-2xl relative z-10">
           {open ? "✕" : "💬"}

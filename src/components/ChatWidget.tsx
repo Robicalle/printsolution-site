@@ -1,5 +1,6 @@
 "use client";
 import { useState, useRef, useEffect, useCallback } from "react";
+import { useTranslations } from "next-intl";
 
 interface Message {
   role: "user" | "assistant";
@@ -7,6 +8,7 @@ interface Message {
 }
 
 export default function ChatWidget() {
+  const t = useTranslations("chat");
   const [open, setOpen] = useState(false);
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState<Message[]>([]);
@@ -49,7 +51,7 @@ export default function ChatWidget() {
         }),
       });
 
-      if (!res.ok) throw new Error("Errore nella risposta");
+      if (!res.ok) throw new Error("Error");
 
       const reader = res.body?.getReader();
       if (!reader) throw new Error("No reader");
@@ -107,7 +109,7 @@ export default function ChatWidget() {
       {/* Chat Button */}
       <button
         onClick={() => setOpen(!open)}
-        aria-label={open ? "Chiudi chat" : "Apri chat assistente"}
+        aria-label={open ? t("close") : t("open")}
         className={`fixed bottom-36 right-4 lg:bottom-6 lg:right-6 z-[9998] w-14 h-14 rounded-full shadow-lg flex items-center justify-center transition-all duration-300 ${
           open
             ? "bg-gray-700 hover:bg-gray-600 rotate-0"
@@ -135,7 +137,7 @@ export default function ChatWidget() {
             <div>
               <div className="font-bold text-sm">Print Solution</div>
               <div className="text-[11px] text-cyan-100">
-                Assistente Virtuale • Online
+                {t("title")} • {t("status")}
               </div>
             </div>
           </div>
@@ -145,9 +147,9 @@ export default function ChatWidget() {
             {messages.length === 0 && (
               <div className="text-center text-gray-400 text-sm py-8">
                 <p className="text-2xl mb-2">👋</p>
-                <p>Ciao! Come posso aiutarti?</p>
+                <p>{t("greeting")}</p>
                 <p className="text-xs mt-1">
-                  Chiedimi dei nostri prodotti per stampa, etichette e packaging.
+                  {t("subtitle")}
                 </p>
               </div>
             )}
@@ -191,7 +193,7 @@ export default function ChatWidget() {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={(e) => e.key === "Enter" && sendMessage()}
-                placeholder="Scrivi un messaggio..."
+                placeholder={t("placeholder")}
                 className="flex-1 px-4 py-2.5 rounded-full border border-gray-300 text-sm text-gray-700 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500"
                 disabled={loading}
               />
@@ -199,7 +201,7 @@ export default function ChatWidget() {
                 onClick={sendMessage}
                 disabled={loading || !input.trim()}
                 className="w-10 h-10 rounded-full bg-cyan-600 text-white flex items-center justify-center hover:bg-cyan-500 disabled:opacity-40 transition-colors"
-                aria-label="Invia messaggio"
+                aria-label={t("send")}
               >
                 <svg
                   className="w-5 h-5"

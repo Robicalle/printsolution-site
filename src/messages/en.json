@@ -69,7 +69,7 @@
     "title1": "Book a Visit",
     "title2": "to Our Demo Room",
     "subtitle": "Come and see our solutions in action. Our demo room in Sesto San Giovanni is equipped with all products running.",
-    "requestDemo": "Request Demo →",
+    "requestDemo": "Request Demo â†’",
     "callNow": "Call Us Now"
   },
   "footer": {
@@ -86,7 +86,7 @@
     "contacts": "Contact",
     "headquarterDemo": "HQ & Demo Room",
     "hours": "Hours",
-    "hoursValue": "Mon — Fri: 9:00 AM — 6:00 PM",
+    "hoursValue": "Mon â€” Fri: 9:00 AM â€” 6:00 PM",
     "companyData": "Company Details",
     "allRightsReserved": "All rights reserved.",
     "privacyPolicy": "Privacy Policy",
@@ -129,5 +129,15 @@
     "readMore": "Read more",
     "backToHome": "Back to Home",
     "loading": "Loading..."
+  },
+  "chat": {
+    "title": "Virtual Assistant",
+    "status": "Online",
+    "greeting": "Hi! How can I help you?",
+    "subtitle": "Ask me about our printing, labelling and packaging products.",
+    "placeholder": "Type a message...",
+    "send": "Send message",
+    "close": "Close chat",
+    "open": "Open chat assistant"
   }
 }

@@ -43,18 +43,18 @@
     "shopperLuxury": "Shopper & Packaging di Lusso",
     "shopperLuxuryDesc": "Stampa hot foil e digitale per shopper e packaging premium con finiture metalliche.",
     "bookEdging": "Labbratura Libri",
-    "bookEdgingDesc": "Stampa digitale sui bordi di libri, quaderni e block notes per personalizzazioni uniche e di alta qualità.",
+    "bookEdgingDesc": "Stampa digitale sui bordi di libri, quaderni e block notes per personalizzazioni uniche e di alta qualitÃ .",
     "consumables": "Consumabili",
     "consumablesDesc": "Inchiostri, testine di stampa, nastri e materiali di consumo originali per tutte le stampanti distribuite.",
-    "learnMore": "Scopri di più"
+    "learnMore": "Scopri di piÃ¹"
   },
   "products": {
     "sectionLabel": "I nostri prodotti",
     "sectionTitle": "Tecnologie di Punta",
-    "learnMore": "Scopri di più"
+    "learnMore": "Scopri di piÃ¹"
   },
   "whyUs": {
-    "sectionLabel": "Perché sceglierci",
+    "sectionLabel": "PerchÃ© sceglierci",
     "sectionTitle1": "Numeri che",
     "sectionTitle2": "parlano",
     "clients": "Clienti soddisfatti",
@@ -68,8 +68,8 @@
   "cta": {
     "title1": "Prenota una Visita",
     "title2": "in Sala Demo",
-    "subtitle": "Vieni a toccare con mano le nostre soluzioni. La nostra sala demo a Sesto San Giovanni è attrezzata con tutti i prodotti in funzione.",
-    "requestDemo": "Richiedi Demo →",
+    "subtitle": "Vieni a toccare con mano le nostre soluzioni. La nostra sala demo a Sesto San Giovanni Ã¨ attrezzata con tutti i prodotti in funzione.",
+    "requestDemo": "Richiedi Demo â†’",
     "callNow": "Chiamaci Ora"
   },
   "footer": {
@@ -86,7 +86,7 @@
     "contacts": "Contatti",
     "headquarterDemo": "Sede & Sala Demo",
     "hours": "Orari",
-    "hoursValue": "Lun — Ven: 9:00 — 18:00",
+    "hoursValue": "Lun â€” Ven: 9:00 â€” 18:00",
     "companyData": "Dati Aziendali",
     "allRightsReserved": "Tutti i diritti riservati.",
     "privacyPolicy": "Privacy Policy",
@@ -114,9 +114,9 @@
     "addToCart": "Aggiungi al Carrello",
     "cart": "Carrello",
     "checkout": "Procedi al Checkout",
-    "emptyCart": "Il carrello è vuoto",
+    "emptyCart": "Il carrello Ã¨ vuoto",
     "total": "Totale",
-    "quantity": "Quantità",
+    "quantity": "QuantitÃ ",
     "remove": "Rimuovi",
     "filters": "Filtri",
     "allCategories": "Tutte le Categorie",
@@ -126,8 +126,18 @@
     "backToShop": "Torna allo Shop"
   },
   "common": {
-    "readMore": "Leggi di più",
+    "readMore": "Leggi di piÃ¹",
     "backToHome": "Torna alla Home",
     "loading": "Caricamento..."
+  },
+  "chat": {
+    "title": "Assistente Virtuale",
+    "status": "Online",
+    "greeting": "Ciao! Come posso aiutarti?",
+    "subtitle": "Chiedimi dei nostri prodotti per stampa, etichette e packaging.",
+    "placeholder": "Scrivi un messaggio...",
+    "send": "Invia messaggio",
+    "close": "Chiudi chat",
+    "open": "Apri chat assistente"
   }
 }

@@ -99,31 +99,6 @@ export const categories: Category[] = [
     ],
   },
   {
-    slug: "consumabili-l701",
-    name: "Afinia L701",
-    description: "Cartucce e testine per stampante Afinia L701",
-    image: "/images/shop/l701.jpg",
-    products: [
-      { id: "l701-k", name: "Cartuccia Nero L-701 150ml", sku: "L701-K", price: 200.00, image: "/images/shop/placeholder.png", inStock: true },
-      { id: "l701-y", name: "Cartuccia Giallo L-701 150ml", sku: "L701-Y", price: 200.00, image: "/images/shop/placeholder.png", inStock: true },
-      { id: "l701-m", name: "Cartuccia Magenta L-701 150ml", sku: "L701-M", price: 200.00, image: "/images/shop/placeholder.png", inStock: true },
-      { id: "l701-c", name: "Cartuccia Ciano L-701 150ml", sku: "L701-C", price: 200.00, image: "/images/shop/placeholder.png", inStock: true },
-      { id: "l701-head", name: "Testina di Stampa Afinia L-701", sku: "L701-HEAD", price: 630.00, image: "/images/shop/placeholder.png", inStock: true },
-    ],
-  },
-  {
-    slug: "consumabili-300x",
-    name: "Afinia 300x",
-    description: "Cartucce per stampante Afinia 300x",
-    image: "/images/shop/300x.jpg",
-    products: [
-      { id: "300x-k", name: "BRPC-300X-HW - Nero per 300x", sku: "BRPC-300X-HW", price: 215.00, image: "/images/shop/placeholder.png", inStock: true },
-      { id: "300x-c", name: "CRPC-300X-HW - Ciano per 300x", sku: "CRPC-300X-HW", price: 215.00, image: "/images/shop/placeholder.png", inStock: true },
-      { id: "300x-m", name: "MRPC-300X-HW - Magenta per 300x", sku: "MRPC-300X-HW", price: 215.00, image: "/images/shop/placeholder.png", inStock: true },
-      { id: "300x-y", name: "YRPC-300X-HW - Giallo per 300x", sku: "YRPC-300X-HW", price: 215.00, image: "/images/shop/placeholder.png", inStock: true },
-    ],
-  },
-  {
     slug: "consumabili-cx1000",
     name: "Primera CX1000 / CX1200",
     description: "Toner e ricambi per stampanti Primera CX1000 e CX1200",

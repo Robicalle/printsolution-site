@@ -194,6 +194,30 @@ export default async function () {
         </div>
       </section>
 
+      {/* Descrizione */}
+      <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
+        <div className="container-custom max-w-4xl">
+          <h2 className="text-3xl font-bold text-dark-800 mb-6">{locale === 'it' ? 'Fustellatura Semi-Rotativa Professionale' : 'Professional Semi-Rotary Die-Cutting'}</h2>
+          {locale === 'it' ? (<><p className="text-gray-500 leading-relaxed mb-4">
+            Gli Afinia DC250 e DC350 sono fustellatori semi-rotativi progettati per la finitura professionale delle etichette. Integrano laminazione, fustellatura con fustelle flessibili in acciaio, rimozione sfrido automatica, slitting e riavvolgimento in un unico sistema compatto. Velocità fino a 30 m/min.
+          </p>
+          <p className="text-gray-500 leading-relaxed mb-4">
+            Il cilindro magnetico consente cambi lavoro rapidissimi con fustelle flessibili economiche. Il DC250 gestisce nastri fino a 250 mm, il DC350 fino a 350 mm di larghezza, adattandosi a qualsiasi esigenza produttiva.
+          </p>
+          <p className="text-gray-500 leading-relaxed">
+            Ideali come complemento alle stampanti Afinia L901 e X350, i DC250/DC350 completano il flusso dalla stampa all&apos;etichetta finita pronta per l&apos;applicazione.
+          </p></>) : (<><p className="text-gray-500 leading-relaxed mb-4">
+            The Afinia DC250 and DC350 are semi-rotary die-cutters designed for professional label finishing. They integrate lamination, flexible steel die-cutting, automatic waste removal, slitting and rewinding in a single compact system. Speeds up to 30 m/min.
+          </p>
+          <p className="text-gray-500 leading-relaxed mb-4">
+            The magnetic cylinder enables ultra-fast job changeovers with economical flexible dies. The DC250 handles webs up to 250 mm, the DC350 up to 350 mm wide, adapting to any production requirement.
+          </p>
+          <p className="text-gray-500 leading-relaxed">
+            Ideal as a complement to the Afinia L901 and X350 printers, the DC250/DC350 complete the workflow from printing to finished labels ready for application.
+          </p></>)}
+        </div>
+      </section>
+
       {/* Video */}
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
         <div className="container-custom">

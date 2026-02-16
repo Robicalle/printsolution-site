@@ -183,23 +183,6 @@ export default async function GreenBoxPrintBookPage() {
         </div>
       </section>
 
-      {/* Video */}
-      <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
-        <div className="container-custom">
-          <div className="text-center mb-12">
-            <p className="text-cyan-500 font-semibold text-sm uppercase tracking-widest mb-4">Video</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-dark-800">{locale === 'it' ? 'GreenBox Print Book in Azione' : 'GreenBox Print Book in Action'}</h2>
-          </div>
-          <div className="max-w-3xl mx-auto">
-            <div className="aspect-video rounded-2xl overflow-hidden shadow-lg">
-              <video controls playsInline preload="metadata" poster="/images/posters/greenbox-print-book-1.jpg" className="w-full h-full rounded-2xl">
-                <source src="/videos/greenbox-print-book-1.mp4" type="video/mp4" />
-              </video>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Descrizione */}
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
         <div className="container-custom max-w-4xl">
@@ -227,6 +210,23 @@ export default async function GreenBoxPrintBookPage() {
           <p className="text-gray-500 leading-relaxed">
             With a speed of 30 m/min and 1200×1200 dpi resolution, the GreenBox Print Book delivers exceptional print quality with vivid and durable colors. Water-based inks ensure resistance to weathering, rubbing and water.
           </p></>)}
+        </div>
+      </section>
+
+      {/* Video */}
+      <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
+        <div className="container-custom">
+          <div className="text-center mb-12">
+            <p className="text-cyan-500 font-semibold text-sm uppercase tracking-widest mb-4">Video</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-dark-800">{locale === 'it' ? 'GreenBox Print Book in Azione' : 'GreenBox Print Book in Action'}</h2>
+          </div>
+          <div className="max-w-3xl mx-auto">
+            <div className="aspect-video rounded-2xl overflow-hidden shadow-lg">
+              <video controls playsInline preload="metadata" poster="/images/posters/greenbox-print-book-1.jpg" className="w-full h-full rounded-2xl">
+                <source src="/videos/greenbox-print-book-1.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </div>
         </div>
       </section>
 

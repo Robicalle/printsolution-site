@@ -176,6 +176,30 @@ export default async function () {
         </div>
       </section>
 
+      {/* Descrizione */}
+      <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
+        <div className="container-custom max-w-4xl">
+          <h2 className="text-3xl font-bold text-dark-800 mb-6">{locale === 'it' ? 'Fustellatura Digitale Senza Fustelle Fisiche' : 'Digital Die-Cutting Without Physical Dies'}</h2>
+          {locale === 'it' ? (<><p className="text-gray-500 leading-relaxed mb-4">
+            Le Afinia DLF-220L e DLF-350L sono fustellatori digitali a plotter che tagliano qualsiasi forma direttamente da file digitale, senza necessità di fustelle fisiche. Laminazione in linea, rimozione sfrido automatica, slitting e riavvolgimento in un unico passaggio.
+          </p>
+          <p className="text-gray-500 leading-relaxed mb-4">
+            Perfetti per tirature brevi, prototipi e produzione on-demand: ogni nuova forma è semplicemente un file da caricare, con zero costi di utensili e cambio lavoro istantaneo.
+          </p>
+          <p className="text-gray-500 leading-relaxed">
+            I modelli &quot;L&quot; includono laminazione integrata per una finitura professionale resistente a graffi e umidità. Le etichette escono pronte per l&apos;applicazione.
+          </p></>) : (<><p className="text-gray-500 leading-relaxed mb-4">
+            The Afinia DLF-220L and DLF-350L are digital plotter die-cutters that cut any shape directly from digital file, with no physical dies required. Inline lamination, automatic waste removal, slitting and rewinding in a single pass.
+          </p>
+          <p className="text-gray-500 leading-relaxed mb-4">
+            Perfect for short runs, prototypes and on-demand production: every new shape is simply a file to load, with zero tooling costs and instant job changeover.
+          </p>
+          <p className="text-gray-500 leading-relaxed">
+            The &quot;L&quot; models include integrated lamination for a professional finish resistant to scratches and moisture. Labels come out ready for application.
+          </p></>)}
+        </div>
+      </section>
+
       {/* Video */}
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
         <div className="container-custom">

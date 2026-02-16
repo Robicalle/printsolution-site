@@ -211,8 +211,35 @@ export default async function () {
         </div>
       </section>
 
+      {/* Video */}
+      <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
+        <div className="container-custom">
+          <div className="text-center mb-12">
+            <p className="text-cyan-500 font-semibold text-sm uppercase tracking-widest mb-4">Video</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-dark-800">{it ? 'EDM-650X in Azione' : 'EDM-650X in Action'}</h2>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <div className="aspect-video rounded-2xl overflow-hidden shadow-lg">
+              <video controls playsInline preload="metadata" poster="/images/posters/edm650x-1.jpg" className="w-full h-full rounded-2xl">
+                <source src="/videos/edm650x-1.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <div className="aspect-video rounded-2xl overflow-hidden shadow-lg">
+              <video controls playsInline preload="metadata" poster="/images/posters/edm650x-2.jpg" className="w-full h-full rounded-2xl">
+                <source src="/videos/edm650x-2.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <div className="aspect-video rounded-2xl overflow-hidden shadow-lg">
+              <video controls playsInline preload="metadata" poster="/images/posters/edm650x-4.jpg" className="w-full h-full rounded-2xl">
+                <source src="/videos/edm650x-4.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Configurazioni */}
-      <section className="px-4 sm:px-6 lg:px-8 pb-10 lg:pb-16 bg-white">
+      <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
         <div className="container-custom">
           <div className="text-center mb-12">
             <p className="text-cyan-500 font-semibold text-sm uppercase tracking-widest mb-4">{it ? 'Configurazioni' : 'Configurations'}</p>
@@ -223,11 +250,6 @@ export default async function () {
                 : 'The EDM-650X is available in multiple configurations to match your production requirements.'}
             </p>
           </div>
-          <p className="text-gray-500 mt-4 max-w-2xl mx-auto text-center">
-            {it
-              ? 'In alto la versione compatta a 2 teste. Qui sotto il dettaglio della versione da 3 a 6 teste.'
-              : 'Above: the compact 2-head version. Below: details of the 3 to 6-head version.'}
-          </p>
           <div className="grid md:grid-cols-2 gap-12 items-center mt-8">
             <div>
               <div className="relative h-72 lg:h-96 rounded-3xl overflow-hidden bg-surface-50">
@@ -256,33 +278,6 @@ export default async function () {
                   <li>{it ? '→ Configurazione personalizzabile' : '→ Customisable configuration'}</li>
                 </ul>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Video */}
-      <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
-        <div className="container-custom">
-          <div className="text-center mb-12">
-            <p className="text-cyan-500 font-semibold text-sm uppercase tracking-widest mb-4">Video</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-dark-800">{it ? 'EDM-650X in Azione' : 'EDM-650X in Action'}</h2>
-          </div>
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            <div className="aspect-video rounded-2xl overflow-hidden shadow-lg">
-              <video controls playsInline preload="metadata" poster="/images/posters/edm650x-1.jpg" className="w-full h-full rounded-2xl">
-                <source src="/videos/edm650x-1.mp4" type="video/mp4" />
-              </video>
-            </div>
-            <div className="aspect-video rounded-2xl overflow-hidden shadow-lg">
-              <video controls playsInline preload="metadata" poster="/images/posters/edm650x-2.jpg" className="w-full h-full rounded-2xl">
-                <source src="/videos/edm650x-2.mp4" type="video/mp4" />
-              </video>
-            </div>
-            <div className="aspect-video rounded-2xl overflow-hidden shadow-lg">
-              <video controls playsInline preload="metadata" poster="/images/posters/edm650x-4.jpg" className="w-full h-full rounded-2xl">
-                <source src="/videos/edm650x-4.mp4" type="video/mp4" />
-              </video>
             </div>
           </div>
         </div>

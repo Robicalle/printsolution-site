@@ -164,6 +164,35 @@ export default async function Any002Page() {
         </div>
       </section>
 
+      {/* Descrizione */}
+      <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
+        <div className="container-custom max-w-4xl">
+          <h2 className="text-3xl font-bold text-dark-800 mb-6">{locale === 'it' ? 'Stampa Laser Digitale per Etichette On-Demand' : 'Digital Laser Printing for On-Demand Labels'}</h2>
+          {locale === 'it' ? (<><p className="text-gray-500 leading-relaxed mb-4">
+            La Anytron ANY-002 è una stampante laser a colori progettata specificamente per la produzione di etichette 
+            in piccoli e medi lotti. Con una risoluzione di 1200 dpi e una velocità fino a 9 m/min, è in grado di 
+            produrre fino a 5.000 etichette in sole 2 ore.
+          </p>
+          <p className="text-gray-500 leading-relaxed mb-4">
+            Il toner resistente ad acqua, calore e abrasioni garantisce etichette di qualità professionale adatte a 
+            qualsiasi applicazione, dal food &amp; beverage ai prodotti cosmetici e chimici. La bobina da 500 metri 
+            assicura un&apos;autonomia produttiva elevata senza frequenti cambi materiale.
+          </p>
+          <p className="text-gray-500 leading-relaxed">
+            Ideale per aziende che necessitano di etichette personalizzate con dati variabili, lotti brevi e 
+            prototipazione rapida, la ANY-002 elimina i costi fissi degli impianti di stampa tradizionali.
+          </p></>) : (<><p className="text-gray-500 leading-relaxed mb-4">
+            The Anytron ANY-002 is a color laser printer designed specifically for small and medium label runs. With 1200 dpi resolution and speeds up to 9 m/min, it can produce up to 5,000 labels in just 2 hours.
+          </p>
+          <p className="text-gray-500 leading-relaxed mb-4">
+            The toner, resistant to water, heat and abrasion, delivers professional-quality labels suited to any application, from food &amp; beverage to cosmetics and chemicals. The 500-meter roll ensures extended production autonomy without frequent media changes.
+          </p>
+          <p className="text-gray-500 leading-relaxed">
+            Ideal for companies requiring custom labels with variable data, short runs and rapid prototyping, the ANY-002 eliminates the fixed costs of traditional printing systems.
+          </p></>)}
+        </div>
+      </section>
+
       {/* Video */}
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
         <div className="container-custom">
@@ -193,35 +222,6 @@ export default async function Any002Page() {
               </video>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Descrizione */}
-      <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
-        <div className="container-custom max-w-4xl">
-          <h2 className="text-3xl font-bold text-dark-800 mb-6">{locale === 'it' ? 'Stampa Laser Digitale per Etichette On-Demand' : 'Digital Laser Printing for On-Demand Labels'}</h2>
-          {locale === 'it' ? (<><p className="text-gray-500 leading-relaxed mb-4">
-            La Anytron ANY-002 è una stampante laser a colori progettata specificamente per la produzione di etichette 
-            in piccoli e medi lotti. Con una risoluzione di 1200 dpi e una velocità fino a 9 m/min, è in grado di 
-            produrre fino a 5.000 etichette in sole 2 ore.
-          </p>
-          <p className="text-gray-500 leading-relaxed mb-4">
-            Il toner resistente ad acqua, calore e abrasioni garantisce etichette di qualità professionale adatte a 
-            qualsiasi applicazione, dal food &amp; beverage ai prodotti cosmetici e chimici. La bobina da 500 metri 
-            assicura un&apos;autonomia produttiva elevata senza frequenti cambi materiale.
-          </p>
-          <p className="text-gray-500 leading-relaxed">
-            Ideale per aziende che necessitano di etichette personalizzate con dati variabili, lotti brevi e 
-            prototipazione rapida, la ANY-002 elimina i costi fissi degli impianti di stampa tradizionali.
-          </p></>) : (<><p className="text-gray-500 leading-relaxed mb-4">
-            The Anytron ANY-002 is a color laser printer designed specifically for small and medium label runs. With 1200 dpi resolution and speeds up to 9 m/min, it can produce up to 5,000 labels in just 2 hours.
-          </p>
-          <p className="text-gray-500 leading-relaxed mb-4">
-            The toner, resistant to water, heat and abrasion, delivers professional-quality labels suited to any application, from food &amp; beverage to cosmetics and chemicals. The 500-meter roll ensures extended production autonomy without frequent media changes.
-          </p>
-          <p className="text-gray-500 leading-relaxed">
-            Ideal for companies requiring custom labels with variable data, short runs and rapid prototyping, the ANY-002 eliminates the fixed costs of traditional printing systems.
-          </p></>)}
         </div>
       </section>
 

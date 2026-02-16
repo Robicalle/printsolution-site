@@ -14,7 +14,6 @@ const navigation = [
       { label: "Etichette", href: "/soluzioni/etichette", desc: "Stampa etichette in bobina e foglio" },
       { label: "Shopper & Packaging di Lusso", href: "/soluzioni/shopper", desc: "Shopper, buste e packaging premium" },
       { label: "Labbratura Libri", href: "/soluzioni/labbratura", desc: "Stampa bordi libri e quaderni" },
-      { label: "Consumabili", href: "/soluzioni/consumabili", desc: "Inchiostri, testine e materiali" },
       { label: "Confronto Prodotti", href: "/confronto-prodotti", desc: "Tutte le stampanti a confronto" },
     ],
   },

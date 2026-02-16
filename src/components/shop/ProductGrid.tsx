@@ -46,10 +46,9 @@ function ProductCard({ product, categoryName }: { product: Product; categoryName
             className="object-contain max-h-full group-hover:scale-105 transition-transform duration-300"
           />
         ) : (
-          <div className="w-full h-full flex items-center justify-center bg-gray-50 rounded-xl">
-            <svg className="w-16 h-16 text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-            </svg>
+          <div className="w-full h-full flex flex-col items-center justify-center rounded-xl overflow-hidden" style={{ background: 'linear-gradient(135deg, #1a237e 0%, #00bcd4 100%)' }}>
+            <span className="text-white font-bold text-2xl tracking-wide text-center px-4 leading-tight">{product.sku}</span>
+            <span className="text-white/70 text-xs mt-2 tracking-widest uppercase">Consumabili</span>
           </div>
         )}
         {product.inStock && (

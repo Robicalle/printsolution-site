@@ -67,7 +67,8 @@ function getSpecs(l: string) { return l === 'it' ? [
   ["Temperatura operativa", "0��45�C, umidit� 20%�80%"],
   ["Assorbimento", "480 W, AC 110V/220V, 50/60 Hz"],
   ["Dimensioni (L�A�P)", "190 � 120 � 165 cm"],
-  ["Peso", "450 kg"],
+  ["Peso", "450 kg"],
+
 ] : [
   ["Production capacity", "Approx. 400 pcs/hour, 3200 pcs/day"],
   ["Print resolution", "1200 dpi"],
@@ -93,8 +94,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
       </svg>
     ),
-    title: "400 Pezzi all\u2019Ora",
-    desc: "Produttivit� elevata con fino a 3200 libri personalizzati al giorno. Ideale per ordini piccoli e grandi.",
+    title: "400 Pezzi all\u2019Ora", titleEn: "400 Pieces per Hour",
+    desc: "Produttività elevata con fino a 3200 libri personalizzati al giorno. Ideale per ordini piccoli e grandi.", descEn: "High productivity with up to 3,200 customised books per day. Ideal for both small and large orders.",
   },
   {
     icon: (
@@ -156,14 +157,13 @@ export default async function () {
         <div className="absolute inset-0 bg-gradient-to-r from-dark-800/90 via-dark-800/70 to-dark-800/40" />
         <div className="container-custom px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-2xl">
-            <p className="text-purple-300 text-sm mb-3 uppercase tracking-widest font-medium">Prodotti</p>
+            <p className="text-purple-300 text-sm mb-3 uppercase tracking-widest font-medium">{locale === 'it' ? 'Prodotti' : 'Products'}</p>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">Robotjet Book Edge Printer</h1>
               <p className="text-lg text-gray-300/90 leading-relaxed mb-8">
-                Stampante digitale rivoluzionaria per la labbratura di libri, quaderni, agende e block notes. 
-                400 pezzi/ora, CMYK single-pass con teste HP A3, risoluzione fino a 1200 dpi.
+                {locale === 'it' ? 'Stampante digitale rivoluzionaria per la labbratura di libri, quaderni, agende e block notes. 400 pezzi/ora, CMYK single-pass con teste HP A3, risoluzione fino a 1200 dpi.' : 'Revolutionary digital printer for book edge printing on books, notebooks, planners and notepads. 400 pcs/hour, CMYK single-pass with HP A3 printheads, up to 1200 dpi resolution.'}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Robotjet&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20Robotjet.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">Richiedi Demo →</a>
+                <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Robotjet&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20Robotjet.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">{locale === 'it' ? 'Richiedi Demo →' : 'Request Demo →'}</a>
               </div>
           </div>
         </div>
@@ -181,23 +181,31 @@ export default async function () {
       {/* Descrizione */}
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
         <div className="container-custom max-w-4xl">
-          <h2 className="text-3xl font-bold text-dark-800 mb-6">La Rivoluzione nella Labbratura dei Libri</h2>
-          <p className="text-gray-500 leading-relaxed mb-4">
-            Robotjet Book Edge Digital Printer � la stampante digitale che rende unici libri, quaderni, agende 
+          <h2 className="text-3xl font-bold text-dark-800 mb-6">{locale === 'it' ? 'La Rivoluzione nella Labbratura dei Libri' : 'The Revolution in Book Edge Printing'}</h2>
+          {locale === 'it' ? (<><p className="text-gray-500 leading-relaxed mb-4">
+            Robotjet Book Edge Digital Printer è la stampante digitale che rende unici libri, quaderni, agende 
             e block notes attraverso la tecnica della labbratura. Sfruttando la tecnologia inkjet a base acqua 
             CMYK con teste di stampa HP A3, offre risultati di stampa mai visti prima.
           </p>
           <p className="text-gray-500 leading-relaxed mb-4">
-            La sua particolarit� risiede nella capacit� di stampare fondi pieni, sovrastampe e sfumature con 
+            La sua particolarità risiede nella capacità di stampare fondi pieni, sovrastampe e sfumature con 
             precisione assoluta grazie alla risoluzione di 1200 dpi. Con 400 pezzi/ora e 3200 pezzi/giorno, 
-            consente di evadere ordini sia piccoli che grandi con estrema facilit�.
+            consente di evadere ordini sia piccoli che grandi con estrema facilità.
           </p>
           <p className="text-gray-500 leading-relaxed">
             Dotata di un sistema intelligente di adattamento, si regola automaticamente alla forma (angoli tondi 
             o squadrati) e allo spessore del libro. La spazzola rotante e l&apos;aspirapolvere integrati puliscono 
             i libri prima della stampa, proteggendo la testina da danni accidentali e garantendo risultati 
             sempre perfetti.
+          </p></>) : (<><p className="text-gray-500 leading-relaxed mb-4">
+            The Robotjet Book Edge Digital Printer is the digital printer that makes books, notebooks, planners and notepads unique through edge printing. Leveraging water-based CMYK inkjet technology with HP A3 printheads, it delivers print results never seen before.
           </p>
+          <p className="text-gray-500 leading-relaxed mb-4">
+            Its standout feature is the ability to print solid fills, overprints and gradients with absolute precision thanks to 1200 dpi resolution. With 400 pieces per hour and 3,200 per day, it handles both small and large orders with ease.
+          </p>
+          <p className="text-gray-500 leading-relaxed">
+            Equipped with an intelligent adaptation system, it automatically adjusts to the shape (round or square corners) and thickness of the book. The integrated rotating brush and vacuum cleaner clean books before printing, protecting the printhead and ensuring perfect results every time.
+          </p></>)}
         </div>
       </section>
 
@@ -206,7 +214,7 @@ export default async function () {
         <div className="container-custom">
           <div className="text-center mb-12">
             <p className="text-purple-500 font-semibold text-sm uppercase tracking-widest mb-4">Video</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-dark-800">Robotjet in Azione</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-dark-800">{locale === 'it' ? 'Robotjet in Azione' : 'Robotjet in Action'}</h2>
           </div>
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             <div className="aspect-video rounded-2xl overflow-hidden shadow-lg">
@@ -226,7 +234,7 @@ export default async function () {
       {/* Features */}
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
         <div className="container-custom">
-          <h2 className="text-3xl font-bold text-dark-800 mb-8 text-center">Vantaggi Principali</h2>
+          <h2 className="text-3xl font-bold text-dark-800 mb-8 text-center">{locale === 'it' ? 'Vantaggi Principali' : 'Key Benefits'}</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((f) => (
               <div key={f.title} className="card-modern p-8 hover:-translate-y-1 transition-transform duration-300">
@@ -243,7 +251,7 @@ export default async function () {
       {/* Specifiche Tecniche */}
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-surface-50">
         <div className="container-custom max-w-3xl">
-          <h2 className="text-3xl font-bold text-dark-800 mb-10 text-center">Specifiche Tecniche</h2>
+          <h2 className="text-3xl font-bold text-dark-800 mb-10 text-center">{locale === 'it' ? 'Specifiche Tecniche' : 'Technical Specifications'}</h2>
           <div className="space-y-3">
             {getSpecs(locale).map(([label, value]) => (
               <div key={label} className="flex flex-col sm:flex-row sm:justify-between gap-1 bg-white rounded-xl px-5 py-4 shadow-sm">
@@ -258,14 +266,14 @@ export default async function () {
       {/* CTA */}
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-surface-50">
         <div className="container-custom text-center">
-          <h2 className="text-3xl font-bold text-dark-800 mb-6">Scopri Robotjet dal Vivo</h2>
+          <h2 className="text-3xl font-bold text-dark-800 mb-6">{locale === 'it' ? 'Scopri Robotjet dal Vivo' : 'See Robotjet Live'}</h2>
           <p className="text-gray-500 max-w-xl mx-auto mb-8">
-            Vieni nella nostra sala demo a Sesto San Giovanni e scopri come la labbratura digitale pu� aprire nuove opportunit� per il tuo business.
+            {locale === 'it' ? 'Vieni nella nostra sala demo a Sesto San Giovanni e scopri come la labbratura digitale può aprire nuove opportunità per il tuo business.' : 'Visit our demo room in Sesto San Giovanni and discover how digital edge printing can open new opportunities for your business.'}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="tel:+390249439417" className="btn-outline text-lg inline-flex items-center">
               <svg className="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" /></svg>
-              Chiamaci Ora
+              {locale === 'it' ? 'Chiamaci Ora' : 'Call Us Now'}
             </a>
           </div>
         </div>
@@ -274,7 +282,7 @@ export default async function () {
       {/* Prodotti Correlati */}
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
         <div className="container-custom">
-          <h2 className="text-2xl font-bold text-dark-800 mb-8 text-center">Prodotti Correlati</h2>
+          <h2 className="text-2xl font-bold text-dark-800 mb-8 text-center">{locale === 'it' ? 'Prodotti Correlati' : 'Related Products'}</h2>
           <div className="grid md:grid-cols-3 gap-6">
             <Link href="/prodotti/greenbox-print-book" className="card-modern overflow-hidden group hover:-translate-y-1 transition-transform duration-300">
                 <div className="h-40 relative overflow-hidden">

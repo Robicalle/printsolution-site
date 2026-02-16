@@ -53,23 +53,39 @@ const breadcrumbJsonLd = {
   ],
 };
 
-const specs: [string, string][] = [
+function getSpecsLocal(l: string): [string, string][] { return l === 'it' ? [
   ["Sistema di stampa", "Getto di inchiostro ultraveloce HP PageWide"],
   ["Tipo di inchiostro", "Base acqua pigmentato, 4 cartucce CMYK"],
   ["Testina di stampa", "HP single-pass di ultima generazione"],
-  ["Capacit\u00e0 inchiostri", "C 250 ml, M 250 ml, Y 250 ml, K 500 ml"],
-  ["Risoluzione di stampa", "Fino a 1200\u00d71200 dpi"],
-  ["Velocit\u00e0 di stampa", "Fino a 30 m/min"],
+  ["Capacità inchiostri", "C 250 ml, M 250 ml, Y 250 ml, K 500 ml"],
+  ["Risoluzione di stampa", "Fino a 1200×1200 dpi"],
+  ["Velocità di stampa", "Fino a 30 m/min"],
   ["Area di stampa", "297 mm (passaggio singolo), larghezza max 90 cm"],
   ["Passaggio carta/cartone", "Spessore max 11 cm, larghezza max 100 cm, lunghezza max 160 cm"],
   ["Escursione testa", "Microregolabile su larghezza piano di lavoro fino a 80 cm"],
   ["Altezza escursione verticale", "Fino a 30 cm di spessore"],
   ["Sensore supporto", "Ottico"],
   ["Lunghezza piano motorizzato", "180 cm"],
-  ["Dimensioni (L\u00d7P\u00d7A)", "210 \u00d7 160 \u00d7 140 cm"],
+  ["Dimensioni (L×P×A)", "210 × 160 × 140 cm"],
   ["Peso", "120 kg"],
   ["Sistema operativo", "Windows XP, Vista, 7, 10"],
-];
+] : [
+  ["Print system", "HP PageWide ultra-fast inkjet"],
+  ["Ink type", "Pigmented water-based, 4 CMYK cartridges"],
+  ["Printhead", "Latest generation HP single-pass"],
+  ["Ink capacity", "C 250 ml, M 250 ml, Y 250 ml, K 500 ml"],
+  ["Print resolution", "Up to 1200×1200 dpi"],
+  ["Print speed", "Up to 30 m/min"],
+  ["Print area", "297 mm (single pass), max width 90 cm"],
+  ["Paper/cardboard passage", "Max thickness 11 cm, max width 100 cm, max length 160 cm"],
+  ["Head travel", "Micro-adjustable across work surface up to 80 cm"],
+  ["Vertical travel height", "Up to 30 cm thickness"],
+  ["Media sensor", "Optical"],
+  ["Motorised bed length", "180 cm"],
+  ["Dimensions (L×W×H)", "210 × 160 × 140 cm"],
+  ["Weight", "120 kg"],
+  ["Operating system", "Windows XP, Vista, 7, 10"],
+]; }
 
 const features = [
   {
@@ -97,7 +113,7 @@ const features = [
       </svg>
     ),
     title: "Inchiostri a Base Acqua", titleEn: "Water-Based Inks",
-    desc: "Senza solventi e totalmente inodore. Resistenti agli agenti atmosferici, allo sfregamento e all\u2019acqua.",
+    desc: "Senza solventi e totalmente inodore. Resistenti agli agenti atmosferici, allo sfregamento e all\u2019acqua.", descEn: "Solvent-free and completely odorless. Resistant to weathering, rubbing and water.",
   },
   {
     icon: (
@@ -143,17 +159,16 @@ export default async function GreenBoxPrintBookPage() {
         <div className="absolute inset-0 bg-gradient-to-r from-dark-800/90 via-dark-800/70 to-dark-800/40" />
         <div className="container-custom px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-2xl">
-            <p className="text-green-300 text-sm mb-3 uppercase tracking-widest font-medium">Labbratura Libri</p>
+            <p className="text-green-300 text-sm mb-3 uppercase tracking-widest font-medium">{locale === 'it' ? 'Labbratura Libri' : 'Book Edge Printing'}</p>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
                 GreenBox<br />
                 <span className="bg-gradient-to-r from-green-400 to-cyan-400 bg-clip-text text-transparent">Print Book</span>
               </h1>
               <p className="text-lg text-gray-300/90 leading-relaxed mb-8">
-                La soluzione digitale per la labbratura dei libri. Stampa inkjet HP single-pass 
-                a base acqua, 30 m/min, 1200&times;1200 dpi. Industria 4.0 ready.
+                {locale === 'it' ? 'La soluzione digitale per la labbratura dei libri. Stampa inkjet HP single-pass a base acqua, 30 m/min, 1200×1200 dpi. Industria 4.0 ready.' : 'The digital solution for book edge printing. HP single-pass inkjet with water-based inks, 30 m/min, 1200×1200 dpi. Industry 4.0 ready.'}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20GreenBox%20Print%20Book&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20GreenBox%20Print%20Book.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">Richiedi Demo &rarr;</a>
+                <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20GreenBox%20Print%20Book&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20GreenBox%20Print%20Book.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">{locale === 'it' ? 'Richiedi Demo →' : 'Request Demo →'}</a>
               </div>
           </div>
         </div>
@@ -188,8 +203,8 @@ export default async function GreenBoxPrintBookPage() {
       {/* Descrizione */}
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
         <div className="container-custom max-w-4xl">
-          <h2 className="text-3xl font-bold text-dark-800 mb-6">Labbratura Digitale dei Libri</h2>
-          <p className="text-gray-500 leading-relaxed mb-4">
+          <h2 className="text-3xl font-bold text-dark-800 mb-6">{locale === 'it' ? 'Labbratura Digitale dei Libri' : 'Digital Book Edge Printing'}</h2>
+          {locale === 'it' ? (<><p className="text-gray-500 leading-relaxed mb-4">
             La GreenBox Print Book trasforma la versatile piattaforma GreenBox 2 in una soluzione dedicata 
             alla labbratura digitale dei libri. Grazie alla tecnologia HP PageWide single-pass con inchiostri 
             pigmentati a base acqua, stampa direttamente in quadricromia sul dorso dei libri, rendendoli unici.
@@ -203,7 +218,15 @@ export default async function GreenBoxPrintBookPage() {
             Con una velocit&agrave; di 30 m/min e una risoluzione di 1200&times;1200 dpi, la GreenBox Print Book 
             offre qualit&agrave; di stampa eccezionale con colori vividi e resistenti. Gli inchiostri a base acqua 
             garantiscono resistenza agli agenti atmosferici, allo sfregamento e all&apos;acqua.
+          </p></>) : (<><p className="text-gray-500 leading-relaxed mb-4">
+            The GreenBox Print Book transforms the versatile GreenBox 2 platform into a dedicated solution for digital book edge printing. Using HP PageWide single-pass technology with pigmented water-based inks, it prints directly in full color on book edges, making each one unique.
           </p>
+          <p className="text-gray-500 leading-relaxed mb-4">
+            The 297 mm printhead, mounted on a sliding rail with 80 cm travel, allows precise centering of the print area. The micrometric system with digital display enables accurate height adjustment, with vertical travel up to 30 cm.
+          </p>
+          <p className="text-gray-500 leading-relaxed">
+            With a speed of 30 m/min and 1200×1200 dpi resolution, the GreenBox Print Book delivers exceptional print quality with vivid and durable colors. Water-based inks ensure resistance to weathering, rubbing and water.
+          </p></>)}
         </div>
       </section>
 
@@ -230,7 +253,7 @@ export default async function GreenBoxPrintBookPage() {
         <div className="container-custom max-w-3xl">
           <h2 className="text-3xl font-bold text-dark-800 mb-10 text-center">{locale === 'it' ? 'Specifiche Tecniche' : 'Technical Specifications'}</h2>
           <div className="space-y-3">
-            {specs.map(([label, value]) => (
+            {getSpecsLocal(locale).map(([label, value]) => (
               <div key={label} className="flex flex-col sm:flex-row sm:justify-between gap-1 bg-white rounded-xl px-5 py-4 shadow-sm">
                 <span className="text-sm font-medium text-gray-600">{label}</span>
                 <span className="text-sm font-bold text-dark-800 text-right max-w-[60%]">{value}</span>
@@ -243,15 +266,15 @@ export default async function GreenBoxPrintBookPage() {
       {/* CTA */}
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-surface-50">
         <div className="container-custom text-center">
-          <h2 className="text-3xl font-bold text-dark-800 mb-6">Scopri GreenBox Print Book</h2>
+          <h2 className="text-3xl font-bold text-dark-800 mb-6">{locale === 'it' ? 'Scopri GreenBox Print Book' : 'Discover GreenBox Print Book'}</h2>
           <p className="text-gray-500 max-w-xl mx-auto mb-8">
-            Vieni nella nostra sala demo a Sesto San Giovanni e scopri come la labbratura digitale pu&ograve; rendere unici i tuoi libri.
+            {locale === 'it' ? 'Vieni nella nostra sala demo a Sesto San Giovanni e scopri come la labbratura digitale può rendere unici i tuoi libri.' : 'Visit our demo room in Sesto San Giovanni and discover how digital edge printing can make your books unique.'}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20GreenBox%20Print%20Book&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20GreenBox%20Print%20Book.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">Richiedi Demo &rarr;</a>
+            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20GreenBox%20Print%20Book&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20GreenBox%20Print%20Book.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">{locale === 'it' ? 'Richiedi Demo →' : 'Request Demo →'}</a>
             <a href="tel:+390249439417" className="btn-outline text-lg inline-flex items-center">
               <svg className="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" /></svg>
-              Chiamaci Ora
+              {locale === 'it' ? 'Chiamaci Ora' : 'Call Us Now'}
             </a>
           </div>
         </div>
@@ -268,7 +291,7 @@ export default async function GreenBoxPrintBookPage() {
                 </div>
                 <div className="p-5">
                   <h3 className="font-bold text-dark-800 group-hover:text-cyan-500 transition-colors">Robotjet</h3>
-                  <p className="text-sm text-gray-500 mt-1">Stampante labbratura libri</p>
+                  <p className="text-sm text-gray-500 mt-1">{locale === 'it' ? 'Stampante labbratura libri' : 'Book edge printer'}</p>
                 </div>
               </Link>
           </div>

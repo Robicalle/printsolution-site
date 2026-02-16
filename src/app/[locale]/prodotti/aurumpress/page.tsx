@@ -57,7 +57,8 @@ function getSpecs(l: string) { return l === 'it' ? [
   ["Tipo stampa", "Hot foil stamping"],
   ["Materiali foil", "Argentati, metallizzati, colori pastello, trasparente lucido"],
   ["Applicazioni", "Loghi, scritte, decorazioni su packaging"],
-  ["Supporti", "Cartone, carta, packaging rigido"],
+  ["Supporti", "Cartone, carta, packaging rigido"],
+
 ] : [
   ["Technology", "Digital thermal foil stamping"],
   ["Resolution", "1200 × 1200 dpi"],
@@ -124,8 +125,7 @@ export default async function AurumPressPage() {
             <p className="text-cyan-300 text-sm mb-3 uppercase tracking-widest font-medium">{locale === 'it' ? 'Prodotti' : 'Products'}</p>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">AurumPress</h1>
               <p className="text-lg text-gray-300/90 leading-relaxed mb-8">
-                Stampatrice termica ad impressione idraulica per foil metallizzati, argentati, 
-                colori pastello e trasparente lucido. Il tocco premium per il tuo packaging.
+                {locale === 'it' ? 'Stampatrice termica ad impressione idraulica per foil metallizzati, argentati, colori pastello e trasparente lucido. Il tocco premium per il tuo packaging.' : 'Thermal foil printer with hydraulic impression for metallic, silver, pastel and glossy transparent foils. The premium touch for your packaging.'}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20AurumPress&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20AurumPress.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">{locale === 'it' ? 'Richiedi Demo →' : 'Request Demo →'}</a>
@@ -146,8 +146,8 @@ export default async function AurumPressPage() {
       {/* Descrizione */}
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
         <div className="container-custom max-w-4xl">
-          <h2 className="text-3xl font-bold text-dark-800 mb-6">Finiture di Lusso per il Tuo Packaging</h2>
-          <p className="text-gray-500 leading-relaxed mb-4">
+          <h2 className="text-3xl font-bold text-dark-800 mb-6">{locale === 'it' ? 'Finiture di Lusso per il Tuo Packaging' : 'Luxury Finishes for Your Packaging'}</h2>
+          {locale === 'it' ? (<><p className="text-gray-500 leading-relaxed mb-4">
             L&apos;AurumPress è una stampatrice termica ad impressione idraulica progettata per aggiungere finiture 
             premium al packaging. Grazie alla tecnologia hot foil stamping, è possibile applicare loghi, scritte 
             e decorazioni con foil argentati, metallizzati, colori pastello e trasparente lucido.
@@ -160,7 +160,15 @@ export default async function AurumPressPage() {
           <p className="text-gray-500 leading-relaxed">
             Perfetta per scatole di lusso, confezioni regalo, packaging cosmetico, alimentare e per il settore 
             della moda. Una macchina che trasforma ogni confezione in un&apos;esperienza sensoriale.
+          </p></>) : (<><p className="text-gray-500 leading-relaxed mb-4">
+            The AurumPress is a thermal foil printer with hydraulic impression designed to add premium finishes to packaging. Using hot foil stamping technology, it applies logos, text and decorations with silver, metallic, pastel and glossy transparent foils.
           </p>
+          <p className="text-gray-500 leading-relaxed mb-4">
+            The hydraulic impression system ensures uniform and consistent pressure, delivering flawless results on cardboard, paper and rigid packaging. The AurumPress is the ideal choice for those looking to differentiate their product with visually and tactilely striking packaging.
+          </p>
+          <p className="text-gray-500 leading-relaxed">
+            Perfect for luxury boxes, gift packaging, cosmetic packaging and the fashion industry. A machine that transforms every package into a sensory experience.
+          </p></>)}
         </div>
       </section>
 
@@ -221,9 +229,9 @@ export default async function AurumPressPage() {
       {/* CTA */}
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-surface-50">
         <div className="container-custom text-center">
-          <h2 className="text-3xl font-bold text-dark-800 mb-6">Aggiungi il Tocco Premium al Tuo Packaging</h2>
+          <h2 className="text-3xl font-bold text-dark-800 mb-6">{locale === 'it' ? 'Aggiungi il Tocco Premium al Tuo Packaging' : 'Add the Premium Touch to Your Packaging'}</h2>
           <p className="text-gray-500 max-w-xl mx-auto mb-8">
-            Scopri come l&apos;AurumPress può trasformare il tuo packaging. Vieni a vederla in azione nella nostra sala demo.
+            {locale === 'it' ? "Scopri come l'AurumPress può trasformare il tuo packaging. Vieni a vederla in azione nella nostra sala demo." : 'Discover how the AurumPress can transform your packaging. Come see it in action in our demo room.'}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20AurumPress&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20AurumPress.%0A%0AGrazie" className="btn-primary text-lg">{locale === 'it' ? 'Richiedi Demo →' : 'Request Demo →'}</a>

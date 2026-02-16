@@ -70,7 +70,8 @@ function getSpecs(l: string) { return l === 'it' ? [
   ["Alimentazione", "220-240V, 50/60Hz, 4.5A (max 1.300W)"],
   ["Ambiente di lavoro", "10-32°C, umidità 20-80%"],
   ["Dimensioni", "180 × 480 × 600 mm"],
-  ["Peso", "95 kg"],
+  ["Peso", "95 kg"],
+
 ] : [
   ["Technology", "Electrophotographic toner LED"],
   ["Resolution", "1200 × 600 dpi"],
@@ -99,7 +100,7 @@ const features = [
   },
   {
     title: "On-Demand Senza Sprechi", titleEn: "On-Demand Without Waste",
-    desc: "Stampate qualsiasi quantità, dalla singola etichetta a migliaia. Zero sprechi di materiale grazie al taglio intelligente (meno di 40 cm di scarto).",
+    desc: "Stampate qualsiasi quantità, dalla singola etichetta a migliaia. Zero sprechi di materiale grazie al taglio intelligente (meno di 40 cm di scarto).", descEn: "Print any quantity, from a single label to thousands. Zero material waste thanks to intelligent cutting (less than 40 cm of waste).",
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
@@ -133,21 +134,21 @@ export default async function Any002Page() {
         <div className="container-custom px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-2xl">
               <span className="inline-block px-4 py-1.5 rounded-full text-xs font-bold bg-gradient-to-r from-violet-500 to-violet-600 text-white mb-6">
-                Stampa
+                {locale === 'it' ? 'Stampa' : 'Printing'}
               </span>
               <h1 className="text-4xl lg:text-6xl font-bold tracking-tight mb-6">
                 Anytron<br />
                 <span className="bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent">ANY-002</span>
               </h1>
               <p className="text-xl text-gray-300 leading-relaxed mb-8 max-w-lg">
-                Sistema completo stampa laser + fustellatura. Fino a <strong className="text-white">5.000 etichette in 2 ore</strong> con toner resistente ad acqua, calore e abrasioni.
+                {locale === 'it' ? (<>Sistema completo stampa laser + fustellatura. Fino a <strong className="text-white">5.000 etichette in 2 ore</strong> con toner resistente ad acqua, calore e abrasioni.</>) : (<>Complete laser printing + die-cutting system. Up to <strong className="text-white">5,000 labels in 2 hours</strong> with toner resistant to water, heat and abrasion.</>)}
               </p>
               <div className="flex flex-wrap gap-4">
                 <a
                   href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Info%20Anytron%20ANY-002&body=Buongiorno%2C%0A%0AVorrei%20ricevere%20informazioni%20sulla%20Anytron%20ANY-002.%0A%0AGrazie"
                   className="btn-primary text-lg"
                 >
-                  Richiedi Informazioni
+                  {locale === 'it' ? 'Richiedi Informazioni' : 'Request Information'}
                 </a>
               </div>
           </div>
@@ -198,8 +199,8 @@ export default async function Any002Page() {
       {/* Descrizione */}
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
         <div className="container-custom max-w-4xl">
-          <h2 className="text-3xl font-bold text-dark-800 mb-6">Stampa Laser Digitale per Etichette On-Demand</h2>
-          <p className="text-gray-500 leading-relaxed mb-4">
+          <h2 className="text-3xl font-bold text-dark-800 mb-6">{locale === 'it' ? 'Stampa Laser Digitale per Etichette On-Demand' : 'Digital Laser Printing for On-Demand Labels'}</h2>
+          {locale === 'it' ? (<><p className="text-gray-500 leading-relaxed mb-4">
             La Anytron ANY-002 è una stampante laser a colori progettata specificamente per la produzione di etichette 
             in piccoli e medi lotti. Con una risoluzione di 1200 dpi e una velocità fino a 9 m/min, è in grado di 
             produrre fino a 5.000 etichette in sole 2 ore.
@@ -212,7 +213,15 @@ export default async function Any002Page() {
           <p className="text-gray-500 leading-relaxed">
             Ideale per aziende che necessitano di etichette personalizzate con dati variabili, lotti brevi e 
             prototipazione rapida, la ANY-002 elimina i costi fissi degli impianti di stampa tradizionali.
+          </p></>) : (<><p className="text-gray-500 leading-relaxed mb-4">
+            The Anytron ANY-002 is a color laser printer designed specifically for small and medium label runs. With 1200 dpi resolution and speeds up to 9 m/min, it can produce up to 5,000 labels in just 2 hours.
           </p>
+          <p className="text-gray-500 leading-relaxed mb-4">
+            The toner, resistant to water, heat and abrasion, delivers professional-quality labels suited to any application, from food &amp; beverage to cosmetics and chemicals. The 500-meter roll ensures extended production autonomy without frequent media changes.
+          </p>
+          <p className="text-gray-500 leading-relaxed">
+            Ideal for companies requiring custom labels with variable data, short runs and rapid prototyping, the ANY-002 eliminates the fixed costs of traditional printing systems.
+          </p></>)}
         </div>
       </section>
 
@@ -238,9 +247,9 @@ export default async function Any002Page() {
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
         <div className="container-custom max-w-4xl">
           <div className="text-center mb-16">
-            <p className="text-violet-500 font-semibold text-sm uppercase tracking-widest mb-4">Dettagli</p>
+            <p className="text-violet-500 font-semibold text-sm uppercase tracking-widest mb-4">{locale === 'it' ? 'Dettagli' : 'Details'}</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-dark-800 tracking-tight">
-              Specifiche Tecniche
+              {locale === 'it' ? 'Specifiche Tecniche' : 'Technical Specifications'}
             </h2>
           </div>
           <div className="card-modern overflow-hidden">
@@ -264,9 +273,9 @@ export default async function Any002Page() {
           <h2 className="text-2xl font-bold text-dark-800 mb-8 text-center">{locale === 'it' ? 'Prodotti Correlati' : 'Related Products'}</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { name: "Any-Press", desc: "Stampante laser LED 5 colori CMYK+Bianco", href: "/prodotti/any-press", image: "/images/products/any-press.avif" },
-              { name: "Afinia L901", desc: "Stampante etichette professionale Memjet", href: "/prodotti/afinia-l901", image: "/images/products/afinia-l901.png" },
-              { name: "Afinia DLP-2200", desc: "Digital Label Press completa", href: "/prodotti/afinia-dlp2200", image: "/images/products/afinia-dlp2200.avif" },
+              { name: "Any-Press", desc: locale === 'it' ? 'Stampante laser LED 5 colori CMYK+Bianco' : 'LED laser printer 5 colors CMYK+White', href: "/prodotti/any-press", image: "/images/products/any-press.avif" },
+              { name: "Afinia L901", desc: locale === 'it' ? 'Stampante etichette professionale Memjet' : 'Professional Memjet label printer', href: "/prodotti/afinia-l901", image: "/images/products/afinia-l901.png" },
+              { name: "Afinia DLP-2200", desc: locale === 'it' ? 'Digital Label Press completa' : 'Complete Digital Label Press', href: "/prodotti/afinia-dlp2200", image: "/images/products/afinia-dlp2200.avif" },
             ].map((p) => (
               <Link key={p.name} href={p.href} className="card-modern overflow-hidden group hover:-translate-y-1 transition-transform duration-300">
                 <div className="h-40 relative overflow-hidden">
@@ -289,16 +298,16 @@ export default async function Any002Page() {
             <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl" />
             <div className="relative">
               <h2 className="text-3xl sm:text-4xl font-bold mb-6 tracking-tight">
-                Vuoi Vedere ANY-002 in Azione?
+                {locale === 'it' ? 'Vuoi Vedere ANY-002 in Azione?' : 'Want to See the ANY-002 in Action?'}
               </h2>
               <p className="text-white/80 max-w-2xl mx-auto mb-10 text-lg leading-relaxed">
-                Contattaci per una demo dal vivo o per ricevere campioni stampati con i tuoi file.
+                {locale === 'it' ? 'Contattaci per una demo dal vivo o per ricevere campioni stampati con i tuoi file.' : 'Contact us for a live demo or to receive samples printed with your own files.'}
               </p>
               <a
                 href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Anytron%20ANY-002&body=Buongiorno%2C%0A%0AVorrei%20prenotare%20una%20demo%20della%20Anytron%20ANY-002.%0A%0AGrazie"
                 className="inline-flex items-center justify-center px-8 py-4 bg-white text-cyan-600 font-bold rounded-full hover:bg-yellow-400 hover:text-dark-800 transition-all duration-300 shadow-lg text-lg"
               >
-                Prenota una Demo
+                {locale === 'it' ? 'Prenota una Demo' : 'Book a Demo'}
               </a>
             </div>
           </div>

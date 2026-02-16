@@ -64,7 +64,8 @@ function getSpecs(l: string) { return l === 'it' ? [
   ["Laminatore", "Opzionale – a freddo o a caldo"],
   ["Software", "ANY-FLOW"],
   ["Alimentazione", "Monofase 220-240V / 6A"],
-  ["Dimensioni", "L 1350 × P 1090 × H 1615 mm"],
+  ["Dimensioni", "L 1350 × P 1090 × H 1615 mm"],
+
 ] : [
   ["Technology", "LED laser electrophotographic"],
   ["Colors", "5 colors – CMYKW (including white)"],
@@ -151,12 +152,10 @@ export default async function AnyPressPage() {
         <div className="absolute inset-0 bg-gradient-to-r from-dark-800/90 via-dark-800/70 to-dark-800/40" />
         <div className="container-custom px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-2xl">
-            <p className="text-cyan-300 text-sm mb-3 uppercase tracking-widest font-medium">Stampanti Etichette</p>
+            <p className="text-cyan-300 text-sm mb-3 uppercase tracking-widest font-medium">{locale === 'it' ? 'Stampanti Etichette' : 'Label Printers'}</p>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">Any-Press</h1>
               <p className="text-lg text-gray-300/90 leading-relaxed mb-8">
-                Stampante laser LED a 5 colori (CMYK+Bianco) per etichette e packaging flessibile.
-                Stampa su carte colorate, kraft e trasparenti grazie al toner bianco. Laminazione
-                integrata opzionale e software ANY-FLOW per dati variabili.
+                {locale === 'it' ? 'Stampante laser LED a 5 colori (CMYK+Bianco) per etichette e packaging flessibile. Stampa su carte colorate, kraft e trasparenti grazie al toner bianco. Laminazione integrata opzionale e software ANY-FLOW per dati variabili.' : '5-color LED laser printer (CMYK+White) for labels and flexible packaging. Print on colored, kraft and transparent materials with white toner. Optional integrated lamination and ANY-FLOW software for variable data.'}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Any-Press&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20Any-Press.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">{locale === 'it' ? 'Richiedi Demo →' : 'Request Demo →'}</a>
@@ -177,8 +176,8 @@ export default async function AnyPressPage() {
       {/* Descrizione */}
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
         <div className="container-custom max-w-4xl">
-          <h2 className="text-3xl font-bold text-dark-800 mb-6">Stampa Laser LED a 5 Colori con Toner Bianco</h2>
-          <p className="text-gray-500 leading-relaxed mb-4">
+          <h2 className="text-3xl font-bold text-dark-800 mb-6">{locale === 'it' ? 'Stampa Laser LED a 5 Colori con Toner Bianco' : '5-Color LED Laser Printing with White Toner'}</h2>
+          {locale === 'it' ? (<><p className="text-gray-500 leading-relaxed mb-4">
             La Any-Press di Anytron è una stampante laser LED a 5 colori (CMYK + Bianco) progettata per la produzione di etichette e packaging flessibile. Grazie al toner bianco, permette di stampare immagini e testi nitidi su carte colorate, kraft e supporti trasparenti, aprendo possibilità creative impossibili con le stampanti CMYK tradizionali. La risoluzione di 1200 × 1200 dpi assicura dettagli precisi e colori vivaci su ogni supporto.
           </p>
           <p className="text-gray-500 leading-relaxed mb-4">
@@ -186,7 +185,15 @@ export default async function AnyPressPage() {
           </p>
           <p className="text-gray-500 leading-relaxed">
             Il software dedicato ANY-FLOW gestisce la produzione con funzionalità avanzate: gestione colori, dati variabili (codici a barre, QR code), nesting ottimizzato e calcolo dei costi di produzione. Con toner e tamburi ad alta capacità e la possibilità di utilizzare supporti non patinati a basso costo, la Any-Press offre i costi di produzione più competitivi della categoria, rendendola ideale per tirature medio-piccole e produzioni on-demand.
+          </p></>) : (<><p className="text-gray-500 leading-relaxed mb-4">
+            The Any-Press by Anytron is a 5-color LED laser printer (CMYK + White) designed for label and flexible packaging production. Thanks to the white toner, it prints sharp images and text on colored, kraft and transparent materials, opening creative possibilities impossible with traditional CMYK printers. 1200 × 1200 dpi resolution ensures precise details and vivid colors on any substrate.
           </p>
+          <p className="text-gray-500 leading-relaxed mb-4">
+            A unique 2-in-1 solution, the Any-Press prints both roll labels and flexible packaging such as flat pouches, stand-up pouches and sachets up to 13 inches wide. The LED laser toner ensures resistance to water, UV rays, scratches and harsh conditions without additional coatings, while the optional integrated laminator (cold or hot) completes the process in a single pass.
+          </p>
+          <p className="text-gray-500 leading-relaxed">
+            The dedicated ANY-FLOW software manages production with advanced features: color management, variable data (barcodes, QR codes), optimised nesting and production cost calculation. With high-capacity toner and drums and the option to use low-cost uncoated media, the Any-Press delivers the most competitive production costs in its class, making it ideal for small-to-medium runs and on-demand production.
+          </p></>)}
         </div>
       </section>
 
@@ -195,7 +202,7 @@ export default async function AnyPressPage() {
         <div className="container-custom">
           <div className="text-center mb-12">
             <p className="text-cyan-500 font-semibold text-sm uppercase tracking-widest mb-4">Video</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-dark-800">Any-Press in Azione</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-dark-800">{locale === 'it' ? 'Any-Press in Azione' : 'Any-Press in Action'}</h2>
           </div>
           <div className="max-w-3xl mx-auto">
             <div className="aspect-video rounded-2xl overflow-hidden shadow-lg">
@@ -242,9 +249,9 @@ export default async function AnyPressPage() {
       {/* CTA */}
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-surface-50">
         <div className="container-custom text-center">
-          <h2 className="text-3xl font-bold text-dark-800 mb-6">Stampa Etichette con il Bianco In-House</h2>
+          <h2 className="text-3xl font-bold text-dark-800 mb-6">{locale === 'it' ? 'Stampa Etichette con il Bianco In-House' : 'Print Labels with White In-House'}</h2>
           <p className="text-gray-500 max-w-xl mx-auto mb-8">
-            Scopri come la Any-Press può trasformare la tua produzione di etichette e packaging flessibile. Contattaci per una consulenza.
+            {locale === 'it' ? 'Scopri come la Any-Press può trasformare la tua produzione di etichette e packaging flessibile. Contattaci per una consulenza.' : 'Discover how the Any-Press can transform your label and flexible packaging production. Contact us for a consultation.'}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Any-Press&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20Any-Press.%0A%0AGrazie" className="btn-primary text-lg">{locale === 'it' ? 'Richiedi Demo →' : 'Request Demo →'}</a>
@@ -258,9 +265,9 @@ export default async function AnyPressPage() {
           <h2 className="text-2xl font-bold text-dark-800 mb-8 text-center">{locale === 'it' ? 'Prodotti Correlati' : 'Related Products'}</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { name: "Afinia LT5C", desc: "Stampante etichette toner LED industriale", href: "/prodotti/afinia-lt5c", image: "/images/products/afinia-lt5c.avif" },
-              { name: "Afinia X350", desc: "Stampante roll-to-roll alta velocità", href: "/prodotti/afinia-x350", image: "/images/products/afinia-x350-site.webp" },
-              { name: "Afinia DLP-2200", desc: "Digital Label Press completa", href: "/prodotti/afinia-dlp2200", image: "/images/products/afinia-dlp2200.avif" },
+              { name: "Afinia LT5C", desc: locale === 'it' ? 'Stampante etichette toner LED industriale' : 'Industrial LED toner label printer', href: "/prodotti/afinia-lt5c", image: "/images/products/afinia-lt5c.avif" },
+              { name: "Afinia X350", desc: locale === 'it' ? 'Stampante roll-to-roll alta velocità' : 'High-speed roll-to-roll printer', href: "/prodotti/afinia-x350", image: "/images/products/afinia-x350-site.webp" },
+              { name: "Afinia DLP-2200", desc: locale === 'it' ? 'Digital Label Press completa' : 'Complete Digital Label Press', href: "/prodotti/afinia-dlp2200", image: "/images/products/afinia-dlp2200.avif" },
             ].map((p) => (
               <Link key={p.name} href={p.href} className="card-modern overflow-hidden group hover:-translate-y-1 transition-transform duration-300">
                 <div className="h-40 relative overflow-hidden">

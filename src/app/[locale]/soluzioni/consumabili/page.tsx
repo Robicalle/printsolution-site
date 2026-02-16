@@ -27,8 +27,8 @@ export const metadata: Metadata = {
 
 const categories = [
   {
-    title: "Inchiostri Packaging — GreenBox EVO / EDM-650X",
-    desc: "Inchiostri pigmentati a base acqua per stampanti single-pass. Senza solventi, inodori, eco-friendly. Resistenti ad agenti atmosferici, sfregamento e acqua.",
+    title: "Inchiostri Packaging — GreenBox EVO / EDM-650X", titleEn: "Packaging Inks — GreenBox EVO / EDM-650X",
+    desc: "Inchiostri pigmentati a base acqua per stampanti single-pass. Senza solventi, inodori, eco-friendly. Resistenti ad agenti atmosferici, sfregamento e acqua.", descEn: "Pigmented water-based inks for single-pass printers. Solvent-free, odorless, eco-friendly. Resistant to weather, rubbing and water.",
     items: [
       { name: "Inchiostro Cyan (C)", detail: "Tanica 3L — pigmentato base acqua" },
       { name: "Inchiostro Magenta (M)", detail: "Tanica 3L — pigmentato base acqua" },
@@ -45,8 +45,8 @@ const categories = [
     icon: "🎨",
   },
   {
-    title: "Cartucce Afinia Label",
-    desc: "Cartucce originali per stampanti etichette Afinia. Tecnologia dye-based e pigmentata per risultati professionali su ogni supporto.",
+    title: "Cartucce Afinia Label", titleEn: "Afinia Label Cartridges",
+    desc: "Cartucce originali per stampanti etichette Afinia. Tecnologia dye-based e pigmentata per risultati professionali su ogni supporto.", descEn: "Original cartridges for Afinia label printers. Dye-based and pigmented technology for professional results on any media.",
     items: [
       { name: "Kit CMYKK per L901", detail: "5 cartucce alta capacità, doppio nero" },
       { name: "Kit CMYK per X350", detail: "Taniche 2L pigmentate, 8L totali" },
@@ -62,8 +62,8 @@ const categories = [
     icon: "🖋️",
   },
   {
-    title: "Testine di Stampa",
-    desc: "Testine di stampa originali e compatibili per le nostre stampanti. Sostituzione semplice, anche dall'utente.",
+    title: "Testine di Stampa", titleEn: "Printheads",
+    desc: "Testine di stampa originali e compatibili per le nostre stampanti. Sostituzione semplice, anche dall'utente.", descEn: "Original and compatible printheads for our printers. Simple replacement, even by the user.",
     items: [
       { name: "Testina HP Pagewide", detail: "Per EDM-650X e GreenBox EVO — single-pass" },
       { name: "Testina Memjet Waterfall", detail: "Per Afinia L901 — sostituibile senza fermo" },
@@ -79,8 +79,8 @@ const categories = [
     icon: "⚡",
   },
   {
-    title: "Finitura e Accessori",
-    desc: "Materiali per laminazione, fustelle, foil metallizzati e accessori per completare la linea di produzione.",
+    title: "Finitura e Accessori", titleEn: "Finishing and Accessories",
+    desc: "Materiali per laminazione, fustelle, foil metallizzati e accessori per completare la linea di produzione.", descEn: "Lamination materials, dies, metallic foils and accessories to complete the production line.",
     items: [
       { name: "Film laminazione", detail: "Per DLP-2200 e serie DLF con laminazione" },
       { name: "Fustelle acciaio flessibili", detail: "Per DLP-2200 — qualsiasi forma, 130–360 mm" },
@@ -129,8 +129,8 @@ export default async function ConsumabiliPage() {
                     {cat.icon}
                   </div>
                   <div>
-                    <h3 className="text-xl lg:text-2xl font-bold text-dark-800">{cat.title}</h3>
-                    <p className="text-gray-500 mt-1">{cat.desc}</p>
+                    <h3 className="text-xl lg:text-2xl font-bold text-dark-800">{locale === 'it' ? cat.title : ((cat as any).titleEn || cat.title)}</h3>
+                    <p className="text-gray-500 mt-1">{locale === 'it' ? cat.desc : ((cat as any).descEn || cat.desc)}</p>
                   </div>
                 </div>
 

@@ -30,8 +30,8 @@ export const metadata: Metadata = {
 const products = [
   {
     name: "GreenBox Print Book",
-    subtitle: "Labbratura Digitale con Tecnologia HP PageWide",
-    desc: "La soluzione digitale per la labbratura dei libri basata su GreenBox 2. Stampa inkjet HP PageWide single-pass a base acqua, 30 m/min, 1200\u00d71200 dpi. Industria 4.0 ready con software GreenFlow.",
+    subtitle: "Labbratura Digitale con Tecnologia HP PageWide", subtitleEn: "Digital Book Edge Printing with HP PageWide Technology",
+    desc: "La soluzione digitale per la labbratura dei libri basata su GreenBox 2. Stampa inkjet HP PageWide single-pass a base acqua, 30 m/min, 1200\u00d71200 dpi. Industria 4.0 ready con software GreenFlow.", descEn: "The digital solution for book edge printing based on GreenBox 2. Single-pass, up to 30 m/min, HP printhead with 1200 dpi resolution. Water-based inks.",
     specs: [
       "Velocit\u00e0 fino a 30 m/min",
       "Risoluzione 1200\u00d71200 dpi",
@@ -88,7 +88,7 @@ export default async function LabbraturaPage() {
           <div className="text-center mb-16">
             <p className="text-cyan-500 font-semibold text-sm uppercase tracking-widest mb-4">Stampante Labbratura</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-dark-800 tracking-tight">
-              La Soluzione per la Labbratura Digitale
+              {locale === 'it' ? 'La Soluzione per la Labbratura Digitale' : 'The Solution for Digital Book Edge Printing'}
             </h2>
           </div>
 
@@ -162,8 +162,8 @@ export default async function LabbraturaPage() {
 
               <div className="p-8 lg:p-12 flex flex-col justify-center">
                 <h3 className="text-2xl lg:text-3xl font-bold text-dark-800 mb-1">{p.name}</h3>
-                <p className="text-sm text-gray-500 mb-4">{p.subtitle}</p>
-                <p className="text-gray-500 leading-relaxed mb-6">{p.desc}</p>
+                <p className="text-sm text-gray-500 mb-4">{locale === 'it' ? p.subtitle : ((p as any).subtitleEn || p.subtitle)}</p>
+                <p className="text-gray-500 leading-relaxed mb-6">{locale === 'it' ? p.desc : ((p as any).descEn || p.desc)}</p>
 
                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
                   {p.specs.map((spec) => (

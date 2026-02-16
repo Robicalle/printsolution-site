@@ -51,7 +51,7 @@ const products = [
   },
   {
     name: "EDM-650X",
-    subtitle: "Stampante Single-Pass per Cartone",
+    subtitle: "Stampante Single-Pass per Cartone", subtitleEn: "Single-Pass Cardboard Printer",
     desc: "Stampa digitale diretta su cartone ondulato e materiali rigidi con tecnologia single-pass HP Pagewide. Velocità industriale, qualità fotografica, inchiostri a base acqua eco-friendly.",
     specs: [
       "Fino a 30 m/min",
@@ -72,7 +72,7 @@ const products = [
   },
   {
     name: "GreenBox EVO",
-    subtitle: "Stampante Single-Pass per Packaging",
+    subtitle: "Stampante Single-Pass per Packaging", subtitleEn: "Single-Pass Packaging Printer",
     desc: "Sistema digitale CMYK single-pass per stampa diretta su cartone, carta e juta. Testina HP Pagewide a 30 m/min con inchiostri pigmentati a base acqua. Ideale per scatole, buste, shopper e packaging personalizzato in piccole e medie tirature.",
     specs: [
       "Fino a 30 m/min",
@@ -151,7 +151,7 @@ export default async function PackagingPage() {
                         <Image src={p.image} alt={p.name} fill className="object-contain p-6 transition-transform duration-300 group-hover/img:scale-105" />
                         <div className="absolute inset-0 bg-cyan-500/0 group-hover/img:bg-cyan-500/5 transition-colors duration-300 rounded-2xl flex items-end justify-center pb-6 opacity-0 group-hover/img:opacity-100">
                           <span className="bg-white/90 backdrop-blur-sm text-cyan-600 font-semibold text-sm px-4 py-2 rounded-full shadow-lg">
-                            Scopri {p.name} →
+                            {locale === 'it' ? 'Scopri' : 'Discover'} {p.name} →
                           </span>
                         </div>
                       </Link>
@@ -184,7 +184,7 @@ export default async function PackagingPage() {
                         {p.brand}
                       </span>
                     )}
-                    <p className="text-gray-500 leading-relaxed mb-6">{p.desc}</p>
+                    <p className="text-gray-500 leading-relaxed mb-6">{locale === 'it' ? p.desc : ((p as any).descEn || p.desc)}</p>
                     
                     <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
                       {p.specs.map((spec) => (

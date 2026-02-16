@@ -51,7 +51,7 @@ const products = [
   },
   {
     name: "GreenBox EVO",
-    subtitle: "Stampante Single-Pass per Shopper e Buste",
+    subtitle: "Stampante Single-Pass per Shopper e Buste", subtitleEn: "Single-Pass Printer for Shoppers and Bags",
     desc: "Stampa digitale CMYK diretta su shopper, buste, carta kraft, juta e cartone. Tecnologia single-pass HP Pagewide a 30 m/min con inchiostri pigmentati a base acqua. Personalizzazione completa on-demand, anche a tiratura 1.",
     specs: [
       "Fino a 30 m/min",
@@ -107,7 +107,7 @@ export default async function ShopperPage() {
                       <Image src={p.image} alt={p.name} fill className="object-contain p-6 transition-transform duration-300 group-hover/img:scale-105" />
                       <div className="absolute inset-0 bg-cyan-500/0 group-hover/img:bg-cyan-500/5 transition-colors duration-300 rounded-2xl flex items-end justify-center pb-6 opacity-0 group-hover/img:opacity-100">
                         <span className="bg-white/90 backdrop-blur-sm text-cyan-600 font-semibold text-sm px-4 py-2 rounded-full shadow-lg">
-                          Scopri {p.name} →
+                          {locale === 'it' ? 'Scopri' : 'Discover'} {p.name} →
                         </span>
                       </div>
                     </Link>
@@ -125,7 +125,7 @@ export default async function ShopperPage() {
                     <span className="text-sm text-amber-500 font-medium mb-4 inline-block">
                       {p.brand}
                     </span>
-                    <p className="text-gray-500 leading-relaxed mb-6">{p.desc}</p>
+                    <p className="text-gray-500 leading-relaxed mb-6">{locale === 'it' ? p.desc : ((p as any).descEn || p.desc)}</p>
 
                     <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
                       {p.specs.map((spec) => (

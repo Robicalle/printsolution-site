@@ -78,7 +78,7 @@ export default async function ShopPage() {
                 href={`/shop/${cat.slug}`}
                 className="group bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg hover:border-cyan-200 transition-all duration-300 hover:-translate-y-1"
               >
-                <div className="aspect-[4/3] bg-gradient-to-br from-gray-100 to-gray-50 flex items-center justify-center p-4 overflow-hidden">
+                <div className="relative aspect-[4/3] bg-gradient-to-br from-gray-100 to-gray-50 flex items-center justify-center p-4 overflow-hidden">
                   <Image
                     src={cat.image}
                     alt={cat.name}
@@ -86,6 +86,11 @@ export default async function ShopPage() {
                     height={210}
                     className="object-contain group-hover:scale-110 transition-transform duration-300 max-h-full"
                   />
+                  {cat.name.toLowerCase().includes('plus') && (
+                    <span className="absolute top-3 right-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-xs font-bold px-2.5 py-1 rounded-full shadow-lg">
+                      PLUS
+                    </span>
+                  )}
                 </div>
                 <div className="p-4">
                   <h3 className="font-bold text-gray-900 group-hover:text-cyan-600 transition-colors">{cat.name}</h3>

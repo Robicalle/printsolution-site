@@ -86,7 +86,7 @@ export default function Header() {
                 <button
                   aria-haspopup="true"
                   aria-expanded={openDropdown === item.label}
-                  className={`px-3 py-2 text-sm font-medium transition-colors duration-200 ${
+                  className={`px-5 py-2.5 text-base font-medium transition-colors duration-200 ${
                     scrolled ? "text-gray-600 hover:text-cyan-500" : "text-white/80 hover:text-cyan-400"
                   }`}
                 >
@@ -107,7 +107,7 @@ export default function Header() {
                 <button
                   aria-haspopup="true"
                   aria-expanded={openDropdown === 'soluzioni'}
-                  className={`px-3 py-2 text-sm font-medium transition-colors duration-200 ${
+                  className={`px-5 py-2.5 text-base font-medium transition-colors duration-200 ${
                     scrolled ? "text-gray-600 hover:text-cyan-500" : "text-white/80 hover:text-cyan-400"
                   }`}
                 >
@@ -141,7 +141,7 @@ export default function Header() {
               <Link
                 key={item.label}
                 href={item.href!}
-                className="ml-1 px-3 py-1.5 text-sm font-semibold rounded-full transition-all duration-300 bg-gradient-to-r from-cyan-500 to-blue-600 text-white hover:from-cyan-400 hover:to-blue-500 hover:shadow-md hover:shadow-cyan-500/25 whitespace-nowrap"
+                className="ml-1 px-4 py-2 text-sm font-semibold rounded-full transition-all duration-300 bg-gradient-to-r from-cyan-500 to-blue-600 text-white hover:from-cyan-400 hover:to-blue-500 hover:shadow-md hover:shadow-cyan-500/25 whitespace-nowrap"
               >
                 🛒 {item.label}
               </Link>
@@ -149,7 +149,7 @@ export default function Header() {
               <Link
                 key={item.label}
                 href={item.href!}
-                className={`px-3 py-2 text-sm font-medium transition-colors duration-200 ${
+                className={`px-5 py-2.5 text-base font-medium transition-colors duration-200 ${
                   scrolled ? "text-gray-600 hover:text-cyan-500" : "text-white/80 hover:text-cyan-400"
                 }`}
               >
@@ -157,7 +157,7 @@ export default function Header() {
               </Link>
             )
           )}
-          <a href={`mailto:info@printsolutionsrl.it?subject=${emailSubject}&body=${emailBody}`} className="btn-primary ml-2 text-sm !py-2.5 !px-5 animate-pulse-subtle">{t("requestDemo")}</a>
+          <a href={`mailto:info@printsolutionsrl.it?subject=${emailSubject}&body=${emailBody}`} className="btn-primary ml-4 text-base !py-3 !px-6 animate-pulse-subtle">{t("requestDemo")}</a>
           <LanguageSwitcher scrolled={scrolled} />
         </nav>
 

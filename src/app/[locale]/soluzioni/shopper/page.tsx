@@ -54,6 +54,7 @@ const products = [
     name: "GreenBox EVO",
     subtitle: "Stampante Single-Pass per Shopper e Buste", subtitleEn: "Single-Pass Printer for Shoppers and Bags",
     desc: "Stampa digitale CMYK diretta su shopper, buste, carta kraft, juta e cartone. Tecnologia single-pass HP Pagewide a 30 m/min con inchiostri pigmentati a base acqua. Personalizzazione completa on-demand, anche a tiratura 1.",
+    descEn: "Direct CMYK digital printing on shoppers, bags, kraft paper, jute and cardboard. HP Pagewide single-pass technology at 30 m/min with pigmented water-based inks. Complete on-demand customisation, even for a run of 1.",
     specs: [
       "Fino a 30 m/min",
       "Risoluzione 1200 × 1200 dpi",
@@ -78,7 +79,7 @@ export default async function ShopperPage() {
     <>
       <PageHero
         title={locale === 'it' ? "Shopper & Packaging di Lusso" : "Shoppers & Luxury Packaging"}
-        subtitle="Stampa hot foil digitale e stampa diretta per shopper, buste e packaging premium. Nobilitazione e personalizzazione on-demand."
+        subtitle={locale === 'it' ? "Stampa hot foil digitale e stampa diretta per shopper, buste e packaging premium. Nobilitazione e personalizzazione on-demand." : "Digital hot foil stamping and direct printing for shoppers, bags and premium packaging. On-demand embellishment and customisation."}
         breadcrumb="Soluzioni"
         videoSrc="/videos/shopper-hero.mp4"
       />

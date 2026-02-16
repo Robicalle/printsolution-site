@@ -85,7 +85,7 @@ export const categories: Category[] = [
     slug: "consumabili-l801",
     name: "Afinia L801 / L801+",
     description: "Cartucce e testine per stampanti Afinia L801 e L801 Plus",
-    image: "/images/products/afinia-l901.png",
+    image: "/images/shop/l801-category.png",
     products: [
       { id: "l801-y", name: "22460 - L801 Yellow", sku: "22460", price: 215.00, image: "/images/shop/placeholder.png", inStock: true },
       { id: "l801p-y", name: "30419 - L801Plus Yellow", sku: "30419", price: 220.00, image: "/images/shop/placeholder.png", inStock: true },

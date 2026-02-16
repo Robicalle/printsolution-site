@@ -1,3 +1,4 @@
+import { Inter } from "next/font/google";
 import { hasLocale } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
@@ -15,6 +16,13 @@ import ChatWidget from "@/components/ChatWidget";
 import { CartProvider } from "@/lib/cart-context";
 import CartSidebar from "@/components/CartSidebar";
 import CartButton from "@/components/CartButton";
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-inter",
+  display: "swap",
+});
 
 const organizationJsonLd = {
   "@context": "https://schema.org",
@@ -69,7 +77,7 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} className="font-inter">
+    <html lang={locale} className={`${inter.variable} font-inter`}>
       <head>
         <link rel="alternate" hrefLang="it" href="https://www.printsolutionsrl.it" />
         <link rel="alternate" hrefLang="en" href="https://www.printsolutionsrl.it/en" />

@@ -141,7 +141,7 @@ export default function EDM650XPage() {
               Grande formato, velocit� industriale, inchiostri a base acqua CMYK.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20EDM-650X&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20EDM-650X.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">Richiedi Demo ?</a>
+              <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20EDM-650X&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20EDM-650X.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">Richiedi Demo →</a>
             </div>
           </div>
         </div>
@@ -290,7 +290,7 @@ export default function EDM650XPage() {
             Visita la nostra sala demo a Sesto San Giovanni e vedi la EDM-650X in azione sui tuoi materiali.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20EDM-650X&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20EDM-650X.%0A%0AGrazie" className="btn-primary text-lg">Richiedi Demo ?</a>
+            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20EDM-650X&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20EDM-650X.%0A%0AGrazie" className="btn-primary text-lg">Richiedi Demo →</a>
           </div>
         </div>
       </section>

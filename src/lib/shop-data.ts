@@ -115,7 +115,7 @@ export const categories: Category[] = [
     slug: "consumabili-lx2000",
     name: "Primera LX2000",
     description: "Cartucce e kit testina per stampante Primera LX2000",
-    image: "/images/shop/lx2000-category.jpg",
+    image: "/images/shop/lx2000-category.png",
     products: [
       { id: "lx2k-y", name: "PRI-53463 Cartuccia LX-2000e Giallo", sku: "53463", price: 33.00, image: "/images/shop/placeholder.png", inStock: true },
       { id: "lx2k-c", name: "PRI-53461 Cartuccia LX-2000e Ciano", sku: "53461", price: 33.00, image: "/images/shop/placeholder.png", inStock: true },

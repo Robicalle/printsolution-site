@@ -17,10 +17,43 @@ export async function generateMetadata({ params }: { params: Promise<{ category:
   };
 }
 
+function buildProductsJsonLd(cat: NonNullable<ReturnType<typeof getCategoryBySlug>>) {
+  return cat.products.map((p) => ({
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: p.name,
+    sku: p.sku,
+    image: `https://www.printsolutionsrl.it${p.image}`,
+    brand: { "@type": "Brand", name: "Print Solution" },
+    offers: {
+      "@type": "Offer",
+      url: `https://www.printsolutionsrl.it/shop/${cat.slug}`,
+      priceCurrency: "EUR",
+      price: p.price.toFixed(2),
+      priceValidUntil: "2026-12-31",
+      availability: p.inStock ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
+      seller: { "@type": "Organization", name: "Print Solution S.r.l." },
+    },
+  }));
+}
+
 export default async function CategoryPage({ params }: { params: Promise<{ category: string }> }) {
   const { category } = await params;
   const cat = getCategoryBySlug(category);
   if (!cat) notFound();
 
-  return <CategoryPageClient category={cat} />;
+  const productsJsonLd = buildProductsJsonLd(cat);
+
+  return (
+    <>
+      {productsJsonLd.map((schema, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
+      <CategoryPageClient category={cat} />
+    </>
+  );
 }

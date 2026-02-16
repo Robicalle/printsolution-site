@@ -20,8 +20,8 @@ export default function ScrollReveal() {
         // Skip if already has transition/animation styles
         if (htmlEl.style.transition) return;
         htmlEl.style.opacity = "0";
-        htmlEl.style.transform = "translateY(32px)";
-        htmlEl.style.transition = "opacity 0.7s ease-out, transform 0.7s ease-out";
+        htmlEl.style.transform = "translateY(24px)";
+        htmlEl.style.transition = "opacity 0.35s cubic-bezier(0.16,1,0.3,1), transform 0.35s cubic-bezier(0.16,1,0.3,1)";
       });
 
       const observer = new IntersectionObserver(

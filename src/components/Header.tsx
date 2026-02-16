@@ -18,6 +18,7 @@ const navigation = [
       { label: "Consumabili", href: "/soluzioni/consumabili", desc: "Inchiostri, testine e materiali" },
     ],
   },
+  { label: "Confronto", href: "/confronto-prodotti" },
   { label: "Promozioni", href: "/promozioni" },
   { label: "Usato", href: "/usato" },
   { label: "Chi Siamo", href: "/chi-siamo" },

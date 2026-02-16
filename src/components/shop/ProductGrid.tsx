@@ -21,8 +21,8 @@ function getProductGradient(name: string, sku: string): string {
   // White / Bianco
   if (t.includes('white') || t.includes('bianco') || /-w\b/.test(t) || t.endsWith('-w'))
     return 'linear-gradient(135deg, #90a4ae 0%, #cfd8dc 100%)';
-  // Default navy-cyan
-  return 'linear-gradient(135deg, #1a237e 0%, #00bcd4 100%)';
+  // Default verde per consumabili non-colore (fusori, belt, testine, waste, ecc.)
+  return 'linear-gradient(135deg, #2e7d32 0%, #43a047 100%)';
 }
 
 export default function ProductGrid({ products, categoryName }: { products: Product[]; categoryName: string }) {

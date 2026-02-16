@@ -52,8 +52,9 @@ const products = [
 
 const product = {
   name: "RobotJet",
-  subtitle: "Book Edge Printer - Stampa Bordi Libri",
+  subtitle: "Book Edge Printer - Stampa Bordi Libri", subtitleEn: "Book Edge Printer — Page Edge Printing",
   desc: "Stampante digitale per labbratura e personalizzazione del bordo delle pagine di libri, quaderni, agende e block notes. Tecnologia inkjet CMYK single-pass a base acqua pigmentata con teste HP A3. Fino a 400 pezzi/ora con risoluzione 1200 dpi.",
+  descEn: "Digital printer for edge printing and customisation of book, notebook, diary and notepad page edges. CMYK single-pass inkjet technology with pigmented water-based inks and HP A3 printheads. Up to 400 pieces/hour at 1200 dpi resolution.",
   specs: [
     "Circa 400 pezzi/ora",
     "Risoluzione 1200 dpi",
@@ -63,6 +64,16 @@ const product = {
     "Larghezza stampa da 5 a 218 mm",
     "Velocità 0-15 m/min (regolabile)",
     "Peso: 450 kg",
+  ],
+  specsEn: [
+    "Approx. 400 pieces/hour",
+    "1200 dpi resolution",
+    "CMYK — pigmented water-based inks",
+    "HP A3 / Epson I3200 printheads",
+    "Book height from 90 to 350 mm",
+    "Print width from 5 to 218 mm",
+    "Speed 0–15 m/min (adjustable)",
+    "Weight: 450 kg",
   ],
   gradient: "from-violet-500 to-violet-600",
   tag: "Book Edge Printer",
@@ -77,7 +88,7 @@ export default async function LabbraturaPage() {
     <>
       <PageHero
         title={locale === 'it' ? "Labbratura Libri" : "Book Edge Printing"}
-        subtitle="Stampa digitale personalizzata sui bordi di libri, quaderni, agende e block notes. Personalizzazioni uniche e di alta qualità."
+        subtitle={locale === 'it' ? "Stampa digitale personalizzata sui bordi di libri, quaderni, agende e block notes. Personalizzazioni uniche e di alta qualità." : "Custom digital printing on the edges of books, notebooks, diaries and notepads. Unique, high-quality customisations."}
         breadcrumb="Soluzioni"
         videoSrc="/videos/labbratura-hero.mp4"
       />
@@ -86,7 +97,7 @@ export default async function LabbraturaPage() {
       <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="text-center mb-16">
-            <p className="text-cyan-500 font-semibold text-sm uppercase tracking-widest mb-4">Stampante Labbratura</p>
+            <p className="text-cyan-500 font-semibold text-sm uppercase tracking-widest mb-4">{locale === 'it' ? 'Stampante Labbratura' : 'Book Edge Printer'}</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-dark-800 tracking-tight">
               {locale === 'it' ? 'La Soluzione per la Labbratura Digitale' : 'The Solution for Digital Book Edge Printing'}
             </h2>
@@ -99,7 +110,7 @@ export default async function LabbraturaPage() {
                   <Image src={product.image} alt={product.name} fill className="object-contain p-6 transition-transform duration-300 group-hover/img:scale-105" />
                   <div className="absolute inset-0 bg-cyan-500/0 group-hover/img:bg-cyan-500/5 transition-colors duration-300 rounded-2xl flex items-end justify-center pb-6 opacity-0 group-hover/img:opacity-100">
                     <span className="bg-white/90 backdrop-blur-sm text-cyan-600 font-semibold text-sm px-4 py-2 rounded-full shadow-lg">
-                      Scopri {product.name} →
+                      {locale === 'it' ? 'Scopri' : 'Discover'} {product.name} →
                     </span>
                   </div>
                 </Link>
@@ -112,11 +123,11 @@ export default async function LabbraturaPage() {
 
               <div className="p-8 lg:p-12 flex flex-col justify-center">
                 <h3 className="text-2xl lg:text-3xl font-bold text-dark-800 mb-1">{product.name}</h3>
-                <p className="text-sm text-gray-500 mb-4">{product.subtitle}</p>
-                <p className="text-gray-500 leading-relaxed mb-6">{product.desc}</p>
+                <p className="text-sm text-gray-500 mb-4">{locale === 'it' ? product.subtitle : product.subtitleEn}</p>
+                <p className="text-gray-500 leading-relaxed mb-6">{locale === 'it' ? product.desc : product.descEn}</p>
 
                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
-                  {product.specs.map((spec) => (
+                  {(locale === 'it' ? product.specs : product.specsEn).map((spec) => (
                     <li key={spec} className="flex items-start text-sm text-gray-600">
                       <svg className="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -149,7 +160,7 @@ export default async function LabbraturaPage() {
                   <Image src={p.image} alt={p.name} fill className="object-contain p-6 transition-transform duration-300 group-hover/img:scale-105" />
                   <div className="absolute inset-0 bg-cyan-500/0 group-hover/img:bg-cyan-500/5 transition-colors duration-300 rounded-2xl flex items-end justify-center pb-6 opacity-0 group-hover/img:opacity-100">
                     <span className="bg-white/90 backdrop-blur-sm text-cyan-600 font-semibold text-sm px-4 py-2 rounded-full shadow-lg">
-                      Scopri {p.name} &rarr;
+                      {locale === 'it' ? 'Scopri' : 'Discover'} {p.name} &rarr;
                     </span>
                   </div>
                 </Link>
@@ -196,16 +207,16 @@ export default async function LabbraturaPage() {
             <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl" />
             <div className="relative">
               <h2 className="text-3xl sm:text-4xl font-bold mb-6 tracking-tight">
-                Vuoi Vedere le Nostre Soluzioni in Azione?
+                {locale === 'it' ? 'Vuoi Vedere le Nostre Soluzioni in Azione?' : 'Want to See Our Solutions in Action?'}
               </h2>
               <p className="text-white/80 max-w-2xl mx-auto mb-10 text-lg leading-relaxed">
-                Contattaci per una demo dal vivo o inviaci i tuoi libri per ricevere campioni di labbratura.
+                {locale === 'it' ? 'Contattaci per una demo dal vivo o inviaci i tuoi libri per ricevere campioni di labbratura.' : 'Contact us for a live demo or send us your books to receive edge printing samples.'}
               </p>
               <a
                 href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20RobotJet%20Labbratura&body=Buongiorno%2C%0A%0AVorrei%20prenotare%20una%20demo%20del%20RobotJet%20per%20labbratura%20libri.%0A%0AGrazie"
                 className="inline-flex items-center justify-center px-8 py-4 bg-white text-cyan-600 font-bold rounded-full hover:bg-yellow-400 hover:text-dark-800 transition-all duration-300 shadow-lg text-lg"
               >
-                Prenota una Demo
+                {locale === 'it' ? 'Prenota una Demo' : 'Book a Demo'}
               </a>
             </div>
           </div>

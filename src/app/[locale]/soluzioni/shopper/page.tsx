@@ -31,8 +31,9 @@ export const metadata: Metadata = {
 const products = [
   {
     name: "AurumPress",
-    subtitle: "Stampa a Caldo Digitale - Hot Foil",
+    subtitle: "Stampa a Caldo Digitale - Hot Foil", subtitleEn: "Digital Hot Foil Stamping",
     desc: "Stampa termica digitale con foil metallizzati (oro, argento, colori), olografici e trasparente lucido. Nobilitazione on-demand per shopper, scatole, buste, etichette e packaging premium. Nessuna fustella, nessun cliché: dal file alla stampa in minuti.",
+    descEn: "Digital thermal printing with metallic foils (gold, silver, colours), holographic and glossy transparent. On-demand embellishment for shoppers, boxes, bags, labels and premium packaging. No dies, no clichés: from file to print in minutes.",
     specs: [
       "Foil oro, argento, colori, olografico",
       "Risoluzione 300 × 300 dpi",

@@ -1,3 +1,4 @@
+import { getLocale } from 'next-intl/server';
 import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
@@ -75,8 +76,8 @@ const specsData = [
 
 const features = [
   {
-    title: "Laminazione Avanzata",
-    desc: "Protegge le etichette da usura, graffi e condizioni ambientali. Supporta laminati self-wound e su liner per una finitura premium e duratura.",
+    title: "Laminazione Avanzata", titleEn: "Advanced Lamination",
+    desc: "Protegge le etichette da usura, graffi e condizioni ambientali. Supporta laminati self-wound e su liner per una finitura premium e duratura.", descEn: "Protects labels from wear, scratches and environmental conditions. Supports self-wound and liner laminates for a premium, long-lasting finish.",
     icon: (
       <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
@@ -84,8 +85,8 @@ const features = [
     ),
   },
   {
-    title: "Fustellatura Semi-Rotativa",
-    desc: "Cilindri magnetici con fustelle flessibili in acciaio: economiche, veloci da produrre e sostituire. Cambio lavoro rapidissimo per massima produttività.",
+    title: "Fustellatura Semi-Rotativa", titleEn: "Semi-Rotary Die-Cutting",
+    desc: "Cilindri magnetici con fustelle flessibili in acciaio: economiche, veloci da produrre e sostituire. Cambio lavoro rapidissimo per massima produttività.", descEn: "Magnetic cylinders with flexible steel dies: economical, quick to produce and replace. Ultra-fast job changeover for maximum productivity.",
     icon: (
       <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 7.5l-2.25-1.313M21 7.5v2.25m0-2.25l-2.25 1.313M3 7.5l2.25-1.313M3 7.5l2.25 1.313M3 7.5v2.25m9 3l2.25-1.313M12 12.75l-2.25-1.313M12 12.75V15m0 6.75l2.25-1.313M12 21.75V19.5m0 2.25l-2.25-1.313m0-16.875L12 2.25l2.25 1.313M21 14.25v2.25l-2.25 1.313m-13.5 0L3 16.5v-2.25" />
@@ -93,8 +94,8 @@ const features = [
     ),
   },
   {
-    title: "Rimozione Sfrido Automatica",
-    desc: "Il sistema integrato elimina automaticamente il materiale in eccesso dopo la fustellatura, lasciando etichette perfettamente sagomate.",
+    title: "Rimozione Sfrido Automatica", titleEn: "Automatic Waste Removal",
+    desc: "Il sistema integrato elimina automaticamente il materiale in eccesso dopo la fustellatura, lasciando etichette perfettamente sagomate.", descEn: "The integrated system automatically removes excess material after die-cutting, leaving perfectly shaped labels.",
     icon: (
       <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
@@ -102,8 +103,8 @@ const features = [
     ),
   },
   {
-    title: "Slitting e Riavvolgimento",
-    desc: "Trasforma bobine larghe in bobine più strette pronte per l'applicazione. Fino a 15 lame di slitting per creare più formati da una singola tiratura.",
+    title: "Slitting e Riavvolgimento", titleEn: "Slitting and Rewinding",
+    desc: "Trasforma bobine larghe in bobine più strette pronte per l'applicazione. Fino a 15 lame di slitting per creare più formati da una singola tiratura.", descEn: "Converts wide rolls into narrower rolls ready for application. Up to 15 slitting blades to create multiple formats from a single run.",
     icon: (
       <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
@@ -120,8 +121,8 @@ const features = [
     ),
   },
   {
-    title: "Cambio Lavoro Rapido",
-    desc: "Setup minimo tra un lavoro e l'altro grazie ai cilindri magnetici intercambiabili. Riduci i tempi morti e massimizza la produttività quotidiana.",
+    title: "Cambio Lavoro Rapido", titleEn: "Quick Job Changeover",
+    desc: "Setup minimo tra un lavoro e l'altro grazie ai cilindri magnetici intercambiabili. Riduci i tempi morti e massimizza la produttività quotidiana.", descEn: "Minimal setup between jobs thanks to interchangeable magnetic cylinders. Reduce downtime and maximize daily productivity.",
     icon: (
       <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -130,7 +131,8 @@ const features = [
   },
 ];
 
-export default function DC350Page() {
+export default async function () {
+  const locale = await getLocale();
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }} />
@@ -198,8 +200,8 @@ export default function DC350Page() {
                 <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-cyan-500 to-magenta-500 flex items-center justify-center text-white mb-5">
                   {f.icon}
                 </div>
-                <h3 className="text-lg font-bold text-dark-800 mb-2">{f.title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{f.desc}</p>
+                <h3 className="text-lg font-bold text-dark-800 mb-2">{locale === 'it' ? f.title : (f.titleEn || f.title)}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{locale === 'it' ? f.desc : (f.descEn || f.desc)}</p>
               </div>
             ))}
           </div>
@@ -244,9 +246,9 @@ export default function DC350Page() {
           <h2 className="text-2xl font-bold text-dark-800 mb-8 text-center">Prodotti Correlati</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { name: "DLF-220L / DLF-350L", desc: "Fustellatori digitali plotter (senza fustelle)", href: "/prodotti/afinia-dlf", image: "/images/products/afinia-dlf-220l.png" },
-              { name: "Afinia L901", desc: "Stampante etichette professionale Memjet", href: "/prodotti/afinia-l901", image: "/images/products/afinia-l901.png" },
-              { name: "Afinia DLP-2200", desc: "Digital Label Press completa", href: "/prodotti/afinia-dlp2200", image: "/images/products/afinia-dlp2200.avif" },
+              { name: "DLF-220L / DLF-350L", desc: "{locale === 'it' ? 'Fustellatori digitali plotter (senza fustelle)' : 'Digital plotter die-cutters (no physical dies)'}", href: "/prodotti/afinia-dlf", image: "/images/products/afinia-dlf-220l.png" },
+              { name: "Afinia L901", desc: "{locale === 'it' ? 'Stampante etichette professionale Memjet' : 'Professional Memjet label printer'}", href: "/prodotti/afinia-l901", image: "/images/products/afinia-l901.png" },
+              { name: "Afinia DLP-2200", desc: "{locale === 'it' ? 'Digital Label Press completa' : 'Complete Digital Label Press'}", href: "/prodotti/afinia-dlp2200", image: "/images/products/afinia-dlp2200.avif" },
             ].map((p) => (
               <Link key={p.name} href={p.href} className="card-modern overflow-hidden group hover:-translate-y-1 transition-transform duration-300">
                 <div className="h-40 relative overflow-hidden">

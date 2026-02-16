@@ -1,3 +1,4 @@
+import { getLocale } from 'next-intl/server';
 import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
@@ -51,7 +52,7 @@ const breadcrumbJsonLd = {
   ],
 };
 
-const specs = [
+function getSpecs(l: string) { return l === 'it' ? [
   ["Tecnologia", "Inkjet single-pass CMYK"],
   ["Testina di stampa", "HP Pagewide, 30 cm"],
   ["Risoluzione", "1200 � 1200 dpi"],
@@ -64,8 +65,17 @@ const specs = [
   ["Software RIP", "Flexprint incluso"],
   ["Display", "Digitale integrato"],
   ["Alimentatore", "Automatico opzionale con pompa a vuoto"],
-  ["Alimentazione", "230V AC monofase"],
-];
+  ["Alimentazione", "230V AC monofase"],
+] : [
+  ["Technology", "HP Pagewide single-pass inkjet"],
+  ["Resolution", "1200 × 1200 dpi"],
+  ["Colors", "CMYK"],
+  ["Max print width", "310 mm"],
+  ["Max speed", "Up to 30 m/min"],
+  ["Inks", "Pigmented water-based"],
+  ["Compatible media", "Cardboard, paper, kraft, jute"],
+  ["Head maintenance", "Automatic"],
+]; }
 
 const features = [
   {
@@ -92,8 +102,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M6.115 5.19l.319 1.913A6 6 0 008.11 10.36L9.75 12l-.387.775c-.217.433-.132.956.21 1.298l1.348 1.348c.21.21.329.497.329.795v1.089c0 .426.24.815.622 1.006l.153.076c.433.217.956.132 1.298-.21l.723-.723a8.7 8.7 0 002.288-4.042 1.087 1.087 0 00-.358-1.099l-1.33-1.108c-.251-.21-.582-.299-.905-.245l-1.17.195a1.125 1.125 0 01-.98-.314l-.295-.295a1.125 1.125 0 010-1.591l.13-.132a1.125 1.125 0 011.3-.21l.603.302a.809.809 0 001.086-1.086L14.25 7.5l1.256-.837a4.5 4.5 0 001.528-1.732l.146-.292M6.115 5.19A9 9 0 1017.18 4.64M6.115 5.19A8.965 8.965 0 0112 3c1.929 0 3.716.607 5.18 1.64" />
       </svg>
     ),
-    title: "Materiali Versatili",
-    desc: "Stampa su cartone, carta kraft, juta, shopper, buste e sacchetti. Spessore supporto fino a 15 cm.",
+    title: "Materiali Versatili", titleEn: "Versatile Materials",
+    desc: "Stampa su cartone, carta kraft, juta, shopper, buste e sacchetti. Spessore supporto fino a 15 cm.", descEn: "Print on cardboard, kraft paper, jute, shoppers, envelopes and bags. Wide range of printable substrates.",
   },
   {
     icon: (
@@ -101,8 +111,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75" />
       </svg>
     ),
-    title: "RIP Flexprint Incluso",
-    desc: "Software RIP professionale incluso con display digitale integrato. Gestione colore avanzata e profili ICC.",
+    title: "RIP Flexprint Incluso", titleEn: "RIP Flexprint Included",
+    desc: "Software RIP professionale incluso con display digitale integrato. Gestione colore avanzata e profili ICC.", descEn: "Professional RIP software included with integrated digital display for advanced color management and print optimization.",
   },
   {
     icon: (
@@ -110,8 +120,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z" />
       </svg>
     ),
-    title: "Entry-Level Accessibile",
-    desc: "Investimento contenuto per entrare nel mondo della stampa digitale su packaging con qualit� professionale.",
+    title: "Entry-Level Accessibile", titleEn: "Accessible Entry-Level",
+    desc: "Investimento contenuto per entrare nel mondo della stampa digitale su packaging con qualit� professionale.", descEn: "Affordable investment to enter the world of direct digital printing on corrugated. High performance at a competitive price.",
   },
   {
     icon: (
@@ -119,12 +129,13 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M11.42 15.17l-5.1-5.1m0 0L11.42 4.97m-5.1 5.1H21M3 21h18" />
       </svg>
     ),
-    title: "Piano Aspirato",
-    desc: "Il piano aspirato con pompa a vuoto garantisce il perfetto ancoraggio del supporto durante la stampa.",
+    title: "Piano Aspirato", titleEn: "Vacuum Table",
+    desc: "Il piano aspirato con pompa a vuoto garantisce il perfetto ancoraggio del supporto durante la stampa.", descEn: "The vacuum table with suction pump ensures perfect sheet adhesion during printing for consistently sharp results.",
   },
 ];
 
-export default function GreenBoxEvoPage() {
+export default async function () {
+  const locale = await getLocale();
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(greenboxJsonLd) }} />
@@ -213,8 +224,8 @@ export default function GreenBoxEvoPage() {
                 <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-green-500 to-cyan-500 flex items-center justify-center text-white mb-5">
                   {f.icon}
                 </div>
-                <h3 className="text-lg font-bold text-dark-800 mb-2">{f.title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{f.desc}</p>
+                <h3 className="text-lg font-bold text-dark-800 mb-2">{locale === 'it' ? f.title : (f.titleEn || f.title)}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{locale === 'it' ? f.desc : (f.descEn || f.desc)}</p>
               </div>
             ))}
           </div>
@@ -225,7 +236,7 @@ export default function GreenBoxEvoPage() {
         <div className="container-custom max-w-3xl">
           <h2 className="text-3xl font-bold text-dark-800 mb-10 text-center">Specifiche Tecniche</h2>
           <div className="space-y-3">
-            {specs.map(([label, value]) => (
+            {getSpecs(locale).map(([label, value]) => (
               <div key={label} className="flex flex-col sm:flex-row sm:justify-between gap-1 bg-white rounded-xl px-5 py-4 shadow-sm">
                 <span className="text-sm font-medium text-gray-600">{label}</span>
                 <span className="text-sm font-bold text-dark-800">{value}</span>
@@ -254,9 +265,9 @@ export default function GreenBoxEvoPage() {
           <h2 className="text-2xl font-bold text-dark-800 mb-8 text-center">Prodotti Correlati</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { name: "EDM-650X", desc: "Stampante single-pass grande formato", href: "/prodotti/edm-650x", image: "/images/products/edm-650x-2hd-nobg-v4.png" },
+              { name: "EDM-650X", desc: "{locale === 'it' ? 'Stampante single-pass grande formato' : 'Large format single-pass printer'}", href: "/prodotti/edm-650x", image: "/images/products/edm-650x-2hd-nobg-v4.png" },
               { name: "AurumPress", desc: "Stampatrice termica per foil", href: "/prodotti/aurumpress", image: "/images/products/aurumpress-nobg.png" },
-              { name: "Anypack AB2500", desc: "Box maker automatico", href: "/prodotti/ab2500", image: "/images/products/ab2500-hero-nobg.png" },
+              { name: "Anypack AB2500", desc: "{locale === 'it' ? 'Box maker automatico' : 'Automatic box maker'}", href: "/prodotti/ab2500", image: "/images/products/ab2500-hero-nobg.png" },
             ].map((p) => (
               <Link key={p.name} href={p.href} className="card-modern overflow-hidden group hover:-translate-y-1 transition-transform duration-300">
                 <div className="h-40 relative overflow-hidden">

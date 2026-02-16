@@ -42,7 +42,7 @@ function Counter({ target, suffix = "" }: { target: number; suffix?: string }) {
 }
 
 /* ───── Hero ───── */
-function Hero() {
+function Hero({ locale }: { locale: string }) {
   return (
     <section className="relative min-h-[70vh] sm:min-h-[85vh] lg:min-h-screen flex items-center text-white overflow-hidden">
       {/* Video only on larger screens */}
@@ -76,17 +76,17 @@ function Hero() {
         <div className="max-w-4xl">
             <div className="mb-6 lg:mb-10" />
             <h1 className="text-3xl sm:text-5xl lg:text-7xl xl:text-[5.5rem] font-bold leading-[1.05] sm:leading-[0.95] tracking-tight mb-6 lg:mb-10 opacity-0 animate-fade-up-delay">
-              {"Soluzioni Digitali per"}{" "}
+              {locale === 'it' ? 'Soluzioni Digitali per' : 'Digital Solutions for'}{" "}
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-emerald-400 to-lime-400">
-                Stampa e Packaging
+                {locale === 'it' ? 'Stampa e Packaging' : 'Printing & Packaging'}
               </span>
             </h1>
             <p className="text-base sm:text-lg lg:text-xl text-gray-300/90 mb-8 lg:mb-12 leading-relaxed max-w-2xl opacity-0 animate-fade-up-delay-2">
-              Scatole personalizzate, etichette professionali: tecnologia, competenza e assistenza per la tua azienda.
+              {locale === 'it' ? 'Scatole personalizzate, etichette professionali: tecnologia, competenza e assistenza per la tua azienda.' : 'Custom boxes, professional labels: technology, expertise and support for your business.'}
             </p>
             <div className="flex flex-row gap-3 sm:gap-5 opacity-0 animate-fade-up-delay-2">
               <Link href="/soluzioni" className="inline-flex items-center justify-center px-6 sm:px-10 py-3.5 sm:py-5 bg-cyan-500 hover:bg-cyan-400 text-white font-semibold rounded-full transition-all text-base sm:text-xl">
-                Le Nostre Soluzioni →
+                {locale === 'it' ? 'Le Nostre Soluzioni →' : 'Our Solutions →'}
               </Link>
             </div>
         </div>
@@ -96,7 +96,7 @@ function Hero() {
 
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 opacity-70 animate-bounce flex">
-        <span className="text-white/60 text-xs uppercase tracking-widest font-medium">{"Scopri"}</span>
+        <span className="text-white/60 text-xs uppercase tracking-widest font-medium">{locale === 'it' ? 'Scopri' : 'Discover'}</span>
         <svg className="w-5 h-5 text-white/60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7" />
         </svg>
@@ -111,12 +111,12 @@ function Hero() {
 /* Brand Bar removed */
 
 /* ───── Solutions ───── */
-function Solutions() {
+function Solutions({ locale }: { locale: string }) {
   const { ref, visible } = useInView();
   const solutions = [
     {
-      title: "Packaging",
-      desc: "Box maker automatici, stampanti single-pass per cartone ondulato, sistemi di fustellatura e incollaggio digitale.",
+      title: locale === 'it' ? "Packaging" : "Packaging",
+      desc: locale === 'it' ? "Box maker automatici, stampanti single-pass per cartone ondulato, sistemi di fustellatura e incollaggio digitale." : "Automatic box makers, single-pass printers for corrugated cardboard, digital die-cutting and gluing systems.",
       href: "/soluzioni/packaging",
       icon: (
         <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -127,8 +127,8 @@ function Solutions() {
       accentBorder: "border-l-cyan-500",
     },
     {
-      title: "Etichette",
-      desc: "Stampanti per etichette in bobina e a foglio con tecnologia inkjet e laser a colori per ogni esigenza produttiva.",
+      title: locale === 'it' ? "Etichette" : "Labels",
+      desc: locale === 'it' ? "Stampanti per etichette in bobina e a foglio con tecnologia inkjet e laser a colori per ogni esigenza produttiva." : "Roll-fed and sheet-fed label printers with colour inkjet and laser technology for every production need.",
       href: "/soluzioni/etichette",
       icon: (
         <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -140,8 +140,8 @@ function Solutions() {
       accentBorder: "border-l-magenta-500",
     },
     {
-      title: "Shopper & Packaging di Lusso",
-      desc: "Stampa hot foil e digitale per shopper e packaging premium con finiture metalliche.",
+      title: locale === 'it' ? "Shopper & Packaging di Lusso" : "Shoppers & Luxury Packaging",
+      desc: locale === 'it' ? "Stampa hot foil e digitale per shopper e packaging premium con finiture metalliche." : "Hot foil and digital printing for premium shoppers and packaging with metallic finishes.",
       href: "/soluzioni#shopper",
       icon: (
         <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -152,8 +152,8 @@ function Solutions() {
       accentBorder: "border-l-amber-500",
     },
     {
-      title: "Labbratura Libri",
-      desc: "Stampa digitale sui bordi di libri, quaderni e block notes per personalizzazioni uniche e di alta qualità.",
+      title: locale === 'it' ? "Labbratura Libri" : "Book Edge Printing",
+      desc: locale === 'it' ? "Stampa digitale sui bordi di libri, quaderni e block notes per personalizzazioni uniche e di alta qualità." : "Digital printing on book edges, notebooks and notepads for unique, high-quality customisation.",
       href: "/soluzioni#labbratura",
       icon: (
         <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -164,8 +164,8 @@ function Solutions() {
       accentBorder: "border-l-violet-500",
     },
     {
-      title: "Consumabili",
-      desc: "Inchiostri, testine di stampa, nastri e materiali di consumo originali per tutte le stampanti distribuite.",
+      title: locale === 'it' ? "Consumabili" : "Consumables",
+      desc: locale === 'it' ? "Inchiostri, testine di stampa, nastri e materiali di consumo originali per tutte le stampanti distribuite." : "Inks, printheads, ribbons and original consumables for all distributed printers.",
       href: "/soluzioni/consumabili",
       icon: (
         <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -181,8 +181,8 @@ function Solutions() {
     <section className="section-padding bg-surface-50">
       <div className="container-custom" ref={ref}>
         <div className={`text-center mb-16 transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <p className="text-cyan-500 font-semibold text-sm uppercase tracking-widest mb-4">{"Cosa facciamo"}</p>
-          <h2 className="text-4xl sm:text-5xl font-bold text-dark-800 tracking-tight">{"Le Nostre Soluzioni"}</h2>
+          <p className="text-cyan-500 font-semibold text-sm uppercase tracking-widest mb-4">{locale === 'it' ? 'Cosa facciamo' : 'What we do'}</p>
+          <h2 className="text-4xl sm:text-5xl font-bold text-dark-800 tracking-tight">{locale === 'it' ? 'Le Nostre Soluzioni' : 'Our Solutions'}</h2>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 lg:gap-5">
           {solutions.map((s, i) => (
@@ -200,7 +200,7 @@ function Solutions() {
               </h3>
               <p className="text-gray-500 text-[15px] leading-relaxed mb-6 flex-grow">{s.desc}</p>
               <span className="inline-flex items-center text-cyan-500 text-sm font-semibold group-hover:gap-3 gap-2 transition-all mt-auto">
-                {"Scopri di più"}
+                {locale === 'it' ? 'Scopri di più' : 'Learn more'}
                 <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
@@ -214,32 +214,32 @@ function Solutions() {
 }
 
 /* ───── Featured Products ───── */
-function FeaturedProducts() {
+function FeaturedProducts({ locale }: { locale: string }) {
   const { ref, visible } = useInView();
   const products = [
     {
       name: "Anypack AB2500",
-      subtitle: "Box Maker Automatico",
-      desc: "Macchina all-in-one per la creazione di scatole in cartone ondulato: taglio, scanalatura, cordonatura e incollaggio in un'unica operazione.",
-      specs: ["500-600 scatole/ora", "Cartone da 1 a 7mm", "Incollaggio a caldo e freddo", "Cambio formato in 10 secondi"],
+      subtitle: locale === 'it' ? "Box Maker Automatico" : "Automatic Box Maker",
+      desc: locale === 'it' ? "Macchina all-in-one per la creazione di scatole in cartone ondulato: taglio, scanalatura, cordonatura e incollaggio in un'unica operazione." : "All-in-one machine for creating corrugated cardboard boxes: cutting, slotting, creasing and gluing in a single operation.",
+      specs: locale === 'it' ? ["500-600 scatole/ora", "Cartone da 1 a 7mm", "Incollaggio a caldo e freddo", "Cambio formato in 10 secondi"] : ["500–600 boxes/hour", "1 to 7 mm cardboard", "Hot and cold gluing", "Format change in 10 seconds"],
       href: "/prodotti/ab2500",
       image: "/images/products/ab2500-hero-nobg.png",
       accent: "cyan",
     },
     {
       name: "EDM-650X",
-      subtitle: "Stampante Single-Pass",
-      desc: "Stampa digitale diretta su cartone ondulato con tecnologia single-pass. Velocità industriale, qualità fotografica.",
-      specs: ["Fino a 30m/min", "Larghezza 650mm", "Inchiostri a base acqua, CMYK", "Stampa su cartone ondulato"],
+      subtitle: locale === 'it' ? "Stampante Single-Pass" : "Single-Pass Printer",
+      desc: locale === 'it' ? "Stampa digitale diretta su cartone ondulato con tecnologia single-pass. Velocità industriale, qualità fotografica." : "Direct digital printing on corrugated cardboard with single-pass technology. Industrial speed, photographic quality.",
+      specs: locale === 'it' ? ["Fino a 30m/min", "Larghezza 650mm", "Inchiostri a base acqua, CMYK", "Stampa su cartone ondulato"] : ["Up to 30 m/min", "650 mm width", "Water-based CMYK inks", "Prints on corrugated cardboard"],
       href: "/prodotti/edm-650x",
       image: "/images/products/edm-650x-photo.avif",
       accent: "magenta",
     },
     {
       name: "GreenBox Print Book",
-      subtitle: "Labbratura Digitale Libri",
-      desc: "Sistema di stampa digitale per dorsi e copertine di libri. Labbratura a colori on-demand, elimina le scorte di copertine prestampate.",
-      specs: ["Stampa digitale a colori", "Formato fino a 350mm", "On-demand, zero scorte", "Integrazione in linea"],
+      subtitle: locale === 'it' ? "Labbratura Digitale Libri" : "Digital Book Edge Printing",
+      desc: locale === 'it' ? "Sistema di stampa digitale per dorsi e copertine di libri. Labbratura a colori on-demand, elimina le scorte di copertine prestampate." : "Digital printing system for book spines and covers. On-demand colour edge printing, eliminating pre-printed cover stock.",
+      specs: locale === 'it' ? ["Stampa digitale a colori", "Formato fino a 350mm", "On-demand, zero scorte", "Integrazione in linea"] : ["Full-colour digital printing", "Format up to 350 mm", "On-demand, zero stock", "Inline integration"],
       href: "/prodotti/greenbox-print-book",
       image: "/images/products/greenbox-printbook.jpg",
       accent: "cyan",
@@ -250,8 +250,8 @@ function FeaturedProducts() {
     <section className="section-padding bg-white">
       <div className="container-custom" ref={ref}>
         <div className={`text-center mb-16 transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <p className="text-cyan-500 font-semibold text-sm uppercase tracking-widest mb-4">{"I nostri prodotti"}</p>
-          <h2 className="text-4xl sm:text-5xl font-bold text-dark-800 tracking-tight">{"Tecnologie di Punta"}</h2>
+          <p className="text-cyan-500 font-semibold text-sm uppercase tracking-widest mb-4">{locale === 'it' ? 'I nostri prodotti' : 'Our products'}</p>
+          <h2 className="text-4xl sm:text-5xl font-bold text-dark-800 tracking-tight">{locale === 'it' ? 'Tecnologie di Punta' : 'Cutting-Edge Technology'}</h2>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {products.map((p, i) => (
@@ -289,7 +289,7 @@ function FeaturedProducts() {
                   ))}
                 </ul>
                 <Link href={p.href} className="inline-flex items-center text-cyan-500 font-semibold text-sm hover:gap-3 gap-2 transition-all group/link">
-                  {"Scopri di più"}
+                  {locale === 'it' ? 'Scopri di più' : 'Learn more'}
                   <svg className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
@@ -304,13 +304,13 @@ function FeaturedProducts() {
 }
 
 /* ───── Why Print Solution (Stats) ───── */
-function WhyUs() {
+function WhyUs({ locale }: { locale: string }) {
   const { ref, visible } = useInView();
   const stats = [
-    { value: 1500, suffix: "+", label: "Clienti soddisfatti", color: "from-cyan-400 to-cyan-500" },
-    { value: 15, suffix: "+", label: "Anni di esperienza", color: "from-magenta-400 to-magenta-500" },
-    { value: 20, suffix: "+", label: "Paesi serviti", color: "from-yellow-400 to-yellow-500" },
-    { value: 150, suffix: "+", label: "Prodotti a catalogo", color: "from-green-400 to-green-500" },
+    { value: 1500, suffix: "+", label: locale === 'it' ? "Clienti soddisfatti" : "Satisfied customers", color: "from-cyan-400 to-cyan-500" },
+    { value: 15, suffix: "+", label: locale === 'it' ? "Anni di esperienza" : "Years of experience", color: "from-magenta-400 to-magenta-500" },
+    { value: 20, suffix: "+", label: locale === 'it' ? "Paesi serviti" : "Countries served", color: "from-yellow-400 to-yellow-500" },
+    { value: 150, suffix: "+", label: locale === 'it' ? "Prodotti a catalogo" : "Products in catalogue", color: "from-green-400 to-green-500" },
   ];
   return (
     <section className="section-padding bg-dark-900 text-white relative overflow-hidden">
@@ -321,9 +321,9 @@ function WhyUs() {
 
       <div className="container-custom relative" ref={ref}>
         <div className={`text-center mb-16 transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <p className="text-cyan-400 font-semibold text-sm uppercase tracking-widest mb-4">{"Perché sceglierci"}</p>
+          <p className="text-cyan-400 font-semibold text-sm uppercase tracking-widest mb-4">{locale === 'it' ? 'Perché sceglierci' : 'Why choose us'}</p>
           <h2 className="text-4xl sm:text-5xl font-bold tracking-tight">
-            Numeri che <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-emerald-400 to-lime-400">{"parlano"}</span>
+            {locale === 'it' ? 'Numeri che ' : 'Numbers that '}<span className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-emerald-400 to-lime-400">{locale === 'it' ? 'parlano' : 'speak'}</span>
           </h2>
         </div>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
@@ -346,10 +346,10 @@ function WhyUs() {
 }
 
 /* ───── Testimonial ───── */
-function Testimonial() {
+function Testimonial({ locale }: { locale: string }) {
   const { ref, visible } = useInView();
   const [active, setActive] = useState(0);
-  const testimonials = [
+  const testimonials = locale === 'it' ? [
     {
       quote: "Non pensavo che una stampante potesse aprirmi così tante opportunità. La personalizzazione del packaging è richiesta da qualunque azienda produttrice.",
       name: "Marina L.",
@@ -364,6 +364,25 @@ function Testimonial() {
     },
     {
       quote: "Cercavamo una soluzione per etichette in piccoli lotti e Print Solution ci ha guidato nella scelta perfetta. Collaborazione che dura da 5 anni.",
+      name: "Francesca T.",
+      location: "Verona, VR",
+      initial: "F",
+    },
+  ] : [
+    {
+      quote: "I never thought a printer could open up so many opportunities. Custom packaging is in demand from every manufacturing company.",
+      name: "Marina L.",
+      location: "Correggio, RE",
+      initial: "M",
+    },
+    {
+      quote: "Impeccable support and very fast response times. With the EDM-650X we tripled our output while maintaining excellent quality.",
+      name: "Giuseppe R.",
+      location: "Naples, NA",
+      initial: "G",
+    },
+    {
+      quote: "We were looking for a solution for small-batch labels and Print Solution guided us to the perfect choice. A partnership that has lasted 5 years.",
       name: "Francesca T.",
       location: "Verona, VR",
       initial: "F",
@@ -399,7 +418,7 @@ function Testimonial() {
             {/* Dots */}
             <div className="flex justify-center gap-2 mt-8">
               {testimonials.map((_, i) => (
-                <button key={i} onClick={() => setActive(i)} aria-label={`Testimonianza ${i + 1}`} className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${i === active ? 'bg-cyan-500 w-8' : 'bg-gray-200 hover:bg-gray-300'}`} />
+                <button key={i} onClick={() => setActive(i)} aria-label={locale === 'it' ? `Testimonianza ${i + 1}` : `Testimonial ${i + 1}`} className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${i === active ? 'bg-cyan-500 w-8' : 'bg-gray-200 hover:bg-gray-300'}`} />
               ))}
             </div>
           </div>
@@ -410,7 +429,7 @@ function Testimonial() {
 }
 
 /* ───── Demo CTA ───── */
-function DemoCTA() {
+function DemoCTA({ locale }: { locale: string }) {
   const { ref, visible } = useInView();
   return (
     <section className="section-padding bg-surface-50">
@@ -422,21 +441,20 @@ function DemoCTA() {
 
           <div className="relative">
             <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold mb-6 tracking-tight">
-              Prenota una Visita
+              {locale === 'it' ? 'Prenota una Visita' : 'Book a Visit'}
               <br />
-              in Sala Demo
+              {locale === 'it' ? 'in Sala Demo' : 'to Our Demo Room'}
             </h2>
             <p className="text-white/80 max-w-2xl mx-auto mb-10 text-lg leading-relaxed">
-              Vieni a toccare con mano le nostre soluzioni. La nostra sala demo a Sesto San Giovanni
-              è attrezzata con tutti i prodotti in funzione.
+              {locale === 'it' ? 'Vieni a toccare con mano le nostre soluzioni. La nostra sala demo a Sesto San Giovanni è attrezzata con tutti i prodotti in funzione.' : 'Come and experience our solutions first-hand. Our demo room in Sesto San Giovanni is equipped with all products up and running.'}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Print%20Solution&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo.%0A%0AGrazie" className="inline-flex items-center justify-center px-8 py-4 bg-white text-cyan-600 font-bold rounded-full hover:bg-yellow-400 hover:text-dark-800 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 text-lg">
-                {"Richiedi Demo →"}
+                {locale === 'it' ? 'Richiedi Demo →' : 'Request a Demo →'}
               </a>
               <a href="tel:+390249439417" className="inline-flex items-center justify-center px-8 py-4 border-2 border-white/30 text-white font-semibold rounded-full hover:bg-white/10 transition-all duration-300 text-lg">
                 <svg className="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" /></svg>
-                {"Chiamaci Ora"}
+                {locale === 'it' ? 'Chiamaci Ora' : 'Call Us Now'}
               </a>
             </div>
           </div>
@@ -451,13 +469,13 @@ export default function HomePageClient() {
   const locale = useLocale();
   return (
     <>
-      <Hero />
+      <Hero locale={locale} />
       {/* BrandBar removed */}
-      <Solutions />
-      <FeaturedProducts />
-      <WhyUs />
-      <Testimonial />
-      <DemoCTA />
+      <Solutions locale={locale} />
+      <FeaturedProducts locale={locale} />
+      <WhyUs locale={locale} />
+      <Testimonial locale={locale} />
+      <DemoCTA locale={locale} />
     </>
   );
 }

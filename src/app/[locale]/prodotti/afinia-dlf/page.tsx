@@ -1,3 +1,4 @@
+import { getLocale } from 'next-intl/server';
 import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
@@ -66,8 +67,8 @@ const specs = [
 
 const features = [
   {
-    title: "Taglio Senza Fustelle",
-    desc: "Tecnologia plotter che taglia qualsiasi forma direttamente da file digitale. Nessuna fustella fisica da acquistare, nessun tempo di attesa per la produzione degli utensili.",
+    title: "Taglio Senza Fustelle", titleEn: "Die-Free Cutting",
+    desc: "Tecnologia plotter che taglia qualsiasi forma direttamente da file digitale. Nessuna fustella fisica da acquistare, nessun tempo di attesa per la produzione degli utensili.", descEn: "Plotter technology that cuts any shape directly from digital file. No physical dies to purchase, no waiting time for tooling production.",
     icon: (
       <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7.848 8.25l1.536.887M7.848 8.25a3 3 0 11-5.196-3 3 3 0 015.196 3zm1.536.887a2.165 2.165 0 011.083 1.839c.005.351.054.695.14 1.024M9.384 9.137l2.077 1.199M7.848 15.75l1.536-.887m-1.536.887a3 3 0 11-5.196 3 3 3 0 015.196-3zm1.536-.887a2.165 2.165 0 001.083-1.838c.005-.352.054-.695.14-1.025m-1.223 2.863l2.077-1.199m0-3.328a4.323 4.323 0 012.068-1.379l5.325-1.628a4.5 4.5 0 012.48-.044l.803.215-7.794 4.5m-2.882-1.664A4.331 4.331 0 0010.607 12m3.736 0l7.794 4.5-.802.215a4.5 4.5 0 01-2.48-.043l-5.326-1.629a4.324 4.324 0 01-2.068-1.379M14.343 12l-2.882 1.664" />
@@ -75,8 +76,8 @@ const features = [
     ),
   },
   {
-    title: "Laminazione Integrata",
-    desc: "I modelli \"L\" includono laminazione in linea per proteggere le etichette e garantire una finitura professionale resistente a graffi e umidità.",
+    title: "Laminazione Integrata", titleEn: "Integrated Lamination",
+    desc: "I modelli \"L\" includono laminazione in linea per proteggere le etichette e garantire una finitura professionale resistente a graffi e umidità.", descEn: "The 'L' models include inline lamination to protect labels and ensure a professional finish resistant to scratches and moisture.",
     icon: (
       <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
@@ -84,8 +85,8 @@ const features = [
     ),
   },
   {
-    title: "Processo Completo in Uno",
-    desc: "Svolgi, lamina, taglia, rimuovi sfrido, slitting e riavvolgimento è tutto in un unico passaggio. Etichette pronte per l'applicazione in uscita.",
+    title: "Processo Completo in Uno", titleEn: "Complete Process in One",
+    desc: "Svolgi, lamina, taglia, rimuovi sfrido, slitting e riavvolgimento è tutto in un unico passaggio. Etichette pronte per l'applicazione in uscita.", descEn: "Unwind, laminate, cut, waste removal, slitting and rewinding — all in a single pass. Labels ready for application at the output.",
     icon: (
       <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
@@ -93,8 +94,8 @@ const features = [
     ),
   },
   {
-    title: "Ideale per Tirature Brevi",
-    desc: "Perfetto per piccole tirature, prototipi e stampa on-demand. Permette ai tipografi di gestire internamente lavori brevi con tempi di consegna rapidi e qualità elevata.",
+    title: "Ideale per Tirature Brevi", titleEn: "Ideal for Short Runs",
+    desc: "Perfetto per piccole tirature, prototipi e stampa on-demand. Permette ai tipografi di gestire internamente lavori brevi con tempi di consegna rapidi e qualità elevata.", descEn: "Perfect for short runs, prototypes and on-demand printing. Allows printers to handle short jobs in-house with quick turnaround and high quality.",
     icon: (
       <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5m.75-9l3-3 2.148 2.148A12.061 12.061 0 0116.5 7.605" />
@@ -102,8 +103,8 @@ const features = [
     ),
   },
   {
-    title: "Nessun Costo Utensili",
-    desc: "Elimina completamente i costi delle fustelle tradizionali. Ogni forma diversa è solo un file: cambi design in pochi click senza attendere la produzione di nuovi utensili.",
+    title: "Nessun Costo Utensili", titleEn: "No Tooling Costs",
+    desc: "Elimina completamente i costi delle fustelle tradizionali. Ogni forma diversa è solo un file: cambi design in pochi click senza attendere la produzione di nuovi utensili.", descEn: "Completely eliminates the cost of traditional dies. Every different shape is just a file: change designs in a few clicks without waiting for new tooling.",
     icon: (
       <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z" />
@@ -111,8 +112,8 @@ const features = [
     ),
   },
   {
-    title: "Cambio Lavoro Istantaneo",
-    desc: "Passa da un design all'altro in secondi: basta caricare il nuovo file di taglio. Zero setup meccanico, zero tempi morti tra una commessa e l'altra.",
+    title: "Cambio Lavoro Istantaneo", titleEn: "Instant Job Changeover",
+    desc: "Passa da un design all'altro in secondi: basta caricare il nuovo file di taglio. Zero setup meccanico, zero tempi morti tra una commessa e l'altra.", descEn: "Switch between designs in seconds: just load the new cutting file. Zero mechanical setup, zero downtime between jobs.",
     icon: (
       <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -121,7 +122,8 @@ const features = [
   },
 ];
 
-export default function DLFPage() {
+export default async function () {
+  const locale = await getLocale();
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }} />
@@ -192,8 +194,8 @@ export default function DLFPage() {
                 <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-cyan-500 to-magenta-500 flex items-center justify-center text-white mb-5">
                   {f.icon}
                 </div>
-                <h3 className="text-lg font-bold text-dark-800 mb-2">{f.title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{f.desc}</p>
+                <h3 className="text-lg font-bold text-dark-800 mb-2">{locale === 'it' ? f.title : (f.titleEn || f.title)}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{locale === 'it' ? f.desc : (f.descEn || f.desc)}</p>
               </div>
             ))}
           </div>
@@ -230,8 +232,8 @@ export default function DLFPage() {
           <h2 className="text-2xl font-bold text-dark-800 mb-8 text-center">Prodotti Correlati</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { name: "Afinia DC250 / DC350", desc: "Fustellatori semi-rotativi per alti volumi", href: "/prodotti/afinia-dc350", image: "/images/products/afinia-dc350.png" },
-              { name: "Afinia L901", desc: "Stampante etichette professionale Memjet", href: "/prodotti/afinia-l901", image: "/images/products/afinia-l901.png" },
+              { name: "Afinia DC250 / DC350", desc: "{locale === 'it' ? 'Fustellatori semi-rotativi per alti volumi' : 'Semi-rotary die-cutters for high volumes'}", href: "/prodotti/afinia-dc350", image: "/images/products/afinia-dc350.png" },
+              { name: "Afinia L901", desc: "{locale === 'it' ? 'Stampante etichette professionale Memjet' : 'Professional Memjet label printer'}", href: "/prodotti/afinia-l901", image: "/images/products/afinia-l901.png" },
               { name: "Afinia X350", desc: "Stampante roll-to-roll alta Velocità", href: "/prodotti/afinia-x350", image: "/images/products/afinia-x350-site.webp" },
             ].map((p) => (
               <Link key={p.name} href={p.href} className="card-modern overflow-hidden group hover:-translate-y-1 transition-transform duration-300">

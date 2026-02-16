@@ -1,3 +1,4 @@
+import { getLocale } from 'next-intl/server';
 import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
@@ -51,7 +52,7 @@ const breadcrumbJsonLd = {
   ],
 };
 
-const specs = [
+function getSpecs(l: string) { return l === 'it' ? [
   ["Capacit� produttiva", "Circa 400 pezzi/ora, 3200 pezzi/giorno"],
   ["Risoluzione di stampa", "1200 dpi"],
   ["Colori", "4 colori CMYK"],
@@ -66,8 +67,24 @@ const specs = [
   ["Temperatura operativa", "0��45�C, umidit� 20%�80%"],
   ["Assorbimento", "480 W, AC 110V/220V, 50/60 Hz"],
   ["Dimensioni (L�A�P)", "190 � 120 � 165 cm"],
-  ["Peso", "450 kg"],
-];
+  ["Peso", "450 kg"],
+] : [
+  ["Production capacity", "Approx. 400 pcs/hour, 3200 pcs/day"],
+  ["Print resolution", "1200 dpi"],
+  ["Colors", "4 colors CMYK"],
+  ["Print technology", "Pigmented water-based inkjet"],
+  ["Printheads", "HP A3 / Epson I3200"],
+  ["Book height", "From 90 to 350 mm"],
+  ["Print width", "From 5 to 218 mm"],
+  ["Print speed", "0-15 m/min (adjustable)"],
+  ["Ink tanks", "1 liter per color"],
+  ["Image formats", "JPG, PDF"],
+  ["Operating systems", "Windows 7 / 10 / 11"],
+  ["Operating temperature", "0°-45°C, humidity 20%-80%"],
+  ["Power consumption", "480 W, AC 110V/220V, 50/60 Hz"],
+  ["Dimensions (L×W×H)", "190 × 120 × 165 cm"],
+  ["Weight", "450 kg"],
+]; }
 
 const features = [
   {
@@ -85,8 +102,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
       </svg>
     ),
-    title: "1200 DPI di Risoluzione",
-    desc: "Fondi pieni, sovrastampe e sfumature con precisione assoluta. Qualit� di stampa senza eguali nel settore.",
+    title: "1200 DPI di Risoluzione", titleEn: "1200 DPI Resolution",
+    desc: "Fondi pieni, sovrastampe e sfumature con precisione assoluta. Qualit� di stampa senza eguali nel settore.", descEn: "Solid fills, overprints and gradients with absolute precision. Unmatched print quality in the industry.",
   },
   {
     icon: (
@@ -94,8 +111,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75" />
       </svg>
     ),
-    title: "Adattamento Intelligente",
-    desc: "Si adatta automaticamente alla forma e allo spessore del libro. Angoli tondi e squadrati, con piastra guida per libri alti.",
+    title: "Adattamento Intelligente", titleEn: "Smart Adaptation",
+    desc: "Si adatta automaticamente alla forma e allo spessore del libro. Angoli tondi e squadrati, con piastra guida per libri alti.", descEn: "Automatically adapts to the shape and thickness of the book. Round and square corners, with guide plate for tall books.",
   },
   {
     icon: (
@@ -103,8 +120,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z" />
       </svg>
     ),
-    title: "Teste di Stampa HP A3",
-    desc: "Tecnologia inkjet a base acqua CMYK con stampa 4 colori in singolo passaggio per design complessi e vivaci.",
+    title: "Teste di Stampa HP A3", titleEn: "HP A3 Printheads",
+    desc: "Tecnologia inkjet a base acqua CMYK con stampa 4 colori in singolo passaggio per design complessi e vivaci.", descEn: "Water-based CMYK inkjet technology with 4-color single-pass printing for complex and vibrant designs.",
   },
   {
     icon: (
@@ -113,8 +130,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
       </svg>
     ),
-    title: "Pulizia Automatica",
-    desc: "Spazzola rotante e aspirapolvere integrati puliscono i libri prima della stampa. Manutenzione automatica della testina.",
+    title: "Pulizia Automatica", titleEn: "Automatic Cleaning",
+    desc: "Spazzola rotante e aspirapolvere integrati puliscono i libri prima della stampa. Manutenzione automatica della testina.", descEn: "Rotating brush and integrated vacuum cleaner clean books before printing. Automatic printhead maintenance.",
   },
   {
     icon: (
@@ -122,12 +139,13 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z" />
       </svg>
     ),
-    title: "Costi Stampa Ridotti",
-    desc: "Taniche da 1 litro per colore garantiscono altissime prestazioni e costi di produzione contenuti.",
+    title: "Costi Stampa Ridotti", titleEn: "Low Printing Costs",
+    desc: "Taniche da 1 litro per colore garantiscono altissime prestazioni e costi di produzione contenuti.", descEn: "1-liter tanks per color ensure excellent performance and low production costs.",
   },
 ];
 
-export default function RobotjetPage() {
+export default async function () {
+  const locale = await getLocale();
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }} />
@@ -215,8 +233,8 @@ export default function RobotjetPage() {
                 <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center text-white mb-5">
                   {f.icon}
                 </div>
-                <h3 className="text-lg font-bold text-dark-800 mb-2">{f.title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{f.desc}</p>
+                <h3 className="text-lg font-bold text-dark-800 mb-2">{locale === 'it' ? f.title : (f.titleEn || f.title)}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{locale === 'it' ? f.desc : (f.descEn || f.desc)}</p>
               </div>
             ))}
           </div>
@@ -227,7 +245,7 @@ export default function RobotjetPage() {
         <div className="container-custom max-w-3xl">
           <h2 className="text-3xl font-bold text-dark-800 mb-10 text-center">Specifiche Tecniche</h2>
           <div className="space-y-3">
-            {specs.map(([label, value]) => (
+            {getSpecs(locale).map(([label, value]) => (
               <div key={label} className="flex flex-col sm:flex-row sm:justify-between gap-1 bg-white rounded-xl px-5 py-4 shadow-sm">
                 <span className="text-sm font-medium text-gray-600">{label}</span>
                 <span className="text-sm font-bold text-dark-800 text-right max-w-[60%]">{value}</span>
@@ -264,7 +282,7 @@ export default function RobotjetPage() {
                 </div>
                 <div className="p-5">
                   <h3 className="font-bold text-dark-800 group-hover:text-cyan-500 transition-colors">GreenBox Print Book</h3>
-                  <p className="text-sm text-gray-500 mt-1">Labbratura digitale libri</p>
+                  <p className="text-sm text-gray-500 mt-1">{locale === 'it' ? 'Labbratura digitale libri' : 'Digital book edge printing'}</p>
                 </div>
               </Link>
           </div>

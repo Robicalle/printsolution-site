@@ -5,7 +5,7 @@ import Image from "next/image";
 import { getLocale } from "next-intl/server";
 
 export const metadata: Metadata = {
-  title: "{locale === 'it' ? 'Stampanti Etichette' : 'Label Printers'} Industriali",
+  title: "Stampanti Etichette Industriali",
   description:
     "Stampante etichette industriale: etichettatura in bobina con Afinia Label L901, X350, LT5C e DLP-2200. Soluzioni complete per etichette a colori.",
   keywords: [
@@ -282,7 +282,7 @@ export default async function EtichettePage() {
       <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="text-center mb-16">
-            <p className="text-cyan-500 font-semibold text-sm uppercase tracking-widest mb-4">Stampanti Etichette</p>
+            <p className="text-cyan-500 font-semibold text-sm uppercase tracking-widest mb-4">{locale === 'it' ? 'Stampanti Etichette' : 'Label Printers'}</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-dark-800 tracking-tight">
               {locale === 'it' ? 'Una Stampante per Ogni Esigenza' : 'A Printer for Every Need'}
             </h2>

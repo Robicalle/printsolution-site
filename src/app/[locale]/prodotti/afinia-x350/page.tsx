@@ -1,3 +1,4 @@
+import { getLocale } from 'next-intl/server';
 import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
@@ -51,7 +52,7 @@ const breadcrumbJsonLd = {
   ],
 };
 
-const specs = [
+function getSpecs(l: string) { return l === 'it' ? [
   ["Tecnologia", "Inkjet pigmentato a base acqua (Memjet DuraFlex)"],
   ["Velocit� di stampa", "Fino a 45 m/min"],
   ["Risoluzione", "1600 � 1600 dpi"],
@@ -66,8 +67,20 @@ const specs = [
   ["Diametro max bobina", "350 mm"],
   ["Compressore", "Ultra silenzioso, integrato"],
   ["Alimentazione", "Monofase 220V"],
-  ["Applicazioni", "Etichette, packaging flessibile"],
-];
+  ["Applicazioni", "Etichette, packaging flessibile"],
+] : [
+  ["Technology", "Memjet Waterfall Inkjet"],
+  ["Resolution", "1600 × 1600 dpi"],
+  ["Inks", "CMYK pigmented water-based"],
+  ["Max media width", "Min 50 mm × Max 350 mm"],
+  ["Media thickness", "Min 0.05 mm × Max 0.35 mm"],
+  ["Max speed", "Up to 45 m/min"],
+  ["Ink capacity", "2 liters per color × 8 liters total"],
+  ["Nozzle redundancy", "2× for zero banding"],
+  ["Display", "21-inch touchscreen + remote connectivity"],
+  ["Printhead", "User-replaceable"],
+  ["Dimensions", "Approx. 1 m² footprint"],
+]; }
 
 const features = [
   {
@@ -76,8 +89,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
       </svg>
     ),
-    title: "45 Metri al Minuto",
-    desc: "La pi� veloce della sua categoria. Produzione industriale con qualit� costante a 1600 dpi anche alle massime velocit�.",
+    title: "45 Metri al Minuto", titleEn: "45 Meters per Minute",
+    desc: "La pi� veloce della sua categoria. Produzione industriale con qualit� costante a 1600 dpi anche alle massime velocit�.", descEn: "The fastest in its class. Industrial production with consistent quality up to 1600 dpi on every label.",
   },
   {
     icon: (
@@ -85,8 +98,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5" />
       </svg>
     ),
-    title: "Inchiostri Pigmentati a Base Acqua",
-    desc: "Inchiostri pigmentati resistenti all'acqua, ai raggi UV e alle sostanze chimiche. Stampe durature ed eco-sostenibili.",
+    title: "Inchiostri Pigmentati a Base Acqua", titleEn: "Pigmented Water-Based Inks",
+    desc: "Inchiostri pigmentati resistenti all'acqua, ai raggi UV e alle sostanze chimiche. Stampe durature ed eco-sostenibili.", descEn: "Pigmented inks resistant to water, UV rays and the harshest environmental conditions. Ideal for outdoor and industrial labels.",
   },
   {
     icon: (
@@ -112,8 +125,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" />
       </svg>
     ),
-    title: "8 Litri di Inchiostro",
-    desc: "Taniche da 2 litri per colore (CMYK), 8 litri totali. Lunghe tirature senza interruzioni e costo stampa ridotto.",
+    title: "8 Litri di Inchiostro", titleEn: "8 Liters of Ink",
+    desc: "Taniche da 2 litri per colore (CMYK), 8 litri totali. Lunghe tirature senza interruzioni e costo stampa ridotto.", descEn: "2-liter tanks per color (CMYK), 8 liters total. Extended autonomous production without frequent replacements.",
   },
   {
     icon: (
@@ -126,7 +139,8 @@ const features = [
   },
 ];
 
-export default function AfiniaX350Page() {
+export default async function () {
+  const locale = await getLocale();
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }} />
@@ -211,8 +225,8 @@ export default function AfiniaX350Page() {
                 <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-yellow-500 to-cyan-500 flex items-center justify-center text-white mb-5">
                   {f.icon}
                 </div>
-                <h3 className="text-lg font-bold text-dark-800 mb-2">{f.title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{f.desc}</p>
+                <h3 className="text-lg font-bold text-dark-800 mb-2">{locale === 'it' ? f.title : (f.titleEn || f.title)}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{locale === 'it' ? f.desc : (f.descEn || f.desc)}</p>
               </div>
             ))}
           </div>
@@ -223,7 +237,7 @@ export default function AfiniaX350Page() {
         <div className="container-custom max-w-3xl">
           <h2 className="text-3xl font-bold text-dark-800 mb-10 text-center">Specifiche Tecniche</h2>
           <div className="space-y-3">
-            {specs.map(([label, value]) => (
+            {getSpecs(locale).map(([label, value]) => (
               <div key={label} className="flex flex-col sm:flex-row sm:justify-between gap-1 bg-white rounded-xl px-5 py-4 shadow-sm">
                 <span className="text-sm font-medium text-gray-600">{label}</span>
                 <span className="text-sm font-bold text-dark-800">{value}</span>
@@ -252,7 +266,7 @@ export default function AfiniaX350Page() {
           <h2 className="text-2xl font-bold text-dark-800 mb-8 text-center">Prodotti Correlati</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { name: "Afinia DLP-2200", desc: "Digital Label Press completa", href: "/prodotti/afinia-dlp2200", image: "/images/products/afinia-dlp2200.avif" },
+              { name: "Afinia DLP-2200", desc: "{locale === 'it' ? 'Digital Label Press completa' : 'Complete Digital Label Press'}", href: "/prodotti/afinia-dlp2200", image: "/images/products/afinia-dlp2200.avif" },
               { name: "Afinia L901", desc: "Stampante etichette professionale Memjet", href: "/prodotti/afinia-l901", image: "/images/products/afinia-l901.png" },
               { name: "Afinia AF200", desc: "Applicatore etichette semiautomatico", href: "/prodotti/afinia-af200", image: "/images/products/afinia-af200-nobg.png" },
             ].map((p) => (

@@ -1,3 +1,4 @@
+import { getLocale } from 'next-intl/server';
 import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
@@ -51,7 +52,7 @@ const breadcrumbJsonLd = {
   ],
 };
 
-const specs = [
+function getSpecs(l: string) { return l === 'it' ? [
   ["Tecnologia", "Inkjet single-pass CMYK"],
   ["Teste di stampa", "Da 2 a 6 teste HP (30 cm ciascuna)"],
   ["Risoluzione", "1200 � 1200 dpi"],
@@ -63,8 +64,17 @@ const specs = [
   ["Piano", "Aspirato con pompa a vuoto"],
   ["Software RIP", "Incluso"],
   ["Alimentatore", "Caricatore automatico opzionale"],
-  ["Opzioni", "Stampa bobina a bobina"],
-];
+  ["Opzioni", "Stampa bobina a bobina"],
+] : [
+  ["Technology", "HP Pagewide single-pass inkjet"],
+  ["Resolution", "1200 × 1200 dpi"],
+  ["Colors", "CMYK"],
+  ["Max print width", "650 mm"],
+  ["Max speed", "Up to 30 m/min"],
+  ["Inks", "Pigmented water-based"],
+  ["Compatible media", "Cardboard, paper, kraft, jute"],
+  ["Configuration", "Customizable (dual head available)"],
+]; }
 
 const features = [
   {
@@ -73,8 +83,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15" />
       </svg>
     ),
-    title: "Grande Formato",
-    desc: "Larghezza stampa fino a 180 cm e passaggio carta fino a 250 cm: ideale per cartone ondulato di grandi dimensioni.",
+    title: "Grande Formato", titleEn: "Large Format",
+    desc: "Larghezza stampa fino a 180 cm e passaggio carta fino a 250 cm: ideale per cartone ondulato di grandi dimensioni.", descEn: "Print width up to 180 cm and paper pass-through up to 250 cm. Ideal for large boxes, displays and POP materials.",
   },
   {
     icon: (
@@ -91,8 +101,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
       </svg>
     ),
-    title: "Inchiostri a Base Acqua",
-    desc: "Inchiostri CMYK a base acqua, ecologici e ad alta resa cromatica. Taniche da 4 litri per colore.",
+    title: "Inchiostri a Base Acqua", titleEn: "Water-Based Inks",
+    desc: "Inchiostri CMYK a base acqua, ecologici e ad alta resa cromatica. Taniche da 4 litri per colore.", descEn: "Ecological CMYK water-based inks with high chromatic yield. Compatible with food contact per current regulations.",
   },
   {
     icon: (
@@ -100,8 +110,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75" />
       </svg>
     ),
-    title: "6 Configurazioni",
-    desc: "Da 2 a 6 teste di stampa HP: scegli la configurazione pi� adatta al tuo volume produttivo.",
+    title: "6 Configurazioni", titleEn: "6 Configurations",
+    desc: "Da 2 a 6 teste di stampa HP: scegli la configurazione pi� adatta al tuo volume produttivo.", descEn: "From 2 to 6 HP printheads: choose the most suitable configuration for your production volumes and needs.",
   },
   {
     icon: (
@@ -109,8 +119,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 12c0-1.232-.046-2.453-.138-3.662a4.006 4.006 0 00-3.7-3.7 48.678 48.678 0 00-7.324 0 4.006 4.006 0 00-3.7 3.7c-.017.22-.032.441-.046.662M19.5 12l3-3m-3 3l-3-3m-12 3c0 1.232.046 2.453.138 3.662a4.006 4.006 0 003.7 3.7 48.656 48.656 0 007.324 0 4.006 4.006 0 003.7-3.7c.017-.22.032-.441.046-.662M4.5 12l3 3m-3-3l-3 3" />
       </svg>
     ),
-    title: "Bobina a Bobina",
-    desc: "Opzione stampa bobina a bobina per produzioni in continuo e massima efficienza.",
+    title: "Bobina a Bobina", titleEn: "Roll to Roll",
+    desc: "Opzione stampa bobina a bobina per produzioni in continuo e massima efficienza.", descEn: "Optional roll-to-roll printing for continuous production and high-speed inline finishing.",
   },
   {
     icon: (
@@ -118,12 +128,13 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z" />
       </svg>
     ),
-    title: "Software RIP Incluso",
-    desc: "Software RIP professionale incluso per la gestione colore avanzata e l'ottimizzazione della produzione.",
+    title: "Software RIP Incluso", titleEn: "RIP Software Included",
+    desc: "Software RIP professionale incluso per la gestione colore avanzata e l'ottimizzazione della produzione.", descEn: "Professional RIP software included for advanced color management and quality control on every print.",
   },
 ];
 
-export default function EDM650XPage() {
+export default async function () {
+  const locale = await getLocale();
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(edm650xJsonLd) }} />
@@ -259,8 +270,8 @@ export default function EDM650XPage() {
                 <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-cyan-500 to-magenta-500 flex items-center justify-center text-white mb-5">
                   {f.icon}
                 </div>
-                <h3 className="text-lg font-bold text-dark-800 mb-2">{f.title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{f.desc}</p>
+                <h3 className="text-lg font-bold text-dark-800 mb-2">{locale === 'it' ? f.title : (f.titleEn || f.title)}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{locale === 'it' ? f.desc : (f.descEn || f.desc)}</p>
               </div>
             ))}
           </div>
@@ -272,7 +283,7 @@ export default function EDM650XPage() {
         <div className="container-custom max-w-3xl">
           <h2 className="text-3xl font-bold text-dark-800 mb-10 text-center">Specifiche Tecniche</h2>
           <div className="space-y-3">
-            {specs.map(([label, value]) => (
+            {getSpecs(locale).map(([label, value]) => (
               <div key={label} className="flex flex-col sm:flex-row sm:justify-between gap-1 bg-white rounded-xl px-5 py-4 shadow-sm">
                 <span className="text-sm font-medium text-gray-600">{label}</span>
                 <span className="text-sm font-bold text-dark-800">{value}</span>
@@ -301,9 +312,9 @@ export default function EDM650XPage() {
           <h2 className="text-2xl font-bold text-dark-800 mb-8 text-center">Prodotti Correlati</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { name: "GreenBox EVO", desc: "Stampante single-pass per packaging", href: "/prodotti/greenbox-evo", image: "/images/products/greenbox-evo-site-nobg.png" },
+              { name: "GreenBox EVO", desc: "{locale === 'it' ? 'Stampante single-pass per packaging' : 'Single-pass printer for packaging'}", href: "/prodotti/greenbox-evo", image: "/images/products/greenbox-evo-site-nobg.png" },
               { name: "AurumPress", desc: "Stampatrice termica per foil", href: "/prodotti/aurumpress", image: "/images/products/aurumpress-nobg.png" },
-              { name: "Anypack AB2500", desc: "Box maker automatico", href: "/prodotti/ab2500", image: "/images/products/ab2500-hero-nobg.png" },
+              { name: "Anypack AB2500", desc: "{locale === 'it' ? 'Box maker automatico' : 'Automatic box maker'}", href: "/prodotti/ab2500", image: "/images/products/ab2500-hero-nobg.png" },
             ].map((p) => (
               <Link key={p.name} href={p.href} className="card-modern overflow-hidden group hover:-translate-y-1 transition-transform duration-300">
                 <div className="h-40 relative overflow-hidden">

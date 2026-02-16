@@ -103,21 +103,20 @@ export default async function ConsumabiliPage() {
   return (
     <>
       <PageHero
-        title="Consumabili e Ricambi"
-        subtitle="Inchiostri, cartucce, testine di stampa, foil e materiali di consumo originali per tutte le nostre stampanti."
+        title={locale === 'it' ? "Consumabili e Ricambi" : "Consumables and Spare Parts"}
+        subtitle={locale === 'it' ? "Inchiostri, cartucce, testine di stampa, foil e materiali di consumo originali per tutte le nostre stampanti." : "Inks, cartridges, printheads, foils and original consumables for all our printers."}
         breadcrumb="Soluzioni"
       />
 
       <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <p className="text-cyan-500 font-semibold text-sm uppercase tracking-widest mb-4">Ricambi Originali</p>
+            <p className="text-cyan-500 font-semibold text-sm uppercase tracking-widest mb-4">{locale === 'it' ? 'Ricambi Originali' : 'Original Spare Parts'}</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-dark-800 tracking-tight mb-6">
-              Materiali di Consumo per Ogni Macchina
+              {locale === 'it' ? 'Materiali di Consumo per Ogni Macchina' : 'Consumables for Every Machine'}
             </h2>
             <p className="text-gray-500 text-lg leading-relaxed">
-              Forniamo tutti i consumabili originali per le stampanti che distribuiamo. Spedizione rapida, assistenza 
-              tecnica e consulenza sulla scelta dei materiali più adatti alla tua applicazione.
+              {locale === 'it' ? 'Forniamo tutti i consumabili originali per le stampanti che distribuiamo. Spedizione rapida, assistenza tecnica e consulenza sulla scelta dei materiali più adatti alla tua applicazione.' : 'We supply all original consumables for the printers we distribute. Fast shipping, technical support and guidance on choosing the most suitable materials for your application.'}
             </p>
           </div>
 
@@ -136,7 +135,7 @@ export default async function ConsumabiliPage() {
 
                 <div className="grid md:grid-cols-2 gap-8">
                   <div>
-                    <h4 className="text-sm font-bold text-dark-800 uppercase tracking-wider mb-4">Prodotti</h4>
+                    <h4 className="text-sm font-bold text-dark-800 uppercase tracking-wider mb-4">{locale === 'it' ? 'Prodotti' : 'Products'}</h4>
                     <ul className="space-y-3">
                       {cat.items.map((item) => (
                         <li key={item.name} className="bg-surface-50 rounded-xl p-4">
@@ -147,7 +146,7 @@ export default async function ConsumabiliPage() {
                     </ul>
                   </div>
                   <div>
-                    <h4 className="text-sm font-bold text-dark-800 uppercase tracking-wider mb-4">Caratteristiche</h4>
+                    <h4 className="text-sm font-bold text-dark-800 uppercase tracking-wider mb-4">{locale === 'it' ? 'Caratteristiche' : 'Features'}</h4>
                     <ul className="space-y-3">
                       {cat.features.map((f) => (
                         <li key={f} className="flex items-start text-sm text-gray-600">
@@ -170,10 +169,10 @@ export default async function ConsumabiliPage() {
       <section className="section-padding bg-surface-50">
         <div className="container-custom">
           <div className="text-center mb-12">
-            <p className="text-magenta-500 font-semibold text-sm uppercase tracking-widest mb-4">Assistenza</p>
+            <p className="text-magenta-500 font-semibold text-sm uppercase tracking-widest mb-4">{locale === 'it' ? 'Assistenza' : 'Support'}</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-dark-800 tracking-tight">Care Pack</h2>
             <p className="text-gray-500 mt-4 max-w-2xl mx-auto">
-              Pacchetti di assistenza dedicati per le stampanti packaging EDM-650X e GreenBox EVO.
+              {locale === 'it' ? 'Pacchetti di assistenza dedicati per le stampanti packaging EDM-650X e GreenBox EVO.' : 'Dedicated support packages for EDM-650X and GreenBox EVO packaging printers.'}
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
@@ -187,9 +186,9 @@ export default async function ConsumabiliPage() {
                   {pack.name[0]}
                 </div>
                 <h3 className="text-lg font-bold text-dark-800 mb-2">{pack.name}</h3>
-                <p className="text-gray-500 text-sm mb-4">{pack.hours} supporto remoto</p>
-                <p className="text-gray-500 text-sm">Sconto ricambi: {pack.discount}</p>
-                <p className="text-gray-500 text-sm mt-1">+ Aggiornamenti SW inclusi</p>
+                <p className="text-gray-500 text-sm mb-4">{pack.hours} {locale === 'it' ? 'supporto remoto' : 'remote support'}</p>
+                <p className="text-gray-500 text-sm">{locale === 'it' ? 'Sconto ricambi:' : 'Parts discount:'} {pack.discount}</p>
+                <p className="text-gray-500 text-sm mt-1">{locale === 'it' ? '+ Aggiornamenti SW inclusi' : '+ SW updates included'}</p>
               </div>
             ))}
           </div>
@@ -199,12 +198,12 @@ export default async function ConsumabiliPage() {
       {/* CTA */}
       <section className="section-padding bg-white">
         <div className="container-custom text-center">
-          <h2 className="text-3xl font-bold text-dark-800 mb-6">Hai Bisogno di Consumabili?</h2>
+          <h2 className="text-3xl font-bold text-dark-800 mb-6">{locale === 'it' ? 'Hai Bisogno di Consumabili?' : 'Need Consumables?'}</h2>
           <p className="text-gray-500 max-w-xl mx-auto mb-8">
-            Contattaci per un preventivo rapido. Spedizione in tutta Italia, prezzi riservati per ordini ricorrenti.
+            {locale === 'it' ? 'Contattaci per un preventivo rapido. Spedizione in tutta Italia, prezzi riservati per ordini ricorrenti.' : 'Contact us for a quick quote. Shipping across Italy, special prices for recurring orders.'}
           </p>
           <div className="flex justify-center">
-            <a href="mailto:ordini@printsolutionsrl.it?subject=Ordine%20Consumabili&body=Buongiorno%2C%0A%0AVorrei%20ordinare%20i%20seguenti%20consumabili%3A%0A%0A%0AGrazie" className="btn-primary">Ordina Consumabili</a>
+            <a href="mailto:ordini@printsolutionsrl.it?subject=Ordine%20Consumabili&body=Buongiorno%2C%0A%0AVorrei%20ordinare%20i%20seguenti%20consumabili%3A%0A%0A%0AGrazie" className="btn-primary">{locale === 'it' ? 'Ordina Consumabili' : 'Order Consumables'}</a>
           </div>
         </div>
       </section>

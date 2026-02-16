@@ -23,7 +23,7 @@ export const categories: Category[] = [
     slug: "consumabili-greenbox",
     name: "GreenBox",
     description: "Inchiostri pigmentati a base acqua per stampanti GreenBox EVO",
-    image: "/images/shop/greenbox.png",
+    image: "/images/shop/greenbox.jpg",
     products: [
       { id: "gb-yellow", name: "Tanica inchiostro YELLOW per GreenBox (225ml)", sku: "GB-YEL", price: 180.00, image: "/images/shop/placeholder.png", inStock: true },
       { id: "gb-cyan", name: "Tanica inchiostro CYANO per GreenBox (237ml)", sku: "GB-CYA", price: 180.00, image: "/images/shop/placeholder.png", inStock: true },

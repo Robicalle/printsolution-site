@@ -44,6 +44,7 @@ export default async function ChiSiamoPage() {
               <div>
                 <p className="text-cyan-500 font-semibold text-sm uppercase tracking-widest mb-4">{locale === 'it' ? 'La Nostra Storia' : 'Our Story'}</p>
                 <h2 className="text-3xl font-bold text-dark-800 mb-6">{locale === 'it' ? 'Oltre 15 Anni di Esperienza' : 'Over 15 Years of Experience'}</h2>
+                {locale === 'it' ? (<>
                 <p className="text-gray-500 leading-relaxed mb-4">
                   Print Solution S.r.l. nasce nel <strong>2010</strong> a Sesto San Giovanni (MI) con una missione chiara: 
                   portare in Italia le migliori soluzioni di stampa digitale per packaging ed etichette.
@@ -57,6 +58,21 @@ export default async function ChiSiamoPage() {
                   Non siamo semplici rivenditori: affianchiamo i nostri clienti dalla consulenza iniziale alla 
                   formazione, dall&apos;installazione all&apos;assistenza post-vendita, con un team dedicato e competente.
                 </p>
+                </>) : (<>
+                <p className="text-gray-500 leading-relaxed mb-4">
+                  Print Solution S.r.l. was founded in <strong>2010</strong> in Sesto San Giovanni (Milan) with a clear mission: 
+                  to bring the best digital printing solutions for packaging and labels to Italy.
+                </p>
+                <p className="text-gray-500 leading-relaxed mb-4">
+                  Over more than 15 years we have built solid partnerships with leading brands in the industry 
+                  — Afinia Label, GreenBox, Anypack and DTM Print — becoming their official distributor 
+                  for the Italian market.
+                </p>
+                <p className="text-gray-500 leading-relaxed">
+                  We are not just resellers: we support our clients from initial consultation to 
+                  training, from installation to after-sales service, with a dedicated and skilled team.
+                </p>
+                </>)}
               </div>
               <div className="bg-gradient-to-br from-cyan-500/10 to-magenta-500/10 rounded-3xl p-10 text-center">
                 <div className="grid grid-cols-2 gap-6">
@@ -83,17 +99,17 @@ export default async function ChiSiamoPage() {
                   {
                     icon: "🎯",
                     title: locale === 'it' ? "Competenza" : "Expertise",
-                    desc: "Conosciamo ogni prodotto nel dettaglio. Il nostro team tecnico ha formazione diretta dai produttori e anni di esperienza sul campo.",
+                    desc: locale === 'it' ? "Conosciamo ogni prodotto nel dettaglio. Il nostro team tecnico ha formazione diretta dai produttori e anni di esperienza sul campo." : "We know every product inside out. Our technical team receives training directly from manufacturers and has years of field experience.",
                   },
                   {
                     icon: "🤝",
                     title: "Partnership",
-                    desc: "Non vendiamo macchine: costruiamo relazioni. Affianchiamo il cliente dalla consulenza iniziale alla crescita del business.",
+                    desc: locale === 'it' ? "Non vendiamo macchine: costruiamo relazioni. Affianchiamo il cliente dalla consulenza iniziale alla crescita del business." : "We don't sell machines: we build relationships. We support clients from initial consulting to business growth.",
                   },
                   {
                     icon: "⚡",
                     title: locale === 'it' ? "Innovazione" : "Innovation",
-                    desc: "Siamo sempre alla ricerca delle tecnologie più avanzate per offrire soluzioni all'avanguardia nel mercato della stampa digitale.",
+                    desc: locale === 'it' ? "Siamo sempre alla ricerca delle tecnologie più avanzate per offrire soluzioni all'avanguardia nel mercato della stampa digitale." : "We are always looking for the most advanced technologies to offer cutting-edge solutions in the digital printing market.",
                   },
                 ].map((v) => (
                   <div key={v.title} className="card-modern p-8 text-center">
@@ -111,6 +127,7 @@ export default async function ChiSiamoPage() {
                 <div>
                   <p className="text-magenta-500 font-semibold text-sm uppercase tracking-widest mb-4">{locale === 'it' ? 'Il Nostro Spazio' : 'Our Space'}</p>
                   <h2 className="text-3xl font-bold text-dark-800 mb-6">{locale === 'it' ? 'Sala Demo' : 'Demo Room'}</h2>
+                  {locale === 'it' ? (<>
                   <p className="text-gray-500 leading-relaxed mb-4">
                     La nostra sede a Sesto San Giovanni ospita una <strong>sala demo completamente attrezzata</strong> dove 
                     potrai vedere e testare dal vivo tutte le nostre soluzioni.
@@ -122,6 +139,19 @@ export default async function ChiSiamoPage() {
                   <p className="text-gray-500 leading-relaxed mb-6">
                     Le demo sono su appuntamento e completamente gratuite.
                   </p>
+                  </>) : (<>
+                  <p className="text-gray-500 leading-relaxed mb-4">
+                    Our headquarters in Sesto San Giovanni houses a <strong>fully equipped demo room</strong> where 
+                    you can see and test all our solutions first-hand.
+                  </p>
+                  <p className="text-gray-500 leading-relaxed mb-4">
+                    Bring your materials — cardboard, labels, shoppers — and we will print them together. 
+                    It is the best way to evaluate quality, speed and output before purchasing.
+                  </p>
+                  <p className="text-gray-500 leading-relaxed mb-6">
+                    Demos are by appointment and completely free of charge.
+                  </p>
+                  </>)}
                   <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Informazioni%20Print%20Solution&body=Buongiorno%2C%0A%0AVorrei%20ricevere%20informazioni.%0A%0AGrazie" className="btn-primary">{locale === 'it' ? "Prenota una Visita" : "Book a Visit"}</a>
                 </div>
                 <div className="bg-gradient-to-br from-cyan-500 to-magenta-500 rounded-2xl h-64 flex items-center justify-center">
@@ -138,13 +168,12 @@ export default async function ChiSiamoPage() {
             <div className="mb-20">
               <h2 className="text-3xl font-bold text-dark-800 mb-4 text-center">{locale === 'it' ? 'Il Nostro Team' : 'Our Team'}</h2>
               <p className="text-gray-500 text-center max-w-2xl mx-auto mb-10">
-                Un team compatto ma altamente specializzato: commerciale, tecnico e assistenza. 
-                Ogni membro ha formazione diretta dai produttori che distribuiamo.
+                {locale === 'it' ? 'Un team compatto ma altamente specializzato: commerciale, tecnico e assistenza. Ogni membro ha formazione diretta dai produttori che distribuiamo.' : 'A compact but highly specialised team: sales, technical and support. Every member receives training directly from the manufacturers we distribute.'}
               </p>
               <div className="relative w-full aspect-[16/9] rounded-3xl overflow-hidden mb-10">
                 <Image
                   src="/images/team-photo.webp"
-                  alt="Il team di Print Solution"
+                  alt={locale === 'it' ? "Il team di Print Solution" : "The Print Solution team"}
                   fill
                   className="object-cover"
                   priority
@@ -179,7 +208,7 @@ export default async function ChiSiamoPage() {
             <div className="relative">
               <h2 className="text-3xl sm:text-4xl font-bold mb-6">{locale === 'it' ? 'Lavoriamo Insieme' : "Let's Work Together"}</h2>
               <p className="text-white/80 max-w-2xl mx-auto mb-10 text-lg">
-                Contattaci per una consulenza gratuita o prenota una visita nella nostra sala demo.
+                {locale === 'it' ? 'Contattaci per una consulenza gratuita o prenota una visita nella nostra sala demo.' : 'Contact us for a free consultation or book a visit to our demo room.'}
               </p>
               <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Informazioni%20Print%20Solution&body=Buongiorno%2C%0A%0AVorrei%20ricevere%20informazioni.%0A%0AGrazie" className="inline-flex items-center justify-center px-8 py-4 bg-white text-cyan-600 font-bold rounded-full hover:bg-yellow-400 hover:text-dark-800 transition-all duration-300 shadow-lg text-lg">{locale === 'it' ? 'Contattaci' : 'Contact Us'}</a>
             </div>

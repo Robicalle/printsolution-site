@@ -157,8 +157,8 @@ export default function Header() {
               </Link>
             )
           )}
-          <LanguageSwitcher scrolled={scrolled} />
           <a href={`mailto:info@printsolutionsrl.it?subject=${emailSubject}&body=${emailBody}`} className="btn-primary ml-2 text-sm !py-2.5 !px-5 animate-pulse-subtle">{t("requestDemo")}</a>
+          <LanguageSwitcher scrolled={scrolled} />
         </nav>
 
         {/* Mobile toggle */}

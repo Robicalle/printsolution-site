@@ -210,7 +210,7 @@ export default async function LabbraturaPage() {
                 {locale === 'it' ? 'Vuoi Vedere le Nostre Soluzioni in Azione?' : 'Want to See Our Solutions in Action?'}
               </h2>
               <p className="text-white/80 max-w-2xl mx-auto mb-10 text-lg leading-relaxed">
-                {locale === 'it' ? 'Contattaci per una demo dal vivo o inviaci i tuoi libri per ricevere campioni di labbratura.' : 'Contact us for a live demo or send us your books to receive edge printing samples.'}
+                {locale === 'it' ? 'Contattaci per una consulenza gratuita o inviaci i tuoi libri per ricevere campioni di labbratura.' : 'Contact us for a free consultation or send us your books to receive edge printing samples.'}
               </p>
               <a
                 href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20RobotJet%20Labbratura&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20del%20RobotJet%20per%20labbratura%20libri.%0A%0AGrazie"

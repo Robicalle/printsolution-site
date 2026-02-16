@@ -300,7 +300,7 @@ export default async function () {
                 {locale === 'it' ? 'Vuoi Vedere la DLF in Azione?' : 'Want to See the DLF in Action?'}
               </h2>
               <p className="text-white/80 max-w-2xl mx-auto mb-10 text-lg leading-relaxed">
-                {locale === 'it' ? 'Contattaci per una demo o per ricevere campioni di etichette fustellate con i tuoi file.' : 'Contact us for a demo or to receive sample labels die-cut with your own files.'}
+                {locale === 'it' ? 'Contattaci per una consulenza gratuita o per ricevere campioni di etichette fustellate con i tuoi file.' : 'Contact us for a free consultation or to receive sample labels die-cut with your own files.'}
               </p>
               <a
                 href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20Afinia%20DLF&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20dei%20fustellatori%20digitali%20DLF.%0A%0AGrazie"

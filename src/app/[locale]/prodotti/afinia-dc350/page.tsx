@@ -323,7 +323,7 @@ export default async function () {
                 {locale === 'it' ? 'Vuoi Vedere DC250/DC350 in Azione?' : 'Want to See the DC250/DC350 in Action?'}
               </h2>
               <p className="text-white/80 max-w-2xl mx-auto mb-10 text-lg leading-relaxed">
-                {locale === 'it' ? 'Contattaci per una demo dal vivo nella nostra sala demo a Sesto San Giovanni.' : 'Contact us for a live demo in our showroom in Sesto San Giovanni.'}
+                {locale === 'it' ? 'Contattaci per una consulenza gratuita nella nostra sala demo a Sesto San Giovanni.' : 'Contact us for a free consultation in our showroom in Sesto San Giovanni.'}
               </p>
               <a
                 href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20Afinia%20DC250%20DC350&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20dei%20fustellatori%20DC250%2FDC350.%0A%0AGrazie"

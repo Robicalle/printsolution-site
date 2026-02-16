@@ -256,7 +256,7 @@ export default async function AfiniaLT5CPage() {
         <div className="container-custom text-center">
           <h2 className="text-3xl font-bold text-dark-800 mb-6">{locale === 'it' ? 'Etichette Resistenti, Subito Pronte' : 'Durable Labels, Instantly Ready'}</h2>
           <p className="text-gray-500 max-w-xl mx-auto mb-8">
-            {locale === 'it' ? 'Scopri come la LT5C può semplificare la tua produzione con etichette immediatamente resistenti. Contattaci per una demo.' : 'Discover how the LT5C can simplify your production with instantly durable labels. Contact us for a demo.'}
+            {locale === 'it' ? 'Scopri come la LT5C può semplificare la tua produzione con etichette immediatamente resistenti. Contattaci per una consulenza gratuita.' : 'Discover how the LT5C can simplify your production with instantly durable labels. Contact us for a free consultation.'}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20Afinia%20LT5C&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20Afinia%20LT5C.%0A%0AGrazie" className="btn-primary text-lg">{locale === 'it' ? 'Richiedi una consulenza gratuita →' : 'Request a free consultation →'}</a>

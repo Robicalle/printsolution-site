@@ -307,7 +307,7 @@ export default async function Any002Page() {
                 {locale === 'it' ? 'Vuoi Vedere ANY-002 in Azione?' : 'Want to See the ANY-002 in Action?'}
               </h2>
               <p className="text-white/80 max-w-2xl mx-auto mb-10 text-lg leading-relaxed">
-                {locale === 'it' ? 'Contattaci per una demo dal vivo o per ricevere campioni stampati con i tuoi file.' : 'Contact us for a live demo or to receive samples printed with your own files.'}
+                {locale === 'it' ? 'Contattaci per una consulenza gratuita o per ricevere campioni stampati con i tuoi file.' : 'Contact us for a free consultation or to receive samples printed with your own files.'}
               </p>
               <a
                 href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20Anytron%20ANY-002&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20della%20Anytron%20ANY-002.%0A%0AGrazie"

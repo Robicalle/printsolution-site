@@ -219,7 +219,7 @@ export default async function ShopperPage() {
                 {locale === 'it' ? 'Vuoi Creare il Tuo Packaging Personalizzato?' : 'Want to Create Your Custom Packaging?'}
               </h2>
               <p className="text-white/80 max-w-2xl mx-auto mb-10 text-lg leading-relaxed">
-                {locale === 'it' ? 'Contattaci per una demo dal vivo o inviaci i tuoi file per ricevere campioni stampati. La nostra sala demo è a Sesto San Giovanni.' : 'Contact us for a live demo or send us your files to receive printed samples. Our demo room is in Sesto San Giovanni.'}
+                {locale === 'it' ? 'Contattaci per una consulenza gratuita o inviaci i tuoi file per ricevere campioni stampati. La nostra sala demo è a Sesto San Giovanni.' : 'Contact us for a free consultation or send us your files to receive printed samples. Our demo room is in Sesto San Giovanni.'}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a

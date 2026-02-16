@@ -4,6 +4,8 @@ import { useCart } from "@/lib/cart-context";
 export default function CartButton() {
   const { totalItems, setIsOpen } = useCart();
 
+  if (totalItems === 0) return null;
+
   return (
     <button
       onClick={() => setIsOpen(true)}

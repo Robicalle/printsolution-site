@@ -7,7 +7,7 @@ export default function CartButton() {
   return (
     <button
       onClick={() => setIsOpen(true)}
-      className="fixed bottom-36 right-4 lg:bottom-[5.5rem] lg:right-6 z-[9998] bg-gradient-to-r from-cyan-500 to-blue-600 text-white w-14 h-14 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-110 flex items-center justify-center"
+      className="fixed bottom-[9.5rem] right-4 lg:bottom-[5.5rem] lg:right-6 z-[9998] bg-gradient-to-r from-cyan-500 to-blue-600 text-white w-14 h-14 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-110 flex items-center justify-center"
       aria-label={`Carrello (${totalItems} articoli)`}
     >
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">

@@ -63,9 +63,9 @@ export const categories: Category[] = [
       { id: "lt5c-m", name: "Toner MAGENTA per Afinia LT5C", sku: "LT5C-TN-M", price: 190.00, image: "/images/shop/lt5c-magenta.jpg", inStock: true },
       { id: "lt5c-c", name: "Toner CIANO per Afinia LT5C", sku: "LT5C-TN-C", price: 190.00, image: "/images/shop/lt5c-cyan.jpg", inStock: true },
       { id: "lt5c-w", name: "Toner WHITE per Afinia LT5C", sku: "LT5C-TN-W", price: 278.00, image: "/images/shop/lt5c-white.jpg", inStock: true },
-      { id: "lt5c-waste", name: "Waste Toner Box per Afinia LT5C", sku: "LT5C-WASTE", price: 50.00, image: "/images/shop/placeholder.png", inStock: true },
-      { id: "lt5c-fuser", name: "Fusore di ricambio per Afinia LT5C", sku: "LT5C-FUSER", price: 477.00, image: "/images/shop/placeholder.png", inStock: true },
-      { id: "lt5c-belt", name: "ITU Transfer Belt per Afinia LT5C", sku: "LT5C-BELT", price: 265.00, image: "/images/shop/placeholder.png", inStock: true },
+      { id: "lt5c-waste", name: "Waste Toner Box per Afinia LT5C", sku: "LT5C-WASTE", price: 50.00, image: "/images/shop/lt5c-waste.jpg", inStock: true },
+      { id: "lt5c-fuser", name: "Fusore di ricambio per Afinia LT5C", sku: "LT5C-FUSER", price: 477.00, image: "/images/shop/lt5c-fuser.jpg", inStock: true },
+      { id: "lt5c-belt", name: "ITU Transfer Belt per Afinia LT5C", sku: "LT5C-BELT", price: 265.00, image: "/images/shop/lt5c-belt.jpg", inStock: true },
     ],
   },
   {

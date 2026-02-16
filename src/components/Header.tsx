@@ -86,7 +86,7 @@ export default function Header() {
                 <button
                   aria-haspopup="true"
                   aria-expanded={openDropdown === item.label}
-                  className={`px-5 py-2.5 text-base font-medium transition-colors duration-200 ${
+                  className={`px-4 py-2.5 text-sm font-medium transition-colors duration-200 whitespace-nowrap ${
                     scrolled ? "text-gray-600 hover:text-cyan-500" : "text-white/80 hover:text-cyan-400"
                   }`}
                 >
@@ -107,7 +107,7 @@ export default function Header() {
                 <button
                   aria-haspopup="true"
                   aria-expanded={openDropdown === 'soluzioni'}
-                  className={`px-5 py-2.5 text-base font-medium transition-colors duration-200 whitespace-nowrap inline-flex items-center ${
+                  className={`px-4 py-2.5 text-sm font-medium transition-colors duration-200 whitespace-nowrap inline-flex items-center ${
                     scrolled ? "text-gray-600 hover:text-cyan-500" : "text-white/80 hover:text-cyan-400"
                   }`}
                 >
@@ -149,7 +149,7 @@ export default function Header() {
               <Link
                 key={item.label}
                 href={item.href!}
-                className={`px-5 py-2.5 text-base font-medium transition-colors duration-200 ${
+                className={`px-4 py-2.5 text-sm font-medium transition-colors duration-200 whitespace-nowrap ${
                   scrolled ? "text-gray-600 hover:text-cyan-500" : "text-white/80 hover:text-cyan-400"
                 }`}
               >

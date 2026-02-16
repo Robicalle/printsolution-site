@@ -4,29 +4,76 @@ import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import { getLocale } from "next-intl/server";
 
-export const metadata: Metadata = {
-  title: "Anypack — Distributore Ufficiale Italia",
-  description:
-    "Anypack: box maker automatici per scatole in cartone ondulato. AB1800 PRO, AB2500, AB3000. Distributore ufficiale Italia — Print Solution.",
-  keywords: ["Anypack", "box maker automatico", "macchina scatole cartone", "distributore Anypack Italia"],
-  openGraph: {
-    title: "Anypack — Distributore Ufficiale Italia | Print Solution",
-    description: "Box maker automatici per scatole in cartone ondulato. Distributore ufficiale Anypack.",
-    images: ["/images/brands/anypack.avif"],
-    type: "website",
-    locale: "it_IT",
-  },
-  twitter: { card: "summary_large_image" },
-  alternates: { canonical: "/brand/anypack" },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getLocale();
+  return {
+    title: locale === 'it' ? "Anypack — Distributore Ufficiale Italia" : "Anypack — Official Distributor Italy",
+    description: locale === 'it'
+      ? "Anypack: box maker automatici per scatole in cartone ondulato. AB1800 PRO, AB2500, AB3000. Distributore ufficiale Italia — Print Solution."
+      : "Anypack: automatic box makers for corrugated cardboard boxes. AB1800 PRO, AB2500, AB3000. Official distributor Italy — Print Solution.",
+    keywords: locale === 'it'
+      ? ["Anypack", "box maker automatico", "macchina scatole cartone", "distributore Anypack Italia"]
+      : ["Anypack", "automatic box maker", "cardboard box machine", "Anypack distributor Italy"],
+    openGraph: {
+      title: locale === 'it' ? "Anypack — Distributore Ufficiale Italia | Print Solution" : "Anypack — Official Distributor Italy | Print Solution",
+      description: locale === 'it' ? "Box maker automatici per scatole in cartone ondulato. Distributore ufficiale Anypack." : "Automatic box makers for corrugated cardboard boxes. Official Anypack distributor.",
+      images: ["/images/brands/anypack.avif"],
+      type: "website",
+      locale: locale === 'it' ? "it_IT" : "en_US",
+    },
+    twitter: { card: "summary_large_image" },
+    alternates: { canonical: "/brand/anypack" },
+  };
+}
 
 export default async function AnypackPage() {
   const locale = await getLocale();
+
+  const models = [
+    { name: "AB1800 PRO", sheet: "1800 mm", height: "1000 mm", weight: "2500 kg", dim: "2900×2430×2025 mm" },
+    { name: "AB2500", sheet: "2500 mm", height: "1500 mm", weight: "3800 kg", dim: "2900×3550×2200 mm" },
+    { name: "AB3000", sheet: "3000 mm", height: "2000 mm", weight: "4200 kg", dim: "3400×4050×2200 mm" },
+  ];
+
+  const modelLabels = locale === 'it'
+    ? [["Foglio max", "sheet"], ["Altezza scatola", "height"], ["Peso", "weight"], ["Dimensioni", "dim"]] as const
+    : [["Max sheet", "sheet"], ["Box height", "height"], ["Weight", "weight"], ["Dimensions", "dim"]] as const;
+
+  const advantages = locale === 'it' ? [
+    "Cambio formato in 10 secondi",
+    "500–600 pezzi/ora",
+    "1 solo operatore necessario",
+    "100+ modelli Fefco precaricati",
+    "20.000 record memorizzabili",
+    "Produzione on-demand, zero stock",
+    "Componenti Keyence e Panasonic",
+    "Lame SKD11 — nessuna sostituzione per anni",
+    "Touchscreen 15,6\" intuitivo",
+    "Integrazione WMS opzionale",
+    "Scansione barcode per input",
+    "83% cartone riciclabile",
+  ] : [
+    "Format change in 10 seconds",
+    "500–600 pieces/hour",
+    "Only 1 operator required",
+    "100+ preloaded Fefco templates",
+    "20,000 storable records",
+    "On-demand production, zero stock",
+    "Keyence and Panasonic components",
+    "SKD11 blades — no replacement for years",
+    "Intuitive 15.6\" touchscreen",
+    "Optional WMS integration",
+    "Barcode scanning for input",
+    "83% recyclable cardboard",
+  ];
+
   return (
     <>
       <PageHero
         title="Anypack"
-        subtitle="Box maker automatici per la creazione di scatole in cartone ondulato. Taglio, scanalatura, cordonatura, fustellatura e incollaggio in un'unica operazione."
+        subtitle={locale === 'it'
+          ? "Box maker automatici per la creazione di scatole in cartone ondulato. Taglio, scanalatura, cordonatura, fustellatura e incollaggio in un'unica operazione."
+          : "Automatic box makers for corrugated cardboard boxes. Cutting, slotting, creasing, die-cutting and gluing in a single operation."}
         breadcrumb="Brand"
       />
 
@@ -35,18 +82,23 @@ export default async function AnypackPage() {
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
             <div>
               <Image src="/images/brands/anypack.avif" alt="Anypack" width={300} height={100} className="h-14 w-auto mb-8" />
-              <h2 className="text-3xl font-bold text-dark-800 mb-6">Il Box Maker che Rivoluziona il Packaging</h2>
+              <h2 className="text-3xl font-bold text-dark-800 mb-6">
+                {locale === 'it' ? 'Il Box Maker che Rivoluziona il Packaging' : 'The Box Maker that Revolutionises Packaging'}
+              </h2>
               <p className="text-gray-500 leading-relaxed mb-4">
-                Anypack è il produttore leader di box maker automatici progettati per varietà multiple e piccoli ordini. 
-                Con oltre 6 anni di esperienza e certificazione CE, le macchine Anypack integrano componenti premium 
-                giapponesi (Keyence, Panasonic) e lame in acciaio SKD11 per prestazioni industriali.
+                {locale === 'it'
+                  ? "Anypack è il produttore leader di box maker automatici progettati per varietà multiple e piccoli ordini. Con oltre 6 anni di esperienza e certificazione CE, le macchine Anypack integrano componenti premium giapponesi (Keyence, Panasonic) e lame in acciaio SKD11 per prestazioni industriali."
+                  : "Anypack is the leading manufacturer of automatic box makers designed for multiple varieties and small orders. With over 6 years of experience and CE certification, Anypack machines integrate premium Japanese components (Keyence, Panasonic) and SKD11 steel blades for industrial performance."}
               </p>
               <p className="text-gray-500 leading-relaxed mb-4">
-                Un solo operatore, cambio formato in 10 secondi, 100+ modelli Fefco precaricati e 20.000 record 
-                memorizzabili: Anypack elimina lo stock di scatole e permette la produzione on-demand.
+                {locale === 'it'
+                  ? "Un solo operatore, cambio formato in 10 secondi, 100+ modelli Fefco precaricati e 20.000 record memorizzabili: Anypack elimina lo stock di scatole e permette la produzione on-demand."
+                  : "One operator, format change in 10 seconds, 100+ preloaded Fefco templates and 20,000 storable records: Anypack eliminates box stock and enables on-demand production."}
               </p>
               <p className="text-gray-500 leading-relaxed">
-                Print Solution è distributore ufficiale Anypack per l&apos;Italia, con demo dal vivo a Sesto San Giovanni.
+                {locale === 'it'
+                  ? "Print Solution è distributore ufficiale Anypack per l'Italia, con demo dal vivo a Sesto San Giovanni."
+                  : "Print Solution is the official Anypack distributor for Italy, with live demos in Sesto San Giovanni."}
               </p>
             </div>
             <div className="relative h-80 rounded-3xl overflow-hidden">
@@ -55,26 +107,19 @@ export default async function AnypackPage() {
             </div>
           </div>
 
-          <h3 className="text-2xl font-bold text-dark-800 mb-8 text-center">Gamma Modelli</h3>
+          <h3 className="text-2xl font-bold text-dark-800 mb-8 text-center">
+            {locale === 'it' ? 'Gamma Modelli' : 'Model Range'}
+          </h3>
           <div className="grid md:grid-cols-3 gap-6 mb-12">
-            {[
-              { name: "AB1800 PRO", sheet: "1800 mm", height: "1000 mm", weight: "2500 kg", dim: "2900×2430×2025 mm" },
-              { name: "AB2500", sheet: "2500 mm", height: "1500 mm", weight: "3800 kg", dim: "2900×3550×2200 mm" },
-              { name: "AB3000", sheet: "3000 mm", height: "2000 mm", weight: "4200 kg", dim: "3400×4050×2200 mm" },
-            ].map((m, i) => (
+            {models.map((m, i) => (
               <div key={m.name} className={`card-modern p-6 ${i === 1 ? 'ring-2 ring-cyan-500 relative' : ''}`}>
                 {i === 1 && <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-cyan-500 text-white text-xs font-bold rounded-full">Best Seller</span>}
                 <h4 className="text-xl font-bold text-dark-800 mb-4">{m.name}</h4>
                 <div className="space-y-2 text-sm">
-                  {[
-                    ["Foglio max", m.sheet],
-                    ["Altezza scatola", m.height],
-                    ["Peso", m.weight],
-                    ["Dimensioni", m.dim],
-                  ].map(([label, val]) => (
+                  {modelLabels.map(([label, key]) => (
                     <div key={label} className="flex justify-between">
                       <span className="text-gray-500">{label}</span>
-                      <span className="font-medium text-dark-800">{val}</span>
+                      <span className="font-medium text-dark-800">{m[key]}</span>
                     </div>
                   ))}
                 </div>
@@ -83,22 +128,11 @@ export default async function AnypackPage() {
           </div>
 
           <div className="card-modern p-8 lg:p-10">
-            <h3 className="text-xl font-bold text-dark-800 mb-6">Perché Anypack AB2500</h3>
+            <h3 className="text-xl font-bold text-dark-800 mb-6">
+              {locale === 'it' ? 'Perché Anypack AB2500' : 'Why Anypack AB2500'}
+            </h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {[
-                "Cambio formato in 10 secondi",
-                "500–600 pezzi/ora",
-                "1 solo operatore necessario",
-                "100+ modelli Fefco precaricati",
-                "20.000 record memorizzabili",
-                "Produzione on-demand, zero stock",
-                "Componenti Keyence e Panasonic",
-                "Lame SKD11 — nessuna sostituzione per anni",
-                "Touchscreen 15,6\" intuitivo",
-                "Integrazione WMS opzionale",
-                "Scansione barcode per input",
-                "83% cartone riciclabile",
-              ].map((v) => (
+              {advantages.map((v) => (
                 <div key={v} className="flex items-start text-sm text-gray-600">
                   <svg className="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -113,12 +147,18 @@ export default async function AnypackPage() {
 
       <section className="section-padding bg-surface-50 text-center">
         <div className="container-custom">
-          <h2 className="text-3xl font-bold text-dark-800 mb-6">Vieni a Vedere il Box Maker in Azione</h2>
+          <h2 className="text-3xl font-bold text-dark-800 mb-6">
+            {locale === 'it' ? 'Vieni a Vedere il Box Maker in Azione' : 'Come See the Box Maker in Action'}
+          </h2>
           <p className="text-gray-500 max-w-xl mx-auto mb-8">
-            Demo dal vivo nella nostra sede a Sesto San Giovanni. Porta il tuo cartone e crea la tua prima scatola.
+            {locale === 'it'
+              ? 'Demo dal vivo nella nostra sede a Sesto San Giovanni. Porta il tuo cartone e crea la tua prima scatola.'
+              : 'Live demo at our facility in Sesto San Giovanni. Bring your cardboard and create your first box.'}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/soluzioni/packaging" className="btn-outline text-lg">Tutte le Soluzioni Packaging</Link>
+            <Link href="/soluzioni/packaging" className="btn-outline text-lg">
+              {locale === 'it' ? 'Tutte le Soluzioni Packaging' : 'All Packaging Solutions'}
+            </Link>
           </div>
         </div>
       </section>

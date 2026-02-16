@@ -174,7 +174,7 @@ export const categories: Category[] = [
       { id: "lx2k-c", name: "PRI-53461 Cartuccia LX-2000e Ciano", sku: "53461", price: 33.00, image: "/images/shop/lx2000-ciano.jpg", inStock: true },
       { id: "lx2k-m", name: "PRI-53462 Cartuccia LX-2000e Magenta", sku: "53462", price: 33.00, image: "/images/shop/lx2000-magenta.jpg", inStock: true },
       { id: "lx2k-k", name: "PRI-53464 Cartuccia LX-2000e Nero", sku: "53464", price: 62.00, image: "/images/shop/lx2000-nero.jpg", inStock: true },
-      { id: "lx2k-kit", name: "LX-2000e Kit Sostituzione testina (include kit inchiostri CMYK)", sku: "LX2K-KIT", price: 269.00, image: "/images/shop/placeholder.png", inStock: true },
+      { id: "lx2k-kit", name: "LX-2000e Kit Sostituzione testina (include kit inchiostri CMYK)", sku: "LX2K-KIT", price: 269.00, image: "/images/shop/lx2000-kit.jpg", inStock: true },
     ],
   },
   {

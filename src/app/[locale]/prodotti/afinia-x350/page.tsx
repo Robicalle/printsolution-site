@@ -4,7 +4,7 @@ import Image from "next/image";
 import { getLocale } from "next-intl/server";
 
 export const metadata: Metadata = {
-  title: "Afinia X350 × Stampante Etichette Roll-to-Roll Alta Velocità",
+  title: "Afinia X350 – Stampante Etichette Roll-to-Roll Alta Velocità",
   description:
     "Afinia X350: stampante digitale roll-to-roll ad alta velocità con inchiostri pigmentati a base acqua. Fino a 45 m/min, 1600 dpi, ridondanza ugelli 2×.",
   keywords: [
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     "stampa etichette industriale",
   ],
   openGraph: {
-    title: "Afinia X350 × Stampante Roll-to-Roll Alta Velocità | Print Solution",
+    title: "Afinia X350 – Stampante Roll-to-Roll Alta Velocità | Print Solution",
     description:
       "Stampante digitale roll-to-roll fino a 45 m/min con inchiostri pigmentati a base acqua e ridondanza ugelli 2×.",
     images: ["/images/products/afinia-x350-full.png"],
@@ -105,7 +105,7 @@ const features = [
       </svg>
     ),
     title: "Touchscreen 21 Pollici",
-    desc: "Display touchscreen da 21 pollici con opzioni avanzate e connettivit× remota per gestione della stampa da qualsiasi postazione.",
+    desc: "Display touchscreen da 21 pollici con opzioni avanzate e connettività remota per gestione della stampa da qualsiasi postazione.",
   },
   {
     icon: (
@@ -122,7 +122,7 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75" />
       </svg>
     ),
-    title: "Versatilit× Totale",
+    title: "Versatilità Totale",
     desc: "Stampa su bobine, etichette fustellate, materiali di imballaggio flessibili e cartoncino. Un solo metro quadro di ingombro.",
   },
 ];
@@ -147,7 +147,7 @@ export default async function AfiniaX350Page() {
               <p className="text-lg text-gray-300/90 leading-relaxed mb-8">
                 Stampante digitale roll-to-roll ad alta velocità con inchiostri pigmentati a base acqua.
                 Fino a 45 m/min, 1600 dpi e ridondanza ugelli 2× per stampe perfette. Design compatto
-                da circa 1 m× di ingombro.
+                da circa 1 m² di ingombro.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Demo%20Afinia%20X350&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20demo%20di%20Afinia%20X350.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">{locale === 'it' ? 'Richiedi Demo →' : 'Request Demo →'}</a>
@@ -176,7 +176,7 @@ export default async function AfiniaX350Page() {
             Equipaggiata con inchiostri pigmentati a base acqua CMYK, la X350 produce stampe resistenti all&apos;acqua, ai raggi UV e alle sostanze chimiche, con un approccio eco-sostenibile. La ridondanza ugelli 2× elimina completamente il problema delle strisce, garantendo colori uniformi e gradazioni omogenee su ogni stampa. Le taniche da 2 litri per colore (8 litri totali) consentono lunghe tirature senza interruzioni con un costo stampa ridotto.
           </p>
           <p className="text-gray-500 leading-relaxed">
-            Il display touchscreen da 21 pollici con connettivit× remota permette la gestione della stampa da qualsiasi postazione. Con un ingombro di circa 1 m×, la X350 si adatta anche a spazi produttivi compatti. Supporta bobine fino a 350 mm di larghezza e 350 mm di diametro, rendendola ideale per etichette, materiali di imballaggio flessibili e cartoncino.
+            Il display touchscreen da 21 pollici con connettività remota permette la gestione della stampa da qualsiasi postazione. Con un ingombro di circa 1 m², la X350 si adatta anche a spazi produttivi compatti. Supporta bobine fino a 350 mm di larghezza e 350 mm di diametro, rendendola ideale per etichette, materiali di imballaggio flessibili e cartoncino.
           </p>
         </div>
       </section>

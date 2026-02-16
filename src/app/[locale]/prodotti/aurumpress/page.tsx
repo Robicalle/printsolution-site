@@ -4,7 +4,7 @@ import Image from "next/image";
 import { getLocale } from "next-intl/server";
 
 export const metadata: Metadata = {
-  title: "AurumPress × Stampa a Caldo Digitale per Packaging",
+  title: "AurumPress – Stampa a Caldo Digitale per Packaging",
   description:
     "AurumPress: stampa a caldo digitale con foil metallizzati, argentati e colori pastello. Hot foil digitale per nobilitazione packaging e etichette.",
   keywords: [
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     "stampa foil packaging",
   ],
   openGraph: {
-    title: "AurumPress × Stampa a Caldo Digitale | Print Solution",
+    title: "AurumPress – Stampa a Caldo Digitale | Print Solution",
     description:
       "Stampa a caldo digitale con foil metallizzati per nobilitazione packaging. Hot foil digitale professionale.",
     images: ["/images/products/aurumpress.jpg"],

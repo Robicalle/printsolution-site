@@ -4,7 +4,7 @@ import Image from "next/image";
 import { getLocale } from "next-intl/server";
 
 export const metadata: Metadata = {
-  title: "Robotjet Book Edge Printer × Stampante per Labbratura Libri",
+  title: "Robotjet Book Edge Printer – Stampante per Labbratura Libri",
   description:
     "Robotjet Book Edge Printer: stampante digitale per labbratura libri, quaderni e agende. 400 pezzi/ora, CMYK single-pass, risoluzione 1200 dpi. Teste HP A3.",
   keywords: [
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     "stampa bordo libri",
   ],
   openGraph: {
-    title: "Robotjet Book Edge Printer × Stampante per Labbratura Libri | Print Solution",
+    title: "Robotjet Book Edge Printer – Stampante per Labbratura Libri | Print Solution",
     description:
       "Stampante digitale per labbratura libri. 400 pezzi/ora, CMYK single-pass, 1200 dpi.",
     images: ["/images/products/book-edge-printer.png"],
@@ -60,11 +60,11 @@ const specs = [
   ["Teste di stampa", "HP A3 / Epson I3200"],
   ["Altezza libri", "Da 90 a 350 mm"],
   ["Larghezza di stampa", "Da 5 a 218 mm"],
-  ["Velocità di stampa", "0×15 m/min (regolabile)"],
+  ["Velocità di stampa", "0-15 m/min (regolabile)"],
   ["Taniche inchiostro", "1 litro per colore"],
   ["Formati immagine", "JPG, PDF"],
   ["Sistemi operativi", "Windows 7 / 10 / 11"],
-  ["Temperatura operativa", "0××45×C, umidità 20%×80%"],
+  ["Temperatura operativa", "0°-45°C, umidità 20%-80%"],
   ["Assorbimento", "480 W, AC 110V/220V, 50/60 Hz"],
   ["Dimensioni (L×A×P)", "190 × 120 × 165 cm"],
   ["Peso", "450 kg"],
@@ -172,9 +172,9 @@ export default async function RobotjetPage() {
             CMYK con teste di stampa HP A3, offre risultati di stampa mai visti prima.
           </p>
           <p className="text-gray-500 leading-relaxed mb-4">
-            La sua particolarit× risiede nella capacità di stampare fondi pieni, sovrastampe e sfumature con 
+            La sua particolarità risiede nella capacità di stampare fondi pieni, sovrastampe e sfumature con 
             precisione assoluta grazie alla risoluzione di 1200 dpi. Con 400 pezzi/ora e 3200 pezzi/giorno, 
-            consente di evadere ordini sia piccoli che grandi con estrema facilit×.
+            consente di evadere ordini sia piccoli che grandi con estrema facilità.
           </p>
           <p className="text-gray-500 leading-relaxed">
             Dotata di un sistema intelligente di adattamento, si regola automaticamente alla forma (angoli tondi 
@@ -244,7 +244,7 @@ export default async function RobotjetPage() {
         <div className="container-custom text-center">
           <h2 className="text-3xl font-bold text-dark-800 mb-6">Scopri Robotjet dal Vivo</h2>
           <p className="text-gray-500 max-w-xl mx-auto mb-8">
-            Vieni nella nostra sala demo a Sesto San Giovanni e scopri come la labbratura digitale può aprire nuove opportunit× per il tuo business.
+            Vieni nella nostra sala demo a Sesto San Giovanni e scopri come la labbratura digitale può aprire nuove opportunità per il tuo business.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="tel:+390249439417" className="btn-outline text-lg inline-flex items-center">

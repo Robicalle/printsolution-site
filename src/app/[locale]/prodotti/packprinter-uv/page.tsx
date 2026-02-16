@@ -57,7 +57,7 @@ const specs = [
   ["Luce di stampa", "Da 12 cm a 118 cm"],
   ["Risoluzione", "600 × 1200 dpi"],
   ["Velocità di stampa", "Fino a 50 metri al minuto"],
-  ["Modalit× di stampa", "4 colori + Bianco (CMYKW)"],
+  ["Modalità di stampa", "4 colori + Bianco (CMYKW)"],
   ["Tipo di inchiostri", "UV ad alte prestazioni"],
   ["Testine", "S3200 U3 - 3200 ugelli"],
   ["Dimensione testina", "150,4 mm × 30 mm × 52 mm"],

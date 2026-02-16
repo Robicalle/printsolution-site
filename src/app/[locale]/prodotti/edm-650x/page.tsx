@@ -213,10 +213,10 @@ export default async function EDM650XPage() {
               <div className="bg-surface-50 rounded-xl p-5">
                 <p className="text-sm font-medium text-gray-600 mb-2">Le versioni da 3 a 6 teste offrono:</p>
                 <ul className="text-sm text-dark-800 space-y-1">
-                  <li>× Larghezza stampa fino a 180 cm</li>
-                  <li>× Passaggio carta fino a 250 cm</li>
-                  <li>× Velocità fino a 30 m/min</li>
-                  <li>× Configurazione personalizzabile</li>
+                  <li>• Larghezza stampa fino a 180 cm</li>
+                  <li>• Passaggio carta fino a 250 cm</li>
+                  <li>• Velocità fino a 30 m/min</li>
+                  <li>• Configurazione personalizzabile</li>
                 </ul>
               </div>
             </div>

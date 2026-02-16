@@ -4,7 +4,7 @@ import Image from "next/image";
 import { getLocale } from "next-intl/server";
 
 export const metadata: Metadata = {
-  title: "Anytron ANY-002 × Stampa + Fustella Etichette",
+  title: "Anytron ANY-002 – Stampa + Fustella Etichette",
   description:
     "Anytron ANY-002: stampa laser + fustellatura etichette on-demand. Toner resistente, 1200 dpi, 9 m/min, fino a 5.000 etichette in 2 ore.",
   keywords: [
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     "stampante toner etichette",
   ],
   openGraph: {
-    title: "Anytron ANY-002 × Stampa + Fustella Etichette | Print Solution",
+    title: "Anytron ANY-002 – Stampa + Fustella Etichette | Print Solution",
     description:
       "Sistema completo stampa laser + fustellatura per etichette on-demand. Fino a 5.000 etichette in 2 ore.",
     images: ["/images/products/any-002.avif"],
@@ -56,19 +56,19 @@ const specs = [
   ["Motore di stampa", "Laser digitale LED"],
   ["Risoluzione", "1.200 dpi a toner"],
   ["Velocità di stampa", "Fino a 9 m/min"],
-  ["produttivit×", "Fino a 5.000 etichette in 2 ore"],
+  ["produttività", "Fino a 5.000 etichette in 2 ore"],
   ["Lunghezza stampa max", "Fino a 1,2 m per etichetta"],
   ["Autonomia bobina", "Fino a 200 m (rilanciabile)"],
   ["Diametro max bobina", "370 mm (~500 m)"],
   ["Diametro anima", "76 mm"],
   ["Materiali supportati", "Carta, PP certificato, PET"],
-  ["Toner", "CMYK × K 11.000 pag / CMY 11.500 pag (5% copertura A4)"],
+  ["Toner", "CMYK – K 11.000 pag / CMY 11.500 pag (5% copertura A4)"],
   ["Tamburi", "28.000 pagine"],
   ["Cinghia e fusore", "60.000 pagine"],
   ["Sensori", "Black mark + salto etichetta"],
   ["RAM / HDD", "256 MB RAM, 160 GB HDD"],
-  ["Alimentazione", "220×240V, 50×60Hz, 4.5A (max 1.300W)"],
-  ["Ambiente di lavoro", "10×32×C, umidità 20×80%"],
+  ["Alimentazione", "220-240V, 50/60Hz, 4.5A (max 1.300W)"],
+  ["Ambiente di lavoro", "10-32°C, umidità 20-80%"],
   ["Dimensioni", "180 × 480 × 600 mm"],
   ["Peso", "95 kg"],
 ];
@@ -76,7 +76,7 @@ const specs = [
 const features = [
   {
     title: "Resistenza Professionale",
-    desc: "Stampe a toner resistenti all'acqua, alle temperature e alle abrasioni. qualità duratura senza necessit× di laminazione aggiuntiva.",
+    desc: "Stampe a toner resistenti all'acqua, alle temperature e alle abrasioni. qualità duratura senza necessità di laminazione aggiuntiva.",
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
@@ -85,7 +85,7 @@ const features = [
   },
   {
     title: "On-Demand Senza Sprechi",
-    desc: "Stampate qualsiasi quantit×, dalla singola etichetta a migliaia. Zero sprechi di materiale grazie al taglio intelligente (meno di 40 cm di scarto).",
+    desc: "Stampate qualsiasi quantità, dalla singola etichetta a migliaia. Zero sprechi di materiale grazie al taglio intelligente (meno di 40 cm di scarto).",
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />

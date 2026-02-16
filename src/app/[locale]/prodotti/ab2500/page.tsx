@@ -116,7 +116,7 @@ const features = [
       </svg>
     ),
     title: "ROI Rapido",
-    desc: "L'automazione completa riduce i costi di manodopera e aumenta la produttivit×. Ritorno sull'investimento in tempi brevi.",
+    desc: "L'automazione completa riduce i costi di manodopera e aumenta la produttività. Ritorno sull'investimento in tempi brevi.",
   },
 ];
 
@@ -163,7 +163,7 @@ export default async function AB2500Page() {
           <p className="text-gray-500 leading-relaxed mb-4">
             L&apos;Anypack AB2500 è un box maker completamente automatico che esegue taglio, scanalatura, cordonatura
             e incollaggio in un&apos;unica operazione. Progettato per la produzione industriale di scatole in cartone
-            ondulato, garantisce una produttivit× di 500-600 scatole all&apos;ora.
+            ondulato, garantisce una produttività di 500-600 scatole all&apos;ora.
           </p>
           <p className="text-gray-500 leading-relaxed mb-4">
             Il cambio formato avviene in soli 10 secondi, eliminando i tempi morti e massimizzando l&apos;efficienza

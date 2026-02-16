@@ -107,12 +107,12 @@ export default function Header() {
                 <button
                   aria-haspopup="true"
                   aria-expanded={openDropdown === 'soluzioni'}
-                  className={`px-5 py-2.5 text-base font-medium transition-colors duration-200 ${
+                  className={`px-5 py-2.5 text-base font-medium transition-colors duration-200 whitespace-nowrap inline-flex items-center ${
                     scrolled ? "text-gray-600 hover:text-cyan-500" : "text-white/80 hover:text-cyan-400"
                   }`}
                 >
                   {item.label}
-                  <svg className="inline ml-1 w-3 h-3 transition-transform group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="ml-1 w-3 h-3 transition-transform group-hover:rotate-180 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
                 </button>

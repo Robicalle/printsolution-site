@@ -102,6 +102,19 @@ export const categories: Category[] = [
     ],
   },
   {
+    slug: "consumabili-l901-plus",
+    name: "Afinia L901 Plus",
+    description: "Cartucce e testine per stampante Afinia L901 Plus",
+    image: "/images/shop/categories/afinia-l901.png",
+    products: [
+      { id: "l901p-y", name: "30440 - L901Plus Yellow", sku: "30440", price: 215.00, image: "/images/shop/l901p-yellow.jpg", inStock: true },
+      { id: "l901p-m", name: "30447 - L901Plus Magenta", sku: "30447", price: 215.00, image: "/images/shop/l901p-magenta.jpg", inStock: true },
+      { id: "l901p-c", name: "30454 - L901Plus Cyano", sku: "30454", price: 215.00, image: "/images/shop/l901p-cyan.jpg", inStock: true },
+      { id: "l901p-k", name: "30461 - L901Plus Black", sku: "30461", price: 215.00, image: "/images/shop/l901p-black.jpg", inStock: true },
+      { id: "l901p-head", name: "Testina di Stampa per L901 Plus", sku: "L901P-HEAD", price: 630.00, image: "/images/shop/l901-testina.png", inStock: true },
+    ],
+  },
+  {
     slug: "consumabili-l801",
     name: "Afinia L801",
     description: "Cartucce e testine per stampante Afinia L801",

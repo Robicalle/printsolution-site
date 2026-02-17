@@ -31,10 +31,10 @@ const products = [
   {
     name: "GreenBox Print Book",
     subtitle: "Labbratura Digitale con Tecnologia HP PageWide", subtitleEn: "Digital Book Edge Printing with HP PageWide Technology",
-    desc: "La soluzione digitale per la labbratura dei libri basata su GreenBox 2. Stampa inkjet HP PageWide single-pass a base acqua, 30 m/min, 1200\u00d71200 dpi. Industria 4.0 ready con software GreenFlow.", descEn: "The digital solution for book edge printing based on GreenBox 2. Single-pass, up to 30 m/min, HP printhead with 1200 dpi resolution. Water-based inks.",
+    desc: "La soluzione digitale per la labbratura dei libri basata su GreenBox 2. Stampa inkjet HP PageWide single-pass a base acqua, 30 m/min, 1200×1200 dpi. Industria 4.0 ready con software GreenFlow.", descEn: "The digital solution for book edge printing based on GreenBox 2. Single-pass, up to 30 m/min, HP printhead with 1200 dpi resolution. Water-based inks.",
     specs: [
-      "Velocit\u00e0 fino a 30 m/min",
-      "Risoluzione 1200\u00d71200 dpi",
+      "Velocità fino a 30 m/min",
+      "Risoluzione 1200×1200 dpi",
       "CMYK \u2014 inchiostri a base acqua",
       "Testina HP PageWide single-pass",
       "Escursione verticale fino a 30 cm",

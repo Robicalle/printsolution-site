@@ -43,18 +43,18 @@
     "shopperLuxury": "Shopper & Packaging di Lusso",
     "shopperLuxuryDesc": "Stampa hot foil e digitale per shopper e packaging premium con finiture metalliche.",
     "bookEdging": "Labbratura Libri",
-    "bookEdgingDesc": "Stampa digitale sui bordi di libri, quaderni e block notes per personalizzazioni uniche e di alta qualitÃ .",
+    "bookEdgingDesc": "Stampa digitale sui bordi di libri, quaderni e block notes per personalizzazioni uniche e di alta qualità.",
     "consumables": "Consumabili",
     "consumablesDesc": "Inchiostri, testine di stampa, nastri e materiali di consumo originali per tutte le stampanti distribuite.",
-    "learnMore": "Scopri di piÃ¹"
+    "learnMore": "Scopri di più"
   },
   "products": {
     "sectionLabel": "I nostri prodotti",
     "sectionTitle": "Tecnologie di Punta",
-    "learnMore": "Scopri di piÃ¹"
+    "learnMore": "Scopri di più"
   },
   "whyUs": {
-    "sectionLabel": "PerchÃ© sceglierci",
+    "sectionLabel": "Perché sceglierci",
     "sectionTitle1": "Numeri che",
     "sectionTitle2": "parlano",
     "clients": "Clienti soddisfatti",
@@ -68,7 +68,7 @@
   "cta": {
     "title1": "Richiedi",
     "title2": "una Consulenza Gratuita",
-    "subtitle": "Vieni a toccare con mano le nostre soluzioni. La nostra sala demo a Sesto San Giovanni Ã¨ attrezzata con tutti i prodotti in funzione.",
+    "subtitle": "Vieni a toccare con mano le nostre soluzioni. La nostra sala demo a Sesto San Giovanni è attrezzata con tutti i prodotti in funzione.",
     "requestDemo": "Consulenza gratuitaâ†'",
     "callNow": "Chiamaci Ora"
   },
@@ -114,9 +114,9 @@
     "addToCart": "Aggiungi al Carrello",
     "cart": "Carrello",
     "checkout": "Procedi al Checkout",
-    "emptyCart": "Il carrello Ã¨ vuoto",
+    "emptyCart": "Il carrello è vuoto",
     "total": "Totale",
-    "quantity": "QuantitÃ ",
+    "quantity": "Quantità",
     "remove": "Rimuovi",
     "filters": "Filtri",
     "allCategories": "Tutte le Categorie",
@@ -126,7 +126,7 @@
     "backToShop": "Torna allo Shop"
   },
   "common": {
-    "readMore": "Leggi di piÃ¹",
+    "readMore": "Leggi di più",
     "backToHome": "Torna alla Home",
     "loading": "Caricamento..."
   },

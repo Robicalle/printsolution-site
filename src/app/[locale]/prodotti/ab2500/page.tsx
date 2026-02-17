@@ -62,7 +62,7 @@ const breadcrumbJsonLd = {
 function getSpecs(l: string) { return l === 'it' ? [
   ["Tipo macchina", "Box maker automatico all-in-one"],
   ["Operazioni", "Taglio, scanalatura, cordonatura, incollaggio"],
-  ["Produttivit�", "500-600 scatole/ora"],
+  ["Produttività", "500-600 scatole/ora"],
   ["Cambio formato", "10 secondi"],
   ["Spessore cartone", "Da 1 a 7 mm"],
   ["Incollaggio", "A caldo e a freddo"],
@@ -95,7 +95,7 @@ const features = [
       </svg>
     ),
     title: "Cambio Formato in 10 secondi", titleEn: "Format Change in 10 Seconds",
-    desc: "Passaggio istantaneo tra formati diversi senza fermo macchina. Massima flessibilit� produttiva.", descEn: "Instant switchover between different formats without downtime. Maximum production flexibility.",
+    desc: "Passaggio istantaneo tra formati diversi senza fermo macchina. Massima flessibilità produttiva.", descEn: "Instant switchover between different formats without downtime. Maximum production flexibility.",
   },
   {
     icon: (
@@ -132,7 +132,7 @@ const features = [
       </svg>
     ),
     title: "ROI Rapido", titleEn: "Quick ROI",
-    desc: "L'automazione completa riduce i costi di manodopera e aumenta la produttivit�. Ritorno sull'investimento in tempi brevi.", descEn: "Full automation reduces labor costs and increases productivity. Quick return on investment.",
+    desc: "L'automazione completa riduce i costi di manodopera e aumenta la produttività. Ritorno sull'investimento in tempi brevi.", descEn: "Full automation reduces labor costs and increases productivity. Quick return on investment.",
   },
 ];
 

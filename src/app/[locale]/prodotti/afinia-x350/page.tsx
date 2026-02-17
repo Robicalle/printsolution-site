@@ -7,19 +7,19 @@ export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
   const isIt = locale === 'it';
   return {
-    title: isIt ? "Afinia X350 � Stampante Etichette Roll-to-Roll Alta Velocit�" : "Afinia X350 - High-Speed Industrial Label Printer",
+    title: isIt ? "Afinia X350 — Stampante Etichette Roll-to-Roll Alta Velocità" : "Afinia X350 - High-Speed Industrial Label Printer",
     description: isIt
       ? "Afinia X350: stampante etichette industriale ad alta velocità. Fino a 45 m/min, 1600 dpi, inchiostri pigmentati. Print Solution"
       : "Afinia X350: high-speed industrial label printer. Up to 45 m/min, 1600 dpi, pigmented inks. Print Solution",
     keywords: [
     "Afinia X350",
-    "stampante etichette alta velocit�",
+    "stampante etichette alta velocità",
     "roll to roll",
     "inchiostri pigmentati",
     "stampa etichette industriale",
   ],
     openGraph: {
-      title: isIt ? "Afinia X350 � Stampante Etichette Roll-to-Roll Alta Velocit� | Print Solution" : "Afinia X350 - High-Speed Industrial Label Printer | Print Solution",
+      title: isIt ? "Afinia X350 — Stampante Etichette Roll-to-Roll Alta Velocità | Print Solution" : "Afinia X350 - High-Speed Industrial Label Printer | Print Solution",
       description: isIt
         ? "Afinia X350: stampante etichette industriale ad alta velocità. Fino a 45 m/min, 1600 dpi, inchiostri pigmentati. Print Solution"
         : "Afinia X350: high-speed industrial label printer. Up to 45 m/min, 1600 dpi, pigmented inks. Print Solution",
@@ -38,7 +38,7 @@ const productJsonLd = {
   name: "Afinia X350",
   brand: { "@type": "Brand", name: "Afinia Label" },
   description:
-    "Stampante digitale roll-to-roll ad alta velocit�. Fino a 45 m/min, 1600 dpi, inchiostri pigmentati a base acqua.",
+    "Stampante digitale roll-to-roll ad alta velocità. Fino a 45 m/min, 1600 dpi, inchiostri pigmentati a base acqua.",
   image: "https://www.printsolution.it/images/products/afinia-x350-full.png",
   manufacturer: { "@type": "Organization", name: "Print Solution S.r.l." },
   offers: {
@@ -61,14 +61,14 @@ const breadcrumbJsonLd = {
 
 function getSpecs(l: string) { return l === 'it' ? [
   ["Tecnologia", "Inkjet pigmentato a base acqua (Memjet DuraFlex)"],
-  ["Velocit� di stampa", "Fino a 45 m/min"],
-  ["Risoluzione", "1600 � 1600 dpi"],
+  ["Velocità di stampa", "Fino a 45 m/min"],
+  ["Risoluzione", "1600 — 1600 dpi"],
   ["Larghezza stampa max", "324,4 mm"],
-  ["Larghezza supporto", "Min 50 mm � Max 350 mm"],
-  ["Spessore supporto", "Min 0,05 mm � Max 0,35 mm"],
+  ["Larghezza supporto", "Min 50 mm — Max 350 mm"],
+  ["Spessore supporto", "Min 0,05 mm — Max 0,35 mm"],
   ["Inchiostri", "Pigmentati a base acqua CMYK"],
-  ["Capacit� inchiostro", "2 litri per colore � 8 litri totali"],
-  ["Ridondanza ugelli", "2� per zero strisce"],
+  ["Capacità inchiostro", "2 litri per colore — 8 litri totali"],
+  ["Ridondanza ugelli", "2× per zero strisce"],
   ["Display", "Touchscreen 21 pollici"],
   ["RIP Software", "RIP basico incluso, moduli opzionali"],
   ["Diametro max bobina", "350 mm"],
@@ -98,7 +98,7 @@ const features = [
       </svg>
     ),
     title: "45 Metri al Minuto", titleEn: "45 Meters per Minute",
-    desc: "La pi� veloce della sua categoria. Produzione industriale con qualit� costante a 1600 dpi anche alle massime velocit�.", descEn: "The fastest in its class. Industrial production with consistent quality up to 1600 dpi on every label.",
+    desc: "La più veloce della sua categoria. Produzione industriale con qualità costante a 1600 dpi anche alle massime velocità.", descEn: "The fastest in its class. Industrial production with consistent quality up to 1600 dpi on every label.",
   },
   {
     icon: (

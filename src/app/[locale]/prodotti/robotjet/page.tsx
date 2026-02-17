@@ -7,7 +7,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
   const isIt = locale === 'it';
   return {
-    title: isIt ? "Robotjet Book Edge Printer � Stampante per Labbratura Libri" : "Robotjet - Book Edge Printer",
+    title: isIt ? "Robotjet Book Edge Printer — Stampante per Labbratura Libri" : "Robotjet - Book Edge Printer",
     description: isIt
       ? "Robotjet: stampante per labbratura libri, quaderni e agende. 400 pezzi/ora, CMYK inkjet 1200 dpi. Print Solution"
       : "Robotjet: book edge printer for books, notebooks and diaries. 400 pieces/hour, CMYK inkjet 1200 dpi. Print Solution",
@@ -19,7 +19,7 @@ export async function generateMetadata(): Promise<Metadata> {
     "stampa bordo libri",
   ],
     openGraph: {
-      title: isIt ? "Robotjet Book Edge Printer � Stampante per Labbratura Libri | Print Solution" : "Robotjet - Book Edge Printer | Print Solution",
+      title: isIt ? "Robotjet Book Edge Printer — Stampante per Labbratura Libri | Print Solution" : "Robotjet - Book Edge Printer | Print Solution",
       description: isIt
         ? "Robotjet: stampante per labbratura libri, quaderni e agende. 400 pezzi/ora, CMYK inkjet 1200 dpi. Print Solution"
         : "Robotjet: book edge printer for books, notebooks and diaries. 400 pieces/hour, CMYK inkjet 1200 dpi. Print Solution",
@@ -60,20 +60,20 @@ const breadcrumbJsonLd = {
 };
 
 function getSpecs(l: string) { return l === 'it' ? [
-  ["Capacit� produttiva", "Circa 400 pezzi/ora, 3200 pezzi/giorno"],
+  ["Capacità produttiva", "Circa 400 pezzi/ora, 3200 pezzi/giorno"],
   ["Risoluzione di stampa", "1200 dpi"],
   ["Colori", "4 colori CMYK"],
   ["Tecnologia di stampa", "Inkjet a base acqua pigmentata"],
   ["Teste di stampa", "HP A3 / Epson I3200"],
   ["Altezza libri", "Da 90 a 350 mm"],
   ["Larghezza di stampa", "Da 5 a 218 mm"],
-  ["Velocit� di stampa", "0�15 m/min (regolabile)"],
+  ["Velocità di stampa", "0–15 m/min (regolabile)"],
   ["Taniche inchiostro", "1 litro per colore"],
   ["Formati immagine", "JPG, PDF"],
   ["Sistemi operativi", "Windows 7 / 10 / 11"],
-  ["Temperatura operativa", "0��45�C, umidit� 20%�80%"],
+  ["Temperatura operativa", "0°–45àC, umidità 20%–80%"],
   ["Assorbimento", "480 W, AC 110V/220V, 50/60 Hz"],
-  ["Dimensioni (L�A�P)", "190 � 120 � 165 cm"],
+  ["Dimensioni (LàAàP)", "190 — 120 — 165 cm"],
   ["Peso", "450 kg"],
 
 ] : [
@@ -111,7 +111,7 @@ const features = [
       </svg>
     ),
     title: "1200 DPI di Risoluzione", titleEn: "1200 DPI Resolution",
-    desc: "Fondi pieni, sovrastampe e sfumature con precisione assoluta. Qualit� di stampa senza eguali nel settore.", descEn: "Solid fills, overprints and gradients with absolute precision. Unmatched print quality in the industry.",
+    desc: "Fondi pieni, sovrastampe e sfumature con precisione assoluta. Qualità di stampa senza eguali nel settore.", descEn: "Solid fills, overprints and gradients with absolute precision. Unmatched print quality in the industry.",
   },
   {
     icon: (

@@ -233,7 +233,7 @@ export default async function () {
           </div>
           <div className="grid md:grid-cols-1 max-w-2xl mx-auto gap-8">
             <div className="aspect-video rounded-2xl overflow-hidden shadow-lg">
-              <video controls preload="metadata" aria-label="Video dimostrativo del prodotto" className="w-full h-full object-cover"><source src="/videos/dc350-1.mp4" type="video/mp4" /></video>
+              <video controls preload="none" aria-label="Video dimostrativo del prodotto" className="w-full h-full object-cover"><source src="/videos/dc350-1.mp4" type="video/mp4" /></video>
             </div>
           </div>
         </div>

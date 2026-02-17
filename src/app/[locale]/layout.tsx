@@ -79,6 +79,9 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} className={`${inter.variable} font-inter`}>
       <head>
+        <link rel="preconnect" href="https://api.anthropic.com" />
+        <link rel="preconnect" href="https://www.youtube.com" />
+        <link rel="preconnect" href="https://i.ytimg.com" />
         <link rel="alternate" hrefLang="it" href="https://www.printsolutionsrl.it" />
         <link rel="alternate" hrefLang="en" href="https://www.printsolutionsrl.it/en" />
         <link rel="alternate" hrefLang="x-default" href="https://www.printsolutionsrl.it" />

@@ -212,7 +212,7 @@ export default async function AnyPressPage() {
           </div>
           <div className="max-w-3xl mx-auto">
             <div className="aspect-video rounded-2xl overflow-hidden shadow-lg">
-              <video controls playsInline preload="metadata" poster="/images/posters/any-press-1.jpg" className="w-full h-full rounded-2xl">
+              <video controls playsInline preload="none" poster="/images/posters/any-press-1.jpg" className="w-full h-full rounded-2xl">
                 <source src="/videos/any-press-1.mp4" type="video/mp4" />
               </video>
             </div>

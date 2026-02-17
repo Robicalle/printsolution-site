@@ -211,7 +211,7 @@ export default async function AfiniaLT5CPage() {
           </div>
           <div className="max-w-3xl mx-auto">
             <div className="aspect-video rounded-2xl overflow-hidden shadow-lg">
-              <video controls playsInline preload="metadata" poster="/images/posters/afinia-lt5c-yt1.jpg" className="w-full h-full rounded-2xl">
+              <video controls playsInline preload="none" poster="/images/posters/afinia-lt5c-yt1.jpg" className="w-full h-full rounded-2xl">
                 <source src="/videos/afinia-lt5c-yt1.mp4" type="video/mp4" />
               </video>
             </div>

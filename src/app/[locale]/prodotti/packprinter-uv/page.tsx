@@ -220,14 +220,14 @@ export default async function PackPrinterUVPage() {
             <p className="text-yellow-500 font-semibold text-sm uppercase tracking-widest mb-4">Video</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-dark-800">{it ? 'PackPrinter UV in Azione' : 'PackPrinter UV in Action'}</h2>
           </div>
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="swipe-gallery md:grid-cols-2 gap-8 max-w-5xl mx-auto scrollbar-hide">
             <div className="aspect-video rounded-2xl overflow-hidden shadow-lg">
-              <video controls playsInline preload="metadata" poster="/images/posters/packprinter-uv-1.jpg" className="w-full h-full rounded-2xl">
+              <video controls playsInline preload="none" poster="/images/posters/packprinter-uv-1.jpg" className="w-full h-full rounded-2xl">
                 <source src="/videos/packprinter-uv-1.mp4" type="video/mp4" />
               </video>
             </div>
             <div className="aspect-video rounded-2xl overflow-hidden shadow-lg">
-              <video controls playsInline preload="metadata" poster="/images/posters/packprinter-uv-3.jpg" className="w-full h-full rounded-2xl">
+              <video controls playsInline preload="none" poster="/images/posters/packprinter-uv-3.jpg" className="w-full h-full rounded-2xl">
                 <source src="/videos/packprinter-uv-3.mp4" type="video/mp4" />
               </video>
             </div>

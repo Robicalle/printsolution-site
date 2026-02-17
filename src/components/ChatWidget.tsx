@@ -140,7 +140,7 @@ export default function ChatWidget() {
         {
           role: "assistant",
           content:
-            "Mi scuso, si è verificato un errore. Riprova o contatta Print Solution al 02 4943 9417.",
+            'Mi scuso, si è verificato un errore. Riprova o contatta Print Solution al <a href="tel:+390249439417">02 4943 9417</a>.',
         },
       ]);
     } finally {

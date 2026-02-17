@@ -215,10 +215,10 @@ export default async function () {
           </div>
           <div className="grid md:grid-cols-2 gap-8">
             <div className="aspect-video rounded-2xl overflow-hidden shadow-lg">
-              <video controls preload="metadata" aria-label="Video dimostrativo del prodotto" className="w-full h-full object-cover"><source src="/videos/dlf-1.mp4" type="video/mp4" /></video>
+              <video controls preload="none" aria-label="Video dimostrativo del prodotto" className="w-full h-full object-cover"><source src="/videos/dlf-1.mp4" type="video/mp4" /></video>
             </div>
             <div className="aspect-video rounded-2xl overflow-hidden shadow-lg">
-              <video controls preload="metadata" aria-label="Video dimostrativo del prodotto" className="w-full h-full object-cover"><source src="/videos/dlf-2.mp4" type="video/mp4" /></video>
+              <video controls preload="none" aria-label="Video dimostrativo del prodotto" className="w-full h-full object-cover"><source src="/videos/dlf-2.mp4" type="video/mp4" /></video>
             </div>
           </div>
         </div>

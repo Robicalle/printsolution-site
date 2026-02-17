@@ -2,6 +2,7 @@ import { getLocale } from 'next-intl/server';
 import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
+import SpecsAccordion from "@/components/SpecsAccordion";
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
@@ -224,19 +225,19 @@ export default async function () {
             <p className="text-cyan-500 font-semibold text-sm uppercase tracking-widest mb-4">Video</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-dark-800">{it ? 'EDM-650X in Azione' : 'EDM-650X in Action'}</h2>
           </div>
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="swipe-gallery md:grid-cols-2 gap-8 max-w-5xl mx-auto scrollbar-hide">
             <div className="aspect-video rounded-2xl overflow-hidden shadow-lg">
-              <video controls playsInline preload="metadata" poster="/images/posters/edm650x-1.jpg" className="w-full h-full rounded-2xl">
+              <video controls playsInline preload="none" poster="/images/posters/edm650x-1.jpg" className="w-full h-full rounded-2xl">
                 <source src="/videos/edm650x-1.mp4" type="video/mp4" />
               </video>
             </div>
             <div className="aspect-video rounded-2xl overflow-hidden shadow-lg">
-              <video controls playsInline preload="metadata" poster="/images/posters/edm650x-2.jpg" className="w-full h-full rounded-2xl">
+              <video controls playsInline preload="none" poster="/images/posters/edm650x-2.jpg" className="w-full h-full rounded-2xl">
                 <source src="/videos/edm650x-2.mp4" type="video/mp4" />
               </video>
             </div>
             <div className="aspect-video rounded-2xl overflow-hidden shadow-lg">
-              <video controls playsInline preload="metadata" poster="/images/posters/edm650x-4.jpg" className="w-full h-full rounded-2xl">
+              <video controls playsInline preload="none" poster="/images/posters/edm650x-4.jpg" className="w-full h-full rounded-2xl">
                 <source src="/videos/edm650x-4.mp4" type="video/mp4" />
               </video>
             </div>
@@ -308,19 +309,7 @@ export default async function () {
       </section>
 
       {/* Specifiche Tecniche */}
-      <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-surface-50">
-        <div className="container-custom max-w-3xl">
-          <h2 className="text-3xl font-bold text-dark-800 mb-10 text-center">{it ? 'Specifiche Tecniche' : 'Technical Specifications'}</h2>
-          <div className="space-y-3">
-            {getSpecs(locale).map(([label, value]) => (
-              <div key={label} className="flex flex-col sm:flex-row sm:justify-between gap-1 bg-white rounded-xl px-5 py-4 shadow-sm">
-                <span className="text-sm font-medium text-gray-600">{label}</span>
-                <span className="text-sm font-bold text-dark-800">{value}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <SpecsAccordion specs={getSpecs(locale)} locale={locale} />
 
       {/* CTA */}
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-surface-50">

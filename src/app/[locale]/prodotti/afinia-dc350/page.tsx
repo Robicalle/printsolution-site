@@ -40,7 +40,8 @@ const productJsonLd = {
   brand: { "@type": "Brand", name: "Afinia Label" },
   description:
     "Fustellatori semi-rotativi per etichette con laminazione, fustellatura con fustelle flessibili, rimozione sfrido e slitting.",
-  image: "https://www.printsolutionsrl.it/images/products/afinia-dc350.png",
+  image: "https://www.printsolution.it/images/products/afinia-dc350.png",
+  manufacturer: { "@type": "Organization", name: "Print Solution S.r.l." },
   offers: {
     "@type": "Offer",
     availability: "https://schema.org/InStock",
@@ -53,9 +54,9 @@ const breadcrumbJsonLd = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.printsolutionsrl.it" },
-    { "@type": "ListItem", position: 2, name: "Etichette", item: "https://www.printsolutionsrl.it/soluzioni/etichette" },
-    { "@type": "ListItem", position: 3, name: "Afinia DC250 / DC350", item: "https://www.printsolutionsrl.it/prodotti/afinia-dc350" },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.printsolution.it" },
+    { "@type": "ListItem", position: 2, name: "Etichette", item: "https://www.printsolution.it/soluzioni/etichette" },
+    { "@type": "ListItem", position: 3, name: "Afinia DC250 / DC350", item: "https://www.printsolution.it/prodotti/afinia-dc350" },
   ],
 };
 
@@ -181,7 +182,7 @@ export default async function () {
               </p>
               <div className="flex flex-wrap gap-4">
                 <a
-                  href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Info%20Afinia%20DC250%20DC350&body=Buongiorno%2C%0A%0AVorrei%20ricevere%20informazioni%20sui%20fustellatori%20Afinia%20DC250%2FDC350.%0A%0AGrazie"
+                  href="mailto:info@printsolution.it?subject=Richiesta%20Info%20Afinia%20DC250%20DC350&body=Buongiorno%2C%0A%0AVorrei%20ricevere%20informazioni%20sui%20fustellatori%20Afinia%20DC250%2FDC350.%0A%0AGrazie"
                   className="btn-primary text-lg"
                 >
                   {locale === 'it' ? 'Richiedi Informazioni' : 'Request Information'}
@@ -326,7 +327,7 @@ export default async function () {
                 {locale === 'it' ? 'Contattaci per una consulenza gratuita nella nostra sala demo a Sesto San Giovanni.' : 'Contact us for a free consultation in our showroom in Sesto San Giovanni.'}
               </p>
               <a
-                href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20Afinia%20DC250%20DC350&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20dei%20fustellatori%20DC250%2FDC350.%0A%0AGrazie"
+                href="mailto:info@printsolution.it?subject=Richiesta%20Consulenza%20Afinia%20DC250%20DC350&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20dei%20fustellatori%20DC250%2FDC350.%0A%0AGrazie"
                 className="inline-flex items-center justify-center px-8 py-4 bg-white text-cyan-600 font-bold rounded-full hover:bg-yellow-400 hover:text-dark-800 transition-all duration-300 shadow-lg text-lg"
               >
                 {locale === 'it' ? 'Consulenza gratuita' : 'Free consultation'}

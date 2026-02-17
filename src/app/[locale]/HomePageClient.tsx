@@ -95,7 +95,7 @@ function Hero({ locale }: { locale: string }) {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 opacity-70 animate-bounce flex">
+      <div className="absolute bottom-2 md:bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 opacity-70 animate-bounce flex">
         <span className="text-white/60 text-xs uppercase tracking-widest font-medium">{locale === 'it' ? 'Scopri' : 'Discover'}</span>
         <svg className="w-5 h-5 text-white/60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7" />
@@ -162,18 +162,6 @@ function Solutions({ locale }: { locale: string }) {
       ),
       gradient: "from-violet-500 to-violet-400",
       accentBorder: "border-l-violet-500",
-    },
-    {
-      title: locale === 'it' ? "Consumabili" : "Consumables",
-      desc: locale === 'it' ? "Inchiostri, testine di stampa, nastri e materiali di consumo originali per tutte le stampanti distribuite." : "Inks, printheads, ribbons and original consumables for all distributed printers.",
-      href: "/soluzioni/consumabili",
-      icon: (
-        <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-          <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 0 1-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 0 1 4.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19 14.5M14.25 3.104c.251.023.501.05.75.082M19 14.5l-2.47 2.47a2.25 2.25 0 0 1-1.591.659H9.061a2.25 2.25 0 0 1-1.591-.659L5 14.5m14 0V5.25A2.25 2.25 0 0 0 16.75 3h-9.5A2.25 2.25 0 0 0 5 5.25v9.25" />
-        </svg>
-      ),
-      gradient: "from-yellow-500 to-yellow-400",
-      accentBorder: "border-l-yellow-500",
     },
   ];
 
@@ -449,7 +437,7 @@ function DemoCTA({ locale }: { locale: string }) {
               {locale === 'it' ? 'Vieni a toccare con mano le nostre soluzioni. La nostra sala demo a Sesto San Giovanni è attrezzata con tutti i prodotti in funzione.' : 'Come and experience our solutions first-hand. Our demo room in Sesto San Giovanni is equipped with all products up and running.'}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20Print%20Solution&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita.%0A%0AGrazie" className="inline-flex items-center justify-center px-8 py-4 bg-white text-cyan-600 font-bold rounded-full hover:bg-yellow-400 hover:text-dark-800 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 text-lg">
+              <a href="mailto:info@printsolution.it?subject=Richiesta%20Consulenza%20Print%20Solution&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita.%0A%0AGrazie" className="inline-flex items-center justify-center px-8 py-4 bg-white text-cyan-600 font-bold rounded-full hover:bg-yellow-400 hover:text-dark-800 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 text-lg">
                 {locale === 'it' ? 'Consulenza gratuita→' : 'Free consultation→'}
               </a>
               <a href="tel:+390249439417" className="inline-flex items-center justify-center px-8 py-4 border-2 border-white/30 text-white font-semibold rounded-full hover:bg-white/10 transition-all duration-300 text-lg">

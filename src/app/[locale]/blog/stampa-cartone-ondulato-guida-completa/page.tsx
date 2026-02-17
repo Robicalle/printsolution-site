@@ -33,20 +33,20 @@ const articleJsonLd = {
   publisher: {
     "@type": "Organization",
     name: "Print Solution S.r.l.",
-    logo: { "@type": "ImageObject", url: "https://www.printsolutionsrl.it/logo.png" },
+    logo: { "@type": "ImageObject", url: "https://www.printsolution.it/logo.png" },
   },
   datePublished: "2026-02-15",
   dateModified: "2026-02-15",
-  mainEntityOfPage: "https://www.printsolutionsrl.it/blog/stampa-cartone-ondulato-guida-completa",
+  mainEntityOfPage: "https://www.printsolution.it/blog/stampa-cartone-ondulato-guida-completa",
 };
 
 const breadcrumbJsonLd = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.printsolutionsrl.it" },
-    { "@type": "ListItem", position: 2, name: "Blog", item: "https://www.printsolutionsrl.it/blog" },
-    { "@type": "ListItem", position: 3, name: "Stampa su Cartone Ondulato: Guida Completa", item: "https://www.printsolutionsrl.it/blog/stampa-cartone-ondulato-guida-completa" },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.printsolution.it" },
+    { "@type": "ListItem", position: 2, name: "Blog", item: "https://www.printsolution.it/blog" },
+    { "@type": "ListItem", position: 3, name: "Stampa su Cartone Ondulato: Guida Completa", item: "https://www.printsolution.it/blog/stampa-cartone-ondulato-guida-completa" },
   ],
 };
 
@@ -148,7 +148,7 @@ export default async function ArticleStampaCartone() {
 
           <div className="mt-12 pt-8 border-t border-gray-100 flex flex-col sm:flex-row gap-4 justify-between items-center">
             <Link href="/blog" className="text-cyan-500 font-semibold text-sm hover:underline">{locale === 'it' ? '← Torna al Blog' : '← Back to Blog'}</Link>
-            <a href="mailto:info@printsolutionsrl.it?subject=Stampa%20Cartone%20Ondulato&body=Buongiorno%2C%0A%0AVorrei%20informazioni%20sulla%20stampa%20digitale%20su%20cartone%20ondulato.%0A%0AGrazie" className="btn-primary text-sm">{locale === 'it' ? 'Consulenza gratuita' : 'Free consultation'}</a>
+            <a href="mailto:info@printsolution.it?subject=Stampa%20Cartone%20Ondulato&body=Buongiorno%2C%0A%0AVorrei%20informazioni%20sulla%20stampa%20digitale%20su%20cartone%20ondulato.%0A%0AGrazie" className="btn-primary text-sm">{locale === 'it' ? 'Consulenza gratuita' : 'Free consultation'}</a>
           </div>
         </div>
       </article>

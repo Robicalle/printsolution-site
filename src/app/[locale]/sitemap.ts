@@ -3,7 +3,7 @@ import { categories } from "@/lib/shop-data";
 
 export const dynamic = "force-static";
 
-const BASE = "https://www.printsolutionsrl.it";
+const BASE = "https://www.printsolution.it";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date().toISOString();

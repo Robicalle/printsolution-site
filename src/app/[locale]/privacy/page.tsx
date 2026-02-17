@@ -37,7 +37,7 @@ export default async function PrivacyPage() {
               P.IVA e C.F.: 07149250966
               <br />
               E-mail:{" "}
-              <a href="mailto:info@printsolutionsrl.it">info@printsolutionsrl.it</a>
+              <a href="mailto:info@printsolution.it">info@printsolution.it</a>
             </p>
 
             <h3>Tipologie di dati raccolti</h3>
@@ -155,7 +155,7 @@ export default async function PrivacyPage() {
             </ul>
             <p>
               Per esercitare i Suoi diritti, può contattare il Titolare all&apos;indirizzo e-mail:{" "}
-              <a href="mailto:info@printsolutionsrl.it">info@printsolutionsrl.it</a>
+              <a href="mailto:info@printsolution.it">info@printsolution.it</a>
             </p>
 
             <h3>Cookie</h3>
@@ -195,7 +195,7 @@ export default async function PrivacyPage() {
             VAT / Tax Code: 07149250966
             <br />
             E-mail:{" "}
-            <a href="mailto:info@printsolutionsrl.it">info@printsolutionsrl.it</a>
+            <a href="mailto:info@printsolution.it">info@printsolution.it</a>
           </p>
 
           <h3>Types of data collected</h3>
@@ -310,7 +310,7 @@ export default async function PrivacyPage() {
           </ul>
           <p>
             To exercise your rights, you may contact the Data Controller at:{" "}
-            <a href="mailto:info@printsolutionsrl.it">info@printsolutionsrl.it</a>
+            <a href="mailto:info@printsolution.it">info@printsolution.it</a>
           </p>
 
           <h3>Cookies</h3>

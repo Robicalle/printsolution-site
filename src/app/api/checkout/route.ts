@@ -13,7 +13,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Carrello vuoto" }, { status: 400 });
     }
 
-    const origin = req.headers.get("origin") || "https://www.printsolutionsrl.it";
+    const origin = req.headers.get("origin") || "https://www.printsolution.it";
 
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ["card"],

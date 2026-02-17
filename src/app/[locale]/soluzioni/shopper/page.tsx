@@ -32,27 +32,27 @@ const products = [
   {
     name: "AurumPress",
     subtitle: "Stampa a Caldo Digitale - Hot Foil", subtitleEn: "Digital Hot Foil Stamping",
-    desc: "Stampa termica digitale con foil metallizzati (oro, argento, colori), olografici e trasparente lucido. Nobilitazione on-demand per shopper, scatole, buste, etichette e packaging premium. Nessuna fustella, nessun cliché: dal file alla stampa in minuti.",
-    descEn: "Digital thermal printing with metallic foils (gold, silver, colours), holographic and glossy transparent. On-demand embellishment for shoppers, boxes, bags, labels and premium packaging. No dies, no clichés: from file to print in minutes.",
+    desc: "Stampa termica digitale con foil metallizzati (oro, argento, colori), olografici e trasparente lucido. Nobilitazione on-demand per shopper, scatole, buste, etichette e packaging premium.",
+    descEn: "Digital thermal printing with metallic foils (gold, silver, colours), holographic and glossy transparent. On-demand embellishment for shoppers, boxes, bags, labels and premium packaging.",
     specs: [
       "Foil oro, argento, colori, olografico",
       "Risoluzione 300 × 300 dpi",
       "Area stampa 320 × 470 mm",
-      "Nessuna fustella o cliché necessario",
+      "Cliché necessario",
       "Stampa da 1 pezzo (on-demand)",
-      "Dato variabile: nomi, loghi, QR",
+      "Dato variabile non possibile",
       "Supporti: carta, cartone, pelle, legno",
-      "Software proprietario incluso",
+      "Nessun software presente",
     ],
     specsEn: [
       "Gold, silver, colour, holographic foils",
       "Resolution 300 × 300 dpi",
       "Print area 320 × 470 mm",
-      "No dies or clichés required",
+      "Cliché required",
       "Print from 1 piece (on-demand)",
-      "Variable data: names, logos, QR codes",
+      "Variable data not possible",
       "Substrates: paper, cardboard, leather, wood",
-      "Proprietary software included",
+      "No software included",
     ],
     gradient: "from-amber-500 to-amber-600",
     icon: "✨",
@@ -159,7 +159,7 @@ export default async function ShopperPage() {
                     </ul>
 
                     <div className="flex flex-wrap gap-3">
-                      <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20Shopper&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita.%0A%0AGrazie" className="btn-primary text-sm">
+                      <a href="mailto:info@printsolution.it?subject=Richiesta%20Consulenza%20Shopper&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita.%0A%0AGrazie" className="btn-primary text-sm">
                         {locale === 'it' ? 'Consulenza gratuita' : 'Free consultation'}
                         <svg className="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
                       </a>
@@ -223,7 +223,7 @@ export default async function ShopperPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
-                  href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Info%20Shopper%20%26%20Packaging%20di%20Lusso&body=Buongiorno%2C%0A%0AVorrei%20ricevere%20informazioni%20sulle%20soluzioni%20per%20shopper%20e%20packaging%20di%20lusso.%0A%0AGrazie"
+                  href="mailto:info@printsolution.it?subject=Richiesta%20Info%20Shopper%20%26%20Packaging%20di%20Lusso&body=Buongiorno%2C%0A%0AVorrei%20ricevere%20informazioni%20sulle%20soluzioni%20per%20shopper%20e%20packaging%20di%20lusso.%0A%0AGrazie"
                   className="inline-flex items-center justify-center px-8 py-4 bg-white text-cyan-600 font-bold rounded-full hover:bg-yellow-400 hover:text-dark-800 transition-all duration-300 shadow-lg text-lg"
                 >
                   {locale === 'it' ? 'Contattaci Ora' : 'Contact Us Now'}

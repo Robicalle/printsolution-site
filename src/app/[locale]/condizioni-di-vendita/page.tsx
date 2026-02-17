@@ -18,7 +18,7 @@ export default async function CondizioniPage() {
           <section>
             <h2 className="text-xl font-bold text-gray-900 mb-4">Art. 1 – Ambito di applicazione</h2>
             <div className="space-y-3 text-gray-600 leading-relaxed">
-              <p><strong>1.1</strong> Dati del titolare del Sito: Printsolution S.r.l. (Titolare del Sito). Sito al quale si applicano le presenti condizioni d&apos;uso: www.printsolutionsrl.it</p>
+              <p><strong>1.1</strong> Dati del titolare del Sito: Printsolution S.r.l. (Titolare del Sito). Sito al quale si applicano le presenti condizioni d&apos;uso: www.printsolution.it</p>
               <p><strong>1.2</strong> Il presente documento (Condizioni d&apos;Uso) disciplina le condizioni d&apos;uso del presente Sito da parte dell&apos;utente, vale a dire la persona fisica che interagisce con il Sito (Utente).</p>
               <p><strong>1.3</strong> Il Titolare del Sito può modificare le Condizioni d&apos;Uso in qualsiasi momento. Le modifiche saranno valide ed efficaci appena pubblicate online.</p>
               <p><strong>1.4</strong> L&apos;accesso al Sito presuppone l&apos;accettazione delle Condizioni d&apos;Uso.</p>

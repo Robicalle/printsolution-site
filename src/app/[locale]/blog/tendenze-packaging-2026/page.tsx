@@ -33,20 +33,20 @@ const articleJsonLd = {
   publisher: {
     "@type": "Organization",
     name: "Print Solution S.r.l.",
-    logo: { "@type": "ImageObject", url: "https://www.printsolutionsrl.it/logo.png" },
+    logo: { "@type": "ImageObject", url: "https://www.printsolution.it/logo.png" },
   },
   datePublished: "2026-02-15",
   dateModified: "2026-02-15",
-  mainEntityOfPage: "https://www.printsolutionsrl.it/blog/tendenze-packaging-2026",
+  mainEntityOfPage: "https://www.printsolution.it/blog/tendenze-packaging-2026",
 };
 
 const breadcrumbJsonLd = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.printsolutionsrl.it" },
-    { "@type": "ListItem", position: 2, name: "Blog", item: "https://www.printsolutionsrl.it/blog" },
-    { "@type": "ListItem", position: 3, name: "Tendenze Packaging 2026", item: "https://www.printsolutionsrl.it/blog/tendenze-packaging-2026" },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.printsolution.it" },
+    { "@type": "ListItem", position: 2, name: "Blog", item: "https://www.printsolution.it/blog" },
+    { "@type": "ListItem", position: 3, name: "Tendenze Packaging 2026", item: "https://www.printsolution.it/blog/tendenze-packaging-2026" },
   ],
 };
 
@@ -145,7 +145,7 @@ export default async function ArticleTendenzePackaging() {
 
           <div className="mt-12 pt-8 border-t border-gray-100 flex flex-col sm:flex-row gap-4 justify-between items-center">
             <Link href="/blog" className="text-cyan-500 font-semibold text-sm hover:underline">{locale === 'it' ? '← Torna al Blog' : '← Back to Blog'}</Link>
-            <a href="mailto:info@printsolutionsrl.it?subject=Soluzioni%20Packaging%20Innovativo&body=Buongiorno%2C%0A%0AVorrei%20informazioni%20sulle%20soluzioni%20di%20packaging%20innovativo.%0A%0AGrazie" className="btn-primary text-sm">{locale === 'it' ? 'Scopri le Nostre Soluzioni' : 'Scopri le Nostre Soluzioni'}</a>
+            <a href="mailto:info@printsolution.it?subject=Soluzioni%20Packaging%20Innovativo&body=Buongiorno%2C%0A%0AVorrei%20informazioni%20sulle%20soluzioni%20di%20packaging%20innovativo.%0A%0AGrazie" className="btn-primary text-sm">{locale === 'it' ? 'Scopri le Nostre Soluzioni' : 'Scopri le Nostre Soluzioni'}</a>
           </div>
         </div>
       </article>

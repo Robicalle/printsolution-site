@@ -40,7 +40,8 @@ const productJsonLd = {
   brand: { "@type": "Brand", name: "Anytron" },
   description:
     "Stampante laser LED a 5 colori (CMYK+Bianco) per etichette e packaging flessibile. 1200 dpi, laminazione integrata.",
-  image: "https://www.printsolutionsrl.it/images/products/any-press.avif",
+  image: "https://www.printsolution.it/images/products/any-press.avif",
+  manufacturer: { "@type": "Organization", name: "Print Solution S.r.l." },
   offers: {
     "@type": "Offer",
     availability: "https://schema.org/InStock",
@@ -53,9 +54,9 @@ const breadcrumbJsonLd = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.printsolutionsrl.it" },
-    { "@type": "ListItem", position: 2, name: "Etichette", item: "https://www.printsolutionsrl.it/soluzioni/etichette" },
-    { "@type": "ListItem", position: 3, name: "Any-Press", item: "https://www.printsolutionsrl.it/prodotti/any-press" },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.printsolution.it" },
+    { "@type": "ListItem", position: 2, name: "Etichette", item: "https://www.printsolution.it/soluzioni/etichette" },
+    { "@type": "ListItem", position: 3, name: "Any-Press", item: "https://www.printsolution.it/prodotti/any-press" },
   ],
 };
 
@@ -164,7 +165,7 @@ export default async function AnyPressPage() {
                 {locale === 'it' ? 'Stampante laser LED a 5 colori (CMYK+Bianco) per etichette e packaging flessibile. Stampa su carte colorate, kraft e trasparenti grazie al toner bianco. Laminazione integrata opzionale e software ANY-FLOW per dati variabili.' : '5-color LED laser printer (CMYK+White) for labels and flexible packaging. Print on colored, kraft and transparent materials with white toner. Optional integrated lamination and ANY-FLOW software for variable data.'}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20Any-Press&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20Any-Press.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">{locale === 'it' ? 'Consulenza gratuita→' : 'Free consultation→'}</a>
+                <a href="mailto:info@printsolution.it?subject=Richiesta%20Consulenza%20Any-Press&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20Any-Press.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">{locale === 'it' ? 'Consulenza gratuita→' : 'Free consultation→'}</a>
               </div>
           </div>
         </div>
@@ -260,7 +261,7 @@ export default async function AnyPressPage() {
             {locale === 'it' ? 'Scopri come la Any-Press può trasformare la tua produzione di etichette e packaging flessibile. Contattaci per una consulenza.' : 'Discover how the Any-Press can transform your label and flexible packaging production. Contact us for a consultation.'}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20Any-Press&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20Any-Press.%0A%0AGrazie" className="btn-primary text-lg">{locale === 'it' ? 'Consulenza gratuita→' : 'Free consultation→'}</a>
+            <a href="mailto:info@printsolution.it?subject=Richiesta%20Consulenza%20Any-Press&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20Any-Press.%0A%0AGrazie" className="btn-primary text-lg">{locale === 'it' ? 'Consulenza gratuita→' : 'Free consultation→'}</a>
           </div>
         </div>
       </section>

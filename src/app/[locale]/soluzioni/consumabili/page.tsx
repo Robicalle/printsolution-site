@@ -203,7 +203,7 @@ export default async function ConsumabiliPage() {
             {locale === 'it' ? 'Contattaci per un preventivo rapido. Spedizione in tutta Italia, prezzi riservati per ordini ricorrenti.' : 'Contact us for a quick quote. Shipping across Italy, special prices for recurring orders.'}
           </p>
           <div className="flex justify-center">
-            <a href="mailto:ordini@printsolutionsrl.it?subject=Ordine%20Consumabili&body=Buongiorno%2C%0A%0AVorrei%20ordinare%20i%20seguenti%20consumabili%3A%0A%0A%0AGrazie" className="btn-primary">{locale === 'it' ? 'Ordina Consumabili' : 'Order Consumables'}</a>
+            <a href="mailto:ordini@printsolution.it?subject=Ordine%20Consumabili&body=Buongiorno%2C%0A%0AVorrei%20ordinare%20i%20seguenti%20consumabili%3A%0A%0A%0AGrazie" className="btn-primary">{locale === 'it' ? 'Ordina Consumabili' : 'Order Consumables'}</a>
           </div>
         </div>
       </section>

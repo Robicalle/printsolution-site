@@ -40,7 +40,8 @@ const edm650xJsonLd = {
   brand: { "@type": "Brand", name: "Print Solution" },
   description:
     "Stampante digitale inkjet single-pass per carta e cartone ondulato. Da 2 a 6 teste HP, fino a 30m/min, 1200x1200 dpi. Inchiostri a base acqua.",
-  image: "https://www.printsolutionsrl.it/images/products/edm-650x-2hd.jpg",
+  image: "https://www.printsolution.it/images/products/edm-650x-2hd.jpg",
+  manufacturer: { "@type": "Organization", name: "Print Solution S.r.l." },
   offers: {
     "@type": "Offer",
     availability: "https://schema.org/InStock",
@@ -53,9 +54,9 @@ const breadcrumbJsonLd = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.printsolutionsrl.it" },
-    { "@type": "ListItem", position: 2, name: "Prodotti", item: "https://www.printsolutionsrl.it/soluzioni/packaging" },
-    { "@type": "ListItem", position: 3, name: "EDM-650X", item: "https://www.printsolutionsrl.it/prodotti/edm-650x" },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.printsolution.it" },
+    { "@type": "ListItem", position: 2, name: "Prodotti", item: "https://www.printsolution.it/soluzioni/packaging" },
+    { "@type": "ListItem", position: 3, name: "EDM-650X", item: "https://www.printsolution.it/prodotti/edm-650x" },
   ],
 };
 
@@ -181,7 +182,7 @@ export default async function () {
                 : 'Single-pass inkjet digital printer for paper and corrugated board sheets. Large format, industrial speed, CMYK water-based inks.'}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20EDM-650X&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20EDM-650X.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">{it ? 'Consulenza gratuita→' : 'Free consultation→'}</a>
+              <a href="mailto:info@printsolution.it?subject=Richiesta%20Consulenza%20EDM-650X&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20EDM-650X.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">{it ? 'Consulenza gratuita→' : 'Free consultation→'}</a>
             </div>
           </div>
         </div>
@@ -321,7 +322,7 @@ export default async function () {
               : 'Visit our demo room in Sesto San Giovanni and see the EDM-650X in action on your materials.'}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20EDM-650X&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20EDM-650X.%0A%0AGrazie" className="btn-primary text-lg">{it ? 'Consulenza gratuita→' : 'Free consultation→'}</a>
+            <a href="mailto:info@printsolution.it?subject=Richiesta%20Consulenza%20EDM-650X&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20EDM-650X.%0A%0AGrazie" className="btn-primary text-lg">{it ? 'Consulenza gratuita→' : 'Free consultation→'}</a>
           </div>
         </div>
       </section>

@@ -152,7 +152,7 @@ export default async function ChiSiamoPage() {
                     Demos are by appointment and completely free of charge.
                   </p>
                   </>)}
-                  <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Informazioni%20Print%20Solution&body=Buongiorno%2C%0A%0AVorrei%20ricevere%20informazioni.%0A%0AGrazie" className="btn-primary">{locale === 'it' ? "Consulenza gratuita" : "Free consultation"}</a>
+                  <a href="mailto:info@printsolution.it?subject=Richiesta%20Informazioni%20Print%20Solution&body=Buongiorno%2C%0A%0AVorrei%20ricevere%20informazioni.%0A%0AGrazie" className="btn-primary">{locale === 'it' ? "Consulenza gratuita" : "Free consultation"}</a>
                 </div>
                 <div className="bg-gradient-to-br from-cyan-500 to-magenta-500 rounded-2xl h-64 flex items-center justify-center">
                   <div className="text-center text-white">
@@ -210,7 +210,7 @@ export default async function ChiSiamoPage() {
               <p className="text-white/80 max-w-2xl mx-auto mb-10 text-lg">
                 {locale === 'it' ? 'Contattaci per una consulenza gratuita o prenota una visita nella nostra sala demo.' : 'Contact us for a free consultation or book a visit to our demo room.'}
               </p>
-              <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Informazioni%20Print%20Solution&body=Buongiorno%2C%0A%0AVorrei%20ricevere%20informazioni.%0A%0AGrazie" className="inline-flex items-center justify-center px-8 py-4 bg-white text-cyan-600 font-bold rounded-full hover:bg-yellow-400 hover:text-dark-800 transition-all duration-300 shadow-lg text-lg">{locale === 'it' ? 'Contattaci' : 'Contact Us'}</a>
+              <a href="mailto:info@printsolution.it?subject=Richiesta%20Informazioni%20Print%20Solution&body=Buongiorno%2C%0A%0AVorrei%20ricevere%20informazioni.%0A%0AGrazie" className="inline-flex items-center justify-center px-8 py-4 bg-white text-cyan-600 font-bold rounded-full hover:bg-yellow-400 hover:text-dark-800 transition-all duration-300 shadow-lg text-lg">{locale === 'it' ? 'Contattaci' : 'Contact Us'}</a>
             </div>
           </div>
         </div>

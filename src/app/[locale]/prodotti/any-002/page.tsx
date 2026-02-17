@@ -39,7 +39,8 @@ const productJsonLd = {
   brand: { "@type": "Brand", name: "Anytron" },
   description:
     "Sistema completo stampa laser digitale + fustellatura per etichette on-demand. Toner resistente, 1200 dpi, 9 m/min.",
-  image: "https://www.printsolutionsrl.it/images/products/any-002.avif",
+  image: "https://www.printsolution.it/images/products/any-002.avif",
+  manufacturer: { "@type": "Organization", name: "Print Solution S.r.l." },
   offers: {
     "@type": "Offer",
     availability: "https://schema.org/InStock",
@@ -52,9 +53,9 @@ const breadcrumbJsonLd = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.printsolutionsrl.it" },
-    { "@type": "ListItem", position: 2, name: "Etichette", item: "https://www.printsolutionsrl.it/soluzioni/etichette" },
-    { "@type": "ListItem", position: 3, name: "Anytron ANY-002", item: "https://www.printsolutionsrl.it/prodotti/any-002" },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.printsolution.it" },
+    { "@type": "ListItem", position: 2, name: "Etichette", item: "https://www.printsolution.it/soluzioni/etichette" },
+    { "@type": "ListItem", position: 3, name: "Anytron ANY-002", item: "https://www.printsolution.it/prodotti/any-002" },
   ],
 };
 
@@ -151,7 +152,7 @@ export default async function Any002Page() {
               </p>
               <div className="flex flex-wrap gap-4">
                 <a
-                  href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Info%20Anytron%20ANY-002&body=Buongiorno%2C%0A%0AVorrei%20ricevere%20informazioni%20sulla%20Anytron%20ANY-002.%0A%0AGrazie"
+                  href="mailto:info@printsolution.it?subject=Richiesta%20Info%20Anytron%20ANY-002&body=Buongiorno%2C%0A%0AVorrei%20ricevere%20informazioni%20sulla%20Anytron%20ANY-002.%0A%0AGrazie"
                   className="btn-primary text-lg"
                 >
                   {locale === 'it' ? 'Richiedi Informazioni' : 'Request Information'}
@@ -310,7 +311,7 @@ export default async function Any002Page() {
                 {locale === 'it' ? 'Contattaci per una consulenza gratuita o per ricevere campioni stampati con i tuoi file.' : 'Contact us for a free consultation or to receive samples printed with your own files.'}
               </p>
               <a
-                href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20Anytron%20ANY-002&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20della%20Anytron%20ANY-002.%0A%0AGrazie"
+                href="mailto:info@printsolution.it?subject=Richiesta%20Consulenza%20Anytron%20ANY-002&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20della%20Anytron%20ANY-002.%0A%0AGrazie"
                 className="inline-flex items-center justify-center px-8 py-4 bg-white text-cyan-600 font-bold rounded-full hover:bg-yellow-400 hover:text-dark-800 transition-all duration-300 shadow-lg text-lg"
               >
                 {locale === 'it' ? 'Consulenza gratuita' : 'Free consultation'}

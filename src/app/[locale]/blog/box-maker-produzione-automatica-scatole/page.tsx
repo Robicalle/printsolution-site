@@ -34,20 +34,20 @@ const articleJsonLd = {
   publisher: {
     "@type": "Organization",
     name: "Print Solution S.r.l.",
-    logo: { "@type": "ImageObject", url: "https://www.printsolutionsrl.it/logo.png" },
+    logo: { "@type": "ImageObject", url: "https://www.printsolution.it/logo.png" },
   },
   datePublished: "2026-02-05",
   dateModified: "2026-02-10",
-  mainEntityOfPage: "https://www.printsolutionsrl.it/blog/box-maker-produzione-automatica-scatole",
+  mainEntityOfPage: "https://www.printsolution.it/blog/box-maker-produzione-automatica-scatole",
 };
 
 const breadcrumbJsonLd = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.printsolutionsrl.it" },
-    { "@type": "ListItem", position: 2, name: "Blog", item: "https://www.printsolutionsrl.it/blog" },
-    { "@type": "ListItem", position: 3, name: "Box Maker: Produzione Automatica Scatole", item: "https://www.printsolutionsrl.it/blog/box-maker-produzione-automatica-scatole" },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.printsolution.it" },
+    { "@type": "ListItem", position: 2, name: "Blog", item: "https://www.printsolution.it/blog" },
+    { "@type": "ListItem", position: 3, name: "Box Maker: Produzione Automatica Scatole", item: "https://www.printsolution.it/blog/box-maker-produzione-automatica-scatole" },
   ],
 };
 
@@ -144,7 +144,7 @@ export default async function ArticleBoxMaker() {
 
           <div className="mt-12 pt-8 border-t border-gray-100 flex flex-col sm:flex-row gap-4 justify-between items-center">
             <Link href="/blog" className="text-cyan-500 font-semibold text-sm hover:underline">{locale === 'it' ? '← Torna al Blog' : '← Back to Blog'}</Link>
-            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20Soluzioni%20Print%20Solution&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20Soluzioni%20Print%20Solution.%0A%0AGrazie" className="btn-primary text-sm">{locale === 'it' ? 'Consulenza gratuita' : 'Free consultation'}</a>
+            <a href="mailto:info@printsolution.it?subject=Richiesta%20Consulenza%20Soluzioni%20Print%20Solution&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20Soluzioni%20Print%20Solution.%0A%0AGrazie" className="btn-primary text-sm">{locale === 'it' ? 'Consulenza gratuita' : 'Free consultation'}</a>
           </div>
         </div>
       </article>

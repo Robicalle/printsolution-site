@@ -91,7 +91,7 @@ export default async function NewsPage() {
             <p className="text-gray-500 mb-6">
               {locale === 'it' ? 'Vuoi restare aggiornato sulle nostre novità?' : 'Want to stay updated on our latest news?'}
             </p>
-            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Informazioni%20Print%20Solution&body=Buongiorno%2C%0A%0AVorrei%20ricevere%20informazioni.%0A%0AGrazie" className="btn-primary">
+            <a href="mailto:info@printsolution.it?subject=Richiesta%20Informazioni%20Print%20Solution&body=Buongiorno%2C%0A%0AVorrei%20ricevere%20informazioni.%0A%0AGrazie" className="btn-primary">
               {locale === 'it' ? 'Contattaci' : 'Contact Us'}
             </a>
           </div>

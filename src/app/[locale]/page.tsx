@@ -30,6 +30,40 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
+const homepageJsonLd = {
+  "@context": "https://schema.org",
+  "@type": ["Organization", "LocalBusiness"],
+  name: "Print Solution S.r.l.",
+  url: "https://www.printsolution.it",
+  logo: "https://www.printsolution.it/logo.png",
+  description: "Vendita e assistenza stampanti digitali per etichette e packaging",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Asti",
+    addressRegion: "Piemonte",
+    addressCountry: "IT",
+  },
+  telephone: "+39-0141-352540",
+  sameAs: [
+    "https://www.facebook.com/printsolutionsrl",
+    "https://www.linkedin.com/company/print-solution-srl",
+  ],
+  knowsAbout: [
+    "stampanti digitali etichette",
+    "packaging digitale",
+    "stampanti inkjet industriali",
+    "consumabili stampa digitale",
+  ],
+};
+
 export default function HomePage() {
-  return <HomePageClient />;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homepageJsonLd) }}
+      />
+      <HomePageClient />
+    </>
+  );
 }

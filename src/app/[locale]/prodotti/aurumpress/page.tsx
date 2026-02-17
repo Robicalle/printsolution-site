@@ -39,7 +39,8 @@ const aurumpressJsonLd = {
   brand: { "@type": "Brand", name: "Print Solution" },
   description:
     "Stampatrice termica per foil metallizzati, argentati, colori pastello e trasparente lucido. Stampa a caldo digitale per nobilitazione packaging.",
-  image: "https://www.printsolutionsrl.it/images/products/aurumpress.jpg",
+  image: "https://www.printsolution.it/images/products/aurumpress.jpg",
+  manufacturer: { "@type": "Organization", name: "Print Solution S.r.l." },
   offers: {
     "@type": "Offer",
     availability: "https://schema.org/InStock",
@@ -52,9 +53,9 @@ const breadcrumbJsonLd = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.printsolutionsrl.it" },
-    { "@type": "ListItem", position: 2, name: "Prodotti", item: "https://www.printsolutionsrl.it/soluzioni/packaging" },
-    { "@type": "ListItem", position: 3, name: "AurumPress", item: "https://www.printsolutionsrl.it/prodotti/aurumpress" },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.printsolution.it" },
+    { "@type": "ListItem", position: 2, name: "Prodotti", item: "https://www.printsolution.it/soluzioni/packaging" },
+    { "@type": "ListItem", position: 3, name: "AurumPress", item: "https://www.printsolution.it/prodotti/aurumpress" },
   ],
 };
 
@@ -134,7 +135,7 @@ export default async function AurumPressPage() {
                 {locale === 'it' ? 'Stampatrice termica ad impressione idraulica per foil metallizzati, argentati, colori pastello e trasparente lucido. Il tocco premium per il tuo packaging.' : 'Thermal foil printer with hydraulic impression for metallic, silver, pastel and glossy transparent foils. The premium touch for your packaging.'}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20AurumPress&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20AurumPress.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">{locale === 'it' ? 'Consulenza gratuita→' : 'Free consultation→'}</a>
+                <a href="mailto:info@printsolution.it?subject=Richiesta%20Consulenza%20AurumPress&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20AurumPress.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">{locale === 'it' ? 'Consulenza gratuita→' : 'Free consultation→'}</a>
               </div>
           </div>
         </div>
@@ -240,7 +241,7 @@ export default async function AurumPressPage() {
             {locale === 'it' ? "Scopri come l'AurumPress può trasformare il tuo packaging. Vieni a vederla in azione nella nostra sala demo." : 'Discover how the AurumPress can transform your packaging. Come see it in action in our demo room.'}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20AurumPress&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20AurumPress.%0A%0AGrazie" className="btn-primary text-lg">{locale === 'it' ? 'Consulenza gratuita→' : 'Free consultation→'}</a>
+            <a href="mailto:info@printsolution.it?subject=Richiesta%20Consulenza%20AurumPress&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20AurumPress.%0A%0AGrazie" className="btn-primary text-lg">{locale === 'it' ? 'Consulenza gratuita→' : 'Free consultation→'}</a>
           </div>
         </div>
       </section>

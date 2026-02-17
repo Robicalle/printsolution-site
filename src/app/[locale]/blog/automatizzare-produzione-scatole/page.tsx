@@ -33,20 +33,20 @@ const articleJsonLd = {
   publisher: {
     "@type": "Organization",
     name: "Print Solution S.r.l.",
-    logo: { "@type": "ImageObject", url: "https://www.printsolutionsrl.it/logo.png" },
+    logo: { "@type": "ImageObject", url: "https://www.printsolution.it/logo.png" },
   },
   datePublished: "2026-02-15",
   dateModified: "2026-02-15",
-  mainEntityOfPage: "https://www.printsolutionsrl.it/blog/automatizzare-produzione-scatole",
+  mainEntityOfPage: "https://www.printsolution.it/blog/automatizzare-produzione-scatole",
 };
 
 const breadcrumbJsonLd = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.printsolutionsrl.it" },
-    { "@type": "ListItem", position: 2, name: "Blog", item: "https://www.printsolutionsrl.it/blog" },
-    { "@type": "ListItem", position: 3, name: "Come Automatizzare la Produzione di Scatole", item: "https://www.printsolutionsrl.it/blog/automatizzare-produzione-scatole" },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.printsolution.it" },
+    { "@type": "ListItem", position: 2, name: "Blog", item: "https://www.printsolution.it/blog" },
+    { "@type": "ListItem", position: 3, name: "Come Automatizzare la Produzione di Scatole", item: "https://www.printsolution.it/blog/automatizzare-produzione-scatole" },
   ],
 };
 
@@ -151,7 +151,7 @@ export default async function ArticleAutomazione() {
 
           <div className="mt-12 pt-8 border-t border-gray-100 flex flex-col sm:flex-row gap-4 justify-between items-center">
             <Link href="/blog" className="text-cyan-500 font-semibold text-sm hover:underline">{locale === 'it' ? '← Torna al Blog' : '← Back to Blog'}</Link>
-            <a href="mailto:info@printsolutionsrl.it?subject=Automazione%20Produzione%20Scatole&body=Buongiorno%2C%0A%0AVorrei%20informazioni%20sull%27automazione%20della%20produzione%20scatole.%0A%0AGrazie" className="btn-primary text-sm">{locale === 'it' ? 'Consulenza gratuita' : 'Free consultation'}</a>
+            <a href="mailto:info@printsolution.it?subject=Automazione%20Produzione%20Scatole&body=Buongiorno%2C%0A%0AVorrei%20informazioni%20sull%27automazione%20della%20produzione%20scatole.%0A%0AGrazie" className="btn-primary text-sm">{locale === 'it' ? 'Consulenza gratuita' : 'Free consultation'}</a>
           </div>
         </div>
       </article>

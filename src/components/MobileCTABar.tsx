@@ -10,7 +10,7 @@ export default function MobileCTABar() {
         📞 Chiamaci
       </a>
       <a
-        href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Informazioni%20Print%20Solution&body=Buongiorno%2C%0A%0AVorrei%20ricevere%20informazioni.%0A%0AGrazie"
+        href="mailto:info@printsolution.it?subject=Richiesta%20Informazioni%20Print%20Solution&body=Buongiorno%2C%0A%0AVorrei%20ricevere%20informazioni.%0A%0AGrazie"
         className="flex-1 flex items-center justify-center gap-2 h-11 bg-gradient-to-r from-cyan-500 to-cyan-600 text-white font-semibold rounded-full text-sm shadow-lg"
       >
         ✉️ Richiedi consulenza

@@ -322,7 +322,7 @@ export default async function EtichettePage() {
                       ))}
                     </ul>
                     <div className="flex flex-wrap gap-3">
-                      <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20Etichette&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita.%0A%0AGrazie" className="btn-primary text-sm">
+                      <a href="mailto:info@printsolution.it?subject=Richiesta%20Consulenza%20Etichette&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita.%0A%0AGrazie" className="btn-primary text-sm">
                         {locale === 'it' ? 'Consulenza gratuita' : 'Free consultation'}
                         <svg className="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
                       </a>
@@ -379,7 +379,7 @@ export default async function EtichettePage() {
                       ))}
                     </ul>
                     <div className="flex flex-wrap gap-3">
-                      <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20Etichette&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita.%0A%0AGrazie" className="btn-primary text-sm">
+                      <a href="mailto:info@printsolution.it?subject=Richiesta%20Consulenza%20Etichette&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita.%0A%0AGrazie" className="btn-primary text-sm">
                         {locale === 'it' ? 'Consulenza gratuita' : 'Free consultation'}
                         <svg className="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
                       </a>
@@ -451,7 +451,7 @@ export default async function EtichettePage() {
               <p className="text-white/80 max-w-2xl mx-auto mb-10 text-lg leading-relaxed">
                 {locale === 'it' ? 'Ti aiutiamo a trovare la soluzione perfetta per le tue esigenze. Contattaci per una consulenza gratuita o vieni a testare le macchine nella nostra sala demo.' : 'We help you find the perfect solution for your needs. Contact us for a free consultation or come test the machines in our demo room.'}
               </p>
-              <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Informazioni%20Print%20Solution&body=Buongiorno%2C%0A%0AVorrei%20ricevere%20informazioni.%0A%0AGrazie" className="inline-flex items-center justify-center px-8 py-4 bg-white text-cyan-600 font-bold rounded-full hover:bg-yellow-400 hover:text-dark-800 transition-all duration-300 shadow-lg text-lg">{locale === 'it' ? 'Contattaci Ora' : 'Contact Us Now'}</a>
+              <a href="mailto:info@printsolution.it?subject=Richiesta%20Informazioni%20Print%20Solution&body=Buongiorno%2C%0A%0AVorrei%20ricevere%20informazioni.%0A%0AGrazie" className="inline-flex items-center justify-center px-8 py-4 bg-white text-cyan-600 font-bold rounded-full hover:bg-yellow-400 hover:text-dark-800 transition-all duration-300 shadow-lg text-lg">{locale === 'it' ? 'Contattaci Ora' : 'Contact Us Now'}</a>
             </div>
           </div>
         </div>

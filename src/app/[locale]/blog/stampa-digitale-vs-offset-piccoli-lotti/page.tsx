@@ -33,20 +33,20 @@ const articleJsonLd = {
   publisher: {
     "@type": "Organization",
     name: "Print Solution S.r.l.",
-    logo: { "@type": "ImageObject", url: "https://www.printsolutionsrl.it/logo.png" },
+    logo: { "@type": "ImageObject", url: "https://www.printsolution.it/logo.png" },
   },
   datePublished: "2026-02-15",
   dateModified: "2026-02-15",
-  mainEntityOfPage: "https://www.printsolutionsrl.it/blog/stampa-digitale-vs-offset-piccoli-lotti",
+  mainEntityOfPage: "https://www.printsolution.it/blog/stampa-digitale-vs-offset-piccoli-lotti",
 };
 
 const breadcrumbJsonLd = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.printsolutionsrl.it" },
-    { "@type": "ListItem", position: 2, name: "Blog", item: "https://www.printsolutionsrl.it/blog" },
-    { "@type": "ListItem", position: 3, name: "Stampa Digitale vs Offset per Piccoli Lotti", item: "https://www.printsolutionsrl.it/blog/stampa-digitale-vs-offset-piccoli-lotti" },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.printsolution.it" },
+    { "@type": "ListItem", position: 2, name: "Blog", item: "https://www.printsolution.it/blog" },
+    { "@type": "ListItem", position: 3, name: "Stampa Digitale vs Offset per Piccoli Lotti", item: "https://www.printsolution.it/blog/stampa-digitale-vs-offset-piccoli-lotti" },
   ],
 };
 
@@ -140,7 +140,7 @@ export default async function ArticleDigitaleVsOffset() {
 
           <div className="mt-12 pt-8 border-t border-gray-100 flex flex-col sm:flex-row gap-4 justify-between items-center">
             <Link href="/blog" className="text-cyan-500 font-semibold text-sm hover:underline">{locale === 'it' ? '← Torna al Blog' : '← Back to Blog'}</Link>
-            <a href="mailto:info@printsolutionsrl.it?subject=Stampa%20Digitale%20Piccoli%20Lotti&body=Buongiorno%2C%0A%0AVorrei%20informazioni%20sulla%20stampa%20digitale%20per%20piccoli%20lotti.%0A%0AGrazie" className="btn-primary text-sm">{locale === 'it' ? 'Richiedi un Preventivo' : 'Request a Quote'}</a>
+            <a href="mailto:info@printsolution.it?subject=Stampa%20Digitale%20Piccoli%20Lotti&body=Buongiorno%2C%0A%0AVorrei%20informazioni%20sulla%20stampa%20digitale%20per%20piccoli%20lotti.%0A%0AGrazie" className="btn-primary text-sm">{locale === 'it' ? 'Richiedi un Preventivo' : 'Request a Quote'}</a>
           </div>
         </div>
       </article>

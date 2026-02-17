@@ -135,7 +135,7 @@ export default async function SoluzioniPage() {
           <p className="text-gray-500 max-w-xl mx-auto mb-8">
             {locale === 'it' ? 'Il nostro team ti aiuta a scegliere la tecnologia più adatta alle tue esigenze. Contattaci per una consulenza gratuita.' : 'Our team helps you choose the most suitable technology for your needs. Contact us for a free consultation.'}
           </p>
-          <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Informazioni&body=Buongiorno%2C%0A%0AVorrei%20informazioni%20sulle%20vostre%20soluzioni.%0A%0AGrazie" className="btn-primary text-lg">{locale === 'it' ? 'Contattaci →' : 'Contact Us →'}</a>
+          <a href="mailto:info@printsolution.it?subject=Richiesta%20Informazioni&body=Buongiorno%2C%0A%0AVorrei%20informazioni%20sulle%20vostre%20soluzioni.%0A%0AGrazie" className="btn-primary text-lg">{locale === 'it' ? 'Contattaci →' : 'Contact Us →'}</a>
         </div>
       </section>
     </>

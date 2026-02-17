@@ -72,7 +72,7 @@ const products = [
       "Larghezza stampa 650 mm",
       "Spessore fino a 80 mm",
       "Dati variabili: barcode, QR",
-      "Da 1 a 8 testine (scalabile)",
+      "Da 2 a 6 testine (scalabile)",
       "Piano aspirato per stabilità",
     ],
     specsEn: [
@@ -82,7 +82,7 @@ const products = [
       "Print width 650 mm",
       "Thickness up to 80 mm",
       "Variable data: barcode, QR",
-      "1 to 8 printheads (scalable)",
+      "2 to 6 printheads (scalable)",
       "Vacuum table for stability",
     ],
     gradient: "from-magenta-500 to-magenta-600",
@@ -241,7 +241,7 @@ export default async function PackagingPage() {
                     </ul>
 
                     <div className="flex flex-wrap gap-3">
-                      <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20Packaging&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita.%0A%0AGrazie" className="btn-primary text-sm">
+                      <a href="mailto:info@printsolution.it?subject=Richiesta%20Consulenza%20Packaging&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita.%0A%0AGrazie" className="btn-primary text-sm">
                         {locale === 'it' ? 'Consulenza gratuita' : 'Free consultation'}
                         <svg className="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
                       </a>

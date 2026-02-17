@@ -27,32 +27,40 @@ const inter = Inter({
 
 const organizationJsonLd = {
   "@context": "https://schema.org",
-  "@type": "Organization",
+  "@type": ["Organization", "LocalBusiness"],
   name: "Print Solution S.r.l.",
-  url: "https://www.printsolutionsrl.it",
-  logo: "https://www.printsolutionsrl.it/logo.png",
+  url: "https://www.printsolution.it",
+  logo: "https://www.printsolution.it/logo.png",
+  description: "Vendita e assistenza stampanti digitali per etichette e packaging",
   foundingDate: "2010",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "Via Pisa 200, int. 23",
-    addressLocality: "Sesto San Giovanni",
-    addressRegion: "MI",
-    postalCode: "20099",
+    addressLocality: "Asti",
+    addressRegion: "Piemonte",
     addressCountry: "IT",
   },
-  telephone: "+39 02 4943 9417",
-  email: "info@printsolutionsrl.it",
-  sameAs: [],
+  telephone: "+39-0141-352540",
+  email: "info@printsolution.it",
+  sameAs: [
+    "https://www.facebook.com/printsolutionsrl",
+    "https://www.linkedin.com/company/print-solution-srl",
+  ],
+  knowsAbout: [
+    "stampanti digitali etichette",
+    "packaging digitale",
+    "stampanti inkjet industriali",
+    "consumabili stampa digitale",
+  ],
 };
 
 const websiteJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   name: "Print Solution S.r.l.",
-  url: "https://www.printsolutionsrl.it",
+  url: "https://www.printsolution.it",
   potentialAction: {
     "@type": "SearchAction",
-    target: "https://www.printsolutionsrl.it/?q={search_term_string}",
+    target: "https://www.printsolution.it/?q={search_term_string}",
     "query-input": "required name=search_term_string",
   },
 };
@@ -83,9 +91,9 @@ export default async function LocaleLayout({
         <link rel="preconnect" href="https://api.anthropic.com" />
         <link rel="preconnect" href="https://www.youtube.com" />
         <link rel="preconnect" href="https://i.ytimg.com" />
-        <link rel="alternate" hrefLang="it" href="https://www.printsolutionsrl.it" />
-        <link rel="alternate" hrefLang="en" href="https://www.printsolutionsrl.it/en" />
-        <link rel="alternate" hrefLang="x-default" href="https://www.printsolutionsrl.it" />
+        <link rel="alternate" hrefLang="it" href="https://www.printsolution.it" />
+        <link rel="alternate" hrefLang="en" href="https://www.printsolution.it/en" />
+        <link rel="alternate" hrefLang="x-default" href="https://www.printsolution.it" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}

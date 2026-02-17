@@ -158,7 +158,7 @@ export default function Header() {
               </Link>
             )
           )}
-          <a href={`mailto:info@printsolutionsrl.it?subject=${emailSubject}&body=${emailBody}`} className="btn-primary ml-3 text-sm !py-2 !px-5 animate-pulse-subtle whitespace-nowrap">{t("requestDemo")}</a>
+          <a href={`mailto:info@printsolution.it?subject=${emailSubject}&body=${emailBody}`} className="btn-primary ml-3 text-sm !py-2 !px-5 animate-pulse-subtle whitespace-nowrap">{t("requestDemo")}</a>
           <LanguageSwitcher scrolled={scrolled} />
         </nav>
 
@@ -237,7 +237,7 @@ export default function Header() {
                onClick={() => setMobileOpen(false)}>
               🛒 {t("eShopConsumables")}
             </Link>
-            <a href={`mailto:info@printsolutionsrl.it?subject=${emailSubject}&body=${emailBody}`}
+            <a href={`mailto:info@printsolution.it?subject=${emailSubject}&body=${emailBody}`}
                className="block w-full text-center py-4 mt-3 bg-gradient-to-r from-cyan-500 to-cyan-600 text-white font-semibold rounded-full shadow-lg text-lg"
                onClick={() => setMobileOpen(false)}>
               {t("requestDemo")} →

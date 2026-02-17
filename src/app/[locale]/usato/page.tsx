@@ -241,7 +241,7 @@ export default async function UsatoPage() {
                   </ul>
 
                   <a
-                    href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Informazioni%20Usato&body=Buongiorno%2C%0A%0AVorrei%20informazioni%20sui%20prodotti%20usato.%0A%0AGrazie"
+                    href="mailto:info@printsolution.it?subject=Richiesta%20Informazioni%20Usato&body=Buongiorno%2C%0A%0AVorrei%20informazioni%20sui%20prodotti%20usato.%0A%0AGrazie"
                     className="btn-primary inline-flex items-center !rounded-full !px-8 !py-3"
                   >
                     {it ? 'Richiedi Informazioni' : 'Request Information'}
@@ -270,7 +270,7 @@ export default async function UsatoPage() {
                   ? 'Valutiamo il tuo usato per una permuta con le nostre macchine nuove. Contattaci per una valutazione gratuita.'
                   : 'We evaluate your used equipment for trade-in towards our new machines. Contact us for a free assessment.'}
               </p>
-              <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Informazioni%20Print%20Solution&body=Buongiorno%2C%0A%0AVorrei%20ricevere%20informazioni.%0A%0AGrazie" className="inline-flex items-center justify-center px-8 py-4 bg-white text-orange-600 font-bold rounded-full hover:bg-yellow-50 transition-all duration-300 shadow-lg text-lg">{it ? 'Contattaci per una Valutazione' : 'Contact Us for an Assessment'}</a>
+              <a href="mailto:info@printsolution.it?subject=Richiesta%20Informazioni%20Print%20Solution&body=Buongiorno%2C%0A%0AVorrei%20ricevere%20informazioni.%0A%0AGrazie" className="inline-flex items-center justify-center px-8 py-4 bg-white text-orange-600 font-bold rounded-full hover:bg-yellow-50 transition-all duration-300 shadow-lg text-lg">{it ? 'Contattaci per una Valutazione' : 'Contact Us for an Assessment'}</a>
             </div>
           </div>
         </div>

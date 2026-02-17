@@ -167,7 +167,7 @@ export default function ContattiClient() {
                   </div>
                   {status === "error" && (
                     <div className="bg-red-50 text-red-600 text-sm p-3 rounded-xl">
-                      {locale === 'it' ? 'Si è verificato un errore. Riprova o scrivici a info@printsolutionsrl.it' : 'An error occurred. Please try again or email us at info@printsolutionsrl.it'}
+                      {locale === 'it' ? 'Si è verificato un errore. Riprova o scrivici a info@printsolution.it' : 'An error occurred. Please try again or email us at info@printsolution.it'}
                     </div>
                   )}
                   <button
@@ -214,8 +214,8 @@ export default function ContattiClient() {
                         <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg>
                       ),
                       title: "Email",
-                      content: "info@printsolutionsrl.it",
-                      href: "mailto:info@printsolutionsrl.it",
+                      content: "info@printsolution.it",
+                      href: "mailto:info@printsolution.it",
                     },
                   ].map((c) => (
                     <div key={c.title} className="flex items-start gap-4 bg-surface-50 rounded-xl p-4">

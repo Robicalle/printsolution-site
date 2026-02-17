@@ -34,20 +34,20 @@ const articleJsonLd = {
   publisher: {
     "@type": "Organization",
     name: "Print Solution S.r.l.",
-    logo: { "@type": "ImageObject", url: "https://www.printsolutionsrl.it/logo.png" },
+    logo: { "@type": "ImageObject", url: "https://www.printsolution.it/logo.png" },
   },
   datePublished: "2026-02-03",
   dateModified: "2026-02-10",
-  mainEntityOfPage: "https://www.printsolutionsrl.it/blog/stampa-digitale-cartone-ondulato-vs-flessografia",
+  mainEntityOfPage: "https://www.printsolution.it/blog/stampa-digitale-cartone-ondulato-vs-flessografia",
 };
 
 const breadcrumbJsonLd = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.printsolutionsrl.it" },
-    { "@type": "ListItem", position: 2, name: "Blog", item: "https://www.printsolutionsrl.it/blog" },
-    { "@type": "ListItem", position: 3, name: "Stampa Digitale vs Flessografia", item: "https://www.printsolutionsrl.it/blog/stampa-digitale-cartone-ondulato-vs-flessografia" },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.printsolution.it" },
+    { "@type": "ListItem", position: 2, name: "Blog", item: "https://www.printsolution.it/blog" },
+    { "@type": "ListItem", position: 3, name: "Stampa Digitale vs Flessografia", item: "https://www.printsolution.it/blog/stampa-digitale-cartone-ondulato-vs-flessografia" },
   ],
 };
 
@@ -153,7 +153,7 @@ export default async function ArticleDigitaleVsFlessoPage() {
               pigmentati a base acqua, eco-friendly e privi di solventi.
             </p>
             <p>
-              Con 7 configurazioni disponibili (da 1 a 8 testine), la macchina cresce con il tuo business.
+              Con 6 configurazioni disponibili (da 2 a 6 testine), la macchina cresce con il tuo business.
             </p>
 
             <h2 className="text-2xl font-bold text-dark-800 mt-10 mb-4">Conclusione</h2>
@@ -167,7 +167,7 @@ export default async function ArticleDigitaleVsFlessoPage() {
 
           <div className="mt-12 pt-8 border-t border-gray-100 flex flex-col sm:flex-row gap-4 justify-between items-center">
             <Link href="/blog" className="text-cyan-500 font-semibold text-sm hover:underline">{locale === 'it' ? '← Torna al Blog' : '← Back to Blog'}</Link>
-            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Informazioni%20Print%20Solution&body=Buongiorno%2C%0A%0AVorrei%20ricevere%20informazioni.%0A%0AGrazie" className="btn-primary text-sm">{locale === 'it' ? 'Richiedi Info sull&apos;EDM-650X' : 'Request EDM-650X Info'}</a>
+            <a href="mailto:info@printsolution.it?subject=Richiesta%20Informazioni%20Print%20Solution&body=Buongiorno%2C%0A%0AVorrei%20ricevere%20informazioni.%0A%0AGrazie" className="btn-primary text-sm">{locale === 'it' ? 'Richiedi Info sull&apos;EDM-650X' : 'Request EDM-650X Info'}</a>
           </div>
         </div>
       </article>

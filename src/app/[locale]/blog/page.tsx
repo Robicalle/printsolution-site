@@ -267,7 +267,7 @@ export default async function BlogPage() {
           <p className="text-gray-500 mb-8">
             {locale === 'it' ? 'Contattaci per ricevere aggiornamenti sulle novità del settore e le nostre soluzioni.' : 'Contact us to receive updates on industry news and our solutions.'}
           </p>
-          <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Informazioni%20Print%20Solution&body=Buongiorno%2C%0A%0AVorrei%20ricevere%20informazioni.%0A%0AGrazie" className="btn-primary">{locale === 'it' ? 'Contattaci' : 'Contact Us'}</a>
+          <a href="mailto:info@printsolution.it?subject=Richiesta%20Informazioni%20Print%20Solution&body=Buongiorno%2C%0A%0AVorrei%20ricevere%20informazioni.%0A%0AGrazie" className="btn-primary">{locale === 'it' ? 'Contattaci' : 'Contact Us'}</a>
         </div>
       </section>
     </>

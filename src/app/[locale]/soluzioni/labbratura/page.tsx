@@ -138,7 +138,7 @@ export default async function LabbraturaPage() {
                 </ul>
 
                 <div className="flex flex-wrap gap-3">
-                  <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20RobotJet&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20del%20RobotJet.%0A%0AGrazie" className="btn-primary text-sm">
+                  <a href="mailto:info@printsolution.it?subject=Richiesta%20Consulenza%20RobotJet&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20del%20RobotJet.%0A%0AGrazie" className="btn-primary text-sm">
                         {locale === 'it' ? 'Consulenza gratuita' : 'Free consultation'}
                     <svg className="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
                   </a>
@@ -188,7 +188,7 @@ export default async function LabbraturaPage() {
                 </ul>
 
                 <div className="flex flex-wrap gap-3">
-                  <a href={`mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20${encodeURIComponent(p.name)}&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20${encodeURIComponent(p.name)}.%0A%0AGrazie`} className="btn-primary text-sm">
+                  <a href={`mailto:info@printsolution.it?subject=Richiesta%20Consulenza%20${encodeURIComponent(p.name)}&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20${encodeURIComponent(p.name)}.%0A%0AGrazie`} className="btn-primary text-sm">
                         {locale === 'it' ? 'Consulenza gratuita' : 'Free consultation'}
                     <svg className="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
                   </a>
@@ -213,7 +213,7 @@ export default async function LabbraturaPage() {
                 {locale === 'it' ? 'Contattaci per una consulenza gratuita o inviaci i tuoi libri per ricevere campioni di labbratura.' : 'Contact us for a free consultation or send us your books to receive edge printing samples.'}
               </p>
               <a
-                href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20RobotJet%20Labbratura&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20del%20RobotJet%20per%20labbratura%20libri.%0A%0AGrazie"
+                href="mailto:info@printsolution.it?subject=Richiesta%20Consulenza%20RobotJet%20Labbratura&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20del%20RobotJet%20per%20labbratura%20libri.%0A%0AGrazie"
                 className="inline-flex items-center justify-center px-8 py-4 bg-white text-cyan-600 font-bold rounded-full hover:bg-yellow-400 hover:text-dark-800 transition-all duration-300 shadow-lg text-lg"
               >
                 {locale === 'it' ? 'Consulenza gratuita' : 'Free consultation'}

@@ -10,7 +10,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.printsolutionsrl.it"),
+  metadataBase: new URL("https://www.printsolution.it"),
   title: {
     default: "Print Solution — Soluzioni Digitali per Stampa e Packaging",
     template: "%s | Print Solution",

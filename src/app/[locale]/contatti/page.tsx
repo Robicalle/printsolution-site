@@ -26,7 +26,34 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
+const contactPageJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  name: "Contatti - Print Solution S.r.l.",
+  url: "https://www.printsolution.it/contatti",
+  mainEntity: {
+    "@type": "Organization",
+    name: "Print Solution S.r.l.",
+    telephone: "+39-0141-352540",
+    email: "info@printsolution.it",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Asti",
+      addressRegion: "Piemonte",
+      addressCountry: "IT",
+    },
+  },
+};
+
 export default async function ContattiPage() {
   const locale = await getLocale();
-  return <ContattiClient />;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(contactPageJsonLd) }}
+      />
+      <ContattiClient />
+    </>
+  );
 }

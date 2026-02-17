@@ -39,7 +39,8 @@ const productJsonLd = {
   brand: { "@type": "Brand", name: "Print Solution" },
   description:
     "Stampante digitale per labbratura e personalizzazione del bordo delle pagine di libri, quaderni, agende e block notes. 400 pezzi/ora, CMYK single-pass, 1200 dpi.",
-  image: "https://www.printsolutionsrl.it/images/products/book-edge-printer.png",
+  image: "https://www.printsolution.it/images/products/book-edge-printer.png",
+  manufacturer: { "@type": "Organization", name: "Print Solution S.r.l." },
   offers: {
     "@type": "Offer",
     availability: "https://schema.org/InStock",
@@ -52,9 +53,9 @@ const breadcrumbJsonLd = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.printsolutionsrl.it" },
-    { "@type": "ListItem", position: 2, name: "Prodotti", item: "https://www.printsolutionsrl.it/soluzioni/packaging" },
-    { "@type": "ListItem", position: 3, name: "Robotjet Book Edge Printer", item: "https://www.printsolutionsrl.it/prodotti/robotjet" },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.printsolution.it" },
+    { "@type": "ListItem", position: 2, name: "Prodotti", item: "https://www.printsolution.it/soluzioni/packaging" },
+    { "@type": "ListItem", position: 3, name: "Robotjet Book Edge Printer", item: "https://www.printsolution.it/prodotti/robotjet" },
   ],
 };
 
@@ -169,7 +170,7 @@ export default async function () {
                 {locale === 'it' ? 'Stampante digitale rivoluzionaria per la labbratura di libri, quaderni, agende e block notes. 400 pezzi/ora, CMYK single-pass con teste HP A3, risoluzione fino a 1200 dpi.' : 'Revolutionary digital printer for book edge printing on books, notebooks, planners and notepads. 400 pcs/hour, CMYK single-pass with HP A3 printheads, up to 1200 dpi resolution.'}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20Robotjet&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20Robotjet.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">{locale === 'it' ? 'Consulenza gratuita→' : 'Free consultation→'}</a>
+                <a href="mailto:info@printsolution.it?subject=Richiesta%20Consulenza%20Robotjet&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20Robotjet.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">{locale === 'it' ? 'Consulenza gratuita→' : 'Free consultation→'}</a>
               </div>
           </div>
         </div>

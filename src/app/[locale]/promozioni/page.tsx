@@ -54,7 +54,7 @@ export default async function PromozioniPage() {
                 : 'There are currently no active promotions. Contact us to discover exclusive offers and stay updated on upcoming opportunities.'}
             </p>
             <a
-              href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Offerte%20Riservate&body=Buongiorno%2C%0A%0AVorrei%20informazioni%20sulle%20offerte%20in%20corso.%0A%0AGrazie"
+              href="mailto:info@printsolution.it?subject=Richiesta%20Offerte%20Riservate&body=Buongiorno%2C%0A%0AVorrei%20informazioni%20sulle%20offerte%20in%20corso.%0A%0AGrazie"
               className="btn-primary inline-flex items-center !rounded-full !px-8 !py-3 text-lg"
             >
               {it ? 'Contattaci per le Offerte Riservate' : 'Contact Us for Exclusive Offers'}

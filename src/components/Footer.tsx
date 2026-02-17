@@ -89,8 +89,8 @@ export default function Footer() {
                   </a>
                 </p>
                 <p>
-                  <a href="mailto:info@printsolutionsrl.it" className="hover:text-white transition-colors duration-200">
-                    info@printsolutionsrl.it
+                  <a href="mailto:info@printsolution.it" className="hover:text-white transition-colors duration-200">
+                    info@printsolution.it
                   </a>
                 </p>
               </div>

@@ -28,7 +28,7 @@ export default async function CookiePage() {
 
             <h3>Premessa</h3>
             <p>
-              La presente cookie policy è resa per il sito www.printsolutionsrl.it (Sito). Il
+              La presente cookie policy è resa per il sito www.printsolution.it (Sito). Il
               documento è stato redatto tenendo conto di quanto indicato dal Regolamento europeo
               679/2016 in materia di protezione dei dati personali (GDPR), dal Codice della Privacy
               (D. Lgs. 30 giugno 2003 n. 196) e delle Linee Guida del Garante Privacy (soprattutto
@@ -167,7 +167,7 @@ export default async function CookiePage() {
 
           <h3>Introduction</h3>
           <p>
-            This cookie policy applies to the website www.printsolutionsrl.it (the
+            This cookie policy applies to the website www.printsolution.it (the
             &quot;Website&quot;). This document has been drafted in accordance with the European
             Regulation 679/2016 on the protection of personal data (GDPR), the Italian Privacy Code
             (Legislative Decree No. 196 of June 30, 2003) and the Italian Data Protection Authority

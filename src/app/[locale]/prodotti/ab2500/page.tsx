@@ -40,7 +40,7 @@ const ab2500JsonLd = {
   brand: { "@type": "Brand", name: "Print Solution" },
   description:
     "Box maker automatico all-in-one per taglio, scanalatura, cordonatura e incollaggio di scatole in cartone ondulato. 500-600 scatole/ora.",
-  image: "https://www.printsolutionsrl.it/images/products/ab2500.png",
+  image: "https://www.printsolution.it/images/products/ab2500.png",
   offers: {
     "@type": "Offer",
     availability: "https://schema.org/InStock",
@@ -53,9 +53,9 @@ const breadcrumbJsonLd = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.printsolutionsrl.it" },
-    { "@type": "ListItem", position: 2, name: "Prodotti", item: "https://www.printsolutionsrl.it/soluzioni/packaging" },
-    { "@type": "ListItem", position: 3, name: "Anypack AB2500", item: "https://www.printsolutionsrl.it/prodotti/ab2500" },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.printsolution.it" },
+    { "@type": "ListItem", position: 2, name: "Prodotti", item: "https://www.printsolution.it/soluzioni/packaging" },
+    { "@type": "ListItem", position: 3, name: "Anypack AB2500", item: "https://www.printsolution.it/prodotti/ab2500" },
   ],
 };
 
@@ -156,7 +156,7 @@ export default async function () {
               {locale === 'it' ? "Box maker automatico all-in-one. Taglio, scanalatura, cordonatura e incollaggio in un'unica macchina. 500-600 scatole/ora con cambio formato in 10 secondi." : "All-in-one automatic box maker. Cutting, creasing, scoring and gluing in a single machine. 500–600 boxes/hour with format change in 10 seconds."}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20Anypack%20AB2500&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20Anypack%20AB2500.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">{locale === 'it' ? 'Consulenza gratuita→' : 'Free consultation→'}</a>
+              <a href="mailto:info@printsolution.it?subject=Richiesta%20Consulenza%20Anypack%20AB2500&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20Anypack%20AB2500.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">{locale === 'it' ? 'Consulenza gratuita→' : 'Free consultation→'}</a>
             </div>
           </div>
         </div>
@@ -252,7 +252,7 @@ export default async function () {
             {locale === 'it' ? "Scopri come l'AB2500 può rivoluzionare la tua linea di produzione. Vieni a vederla nella nostra sala demo." : "Discover how the AB2500 can revolutionise your production line. Come see it in our demo room."}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20Anypack%20AB2500&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20Anypack%20AB2500.%0A%0AGrazie" className="btn-primary text-lg">{locale === 'it' ? 'Consulenza gratuita→' : 'Free consultation→'}</a>
+            <a href="mailto:info@printsolution.it?subject=Richiesta%20Consulenza%20Anypack%20AB2500&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20Anypack%20AB2500.%0A%0AGrazie" className="btn-primary text-lg">{locale === 'it' ? 'Consulenza gratuita→' : 'Free consultation→'}</a>
           </div>
         </div>
       </section>

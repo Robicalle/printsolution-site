@@ -138,6 +138,11 @@
     "placeholder": "Scrivi un messaggio...",
     "send": "Invia messaggio",
     "close": "Chiudi chat",
-    "open": "Apri chat assistente"
+    "open": "Apri chat assistente",
+    "clearHistory": "Cancella cronologia",
+    "quickReply1": "Che stampante mi serve?",
+    "quickReply2": "Stampa su cartone ondulato",
+    "quickReply3": "Prenota una demo",
+    "quickReply4": "Cerco consumabili"
   }
 }

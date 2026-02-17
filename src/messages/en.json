@@ -138,6 +138,11 @@
     "placeholder": "Type a message...",
     "send": "Send message",
     "close": "Close chat",
-    "open": "Open chat assistant"
+    "open": "Open chat assistant",
+    "clearHistory": "Clear history",
+    "quickReply1": "Which printer do I need?",
+    "quickReply2": "Printing on corrugated board",
+    "quickReply3": "Book a demo",
+    "quickReply4": "Looking for consumables"
   }
 }

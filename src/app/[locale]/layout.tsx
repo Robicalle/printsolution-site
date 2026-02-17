@@ -13,6 +13,7 @@ import BackToTop from "@/components/BackToTop";
 import ScrollReveal from "@/components/ScrollReveal";
 import CookieBanner from "@/components/CookieBanner";
 import ChatWidget from "@/components/ChatWidget";
+import BottomNavBar from "@/components/BottomNavBar";
 import { CartProvider } from "@/lib/cart-context";
 import CartSidebar from "@/components/CartSidebar";
 import CartButton from "@/components/CartButton";
@@ -111,6 +112,7 @@ export default async function LocaleLayout({
             <ChatWidget />
             <CartSidebar />
             <CartButton />
+            <BottomNavBar />
           </CartProvider>
         </NextIntlClientProvider>
       </body>

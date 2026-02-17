@@ -2,7 +2,7 @@
 
 export default function MobileCTABar() {
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-[9997] h-16 bg-white shadow-[0_-2px_10px_rgba(0,0,0,0.1)] flex items-center justify-center gap-3 px-4 lg:hidden">
+    <div className="fixed bottom-14 left-0 right-0 z-[9996] h-14 bg-white/95 backdrop-blur-sm shadow-[0_-1px_6px_rgba(0,0,0,0.08)] flex items-center justify-center gap-3 px-4 lg:hidden">
       <a
         href="tel:+390249439417"
         className="flex-1 flex items-center justify-center gap-2 h-11 bg-white border-2 border-gray-200 text-gray-700 font-semibold rounded-full text-sm"

@@ -26,7 +26,7 @@
   {
     "source": "/prodotti/greenbox-evo",
     "title": "GreenBox EVO - Applicazioni e Materiali Supportati",
-    "content": "GreenBox EVO stampa su: cartone ondulato, cartoncino, carta kraft, sacchetti di carta, shopper di carta, buste per spedizioni, juta, carta non trattata. Applicazioni: packaging personalizzato per e-commerce, scatole regalo, shopper per negozi e brand, buste spedizione con logo, packaging alimentare (inchiostri a base acqua), packaging cosmetica, packaging promozionale per eventi. Perfetta per chi cerca una stampante per sacchetti di carta in quadricromia CMYK. Non richiede lastre o cliché: stampa digitale diretta on-demand.",
+    "content": "GreenBox EVO stampa su: cartone ondulato, cartoncino, carta kraft, sacchetti di carta, shopper di carta, buste per spedizioni, juta, carta non trattata. Applicazioni: packaging personalizzato per e-commerce, scatole regalo, shopper per negozi e brand, buste spedizione con logo, packaging alimentare (inchiostri a base acqua), packaging cosmetica, packaging promozionale per eventi. Perfetta per chi cerca una stampante per sacchetti di carta in quadricromia CMYK. Non richiede lastre o cliché: stampa digitale diretta on-demand. ATTENZIONE: GreenBox EVO NON stampa bene su sacchetti colorati. I risultati migliori si ottengono su supporti bianchi o kraft naturale (chiaro). Su sacchetti di colore scuro o colorati gli inchiostri a base acqua non coprono e il risultato non è soddisfacente.",
     "category": "prodotto"
   },
   {
@@ -68,7 +68,7 @@
   {
     "source": "/prodotti/edm-650x",
     "title": "EDM-650X - Sistema di Stampa Inkjet Industriale per Cartone",
-    "content": "EDM-650X è un sistema di stampa inkjet single-pass industriale per cartone ondulato e packaging di grande formato. Da 2 a 6 teste HP da 30 cm ciascuna, risoluzione 1200x1200 dpi, velocità fino a 30 m/min. Larghezza stampa da 60 a 180 cm, passaggio carta da 120 a 250 cm. 6 configurazioni disponibili. Inchiostri a base acqua. Ideale per produzione industriale di scatole stampate, display, espositori di grande formato. Integrazione in linee di produzione esistenti. Brand: Anypack.",
+    "content": "EDM-650X è un sistema di stampa inkjet single-pass industriale per cartone ondulato e packaging di grande formato. Da 2 a 6 teste HP da 30 cm ciascuna, risoluzione 1200x1200 dpi, velocità fino a 30 m/min. Larghezza stampa da 60 a 180 cm, passaggio carta da 120 a 250 cm. 6 configurazioni disponibili. Inchiostri a base acqua. Ideale per produzione industriale di scatole stampate, display, espositori di grande formato. Integrazione in linee di produzione esistenti. Brand: Anypack. ATTENZIONE: EDM-650X NON stampa bene su sacchetti colorati. I risultati migliori si ottengono su supporti bianchi o kraft naturale (chiaro). Su sacchetti di colore scuro o colorati gli inchiostri a base acqua non coprono e il risultato non è soddisfacente.",
     "category": "prodotto"
   },
   {
@@ -208,5 +208,10 @@
     "title": "E-Shop Consumabili Print Solution - Acquisto Online",
     "content": "Print Solution dispone di un e-shop online per l'acquisto di consumabili originali: cartucce, inchiostri, toner, testine di stampa e ricambi per tutte le stampanti distribuite. Disponibili consumabili per: GreenBox, PrintBox 42, NS PRO/EVO, NS MULTI/LG, NS ATOM, ANY-002, Afinia LT5C, L901 Plus, L801/L801+, L701, VP700, i700, i900, 300X, CX1000/CX1200, LX2000, LX900, Serie DP-SE, Serie DP41xx. Spedizione in 24/48 ore per ordini effettuati entro le 12:00. Solo prodotti originali garantiti. Pagamento online sicuro con carta di credito. Visita la sezione E-Shop del sito.",
     "category": "azienda"
+  },
+  {
+    "source": "/prodotti/greenbox-evo",
+    "title": "GreenBox EVO e EDM-650X - Limitazioni Sacchetti Colorati",
+    "content": "IMPORTANTE: GreenBox EVO e EDM-650X NON stampano bene su sacchetti colorati. Queste macchine usano inchiostri a base acqua (pigmentati e dye) che non hanno potere coprente su superfici colorate o scure. Per risultati ottimali usare sempre supporti bianchi, kraft naturale o comunque di colore chiaro. Su sacchetti neri, blu, rossi o altri colori scuri la stampa risulta poco visibile e di scarsa qualità. Questa limitazione vale per entrambe le macchine dato che condividono la stessa piattaforma HP PageWide."
   }
 ]

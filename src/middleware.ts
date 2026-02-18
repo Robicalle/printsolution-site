@@ -6,6 +6,6 @@ export default createMiddleware(routing);
 export const config = {
   matcher: [
     // Match all pathnames except Next.js internals and static files
-    "/((?!_next|api|images|videos|fonts|favicon.ico|sitemap.xml|robots.txt|.*\\..*).*)",
+    "/((?!_next|api|studio|images|videos|fonts|favicon.ico|sitemap.xml|robots.txt|.*\\..*).*)",
   ],
 };

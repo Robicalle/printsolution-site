@@ -118,7 +118,7 @@ function Solutions({ locale }: { locale: string }) {
       title: locale === 'it' ? "Packaging" : "Packaging",
       desc: locale === 'it' ? "Box maker automatici, stampanti single-pass per cartone ondulato, sistemi di fustellatura e incollaggio digitale." : "Automatic box makers, single-pass printers for corrugated cardboard, digital die-cutting and gluing systems.",
       href: "/soluzioni/packaging",
-      image: "/images/products/boxes.webp",
+      image: "/images/products/boxes-nobg.png",
       gradient: "from-cyan-500 to-cyan-400",
       accentBorder: "border-l-cyan-500",
     },
@@ -163,8 +163,8 @@ function Solutions({ locale }: { locale: string }) {
               className={`group card-modern p-5 sm:p-8 lg:p-10 hover:-translate-y-2 hover:shadow-2xl border-l-4 ${s.accentBorder} flex flex-col transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
               style={{ transitionDelay: visible ? `${i * 150}ms` : '0ms' }}
             >
-              <div className="w-16 h-16 rounded-2xl overflow-hidden mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
-                <img src={s.image} alt={s.title} className="w-full h-full object-cover" />
+              <div className="w-full aspect-[4/3] rounded-2xl overflow-hidden mb-6 shadow-lg group-hover:scale-[1.03] transition-transform duration-300 bg-white">
+                <img src={s.image} alt={s.title} className="w-full h-full object-contain p-3" />
               </div>
               <h3 className="text-xl font-bold text-dark-800 mb-3 group-hover:text-cyan-500 transition-colors">
                 {s.title}

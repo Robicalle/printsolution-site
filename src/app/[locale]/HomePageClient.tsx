@@ -118,11 +118,7 @@ function Solutions({ locale }: { locale: string }) {
       title: locale === 'it' ? "Packaging" : "Packaging",
       desc: locale === 'it' ? "Box maker automatici, stampanti single-pass per cartone ondulato, sistemi di fustellatura e incollaggio digitale." : "Automatic box makers, single-pass printers for corrugated cardboard, digital die-cutting and gluing systems.",
       href: "/soluzioni/packaging",
-      icon: (
-        <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-          <path strokeLinecap="round" strokeLinejoin="round" d="M21 7.5l-2.25-1.313M21 7.5v2.25m0-2.25l-2.25 1.313M3 7.5l2.25-1.313M3 7.5l2.25 1.313M3 7.5v2.25m9 3l2.25-1.313M12 12.75l-2.25-1.313M12 12.75V15m0 6.75l2.25-1.313M12 21.75V15m0 0l-2.25-1.313M3 16.5v2.25l2.25 1.313M21 16.5v2.25l-2.25 1.313M12 3v3.75m0 0l2.25 1.313M12 6.75L9.75 8.063" />
-        </svg>
-      ),
+      image: "/images/products/boxes.webp",
       gradient: "from-cyan-500 to-cyan-400",
       accentBorder: "border-l-cyan-500",
     },
@@ -130,13 +126,7 @@ function Solutions({ locale }: { locale: string }) {
       title: locale === 'it' ? "Etichette" : "Labels",
       desc: locale === 'it' ? "Stampanti per etichette in bobina e a foglio con tecnologia inkjet e laser a colori per ogni esigenza produttiva." : "Roll-fed and sheet-fed label printers with colour inkjet and laser technology for every production need.",
       href: "/soluzioni/etichette",
-      icon: (
-        <svg className="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
-          <rect x="3" y="3" width="18" height="18" rx="2" strokeLinecap="round" strokeLinejoin="round" />
-          <path d="M3 9h18M9 9v12" strokeLinecap="round" strokeLinejoin="round" />
-          <circle cx="6" cy="6" r="1" fill="currentColor" stroke="none" />
-        </svg>
-      ),
+      image: "/images/hero-labels.webp",
       gradient: "from-magenta-500 to-magenta-400",
       accentBorder: "border-l-magenta-500",
     },
@@ -144,14 +134,7 @@ function Solutions({ locale }: { locale: string }) {
       title: locale === 'it' ? "Shopper & Packaging di Lusso" : "Shoppers & Luxury Packaging",
       desc: locale === 'it' ? "Stampa hot foil e digitale per shopper e packaging premium con finiture metalliche." : "Hot foil and digital printing for premium shoppers and packaging with metallic finishes.",
       href: "/soluzioni/shopper",
-      icon: (
-        <svg className="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
-          <path d="M6 20V8l6-5 6 5v12H6z" strokeLinecap="round" strokeLinejoin="round" />
-          <path d="M9 3.5V2M15 3.5V2" strokeLinecap="round" />
-          <path d="M6 20h12" strokeLinecap="round" />
-          <path d="M9.5 12h5M9.5 15h5" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-      ),
+      image: "/images/shopper-d1.jpg",
       gradient: "from-amber-500 to-amber-400",
       accentBorder: "border-l-amber-500",
     },
@@ -159,14 +142,7 @@ function Solutions({ locale }: { locale: string }) {
       title: locale === 'it' ? "Labbratura Libri" : "Book Edge Printing",
       desc: locale === 'it' ? "Stampa digitale sui bordi di libri, quaderni e block notes per personalizzazioni uniche e di alta qualità." : "Digital printing on book edges, notebooks and notepads for unique, high-quality customisation.",
       href: "/soluzioni/labbratura",
-      icon: (
-        <svg className="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
-          <path d="M4 19.5V4.5A1.5 1.5 0 015.5 3H14l5 5v11.5a1.5 1.5 0 01-1.5 1.5h-12A1.5 1.5 0 014 19.5z" strokeLinecap="round" strokeLinejoin="round" />
-          <path d="M14 3v5h5" strokeLinecap="round" strokeLinejoin="round" />
-          <path d="M8 13h7M8 16h5" strokeLinecap="round" />
-          <path d="M2 6v14a2 2 0 002 2h10" strokeLinecap="round" strokeLinejoin="round" strokeDasharray="2 2" />
-        </svg>
-      ),
+      image: "/images/products/book-edge-detail1.png",
       gradient: "from-violet-500 to-violet-400",
       accentBorder: "border-l-violet-500",
     },
@@ -187,8 +163,8 @@ function Solutions({ locale }: { locale: string }) {
               className={`group card-modern p-5 sm:p-8 lg:p-10 hover:-translate-y-2 hover:shadow-2xl border-l-4 ${s.accentBorder} flex flex-col transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
               style={{ transitionDelay: visible ? `${i * 150}ms` : '0ms' }}
             >
-              <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${s.gradient} flex items-center justify-center text-white mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                {s.icon}
+              <div className="w-16 h-16 rounded-2xl overflow-hidden mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <img src={s.image} alt={s.title} className="w-full h-full object-cover" />
               </div>
               <h3 className="text-xl font-bold text-dark-800 mb-3 group-hover:text-cyan-500 transition-colors">
                 {s.title}

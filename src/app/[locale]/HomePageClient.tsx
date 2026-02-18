@@ -142,7 +142,7 @@ function Solutions({ locale }: { locale: string }) {
     {
       title: locale === 'it' ? "Shopper & Packaging di Lusso" : "Shoppers & Luxury Packaging",
       desc: locale === 'it' ? "Stampa hot foil e digitale per shopper e packaging premium con finiture metalliche." : "Hot foil and digital printing for premium shoppers and packaging with metallic finishes.",
-      href: "/soluzioni#shopper",
+      href: "/soluzioni/shopper",
       icon: (
         <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
           <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
@@ -154,7 +154,7 @@ function Solutions({ locale }: { locale: string }) {
     {
       title: locale === 'it' ? "Labbratura Libri" : "Book Edge Printing",
       desc: locale === 'it' ? "Stampa digitale sui bordi di libri, quaderni e block notes per personalizzazioni uniche e di alta qualità." : "Digital printing on book edges, notebooks and notepads for unique, high-quality customisation.",
-      href: "/soluzioni#labbratura",
+      href: "/soluzioni/labbratura",
       icon: (
         <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
           <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />

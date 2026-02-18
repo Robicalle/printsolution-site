@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ContattiClient from "./ContattiClient";
 import { getLocale } from "next-intl/server";
+import { getSiteSettings } from "@/sanity/lib/fetchers";
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
@@ -47,11 +48,24 @@ const contactPageJsonLd = {
 
 export default async function ContattiPage() {
   const locale = await getLocale();
+  const settings = await getSiteSettings().catch(() => null);
+
+  const dynamicJsonLd = settings
+    ? {
+        ...contactPageJsonLd,
+        mainEntity: {
+          ...contactPageJsonLd.mainEntity,
+          telephone: settings.contact?.phone ? `+39-${settings.contact.phone.replace(/\s/g, "-")}` : contactPageJsonLd.mainEntity.telephone,
+          email: settings.contact?.email || contactPageJsonLd.mainEntity.email,
+        },
+      }
+    : contactPageJsonLd;
+
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(contactPageJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(dynamicJsonLd) }}
       />
       <ContattiClient />
     </>

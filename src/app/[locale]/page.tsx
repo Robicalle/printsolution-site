@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import HomePageClient from "./HomePageClient";
+import FaqSection from "@/components/FaqSection";
 import { getLocale } from "next-intl/server";
+import { getSiteSettings } from "@/sanity/lib/fetchers";
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
@@ -56,14 +58,26 @@ const homepageJsonLd = {
   ],
 };
 
-export default function HomePage() {
+export default async function HomePage() {
+  const settings = await getSiteSettings().catch(() => null);
+
+  const dynamicJsonLd = settings
+    ? {
+        ...homepageJsonLd,
+        name: settings.companyName || homepageJsonLd.name,
+        telephone: settings.contact?.phone ? `+39-${settings.contact.phone.replace(/\s/g, "-")}` : homepageJsonLd.telephone,
+        email: settings.contact?.email,
+      }
+    : homepageJsonLd;
+
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(homepageJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(dynamicJsonLd) }}
       />
       <HomePageClient />
+      <FaqSection />
     </>
   );
 }

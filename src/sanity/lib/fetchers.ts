@@ -4,9 +4,11 @@ import {
   productBySlugQuery,
   postsQuery,
   postBySlugQuery,
+  pageBySlugQuery,
   solutionsQuery,
   solutionBySlugQuery,
   shopProductsQuery,
+  shopProductBySlugQuery,
   faqsQuery,
   siteSettingsQuery,
 } from "./queries";
@@ -53,6 +55,16 @@ export async function getShopProductsByCategory(category: string) {
 // ── FAQ ───────────────────────────────────────────────────
 export async function getFaqs() {
   return client.fetch(faqsQuery, {}, { next: { revalidate: REVALIDATE } });
+}
+
+// ── Pages ─────────────────────────────────────────────────
+export async function getPageBySlug(slug: string) {
+  return client.fetch(pageBySlugQuery, { slug }, { next: { revalidate: REVALIDATE } });
+}
+
+// ── Shop Product By Slug ──────────────────────────────────
+export async function getShopProductBySlug(slug: string) {
+  return client.fetch(shopProductBySlugQuery, { slug }, { next: { revalidate: REVALIDATE } });
 }
 
 // ── Site Settings ─────────────────────────────────────────

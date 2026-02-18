@@ -17,6 +17,7 @@ import BottomNavBar from "@/components/BottomNavBar";
 import { CartProvider } from "@/lib/cart-context";
 import CartSidebar from "@/components/CartSidebar";
 import CartButton from "@/components/CartButton";
+import { getSiteSettings } from "@/sanity/lib/fetchers";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -84,6 +85,19 @@ export default async function LocaleLayout({
 
   setRequestLocale(locale);
   const messages = await getMessages();
+  const siteSettings = await getSiteSettings().catch(() => null);
+
+  // Merge siteSettings into JSON-LD if available
+  const dynamicOrgJsonLd = siteSettings
+    ? {
+        ...organizationJsonLd,
+        name: siteSettings.companyName || organizationJsonLd.name,
+        telephone: siteSettings.contact?.phone
+          ? `+39-${siteSettings.contact.phone.replace(/\s/g, "-")}`
+          : organizationJsonLd.telephone,
+        email: siteSettings.contact?.email || organizationJsonLd.email,
+      }
+    : organizationJsonLd;
 
   return (
     <html lang={locale} className={`${inter.variable} font-inter`}>
@@ -96,7 +110,7 @@ export default async function LocaleLayout({
         <link rel="alternate" hrefLang="x-default" href="https://www.printsolution.it" />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(dynamicOrgJsonLd) }}
         />
         <script
           type="application/ld+json"

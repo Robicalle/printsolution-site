@@ -5,4 +5,4 @@ import { dataset, projectId } from "../env";
 const imageBuilder = createImageUrlBuilder({ projectId, dataset });
 
 export const urlForImage = (source: Image) =>
-  imageBuilder?.image(source).auto("format").fit("max");
+  imageBuilder?.image(source).auto("format").fit("crop");

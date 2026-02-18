@@ -2,11 +2,13 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
+import { draftMode } from "next/headers";
 import { getLocale } from "next-intl/server";
 import { getSolutionBySlug, getAllSolutions } from "@/sanity/lib/fetchers";
 import { urlForImage } from "@/sanity/lib/image";
 import { PortableText } from "@portabletext/react";
 import { portableTextComponents } from "@/components/PortableTextComponents";
+import PreviewBanner from "@/components/PreviewBanner";
 
 export async function generateStaticParams() {
   try {
@@ -58,7 +60,8 @@ export default async function SolutionPage({
   const { slug } = await params;
   const locale = await getLocale();
   const it = locale === "it";
-  const solution = await getSolutionBySlug(slug);
+  const { isEnabled: isPreview } = await draftMode();
+  const solution = await getSolutionBySlug(slug, isPreview);
 
   if (!solution) notFound();
 
@@ -68,6 +71,7 @@ export default async function SolutionPage({
 
   return (
     <>
+      {isPreview && <PreviewBanner />}
       {/* Hero */}
       <section className="relative bg-hero-gradient text-white pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
         <div className="absolute top-20 right-0 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl" />

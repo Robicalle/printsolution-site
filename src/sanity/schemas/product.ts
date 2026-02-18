@@ -5,9 +5,11 @@ export default defineType({
   title: "Prodotti",
   type: "document",
   fields: [
-    defineField({ name: "name", title: "Nome", type: "string", validation: (r) => r.required() }),
+    defineField({ name: "name", title: "Nome (IT)", type: "string", validation: (r) => r.required() }),
+    defineField({ name: "name_en", title: "Nome (EN)", type: "string", description: "English name — leave empty to use Italian" }),
     defineField({ name: "slug", title: "Slug", type: "slug", options: { source: "name" }, validation: (r) => r.required() }),
-    defineField({ name: "description", title: "Descrizione", type: "blockContent" }),
+    defineField({ name: "description", title: "Descrizione (IT)", type: "blockContent" }),
+    defineField({ name: "description_en", title: "Descrizione (EN)", type: "blockContent" }),
     defineField({
       name: "specs",
       title: "Specifiche Tecniche",
@@ -43,12 +45,21 @@ export default defineType({
     }),
     defineField({
       name: "seo",
-      title: "SEO",
+      title: "SEO (IT)",
       type: "object",
       fields: [
         { name: "title", title: "Meta Title", type: "string" },
         { name: "description", title: "Meta Description", type: "text", rows: 3 },
         { name: "image", title: "OG Image", type: "image" },
+      ],
+    }),
+    defineField({
+      name: "seo_en",
+      title: "SEO (EN)",
+      type: "object",
+      fields: [
+        { name: "title", title: "Meta Title (EN)", type: "string" },
+        { name: "description", title: "Meta Description (EN)", type: "text", rows: 3 },
       ],
     }),
   ],

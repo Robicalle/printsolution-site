@@ -1,7 +1,7 @@
 "use client";
 import { useState, useMemo } from "react";
 import { Link } from "@/i18n/navigation";
-import { Product, Category, categories } from "@/lib/shop-data";
+import { Product, Category } from "@/lib/shop-data";
 import ProductGrid from "./ProductGrid";
 import QuickViewModal from "./QuickViewModal";
 import StickyCartBar from "./StickyCartBar";
@@ -28,7 +28,8 @@ function matchesFilter(product: Product, keywords: string[]): boolean {
   return keywords.some((kw) => t.includes(kw));
 }
 
-export default function CategoryPageClient({ category }: { category: Category }) {
+export default function CategoryPageClient({ category, allCategories }: { category: Category; allCategories?: Category[] }) {
+  const categories = allCategories || [category];
   const [search, setSearch] = useState("");
   const [colorFilters, setColorFilters] = useState<string[]>([]);
   const [typeFilters, setTypeFilters] = useState<string[]>([]);

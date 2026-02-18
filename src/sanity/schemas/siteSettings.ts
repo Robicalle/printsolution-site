@@ -7,7 +7,7 @@ export default defineType({
   // Singleton — only one document
   fields: [
     defineField({ name: "companyName", title: "Nome Azienda", type: "string" }),
-    defineField({ name: "logo", title: "Logo", type: "image" }),
+    defineField({ name: "logo", title: "Logo", type: "image", options: { hotspot: true } }),
     defineField({
       name: "contact",
       title: "Contatti",

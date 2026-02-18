@@ -2,12 +2,14 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
+import { draftMode } from "next/headers";
 import { getLocale } from "next-intl/server";
 import { getProductBySlug, getAllProducts } from "@/sanity/lib/fetchers";
 import { urlForImage } from "@/sanity/lib/image";
 import { PortableText } from "@portabletext/react";
 import { portableTextComponents } from "@/components/PortableTextComponents";
 import SpecsAccordion from "@/components/SpecsAccordion";
+import PreviewBanner from "@/components/PreviewBanner";
 
 export async function generateStaticParams() {
   try {
@@ -59,7 +61,8 @@ export default async function ProductPage({
   const { slug } = await params;
   const locale = await getLocale();
   const it = locale === "it";
-  const product = await getProductBySlug(slug);
+  const { isEnabled: isPreview } = await draftMode();
+  const product = await getProductBySlug(slug, isPreview);
 
   if (!product) notFound();
 
@@ -97,6 +100,7 @@ export default async function ProductPage({
 
   return (
     <>
+      {isPreview && <PreviewBanner />}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
 

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
-import { categories } from "@/lib/shop-data";
+import { getShopCategories } from "@/lib/shop-sanity";
 import { getLocale } from "next-intl/server";
 
 export const metadata: Metadata = {
@@ -9,8 +9,12 @@ export const metadata: Metadata = {
   description: "Acquista online cartucce, inchiostri e consumabili originali per la tua stampante. Spedizione in 24/48h.",
 };
 
+export const revalidate = 60;
+
 export default async function ShopPage() {
   const locale = await getLocale();
+  const categories = await getShopCategories();
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       {/* Hero */}

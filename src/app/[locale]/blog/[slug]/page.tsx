@@ -1,10 +1,12 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
+import { draftMode } from "next/headers";
 import { getLocale } from "next-intl/server";
 import { getPostBySlug, getAllPosts } from "@/sanity/lib/fetchers";
 import { urlForImage } from "@/sanity/lib/image";
 import { PortableText } from "@portabletext/react";
+import PreviewBanner from "@/components/PreviewBanner";
 
 export async function generateStaticParams() {
   try {
@@ -87,10 +89,11 @@ export default async function BlogPostPage({
 }) {
   const { slug } = await params;
   const locale = await getLocale();
+  const { isEnabled: isPreview } = await draftMode();
 
   let post: any = null;
   try {
-    post = await getPostBySlug(slug);
+    post = await getPostBySlug(slug, isPreview);
   } catch (e) {
     console.error("Failed to fetch post:", e);
   }
@@ -112,6 +115,7 @@ export default async function BlogPostPage({
 
   return (
     <>
+      {isPreview && <PreviewBanner />}
       {/* Hero */}
       <section className="relative bg-hero-gradient text-white pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
         <div className="absolute top-20 right-0 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl" />

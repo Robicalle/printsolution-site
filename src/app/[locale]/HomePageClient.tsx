@@ -120,7 +120,7 @@ function Solutions({ locale }: { locale: string }) {
       href: "/soluzioni/packaging",
       icon: (
         <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-          <path strokeLinecap="round" strokeLinejoin="round" d="m20.25 7.5-.625 10.632a2.25 2.25 0 0 1-2.247 2.118H6.622a2.25 2.25 0 0 1-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125Z" />
+          <path strokeLinecap="round" strokeLinejoin="round" d="M21 7.5l-2.25-1.313M21 7.5v2.25m0-2.25l-2.25 1.313M3 7.5l2.25-1.313M3 7.5l2.25 1.313M3 7.5v2.25m9 3l2.25-1.313M12 12.75l-2.25-1.313M12 12.75V15m0 6.75l2.25-1.313M12 21.75V15m0 0l-2.25-1.313M3 16.5v2.25l2.25 1.313M21 16.5v2.25l-2.25 1.313M12 3v3.75m0 0l2.25 1.313M12 6.75L9.75 8.063" />
         </svg>
       ),
       gradient: "from-cyan-500 to-cyan-400",
@@ -131,9 +131,10 @@ function Solutions({ locale }: { locale: string }) {
       desc: locale === 'it' ? "Stampanti per etichette in bobina e a foglio con tecnologia inkjet e laser a colori per ogni esigenza produttiva." : "Roll-fed and sheet-fed label printers with colour inkjet and laser technology for every production need.",
       href: "/soluzioni/etichette",
       icon: (
-        <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-          <path strokeLinecap="round" strokeLinejoin="round" d="M9.568 3H5.25A2.25 2.25 0 0 0 3 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581c.699.699 1.78.872 2.607.33a18.095 18.095 0 0 0 5.223-5.223c.542-.827.369-1.908-.33-2.607L11.16 3.66A2.25 2.25 0 0 0 9.568 3Z" />
-          <path strokeLinecap="round" strokeLinejoin="round" d="M6 6h.008v.008H6V6Z" />
+        <svg className="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+          <rect x="3" y="3" width="18" height="18" rx="2" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M3 9h18M9 9v12" strokeLinecap="round" strokeLinejoin="round" />
+          <circle cx="6" cy="6" r="1" fill="currentColor" stroke="none" />
         </svg>
       ),
       gradient: "from-magenta-500 to-magenta-400",
@@ -144,8 +145,11 @@ function Solutions({ locale }: { locale: string }) {
       desc: locale === 'it' ? "Stampa hot foil e digitale per shopper e packaging premium con finiture metalliche." : "Hot foil and digital printing for premium shoppers and packaging with metallic finishes.",
       href: "/soluzioni/shopper",
       icon: (
-        <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-          <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+        <svg className="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+          <path d="M6 20V8l6-5 6 5v12H6z" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M9 3.5V2M15 3.5V2" strokeLinecap="round" />
+          <path d="M6 20h12" strokeLinecap="round" />
+          <path d="M9.5 12h5M9.5 15h5" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       ),
       gradient: "from-amber-500 to-amber-400",
@@ -156,8 +160,11 @@ function Solutions({ locale }: { locale: string }) {
       desc: locale === 'it' ? "Stampa digitale sui bordi di libri, quaderni e block notes per personalizzazioni uniche e di alta qualità." : "Digital printing on book edges, notebooks and notepads for unique, high-quality customisation.",
       href: "/soluzioni/labbratura",
       icon: (
-        <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-          <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
+        <svg className="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+          <path d="M4 19.5V4.5A1.5 1.5 0 015.5 3H14l5 5v11.5a1.5 1.5 0 01-1.5 1.5h-12A1.5 1.5 0 014 19.5z" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M14 3v5h5" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M8 13h7M8 16h5" strokeLinecap="round" />
+          <path d="M2 6v14a2 2 0 002 2h10" strokeLinecap="round" strokeLinejoin="round" strokeDasharray="2 2" />
         </svg>
       ),
       gradient: "from-violet-500 to-violet-400",

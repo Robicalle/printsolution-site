@@ -13,7 +13,13 @@ export async function generateMetadata(): Promise<Metadata> {
     description: it
       ? "Scopri tutta la gamma di stampanti digitali per packaging ed etichette di Print Solution."
       : "Discover the full range of digital printers for packaging and labels from Print Solution.",
-    alternates: { canonical: "/prodotti" },
+    alternates: {
+      canonical: `https://website-theta-one-59.vercel.app/${locale}/prodotti`,
+      languages: {
+        'it': 'https://website-theta-one-59.vercel.app/it/prodotti',
+        'en': 'https://website-theta-one-59.vercel.app/en/prodotti',
+      },
+    },
   };
 }
 

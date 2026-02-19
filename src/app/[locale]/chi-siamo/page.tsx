@@ -29,7 +29,13 @@ export async function generateMetadata(): Promise<Metadata> {
       locale: it ? "it_IT" : "en_US",
     },
     twitter: { card: "summary_large_image" },
-    alternates: { canonical: "/chi-siamo" },
+    alternates: {
+      canonical: `https://website-theta-one-59.vercel.app/${locale}/chi-siamo`,
+      languages: {
+        'it': 'https://website-theta-one-59.vercel.app/it/chi-siamo',
+        'en': 'https://website-theta-one-59.vercel.app/en/chi-siamo',
+      },
+    },
   };
 }
 

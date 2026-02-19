@@ -33,7 +33,13 @@ export async function generateMetadata(): Promise<Metadata> {
       type: "website",
       locale: it ? "it_IT" : "en_US",
     },
-    alternates: { canonical: "/soluzioni" },
+    alternates: {
+      canonical: `https://website-theta-one-59.vercel.app/${locale}/soluzioni`,
+      languages: {
+        'it': 'https://website-theta-one-59.vercel.app/it/soluzioni',
+        'en': 'https://website-theta-one-59.vercel.app/en/soluzioni',
+      },
+    },
   };
 }
 

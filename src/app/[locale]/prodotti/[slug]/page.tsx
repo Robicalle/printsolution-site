@@ -54,7 +54,13 @@ export async function generateMetadata({
         description,
         images: [image],
       },
-      alternates: { canonical: `/prodotti/${slug}` },
+      alternates: {
+        canonical: `https://website-theta-one-59.vercel.app/${locale}/prodotti/${slug}`,
+        languages: {
+          'it': `https://website-theta-one-59.vercel.app/it/prodotti/${slug}`,
+          'en': `https://website-theta-one-59.vercel.app/en/prodotti/${slug}`,
+        },
+      },
     };
   } catch {
     return {};
@@ -192,7 +198,7 @@ export default async function ProductPage({
                 const imgUrl = urlForImage(img).width(600).url();
                 return (
                   <div key={img._key || i} className="relative aspect-square rounded-2xl overflow-hidden bg-surface-50 shadow-sm">
-                    <Image src={imgUrl} alt={`${product.name} ${i + 2}`} fill className="object-contain p-4" />
+                    <Image src={imgUrl} alt={`${product.name} ${i + 2}`} fill className="object-contain p-4" loading="lazy" />
                   </div>
                 );
               })}

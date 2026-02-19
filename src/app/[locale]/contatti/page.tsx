@@ -23,7 +23,13 @@ export async function generateMetadata(): Promise<Metadata> {
       locale: locale === 'it' ? "it_IT" : "en_US",
     },
     twitter: { card: "summary_large_image" },
-    alternates: { canonical: "/contatti" },
+    alternates: {
+      canonical: `https://website-theta-one-59.vercel.app/${locale}/contatti`,
+      languages: {
+        'it': 'https://website-theta-one-59.vercel.app/it/contatti',
+        'en': 'https://website-theta-one-59.vercel.app/en/contatti',
+      },
+    },
   };
 }
 

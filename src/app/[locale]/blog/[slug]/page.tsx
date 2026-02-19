@@ -5,6 +5,7 @@ import { draftMode } from "next/headers";
 import { getLocale } from "next-intl/server";
 import { getPostBySlug, getAllPosts } from "@/sanity/lib/fetchers";
 import { urlForImage } from "@/sanity/lib/image";
+import Image from "next/image";
 import { PortableText } from "@portabletext/react";
 import PreviewBanner from "@/components/PreviewBanner";
 
@@ -47,7 +48,13 @@ export async function generateMetadata({
           images: [urlForImage(post.coverImage)?.width(1200).height(630).url() || ""],
         }),
       },
-      alternates: { canonical: `/blog/${slug}` },
+      alternates: {
+        canonical: `https://website-theta-one-59.vercel.app/${(await getLocale())}/blog/${slug}`,
+        languages: {
+          'it': `https://website-theta-one-59.vercel.app/it/blog/${slug}`,
+          'en': `https://website-theta-one-59.vercel.app/en/blog/${slug}`,
+        },
+      },
     };
   } catch {
     return {};
@@ -178,11 +185,15 @@ export default async function BlogPostPage({
       {/* Cover image */}
       {coverUrl && (
         <div className="container-custom -mt-10 mb-8 relative z-10">
-          <img
-            src={coverUrl}
-            alt={post.title}
-            className="w-full max-w-3xl mx-auto rounded-2xl shadow-lg"
-          />
+          <div className="relative w-full max-w-3xl mx-auto aspect-[12/5] rounded-2xl overflow-hidden shadow-lg">
+            <Image
+              src={coverUrl}
+              alt={post.title}
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
         </div>
       )}
 

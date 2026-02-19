@@ -3,6 +3,7 @@ import PageHero from "@/components/PageHero";
 import { Link } from "@/i18n/navigation";
 import { getLocale } from "next-intl/server";
 import { getAllPosts } from "@/sanity/lib/fetchers";
+import Image from "next/image";
 import { urlForImage } from "@/sanity/lib/image";
 
 export const metadata: Metadata = {
@@ -24,7 +25,13 @@ export const metadata: Metadata = {
     locale: "it_IT",
   },
   twitter: { card: "summary_large_image" },
-  alternates: { canonical: "/blog" },
+  alternates: {
+    canonical: 'https://website-theta-one-59.vercel.app/it/blog',
+    languages: {
+      'it': 'https://website-theta-one-59.vercel.app/it/blog',
+      'en': 'https://website-theta-one-59.vercel.app/en/blog',
+    },
+  },
 };
 
 const categoryGradients: Record<string, string> = {
@@ -116,13 +123,15 @@ export default async function BlogPage() {
                   className="card-modern overflow-hidden group hover:-translate-y-1 transition-transform duration-300"
                 >
                   <div
-                    className={`h-48 bg-gradient-to-br ${gradient} flex items-center justify-center overflow-hidden`}
+                    className={`h-48 relative bg-gradient-to-br ${gradient} flex items-center justify-center overflow-hidden`}
                   >
                     {coverUrl ? (
-                      <img
+                      <Image
                         src={coverUrl}
                         alt={post.title}
-                        className="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-300"
+                        fill
+                        className="object-cover opacity-90 group-hover:scale-105 transition-transform duration-300"
+                        loading="lazy"
                       />
                     ) : (
                       <svg

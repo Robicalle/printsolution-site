@@ -53,7 +53,13 @@ export async function generateMetadata({
         description,
         images: [image],
       },
-      alternates: { canonical: `/soluzioni/${slug}` },
+      alternates: {
+        canonical: `https://website-theta-one-59.vercel.app/${locale}/soluzioni/${slug}`,
+        languages: {
+          'it': `https://website-theta-one-59.vercel.app/it/soluzioni/${slug}`,
+          'en': `https://website-theta-one-59.vercel.app/en/soluzioni/${slug}`,
+        },
+      },
     };
   } catch {
     return {};

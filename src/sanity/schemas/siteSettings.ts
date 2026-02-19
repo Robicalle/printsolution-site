@@ -19,6 +19,17 @@ export default defineType({
       ],
     }),
     defineField({
+      name: "tracking",
+      title: "Tracking & Analytics",
+      type: "object",
+      fields: [
+        { name: "gtmId", title: "Google Tag Manager ID", type: "string", description: "Formato: GTM-XXXXXXX" },
+        { name: "ga4Id", title: "Google Analytics 4 ID", type: "string", description: "Formato: G-XXXXXXXXXX (opzionale se usi GTM)" },
+        { name: "metaPixelId", title: "Meta Pixel ID", type: "string", description: "Per Facebook/Instagram Ads (opzionale)" },
+        { name: "googleSiteVerification", title: "Google Search Console", type: "string", description: "Codice di verifica Google Search Console" },
+      ],
+    }),
+    defineField({
       name: "social",
       title: "Social Links",
       type: "object",

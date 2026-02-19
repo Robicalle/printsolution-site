@@ -1,6 +1,5 @@
 export const metadata = {
-  title: "Print Solution Studio",
-  description: "CMS Sanity Studio per Print Solution",
+  title: "Print Solution CMS",
 };
 
 export default function StudioLayout({
@@ -10,7 +9,7 @@ export default function StudioLayout({
 }) {
   return (
     <html lang="it">
-      <body style={{ margin: 0 }}>{children}</body>
+      <body style={{ margin: 0, padding: 0 }}>{children}</body>
     </html>
   );
 }

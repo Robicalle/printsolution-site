@@ -3,8 +3,65 @@
 import { defineConfig } from "sanity";
 import { structureTool } from "sanity/structure";
 import { visionTool } from "@sanity/vision";
+import { Iframe, type IframeOptions } from "sanity-plugin-iframe-pane";
 import { schemaTypes } from "./src/sanity/schemas";
-import type { StructureBuilder } from "sanity/structure";
+import type { StructureBuilder, DefaultDocumentNodeResolver } from "sanity/structure";
+
+// Map document type + slug to preview URL
+function getPreviewUrl(doc: Record<string, unknown>): string {
+  const type = doc._type as string;
+  const slug = (doc.slug as { current?: string })?.current || "";
+  const secret = typeof window !== "undefined" ? "" : "";
+  
+  let path = "/";
+  switch (type) {
+    case "product":
+      path = `/it/prodotti/${slug}`;
+      break;
+    case "post":
+      path = `/it/blog/${slug}`;
+      break;
+    case "solution":
+      path = `/it/soluzioni/${slug}`;
+      break;
+    case "shopProduct":
+      path = `/it/shop`;
+      break;
+    case "faq":
+      path = `/it/faq`;
+      break;
+    case "page":
+      path = slug ? `/it/${slug}` : `/it`;
+      break;
+    default:
+      path = `/it`;
+  }
+  return path;
+}
+
+const iframeOptions: IframeOptions = {
+  url: {
+    origin: "same-origin",
+    preview: (doc) => {
+      if (!doc) return "/it";
+      return getPreviewUrl(doc as Record<string, unknown>);
+    },
+    draftMode: "/api/draft",
+  },
+  reload: { button: true },
+};
+
+const previewTypes = ["product", "post", "solution", "shopProduct", "faq", "page"];
+
+const defaultDocumentNode: DefaultDocumentNodeResolver = (S, { schemaType }) => {
+  if (previewTypes.includes(schemaType)) {
+    return S.document().views([
+      S.view.form(),
+      S.view.component(Iframe).options(iframeOptions).title("Anteprima"),
+    ]);
+  }
+  return S.document().views([S.view.form()]);
+};
 
 function deskStructure(S: StructureBuilder) {
   return S.list()
@@ -129,7 +186,7 @@ export default defineConfig({
   projectId: "dnhjoqwl",
   dataset: "production",
   plugins: [
-    structureTool({ structure: deskStructure }),
+    structureTool({ structure: deskStructure, defaultDocumentNode }),
     visionTool(),
   ],
   schema: {

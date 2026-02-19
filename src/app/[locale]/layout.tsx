@@ -18,6 +18,7 @@ import { CartProvider } from "@/lib/cart-context";
 import CartSidebar from "@/components/CartSidebar";
 import CartButton from "@/components/CartButton";
 import ErrorBoundary from "@/components/ErrorBoundary";
+import { WebVitals } from "@/components/WebVitals";
 import { getSiteSettings } from "@/sanity/lib/fetchers";
 
 const inter = Inter({
@@ -108,6 +109,7 @@ export default async function LocaleLayout({
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#f97316" />
+        <meta name="format-detection" content="telephone=no" />
         <link rel="preconnect" href="https://api.anthropic.com" />
         <link rel="preconnect" href="https://www.youtube.com" />
         <link rel="preconnect" href="https://i.ytimg.com" />
@@ -124,6 +126,7 @@ export default async function LocaleLayout({
         />
       </head>
       <body>
+        {process.env.NODE_ENV === 'development' && <WebVitals />}
         <NextIntlClientProvider messages={messages}>
           <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[9999] focus:bg-cyan-500 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:text-sm">
             {locale === "it" ? "Salta al contenuto" : "Skip to content"}

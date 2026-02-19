@@ -9,6 +9,7 @@ import { urlForImage } from "@/sanity/lib/image";
 import { PortableText } from "@portabletext/react";
 import { portableTextComponents } from "@/components/PortableTextComponents";
 import PreviewBanner from "@/components/PreviewBanner";
+import { MotionScrollReveal } from "@/components/MotionScrollReveal";
 
 export async function generateStaticParams() {
   try {
@@ -121,6 +122,7 @@ export default async function SolutionPage({
       </section>
 
       {/* Image + Description */}
+      <MotionScrollReveal>
       <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
@@ -139,6 +141,7 @@ export default async function SolutionPage({
           </div>
         </div>
       </section>
+      </MotionScrollReveal>
 
       {/* Related Products */}
       {solution.products && solution.products.length > 0 && (

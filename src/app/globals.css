@@ -133,3 +133,40 @@
     font-size: 16px !important;
   }
 }
+
+/* Cross-browser compatibility */
+.backdrop-blur-sm,
+.backdrop-blur-xl,
+[class*="backdrop-blur"] {
+  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+}
+
+/* Safari aspect-ratio fallback */
+@supports not (aspect-ratio: 1) {
+  .aspect-square { padding-bottom: 100%; height: 0; position: relative; }
+  .aspect-square > * { position: absolute; inset: 0; }
+  .aspect-video { padding-bottom: 56.25%; height: 0; position: relative; }
+  .aspect-video > * { position: absolute; inset: 0; }
+  .aspect-\[4\/3\] { padding-bottom: 75%; height: 0; position: relative; }
+  .aspect-\[4\/3\] > * { position: absolute; inset: 0; }
+  .aspect-\[16\/9\] { padding-bottom: 56.25%; height: 0; position: relative; }
+  .aspect-\[16\/9\] > * { position: absolute; inset: 0; }
+}
+
+/* Webkit animation prefixes for older Safari */
+@-webkit-keyframes pulse-subtle {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(6, 182, 212, 0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(6, 182, 212, 0); }
+}
+
+/* CTA button hover micro-animation */
+.btn-primary,
+.btn-secondary,
+.btn-outline {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-primary:active,
+.btn-secondary:active,
+.btn-outline:active {
+  transform: translateY(0) scale(0.98);
+}

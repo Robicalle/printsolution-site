@@ -10,6 +10,8 @@ import { PortableText } from "@portabletext/react";
 import { portableTextComponents } from "@/components/PortableTextComponents";
 import SpecsAccordion from "@/components/SpecsAccordion";
 import PreviewBanner from "@/components/PreviewBanner";
+import { PageTransition } from "@/components/PageTransition";
+import { MotionScrollReveal } from "@/components/MotionScrollReveal";
 
 export async function generateStaticParams() {
   try {
@@ -152,6 +154,7 @@ export default async function ProductPage({
 
       {/* Main Image */}
       {mainImage && (
+        <MotionScrollReveal>
         <section className="bg-white pt-8 lg:pt-10 px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mx-auto">
             <div className="relative w-full aspect-[16/9] rounded-3xl overflow-hidden">
@@ -161,14 +164,17 @@ export default async function ProductPage({
                 fill
                 className="object-contain p-6"
                 priority
+                fetchPriority="high"
               />
             </div>
           </div>
         </section>
+        </MotionScrollReveal>
       )}
 
       {/* Description */}
       {product.description && (
+        <MotionScrollReveal delay={0.1}>
         <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
           <div className="container-custom max-w-4xl">
             <h2 className="text-3xl font-bold text-dark-800 mb-6">
@@ -181,6 +187,7 @@ export default async function ProductPage({
             )}
           </div>
         </section>
+        </MotionScrollReveal>
       )}
 
       {/* Gallery */}

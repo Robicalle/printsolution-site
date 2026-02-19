@@ -113,7 +113,7 @@ export default async function BlogPage() {
               const slug = post.slug?.current || post.slug;
               const gradient = getGradient(post.category);
               const coverUrl = post.coverImage
-                ? urlForImage(post.coverImage)?.width(600).height(300).url()
+                ? urlForImage(post.coverImage)?.width(600).height(300).fit('crop').auto('format').url()
                 : null;
 
               return (
@@ -123,13 +123,14 @@ export default async function BlogPage() {
                   className="card-modern overflow-hidden group hover:-translate-y-1 transition-transform duration-300"
                 >
                   <div
-                    className={`h-48 relative bg-gradient-to-br ${gradient} flex items-center justify-center overflow-hidden`}
+                    className={`aspect-[2/1] relative bg-gradient-to-br ${gradient} flex items-center justify-center overflow-hidden`}
                   >
                     {coverUrl ? (
                       <Image
                         src={coverUrl}
-                        alt={post.title}
+                        alt={post.coverImage?.alt || post.title}
                         fill
+                        sizes="(max-width: 768px) 100vw, 33vw"
                         className="object-cover opacity-90 group-hover:scale-105 transition-transform duration-300"
                         loading="lazy"
                       />

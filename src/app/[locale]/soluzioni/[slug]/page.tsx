@@ -1,15 +1,17 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getLocale } from "next-intl/server";
-import { getPageBuilderBySlug, getAllPageBuilderSlugs } from "@/sanity/lib/fetchers";
+import { getSolutionBySlug, getAllSolutions } from "@/sanity/lib/fetchers";
 import PageRenderer from "@/components/page-builder/PageRenderer";
+
+export const revalidate = 60;
 
 export async function generateStaticParams() {
   try {
-    const pages = await getAllPageBuilderSlugs();
-    return (pages || [])
-      .filter((p: any) => p.pageType === "soluzione")
-      .map((p: any) => ({ slug: p.slug }));
+    const solutions = await getAllSolutions();
+    return (solutions || [])
+      .filter((s: any) => s.slug?.current && s.sezioniPagina?.length)
+      .map((s: any) => ({ slug: s.slug.current }));
   } catch {
     return [];
   }
@@ -24,24 +26,23 @@ export async function generateMetadata({
   const locale = await getLocale();
   const it = locale === "it";
   try {
-    const page = await getPageBuilderBySlug(slug);
-    if (!page) return {};
-    const seo = it ? page.seo : (page.seo_en || page.seo);
-    const title = seo?.title || page.title;
-    const description = seo?.description || `${page.title} — Print Solution`;
+    const solution = await getSolutionBySlug(slug);
+    if (!solution) return {};
+    const seo = it ? solution.seo : (solution.seo_en || solution.seo);
+    const title = seo?.title || (it ? solution.title : (solution.title_en || solution.title));
+    const description = seo?.description || `${solution.title} — Print Solution`;
     return {
       title,
       description,
-      keywords: page.seo?.keywords,
       openGraph: {
         title: `${title} | Print Solution`,
         description,
-        images: page.seo?.image ? [page.seo.image] : ["/images/hero-boxes.webp"],
+        images: ["/images/hero-boxes.webp"],
         type: "website",
         locale: it ? "it_IT" : "en_US",
       },
       twitter: { card: "summary_large_image" },
-      alternates: { canonical: page.seo?.canonical || `/soluzioni/${slug}` },
+      alternates: { canonical: `/soluzioni/${slug}` },
     };
   } catch {
     return {};
@@ -55,9 +56,9 @@ export default async function SolutionDynamicPage({
 }) {
   const { slug } = await params;
   const locale = await getLocale();
-  const page = await getPageBuilderBySlug(slug);
+  const solution = await getSolutionBySlug(slug);
 
-  if (!page || !page.sections) notFound();
+  if (!solution || !solution.sezioniPagina?.length) notFound();
 
-  return <PageRenderer sections={page.sections} locale={locale} />;
+  return <PageRenderer sections={solution.sezioniPagina} locale={locale} />;
 }

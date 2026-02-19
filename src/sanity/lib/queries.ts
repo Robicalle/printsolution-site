@@ -3,10 +3,14 @@ import { groq } from "next-sanity";
 // Prodotti
 export const productsQuery = groq`*[_type == "product"] | order(coalesce(order, 999) asc, name asc) {
   _id, _updatedAt, name, slug, description, specs, images, video, price, category, order,
+  "hasPageBuilder": defined(sezioniPagina) && count(sezioniPagina) > 0,
+  sezioniPagina,
   "seoTitle": seo.title, "seoDescription": seo.description
 }`;
 
-export const productBySlugQuery = groq`*[_type == "product" && slug.current == $slug][0]`;
+export const productBySlugQuery = groq`*[_type == "product" && slug.current == $slug][0]{
+  ..., sezioniPagina
+}`;
 
 // Blog
 export const postsQuery = groq`*[_type == "post"] | order(publishedAt desc) {
@@ -26,12 +30,12 @@ export const pageBuilderBySlugQuery = groq`*[_type == "page" && slug.current == 
 
 // Soluzioni
 export const solutionsQuery = groq`*[_type == "solution"] | order(coalesce(order, 999) asc, title asc) {
-  _id, _updatedAt, title, slug, description, image, order,
+  _id, _updatedAt, title, slug, description, image, order, sezioniPagina,
   "products": products[]->{ _id, name, slug, images }
 }`;
 
 export const solutionBySlugQuery = groq`*[_type == "solution" && slug.current == $slug][0]{
-  ..., "products": products[]->{ _id, name, slug, images, description }
+  ..., sezioniPagina, "products": products[]->{ _id, name, slug, images, description }
 }`;
 
 // Shop Products

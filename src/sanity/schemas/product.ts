@@ -1,4 +1,5 @@
 import { defineField, defineType } from "sanity";
+import { allPageBuilderBlocks } from "./pageBuilderBlocks";
 
 export default defineType({
   name: "product",
@@ -93,6 +94,13 @@ export default defineType({
       type: "number",
       description: "Numero per ordinamento manuale (più basso = prima)",
       initialValue: 0,
+    }),
+    defineField({
+      name: "sezioniPagina",
+      title: "Sezioni Pagina (Page Builder)",
+      type: "array",
+      of: allPageBuilderBlocks,
+      description: "Blocchi page builder per la pagina prodotto dinamica",
     }),
     defineField({
       name: "seo",

@@ -34,18 +34,26 @@ export async function generateMetadata({
     if (!product) return {};
     const title = product.seo?.title || product.name;
     const description = product.seo?.description || `${product.name} — Print Solution`;
-    const image = product.images?.[0] ? urlForImage(product.images[0]).width(1200).url() : "/images/hero-boxes.webp";
+    const image = product.images?.[0]
+      ? urlForImage(product.images[0]).width(1200).height(630).url()
+      : "/images/hero-boxes.webp";
     return {
       title,
       description,
       openGraph: {
         title: `${title} | Print Solution`,
         description,
-        images: [image],
+        images: [{ url: image, width: 1200, height: 630, alt: title }],
         type: "website",
         locale: locale === "it" ? "it_IT" : "en_US",
+        url: `https://www.printsolution.it/prodotti/${slug}`,
       },
-      twitter: { card: "summary_large_image" },
+      twitter: {
+        card: "summary_large_image",
+        title: `${title} | Print Solution`,
+        description,
+        images: [image],
+      },
       alternates: { canonical: `/prodotti/${slug}` },
     };
   } catch {

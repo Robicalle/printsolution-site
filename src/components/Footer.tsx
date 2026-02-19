@@ -6,7 +6,7 @@ import { useTranslations } from "next-intl";
 export default function Footer() {
   const t = useTranslations("footer");
   return (
-    <footer className="bg-dark-900 text-gray-400 relative overflow-hidden">
+    <footer aria-label="Footer" className="bg-dark-900 text-gray-400 relative overflow-hidden">
       {/* Subtle gradient orb */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-gradient-to-b from-cyan-500/5 to-transparent rounded-full blur-3xl" />
 

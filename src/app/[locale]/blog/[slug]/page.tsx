@@ -39,6 +39,14 @@ export async function generateMetadata({
           images: [urlForImage(post.coverImage)?.width(1200).height(630).url() || ""],
         }),
       },
+      twitter: {
+        card: "summary_large_image",
+        title: post.seo?.title || post.title,
+        description: post.seo?.description || post.excerpt,
+        ...(post.coverImage && {
+          images: [urlForImage(post.coverImage)?.width(1200).height(630).url() || ""],
+        }),
+      },
       alternates: { canonical: `/blog/${slug}` },
     };
   } catch {
@@ -89,6 +97,7 @@ export default async function BlogPostPage({
 }) {
   const { slug } = await params;
   const locale = await getLocale();
+  const it = locale === "it";
   const { isEnabled: isPreview } = await draftMode();
 
   let post: any = null;
@@ -113,9 +122,39 @@ export default async function BlogPostPage({
       )
     : null;
 
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    datePublished: post.publishedAt || undefined,
+    dateModified: post._updatedAt || post.publishedAt || undefined,
+    author: post.author
+      ? { "@type": "Person", name: post.author }
+      : { "@type": "Organization", name: "Print Solution S.r.l." },
+    publisher: {
+      "@type": "Organization",
+      name: "Print Solution S.r.l.",
+      logo: { "@type": "ImageObject", url: "https://www.printsolution.it/logo.png" },
+    },
+    image: coverUrl || "https://www.printsolution.it/images/hero-boxes.webp",
+    description: post.excerpt || post.seo?.description || "",
+  };
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.printsolution.it" },
+      { "@type": "ListItem", position: 2, name: "Blog", item: "https://www.printsolution.it/blog" },
+      { "@type": "ListItem", position: 3, name: post.title, item: `https://www.printsolution.it/blog/${slug}` },
+    ],
+  };
+
   return (
     <>
       {isPreview && <PreviewBanner />}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       {/* Hero */}
       <section className="relative bg-hero-gradient text-white pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
         <div className="absolute top-20 right-0 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl" />

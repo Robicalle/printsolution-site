@@ -17,6 +17,7 @@ import BottomNavBar from "@/components/BottomNavBar";
 import { CartProvider } from "@/lib/cart-context";
 import CartSidebar from "@/components/CartSidebar";
 import CartButton from "@/components/CartButton";
+import ErrorBoundary from "@/components/ErrorBoundary";
 import { getSiteSettings } from "@/sanity/lib/fetchers";
 
 const inter = Inter({
@@ -125,7 +126,11 @@ export default async function LocaleLayout({
           <CartProvider>
             <CmykCursor />
             <Header />
-            <main id="main-content" className="pb-28 lg:pb-0">{children}</main>
+            <main id="main-content" role="main" aria-label={locale === "it" ? "Contenuto principale" : "Main content"} className="pb-28 lg:pb-0">
+              <ErrorBoundary>
+                {children}
+              </ErrorBoundary>
+            </main>
             <Footer />
             <MobileCTABar />
             <BackToTop />

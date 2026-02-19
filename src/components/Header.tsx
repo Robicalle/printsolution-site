@@ -75,7 +75,7 @@ export default function Header() {
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden lg:flex items-center gap-1">
+        <nav aria-label="Navigazione principale" className="hidden lg:flex items-center gap-1">
           {navigation.filter((item) => !('homeOnly' in item && item.homeOnly && isHome)).map((item) =>
             'megaMenu' in item ? (
               <div
@@ -188,7 +188,7 @@ export default function Header() {
           mobileOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
       >
-        <nav className="px-6 py-6 space-y-1">
+        <nav aria-label="Menu mobile" className="px-6 py-6 space-y-1">
           {navigation.filter((item) => !('homeOnly' in item && item.homeOnly && isHome)).map((item) =>
             'megaMenu' in item ? (
               <div key={item.label}>

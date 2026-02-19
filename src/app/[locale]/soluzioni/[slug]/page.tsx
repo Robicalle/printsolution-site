@@ -33,18 +33,26 @@ export async function generateMetadata({
     if (!solution) return {};
     const title = solution.seo?.title || solution.title;
     const description = solution.seo?.description || `${solution.title} — Print Solution`;
-    const image = solution.image ? urlForImage(solution.image).width(1200).url() : "/images/hero-boxes.webp";
+    const image = solution.image
+      ? urlForImage(solution.image).width(1200).height(630).url()
+      : "/images/hero-boxes.webp";
     return {
       title,
       description,
       openGraph: {
         title: `${title} | Print Solution`,
         description,
-        images: [image],
+        images: [{ url: image, width: 1200, height: 630, alt: title }],
         type: "website",
         locale: locale === "it" ? "it_IT" : "en_US",
+        url: `https://www.printsolution.it/soluzioni/${slug}`,
       },
-      twitter: { card: "summary_large_image" },
+      twitter: {
+        card: "summary_large_image",
+        title: `${title} | Print Solution`,
+        description,
+        images: [image],
+      },
       alternates: { canonical: `/soluzioni/${slug}` },
     };
   } catch {
@@ -69,9 +77,20 @@ export default async function SolutionPage({
     ? urlForImage(solution.image).width(1200).url()
     : null;
 
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.printsolution.it" },
+      { "@type": "ListItem", position: 2, name: it ? "Soluzioni" : "Solutions", item: "https://www.printsolution.it/soluzioni" },
+      { "@type": "ListItem", position: 3, name: solution.title, item: `https://www.printsolution.it/soluzioni/${slug}` },
+    ],
+  };
+
   return (
     <>
       {isPreview && <PreviewBanner />}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       {/* Hero */}
       <section className="relative bg-hero-gradient text-white pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
         <div className="absolute top-20 right-0 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl" />

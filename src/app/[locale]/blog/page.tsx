@@ -113,7 +113,7 @@ export default async function BlogPage() {
               const slug = post.slug?.current || post.slug;
               const gradient = getGradient(post.category);
               const coverUrl = post.coverImage
-                ? urlForImage(post.coverImage)?.width(800).height(400).fit('crop').auto('format').url()
+                ? urlForImage(post.coverImage)?.width(800).height(400).url()
                 : null;
 
               return (

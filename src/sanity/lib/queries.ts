@@ -14,7 +14,7 @@ export const productBySlugQuery = groq`*[_type == "product" && slug.current == $
 
 // Blog
 export const postsQuery = groq`*[_type == "post"] | order(publishedAt desc) {
-  _id, _updatedAt, title, slug, author, category, coverImage, excerpt, publishedAt,
+  _id, _updatedAt, title, slug, author, category, "coverImage": coverImage{asset, hotspot, crop, alt}, excerpt, publishedAt,
   "seoTitle": seo.title, "seoDescription": seo.description
 }`;
 

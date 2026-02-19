@@ -19,6 +19,11 @@ export const postBySlugQuery = groq`*[_type == "post" && slug.current == $slug][
 // Pagine
 export const pageBySlugQuery = groq`*[_type == "page" && slug.current == $slug][0]`;
 
+// Pagine con sezioni (page builder)
+export const pageBuilderBySlugQuery = groq`*[_type == "page" && slug.current == $slug][0]{
+  _id, _updatedAt, title, title_en, slug, pageType, sections, seo, seo_en
+}`;
+
 // Soluzioni
 export const solutionsQuery = groq`*[_type == "solution"] | order(coalesce(order, 999) asc, title asc) {
   _id, _updatedAt, title, slug, description, image, order,

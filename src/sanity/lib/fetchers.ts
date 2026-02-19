@@ -6,6 +6,7 @@ import {
   postsQuery,
   postBySlugQuery,
   pageBySlugQuery,
+  pageBuilderBySlugQuery,
   solutionsQuery,
   solutionBySlugQuery,
   shopProductsQuery,
@@ -69,6 +70,15 @@ export async function getFaqs(preview = false) {
 // ── Pages ─────────────────────────────────────────────────
 export async function getPageBySlug(slug: string, preview = false) {
   return getClient(preview).fetch(pageBySlugQuery, { slug }, fetchOpts(preview));
+}
+
+export async function getPageBuilderBySlug(slug: string, preview = false) {
+  return getClient(preview).fetch(pageBuilderBySlugQuery, { slug }, fetchOpts(preview));
+}
+
+export async function getAllPageBuilderSlugs(preview = false) {
+  const query = `*[_type == "page" && defined(sections)] { "slug": slug.current, pageType }`;
+  return getClient(preview).fetch(query, {}, fetchOpts(preview));
 }
 
 // ── Shop Product By Slug ──────────────────────────────────

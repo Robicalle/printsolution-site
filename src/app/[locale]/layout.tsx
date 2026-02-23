@@ -17,6 +17,7 @@ import BottomNavBar from "@/components/BottomNavBar";
 import { CartProvider } from "@/lib/cart-context";
 import CartSidebar from "@/components/CartSidebar";
 import CartButton from "@/components/CartButton";
+import { ConsultationProvider } from "@/components/ui/consultation-modal";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import { WebVitals } from "@/components/WebVitals";
 import { GoogleTagManagerHead, GoogleTagManagerBody } from "@/components/GoogleTagManager";
@@ -136,22 +137,24 @@ export default async function LocaleLayout({
             {locale === "it" ? "Salta al contenuto" : "Skip to content"}
           </a>
           <CartProvider>
-            <CmykCursor />
-            <Header />
-            <main id="main-content" role="main" aria-label={locale === "it" ? "Contenuto principale" : "Main content"} className="pb-28 lg:pb-0">
-              <ErrorBoundary>
-                {children}
-              </ErrorBoundary>
-            </main>
-            <Footer />
-            <MobileCTABar />
-            <BackToTop />
-            <ScrollReveal />
-            <CookieBanner />
-            <ChatWidget />
-            <CartSidebar />
-            <CartButton />
-            <BottomNavBar />
+            <ConsultationProvider>
+              <CmykCursor />
+              <Header />
+              <main id="main-content" role="main" aria-label={locale === "it" ? "Contenuto principale" : "Main content"} className="pb-28 lg:pb-0">
+                <ErrorBoundary>
+                  {children}
+                </ErrorBoundary>
+              </main>
+              <Footer />
+              <MobileCTABar />
+              <BackToTop />
+              <ScrollReveal />
+              <CookieBanner />
+              <ChatWidget />
+              <CartSidebar />
+              <CartButton />
+              <BottomNavBar />
+            </ConsultationProvider>
           </CartProvider>
         </NextIntlClientProvider>
       </body>

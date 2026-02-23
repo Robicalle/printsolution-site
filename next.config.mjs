@@ -63,9 +63,53 @@ const nextConfig = {
   },
   async redirects() {
     return [
-      // Old static product pages → dynamic slugs (safety net)
-      // If old URLs had different paths, add them here
-      // Example: { source: '/prodotti/greenbox', destination: '/prodotti/greenbox-evo', permanent: true },
+      // === OLD SITE REDIRECTS (printsolutionsrl.it) ===
+      
+      // Category pages → solution pages
+      { source: '/categoria/box-maker', destination: '/soluzioni/packaging', permanent: true },
+      { source: '/categoria/packaging-printers', destination: '/soluzioni/packaging', permanent: true },
+      { source: '/categoria/label-printers', destination: '/soluzioni/etichette', permanent: true },
+      { source: '/categoria/book-edge-printers', destination: '/soluzioni/labbratura', permanent: true },
+      { source: '/categoria/:slug', destination: '/soluzioni/packaging', permanent: true },
+      
+      // Old product listing pages
+      { source: '/products/packaging-cardboard-printers', destination: '/soluzioni/packaging', permanent: true },
+      { source: '/products/cutting-and-finishing-systems', destination: '/soluzioni/etichette', permanent: true },
+      { source: '/products/cd-dvd-printers', destination: '/prodotti', permanent: true },
+      { source: '/products/promo-used', destination: '/promozioni', permanent: true },
+      { source: '/products/:slug', destination: '/prodotti', permanent: true },
+      
+      // Old product pages that exist with same slug (no redirect needed, just safety)
+      // greenbox-evo, any-002, etc. → same slug, no redirect
+      
+      // Old product pages that DON'T exist in new site → redirect to products listing
+      { source: '/prodotti/dp-se-autoprinter', destination: '/prodotti', permanent: true },
+      { source: '/prodotti/dp-se-dvd', destination: '/prodotti', permanent: true },
+      { source: '/prodotti/dp-se-blu-ray', destination: '/prodotti', permanent: true },
+      { source: '/prodotti/dp-4102-xrp-blu-ray', destination: '/prodotti', permanent: true },
+      { source: '/prodotti/digital-print-cup', destination: '/prodotti', permanent: true },
+      { source: '/prodotti/digital-print-cup-water-based', destination: '/prodotti', permanent: true },
+      { source: '/prodotti/ns-multi', destination: '/prodotti', permanent: true },
+      { source: '/prodotti/greenbox', destination: '/prodotti/greenbox-evo', permanent: true },
+      
+      // Old English routes
+      { source: '/en/home-en', destination: '/en', permanent: true },
+      { source: '/en/video', destination: '/en', permanent: true },
+      { source: '/en/products/:slug', destination: '/en/prodotti', permanent: true },
+      { source: '/en/categoria/:slug', destination: '/en/soluzioni/packaging', permanent: true },
+      { source: '/en/prodotti/dp-se-autoprinter', destination: '/en/prodotti', permanent: true },
+      { source: '/en/prodotti/dp-se-dvd', destination: '/en/prodotti', permanent: true },
+      { source: '/en/prodotti/dp-se-blu-ray', destination: '/en/prodotti', permanent: true },
+      { source: '/en/prodotti/dp-4102-xrp-blu-ray', destination: '/en/prodotti', permanent: true },
+      { source: '/en/prodotti/digital-print-cup', destination: '/en/prodotti', permanent: true },
+      { source: '/en/prodotti/digital-print-cup-water-based', destination: '/en/prodotti', permanent: true },
+      { source: '/en/prodotti/ns-multi', destination: '/en/prodotti', permanent: true },
+      { source: '/en/prodotti/greenbox', destination: '/en/prodotti/greenbox-evo', permanent: true },
+      
+      // Old misc pages
+      { source: '/video', destination: '/', permanent: true },
+      { source: '/post/:slug', destination: '/blog', permanent: true },
+      { source: '/en/post/:slug', destination: '/en/blog', permanent: true },
     ];
   },
 };

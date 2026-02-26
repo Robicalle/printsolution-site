@@ -28,11 +28,11 @@ function buildProductsJsonLd(cat: NonNullable<Awaited<ReturnType<typeof getShopC
     "@type": "Product",
     name: p.name,
     sku: p.sku,
-    image: p.image?.startsWith("http") ? p.image : `https://www.printsolution.it${p.image}`,
+    image: p.image?.startsWith("http") ? p.image : `https://www.printsolutionsrl.it${p.image}`,
     brand: { "@type": "Brand", name: "Print Solution" },
     offers: {
       "@type": "Offer",
-      url: `https://www.printsolution.it/shop/${cat.slug}`,
+      url: `https://www.printsolutionsrl.it/shop/${cat.slug}`,
       priceCurrency: "EUR",
       price: p.price.toFixed(2),
       priceValidUntil: "2026-12-31",

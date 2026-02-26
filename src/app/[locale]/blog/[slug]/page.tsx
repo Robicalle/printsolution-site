@@ -141,9 +141,9 @@ export default async function BlogPostPage({
     publisher: {
       "@type": "Organization",
       name: "Print Solution S.r.l.",
-      logo: { "@type": "ImageObject", url: "https://www.printsolution.it/logo.png" },
+      logo: { "@type": "ImageObject", url: "https://www.printsolutionsrl.it/logo.png" },
     },
-    image: coverUrl || "https://www.printsolution.it/images/hero-boxes.webp",
+    image: coverUrl || "https://www.printsolutionsrl.it/images/hero-boxes.webp",
     description: post.excerpt || post.seo?.description || "",
   };
 
@@ -151,9 +151,9 @@ export default async function BlogPostPage({
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.printsolution.it" },
-      { "@type": "ListItem", position: 2, name: "Blog", item: "https://www.printsolution.it/blog" },
-      { "@type": "ListItem", position: 3, name: post.title, item: `https://www.printsolution.it/blog/${slug}` },
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.printsolutionsrl.it" },
+      { "@type": "ListItem", position: 2, name: "Blog", item: "https://www.printsolutionsrl.it/blog" },
+      { "@type": "ListItem", position: 3, name: post.title, item: `https://www.printsolutionsrl.it/blog/${slug}` },
     ],
   };
 
@@ -224,7 +224,7 @@ export default async function BlogPostPage({
               {locale === "it" ? "← Torna al Blog" : "← Back to Blog"}
             </Link>
             <a
-              href="mailto:info@printsolution.it?subject=Richiesta%20Informazioni&body=Buongiorno%2C%0A%0AVorrei%20informazioni.%0A%0AGrazie"
+              href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Informazioni&body=Buongiorno%2C%0A%0AVorrei%20informazioni.%0A%0AGrazie"
               className="btn-primary text-sm"
             >
               {locale === "it" ? "Contattaci" : "Contact Us"}

@@ -42,8 +42,8 @@ const homepageJsonLd = {
   "@context": "https://schema.org",
   "@type": ["Organization", "LocalBusiness"],
   name: "Print Solution S.r.l.",
-  url: "https://www.printsolution.it",
-  logo: "https://www.printsolution.it/logo.png",
+  url: "https://www.printsolutionsrl.it",
+  logo: "https://www.printsolutionsrl.it/logo.png",
   description: "Vendita e assistenza stampanti digitali per etichette e packaging",
   address: {
     "@type": "PostalAddress",

@@ -30,7 +30,7 @@ export async function POST(req: NextRequest) {
           <tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold;">Interesse</td><td style="padding:8px;border:1px solid #ddd;">${escapeHtml(interesse || "-")}</td></tr>
           <tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold;">Messaggio</td><td style="padding:8px;border:1px solid #ddd;">${escapeHtml(messaggio).replace(/\n/g, "<br>")}</td></tr>
         </table>
-        <p style="color:#888;font-size:12px;margin-top:20px;">Inviato dal form contatti di printsolution.it — ${new Date().toLocaleString("it-IT", { timeZone: "Europe/Rome" })}</p>
+        <p style="color:#888;font-size:12px;margin-top:20px;">Inviato dal form contatti di printsolutionsrl.it — ${new Date().toLocaleString("it-IT", { timeZone: "Europe/Rome" })}</p>
       `;
 
       await fetch("https://api.brevo.com/v3/smtp/email", {

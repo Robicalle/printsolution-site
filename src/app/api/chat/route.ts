@@ -7,8 +7,8 @@ const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY?.trim() || "";
 
 const ALLOWED_ORIGINS = [
   "https://website-theta-one-59.vercel.app",
-  "https://www.printsolution.it",
-  "https://printsolution.it",
+  "https://www.printsolutionsrl.it",
+  "https://printsolutionsrl.it",
 ];
 
 function getCorsHeaders(origin: string | null): Record<string, string> {
@@ -52,7 +52,7 @@ REGOLE FONDAMENTALI:
 9. NON confondere: RobotJet e GreenBox Print Book sono per LABBRATURA LIBRI. GreenBox EVO è per PACKAGING/SACCHETTI/SHOPPER. Sono prodotti diversi!
 10. Suggerisci sempre di prenotare una demo gratuita in sala demo.
 
-Contatti: Tel 02 4943 9417 | Email info@printsolution.it | Sede: Sesto San Giovanni (MI)
+Contatti: Tel 02 4943 9417 | Email info@printsolutionsrl.it | Sede: Sesto San Giovanni (MI)
 
 LINK AI PRODOTTI:
 Quando menzioni un prodotto, includi un link alla pagina prodotto nel formato markdown. Usa /it/ per risposte in italiano, /en/ per risposte in inglese.

@@ -37,12 +37,12 @@ const contactPageJsonLd = {
   "@context": "https://schema.org",
   "@type": "ContactPage",
   name: "Contatti - Print Solution S.r.l.",
-  url: "https://www.printsolution.it/contatti",
+  url: "https://www.printsolutionsrl.it/contatti",
   mainEntity: {
     "@type": "Organization",
     name: "Print Solution S.r.l.",
     telephone: "+39-0141-352540",
-    email: "info@printsolution.it",
+    email: "info@printsolutionsrl.it",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Asti",

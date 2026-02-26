@@ -2,7 +2,7 @@ import { MetadataRoute } from "next";
 import { client } from "@/sanity/lib/client";
 import { groq } from "next-sanity";
 
-const BASE = "https://www.printsolution.it";
+const BASE = "https://www.printsolutionsrl.it";
 const locales = ["it", "en"];
 
 function localizedUrl(path: string, locale: string) {

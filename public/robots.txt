@@ -3,4 +3,4 @@ Allow: /
 Disallow: /api/
 Disallow: /_next/
 
-Sitemap: https://www.printsolution.it/sitemap.xml
+Sitemap: https://www.printsolutionsrl.it/sitemap.xml

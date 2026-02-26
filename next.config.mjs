@@ -63,26 +63,29 @@ const nextConfig = {
   },
   async redirects() {
     return [
-      // === OLD SITE REDIRECTS (printsolutionsrl.it) ===
+      // === OLD SITE REDIRECTS (printsolutionsrl.it → new site) ===
       
-      // Category pages → solution pages
+      // --- IT: Pages ---
+      { source: '/newseventi', destination: '/news', permanent: true },
+      { source: '/privacypolicy', destination: '/privacy', permanent: true },
+      { source: '/search', destination: '/', permanent: true },
+      { source: '/video', destination: '/', permanent: true },
+
+      // --- IT: Category/folder pages ---
+      { source: '/cartella-prodotti/promo-usato', destination: '/usato', permanent: true },
+      { source: '/cartella-prodotti/applicatori-di-etichette', destination: '/soluzioni/etichette', permanent: true },
+      { source: '/cartella-prodotti/stampanti-packaging', destination: '/soluzioni/packaging', permanent: true },
+      { source: '/cartella-prodotti/sistemi-di-taglio-e-finitura', destination: '/soluzioni/etichette', permanent: true },
+      { source: '/cartella-prodotti/stampanti-per-cd-dvd', destination: '/prodotti', permanent: true },
+      { source: '/cartella-prodotti/stampanti-etichette', destination: '/soluzioni/etichette', permanent: true },
+      { source: '/cartella-prodotti/:slug', destination: '/prodotti', permanent: true },
       { source: '/categoria/box-maker', destination: '/soluzioni/packaging', permanent: true },
       { source: '/categoria/packaging-printers', destination: '/soluzioni/packaging', permanent: true },
       { source: '/categoria/label-printers', destination: '/soluzioni/etichette', permanent: true },
       { source: '/categoria/book-edge-printers', destination: '/soluzioni/labbratura', permanent: true },
-      { source: '/categoria/:slug', destination: '/soluzioni/packaging', permanent: true },
-      
-      // Old product listing pages
-      { source: '/products/packaging-cardboard-printers', destination: '/soluzioni/packaging', permanent: true },
-      { source: '/products/cutting-and-finishing-systems', destination: '/soluzioni/etichette', permanent: true },
-      { source: '/products/cd-dvd-printers', destination: '/prodotti', permanent: true },
-      { source: '/products/promo-used', destination: '/promozioni', permanent: true },
-      { source: '/products/:slug', destination: '/prodotti', permanent: true },
-      
-      // Old product pages that exist with same slug (no redirect needed, just safety)
-      // greenbox-evo, any-002, etc. → same slug, no redirect
-      
-      // Old product pages that DON'T exist in new site → redirect to products listing
+      { source: '/categoria/:slug', destination: '/prodotti', permanent: true },
+
+      // --- IT: Old product pages that DON'T exist in new site ---
       { source: '/prodotti/dp-se-autoprinter', destination: '/prodotti', permanent: true },
       { source: '/prodotti/dp-se-dvd', destination: '/prodotti', permanent: true },
       { source: '/prodotti/dp-se-blu-ray', destination: '/prodotti', permanent: true },
@@ -91,12 +94,37 @@ const nextConfig = {
       { source: '/prodotti/digital-print-cup-water-based', destination: '/prodotti', permanent: true },
       { source: '/prodotti/ns-multi', destination: '/prodotti', permanent: true },
       { source: '/prodotti/greenbox', destination: '/prodotti/greenbox-evo', permanent: true },
-      
-      // Old English routes
+      { source: '/prodotti/edm-650', destination: '/prodotti/edm-650x', permanent: true },
+
+      // --- IT: Old shop pages with same slug (already exist, just safety) ---
+      // /shop/consumabili-greenbox, /shop/consumabili-cx1000, etc. → same slug, no redirect needed
+      // /shop/consumabil-lt5c (old typo) → correct
+      { source: '/shop/consumabil-lt5c', destination: '/shop/consumabili-lt5c', permanent: true },
+
+      // --- IT: Blog/news posts ---
+      { source: '/post/:slug', destination: '/blog', permanent: true },
+
+      // --- EN: Pages ---
       { source: '/en/home-en', destination: '/en', permanent: true },
+      { source: '/en/newseventi', destination: '/en/news', permanent: true },
+      { source: '/en/contacts', destination: '/en/contatti', permanent: true },
+      { source: '/en/about', destination: '/en/chi-siamo', permanent: true },
+      { source: '/en/privacy-policy', destination: '/en/privacy', permanent: true },
+      { source: '/en/terms-an-conditions', destination: '/en/condizioni-di-vendita', permanent: true },
       { source: '/en/video', destination: '/en', permanent: true },
+      { source: '/en/search', destination: '/en', permanent: true },
+
+      // --- EN: Category/folder pages ---
+      { source: '/en/products/promo-used', destination: '/en/usato', permanent: true },
+      { source: '/en/products/packaging-cardboard-printers', destination: '/en/soluzioni/packaging', permanent: true },
+      { source: '/en/products/cutting-and-finishing-systems', destination: '/en/soluzioni/etichette', permanent: true },
+      { source: '/en/products/cd-dvd-printers', destination: '/en/prodotti', permanent: true },
+      { source: '/en/products/label-printers', destination: '/en/soluzioni/etichette', permanent: true },
+      { source: '/en/products/label-applicators', destination: '/en/soluzioni/etichette', permanent: true },
       { source: '/en/products/:slug', destination: '/en/prodotti', permanent: true },
-      { source: '/en/categoria/:slug', destination: '/en/soluzioni/packaging', permanent: true },
+      { source: '/en/categoria/:slug', destination: '/en/prodotti', permanent: true },
+
+      // --- EN: Old product pages that DON'T exist in new site ---
       { source: '/en/prodotti/dp-se-autoprinter', destination: '/en/prodotti', permanent: true },
       { source: '/en/prodotti/dp-se-dvd', destination: '/en/prodotti', permanent: true },
       { source: '/en/prodotti/dp-se-blu-ray', destination: '/en/prodotti', permanent: true },
@@ -105,10 +133,12 @@ const nextConfig = {
       { source: '/en/prodotti/digital-print-cup-water-based', destination: '/en/prodotti', permanent: true },
       { source: '/en/prodotti/ns-multi', destination: '/en/prodotti', permanent: true },
       { source: '/en/prodotti/greenbox', destination: '/en/prodotti/greenbox-evo', permanent: true },
-      
-      // Old misc pages
-      { source: '/video', destination: '/', permanent: true },
-      { source: '/post/:slug', destination: '/blog', permanent: true },
+      { source: '/en/prodotti/edm-650', destination: '/en/prodotti/edm-650x', permanent: true },
+
+      // --- EN: Shop old typo ---
+      { source: '/en/shop/consumabil-lt5c', destination: '/en/shop/consumabili-lt5c', permanent: true },
+
+      // --- EN: Blog/news posts ---
       { source: '/en/post/:slug', destination: '/en/blog', permanent: true },
     ];
   },

@@ -20,6 +20,7 @@ import CartButton from "@/components/CartButton";
 import { ConsultationProvider } from "@/components/ui/consultation-modal";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import { WebVitals } from "@/components/WebVitals";
+import { TrackingScriptsHead } from "@/components/TrackingScripts";
 import { GoogleTagManagerHead, GoogleTagManagerBody } from "@/components/GoogleTagManager";
 import { getSiteSettings } from "@/sanity/lib/fetchers";
 
@@ -130,6 +131,7 @@ export default async function LocaleLayout({
         />
       </head>
       <body>
+        <TrackingScriptsHead />
         <GoogleTagManagerBody gtmId={siteSettings?.tracking?.gtmId} />
         {process.env.NODE_ENV === 'development' && <WebVitals />}
         <NextIntlClientProvider messages={messages}>

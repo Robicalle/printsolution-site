@@ -140,6 +140,10 @@ const nextConfig = {
 
       // --- EN: Blog/news posts ---
       { source: '/en/post/:slug', destination: '/en/blog', permanent: true },
+
+      // --- Brand pages (removed) ---
+      { source: '/brand/:slug', destination: '/prodotti', permanent: true },
+      { source: '/en/brand/:slug', destination: '/en/prodotti', permanent: true },
     ];
   },
 };

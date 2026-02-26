@@ -29,6 +29,7 @@ export default function Header() {
         { label: t("productComparison"), href: "/confronto-prodotti", desc: t("productComparisonDesc") },
       ],
     },
+    { label: t("products"), href: "/prodotti" },
     { label: t("promotions"), href: "/promozioni" },
     { label: t("used"), href: "/usato" },
     { label: t("aboutUs"), href: "/chi-siamo" },

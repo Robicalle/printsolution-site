@@ -14,10 +14,10 @@ export async function generateMetadata(): Promise<Metadata> {
       ? "Scopri tutta la gamma di stampanti digitali per packaging ed etichette di Print Solution."
       : "Discover the full range of digital printers for packaging and labels from Print Solution.",
     alternates: {
-      canonical: `https://website-theta-one-59.vercel.app/${locale}/prodotti`,
+      canonical: `https://www.printsolutionsrl.it/${locale}/prodotti`,
       languages: {
-        'it': 'https://website-theta-one-59.vercel.app/it/prodotti',
-        'en': 'https://website-theta-one-59.vercel.app/en/prodotti',
+        'it': 'https://www.printsolutionsrl.it/it/prodotti',
+        'en': 'https://www.printsolutionsrl.it/en/prodotti',
       },
     },
   };
@@ -45,10 +45,17 @@ export default async function ProdottiPage() {
 
   return (
     <>
-      {/* Hero */}
-      <section className="relative bg-hero-gradient text-white pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
-        <div className="absolute top-20 right-0 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl" />
-        <div className="container-custom px-4 sm:px-6 lg:px-8 relative">
+      {/* Hero with background image */}
+      <section className="relative text-white pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
+        <Image
+          src="/images/hero-machine2.webp"
+          alt={it ? "Stampanti digitali Print Solution" : "Print Solution digital printers"}
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-dark-900/85 via-dark-900/70 to-dark-900/40" />
+        <div className="container-custom px-4 sm:px-6 lg:px-8 relative z-10">
           <p className="text-cyan-300 text-sm mb-3 uppercase tracking-widest font-medium">Print Solution</p>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight">
             {it ? "I Nostri Prodotti" : "Our Products"}

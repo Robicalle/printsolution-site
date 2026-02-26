@@ -3,6 +3,13 @@ import { useState, useRef, useEffect, useCallback } from "react";
 import { useTranslations } from "next-intl";
 import ReactMarkdown from "react-markdown";
 
+// GA4 event helper
+function trackEvent(event: string, params?: Record<string, string | number>) {
+  if (typeof window !== "undefined" && (window as any).gtag) {
+    (window as any).gtag("event", event, params);
+  }
+}
+
 interface Message {
   role: "user" | "assistant";
   content: string;
@@ -82,9 +89,12 @@ export default function ChatWidget() {
     if (open && inputRef.current) inputRef.current.focus();
   }, [open]);
 
-  // Stop pulse after first open
+  // Stop pulse after first open + track
   useEffect(() => {
-    if (open) setPulse(false);
+    if (open) {
+      setPulse(false);
+      trackEvent("chat_open", { event_category: "chatbot" });
+    }
   }, [open]);
 
   const clearHistory = useCallback(() => {
@@ -100,6 +110,7 @@ export default function ChatWidget() {
     setMessages((prev) => [...prev, userMsg]);
     if (!textOverride) setInput("");
     setLoading(true);
+    trackEvent("chat_message_sent", { event_category: "chatbot", message_length: text.length });
 
     try {
       const res = await fetch("/api/chat", {
@@ -258,7 +269,7 @@ export default function ChatWidget() {
                   {quickReplies.map((qr, i) => (
                     <button
                       key={i}
-                      onClick={() => sendMessage(qr)}
+                      onClick={() => { trackEvent("chat_quick_reply", { event_category: "chatbot", quick_reply: qr }); sendMessage(qr); }}
                       className="px-3 py-1.5 text-xs border border-cyan-400 text-cyan-700 rounded-full hover:bg-cyan-50 hover:border-cyan-500 transition-colors"
                     >
                       {qr}
@@ -289,6 +300,7 @@ export default function ChatWidget() {
                             className="text-cyan-600 hover:text-cyan-700 underline"
                             target={href?.startsWith("http") ? "_blank" : undefined}
                             rel={href?.startsWith("http") ? "noopener noreferrer" : undefined}
+                            onClick={() => trackEvent("chat_link_click", { event_category: "chatbot", link_url: href || "" })}
                             {...props}
                           >
                             {children}

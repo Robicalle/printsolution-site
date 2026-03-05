@@ -2,9 +2,11 @@
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import { useConsent } from "./ConsentManager";
 
 export default function Footer() {
   const t = useTranslations("footer");
+  const { resetConsent } = useConsent();
   return (
     <footer aria-label="Footer" className="bg-dark-900 text-gray-400 relative overflow-hidden">
       {/* Subtle gradient orb */}
@@ -139,10 +141,20 @@ export default function Footer() {
 
         <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center text-sm md:text-xs text-gray-600">
           <p>&copy; {new Date().getFullYear()} Print Solution S.r.l. — {t("allRightsReserved")}</p>
-          <div className="flex gap-6 mt-4 md:mt-0">
+          <div className="flex flex-wrap gap-6 mt-4 md:mt-0 justify-center">
             <Link href="/privacy" className="hover:text-white transition-colors duration-200 py-2 inline-block">{t("privacyPolicy")}</Link>
             <Link href="/cookie" className="hover:text-white transition-colors duration-200 py-2 inline-block">{t("cookiePolicy")}</Link>
             <Link href="/condizioni-di-vendita" className="hover:text-white transition-colors duration-200 py-2 inline-block">{t("salesConditions")}</Link>
+            <button
+              onClick={resetConsent}
+              className="hover:text-white transition-colors duration-200 py-2 inline-block flex items-center gap-1"
+            >
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              Gestisci cookie
+            </button>
           </div>
         </div>
       </div>

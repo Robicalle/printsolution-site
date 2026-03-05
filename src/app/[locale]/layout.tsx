@@ -23,6 +23,7 @@ import { WebVitals } from "@/components/WebVitals";
 import { TrackingScriptsHead } from "@/components/TrackingScripts";
 import { GoogleTagManagerHead, GoogleTagManagerBody } from "@/components/GoogleTagManager";
 import { getSiteSettings } from "@/sanity/lib/fetchers";
+import { ConsentProvider } from "@/components/ConsentManager";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -131,33 +132,35 @@ export default async function LocaleLayout({
         />
       </head>
       <body>
-        <TrackingScriptsHead />
         <GoogleTagManagerBody gtmId={siteSettings?.tracking?.gtmId} />
         {process.env.NODE_ENV === 'development' && <WebVitals />}
         <NextIntlClientProvider messages={messages}>
-          <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[9999] focus:bg-cyan-500 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:text-sm">
-            {locale === "it" ? "Salta al contenuto" : "Skip to content"}
-          </a>
-          <CartProvider>
-            <ConsultationProvider>
-              <CmykCursor />
-              <Header />
-              <main id="main-content" role="main" aria-label={locale === "it" ? "Contenuto principale" : "Main content"} className="pb-28 lg:pb-0">
-                <ErrorBoundary>
-                  {children}
-                </ErrorBoundary>
-              </main>
-              <Footer />
-              <MobileCTABar />
-              <BackToTop />
-              <ScrollReveal />
-              <CookieBanner />
-              <ChatWidget />
-              <CartSidebar />
-              <CartButton />
-              <BottomNavBar />
-            </ConsultationProvider>
-          </CartProvider>
+          <ConsentProvider>
+            <TrackingScriptsHead />
+            <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[9999] focus:bg-cyan-500 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:text-sm">
+              {locale === "it" ? "Salta al contenuto" : "Skip to content"}
+            </a>
+            <CartProvider>
+              <ConsultationProvider>
+                <CmykCursor />
+                <Header />
+                <main id="main-content" role="main" aria-label={locale === "it" ? "Contenuto principale" : "Main content"} className="pb-28 lg:pb-0">
+                  <ErrorBoundary>
+                    {children}
+                  </ErrorBoundary>
+                </main>
+                <Footer />
+                <MobileCTABar />
+                <BackToTop />
+                <ScrollReveal />
+                <CookieBanner />
+                <ChatWidget />
+                <CartSidebar />
+                <CartButton />
+                <BottomNavBar />
+              </ConsultationProvider>
+            </CartProvider>
+          </ConsentProvider>
         </NextIntlClientProvider>
       </body>
     </html>

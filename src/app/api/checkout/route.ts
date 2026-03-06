@@ -7,11 +7,6 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
 
 export async function POST(req: NextRequest) {
   try {
-    console.log("🔵 Checkout API chiamata");
-    console.log("🔑 STRIPE_SECRET_KEY presente:", !!process.env.STRIPE_SECRET_KEY);
-    console.log("🔑 STRIPE_SECRET_KEY lunghezza:", process.env.STRIPE_SECRET_KEY?.length);
-    console.log("🔑 STRIPE_SECRET_KEY inizia con:", process.env.STRIPE_SECRET_KEY?.substring(0, 20));
-    
     const { items } = await req.json();
 
     if (!items || items.length === 0) {
@@ -55,16 +50,8 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({ url: session.url });
   } catch (err: unknown) {
-    console.error("🔴 Stripe checkout error:", err);
-    console.error("🔴 Error type:", err?.constructor?.name);
-    console.error("🔴 Error details:", JSON.stringify(err, null, 2));
+    console.error("Stripe checkout error:", err);
     const message = err instanceof Error ? err.message : "Errore durante il checkout";
-    return NextResponse.json({ 
-      error: message,
-      debug: process.env.NODE_ENV === 'production' ? undefined : { 
-        type: err?.constructor?.name,
-        details: err instanceof Error ? err.stack : String(err)
-      }
-    }, { status: 500 });
+    return NextResponse.json({ error: message }, { status: 500 });
   }
 }

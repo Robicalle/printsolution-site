@@ -4,13 +4,16 @@
  */
 
 import { createClient } from '@sanity/client';
+import fs from 'fs';
+
+const token = fs.readFileSync('C:\\Users\\Jarvis\\.openclaw\\workspace\\memory\\vault\\sanity-editor-token.key', 'utf-8').trim();
 
 const client = createClient({
   projectId: 'dnhjoqwl',
   dataset: 'production',
   apiVersion: '2024-01-01',
   useCdn: false,
-  token: process.env.SANITY_WRITE_TOKEN, // Serve token con permessi di scrittura
+  token,
 });
 
 async function updateBlogDates() {

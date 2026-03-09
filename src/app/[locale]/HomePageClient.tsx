@@ -78,7 +78,7 @@ function Hero({ locale }: { locale: string }) {
             <h1 className="text-3xl sm:text-5xl lg:text-7xl xl:text-[5.5rem] font-bold leading-[1.05] sm:leading-[0.95] tracking-tight mb-6 lg:mb-10 opacity-0 animate-fade-up-delay">
               {locale === 'it' ? 'Soluzioni Digitali per' : 'Digital Solutions for'}{" "}
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-emerald-400 to-lime-400">
-                {locale === 'it' ? 'Stampa e Packaging' : 'Printing & Packaging'}
+                {locale === 'it' ? 'la stampa di Labelling e Packaging' : 'Labelling and Packaging Printing'}
               </span>
             </h1>
             <p className="text-base sm:text-lg lg:text-xl text-gray-300/90 mb-8 lg:mb-12 leading-relaxed max-w-2xl opacity-0 animate-fade-up-delay-2">

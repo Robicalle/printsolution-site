@@ -8,8 +8,8 @@ export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
   return {
     title: locale === 'it'
-      ? "Print Solution — Soluzioni Digitali per Stampa e Packaging"
-      : "Print Solution — Digital Printing & Packaging Solutions",
+      ? "Print Solution — Soluzioni Digitali per la stampa di Labelling e Packaging"
+      : "Print Solution — Digital Solutions for Labelling and Packaging Printing",
     description: locale === 'it'
       ? "Stampa digitale packaging, etichettatura industriale e consumabili. Dal 2010, Print Solution è il punto di riferimento italiano per soluzioni di stampa digitale."
       : "Digital packaging printing, industrial labelling and consumables. Since 2010, Print Solution has been Italy's reference point for digital printing solutions.",
@@ -18,8 +18,8 @@ export async function generateMetadata(): Promise<Metadata> {
       : ["digital packaging printing", "industrial labelling", "Print Solution", "packaging printer", "industrial label printing", "automatic box maker"],
     openGraph: {
       title: locale === 'it'
-        ? "Print Solution — Soluzioni Digitali per Stampa e Packaging"
-        : "Print Solution — Digital Printing & Packaging Solutions",
+        ? "Print Solution — Soluzioni Digitali per la stampa di Labelling e Packaging"
+        : "Print Solution — Digital Solutions for Labelling and Packaging Printing",
       description: locale === 'it'
         ? "Stampa digitale packaging, etichettatura industriale e consumabili. Dal 2010, il punto di riferimento italiano per la stampa digitale."
         : "Digital packaging printing, industrial labelling and consumables. Since 2010, Italy's reference point for digital printing.",

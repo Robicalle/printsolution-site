@@ -34,10 +34,16 @@ function buildProductsJsonLd(cat: NonNullable<Awaited<ReturnType<typeof getShopC
       "@type": "Offer",
       url: `https://www.printsolutionsrl.it/shop/${cat.slug}`,
       priceCurrency: "EUR",
-      price: p.price.toFixed(2),
+      price: (p.price * 1.22).toFixed(2),
       priceValidUntil: "2026-12-31",
       availability: p.inStock ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
       seller: { "@type": "Organization", name: "Print Solution S.r.l." },
+      priceSpecification: {
+        "@type": "PriceSpecification",
+        price: (p.price * 1.22).toFixed(2),
+        priceCurrency: "EUR",
+        valueAddedTaxIncluded: true,
+      },
     },
   }));
 }

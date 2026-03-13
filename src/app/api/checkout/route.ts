@@ -26,12 +26,44 @@ export async function POST(req: NextRequest) {
             name: item.name,
             ...(item.sku ? { metadata: { sku: item.sku } } : {}),
           },
-          unit_amount: Math.round(item.price * 100), // Stripe uses cents
+          // Prezzi IVA INCLUSA (22% su prezzo base)
+          unit_amount: Math.round(item.price * 1.22 * 100), // IVA 22% + converti in cents
         },
         quantity: item.quantity,
       })),
       // Auto-calculate tax
       automatic_tax: { enabled: false },
+      // Shipping options
+      shipping_options: [
+        {
+          shipping_rate_data: {
+            type: "fixed_amount",
+            fixed_amount: {
+              amount: 1500, // €15.00 spedizione standard
+              currency: "eur",
+            },
+            display_name: "Spedizione Standard",
+            delivery_estimate: {
+              minimum: { unit: "business_day", value: 3 },
+              maximum: { unit: "business_day", value: 5 },
+            },
+          },
+        },
+        {
+          shipping_rate_data: {
+            type: "fixed_amount",
+            fixed_amount: {
+              amount: 2500, // €25.00 spedizione express
+              currency: "eur",
+            },
+            display_name: "Spedizione Express",
+            delivery_estimate: {
+              minimum: { unit: "business_day", value: 1 },
+              maximum: { unit: "business_day", value: 2 },
+            },
+          },
+        },
+      ],
       // Shipping
       shipping_address_collection: {
         allowed_countries: ["IT", "DE", "FR", "ES", "AT", "CH", "NL", "BE", "GB", "PT"],

@@ -107,8 +107,8 @@ function getProducts(locale: string) {
     {
       name: "GreenBox 2",
       subtitle: it ? "Stampante Digitale per Packaging" : "Digital Printer for Packaging",
-      badge: it ? "PROMO" : "PROMO",
-      badgeColor: "bg-cyan-500",
+      badge: it ? "USATO GARANTITO" : "CERTIFIED PRE-OWNED",
+      badgeColor: "bg-orange-500",
       desc: it
         ? "Stampante digitale per packaging con inchiostri ecologici resistenti all'acqua. Ideale per stampa diretta su cartone, carta e materiali per packaging. Soluzione economica per entrare nel mondo della stampa diretta su packaging."
         : "Digital printer for packaging with eco-friendly water-resistant inks. Ideal for direct printing on cardboard, paper, and packaging materials. Cost-effective solution to enter the world of direct-to-packaging printing.",
@@ -117,7 +117,6 @@ function getProducts(locale: string) {
         "Stampa su cartone e carta",
         "Risoluzione fino a 1200 dpi",
         "Formato compatto",
-        "Software RIP incluso",
         "Facile da usare",
         "Manutenzione minima",
         "Ideale per piccole tirature",
@@ -126,18 +125,17 @@ function getProducts(locale: string) {
         "Print on cardboard and paper",
         "Resolution up to 1200 dpi",
         "Compact format",
-        "RIP software included",
         "Easy to use",
         "Minimal maintenance",
         "Ideal for short runs",
       ],
       highlights: it ? [
-        "Prezzo promozionale",
-        "Formazione inclusa",
+        "Revisionata e testata",
+        "garanzia 6 mesi",
         "Assistenza dedicata",
       ] : [
-        "Promotional price",
-        "Training included",
+        "Refurbished and tested",
+        "6-month warranty",
         "Dedicated support",
       ],
       image: "/images/products/greenbox2-scont.avif",

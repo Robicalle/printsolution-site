@@ -89,8 +89,8 @@ function ProductCard({ product, categoryName }: { product: Product; categoryName
         
         <div className="mt-auto">
           <p className="text-2xl font-bold text-gray-900 mb-4">
-            €{(product.price * 1.22).toFixed(2)}
-            <span className="text-xs text-gray-400 font-normal ml-1.5">IVA inc.</span>
+            €{product.price.toFixed(2)}
+            <span className="text-xs text-gray-400 font-normal ml-1.5">+ IVA</span>
           </p>
           
           <button

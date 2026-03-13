@@ -39,27 +39,13 @@ export async function POST(req: NextRequest) {
           shipping_rate_data: {
             type: "fixed_amount",
             fixed_amount: {
-              amount: 1500, // €15.00 spedizione standard
-              currency: "eur",
-            },
-            display_name: "Spedizione Standard",
-            delivery_estimate: {
-              minimum: { unit: "business_day", value: 3 },
-              maximum: { unit: "business_day", value: 5 },
-            },
-          },
-        },
-        {
-          shipping_rate_data: {
-            type: "fixed_amount",
-            fixed_amount: {
-              amount: 2500, // €25.00 spedizione express
+              amount: 1500, // €15.00 spedizione express
               currency: "eur",
             },
             display_name: "Spedizione Express",
             delivery_estimate: {
-              minimum: { unit: "business_day", value: 1 },
-              maximum: { unit: "business_day", value: 2 },
+              minimum: { unit: "business_day", value: 2 },
+              maximum: { unit: "business_day", value: 4 },
             },
           },
         },

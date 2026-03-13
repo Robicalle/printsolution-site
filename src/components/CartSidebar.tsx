@@ -50,8 +50,7 @@ export default function CartSidebar() {
                     <div className="flex-1 min-w-0">
                       <p className="font-medium text-gray-900 text-sm truncate">{item.name}</p>
                       {item.sku && <p className="text-xs text-gray-400">{item.sku}</p>}
-                      <p className="text-cyan-600 font-bold mt-1">€{(item.price * 1.22).toFixed(2)}</p>
-                      <p className="text-xs text-gray-400">IVA inc.</p>
+                      <p className="text-cyan-600 font-bold mt-1">€{item.price.toFixed(2)}</p>
                     </div>
                     <div className="flex flex-col items-end gap-2">
                       <button onClick={() => removeItem(item.id)} className="text-gray-400 hover:text-red-500 transition-colors">
@@ -75,10 +74,10 @@ export default function CartSidebar() {
           {items.length > 0 && (
             <div className="border-t p-6 space-y-4">
               <div className="flex justify-between items-center">
-                <span className="text-gray-600">Subtotale</span>
-                <span className="text-2xl font-bold text-gray-900">€{(totalPrice * 1.22).toFixed(2)}</span>
+                <span className="text-gray-600">Subtotale (IVA esclusa)</span>
+                <span className="text-2xl font-bold text-gray-900">€{totalPrice.toFixed(2)}</span>
               </div>
-              <p className="text-xs text-gray-400">IVA 22% inclusa • Spedizione calcolata al checkout</p>
+              <p className="text-xs text-gray-400">IVA 22% e spedizione calcolate al checkout</p>
               <Link
                 href="/shop/checkout"
                 onClick={() => setIsOpen(false)}

@@ -2,6 +2,7 @@
 import { useLocale } from "next-intl";
 import PageHero from "@/components/PageHero";
 import { useState } from "react";
+import { Turnstile } from "@marsidev/react-turnstile";
 
 export default function ContattiClient() {
   const locale = useLocale();
@@ -9,21 +10,29 @@ export default function ContattiClient() {
     nome: "", azienda: "", email: "", telefono: "", messaggio: "", interesse: "generico", privacy: false, _hp_field: "",
   });
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const [turnstileToken, setTurnstileToken] = useState<string>("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    if (!turnstileToken) {
+      setStatus("error");
+      return;
+    }
+
     setStatus("sending");
 
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, turnstileToken }),
       });
 
       if (res.ok) {
         setStatus("success");
         setFormData({ nome: "", azienda: "", email: "", telefono: "", messaggio: "", interesse: "generico", privacy: false, _hp_field: "" });
+        setTurnstileToken("");
       } else {
         setStatus("error");
       }
@@ -165,6 +174,16 @@ export default function ContattiClient() {
                       )}
                     </label>
                   </div>
+                  {/* Cloudflare Turnstile */}
+                  <div className="flex justify-center">
+                    <Turnstile
+                      siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+                      onSuccess={(token) => setTurnstileToken(token)}
+                      onError={() => setTurnstileToken("")}
+                      onExpire={() => setTurnstileToken("")}
+                    />
+                  </div>
+
                   {status === "error" && (
                     <div className="bg-red-50 text-red-600 text-sm p-3 rounded-xl">
                       {locale === 'it' ? 'Si è verificato un errore. Riprova o scrivici a info@printsolutionsrl.it' : 'An error occurred. Please try again or email us at info@printsolutionsrl.it'}

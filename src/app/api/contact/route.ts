@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const { nome, azienda, email, telefono, interesse, messaggio, _hp_field } = body;
+    const { nome, azienda, email, telefono, interesse, messaggio, _hp_field, turnstileToken } = body;
 
     // Honeypot check
     if (_hp_field) {
@@ -15,6 +15,37 @@ export async function POST(req: NextRequest) {
         { error: "Campi obbligatori mancanti" },
         { status: 400 }
       );
+    }
+
+    // Cloudflare Turnstile verification
+    if (!turnstileToken) {
+      return NextResponse.json(
+        { error: "Verifica CAPTCHA mancante" },
+        { status: 400 }
+      );
+    }
+
+    const turnstileSecret = process.env.TURNSTILE_SECRET_KEY;
+    if (turnstileSecret) {
+      const verifyRes = await fetch(
+        "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            secret: turnstileSecret,
+            response: turnstileToken,
+          }),
+        }
+      );
+
+      const verifyData = await verifyRes.json();
+      if (!verifyData.success) {
+        return NextResponse.json(
+          { error: "Verifica CAPTCHA fallita" },
+          { status: 403 }
+        );
+      }
     }
 
     // Send email via Brevo SMTP API

@@ -47,11 +47,11 @@ const nextConfig = {
             key: "Content-Security-Policy",
             value: [
               "default-src 'self'",
-              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.sentry.io https://*.googletagmanager.com https://*.google-analytics.com https://connect.facebook.net https://*.clarity.ms https://api.pirsch.io https://app.legalblink.it",
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.sentry.io https://*.googletagmanager.com https://*.google-analytics.com https://connect.facebook.net https://*.clarity.ms https://api.pirsch.io https://app.legalblink.it https://challenges.cloudflare.com",
               "style-src 'self' 'unsafe-inline'",
               "img-src 'self' data: blob: https: https://cdn.sanity.io https://*.facebook.com https://*.facebook.net",
               "font-src 'self' data:",
-              "connect-src 'self' https: https://*.sentry.io https://*.google-analytics.com https://*.clarity.ms https://api.pirsch.io https://*.facebook.com",
+              "connect-src 'self' https: https://*.sentry.io https://*.google-analytics.com https://*.clarity.ms https://api.pirsch.io https://*.facebook.com https://challenges.cloudflare.com",
               "media-src 'self' https:",
               "frame-src 'self' https://www.google.com https://player.vimeo.com https://www.youtube.com https://youtube.com",
               "frame-ancestors 'self'",

@@ -1,6 +1,7 @@
 'use client';
 
 import { createContext, useContext, useState, useCallback, useEffect, ReactNode } from 'react';
+import { Turnstile } from '@marsidev/react-turnstile';
 
 interface ConsultationContextType {
   open: (product?: string) => void;
@@ -87,6 +88,7 @@ function ConsultationModal({ product, onClose }: { product: string; onClose: () 
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
   const [error, setError] = useState('');
+  const [turnstileToken, setTurnstileToken] = useState<string>('');
 
   // Close on Escape
   useEffect(() => {
@@ -107,6 +109,10 @@ function ConsultationModal({ product, onClose }: { product: string; onClose: () 
       setError('Nome e email sono obbligatori');
       return;
     }
+    if (!turnstileToken) {
+      setError('Completa la verifica di sicurezza');
+      return;
+    }
     setSending(true);
     setError('');
     try {
@@ -116,6 +122,7 @@ function ConsultationModal({ product, onClose }: { product: string; onClose: () 
         body: JSON.stringify({
           ...form,
           messaggio: form.messaggio || `Richiesta consulenza gratuita${product ? ` per ${product}` : ''}`,
+          turnstileToken,
         }),
       });
       if (res.ok) {
@@ -234,6 +241,17 @@ function ConsultationModal({ product, onClose }: { product: string; onClose: () 
                 placeholder="Descrivi brevemente le tue esigenze..."
               />
             </div>
+            
+            {/* Cloudflare Turnstile */}
+            <div className="flex justify-center">
+              <Turnstile
+                siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!.trim()}
+                onSuccess={(token) => setTurnstileToken(token)}
+                onError={() => setTurnstileToken('')}
+                onExpire={() => setTurnstileToken('')}
+              />
+            </div>
+
             {error && <p className="text-red-500 text-sm">{error}</p>}
             <button
               type="submit"

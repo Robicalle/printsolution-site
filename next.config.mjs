@@ -53,7 +53,7 @@ const nextConfig = {
               "font-src 'self' data:",
               "connect-src 'self' https: https://*.sentry.io https://*.google-analytics.com https://*.clarity.ms https://api.pirsch.io https://*.facebook.com https://challenges.cloudflare.com",
               "media-src 'self' https:",
-              "frame-src 'self' https://www.google.com https://player.vimeo.com https://www.youtube.com https://youtube.com",
+              "frame-src 'self' https://www.google.com https://player.vimeo.com https://www.youtube.com https://youtube.com https://challenges.cloudflare.com",
               "frame-ancestors 'self'",
             ].join("; "),
           },

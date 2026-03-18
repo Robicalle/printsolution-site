@@ -177,7 +177,7 @@ export default function ContattiClient() {
                   {/* Cloudflare Turnstile */}
                   <div className="flex justify-center">
                     <Turnstile
-                      siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+                      siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!.trim()}
                       onSuccess={(token) => setTurnstileToken(token)}
                       onError={() => setTurnstileToken("")}
                       onExpire={() => setTurnstileToken("")}

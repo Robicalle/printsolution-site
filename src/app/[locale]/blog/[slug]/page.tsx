@@ -134,6 +134,26 @@ const portableTextComponents = {
       );
     },
   },
+  block: {
+    h2: ({ children }: any) => (
+      <h2 className="text-2xl font-bold text-gray-800 mt-10 mb-3 border-l-4 border-cyan-500 pl-4">
+        {children}
+      </h2>
+    ),
+    h3: ({ children }: any) => (
+      <h3 className="text-xl font-semibold text-gray-700 mt-8 mb-2">
+        {children}
+      </h3>
+    ),
+    normal: ({ children }: any) => (
+      <p className="text-gray-600 leading-relaxed mb-4">{children}</p>
+    ),
+    blockquote: ({ children }: any) => (
+      <blockquote className="border-l-4 border-cyan-400 pl-5 my-6 italic text-gray-500 bg-cyan-50 py-3 pr-4 rounded-r-lg">
+        {children}
+      </blockquote>
+    ),
+  },
   marks: {
     link: ({ children, value }: any) => (
       <a

@@ -120,7 +120,7 @@ const portableTextComponents = {
         <figure className="my-8">
           <video
             controls
-            className="rounded-xl w-full shadow-lg"
+            className="rounded-xl w-full max-h-72 shadow-lg"
             preload="metadata"
           >
             <source src={url} type="video/mp4" />

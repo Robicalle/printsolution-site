@@ -170,7 +170,7 @@ export default async function BlogPostPage({
   }
 
   const coverUrl = post.coverImage
-    ? urlForImage(post.coverImage)?.width(1200).height(500).url()
+    ? urlForImage(post.coverImage)?.width(1200).url()
     : null;
 
   const publishedDate = post.publishedAt
@@ -236,12 +236,13 @@ export default async function BlogPostPage({
       {/* Cover image */}
       {coverUrl && (
         <div className="container-custom -mt-10 mb-8 relative z-10">
-          <div className="relative w-full max-w-3xl mx-auto aspect-[12/5] rounded-2xl overflow-hidden shadow-lg bg-white">
+          <div className="w-full max-w-3xl mx-auto rounded-2xl overflow-hidden shadow-lg bg-white flex items-center justify-center p-6">
             <Image
               src={coverUrl}
               alt={post.title}
-              fill
-              className="object-contain p-6"
+              width={1200}
+              height={600}
+              className="object-contain w-full h-auto"
               priority
             />
           </div>

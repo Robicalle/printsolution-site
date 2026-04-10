@@ -43,6 +43,7 @@ export default defineType({
           { title: "Tecnologia", value: "tecnologia" },
           { title: "Guide", value: "guide" },
           { title: "News", value: "news" },
+          { title: "Case Study", value: "case-study" },
         ],
       },
     }),

@@ -117,10 +117,10 @@ const portableTextComponents = {
       }
       // File MP4 diretto → video HTML5
       return (
-        <figure className="my-8">
+        <figure className="my-8 flex flex-col items-center">
           <video
             controls
-            className="rounded-xl w-full max-h-72 shadow-lg"
+            className="rounded-xl shadow-lg w-full max-w-sm aspect-[9/16] object-cover"
             preload="metadata"
           >
             <source src={url} type="video/mp4" />

@@ -82,6 +82,57 @@ const portableTextComponents = {
         </figure>
       );
     },
+    videoEmbed: ({ value }: any) => {
+      if (!value?.url) return null;
+      const url: string = value.url;
+      // YouTube / Vimeo → iframe embed
+      const isYoutube = url.includes("youtube.com") || url.includes("youtu.be");
+      const isVimeo = url.includes("vimeo.com");
+      if (isYoutube || isVimeo) {
+        let embedUrl = url;
+        if (isYoutube) {
+          const id = url.match(/(?:v=|youtu\.be\/)([^&?]+)/)?.[1];
+          embedUrl = `https://www.youtube.com/embed/${id}`;
+        } else if (isVimeo) {
+          const id = url.match(/vimeo\.com\/(\d+)/)?.[1];
+          embedUrl = `https://player.vimeo.com/video/${id}`;
+        }
+        return (
+          <figure className="my-8">
+            <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-lg">
+              <iframe
+                src={embedUrl}
+                className="absolute inset-0 w-full h-full"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+            {value.caption && (
+              <figcaption className="text-center text-sm text-gray-400 mt-2">
+                {value.caption}
+              </figcaption>
+            )}
+          </figure>
+        );
+      }
+      // File MP4 diretto → video HTML5
+      return (
+        <figure className="my-8">
+          <video
+            controls
+            className="rounded-xl w-full shadow-lg"
+            preload="metadata"
+          >
+            <source src={url} type="video/mp4" />
+          </video>
+          {value.caption && (
+            <figcaption className="text-center text-sm text-gray-400 mt-2">
+              {value.caption}
+            </figcaption>
+          )}
+        </figure>
+      );
+    },
   },
   marks: {
     link: ({ children, value }: any) => (
@@ -185,12 +236,12 @@ export default async function BlogPostPage({
       {/* Cover image */}
       {coverUrl && (
         <div className="container-custom -mt-10 mb-8 relative z-10">
-          <div className="relative w-full max-w-3xl mx-auto aspect-[12/5] rounded-2xl overflow-hidden shadow-lg">
+          <div className="relative w-full max-w-3xl mx-auto aspect-[12/5] rounded-2xl overflow-hidden shadow-lg bg-white">
             <Image
               src={coverUrl}
               alt={post.title}
               fill
-              className="object-cover"
+              className="object-contain p-6"
               priority
             />
           </div>

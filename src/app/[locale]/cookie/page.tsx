@@ -23,262 +23,375 @@ export default async function CookiePage() {
         <PageHero title="Cookie Policy" />
         <section className="section-padding">
           <div className="container-custom max-w-3xl prose prose-gray">
+
             <h2>Informativa estesa sull&apos;uso dei cookie</h2>
-            <p className="text-sm text-gray-500">In vigore dal 15 gennaio 2024</p>
+            <table className="w-full text-sm border border-gray-200 rounded mb-8">
+              <tbody>
+                <tr className="border-b border-gray-100">
+                  <td className="py-2 px-4 font-semibold text-gray-700 w-48">Titolare del Trattamento</td>
+                  <td className="py-2 px-4">Print Solution S.r.l.</td>
+                </tr>
+                <tr className="border-b border-gray-100">
+                  <td className="py-2 px-4 font-semibold text-gray-700">Email di contatto</td>
+                  <td className="py-2 px-4"><a href="mailto:info@printsolutionsrl.it">info@printsolutionsrl.it</a></td>
+                </tr>
+                <tr className="border-b border-gray-100">
+                  <td className="py-2 px-4 font-semibold text-gray-700">Ultimo aggiornamento</td>
+                  <td className="py-2 px-4">Aprile 2026</td>
+                </tr>
+                <tr>
+                  <td className="py-2 px-4 font-semibold text-gray-700">Normativa di riferimento</td>
+                  <td className="py-2 px-4">GDPR Reg. UE 2016/679 — D.Lgs. 196/2003 — Linee Guida Garante 10 luglio 2021</td>
+                </tr>
+              </tbody>
+            </table>
 
-            <h3>Premessa</h3>
+            <h3>1. Cosa sono i cookie</h3>
             <p>
-              La presente cookie policy è resa per il sito www.printsolutionsrl.it (Sito). Il
-              documento è stato redatto tenendo conto di quanto indicato dal Regolamento europeo
-              679/2016 in materia di protezione dei dati personali (GDPR), dal Codice della Privacy
-              (D. Lgs. 30 giugno 2003 n. 196) e delle Linee Guida del Garante Privacy (soprattutto
-              le Linee Guida sull&apos;uso dei cookie emesse il 10 luglio 2021).
+              I cookie sono piccoli file di testo che i siti web visitati inviano al browser
+              dell&apos;utente, dove vengono memorizzati e ritrasmessi al sito nelle visite successive.
+              Consentono al sito di riconoscere il dispositivo dell&apos;utente e di memorizzare alcune
+              informazioni sulle preferenze di navigazione.
             </p>
             <p>
-              <strong>Titolare del Trattamento:</strong> Print Solution S.r.l.
+              I cookie si distinguono in: <strong>cookie di prima parte</strong> (installati
+              direttamente dal Titolare del Sito) e <strong>cookie di terza parte</strong> (installati
+              da soggetti terzi tramite il Sito); e in base alla finalità: <strong>cookie tecnici</strong>{" "}
+              (necessari al funzionamento) e <strong>cookie analitici/di profilazione</strong>{" "}
+              (richiedono il consenso dell&apos;utente).
             </p>
 
-            <h3>Che cosa sono i cookie e a cosa servono</h3>
+            <h3>2. Cookie tecnici di prima parte</h3>
             <p>
-              Un cookie è un file di testo che un sito web visitato dall&apos;utente invia al suo
-              terminale (computer, dispositivo mobile quale smartphone o tablet), dove viene
-              memorizzato per essere poi ritrasmesso a tale sito in occasione di una visita
-              successiva al sito medesimo.
+              Il Sito utilizza i seguenti cookie tecnici, necessari per il corretto funzionamento.
+              Non richiedono il consenso dell&apos;utente (Linee Guida Garante 2021).
             </p>
-            <p>I cookie vengono tra loro distinti:</p>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm border border-gray-200 rounded">
+                <thead className="bg-gray-50">
+                  <tr>
+                    <th className="py-2 px-4 text-left font-semibold text-gray-700 border-b border-gray-200">Nome cookie</th>
+                    <th className="py-2 px-4 text-left font-semibold text-gray-700 border-b border-gray-200">Finalità</th>
+                    <th className="py-2 px-4 text-left font-semibold text-gray-700 border-b border-gray-200">Durata</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b border-gray-100">
+                    <td className="py-2 px-4 font-mono text-xs">session_id</td>
+                    <td className="py-2 px-4">Gestione sessione utente e carrello e-shop</td>
+                    <td className="py-2 px-4">Sessione</td>
+                  </tr>
+                  <tr className="border-b border-gray-100">
+                    <td className="py-2 px-4 font-mono text-xs">cookie_consent</td>
+                    <td className="py-2 px-4">Memorizza le preferenze sui cookie espresse dall&apos;utente</td>
+                    <td className="py-2 px-4">12 mesi</td>
+                  </tr>
+                  <tr className="border-b border-gray-100">
+                    <td className="py-2 px-4 font-mono text-xs">XSRF-TOKEN</td>
+                    <td className="py-2 px-4">Protezione CSRF (sicurezza dei form)</td>
+                    <td className="py-2 px-4">Sessione</td>
+                  </tr>
+                  <tr>
+                    <td className="py-2 px-4 font-mono text-xs">lang</td>
+                    <td className="py-2 px-4">Memorizza la lingua selezionata (IT/EN)</td>
+                    <td className="py-2 px-4">12 mesi</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3>3. Cookie analitici di terza parte — Google Analytics 4</h3>
+            <p>
+              Il Sito utilizza Google Analytics 4 (GA4), un servizio di analisi web fornito da
+              Google LLC (1600 Amphitheatre Parkway, Mountain View, CA, USA). GA4 raccoglie dati
+              sulla navigazione degli utenti in forma anonimizzata per produrre statistiche aggregate
+              sull&apos;utilizzo del Sito. L&apos;indirizzo IP è anonimizzato prima di qualsiasi
+              elaborazione.
+            </p>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm border border-gray-200 rounded">
+                <thead className="bg-gray-50">
+                  <tr>
+                    <th className="py-2 px-4 text-left font-semibold text-gray-700 border-b border-gray-200">Nome cookie</th>
+                    <th className="py-2 px-4 text-left font-semibold text-gray-700 border-b border-gray-200">Finalità</th>
+                    <th className="py-2 px-4 text-left font-semibold text-gray-700 border-b border-gray-200">Durata</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b border-gray-100">
+                    <td className="py-2 px-4 font-mono text-xs">_ga</td>
+                    <td className="py-2 px-4">Identifica gli utenti univoci per Google Analytics</td>
+                    <td className="py-2 px-4">2 anni</td>
+                  </tr>
+                  <tr className="border-b border-gray-100">
+                    <td className="py-2 px-4 font-mono text-xs">_ga_XXXXXXX</td>
+                    <td className="py-2 px-4">Mantiene lo stato della sessione in GA4</td>
+                    <td className="py-2 px-4">2 anni</td>
+                  </tr>
+                  <tr className="border-b border-gray-100">
+                    <td className="py-2 px-4 font-mono text-xs">_gid</td>
+                    <td className="py-2 px-4">Distingue gli utenti in sessioni diverse</td>
+                    <td className="py-2 px-4">24 ore</td>
+                  </tr>
+                  <tr>
+                    <td className="py-2 px-4 font-mono text-xs">_gat</td>
+                    <td className="py-2 px-4">Limita la frequenza delle richieste a Google Analytics</td>
+                    <td className="py-2 px-4">1 minuto</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p className="text-sm text-gray-500 mt-2">
+              <strong>Base giuridica:</strong> legittimo interesse (art. 6.1.f GDPR) per la sola
+              analisi statistica anonimizzata. L&apos;utente può opporsi in qualsiasi momento tramite
+              il pannello di gestione cookie del Sito o installando il componente aggiuntivo del
+              browser:{" "}
+              <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer">
+                tools.google.com/dlpage/gaoptout
+              </a>.
+              I dati possono essere trasferiti negli USA sulla base delle Clausole Contrattuali Standard
+              adottate da Google. Informativa privacy di Google:{" "}
+              <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">
+                policies.google.com/privacy
+              </a>.
+            </p>
+
+            <h3>4. Nessun cookie di profilazione pubblicitaria</h3>
+            <p>
+              Il Sito non utilizza cookie di profilazione pubblicitaria propri. Non viene effettuato
+              remarketing né targeting pubblicitario tramite cookie di terze parti a finalità
+              commerciale.
+            </p>
+
+            <h3>5. Come gestire i cookie</h3>
+
+            <h4>5.1 Pannello preferenze cookie del Sito</h4>
+            <p>
+              In qualsiasi momento l&apos;utente può modificare le proprie preferenze sui cookie
+              tramite il link &quot;Gestisci cookie&quot; presente nel footer del Sito.
+            </p>
+
+            <h4>5.2 Impostazioni del browser</h4>
+            <p>
+              L&apos;utente può impostare il proprio browser per rifiutare tutti i cookie o per
+              ricevere un avviso quando viene inviato un cookie. Si noti che la disabilitazione dei
+              cookie tecnici potrebbe compromettere il corretto funzionamento del Sito e
+              dell&apos;E-Shop.
+            </p>
             <ul>
-              <li>
-                in base al soggetto che li installa, a seconda che si tratti dello stesso gestore
-                del sito visitato (c.d. &quot;cookie di prima parte&quot;) ovvero di un soggetto
-                diverso (c.d. &quot;cookie di terza parte&quot;);
-              </li>
-              <li>
-                in base alla finalità di ciascun cookie: alcuni cookie permettono una migliore
-                navigazione, memorizzando alcune scelte dell&apos;utente, ad esempio la lingua (c.d.
-                &quot;cookie tecnici&quot;), altri cookie consentono di monitorare la navigazione
-                dell&apos;utente anche allo scopo di inviare pubblicità e/od offrire servizi in
-                linea con sue preferenze (c.d. &quot;cookie di profilazione&quot;).
-              </li>
-            </ul>
-            <p>
-              Solo i cookie di profilazione richiedono il consenso preventivo dell&apos;utente al
-              loro utilizzo.
-            </p>
-            <p>
-              Il Titolare del Trattamento è responsabile esclusivamente dei cookie di prima parte
-              dallo stesso installati sul Sito.
-            </p>
-
-            <h3>Cookie tecnici di prima parte</h3>
-            <p>
-              Questi cookie sono necessari per il funzionamento del Sito e non possono essere
-              disattivati. Di solito sono definiti come una risposta alle azioni intraprese che
-              costituiscono una richiesta di servizi, come l&apos;impostazione delle preferenze sui
-              cookie, l&apos;accesso o la compilazione di moduli, preferenze di navigazione.
-            </p>
-            <ul>
-              <li>
-                Il Sito rilascia cookie di navigazione o di sessione che garantiscono la normale
-                navigazione e normale fruizione del Sito.
-              </li>
-              <li>
-                Vengono utilizzati anche cookie tecnici che Le permettono di navigare sul Sito
-                mantenendo le scelte effettuate.
-              </li>
-              <li>
-                Il Titolare del Trattamento utilizza anche cookie che tengono traccia dei Prodotti
-                visionati dall&apos;utente durante la sessione sul Sito.
-              </li>
+              <li><strong>Google Chrome:</strong> Menu &gt; Impostazioni &gt; Privacy e sicurezza &gt; Cookie e altri dati dei siti</li>
+              <li><strong>Mozilla Firefox:</strong> Menu &gt; Opzioni &gt; Privacy e sicurezza &gt; Cookie e dati dei siti</li>
+              <li><strong>Microsoft Edge:</strong> Menu &gt; Impostazioni &gt; Cookie e autorizzazioni del sito</li>
+              <li><strong>Safari (macOS):</strong> Safari &gt; Preferenze &gt; Privacy</li>
+              <li><strong>Safari (iOS):</strong> Impostazioni &gt; Safari &gt; Privacy e sicurezza</li>
             </ul>
 
-            <h3>Cookie di profilazione di terza parte</h3>
-            <p>Il Sito non rilascia cookie di profilazione, pubblicitaria o statistica.</p>
-
-            <h3>Gestione dei cookie tramite browser</h3>
+            <h4>5.3 Opt-out specifico per Google Analytics</h4>
             <p>
-              Lei può abilitare/disabilitare i cookie anche attraverso le opzioni del Suo browser:
-            </p>
-            <ul>
-              <li>
-                <strong>Internet Explorer:</strong> Accedere al menu Strumenti → Opzioni Internet →
-                Privacy → Avanzate → selezionare le proprie preferenze.
-              </li>
-              <li>
-                <strong>Google Chrome:</strong> Menu Chrome (pulsante in alto a destra) →
-                Impostazioni → Avanzate → Privacy e sicurezza → Impostazioni contenuti → Cookie.
-              </li>
-              <li>
-                <strong>Firefox:</strong> Strumenti → Opzioni → Privacy e sicurezza → Utilizza
-                impostazioni personalizzate per la cronologia → Cookie.
-              </li>
-              <li>
-                <strong>Safari:</strong> Safari → Preferenze → Privacy e sicurezza → Blocca cookie.
-              </li>
-            </ul>
-
-            <h3>I Suoi diritti</h3>
-            <p>Ai sensi dell&apos;art. 13 del GDPR, Lei ha diritto di:</p>
-            <ul>
-              <li>
-                chiedere al Titolare del Trattamento l&apos;accesso ai Suoi dati personali e la
-                rettifica o la cancellazione degli stessi o la limitazione del trattamento che La
-                riguardano o di opporsi al loro trattamento, oltre al diritto alla portabilità dei
-                dati;
-              </li>
-              <li>
-                revocare il consenso in qualsiasi momento senza pregiudicare la liceità del
-                trattamento basata sul consenso prestato prima della revoca;
-              </li>
-              <li>
-                proporre reclamo a un&apos;autorità di controllo (es.: il Garante per la protezione
-                dei dati personali).
-              </li>
-            </ul>
-            <p>
-              I diritti di cui sopra potranno essere esercitati con richiesta rivolta senza
-              formalità ai contatti indicati in Premessa.
+              Componente aggiuntivo del browser:{" "}
+              <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer">
+                https://tools.google.com/dlpage/gaoptout
+              </a>
             </p>
 
-            <h3>Comunicazione dei dati</h3>
+            <h3>6. Diritti dell&apos;interessato</h3>
             <p>
-              Il Titolare del Trattamento non comunica a terzi le informazioni derivanti
-              dall&apos;uso dei cookie.
+              L&apos;utente può esercitare i diritti previsti dagli artt. 15-22 GDPR (accesso,
+              rettifica, cancellazione, limitazione, opposizione, portabilità) scrivendo a{" "}
+              <a href="mailto:info@printsolutionsrl.it">info@printsolutionsrl.it</a> o via PEC a{" "}
+              <a href="mailto:printsolutionsrl@pec.it">printsolutionsrl@pec.it</a>. Ha inoltre il
+              diritto di proporre reclamo al Garante per la protezione dei dati personali (
+              <a href="https://www.garanteprivacy.it" target="_blank" rel="noopener noreferrer">
+                www.garanteprivacy.it
+              </a>
+              ).
             </p>
 
-            <h3>Conservazione delle informazioni</h3>
+            <h3>7. Aggiornamenti</h3>
             <p>
-              I dati comportamentali dell&apos;utente vengono conservati sino a 1 anno da quando
-              sono stati ottenuti dal relativo cookie di profilazione. In ogni caso, i dati vengono
-              cancellati prima se v&apos;è revoca del consenso da parte dell&apos;utente.
+              La presente Cookie Policy può essere aggiornata in seguito a variazioni normative o
+              modifiche dei servizi utilizzati sul Sito. Si consiglia di consultare periodicamente
+              questa pagina. La versione in vigore è quella con la data indicata in intestazione.
             </p>
+
           </div>
         </section>
       </>
     );
   }
 
+  // English version
   return (
     <>
       <PageHero title="Cookie Policy" />
       <section className="section-padding">
         <div className="container-custom max-w-3xl prose prose-gray">
+
           <h2>Extended Cookie Policy</h2>
-          <p className="text-sm text-gray-500">Effective from January 15, 2024</p>
+          <table className="w-full text-sm border border-gray-200 rounded mb-8">
+            <tbody>
+              <tr className="border-b border-gray-100">
+                <td className="py-2 px-4 font-semibold text-gray-700 w-48">Data Controller</td>
+                <td className="py-2 px-4">Print Solution S.r.l.</td>
+              </tr>
+              <tr className="border-b border-gray-100">
+                <td className="py-2 px-4 font-semibold text-gray-700">Contact email</td>
+                <td className="py-2 px-4"><a href="mailto:info@printsolutionsrl.it">info@printsolutionsrl.it</a></td>
+              </tr>
+              <tr className="border-b border-gray-100">
+                <td className="py-2 px-4 font-semibold text-gray-700">Last updated</td>
+                <td className="py-2 px-4">April 2026</td>
+              </tr>
+              <tr>
+                <td className="py-2 px-4 font-semibold text-gray-700">Legal reference</td>
+                <td className="py-2 px-4">GDPR Reg. EU 2016/679 — D.Lgs. 196/2003 — Italian DPA Guidelines July 10, 2021</td>
+              </tr>
+            </tbody>
+          </table>
 
-          <h3>Introduction</h3>
+          <h3>1. What are cookies</h3>
           <p>
-            This cookie policy applies to the website www.printsolutionsrl.it (the
-            &quot;Website&quot;). This document has been drafted in accordance with the European
-            Regulation 679/2016 on the protection of personal data (GDPR), the Italian Privacy Code
-            (Legislative Decree No. 196 of June 30, 2003) and the Italian Data Protection Authority
-            Guidelines (in particular the Guidelines on the use of cookies issued on July 10, 2021).
+            Cookies are small text files sent by websites to the user&apos;s browser, stored and
+            retransmitted on subsequent visits. They allow the site to recognise the user&apos;s
+            device and remember certain browsing preferences.
           </p>
           <p>
-            <strong>Data Controller:</strong> Print Solution S.r.l.
+            Cookies are classified as <strong>first-party</strong> (set by the website operator)
+            or <strong>third-party</strong> (set by other parties); and by purpose:
+            <strong> technical cookies</strong> (necessary for functioning) or
+            <strong> analytical/profiling cookies</strong> (requiring user consent).
           </p>
 
-          <h3>What are cookies and what are they used for</h3>
+          <h3>2. First-party technical cookies</h3>
+          <p>These cookies are necessary for the Website to function and do not require consent.</p>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border border-gray-200 rounded">
+              <thead className="bg-gray-50">
+                <tr>
+                  <th className="py-2 px-4 text-left font-semibold text-gray-700 border-b border-gray-200">Cookie name</th>
+                  <th className="py-2 px-4 text-left font-semibold text-gray-700 border-b border-gray-200">Purpose</th>
+                  <th className="py-2 px-4 text-left font-semibold text-gray-700 border-b border-gray-200">Duration</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b border-gray-100">
+                  <td className="py-2 px-4 font-mono text-xs">session_id</td>
+                  <td className="py-2 px-4">Session management and e-shop cart</td>
+                  <td className="py-2 px-4">Session</td>
+                </tr>
+                <tr className="border-b border-gray-100">
+                  <td className="py-2 px-4 font-mono text-xs">cookie_consent</td>
+                  <td className="py-2 px-4">Stores the user&apos;s cookie preferences</td>
+                  <td className="py-2 px-4">12 months</td>
+                </tr>
+                <tr className="border-b border-gray-100">
+                  <td className="py-2 px-4 font-mono text-xs">XSRF-TOKEN</td>
+                  <td className="py-2 px-4">CSRF protection (form security)</td>
+                  <td className="py-2 px-4">Session</td>
+                </tr>
+                <tr>
+                  <td className="py-2 px-4 font-mono text-xs">lang</td>
+                  <td className="py-2 px-4">Stores the selected language (IT/EN)</td>
+                  <td className="py-2 px-4">12 months</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>3. Third-party analytical cookies — Google Analytics 4</h3>
           <p>
-            A cookie is a text file sent by a website visited by the user to their device (computer,
-            mobile device such as smartphone or tablet), where it is stored and then retransmitted to
-            the same website on subsequent visits.
+            The Website uses Google Analytics 4 (GA4) by Google LLC. GA4 collects anonymised
+            browsing data to produce aggregate usage statistics. IP addresses are anonymised
+            before any processing.
           </p>
-          <p>Cookies are distinguished by:</p>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border border-gray-200 rounded">
+              <thead className="bg-gray-50">
+                <tr>
+                  <th className="py-2 px-4 text-left font-semibold text-gray-700 border-b border-gray-200">Cookie name</th>
+                  <th className="py-2 px-4 text-left font-semibold text-gray-700 border-b border-gray-200">Purpose</th>
+                  <th className="py-2 px-4 text-left font-semibold text-gray-700 border-b border-gray-200">Duration</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b border-gray-100">
+                  <td className="py-2 px-4 font-mono text-xs">_ga</td>
+                  <td className="py-2 px-4">Identifies unique users</td>
+                  <td className="py-2 px-4">2 years</td>
+                </tr>
+                <tr className="border-b border-gray-100">
+                  <td className="py-2 px-4 font-mono text-xs">_ga_XXXXXXX</td>
+                  <td className="py-2 px-4">Maintains GA4 session state</td>
+                  <td className="py-2 px-4">2 years</td>
+                </tr>
+                <tr className="border-b border-gray-100">
+                  <td className="py-2 px-4 font-mono text-xs">_gid</td>
+                  <td className="py-2 px-4">Distinguishes users across sessions</td>
+                  <td className="py-2 px-4">24 hours</td>
+                </tr>
+                <tr>
+                  <td className="py-2 px-4 font-mono text-xs">_gat</td>
+                  <td className="py-2 px-4">Throttles request rate to Google Analytics</td>
+                  <td className="py-2 px-4">1 minute</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="text-sm text-gray-500 mt-2">
+            <strong>Legal basis:</strong> legitimate interest (Art. 6.1.f GDPR) for anonymised
+            statistical analysis only. You may opt out via the cookie settings panel or by
+            installing:{" "}
+            <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer">
+              tools.google.com/dlpage/gaoptout
+            </a>.
+          </p>
+
+          <h3>4. No advertising profiling cookies</h3>
+          <p>
+            The Website does not use advertising profiling cookies. No remarketing or commercial
+            targeting is carried out through third-party cookies.
+          </p>
+
+          <h3>5. How to manage cookies</h3>
+
+          <h4>5.1 Cookie preferences panel</h4>
+          <p>You can update your cookie preferences at any time via the &quot;Manage cookies&quot; link in the footer.</p>
+
+          <h4>5.2 Browser settings</h4>
           <ul>
-            <li>
-              the entity that installs them: either the operator of the visited website
-              (&quot;first-party cookies&quot;) or a third party (&quot;third-party cookies&quot;);
-            </li>
-            <li>
-              their purpose: some cookies enable better browsing by storing certain user preferences
-              such as language (&quot;technical cookies&quot;), while others allow monitoring user
-              browsing activity for advertising purposes or to offer services tailored to their
-              preferences (&quot;profiling cookies&quot;).
-            </li>
-          </ul>
-          <p>Only profiling cookies require prior user consent.</p>
-          <p>
-            The Data Controller is solely responsible for its own first-party cookies installed on
-            the Website.
-          </p>
-
-          <h3>First-party technical cookies</h3>
-          <p>
-            These cookies are necessary for the Website to function and cannot be deactivated. They
-            are usually set in response to actions taken by the user that constitute a service
-            request, such as setting cookie preferences, logging in, or filling in forms.
-          </p>
-          <ul>
-            <li>
-              The Website uses navigation or session cookies that ensure normal browsing and use of
-              the Website.
-            </li>
-            <li>
-              Technical cookies are also used to allow you to browse the Website while maintaining
-              your choices.
-            </li>
-            <li>
-              The Data Controller also uses cookies that track products viewed by the user during the
-              session on the Website.
-            </li>
+            <li><strong>Google Chrome:</strong> Menu &gt; Settings &gt; Privacy and security &gt; Cookies and other site data</li>
+            <li><strong>Mozilla Firefox:</strong> Menu &gt; Options &gt; Privacy &amp; Security &gt; Cookies and Site Data</li>
+            <li><strong>Microsoft Edge:</strong> Menu &gt; Settings &gt; Cookies and site permissions</li>
+            <li><strong>Safari (macOS):</strong> Safari &gt; Preferences &gt; Privacy</li>
+            <li><strong>Safari (iOS):</strong> Settings &gt; Safari &gt; Privacy &amp; Security</li>
           </ul>
 
-          <h3>Third-party profiling cookies</h3>
-          <p>The Website does not use profiling, advertising, or statistical cookies.</p>
-
-          <h3>Managing cookies through your browser</h3>
-          <p>You can enable/disable cookies through your browser settings:</p>
-          <ul>
-            <li>
-              <strong>Internet Explorer:</strong> Tools menu → Internet Options → Privacy → Advanced
-              → select your preferences.
-            </li>
-            <li>
-              <strong>Google Chrome:</strong> Chrome menu (top-right button) → Settings → Advanced →
-              Privacy and Security → Content Settings → Cookies.
-            </li>
-            <li>
-              <strong>Firefox:</strong> Tools → Options → Privacy and Security → Use custom settings
-              for history → Cookies.
-            </li>
-            <li>
-              <strong>Safari:</strong> Safari → Preferences → Privacy and Security → Block Cookies.
-            </li>
-          </ul>
-
-          <h3>Your rights</h3>
-          <p>Pursuant to Art. 13 of the GDPR, you have the right to:</p>
-          <ul>
-            <li>
-              request from the Data Controller access to your personal data and their rectification
-              or erasure, restriction of processing, or to object to processing, as well as the
-              right to data portability;
-            </li>
-            <li>
-              withdraw consent at any time without affecting the lawfulness of processing based on
-              consent given prior to withdrawal;
-            </li>
-            <li>
-              lodge a complaint with a supervisory authority (e.g., the Italian Data Protection
-              Authority).
-            </li>
-          </ul>
+          <h4>5.3 Google Analytics opt-out</h4>
           <p>
-            The above rights may be exercised by contacting us informally using the details provided
-            in the Introduction.
+            Browser add-on:{" "}
+            <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer">
+              https://tools.google.com/dlpage/gaoptout
+            </a>
           </p>
 
-          <h3>Data disclosure</h3>
+          <h3>6. Your rights</h3>
           <p>
-            The Data Controller does not disclose to third parties any information derived from the
-            use of cookies.
+            You may exercise your rights under Arts. 15–22 GDPR by writing to{" "}
+            <a href="mailto:info@printsolutionsrl.it">info@printsolutionsrl.it</a> or certified
+            email to <a href="mailto:printsolutionsrl@pec.it">printsolutionsrl@pec.it</a>.
+            You may also lodge a complaint with the Italian Data Protection Authority (
+            <a href="https://www.garanteprivacy.it" target="_blank" rel="noopener noreferrer">
+              www.garanteprivacy.it
+            </a>
+            ).
           </p>
 
-          <h3>Data retention</h3>
+          <h3>7. Updates</h3>
           <p>
-            User behavioral data is retained for up to 1 year from collection via the relevant
-            profiling cookie. In any case, data is deleted earlier if the user withdraws consent.
+            This Cookie Policy may be updated following regulatory changes or modifications to the
+            services used on the Website. Please check this page periodically.
           </p>
+
         </div>
       </section>
     </>

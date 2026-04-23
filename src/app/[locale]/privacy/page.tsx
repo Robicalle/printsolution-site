@@ -8,7 +8,7 @@ export async function generateMetadata(): Promise<Metadata> {
     title: "Privacy Policy",
     description:
       locale === "it"
-        ? "Informativa sulla privacy di Print Solution S.r.l. — Trattamento dei dati personali ai sensi del GDPR."
+        ? "Informativa sul trattamento dei dati personali di Print Solution S.r.l. ai sensi dell'art. 13 GDPR."
         : "Privacy policy of Print Solution S.r.l. — Personal data processing under GDPR.",
     alternates: { canonical: "/privacy" },
   };
@@ -23,307 +23,392 @@ export default async function PrivacyPage() {
         <PageHero title="Privacy Policy" />
         <section className="section-padding">
           <div className="container-custom max-w-3xl prose prose-gray">
+
             <h2>Informativa sul trattamento dei dati personali</h2>
             <p className="text-sm text-gray-500">
               Ai sensi dell&apos;art. 13 del Regolamento UE 2016/679 (GDPR)
             </p>
 
-            <h3>Titolare del Trattamento</h3>
+            <table className="w-full text-sm border border-gray-200 rounded mb-8">
+              <tbody>
+                <tr className="border-b border-gray-100">
+                  <td className="py-2 px-4 font-semibold text-gray-700 w-40">Titolare</td>
+                  <td className="py-2 px-4">Print Solution S.r.l.</td>
+                </tr>
+                <tr className="border-b border-gray-100">
+                  <td className="py-2 px-4 font-semibold text-gray-700">Sede legale</td>
+                  <td className="py-2 px-4">Via Pisa 200, int. 23 — 20099 Sesto San Giovanni (MI)</td>
+                </tr>
+                <tr className="border-b border-gray-100">
+                  <td className="py-2 px-4 font-semibold text-gray-700">P.IVA / C.F.</td>
+                  <td className="py-2 px-4">07149250966</td>
+                </tr>
+                <tr className="border-b border-gray-100">
+                  <td className="py-2 px-4 font-semibold text-gray-700">REA</td>
+                  <td className="py-2 px-4">MI – 1939367</td>
+                </tr>
+                <tr className="border-b border-gray-100">
+                  <td className="py-2 px-4 font-semibold text-gray-700">Email</td>
+                  <td className="py-2 px-4"><a href="mailto:info@printsolutionsrl.it">info@printsolutionsrl.it</a></td>
+                </tr>
+                <tr className="border-b border-gray-100">
+                  <td className="py-2 px-4 font-semibold text-gray-700">PEC</td>
+                  <td className="py-2 px-4"><a href="mailto:printsolutionsrl@pec.it">printsolutionsrl@pec.it</a></td>
+                </tr>
+                <tr className="border-b border-gray-100">
+                  <td className="py-2 px-4 font-semibold text-gray-700">Sito web</td>
+                  <td className="py-2 px-4">www.printsolutionsrl.it</td>
+                </tr>
+                <tr>
+                  <td className="py-2 px-4 font-semibold text-gray-700">Ultimo aggiornamento</td>
+                  <td className="py-2 px-4">Aprile 2026</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h3>1. Ambito di applicazione</h3>
             <p>
-              <strong>Print Solution S.r.l.</strong>
-              <br />
-              Via Pisa 200, int. 23 — 20099 Sesto San Giovanni (MI), Italia
-              <br />
-              P.IVA e C.F.: 07149250966
-              <br />
-              E-mail:{" "}
-              <a href="mailto:info@printsolutionsrl.it">info@printsolutionsrl.it</a>
+              La presente informativa descrive le modalità di raccolta e trattamento dei dati personali
+              degli utenti che visitano il sito web www.printsolutionsrl.it (il &quot;Sito&quot;),
+              utilizzano il modulo di contatto, effettuano acquisti tramite l&apos;E-Shop di consumabili,
+              o interagiscono con Print Solution S.r.l. nell&apos;ambito di un rapporto commerciale.
             </p>
 
-            <h3>Tipologie di dati raccolti</h3>
+            <h3>2. Dati raccolti e finalità del trattamento</h3>
+
+            <h4>2.1 Navigazione del Sito</h4>
             <p>
-              Il Titolare raccoglie, direttamente o tramite terze parti, le seguenti categorie di
-              dati personali:
-            </p>
-            <ul>
-              <li>
-                <strong>Dati di navigazione:</strong> indirizzo IP, tipo di browser, sistema
-                operativo, pagine visitate, orari di accesso e altre informazioni trasmesse
-                automaticamente dal dispositivo durante la navigazione.
-              </li>
-              <li>
-                <strong>Dati forniti volontariamente dall&apos;utente:</strong> nome, cognome,
-                indirizzo e-mail, numero di telefono, ragione sociale e qualsiasi altro dato
-                comunicato tramite i moduli di contatto o richiesta preventivo presenti sul Sito.
-              </li>
-            </ul>
-
-            <h3>Finalità del trattamento</h3>
-            <p>I dati personali sono trattati per le seguenti finalità:</p>
-            <ul>
-              <li>
-                consentire la navigazione sul Sito e garantirne il corretto funzionamento;
-              </li>
-              <li>rispondere alle richieste di contatto e/o preventivo dell&apos;utente;</li>
-              <li>adempiere ad obblighi di legge, regolamenti o normativa comunitaria;</li>
-              <li>
-                previo consenso, inviare comunicazioni commerciali e promozionali relative ai
-                prodotti e servizi offerti dal Titolare.
-              </li>
-            </ul>
-
-            <h3>Base giuridica del trattamento</h3>
-            <ul>
-              <li>
-                <strong>Esecuzione di un contratto</strong> o misure precontrattuali (art. 6, par.
-                1, lett. b GDPR): per rispondere alle richieste dell&apos;utente.
-              </li>
-              <li>
-                <strong>Obbligo legale</strong> (art. 6, par. 1, lett. c GDPR): per adempiere ad
-                obblighi normativi.
-              </li>
-              <li>
-                <strong>Consenso</strong> (art. 6, par. 1, lett. a GDPR): per l&apos;invio di
-                comunicazioni commerciali.
-              </li>
-              <li>
-                <strong>Legittimo interesse</strong> (art. 6, par. 1, lett. f GDPR): per la
-                sicurezza e il corretto funzionamento del Sito.
-              </li>
-            </ul>
-
-            <h3>Modalità del trattamento</h3>
-            <p>
-              Il trattamento dei dati è effettuato mediante strumenti informatici e/o telematici, con
-              modalità organizzative e logiche strettamente correlate alle finalità indicate. Il
-              Titolare adotta misure di sicurezza adeguate per prevenire la perdita, l&apos;uso
-              illecito o non corretto e l&apos;accesso non autorizzato ai dati.
-            </p>
-
-            <h3>Comunicazione e diffusione dei dati</h3>
-            <p>
-              I dati personali potranno essere comunicati a soggetti terzi esclusivamente per
-              l&apos;adempimento delle finalità sopra indicate, tra cui:
+              Durante la navigazione vengono acquisiti automaticamente alcuni dati tecnici trasmessi dal browser:
             </p>
             <ul>
-              <li>fornitori di servizi tecnici e informatici (hosting, manutenzione del Sito);</li>
-              <li>consulenti e professionisti incaricati dal Titolare;</li>
-              <li>
-                autorità competenti, nei casi previsti dalla legge.
-              </li>
+              <li>Indirizzo IP, tipo di browser, sistema operativo</li>
+              <li>Pagine visitate, orari di accesso, durata della sessione</li>
+              <li>Dati statistici aggregati tramite Google Analytics 4 (base giuridica: legittimo interesse ex art. 6.1.f GDPR)</li>
             </ul>
-            <p>I dati personali non saranno diffusi.</p>
-
-            <h3>Trasferimento dei dati</h3>
             <p>
-              I dati personali sono conservati su server situati nell&apos;Unione Europea. Qualora
-              fosse necessario trasferire i dati al di fuori dell&apos;UE, il Titolare garantirà
-              l&apos;adozione di garanzie adeguate ai sensi degli artt. 44 e ss. del GDPR.
+              Questi dati sono utilizzati per garantire il corretto funzionamento del Sito, analizzare
+              il traffico in forma aggregata e migliorare l&apos;esperienza utente. Non vengono
+              utilizzati per identificare l&apos;utente se non in caso di necessità per accertare
+              responsabilità in caso di illeciti informatici.
             </p>
 
-            <h3>Conservazione dei dati</h3>
+            <h4>2.2 Moduli di contatto e richiesta informazioni</h4>
             <p>
-              I dati personali sono conservati per il tempo strettamente necessario al raggiungimento
-              delle finalità per cui sono stati raccolti e comunque entro i termini previsti dalla
-              normativa vigente. I dati raccolti tramite i moduli di contatto sono conservati per un
-              periodo massimo di 24 mesi dalla raccolta, salvo diversa necessità legale.
+              Quando l&apos;utente compila un modulo di contatto o invia una email a
+              info@printsolutionsrl.it, vengono raccolti: nome, cognome, ragione sociale,
+              indirizzo email, numero di telefono e contenuto del messaggio.
+            </p>
+            <p>
+              <strong>Finalità:</strong> rispondere alla richiesta e, ove pertinente, fornire preventivi
+              o informazioni commerciali.<br />
+              <strong>Base giuridica:</strong> misure precontrattuali (art. 6.1.b GDPR) e legittimo
+              interesse (art. 6.1.f GDPR).<br />
+              <strong>Conservazione:</strong> 24 mesi dalla data di ricezione, salvo necessità legali
+              o contrattuali.
             </p>
 
-            <h3>Diritti dell&apos;interessato</h3>
-            <p>Ai sensi degli artt. 15-22 del GDPR, Lei ha il diritto di:</p>
+            <h4>2.3 E-Shop consumabili</h4>
+            <p>Per gli acquisti effettuati sull&apos;E-Shop vengono raccolti:</p>
             <ul>
-              <li>accedere ai Suoi dati personali;</li>
-              <li>ottenerne la rettifica o la cancellazione;</li>
-              <li>ottenere la limitazione del trattamento;</li>
-              <li>opporsi al trattamento;</li>
-              <li>richiedere la portabilità dei dati;</li>
+              <li>Dati anagrafici e di fatturazione (nome/ragione sociale, indirizzo, P.IVA)</li>
+              <li>Dati di contatto (email, telefono)</li>
+              <li>Indirizzo di spedizione</li>
               <li>
-                revocare il consenso in qualsiasi momento, senza pregiudicare la liceità del
-                trattamento basata sul consenso prestato prima della revoca;
+                Dati di pagamento: gestiti esclusivamente da Stripe Inc. — Print Solution S.r.l.
+                non memorizza i dati delle carte di credito
               </li>
-              <li>
-                proporre reclamo al Garante per la protezione dei dati personali (
-                <a
-                  href="https://www.garanteprivacy.it"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  www.garanteprivacy.it
-                </a>
-                ).
-              </li>
+              <li>Storico ordini</li>
             </ul>
             <p>
-              Per esercitare i Suoi diritti, può contattare il Titolare all&apos;indirizzo e-mail:{" "}
-              <a href="mailto:info@printsolutionsrl.it">info@printsolutionsrl.it</a>
+              <strong>Finalità:</strong> esecuzione del contratto di vendita, adempimento obblighi
+              fiscali e contabili, gestione resi e garanzie.<br />
+              <strong>Base giuridica:</strong> esecuzione del contratto (art. 6.1.b) e obbligo legale
+              (art. 6.1.c GDPR).<br />
+              <strong>Conservazione:</strong> 10 anni dalla data dell&apos;operazione commerciale
+              (obbligo normativo fiscale).
             </p>
 
-            <h3>Cookie</h3>
+            <h4>2.4 Clienti e prospect B2B</h4>
             <p>
-              Per informazioni sull&apos;uso dei cookie, La invitiamo a consultare la nostra{" "}
+              Nell&apos;ambito dell&apos;attività commerciale vengono trattati dati dei referenti
+              aziendali di clienti e potenziali clienti (nome, cognome, qualifica, email aziendale,
+              telefono). Tali dati sono trattati per:
+            </p>
+            <ul>
+              <li>Gestione delle relazioni commerciali e assistenza post-vendita</li>
+              <li>Invio di comunicazioni commerciali relative a prodotti, promozioni e novità del settore</li>
+              <li>Gestione del portale di assistenza tecnica</li>
+            </ul>
+            <p>
+              <strong>Base giuridica:</strong> legittimo interesse (art. 6.1.f GDPR) per clienti
+              attivi; consenso (art. 6.1.a) per prospect.<br />
+              <strong>Conservazione:</strong> per tutta la durata del rapporto commerciale e per i 5
+              anni successivi alla sua cessazione.
+            </p>
+
+            <h4>2.5 Comunicazioni promozionali</h4>
+            <p>
+              L&apos;invio di newsletter e comunicazioni commerciali avviene previo consenso esplicito
+              o, per i clienti esistenti, sulla base del legittimo interesse (art. 130 co. 4 D.Lgs.
+              196/2003 — Codice Privacy). L&apos;utente può opporsi all&apos;invio in qualsiasi
+              momento tramite il link di disiscrizione presente in ogni comunicazione o contattando{" "}
+              <a href="mailto:info@printsolutionsrl.it">info@printsolutionsrl.it</a>.
+            </p>
+
+            <h3>3. Cookie</h3>
+            <p>
+              Il Sito utilizza cookie tecnici necessari al funzionamento e cookie analitici (Google
+              Analytics 4) per l&apos;analisi statistica del traffico. Per l&apos;informativa
+              completa sull&apos;uso dei cookie si rimanda alla{" "}
               <a href="/it/cookie">Cookie Policy</a>.
             </p>
 
-            <h3>Modifiche alla presente informativa</h3>
+            <h3>4. Comunicazione dei dati a terzi</h3>
             <p>
-              Il Titolare si riserva il diritto di modificare la presente informativa in qualsiasi
-              momento. Le eventuali modifiche saranno pubblicate su questa pagina. Si consiglia di
-              consultare periodicamente la presente pagina.
+              I dati personali potranno essere comunicati, nei limiti strettamente necessari, a:
             </p>
+            <ul>
+              <li>
+                Responsabili del trattamento nominati ex art. 28 GDPR: provider di hosting,
+                gestionale interno, Stripe Inc. (pagamenti), Google LLC (analytics), fornitori
+                di servizi IT
+              </li>
+              <li>
+                Consulenti professionali (commercialista, consulente del lavoro, legale) vincolati
+                da obbligo di riservatezza
+              </li>
+              <li>Autorità pubbliche nei casi previsti dalla legge</li>
+            </ul>
+            <p>
+              I dati non vengono venduti né ceduti a terzi per finalità di marketing di soggetti terzi.
+            </p>
+
+            <h3>5. Trasferimento dei dati extra-UE</h3>
+            <p>
+              Alcuni fornitori di servizi (Google LLC per Analytics, Stripe Inc. per i pagamenti)
+              possono trattare dati al di fuori dell&apos;Unione Europea. In tali casi il
+              trasferimento avviene sulla base delle Clausole Contrattuali Standard adottate dalla
+              Commissione Europea (art. 46 GDPR) o di altre garanzie adeguate. I dati relativi
+              all&apos;operatività aziendale ordinaria sono conservati su server ubicati
+              nell&apos;Unione Europea.
+            </p>
+
+            <h3>6. Misure di sicurezza</h3>
+            <p>
+              Print Solution S.r.l. adotta misure tecniche e organizzative adeguate al rischio per
+              proteggere i dati personali da accessi non autorizzati, perdita, distruzione o
+              divulgazione, tra cui: connessioni HTTPS, controllo degli accessi, backup periodici,
+              procedure di gestione degli incidenti di sicurezza (data breach).
+            </p>
+
+            <h3>7. Diritti dell&apos;interessato</h3>
+            <p>Ai sensi degli artt. 15-22 del GDPR, l&apos;interessato ha il diritto di:</p>
+            <ul>
+              <li>Accedere ai propri dati personali trattati dal Titolare (art. 15)</li>
+              <li>Ottenere la rettifica di dati inesatti o incompleti (art. 16)</li>
+              <li>Ottenere la cancellazione dei dati (art. 17), salvo obblighi di legge</li>
+              <li>Ottenere la limitazione del trattamento (art. 18)</li>
+              <li>Ricevere i dati in formato strutturato — portabilità (art. 20)</li>
+              <li>Opporsi al trattamento per legittimo interesse (art. 21)</li>
+              <li>
+                Revocare il consenso in qualsiasi momento, senza pregiudicare la liceità del
+                trattamento precedente (art. 7.3)
+              </li>
+              <li>
+                Proporre reclamo al Garante per la protezione dei dati personali (
+                <a href="https://www.garanteprivacy.it" target="_blank" rel="noopener noreferrer">
+                  www.garanteprivacy.it
+                </a>
+                ) ai sensi dell&apos;art. 77 GDPR
+              </li>
+            </ul>
+            <p>
+              Le richieste possono essere inviate a:{" "}
+              <a href="mailto:info@printsolutionsrl.it">info@printsolutionsrl.it</a> oppure a mezzo
+              PEC a: <a href="mailto:printsolutionsrl@pec.it">printsolutionsrl@pec.it</a>.
+              Il Titolare risponde entro 30 giorni dalla ricezione della richiesta.
+            </p>
+
+            <h3>8. Modifiche alla presente informativa</h3>
+            <p>
+              Il Titolare si riserva di aggiornare la presente informativa in qualsiasi momento. Le
+              modifiche sono efficaci dalla data di pubblicazione sul Sito. Si consiglia di
+              consultare periodicamente questa pagina. La data dell&apos;ultimo aggiornamento è
+              indicata in apertura del documento.
+            </p>
+
           </div>
         </section>
       </>
     );
   }
 
+  // English version
   return (
     <>
       <PageHero title="Privacy Policy" />
       <section className="section-padding">
         <div className="container-custom max-w-3xl prose prose-gray">
+
           <h2>Personal Data Processing Policy</h2>
           <p className="text-sm text-gray-500">
             Pursuant to Art. 13 of EU Regulation 2016/679 (GDPR)
           </p>
 
-          <h3>Data Controller</h3>
+          <table className="w-full text-sm border border-gray-200 rounded mb-8">
+            <tbody>
+              <tr className="border-b border-gray-100">
+                <td className="py-2 px-4 font-semibold text-gray-700 w-40">Data Controller</td>
+                <td className="py-2 px-4">Print Solution S.r.l.</td>
+              </tr>
+              <tr className="border-b border-gray-100">
+                <td className="py-2 px-4 font-semibold text-gray-700">Registered office</td>
+                <td className="py-2 px-4">Via Pisa 200, int. 23 — 20099 Sesto San Giovanni (MI), Italy</td>
+              </tr>
+              <tr className="border-b border-gray-100">
+                <td className="py-2 px-4 font-semibold text-gray-700">VAT / Tax Code</td>
+                <td className="py-2 px-4">07149250966</td>
+              </tr>
+              <tr className="border-b border-gray-100">
+                <td className="py-2 px-4 font-semibold text-gray-700">Email</td>
+                <td className="py-2 px-4"><a href="mailto:info@printsolutionsrl.it">info@printsolutionsrl.it</a></td>
+              </tr>
+              <tr className="border-b border-gray-100">
+                <td className="py-2 px-4 font-semibold text-gray-700">PEC</td>
+                <td className="py-2 px-4"><a href="mailto:printsolutionsrl@pec.it">printsolutionsrl@pec.it</a></td>
+              </tr>
+              <tr>
+                <td className="py-2 px-4 font-semibold text-gray-700">Last updated</td>
+                <td className="py-2 px-4">April 2026</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>1. Scope</h3>
           <p>
-            <strong>Print Solution S.r.l.</strong>
-            <br />
-            Via Pisa 200, int. 23 — 20099 Sesto San Giovanni (MI), Italy
-            <br />
-            VAT / Tax Code: 07149250966
-            <br />
-            E-mail:{" "}
-            <a href="mailto:info@printsolutionsrl.it">info@printsolutionsrl.it</a>
+            This policy describes how personal data is collected and processed for users who visit
+            www.printsolutionsrl.it, use the contact form, make purchases through the consumables
+            E-Shop, or interact with Print Solution S.r.l. in a commercial relationship.
           </p>
 
-          <h3>Types of data collected</h3>
-          <p>
-            The Data Controller collects, directly or through third parties, the following categories
-            of personal data:
-          </p>
+          <h3>2. Data collected and purposes of processing</h3>
+
+          <h4>2.1 Website browsing</h4>
+          <p>During browsing, the following technical data is automatically collected:</p>
           <ul>
-            <li>
-              <strong>Browsing data:</strong> IP address, browser type, operating system, pages
-              visited, access times and other information automatically transmitted by the device
-              during browsing.
-            </li>
-            <li>
-              <strong>Data voluntarily provided by the user:</strong> name, surname, e-mail address,
-              phone number, company name and any other data submitted through contact or quote
-              request forms on the Website.
-            </li>
+            <li>IP address, browser type, operating system</li>
+            <li>Pages visited, access times, session duration</li>
+            <li>Aggregated statistical data via Google Analytics 4 (legal basis: legitimate interest under Art. 6.1.f GDPR)</li>
           </ul>
 
-          <h3>Purposes of processing</h3>
-          <p>Personal data is processed for the following purposes:</p>
+          <h4>2.2 Contact forms</h4>
+          <p>
+            When submitting a contact form or emailing info@printsolutionsrl.it, the following
+            data is collected: name, surname, company name, email address, phone number and message
+            content.
+          </p>
+          <p>
+            <strong>Legal basis:</strong> pre-contractual measures (Art. 6.1.b GDPR) and legitimate
+            interest (Art. 6.1.f GDPR).<br />
+            <strong>Retention:</strong> 24 months from receipt, unless legal requirements apply.
+          </p>
+
+          <h4>2.3 Consumables E-Shop</h4>
+          <p>For purchases made through the E-Shop, the following data is collected:</p>
           <ul>
-            <li>
-              enabling browsing on the Website and ensuring its proper functioning;
-            </li>
-            <li>responding to contact and/or quote requests from the user;</li>
-            <li>complying with legal obligations, regulations or EU legislation;</li>
-            <li>
-              with prior consent, sending commercial and promotional communications regarding
-              products and services offered by the Data Controller.
-            </li>
+            <li>Billing details (name/company, address, VAT number)</li>
+            <li>Contact details (email, phone)</li>
+            <li>Shipping address</li>
+            <li>Payment data: processed exclusively by Stripe Inc. — Print Solution S.r.l. does not store card details</li>
+            <li>Order history</li>
           </ul>
+          <p>
+            <strong>Legal basis:</strong> contract performance (Art. 6.1.b) and legal obligation
+            (Art. 6.1.c GDPR).<br />
+            <strong>Retention:</strong> 10 years from the date of the commercial transaction (tax law requirement).
+          </p>
 
-          <h3>Legal basis for processing</h3>
+          <h4>2.4 B2B clients and prospects</h4>
+          <p>
+            In the context of commercial activities, contact data of business clients and prospects
+            is processed (name, role, business email, phone) for relationship management, commercial
+            communications and technical support.
+          </p>
+          <p>
+            <strong>Legal basis:</strong> legitimate interest (Art. 6.1.f GDPR) for active clients;
+            consent (Art. 6.1.a) for prospects.<br />
+            <strong>Retention:</strong> for the duration of the commercial relationship and for 5
+            years after its termination.
+          </p>
+
+          <h4>2.5 Promotional communications</h4>
+          <p>
+            Newsletters and commercial communications are sent with explicit consent or, for existing
+            clients, based on legitimate interest. You may opt out at any time via the unsubscribe
+            link or by contacting{" "}
+            <a href="mailto:info@printsolutionsrl.it">info@printsolutionsrl.it</a>.
+          </p>
+
+          <h3>3. Cookies</h3>
+          <p>
+            The Website uses technical cookies and Google Analytics 4 for statistical analysis.
+            For full details, please refer to our <a href="/en/cookie">Cookie Policy</a>.
+          </p>
+
+          <h3>4. Data disclosure to third parties</h3>
+          <p>Personal data may be disclosed to:</p>
           <ul>
-            <li>
-              <strong>Performance of a contract</strong> or pre-contractual measures (Art. 6(1)(b)
-              GDPR): to respond to user requests.
-            </li>
-            <li>
-              <strong>Legal obligation</strong> (Art. 6(1)(c) GDPR): to comply with regulatory
-              requirements.
-            </li>
-            <li>
-              <strong>Consent</strong> (Art. 6(1)(a) GDPR): for sending commercial communications.
-            </li>
-            <li>
-              <strong>Legitimate interest</strong> (Art. 6(1)(f) GDPR): for the security and proper
-              functioning of the Website.
-            </li>
+            <li>Data processors under Art. 28 GDPR: hosting providers, Stripe Inc. (payments), Google LLC (analytics), IT service providers</li>
+            <li>Professional advisors bound by confidentiality obligations</li>
+            <li>Public authorities where required by law</li>
           </ul>
+          <p>Data is not sold or transferred to third parties for their marketing purposes.</p>
 
-          <h3>Processing methods</h3>
+          <h3>5. Transfers outside the EU</h3>
           <p>
-            Data is processed using electronic and/or digital tools, with organizational and logical
-            methods strictly related to the stated purposes. The Data Controller adopts appropriate
-            security measures to prevent loss, unlawful or improper use, and unauthorized access to
-            data.
+            Some service providers (Google LLC, Stripe Inc.) may process data outside the EU.
+            Such transfers take place based on Standard Contractual Clauses adopted by the European
+            Commission (Art. 46 GDPR).
           </p>
 
-          <h3>Data disclosure and dissemination</h3>
+          <h3>6. Security measures</h3>
           <p>
-            Personal data may be disclosed to third parties solely for the purposes described above,
-            including:
+            Print Solution S.r.l. implements appropriate technical and organisational measures
+            including HTTPS connections, access controls, periodic backups and incident management
+            procedures.
           </p>
+
+          <h3>7. Your rights</h3>
+          <p>Under Articles 15–22 of the GDPR, you have the right to:</p>
           <ul>
-            <li>technical and IT service providers (hosting, website maintenance);</li>
-            <li>consultants and professionals appointed by the Data Controller;</li>
-            <li>competent authorities, where required by law.</li>
-          </ul>
-          <p>Personal data will not be disseminated.</p>
-
-          <h3>Data transfers</h3>
-          <p>
-            Personal data is stored on servers located within the European Union. Should it become
-            necessary to transfer data outside the EU, the Data Controller will ensure appropriate
-            safeguards are in place pursuant to Articles 44 et seq. of the GDPR.
-          </p>
-
-          <h3>Data retention</h3>
-          <p>
-            Personal data is retained for the time strictly necessary to achieve the purposes for
-            which it was collected and in any case within the limits set by applicable legislation.
-            Data collected through contact forms is retained for a maximum of 24 months from
-            collection, unless a different legal requirement applies.
-          </p>
-
-          <h3>Data subject rights</h3>
-          <p>Pursuant to Articles 15-22 of the GDPR, you have the right to:</p>
-          <ul>
-            <li>access your personal data;</li>
-            <li>obtain their rectification or erasure;</li>
-            <li>obtain restriction of processing;</li>
-            <li>object to processing;</li>
-            <li>request data portability;</li>
+            <li>Access your personal data (Art. 15)</li>
+            <li>Rectification of inaccurate data (Art. 16)</li>
+            <li>Erasure of data (Art. 17), subject to legal obligations</li>
+            <li>Restriction of processing (Art. 18)</li>
+            <li>Data portability (Art. 20)</li>
+            <li>Object to processing based on legitimate interest (Art. 21)</li>
+            <li>Withdraw consent at any time without affecting prior lawful processing (Art. 7.3)</li>
             <li>
-              withdraw consent at any time, without affecting the lawfulness of processing based on
-              consent given prior to withdrawal;
-            </li>
-            <li>
-              lodge a complaint with the Italian Data Protection Authority (
-              <a
-                href="https://www.garanteprivacy.it"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              Lodge a complaint with the Italian Data Protection Authority (
+              <a href="https://www.garanteprivacy.it" target="_blank" rel="noopener noreferrer">
                 www.garanteprivacy.it
               </a>
-              ).
+              )
             </li>
           </ul>
           <p>
-            To exercise your rights, you may contact the Data Controller at:{" "}
-            <a href="mailto:info@printsolutionsrl.it">info@printsolutionsrl.it</a>
+            Requests may be sent to{" "}
+            <a href="mailto:info@printsolutionsrl.it">info@printsolutionsrl.it</a> or by certified
+            email to <a href="mailto:printsolutionsrl@pec.it">printsolutionsrl@pec.it</a>.
+            We will respond within 30 days.
           </p>
 
-          <h3>Cookies</h3>
+          <h3>8. Changes to this policy</h3>
           <p>
-            For information on the use of cookies, please refer to our{" "}
-            <a href="/en/cookie">Cookie Policy</a>.
+            This policy may be updated at any time. Changes take effect upon publication on the
+            Website. Please check this page periodically.
           </p>
 
-          <h3>Changes to this policy</h3>
-          <p>
-            The Data Controller reserves the right to amend this policy at any time. Any changes
-            will be published on this page. We recommend checking this page periodically.
-          </p>
         </div>
       </section>
     </>

@@ -31,6 +31,13 @@ export default function ContattiClient() {
 
       if (res.ok) {
         setStatus("success");
+        // GA4 conversion tracking
+        if (typeof window !== "undefined" && (window as any).gtag) {
+          (window as any).gtag("event", "generate_lead", {
+            interest: formData.interesse,
+            page_path: window.location.pathname,
+          });
+        }
         setFormData({ nome: "", azienda: "", email: "", telefono: "", messaggio: "", interesse: "generico", privacy: false, _hp_field: "" });
         setTurnstileToken("");
       } else {
@@ -262,7 +269,7 @@ export default function ContattiClient() {
                 <p className="text-gray-500 text-sm mb-4">
                   {locale === 'it' ? 'Vieni nella nostra sala demo a Sesto San Giovanni. Porta i tuoi materiali e testa le macchine dal vivo. Su appuntamento, gratuita.' : 'Visit our demo room in Sesto San Giovanni. Bring your materials and test the machines live. By appointment, free of charge.'}
                 </p>
-                <a href="tel:+390249439417" className="btn-primary text-sm !py-2.5">
+                <a href="tel:+390249439417" className="btn-primary text-sm !py-2.5" data-track="click_cta" data-track-label="contatti_chiama_demo">
                   <svg className="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" /></svg>
                   {locale === 'it' ? 'Chiama per Prenotare' : 'Call to Book'}
                 </a>

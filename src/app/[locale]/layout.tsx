@@ -24,6 +24,7 @@ import { TrackingScriptsHead } from "@/components/TrackingScripts";
 import { GoogleTagManagerHead, GoogleTagManagerBody } from "@/components/GoogleTagManager";
 import { getSiteSettings } from "@/sanity/lib/fetchers";
 import { ConsentProvider } from "@/components/ConsentManager";
+import ConversionTracking from "@/components/ConversionTracking";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -60,6 +61,26 @@ const organizationJsonLd = {
     "stampanti inkjet industriali",
     "consumabili stampa digitale",
   ],
+  areaServed: {
+    "@type": "Country",
+    name: "Italy",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 45.5363,
+    longitude: 9.2237,
+  },
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "09:00",
+      closes: "18:00",
+    },
+  ],
+  priceRange: "€€€",
+  currenciesAccepted: "EUR",
+  paymentAccepted: "Cash, Credit Card, Bank Transfer",
 };
 
 const websiteJsonLd = {
@@ -121,9 +142,7 @@ export default async function LocaleLayout({
         <link rel="preconnect" href="https://api.anthropic.com" />
         <link rel="preconnect" href="https://www.youtube.com" />
         <link rel="preconnect" href="https://i.ytimg.com" />
-        <link rel="alternate" hrefLang="it" href="https://www.printsolutionsrl.it" />
-        <link rel="alternate" hrefLang="en" href="https://www.printsolutionsrl.it/en" />
-        <link rel="alternate" hrefLang="x-default" href="https://www.printsolutionsrl.it" />
+        {/* hreflang gestito pagina per pagina tramite alternates.languages in generateMetadata */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(dynamicOrgJsonLd) }}
@@ -160,6 +179,7 @@ export default async function LocaleLayout({
                 <CartSidebar />
                 <CartButton />
                 <BottomNavBar />
+                <ConversionTracking />
               </ConsultationProvider>
             </CartProvider>
           </ConsentProvider>

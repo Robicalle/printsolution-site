@@ -6,7 +6,7 @@ import { rateLimit } from "@/lib/rate-limit";
 const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY?.trim() || "";
 
 const ALLOWED_ORIGINS = [
-  "https://website-theta-one-59.vercel.app",
+  "https://www.printsolutionsrl.it",
   "https://www.printsolutionsrl.it",
   "https://printsolutionsrl.it",
 ];

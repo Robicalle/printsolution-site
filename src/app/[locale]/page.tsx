@@ -29,10 +29,10 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     twitter: { card: "summary_large_image" },
     alternates: {
-      canonical: `https://website-theta-one-59.vercel.app/${locale}`,
+      canonical: `https://www.printsolutionsrl.it/${locale}`,
       languages: {
-        'it': 'https://website-theta-one-59.vercel.app/it',
-        'en': 'https://website-theta-one-59.vercel.app/en',
+        'it': 'https://www.printsolutionsrl.it/it',
+        'en': 'https://www.printsolutionsrl.it/en',
       },
     },
   };

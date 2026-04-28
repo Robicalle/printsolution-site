@@ -10,10 +10,10 @@ export async function generateMetadata(): Promise<Metadata> {
     title: "E-Shop Consumabili",
     description: "Acquista online cartucce, inchiostri e consumabili originali per la tua stampante. Spedizione in 24/48h.",
     alternates: {
-      canonical: `https://website-theta-one-59.vercel.app/${locale}/shop`,
+      canonical: `https://www.printsolutionsrl.it/${locale}/shop`,
       languages: {
-        'it': 'https://website-theta-one-59.vercel.app/it/shop',
-        'en': 'https://website-theta-one-59.vercel.app/en/shop',
+        'it': 'https://www.printsolutionsrl.it/it/shop',
+        'en': 'https://www.printsolutionsrl.it/en/shop',
       },
     },
   };

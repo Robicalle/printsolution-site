@@ -26,10 +26,10 @@ export const metadata: Metadata = {
   },
   twitter: { card: "summary_large_image" },
   alternates: {
-    canonical: 'https://website-theta-one-59.vercel.app/it/blog',
+    canonical: 'https://www.printsolutionsrl.it/it/blog',
     languages: {
-      'it': 'https://website-theta-one-59.vercel.app/it/blog',
-      'en': 'https://website-theta-one-59.vercel.app/en/blog',
+      'it': 'https://www.printsolutionsrl.it/it/blog',
+      'en': 'https://www.printsolutionsrl.it/en/blog',
     },
   },
 };

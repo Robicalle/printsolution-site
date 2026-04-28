@@ -24,10 +24,10 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     twitter: { card: "summary_large_image" },
     alternates: {
-      canonical: `https://website-theta-one-59.vercel.app/${locale}/contatti`,
+      canonical: `https://www.printsolutionsrl.it/${locale}/contatti`,
       languages: {
-        'it': 'https://website-theta-one-59.vercel.app/it/contatti',
-        'en': 'https://website-theta-one-59.vercel.app/en/contatti',
+        'it': 'https://www.printsolutionsrl.it/it/contatti',
+        'en': 'https://www.printsolutionsrl.it/en/contatti',
       },
     },
   };

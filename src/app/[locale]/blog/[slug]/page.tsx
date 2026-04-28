@@ -49,10 +49,10 @@ export async function generateMetadata({
         }),
       },
       alternates: {
-        canonical: `https://website-theta-one-59.vercel.app/${(await getLocale())}/blog/${slug}`,
+        canonical: `https://www.printsolutionsrl.it/${(await getLocale())}/blog/${slug}`,
         languages: {
-          'it': `https://website-theta-one-59.vercel.app/it/blog/${slug}`,
-          'en': `https://website-theta-one-59.vercel.app/en/blog/${slug}`,
+          'it': `https://www.printsolutionsrl.it/it/blog/${slug}`,
+          'en': `https://www.printsolutionsrl.it/en/blog/${slug}`,
         },
       },
     };

@@ -147,7 +147,7 @@ export default async function AurumPressPage() {
       <section className="bg-white pt-8 lg:pt-10 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">
           <div className="relative w-full aspect-[16/9] rounded-3xl overflow-hidden">
-            <Image src="/images/products/aurumpress-nobg.png" alt="AurumPress — stampante hot foil digitale per packaging di lusso" fill className="object-contain p-6" />
+            <Image src="/images/products/aurumpress-nobg.png" alt="AurumPress — stampante hot foil per packaging di lusso" fill className="object-contain p-6" />
           </div>
         </div>
       </section>

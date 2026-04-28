@@ -10,8 +10,8 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: isIt ? "Afinia L901: Stampante Etichette Colori Memjet Alta Velocità" : "Afinia L901: High-Speed Memjet Colour Label Printer",
     description: isIt
-      ? "Afinia L901: stampante etichette a colori professionale Memjet. 1600 dpi, CMYKK, testina sostituibile dall\'utente. Print Solution"
-      : "Afinia L901: professional colour label printer with Memjet technology. 1600 dpi, CMYKK, user-replaceable printhead. Print Solution",
+      ? "Afinia L901: stampante etichette a colori professionale Memjet. 1200 dpi, CMYKK, testina sostituibile dall\'utente. Print Solution"
+      : "Afinia L901: professional colour label printer with Memjet technology. 1200 dpi, CMYKK, user-replaceable printhead. Print Solution",
     keywords: [
     "Afinia L901",
     "stampante etichette professionale",
@@ -22,8 +22,8 @@ export async function generateMetadata(): Promise<Metadata> {
     openGraph: {
       title: isIt ? "Afinia L901: Stampante Etichette Colori Memjet Alta Velocità | Print Solution" : "Afinia L901: High-Speed Memjet Colour Label Printer | Print Solution",
       description: isIt
-        ? "Afinia L901: stampante etichette a colori professionale Memjet. 1600 dpi, CMYKK, testina sostituibile dall\'utente. Print Solution"
-        : "Afinia L901: professional colour label printer with Memjet technology. 1600 dpi, CMYKK, user-replaceable printhead. Print Solution",
+        ? "Afinia L901: stampante etichette a colori professionale Memjet. 1200 dpi, CMYKK, testina sostituibile dall\'utente. Print Solution"
+        : "Afinia L901: professional colour label printer with Memjet technology. 1200 dpi, CMYKK, user-replaceable printhead. Print Solution",
       images: ["/images/products/afinia-l901.png"],
       type: "website",
       locale: isIt ? "it_IT" : "en_US",
@@ -39,7 +39,7 @@ const productJsonLd = {
   name: "Afinia L901",
   brand: { "@type": "Brand", name: "Afinia Label" },
   description:
-    "Stampante etichette a colori professionale con tecnologia Memjet Waterfall. 1600 dpi, doppio nero, testina sostituibile.",
+    "Stampante etichette a colori professionale con tecnologia Memjet Waterfall. 1200 dpi, doppio nero, testina sostituibile.",
   image: "https://www.printsolutionsrl.it/images/products/afinia-l901.png",
   manufacturer: { "@type": "Organization", name: "Print Solution S.r.l." },
   offers: {
@@ -54,7 +54,7 @@ const productJsonLd = {
 
 function getSpecs(l: string) { return l === 'it' ? [
   ["Tecnologia", "Memjet Waterfall Inkjet"],
-  ["Risoluzione", "1600 dpi full-color"],
+  ["Risoluzione", "1200 dpi full-color"],
   ["Inchiostri", "CMYKK (doppio nero)"],
   ["Larghezza stampa max", "216 mm (8,5 pollici)"],
   ["Testina", "Sostituibile dall'utente"],
@@ -65,7 +65,7 @@ function getSpecs(l: string) { return l === 'it' ? [
 
 ] : [
   ["Technology", "Memjet Waterfall Inkjet"],
-  ["Resolution", "1600 dpi full-color"],
+  ["Resolution", "1200 dpi full-color"],
   ["Inks", "CMYKK (dual black)"],
   ["Max print width", "216 mm (8.5 inches)"],
   ["Printhead", "User-replaceable"],
@@ -83,7 +83,7 @@ const features = [
       </svg>
     ),
     title: "Alta Produttività", titleEn: "High Productivity",
-    desc: "Motore di stampa Memjet Waterfall per produzioni professionali continue con qualità costante a 1600 dpi.", descEn: "Memjet Waterfall print engine for continuous professional production with consistent quality at 1600 dpi.",
+    desc: "Motore di stampa Memjet Waterfall per produzioni professionali continue con qualità costante a 1200 dpi.", descEn: "Memjet Waterfall print engine for continuous professional production with consistent quality at 1200 dpi.",
   },
   {
     icon: (
@@ -213,7 +213,7 @@ export default async function () {
       <section className="bg-white pt-8 lg:pt-10 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">
           <div className="relative w-full aspect-[16/9] rounded-3xl overflow-hidden">
-            <Image src="/images/products/afinia-l901.png" alt="Afinia L901 — stampante etichette a colori Memjet 1600 dpi" fill className="object-contain p-6" />
+            <Image src="/images/products/afinia-l901.png" alt="Afinia L901 — stampante etichette a colori Memjet 1200 dpi" fill className="object-contain p-6" />
           </div>
         </div>
       </section>
@@ -223,7 +223,7 @@ export default async function () {
         <div className="container-custom max-w-4xl">
           <h2 className="text-3xl font-bold text-dark-800 mb-6">{locale === 'it' ? 'Prestazioni Professionali con Tecnologia Memjet Waterfall' : 'Professional Performance with Memjet Waterfall Technology'}</h2>
           {locale === 'it' ? (<><p className="text-gray-500 leading-relaxed mb-4">
-            La Afinia L901 è una stampante etichette a colori professionale progettata per produzioni continue ad alta qualità. Equipaggiata con il motore di stampa Memjet Waterfall, raggiunge una risoluzione di 1600 dpi full-color con una configurazione a 5 canali CMYKK (doppio nero) che garantisce neri più profondi, testi più nitidi e una maggiore autonomia di stampa rispetto ai sistemi CMYK tradizionali.
+            La Afinia L901 è una stampante etichette a colori professionale progettata per produzioni continue ad alta qualità. Equipaggiata con il motore di stampa Memjet Waterfall, raggiunge una risoluzione di 1200 dpi full-color con una configurazione a 5 canali CMYKK (doppio nero) che garantisce neri più profondi, testi più nitidi e una maggiore autonomia di stampa rispetto ai sistemi CMYK tradizionali.
           </p>
           <p className="text-gray-500 leading-relaxed mb-4">
             La caratteristica distintiva della L901 è la testina di stampa sostituibile dall&apos;utente: in caso di necessità, l&apos;operatore può sostituirla in pochi secondi senza fermare la produzione, eliminando completamente i tempi di fermo macchina. Il display touchscreen integrato consente una gestione intuitiva dei lavori, il monitoraggio dello stato e la configurazione rapida dei parametri di stampa.
@@ -231,7 +231,7 @@ export default async function () {
           <p className="text-gray-500 leading-relaxed">
             Versatile e modulare, la L901 può essere utilizzata come stampante standalone per produzioni indipendenti oppure integrata nella Afinia DLP-2200 per creare un sistema completo stampa + finitura. Questa flessibilità la rende la scelta ideale per aziende che cercano una soluzione scalabile, in grado di crescere insieme alle esigenze produttive.
           </p></>) : (<><p className="text-gray-500 leading-relaxed mb-4">
-            The Afinia L901 is a professional color label printer designed for continuous high-quality production. Equipped with the Memjet Waterfall print engine, it achieves 1600 dpi full-color resolution with a 5-channel CMYKK (dual black) configuration that ensures deeper blacks, sharper text and greater print autonomy compared to traditional CMYK systems.
+            The Afinia L901 is a professional color label printer designed for continuous high-quality production. Equipped with the Memjet Waterfall print engine, it achieves 1200 dpi full-color resolution with a 5-channel CMYKK (dual black) configuration that ensures deeper blacks, sharper text and greater print autonomy compared to traditional CMYK systems.
           </p>
           <p className="text-gray-500 leading-relaxed mb-4">
             The standout feature of the L901 is the user-replaceable printhead: when needed, the operator can replace it in seconds without stopping production, completely eliminating downtime. The built-in touchscreen display enables intuitive job management, status monitoring and quick configuration of print parameters.

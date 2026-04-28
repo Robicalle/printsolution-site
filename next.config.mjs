@@ -86,6 +86,7 @@ const nextConfig = {
       { source: '/categoria/:slug', destination: '/prodotti', permanent: true },
 
       // --- IT: Old product pages that DON'T exist in new site ---
+      { source: '/prodotti/anypack-ab2500', destination: '/prodotti/ab2500', permanent: true },
       { source: '/prodotti/dp-se-autoprinter', destination: '/prodotti', permanent: true },
       { source: '/prodotti/dp-se-dvd', destination: '/prodotti', permanent: true },
       { source: '/prodotti/dp-se-blu-ray', destination: '/prodotti', permanent: true },
@@ -125,6 +126,7 @@ const nextConfig = {
       { source: '/en/categoria/:slug', destination: '/en/prodotti', permanent: true },
 
       // --- EN: Old product pages that DON'T exist in new site ---
+      { source: '/en/prodotti/anypack-ab2500', destination: '/en/prodotti/ab2500', permanent: true },
       { source: '/en/prodotti/dp-se-autoprinter', destination: '/en/prodotti', permanent: true },
       { source: '/en/prodotti/dp-se-dvd', destination: '/en/prodotti', permanent: true },
       { source: '/en/prodotti/dp-se-blu-ray', destination: '/en/prodotti', permanent: true },

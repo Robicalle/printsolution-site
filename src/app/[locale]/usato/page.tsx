@@ -3,27 +3,30 @@ import PageHero from "@/components/PageHero";
 import Image from "next/image";
 import { getLocale } from "next-intl/server";
 
-export const metadata: Metadata = {
-  title: "Usato Garantito",
-  description:
-    "Macchine da stampa e packaging usate, revisionate e garantite 6 mesi. Occasioni su stampanti digitali per cartone, etichette e packaging.",
-  keywords: [
-    "stampanti usate garantite",
-    "macchine packaging usate",
-    "stampante etichette usata",
-    "usato garantito stampa digitale",
-  ],
-  openGraph: {
-    title: "Usato Garantito | Print Solution",
-    description:
-      "Macchine da stampa e packaging usate, revisionate e garantite 6 mesi.",
-    images: ["/images/hero-boxes.webp"],
-    type: "website",
-    locale: "it_IT",
-  },
-  twitter: { card: "summary_large_image" },
-  alternates: { canonical: "/usato" },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getLocale();
+  const it = locale === 'it';
+  return {
+    title: it ? "Usato Garantito" : "Certified Pre-Owned",
+    description: it
+      ? "Macchine da stampa e packaging usate, revisionate e garantite 6 mesi. Occasioni su stampanti digitali per cartone, etichette e packaging."
+      : "Used printing and packaging machines, reconditioned and guaranteed 6 months. Deals on digital printers for cardboard, labels and packaging.",
+    keywords: it
+      ? ["stampanti usate garantite", "macchine packaging usate", "stampante etichette usata", "usato garantito stampa digitale"]
+      : ["certified pre-owned printers", "used packaging machines", "label printer used", "guaranteed used digital printing"],
+    openGraph: {
+      title: it ? "Usato Garantito | Print Solution" : "Certified Pre-Owned | Print Solution",
+      description: it
+        ? "Macchine da stampa e packaging usate, revisionate e garantite 6 mesi."
+        : "Used printing and packaging machines, reconditioned and guaranteed 6 months.",
+      images: ["/images/hero-boxes.webp"],
+      type: "website",
+      locale: it ? "it_IT" : "en_US",
+    },
+    twitter: { card: "summary_large_image" },
+    alternates: { canonical: `https://www.printsolutionsrl.it/${locale}/usato` },
+  };
+}
 
 function getProducts(locale: string) {
   const it = locale === 'it';

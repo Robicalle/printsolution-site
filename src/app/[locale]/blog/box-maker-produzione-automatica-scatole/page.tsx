@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     locale: "it_IT",
   },
   twitter: { card: "summary_large_image" },
-  alternates: { canonical: "/blog/box-maker-produzione-automatica-scatole" },
+  alternates: { canonical: "https://www.printsolutionsrl.it/it/blog/box-maker-produzione-automatica-scatole" },
 };
 
 const articleJsonLd = {

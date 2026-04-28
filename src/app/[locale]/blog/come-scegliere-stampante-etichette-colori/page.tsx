@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     locale: "it_IT",
   },
   twitter: { card: "summary_large_image" },
-  alternates: { canonical: "/blog/come-scegliere-stampante-etichette-colori" },
+  alternates: { canonical: "https://www.printsolutionsrl.it/it/blog/come-scegliere-stampante-etichette-colori" },
 };
 
 const articleJsonLd = {

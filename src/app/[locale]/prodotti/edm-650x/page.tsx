@@ -29,7 +29,7 @@ export async function generateMetadata(): Promise<Metadata> {
       locale: isIt ? "it_IT" : "en_US",
     },
     twitter: { card: "summary_large_image" },
-    alternates: { canonical: "/prodotti/edm-650x" },
+    alternates: { canonical: `https://www.printsolutionsrl.it/${locale}/prodotti/edm-650x` },
   };
 }
 

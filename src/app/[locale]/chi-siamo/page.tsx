@@ -22,7 +22,7 @@ export async function generateMetadata(): Promise<Metadata> {
         locale: it ? "it_IT" : "en_US",
       },
       twitter: { card: "summary_large_image" },
-      alternates: { canonical: "/chi-siamo" },
+      alternates: { canonical: `https://www.printsolutionsrl.it/${locale}/chi-siamo` },
     };
   } catch {
     return { title: "Chi Siamo" };

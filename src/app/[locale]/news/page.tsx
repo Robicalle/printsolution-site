@@ -22,7 +22,7 @@ export async function generateMetadata(): Promise<Metadata> {
       locale: locale === 'it' ? "it_IT" : "en_US",
     },
     twitter: { card: "summary_large_image" },
-    alternates: { canonical: "/news" },
+    alternates: { canonical: `https://www.printsolutionsrl.it/${locale}/news` },
   };
 }
 

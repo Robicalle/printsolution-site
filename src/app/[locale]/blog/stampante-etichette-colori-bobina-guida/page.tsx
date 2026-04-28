@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     locale: "it_IT",
   },
   twitter: { card: "summary_large_image" },
-  alternates: { canonical: "/blog/stampante-etichette-colori-bobina-guida" },
+  alternates: { canonical: "https://www.printsolutionsrl.it/it/blog/stampante-etichette-colori-bobina-guida" },
 };
 
 const articleJsonLd = {

@@ -10,7 +10,7 @@ export async function generateMetadata(): Promise<Metadata> {
     description: locale === 'it'
       ? "Confronta tutte le stampanti e macchine Print Solution: tecnologia, velocità, formato, risoluzione e prezzo."
       : "Compare all Print Solution printers and machines: technology, speed, format, resolution and price.",
-    alternates: { canonical: "/confronto-prodotti" },
+    alternates: { canonical: `https://www.printsolutionsrl.it/${locale}/confronto-prodotti` },
   };
 }
 

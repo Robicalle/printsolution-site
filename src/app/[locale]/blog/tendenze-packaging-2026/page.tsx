@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     locale: "it_IT",
   },
   twitter: { card: "summary_large_image" },
-  alternates: { canonical: "/blog/tendenze-packaging-2026" },
+  alternates: { canonical: "https://www.printsolutionsrl.it/it/blog/tendenze-packaging-2026" },
 };
 
 const articleJsonLd = {

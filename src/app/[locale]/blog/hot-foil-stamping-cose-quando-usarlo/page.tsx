@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     locale: "it_IT",
   },
   twitter: { card: "summary_large_image" },
-  alternates: { canonical: "/blog/hot-foil-stamping-cose-quando-usarlo" },
+  alternates: { canonical: "https://www.printsolutionsrl.it/it/blog/hot-foil-stamping-cose-quando-usarlo" },
 };
 
 const articleJsonLd = {

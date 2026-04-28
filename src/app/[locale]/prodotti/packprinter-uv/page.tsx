@@ -28,7 +28,7 @@ export async function generateMetadata(): Promise<Metadata> {
       locale: isIt ? "it_IT" : "en_US",
     },
     twitter: { card: "summary_large_image" },
-    alternates: { canonical: "/prodotti/packprinter-uv" },
+    alternates: { canonical: `https://www.printsolutionsrl.it/${locale}/prodotti/packprinter-uv` },
   };
 }
 

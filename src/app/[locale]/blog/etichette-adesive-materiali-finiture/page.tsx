@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     locale: "it_IT",
   },
   twitter: { card: "summary_large_image" },
-  alternates: { canonical: "/blog/etichette-adesive-materiali-finiture" },
+  alternates: { canonical: "https://www.printsolutionsrl.it/it/blog/etichette-adesive-materiali-finiture" },
 };
 
 const articleJsonLd = {

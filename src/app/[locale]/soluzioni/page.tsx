@@ -20,7 +20,7 @@ export async function generateMetadata(): Promise<Metadata> {
         type: "website",
         locale: it ? "it_IT" : "en_US",
       },
-      alternates: { canonical: "/soluzioni" },
+      alternates: { canonical: `https://www.printsolutionsrl.it/${locale}/soluzioni` },
     };
   } catch {
     return { title: "Soluzioni" };

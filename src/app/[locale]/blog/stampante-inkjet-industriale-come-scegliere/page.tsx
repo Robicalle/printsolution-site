@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     locale: "it_IT",
   },
   twitter: { card: "summary_large_image" },
-  alternates: { canonical: "/blog/stampante-inkjet-industriale-come-scegliere" },
+  alternates: { canonical: "https://www.printsolutionsrl.it/it/blog/stampante-inkjet-industriale-come-scegliere" },
 };
 
 const articleJsonLd = {

@@ -10,7 +10,7 @@ export async function generateMetadata(): Promise<Metadata> {
       locale === "it"
         ? "Informativa sul trattamento dei dati personali di Print Solution S.r.l. ai sensi dell'art. 13 GDPR."
         : "Privacy policy of Print Solution S.r.l. — Personal data processing under GDPR.",
-    alternates: { canonical: "/privacy" },
+    alternates: { canonical: `https://www.printsolutionsrl.it/${locale}/privacy` },
   };
 }
 

@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     locale: "it_IT",
   },
   twitter: { card: "summary_large_image" },
-  alternates: { canonical: "/blog/packaging-personalizzato-vantaggi-pmi" },
+  alternates: { canonical: "https://www.printsolutionsrl.it/it/blog/packaging-personalizzato-vantaggi-pmi" },
 };
 
 const articleJsonLd = {

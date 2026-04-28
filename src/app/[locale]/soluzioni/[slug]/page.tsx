@@ -42,7 +42,7 @@ export async function generateMetadata({
         locale: it ? "it_IT" : "en_US",
       },
       twitter: { card: "summary_large_image" },
-      alternates: { canonical: `/soluzioni/${slug}` },
+      alternates: { canonical: `https://www.printsolutionsrl.it/${locale}/soluzioni/${slug}` },
     };
   } catch {
     return {};

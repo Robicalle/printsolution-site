@@ -2,26 +2,30 @@ import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import { getLocale } from "next-intl/server";
 
-export const metadata: Metadata = {
-  title: "Promozioni",
-  description:
-    "Scopri le promozioni Print Solution su macchine da stampa digitale per packaging ed etichette. Offerte speciali, prezzi scontati e occasioni su stampanti professionali.",
-  keywords: [
-    "promozioni stampa digitale",
-    "offerte stampanti packaging",
-    "promozioni print solution",
-  ],
-  openGraph: {
-    title: "Promozioni | Print Solution",
-    description:
-      "Promozioni su macchine da stampa digitale per packaging ed etichette.",
-    images: ["/images/hero-boxes.webp"],
-    type: "website",
-    locale: "it_IT",
-  },
-  twitter: { card: "summary_large_image" },
-  alternates: { canonical: "/promozioni" },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getLocale();
+  const it = locale === 'it';
+  return {
+    title: it ? "Promozioni" : "Promotions",
+    description: it
+      ? "Scopri le promozioni Print Solution su macchine da stampa digitale per packaging ed etichette. Offerte speciali, prezzi scontati e occasioni su stampanti professionali."
+      : "Discover Print Solution promotions on digital printing machines for packaging and labels. Special offers, discounted prices and deals on professional printers.",
+    keywords: it
+      ? ["promozioni stampa digitale", "offerte stampanti packaging", "promozioni print solution"]
+      : ["digital printing promotions", "packaging printer offers", "print solution deals"],
+    openGraph: {
+      title: it ? "Promozioni | Print Solution" : "Promotions | Print Solution",
+      description: it
+        ? "Promozioni su macchine da stampa digitale per packaging ed etichette."
+        : "Promotions on digital printing machines for packaging and labels.",
+      images: ["/images/hero-boxes.webp"],
+      type: "website",
+      locale: it ? "it_IT" : "en_US",
+    },
+    twitter: { card: "summary_large_image" },
+    alternates: { canonical: `https://www.printsolutionsrl.it/${locale}/promozioni` },
+  };
+}
 
 export default async function PromozioniPage() {
   const locale = await getLocale();

@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     locale: "it_IT",
   },
   twitter: { card: "summary_large_image" },
-  alternates: { canonical: "/blog/stampa-digitale-vs-offset-piccoli-lotti" },
+  alternates: { canonical: "https://www.printsolutionsrl.it/it/blog/stampa-digitale-vs-offset-piccoli-lotti" },
 };
 
 const articleJsonLd = {

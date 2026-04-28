@@ -47,11 +47,13 @@ const homepageJsonLd = {
   description: "Vendita e assistenza stampanti digitali per etichette e packaging",
   address: {
     "@type": "PostalAddress",
-    addressLocality: "Asti",
-    addressRegion: "Piemonte",
+    streetAddress: "Via Pisa 200, int. 23",
+    postalCode: "20099",
+    addressLocality: "Sesto San Giovanni",
+    addressRegion: "Lombardia",
     addressCountry: "IT",
   },
-  telephone: "+39-0141-352540",
+  telephone: "+39-02-49439417",
   sameAs: [
     "https://www.facebook.com/printsolutionsrl",
     "https://www.linkedin.com/company/print-solution-srl",

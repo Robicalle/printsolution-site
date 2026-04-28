@@ -42,11 +42,13 @@ const organizationJsonLd = {
   foundingDate: "2010",
   address: {
     "@type": "PostalAddress",
-    addressLocality: "Asti",
-    addressRegion: "Piemonte",
+    streetAddress: "Via Pisa 200, int. 23",
+    postalCode: "20099",
+    addressLocality: "Sesto San Giovanni",
+    addressRegion: "Lombardia",
     addressCountry: "IT",
   },
-  telephone: "+39-0141-352540",
+  telephone: "+39-02-49439417",
   email: "info@printsolutionsrl.it",
   sameAs: [
     "https://www.facebook.com/printsolutionsrl",

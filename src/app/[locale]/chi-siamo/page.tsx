@@ -13,16 +13,26 @@ export async function generateMetadata(): Promise<Metadata> {
     const seo = it ? page.seo : (page.seo_en || page.seo);
     return {
       title: seo?.title || page.title,
-      description: seo?.description || "",
+      description: seo?.description || (it
+        ? "Chi siamo: Print Solution S.r.l., distributore italiano di soluzioni digitali per la stampa di packaging, etichette e consumabili. Dal 2010."
+        : "About us: Print Solution S.r.l., Italian distributor of digital solutions for packaging printing, labels and consumables. Since 2010."),
       openGraph: {
         title: `${seo?.title || page.title} | Print Solution`,
-        description: seo?.description || "",
-        images: ["/images/hero-boxes.webp"],
+        description: seo?.description || (it
+          ? "Chi siamo: Print Solution S.r.l., distributore italiano di soluzioni digitali per la stampa di packaging, etichette e consumabili. Dal 2010."
+          : "About us: Print Solution S.r.l., Italian distributor of digital solutions for packaging printing, labels and consumables. Since 2010."),
+        images: [seo?.image || "/images/hero-boxes.webp"],
         type: "website",
         locale: it ? "it_IT" : "en_US",
       },
       twitter: { card: "summary_large_image" },
-      alternates: { canonical: `https://www.printsolutionsrl.it/${locale}/chi-siamo` },
+      alternates: {
+        canonical: `https://www.printsolutionsrl.it${it ? "" : "/en"}/chi-siamo`,
+        languages: {
+          'it': 'https://www.printsolutionsrl.it/chi-siamo',
+          'en': 'https://www.printsolutionsrl.it/en/chi-siamo',
+        },
+      },
     };
   } catch {
     return { title: "Chi Siamo" };

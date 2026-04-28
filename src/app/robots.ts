@@ -6,7 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/studio", "/api/"],
+        disallow: ["/studio", "/en/studio", "/api/", "/en/api/"],
       },
     ],
     sitemap: "https://www.printsolutionsrl.it/sitemap.xml",

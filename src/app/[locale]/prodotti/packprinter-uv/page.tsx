@@ -7,7 +7,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
   const isIt = locale === 'it';
   return {
-    title: isIt ? "PackPrinter UV - Stampante UV Single-Pass" : "PackPrinter UV - UV Single-Pass Printer",
+    title: isIt ? "PackPrinter UV: Stampante UV Single-Pass per Packaging" : "PackPrinter UV: UV Single-Pass Packaging Printer",
     description: isIt
       ? "PackPrinter UV: stampante UV single-pass CMYK+Bianco fino a 50 m/min. Stampa su PVC, vetro, cartone, legno. Print Solution"
       : "PackPrinter UV: UV single-pass printer CMYK+White up to 50 m/min. Print on PVC, glass, cardboard, wood. Print Solution",
@@ -19,7 +19,7 @@ export async function generateMetadata(): Promise<Metadata> {
     "stampante materiali sintetici",
   ],
     openGraph: {
-      title: isIt ? "PackPrinter UV - Stampante UV Single-Pass | Print Solution" : "PackPrinter UV - UV Single-Pass Printer | Print Solution",
+      title: isIt ? "PackPrinter UV: Stampante UV Single-Pass per Packaging | Print Solution" : "PackPrinter UV: UV Single-Pass Packaging Printer | Print Solution",
       description: isIt
         ? "PackPrinter UV: stampante UV single-pass CMYK+Bianco fino a 50 m/min. Stampa su PVC, vetro, cartone, legno. Print Solution"
         : "PackPrinter UV: UV single-pass printer CMYK+White up to 50 m/min. Print on PVC, glass, cardboard, wood. Print Solution",
@@ -28,7 +28,7 @@ export async function generateMetadata(): Promise<Metadata> {
       locale: isIt ? "it_IT" : "en_US",
     },
     twitter: { card: "summary_large_image" },
-    alternates: { canonical: `https://www.printsolutionsrl.it/${locale}/prodotti/packprinter-uv` },
+    alternates: { canonical: locale === 'it' ? `https://www.printsolutionsrl.it/prodotti/packprinter-uv` : `https://www.printsolutionsrl.it/en/prodotti/packprinter-uv` },
   };
 }
 
@@ -36,28 +36,20 @@ const productJsonLd = {
   "@context": "https://schema.org",
   "@type": "Product",
   name: "PackPrinter UV",
-  brand: { "@type": "Brand", name: "Print Solution" },
+  brand: { "@type": "Brand", name: "PackPrinter" },
   description:
     "Stampante digitale UV single-pass CMYK+Bianco fino a 50 m/min. Stampa su PVC, vetro, cartone, legno, ceramica e materiali sintetici. 9 configurazioni disponibili.",
   image: "https://www.printsolutionsrl.it/images/products/packprinter-uv.avif",
   manufacturer: { "@type": "Organization", name: "Print Solution S.r.l." },
   offers: {
     "@type": "Offer",
+    url: "https://www.printsolutionsrl.it/prodotti/packprinter-uv",
     availability: "https://schema.org/InStock",
     priceCurrency: "EUR",
     seller: { "@type": "Organization", name: "Print Solution S.r.l." },
   },
 };
 
-const breadcrumbJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.printsolutionsrl.it" },
-    { "@type": "ListItem", position: 2, name: "Prodotti", item: "https://www.printsolutionsrl.it/soluzioni/packaging" },
-    { "@type": "ListItem", position: 3, name: "PackPrinter UV", item: "https://www.printsolutionsrl.it/prodotti/packprinter-uv" },
-  ],
-};
 
 function getSpecs(l: string) { return l === 'it' ? [
   ["Modelli", "9 modelli con luce di stampa variabile"],
@@ -157,6 +149,15 @@ export default async function PackPrinterUVPage() {
   const locale = await getLocale();
   const it = locale === 'it';
   const features = getFeatures(locale);
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.printsolutionsrl.it" },
+      { "@type": "ListItem", position: 2, name: it ? "Prodotti" : "Products", item: it ? "https://www.printsolutionsrl.it/prodotti" : "https://www.printsolutionsrl.it/en/prodotti" },
+      { "@type": "ListItem", position: 3, name: "PackPrinter UV", item: it ? "https://www.printsolutionsrl.it/prodotti/packprinter-uv" : "https://www.printsolutionsrl.it/en/prodotti/packprinter-uv" },
+    ],
+  };
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }} />
@@ -177,7 +178,7 @@ export default async function PackPrinterUVPage() {
                   : 'UV single-pass digital printer CMYK + White. High-speed printing up to 50 m/min on packaging, glass, PVC, wood, ceramic, and synthetic materials. 9 configurations available.'}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20PackPrinter%20UV&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20PackPrinter%20UV.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">{it ? 'Consulenza gratuita→' : 'Free consultation→'}</a>
+                <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20PackPrinter%20UV&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20PackPrinter%20UV.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full" data-track="click_cta" data-track-label="cta_packprinter_uv">{it ? 'Consulenza gratuita→' : 'Free consultation→'}</a>
               </div>
           </div>
         </div>
@@ -298,7 +299,7 @@ export default async function PackPrinterUVPage() {
             ].map((p) => (
               <Link key={p.name} href={p.href} className="card-modern overflow-hidden group hover:-translate-y-1 transition-transform duration-300">
                 <div className="h-40 relative overflow-hidden">
-                  <Image src={p.image} alt={p.name} fill className="object-contain p-4 group-hover:scale-105 transition-transform duration-500" />
+                  <Image src={p.image} alt={`${p.name} — ${p.desc}`} fill className="object-contain p-4 group-hover:scale-105 transition-transform duration-500" />
                 </div>
                 <div className="p-5">
                   <h3 className="font-bold text-dark-800 group-hover:text-cyan-500 transition-colors">{p.name}</h3>

@@ -10,10 +10,11 @@ export async function generateMetadata(): Promise<Metadata> {
     title: "E-Shop Consumabili",
     description: "Acquista online cartucce, inchiostri e consumabili originali per la tua stampante. Spedizione in 24/48h.",
     alternates: {
-      canonical: `https://www.printsolutionsrl.it/${locale}/shop`,
+      canonical: locale === 'it' ? `https://www.printsolutionsrl.it/shop` : `https://www.printsolutionsrl.it/en/shop`,
       languages: {
-        'it': 'https://www.printsolutionsrl.it/it/shop',
+        'it': 'https://www.printsolutionsrl.it/shop',
         'en': 'https://www.printsolutionsrl.it/en/shop',
+        'x-default': 'https://www.printsolutionsrl.it/shop',
       },
     },
   };

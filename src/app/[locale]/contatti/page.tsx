@@ -24,10 +24,11 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     twitter: { card: "summary_large_image" },
     alternates: {
-      canonical: `https://www.printsolutionsrl.it/${locale}/contatti`,
+      canonical: locale === 'it' ? 'https://www.printsolutionsrl.it/contatti' : 'https://www.printsolutionsrl.it/en/contatti',
       languages: {
-        'it': 'https://www.printsolutionsrl.it/it/contatti',
+        'it': 'https://www.printsolutionsrl.it/contatti',
         'en': 'https://www.printsolutionsrl.it/en/contatti',
+        'x-default': 'https://www.printsolutionsrl.it/contatti',
       },
     },
   };

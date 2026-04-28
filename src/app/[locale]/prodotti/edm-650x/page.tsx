@@ -3,12 +3,13 @@ import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import SpecsAccordion from "@/components/SpecsAccordion";
+import ProductFaqSection from "@/components/ProductFaqSection";
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
   const isIt = locale === 'it';
   return {
-    title: isIt ? "EDM-650X - Stampante per Cartone Ondulato" : "EDM-650X - Single-Pass Corrugated Cardboard Printer",
+    title: isIt ? "EDM-650X: Stampante Inkjet Single-Pass Cartone Ondulato" : "EDM-650X: Single-Pass Inkjet Printer for Corrugated Cardboard",
     description: isIt
       ? "EDM-650X: stampante inkjet single-pass per cartone ondulato. Da 2 a 6 teste HP, fino a 30 m/min, 1200 dpi. Print Solution"
       : "EDM-650X: single-pass inkjet printer for corrugated cardboard. 2 to 6 HP heads, up to 30 m/min, 1200 dpi. Print Solution",
@@ -20,7 +21,7 @@ export async function generateMetadata(): Promise<Metadata> {
     "stampante single-pass",
   ],
     openGraph: {
-      title: isIt ? "EDM-650X - Stampante per Cartone Ondulato | Print Solution" : "EDM-650X - Single-Pass Corrugated Cardboard Printer | Print Solution",
+      title: isIt ? "EDM-650X: Stampante Inkjet Single-Pass Cartone Ondulato | Print Solution" : "EDM-650X: Single-Pass Inkjet Printer for Corrugated Cardboard | Print Solution",
       description: isIt
         ? "EDM-650X: stampante inkjet single-pass per cartone ondulato. Da 2 a 6 teste HP, fino a 30 m/min, 1200 dpi. Print Solution"
         : "EDM-650X: single-pass inkjet printer for corrugated cardboard. 2 to 6 HP heads, up to 30 m/min, 1200 dpi. Print Solution",
@@ -29,7 +30,7 @@ export async function generateMetadata(): Promise<Metadata> {
       locale: isIt ? "it_IT" : "en_US",
     },
     twitter: { card: "summary_large_image" },
-    alternates: { canonical: `https://www.printsolutionsrl.it/${locale}/prodotti/edm-650x` },
+    alternates: { canonical: locale === 'it' ? `https://www.printsolutionsrl.it/prodotti/edm-650x` : `https://www.printsolutionsrl.it/en/prodotti/edm-650x` },
   };
 }
 
@@ -37,28 +38,20 @@ const edm650xJsonLd = {
   "@context": "https://schema.org",
   "@type": "Product",
   name: "EDM-650X",
-  brand: { "@type": "Brand", name: "Print Solution" },
+  brand: { "@type": "Brand", name: "EDM" },
   description:
     "Stampante digitale inkjet single-pass per carta e cartone ondulato. Da 2 a 6 teste HP, fino a 30m/min, 1200x1200 dpi. Inchiostri a base acqua.",
   image: "https://www.printsolutionsrl.it/images/products/edm-650x-2hd.jpg",
   manufacturer: { "@type": "Organization", name: "Print Solution S.r.l." },
   offers: {
     "@type": "Offer",
+    url: "https://www.printsolutionsrl.it/prodotti/edm-650x",
     availability: "https://schema.org/InStock",
     priceCurrency: "EUR",
     seller: { "@type": "Organization", name: "Print Solution S.r.l." },
   },
 };
 
-const breadcrumbJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.printsolutionsrl.it" },
-    { "@type": "ListItem", position: 2, name: "Prodotti", item: "https://www.printsolutionsrl.it/soluzioni/packaging" },
-    { "@type": "ListItem", position: 3, name: "EDM-650X", item: "https://www.printsolutionsrl.it/prodotti/edm-650x" },
-  ],
-};
 
 function getSpecs(l: string) { return l === 'it' ? [
   ["Tecnologia", "Inkjet single-pass CMYK"],
@@ -164,10 +157,57 @@ export default async function () {
   const locale = await getLocale();
   const it = locale === 'it';
   const features = getFeatures(locale);
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.printsolutionsrl.it" },
+      { "@type": "ListItem", position: 2, name: it ? "Prodotti" : "Products", item: it ? "https://www.printsolutionsrl.it/prodotti" : "https://www.printsolutionsrl.it/en/prodotti" },
+      { "@type": "ListItem", position: 3, name: "EDM-650X", item: it ? "https://www.printsolutionsrl.it/prodotti/edm-650x" : "https://www.printsolutionsrl.it/en/prodotti/edm-650x" },
+    ],
+  };
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: it ? [
+      {
+        "@type": "Question",
+        name: "Cos'è l'EDM 650X?",
+        acceptedAnswer: { "@type": "Answer", text: "L'EDM 650X è una stampante digitale single-pass per cartone ondulato, larghezza 650mm, velocità fino a 35m/min, inchiostri water-based." },
+      },
+      {
+        "@type": "Question",
+        name: "L'EDM 650X richiede pre-trattamento del cartone?",
+        acceptedAnswer: { "@type": "Answer", text: "No, gli inchiostri water-based dell'EDM 650X aderiscono direttamente al cartone senza primer o pre-trattamento." },
+      },
+      {
+        "@type": "Question",
+        name: "Quali spessori di cartone supporta?",
+        acceptedAnswer: { "@type": "Answer", text: "Supporta cartone ondulato fino a 12mm di spessore." },
+      },
+    ] : [
+      {
+        "@type": "Question",
+        name: "What is the EDM 650X?",
+        acceptedAnswer: { "@type": "Answer", text: "The EDM 650X is a single-pass digital printer for corrugated cardboard, 650mm width, speed up to 35m/min, water-based inks." },
+      },
+      {
+        "@type": "Question",
+        name: "Does the EDM 650X require cardboard pre-treatment?",
+        acceptedAnswer: { "@type": "Answer", text: "No, the EDM 650X water-based inks adhere directly to cardboard without primer or pre-treatment." },
+      },
+      {
+        "@type": "Question",
+        name: "What cardboard thicknesses does it support?",
+        acceptedAnswer: { "@type": "Answer", text: "It supports corrugated cardboard up to 12mm thick." },
+      },
+    ],
+  };
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(edm650xJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       {/* Hero */}
       <section className="relative text-white pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden min-h-[60vh] flex items-center">
         <Image src="/images/products/boxes.webp" alt={it ? "Scatole stampate in quadricromia" : "CMYK printed boxes"} fill className="object-cover" priority />
@@ -182,7 +222,7 @@ export default async function () {
                 : 'Single-pass inkjet digital printer for paper and corrugated board sheets. Large format, industrial speed, CMYK water-based inks.'}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20EDM-650X&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20EDM-650X.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">{it ? 'Consulenza gratuita→' : 'Free consultation→'}</a>
+              <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20EDM-650X&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20EDM-650X.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full" data-track="click_cta" data-track-label="cta_edm650x">{it ? 'Consulenza gratuita→' : 'Free consultation→'}</a>
             </div>
           </div>
         </div>
@@ -312,6 +352,9 @@ export default async function () {
       {/* Specifiche Tecniche */}
       <SpecsAccordion specs={getSpecs(locale)} locale={locale} />
 
+      {/* FAQ */}
+      <ProductFaqSection items={(faqJsonLd.mainEntity as any[]).map((q: any) => ({ question: q.name, answer: q.acceptedAnswer.text }))} locale={locale} />
+
       {/* CTA */}
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-surface-50">
         <div className="container-custom text-center">
@@ -322,7 +365,7 @@ export default async function () {
               : 'Visit our demo room in Sesto San Giovanni and see the EDM-650X in action on your materials.'}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20EDM-650X&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20EDM-650X.%0A%0AGrazie" className="btn-primary text-lg">{it ? 'Consulenza gratuita→' : 'Free consultation→'}</a>
+            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20EDM-650X&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20EDM-650X.%0A%0AGrazie" className="btn-primary text-lg" data-track="click_cta" data-track-label="cta_edm650x">{it ? 'Consulenza gratuita→' : 'Free consultation→'}</a>
           </div>
         </div>
       </section>
@@ -339,7 +382,7 @@ export default async function () {
             ].map((p) => (
               <Link key={p.name} href={p.href} className="card-modern overflow-hidden group hover:-translate-y-1 transition-transform duration-300">
                 <div className="h-40 relative overflow-hidden">
-                  <Image src={p.image} alt={p.name} fill className="object-contain p-4 group-hover:scale-105 transition-transform duration-500" />
+                  <Image src={p.image} alt={`${p.name} — ${p.desc}`} fill className="object-contain p-4 group-hover:scale-105 transition-transform duration-500" />
                 </div>
                 <div className="p-5">
                   <h3 className="font-bold text-dark-800 group-hover:text-cyan-500 transition-colors">{p.name}</h3>

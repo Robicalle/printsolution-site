@@ -7,7 +7,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
   const isIt = locale === 'it';
   return {
-    title: isIt ? "Robotjet Book Edge Printer — Stampante per Labbratura Libri" : "Robotjet - Book Edge Printer",
+    title: isIt ? "Robotjet: Stampante per Labbratura Libri Book Edge Printer" : "Robotjet: Book Edge Printer for Library & Publishing",
     description: isIt
       ? "Robotjet: stampante per labbratura libri, quaderni e agende. 400 pezzi/ora, CMYK inkjet 1200 dpi. Print Solution"
       : "Robotjet: book edge printer for books, notebooks and diaries. 400 pieces/hour, CMYK inkjet 1200 dpi. Print Solution",
@@ -19,7 +19,7 @@ export async function generateMetadata(): Promise<Metadata> {
     "stampa bordo libri",
   ],
     openGraph: {
-      title: isIt ? "Robotjet Book Edge Printer — Stampante per Labbratura Libri | Print Solution" : "Robotjet - Book Edge Printer | Print Solution",
+      title: isIt ? "Robotjet: Stampante per Labbratura Libri Book Edge Printer | Print Solution" : "Robotjet: Book Edge Printer for Library & Publishing | Print Solution",
       description: isIt
         ? "Robotjet: stampante per labbratura libri, quaderni e agende. 400 pezzi/ora, CMYK inkjet 1200 dpi. Print Solution"
         : "Robotjet: book edge printer for books, notebooks and diaries. 400 pieces/hour, CMYK inkjet 1200 dpi. Print Solution",
@@ -28,7 +28,7 @@ export async function generateMetadata(): Promise<Metadata> {
       locale: isIt ? "it_IT" : "en_US",
     },
     twitter: { card: "summary_large_image" },
-    alternates: { canonical: `https://www.printsolutionsrl.it/${locale}/prodotti/robotjet` },
+    alternates: { canonical: locale === 'it' ? `https://www.printsolutionsrl.it/prodotti/robotjet` : `https://www.printsolutionsrl.it/en/prodotti/robotjet` },
   };
 }
 
@@ -36,28 +36,20 @@ const productJsonLd = {
   "@context": "https://schema.org",
   "@type": "Product",
   name: "Robotjet Book Edge Printer",
-  brand: { "@type": "Brand", name: "Print Solution" },
+  brand: { "@type": "Brand", name: "Robotjet" },
   description:
     "Stampante digitale per labbratura e personalizzazione del bordo delle pagine di libri, quaderni, agende e block notes. 400 pezzi/ora, CMYK single-pass, 1200 dpi.",
   image: "https://www.printsolutionsrl.it/images/products/book-edge-printer.png",
   manufacturer: { "@type": "Organization", name: "Print Solution S.r.l." },
   offers: {
     "@type": "Offer",
+    url: "https://www.printsolutionsrl.it/prodotti/robotjet",
     availability: "https://schema.org/InStock",
     priceCurrency: "EUR",
     seller: { "@type": "Organization", name: "Print Solution S.r.l." },
   },
 };
 
-const breadcrumbJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.printsolutionsrl.it" },
-    { "@type": "ListItem", position: 2, name: "Prodotti", item: "https://www.printsolutionsrl.it/soluzioni/packaging" },
-    { "@type": "ListItem", position: 3, name: "Robotjet Book Edge Printer", item: "https://www.printsolutionsrl.it/prodotti/robotjet" },
-  ],
-};
 
 function getSpecs(l: string) { return l === 'it' ? [
   ["Capacità produttiva", "Circa 400 pezzi/ora, 3200 pezzi/giorno"],
@@ -154,6 +146,16 @@ const features = [
 
 export default async function () {
   const locale = await getLocale();
+  const isIt = locale === 'it';
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.printsolutionsrl.it" },
+      { "@type": "ListItem", position: 2, name: isIt ? "Prodotti" : "Products", item: isIt ? "https://www.printsolutionsrl.it/prodotti" : "https://www.printsolutionsrl.it/en/prodotti" },
+      { "@type": "ListItem", position: 3, name: "Robotjet Book Edge Printer", item: isIt ? "https://www.printsolutionsrl.it/prodotti/robotjet" : "https://www.printsolutionsrl.it/en/prodotti/robotjet" },
+    ],
+  };
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }} />
@@ -170,7 +172,7 @@ export default async function () {
                 {locale === 'it' ? 'Stampante digitale rivoluzionaria per la labbratura di libri, quaderni, agende e block notes. 400 pezzi/ora, CMYK single-pass con teste HP A3, risoluzione fino a 1200 dpi.' : 'Revolutionary digital printer for book edge printing on books, notebooks, planners and notepads. 400 pcs/hour, CMYK single-pass with HP A3 printheads, up to 1200 dpi resolution.'}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20Robotjet&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20Robotjet.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">{locale === 'it' ? 'Consulenza gratuita→' : 'Free consultation→'}</a>
+                <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20Robotjet&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20Robotjet.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full" data-track="click_cta" data-track-label="cta_robotjet">{locale === 'it' ? 'Consulenza gratuita→' : 'Free consultation→'}</a>
               </div>
           </div>
         </div>

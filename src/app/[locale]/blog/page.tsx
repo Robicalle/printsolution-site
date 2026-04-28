@@ -6,33 +6,39 @@ import { getAllPosts } from "@/sanity/lib/fetchers";
 import Image from "next/image";
 import { urlForImage } from "@/sanity/lib/image";
 
-export const metadata: Metadata = {
-  title: "Blog",
-  description:
-    "Articoli e guide sulla stampa digitale per packaging, etichette a colori e cartone ondulato. Approfondimenti tecnici da Print Solution.",
-  keywords: [
-    "blog stampa digitale",
-    "guida packaging digitale",
-    "stampa etichette guida",
-    "cartone ondulato stampa",
-  ],
-  openGraph: {
-    title: "Blog | Print Solution",
-    description:
-      "Articoli e guide sulla stampa digitale per packaging, etichette e cartone ondulato.",
-    images: ["/images/hero-boxes.webp"],
-    type: "website",
-    locale: "it_IT",
-  },
-  twitter: { card: "summary_large_image" },
-  alternates: {
-    canonical: 'https://www.printsolutionsrl.it/it/blog',
-    languages: {
-      'it': 'https://www.printsolutionsrl.it/it/blog',
-      'en': 'https://www.printsolutionsrl.it/en/blog',
+export const revalidate = 60;
+
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getLocale();
+  const it = locale === 'it';
+  return {
+    title: it ? "Blog | Print Solution" : "Blog | Print Solution",
+    description: it
+      ? "Articoli e guide sulla stampa digitale per packaging, etichette a colori e cartone ondulato. Approfondimenti tecnici da Print Solution."
+      : "Articles and guides on digital printing for packaging, colour labels and corrugated cardboard. Technical insights from Print Solution.",
+    keywords: it
+      ? ["blog stampa digitale", "guida packaging digitale", "stampa etichette guida", "cartone ondulato stampa"]
+      : ["digital printing blog", "digital packaging guide", "label printing guide", "corrugated cardboard printing"],
+    openGraph: {
+      title: it ? "Blog | Print Solution" : "Blog | Print Solution",
+      description: it
+        ? "Articoli e guide sulla stampa digitale per packaging, etichette e cartone ondulato."
+        : "Articles and guides on digital printing for packaging, labels and corrugated cardboard.",
+      images: ["/images/hero-boxes.webp"],
+      type: "website",
+      locale: it ? "it_IT" : "en_US",
     },
-  },
-};
+    twitter: { card: "summary_large_image" },
+    alternates: {
+      canonical: it ? 'https://www.printsolutionsrl.it/blog' : 'https://www.printsolutionsrl.it/en/blog',
+      languages: {
+        'it': 'https://www.printsolutionsrl.it/blog',
+        'en': 'https://www.printsolutionsrl.it/en/blog',
+        'x-default': 'https://www.printsolutionsrl.it/blog',
+      },
+    },
+  };
+}
 
 const categoryGradients: Record<string, string> = {
   packaging: "from-cyan-500 to-cyan-600",
@@ -159,10 +165,10 @@ export default async function BlogPage() {
                       </span>
                     </div>
                     <h3 className="text-lg font-bold text-dark-800 mb-2 group-hover:text-cyan-500 transition-colors leading-snug">
-                      {post.title}
+                      {(locale === 'en' && post.title_en) ? post.title_en : post.title}
                     </h3>
                     <p className="text-gray-500 text-sm leading-relaxed mb-4 line-clamp-3">
-                      {post.excerpt}
+                      {(locale === 'en' && post.excerpt_en) ? post.excerpt_en : post.excerpt}
                     </p>
                     <div className="flex items-center justify-between">
                       <span className="text-gray-500 text-sm">

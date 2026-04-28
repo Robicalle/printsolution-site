@@ -7,7 +7,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
   const isIt = locale === 'it';
   return {
-    title: isIt ? "Afinia DLP-2200 — {locale === 'it' ? 'Digital Label Press' : 'Digital Label Press'} Completa" : "Afinia DLP-2200 - Complete Digital Label Press",
+    title: isIt ? "Afinia DLP-2200: Digital Label Press Completa per Etichette" : "Afinia DLP-2200: Complete Digital Label Press",
     description: isIt
       ? "Afinia DLP-2200: pressa digitale per etichette completa. Stampa, laminazione, fustellatura e riavvolgimento. 25.000+ etichette/ora. Print Solution"
       : "Afinia DLP-2200: complete digital label press. Print, laminate, die-cut and rewind. 25,000+ labels/hour. Print Solution",
@@ -19,7 +19,7 @@ export async function generateMetadata(): Promise<Metadata> {
     "stampante etichette industriale",
   ],
     openGraph: {
-      title: isIt ? "Afinia DLP-2200 — {locale === 'it' ? 'Digital Label Press' : 'Digital Label Press'} Completa | Print Solution" : "Afinia DLP-2200 - Complete Digital Label Press | Print Solution",
+      title: isIt ? "Afinia DLP-2200: Digital Label Press Completa per Etichette | Print Solution" : "Afinia DLP-2200: Complete Digital Label Press | Print Solution",
       description: isIt
         ? "Afinia DLP-2200: pressa digitale per etichette completa. Stampa, laminazione, fustellatura e riavvolgimento. 25.000+ etichette/ora. Print Solution"
         : "Afinia DLP-2200: complete digital label press. Print, laminate, die-cut and rewind. 25,000+ labels/hour. Print Solution",
@@ -28,7 +28,7 @@ export async function generateMetadata(): Promise<Metadata> {
       locale: isIt ? "it_IT" : "en_US",
     },
     twitter: { card: "summary_large_image" },
-    alternates: { canonical: `https://www.printsolutionsrl.it/${locale}/prodotti/afinia-dlp2200` },
+    alternates: { canonical: locale === 'it' ? `https://www.printsolutionsrl.it/prodotti/afinia-dlp2200` : `https://www.printsolutionsrl.it/en/prodotti/afinia-dlp2200` },
   };
 }
 
@@ -43,21 +43,13 @@ const productJsonLd = {
   manufacturer: { "@type": "Organization", name: "Print Solution S.r.l." },
   offers: {
     "@type": "Offer",
+    url: "https://www.printsolutionsrl.it/prodotti/afinia-dlp2200",
     availability: "https://schema.org/InStock",
     priceCurrency: "EUR",
     seller: { "@type": "Organization", name: "Print Solution S.r.l." },
   },
 };
 
-const breadcrumbJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.printsolutionsrl.it" },
-    { "@type": "ListItem", position: 2, name: "Etichette", item: "https://www.printsolutionsrl.it/soluzioni/etichette" },
-    { "@type": "ListItem", position: 3, name: "Afinia DLP-2200", item: "https://www.printsolutionsrl.it/prodotti/afinia-dlp2200" },
-  ],
-};
 
 function getSpecs(l: string) { return l === 'it' ? [
   ["Tipo sistema", "Digital Label Press completa (stampa + finitura)"],
@@ -150,6 +142,16 @@ const features = [
 
 export default async function AfiniaDLP2200Page() {
   const locale = await getLocale();
+  const isIt = locale === 'it';
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.printsolutionsrl.it" },
+      { "@type": "ListItem", position: 2, name: isIt ? "Prodotti" : "Products", item: isIt ? "https://www.printsolutionsrl.it/prodotti" : "https://www.printsolutionsrl.it/en/prodotti" },
+      { "@type": "ListItem", position: 3, name: "Afinia DLP-2200", item: isIt ? "https://www.printsolutionsrl.it/prodotti/afinia-dlp2200" : "https://www.printsolutionsrl.it/en/prodotti/afinia-dlp2200" },
+    ],
+  };
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }} />
@@ -167,7 +169,7 @@ export default async function AfiniaDLP2200Page() {
                 {locale === 'it' ? "Digital Label Press completa: dalla bobina bianca all'etichetta finita in un unico passaggio. Stampa, laminazione, fustellatura rotativa, rimozione sfridi, slitting e riavvolgimento su doppio mandrino. Oltre 25.000 etichette all'ora." : "Complete Digital Label Press: from blank roll to finished label in a single pass. Printing, lamination, rotary die-cutting, waste removal, slitting and dual-spindle rewinding. Over 25,000 labels per hour."}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20Afinia%20DLP-2200&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20Afinia%20DLP-2200.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">{locale === 'it' ? 'Consulenza gratuita→' : 'Free consultation→'}</a>
+                <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20Afinia%20DLP-2200&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20Afinia%20DLP-2200.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full" data-track="click_cta" data-track-label="cta_afinia_dlp2200">{locale === 'it' ? 'Consulenza gratuita→' : 'Free consultation→'}</a>
               </div>
           </div>
         </div>
@@ -263,7 +265,7 @@ export default async function AfiniaDLP2200Page() {
             {locale === 'it' ? "Elimina la necessità di esternalizzare. Con la DLP-2200 produci etichette finite e pronte per l'applicazione direttamente nel tuo stabilimento." : "Eliminate the need to outsource. With the DLP-2200, produce finished labels ready for application directly in your facility."}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20Afinia%20DLP-2200&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20Afinia%20DLP-2200.%0A%0AGrazie" className="btn-primary text-lg">{locale === 'it' ? 'Consulenza gratuita→' : 'Free consultation→'}</a>
+            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20Afinia%20DLP-2200&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20Afinia%20DLP-2200.%0A%0AGrazie" className="btn-primary text-lg" data-track="click_cta" data-track-label="cta_afinia_dlp2200">{locale === 'it' ? 'Consulenza gratuita→' : 'Free consultation→'}</a>
           </div>
         </div>
       </section>
@@ -280,7 +282,7 @@ export default async function AfiniaDLP2200Page() {
             ].map((p) => (
               <Link key={p.name} href={p.href} className="card-modern overflow-hidden group hover:-translate-y-1 transition-transform duration-300">
                 <div className="h-40 relative overflow-hidden">
-                  <Image src={p.image} alt={p.name} fill className="object-contain p-4 group-hover:scale-105 transition-transform duration-500" />
+                  <Image src={p.image} alt={`${p.name} — ${p.desc}`} fill className="object-contain p-4 group-hover:scale-105 transition-transform duration-500" />
                 </div>
                 <div className="p-5">
                   <h3 className="font-bold text-dark-800 group-hover:text-cyan-500 transition-colors">{p.name}</h3>

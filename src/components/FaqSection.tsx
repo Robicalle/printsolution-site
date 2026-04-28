@@ -22,7 +22,11 @@ export default async function FaqSection() {
       name: f.question,
       acceptedAnswer: {
         "@type": "Answer",
-        text: f.answer?.[0]?.children?.[0]?.text || "",
+        text: Array.isArray(f.answer)
+          ? f.answer
+              .flatMap((block: any) => block.children?.map((c: any) => c.text) ?? [])
+              .join(" ")
+          : f.answer || "",
       },
     })),
   };

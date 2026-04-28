@@ -78,6 +78,35 @@ export default defineType({
     }),
     defineField({ name: "body", title: "Contenuto (IT)", type: "blockContent" }),
     defineField({ name: "body_en", title: "Contenuto (EN)", type: "blockContent" }),
+    defineField({
+      name: "faq",
+      title: "FAQ (IT)",
+      type: "array",
+      description: "Domande frequenti — usate per il FAQPage schema (AI Overview)",
+      of: [{
+        type: "object",
+        name: "faqItem",
+        fields: [
+          { name: "question", title: "Domanda", type: "string" },
+          { name: "answer", title: "Risposta", type: "text", rows: 3 },
+        ],
+        preview: { select: { title: "question" } },
+      }],
+    }),
+    defineField({
+      name: "faq_en",
+      title: "FAQ (EN)",
+      type: "array",
+      of: [{
+        type: "object",
+        name: "faqItemEn",
+        fields: [
+          { name: "question", title: "Question", type: "string" },
+          { name: "answer", title: "Answer", type: "text", rows: 3 },
+        ],
+        preview: { select: { title: "question" } },
+      }],
+    }),
     defineField({ name: "publishedAt", title: "Data Pubblicazione", type: "datetime" }),
     defineField({
       name: "order",
@@ -104,6 +133,7 @@ export default defineType({
           validation: (r) => r.max(160).warning("Massimo 160 caratteri per SEO"),
         },
         { name: "image", title: "OG Image", type: "image" },
+        { name: "keywords", title: "Keywords (IT)", type: "array", of: [{ type: "string" }] },
       ],
     }),
     defineField({

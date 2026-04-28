@@ -3,12 +3,13 @@ import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import SpecsAccordion from "@/components/SpecsAccordion";
+import ProductFaqSection from "@/components/ProductFaqSection";
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
   const isIt = locale === 'it';
   return {
-    title: isIt ? "Anypack AB2500 - Box Maker Automatico" : "Anypack AB2500 - Automatic Box Maker",
+    title: isIt ? "Anypack AB2500: Box Maker Automatico per Scatole Su Misura" : "Anypack AB2500: Automatic Box Maker for Custom Corrugated Boxes",
     description: isIt
       ? "Anypack AB2500: box maker automatico per scatole in cartone ondulato. 500-600 pezzi/ora, cambio formato in 10 sec. Print Solution"
       : "Anypack AB2500: automatic box maker for corrugated cardboard. 500-600 boxes/hour, format change in 10 sec. Print Solution",
@@ -20,7 +21,7 @@ export async function generateMetadata(): Promise<Metadata> {
     "box maker on-demand",
   ],
     openGraph: {
-      title: isIt ? "Anypack AB2500 - Box Maker Automatico | Print Solution" : "Anypack AB2500 - Automatic Box Maker | Print Solution",
+      title: isIt ? "Anypack AB2500: Box Maker Automatico per Scatole Su Misura | Print Solution" : "Anypack AB2500: Automatic Box Maker for Custom Corrugated Boxes | Print Solution",
       description: isIt
         ? "Anypack AB2500: box maker automatico per scatole in cartone ondulato. 500-600 pezzi/ora, cambio formato in 10 sec. Print Solution"
         : "Anypack AB2500: automatic box maker for corrugated cardboard. 500-600 boxes/hour, format change in 10 sec. Print Solution",
@@ -29,7 +30,7 @@ export async function generateMetadata(): Promise<Metadata> {
       locale: isIt ? "it_IT" : "en_US",
     },
     twitter: { card: "summary_large_image" },
-    alternates: { canonical: `https://www.printsolutionsrl.it/${locale}/prodotti/ab2500` },
+    alternates: { canonical: locale === 'it' ? `https://www.printsolutionsrl.it/prodotti/ab2500` : `https://www.printsolutionsrl.it/en/prodotti/ab2500` },
   };
 }
 
@@ -37,27 +38,19 @@ const ab2500JsonLd = {
   "@context": "https://schema.org",
   "@type": "Product",
   name: "Anypack AB2500",
-  brand: { "@type": "Brand", name: "Print Solution" },
+  brand: { "@type": "Brand", name: "Anypack" },
   description:
     "Box maker automatico all-in-one per taglio, scanalatura, cordonatura e incollaggio di scatole in cartone ondulato. 500-600 scatole/ora.",
   image: "https://www.printsolutionsrl.it/images/products/ab2500.png",
   offers: {
     "@type": "Offer",
+    url: "https://www.printsolutionsrl.it/prodotti/ab2500",
     availability: "https://schema.org/InStock",
     priceCurrency: "EUR",
     seller: { "@type": "Organization", name: "Print Solution S.r.l." },
   },
 };
 
-const breadcrumbJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.printsolutionsrl.it" },
-    { "@type": "ListItem", position: 2, name: "Prodotti", item: "https://www.printsolutionsrl.it/soluzioni/packaging" },
-    { "@type": "ListItem", position: 3, name: "Anypack AB2500", item: "https://www.printsolutionsrl.it/prodotti/ab2500" },
-  ],
-};
 
 function getSpecs(l: string) { return l === 'it' ? [
   ["Tipo macchina", "Box maker automatico all-in-one"],
@@ -138,10 +131,58 @@ const features = [
 
 export default async function () {
   const locale = await getLocale();
+  const isIt = locale === 'it';
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.printsolutionsrl.it" },
+      { "@type": "ListItem", position: 2, name: isIt ? "Prodotti" : "Products", item: isIt ? "https://www.printsolutionsrl.it/prodotti" : "https://www.printsolutionsrl.it/en/prodotti" },
+      { "@type": "ListItem", position: 3, name: "Anypack AB2500", item: isIt ? "https://www.printsolutionsrl.it/prodotti/ab2500" : "https://www.printsolutionsrl.it/en/prodotti/ab2500" },
+    ],
+  };
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: isIt ? [
+      {
+        "@type": "Question",
+        name: "Quante scatole produce all'ora l'AB2500?",
+        acceptedAnswer: { "@type": "Answer", text: "L'Anypack AB2500 produce 500–600 scatole/ora con cambio formato automatico in 10–15 secondi." },
+      },
+      {
+        "@type": "Question",
+        name: "Quali materiali supporta l'AB2500?",
+        acceptedAnswer: { "@type": "Answer", text: "Lavora con cartone ondulato singola onda (3mm) e doppia onda (6mm), in formati personalizzati." },
+      },
+      {
+        "@type": "Question",
+        name: "Serve un operatore dedicato?",
+        acceptedAnswer: { "@type": "Answer", text: "Sì, l'AB2500 richiede un operatore che inserisca le misure sul touchscreen e supervisioni il processo. La macchina è completamente automatica nelle operazioni di taglio, scanalatura e incollaggio, ma la presenza dell'operatore è necessaria." },
+      },
+    ] : [
+      {
+        "@type": "Question",
+        name: "How many boxes per hour does the AB2500 produce?",
+        acceptedAnswer: { "@type": "Answer", text: "The Anypack AB2500 produces 500–600 boxes/hour with automatic format changeover in 10–15 seconds." },
+      },
+      {
+        "@type": "Question",
+        name: "What materials does the AB2500 support?",
+        acceptedAnswer: { "@type": "Answer", text: "It works with single-flute corrugated board (3mm) and double-flute (6mm), in custom formats." },
+      },
+      {
+        "@type": "Question",
+        name: "Does it require a dedicated operator?",
+        acceptedAnswer: { "@type": "Answer", text: "Yes, the AB2500 requires an operator to enter the dimensions on the touchscreen and supervise the process. The machine is fully automatic in its cutting, slotting and gluing operations, but operator presence is required." },
+      },
+    ],
+  };
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ab2500JsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       {/* Hero */}
       <section className="relative text-white pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden min-h-[60vh] flex items-center">
         <video autoPlay muted loop playsInline aria-hidden="true" className="absolute inset-0 w-full h-full object-cover">
@@ -156,7 +197,7 @@ export default async function () {
               {locale === 'it' ? "Box maker automatico all-in-one. Taglio, scanalatura, cordonatura e incollaggio in un'unica macchina. 500-600 scatole/ora con cambio formato in 10 secondi." : "All-in-one automatic box maker. Cutting, creasing, scoring and gluing in a single machine. 500–600 boxes/hour with format change in 10 seconds."}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20Anypack%20AB2500&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20Anypack%20AB2500.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">{locale === 'it' ? 'Consulenza gratuita→' : 'Free consultation→'}</a>
+              <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20Anypack%20AB2500&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20Anypack%20AB2500.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full" data-track="click_cta" data-track-label="cta_ab2500">{locale === 'it' ? 'Consulenza gratuita→' : 'Free consultation→'}</a>
             </div>
           </div>
         </div>
@@ -244,6 +285,9 @@ export default async function () {
       {/* Specifiche Tecniche */}
       <SpecsAccordion specs={getSpecs(locale)} locale={locale} />
 
+      {/* FAQ */}
+      <ProductFaqSection items={(faqJsonLd.mainEntity as any[]).map((q: any) => ({ question: q.name, answer: q.acceptedAnswer.text }))} locale={locale} />
+
       {/* CTA */}
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-surface-50">
         <div className="container-custom text-center">
@@ -252,7 +296,7 @@ export default async function () {
             {locale === 'it' ? "Scopri come l'AB2500 può rivoluzionare la tua linea di produzione. Vieni a vederla nella nostra sala demo." : "Discover how the AB2500 can revolutionise your production line. Come see it in our demo room."}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20Anypack%20AB2500&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20Anypack%20AB2500.%0A%0AGrazie" className="btn-primary text-lg">{locale === 'it' ? 'Consulenza gratuita→' : 'Free consultation→'}</a>
+            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20Anypack%20AB2500&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20Anypack%20AB2500.%0A%0AGrazie" className="btn-primary text-lg" data-track="click_cta" data-track-label="cta_ab2500">{locale === 'it' ? 'Consulenza gratuita→' : 'Free consultation→'}</a>
           </div>
         </div>
       </section>
@@ -269,7 +313,7 @@ export default async function () {
             ].map((p) => (
               <Link key={p.name} href={p.href} className="card-modern overflow-hidden group hover:-translate-y-1 transition-transform duration-300">
                 <div className="h-40 relative overflow-hidden">
-                  <Image src={p.image} alt={p.name} fill className="object-contain p-4 group-hover:scale-105 transition-transform duration-500" />
+                  <Image src={p.image} alt={`${p.name} — ${p.desc}`} fill className="object-contain p-4 group-hover:scale-105 transition-transform duration-500" />
                 </div>
                 <div className="p-5">
                   <h3 className="font-bold text-dark-800 group-hover:text-cyan-500 transition-colors">{p.name}</h3>

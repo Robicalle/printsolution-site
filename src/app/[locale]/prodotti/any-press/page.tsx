@@ -7,7 +7,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
   const isIt = locale === 'it';
   return {
-    title: isIt ? "Any-Press – Stampante Laser LED 5 Colori CMYK+Bianco" : "Any-Press - 5-Colour LED Laser Label Printer",
+    title: isIt ? "Any-Press: Stampante Laser LED 5 Colori CMYK+Bianco" : "Any-Press: 5-Colour LED Laser Label Printer CMYK+White",
     description: isIt
       ? "Any-Press: stampante laser LED 5 colori CMYK+Bianco per etichette e packaging flessibile. 1200 dpi. Print Solution"
       : "Any-Press: 5-colour LED laser printer CMYK+White for labels and flexible packaging. 1200 dpi. Print Solution",
@@ -20,7 +20,7 @@ export async function generateMetadata(): Promise<Metadata> {
     "toner bianco",
   ],
     openGraph: {
-      title: isIt ? "Any-Press – Stampante Laser LED 5 Colori CMYK+Bianco | Print Solution" : "Any-Press - 5-Colour LED Laser Label Printer | Print Solution",
+      title: isIt ? "Any-Press: Stampante Laser LED 5 Colori CMYK+Bianco | Print Solution" : "Any-Press: 5-Colour LED Laser Label Printer CMYK+White | Print Solution",
       description: isIt
         ? "Any-Press: stampante laser LED 5 colori CMYK+Bianco per etichette e packaging flessibile. 1200 dpi. Print Solution"
         : "Any-Press: 5-colour LED laser printer CMYK+White for labels and flexible packaging. 1200 dpi. Print Solution",
@@ -29,7 +29,7 @@ export async function generateMetadata(): Promise<Metadata> {
       locale: isIt ? "it_IT" : "en_US",
     },
     twitter: { card: "summary_large_image" },
-    alternates: { canonical: `https://www.printsolutionsrl.it/${locale}/prodotti/any-press` },
+    alternates: { canonical: locale === 'it' ? `https://www.printsolutionsrl.it/prodotti/any-press` : `https://www.printsolutionsrl.it/en/prodotti/any-press` },
   };
 }
 
@@ -44,21 +44,13 @@ const productJsonLd = {
   manufacturer: { "@type": "Organization", name: "Print Solution S.r.l." },
   offers: {
     "@type": "Offer",
+    url: "https://www.printsolutionsrl.it/prodotti/any-press",
     availability: "https://schema.org/InStock",
     priceCurrency: "EUR",
     seller: { "@type": "Organization", name: "Print Solution S.r.l." },
   },
 };
 
-const breadcrumbJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.printsolutionsrl.it" },
-    { "@type": "ListItem", position: 2, name: "Etichette", item: "https://www.printsolutionsrl.it/soluzioni/etichette" },
-    { "@type": "ListItem", position: 3, name: "Any-Press", item: "https://www.printsolutionsrl.it/prodotti/any-press" },
-  ],
-};
 
 function getSpecs(l: string) { return l === 'it' ? [
   ["Motore di stampa", "Laser digitale LED"],
@@ -146,6 +138,16 @@ const features = [
 
 export default async function AnyPressPage() {
   const locale = await getLocale();
+  const isIt = locale === 'it';
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.printsolutionsrl.it" },
+      { "@type": "ListItem", position: 2, name: isIt ? "Prodotti" : "Products", item: isIt ? "https://www.printsolutionsrl.it/prodotti" : "https://www.printsolutionsrl.it/en/prodotti" },
+      { "@type": "ListItem", position: 3, name: "Any-Press", item: isIt ? "https://www.printsolutionsrl.it/prodotti/any-press" : "https://www.printsolutionsrl.it/en/prodotti/any-press" },
+    ],
+  };
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }} />
@@ -165,7 +167,7 @@ export default async function AnyPressPage() {
                 {locale === 'it' ? 'Stampante laser LED a 5 colori (CMYK+Bianco) per etichette e packaging flessibile. Stampa su carte colorate, kraft e trasparenti grazie al toner bianco. Laminazione integrata opzionale e software ANY-FLOW per dati variabili.' : '5-color LED laser printer (CMYK+White) for labels and flexible packaging. Print on colored, kraft and transparent materials with white toner. Optional integrated lamination and ANY-FLOW software for variable data.'}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20Any-Press&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20Any-Press.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">{locale === 'it' ? 'Consulenza gratuita→' : 'Free consultation→'}</a>
+                <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20Any-Press&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20Any-Press.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full" data-track="click_cta" data-track-label="cta_any_press">{locale === 'it' ? 'Consulenza gratuita→' : 'Free consultation→'}</a>
               </div>
           </div>
         </div>
@@ -261,7 +263,7 @@ export default async function AnyPressPage() {
             {locale === 'it' ? 'Scopri come la Any-Press può trasformare la tua produzione di etichette e packaging flessibile. Contattaci per una consulenza.' : 'Discover how the Any-Press can transform your label and flexible packaging production. Contact us for a consultation.'}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20Any-Press&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20Any-Press.%0A%0AGrazie" className="btn-primary text-lg">{locale === 'it' ? 'Consulenza gratuita→' : 'Free consultation→'}</a>
+            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20Any-Press&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20Any-Press.%0A%0AGrazie" className="btn-primary text-lg" data-track="click_cta" data-track-label="cta_any_press">{locale === 'it' ? 'Consulenza gratuita→' : 'Free consultation→'}</a>
           </div>
         </div>
       </section>
@@ -278,7 +280,7 @@ export default async function AnyPressPage() {
             ].map((p) => (
               <Link key={p.name} href={p.href} className="card-modern overflow-hidden group hover:-translate-y-1 transition-transform duration-300">
                 <div className="h-40 relative overflow-hidden">
-                  <Image src={p.image} alt={p.name} fill className="object-contain p-4 group-hover:scale-105 transition-transform duration-500" />
+                  <Image src={p.image} alt={`${p.name} — ${p.desc}`} fill className="object-contain p-4 group-hover:scale-105 transition-transform duration-500" />
                 </div>
                 <div className="p-5">
                   <h3 className="font-bold text-dark-800 group-hover:text-cyan-500 transition-colors">{p.name}</h3>

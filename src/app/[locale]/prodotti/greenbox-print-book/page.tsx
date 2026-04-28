@@ -7,7 +7,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
   const isIt = locale === 'it';
   return {
-    title: isIt ? "GreenBox Print Book \u2014 Labbratura Digitale Libri" : "GreenBox Print Book - Digital Book Edge Printer",
+    title: isIt ? "GreenBox Print Book: Stampante Digitale per Labbratura Libri" : "GreenBox Print Book: Digital Book Edge Printer",
     description: isIt
       ? "GreenBox Print Book: stampante per labbratura libri con tecnologia HP PageWide. Single-pass, 30 m/min, 1200 dpi. Print Solution"
       : "GreenBox Print Book: book edge printer with HP PageWide technology. Single-pass, 30 m/min, 1200 dpi. Print Solution",
@@ -20,7 +20,7 @@ export async function generateMetadata(): Promise<Metadata> {
     "GreenBox 2",
   ],
     openGraph: {
-      title: isIt ? "GreenBox Print Book \u2014 Labbratura Digitale Libri | Print Solution" : "GreenBox Print Book - Digital Book Edge Printer | Print Solution",
+      title: isIt ? "GreenBox Print Book: Stampante Digitale per Labbratura Libri | Print Solution" : "GreenBox Print Book: Digital Book Edge Printer | Print Solution",
       description: isIt
         ? "GreenBox Print Book: stampante per labbratura libri con tecnologia HP PageWide. Single-pass, 30 m/min, 1200 dpi. Print Solution"
         : "GreenBox Print Book: book edge printer with HP PageWide technology. Single-pass, 30 m/min, 1200 dpi. Print Solution",
@@ -29,7 +29,7 @@ export async function generateMetadata(): Promise<Metadata> {
       locale: isIt ? "it_IT" : "en_US",
     },
     twitter: { card: "summary_large_image" },
-    alternates: { canonical: `https://www.printsolutionsrl.it/${locale}/prodotti/greenbox-print-book` },
+    alternates: { canonical: locale === 'it' ? `https://www.printsolutionsrl.it/prodotti/greenbox-print-book` : `https://www.printsolutionsrl.it/en/prodotti/greenbox-print-book` },
   };
 }
 
@@ -37,28 +37,20 @@ const productJsonLd = {
   "@context": "https://schema.org",
   "@type": "Product",
   name: "GreenBox Print Book",
-  brand: { "@type": "Brand", name: "Print Solution" },
+  brand: { "@type": "Brand", name: "GreenBox" },
   description:
     "Soluzione digitale per la labbratura dei libri basata su GreenBox 2. Stampa inkjet HP PageWide single-pass, inchiostri a base acqua, 30 m/min, 1200x1200 dpi. Industria 4.0 ready.",
   image: "https://www.printsolutionsrl.it/images/products/greenbox-evo-site-nobg.png",
   manufacturer: { "@type": "Organization", name: "Print Solution S.r.l." },
   offers: {
     "@type": "Offer",
+    url: "https://www.printsolutionsrl.it/prodotti/greenbox-print-book",
     availability: "https://schema.org/InStock",
     priceCurrency: "EUR",
     seller: { "@type": "Organization", name: "Print Solution S.r.l." },
   },
 };
 
-const breadcrumbJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.printsolutionsrl.it" },
-    { "@type": "ListItem", position: 2, name: "{locale === 'it' ? 'Labbratura Libri' : 'Book Edge Printing'}", item: "https://www.printsolutionsrl.it/soluzioni/labbratura" },
-    { "@type": "ListItem", position: 3, name: "GreenBox Print Book", item: "https://www.printsolutionsrl.it/prodotti/greenbox-print-book" },
-  ],
-};
 
 function getSpecsLocal(l: string): [string, string][] { return l === 'it' ? [
   ["Sistema di stampa", "Getto di inchiostro ultraveloce HP PageWide"],
@@ -154,6 +146,16 @@ const features = [
 
 export default async function GreenBoxPrintBookPage() {
   const locale = await getLocale();
+  const isIt = locale === 'it';
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.printsolutionsrl.it" },
+      { "@type": "ListItem", position: 2, name: isIt ? "Prodotti" : "Products", item: isIt ? "https://www.printsolutionsrl.it/prodotti" : "https://www.printsolutionsrl.it/en/prodotti" },
+      { "@type": "ListItem", position: 3, name: "GreenBox Print Book", item: isIt ? "https://www.printsolutionsrl.it/prodotti/greenbox-print-book" : "https://www.printsolutionsrl.it/en/prodotti/greenbox-print-book" },
+    ],
+  };
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }} />
@@ -175,7 +177,7 @@ export default async function GreenBoxPrintBookPage() {
                 {locale === 'it' ? 'La soluzione digitale per la labbratura dei libri. Stampa inkjet HP single-pass a base acqua, 30 m/min, 1200×1200 dpi. Industria 4.0 ready.' : 'The digital solution for book edge printing. HP single-pass inkjet with water-based inks, 30 m/min, 1200×1200 dpi. Industry 4.0 ready.'}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20GreenBox%20Print%20Book&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20GreenBox%20Print%20Book.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">{locale === 'it' ? 'Consulenza gratuita→' : 'Free consultation→'}</a>
+                <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20GreenBox%20Print%20Book&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20GreenBox%20Print%20Book.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full" data-track="click_cta" data-track-label="cta_greenbox_printbook">{locale === 'it' ? 'Consulenza gratuita→' : 'Free consultation→'}</a>
               </div>
           </div>
         </div>
@@ -278,7 +280,7 @@ export default async function GreenBoxPrintBookPage() {
             {locale === 'it' ? 'Vieni nella nostra sala demo a Sesto San Giovanni e scopri come la labbratura digitale può rendere unici i tuoi libri.' : 'Visit our demo room in Sesto San Giovanni and discover how digital edge printing can make your books unique.'}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20GreenBox%20Print%20Book&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20GreenBox%20Print%20Book.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">{locale === 'it' ? 'Consulenza gratuita→' : 'Free consultation→'}</a>
+            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20GreenBox%20Print%20Book&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20GreenBox%20Print%20Book.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full" data-track="click_cta" data-track-label="cta_greenbox_printbook">{locale === 'it' ? 'Consulenza gratuita→' : 'Free consultation→'}</a>
             <a href="tel:+390249439417" className="btn-outline text-lg inline-flex items-center">
               <svg className="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" /></svg>
               {locale === 'it' ? 'Chiamaci Ora' : 'Call Us Now'}

@@ -7,7 +7,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
   const isIt = locale === 'it';
   return {
-    title: isIt ? "AurumPress – {locale === 'it' ? 'Stampa a Caldo Digitale' : 'Digital Hot Foil Stamping'} per Packaging" : "AurumPress - Digital Hot Foil Stamping Machine",
+    title: isIt ? "AurumPress: Stampante Hot Foil Digitale per Etichette Premium" : "AurumPress: Digital Hot Foil Stamping Machine for Premium Labels",
     description: isIt
       ? "AurumPress: stampa a caldo digitale con foil oro, argento e olografici. Nobilitazione on-demand per packaging di lusso. Print Solution"
       : "AurumPress: digital hot foil stamping with gold, silver and holographic foils. On-demand luxury packaging. Print Solution",
@@ -19,7 +19,7 @@ export async function generateMetadata(): Promise<Metadata> {
     "stampa foil packaging",
   ],
     openGraph: {
-      title: isIt ? "AurumPress – {locale === 'it' ? 'Stampa a Caldo Digitale' : 'Digital Hot Foil Stamping'} per Packaging | Print Solution" : "AurumPress - Digital Hot Foil Stamping Machine | Print Solution",
+      title: isIt ? "AurumPress: Stampante Hot Foil Digitale per Etichette Premium | Print Solution" : "AurumPress: Digital Hot Foil Stamping Machine for Premium Labels | Print Solution",
       description: isIt
         ? "AurumPress: stampa a caldo digitale con foil oro, argento e olografici. Nobilitazione on-demand per packaging di lusso. Print Solution"
         : "AurumPress: digital hot foil stamping with gold, silver and holographic foils. On-demand luxury packaging. Print Solution",
@@ -28,7 +28,7 @@ export async function generateMetadata(): Promise<Metadata> {
       locale: isIt ? "it_IT" : "en_US",
     },
     twitter: { card: "summary_large_image" },
-    alternates: { canonical: `https://www.printsolutionsrl.it/${locale}/prodotti/aurumpress` },
+    alternates: { canonical: locale === 'it' ? `https://www.printsolutionsrl.it/prodotti/aurumpress` : `https://www.printsolutionsrl.it/en/prodotti/aurumpress` },
   };
 }
 
@@ -36,28 +36,20 @@ const aurumpressJsonLd = {
   "@context": "https://schema.org",
   "@type": "Product",
   name: "AurumPress",
-  brand: { "@type": "Brand", name: "Print Solution" },
+  brand: { "@type": "Brand", name: "AurumPress" },
   description:
     "Stampatrice termica per foil metallizzati, argentati, colori pastello e trasparente lucido. Stampa a caldo digitale per nobilitazione packaging.",
   image: "https://www.printsolutionsrl.it/images/products/aurumpress.jpg",
   manufacturer: { "@type": "Organization", name: "Print Solution S.r.l." },
   offers: {
     "@type": "Offer",
+    url: "https://www.printsolutionsrl.it/prodotti/aurumpress",
     availability: "https://schema.org/InStock",
     priceCurrency: "EUR",
     seller: { "@type": "Organization", name: "Print Solution S.r.l." },
   },
 };
 
-const breadcrumbJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.printsolutionsrl.it" },
-    { "@type": "ListItem", position: 2, name: "Prodotti", item: "https://www.printsolutionsrl.it/soluzioni/packaging" },
-    { "@type": "ListItem", position: 3, name: "AurumPress", item: "https://www.printsolutionsrl.it/prodotti/aurumpress" },
-  ],
-};
 
 function getSpecs(l: string) { return l === 'it' ? [
   ["Tecnologia", "Stampa termica ad impressione idraulica"],
@@ -117,6 +109,16 @@ const features = [
 
 export default async function AurumPressPage() {
   const locale = await getLocale();
+  const isIt = locale === 'it';
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.printsolutionsrl.it" },
+      { "@type": "ListItem", position: 2, name: isIt ? "Prodotti" : "Products", item: isIt ? "https://www.printsolutionsrl.it/prodotti" : "https://www.printsolutionsrl.it/en/prodotti" },
+      { "@type": "ListItem", position: 3, name: "AurumPress", item: isIt ? "https://www.printsolutionsrl.it/prodotti/aurumpress" : "https://www.printsolutionsrl.it/en/prodotti/aurumpress" },
+    ],
+  };
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(aurumpressJsonLd) }} />
@@ -135,7 +137,7 @@ export default async function AurumPressPage() {
                 {locale === 'it' ? 'Stampatrice termica ad impressione idraulica per foil metallizzati, argentati, colori pastello e trasparente lucido. Il tocco premium per il tuo packaging.' : 'Thermal foil printer with hydraulic impression for metallic, silver, pastel and glossy transparent foils. The premium touch for your packaging.'}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20AurumPress&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20AurumPress.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">{locale === 'it' ? 'Consulenza gratuita→' : 'Free consultation→'}</a>
+                <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20AurumPress&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20AurumPress.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full" data-track="click_cta" data-track-label="cta_aurumpress">{locale === 'it' ? 'Consulenza gratuita→' : 'Free consultation→'}</a>
               </div>
           </div>
         </div>
@@ -241,7 +243,7 @@ export default async function AurumPressPage() {
             {locale === 'it' ? "Scopri come l'AurumPress può trasformare il tuo packaging. Vieni a vederla in azione nella nostra sala demo." : 'Discover how the AurumPress can transform your packaging. Come see it in action in our demo room.'}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20AurumPress&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20AurumPress.%0A%0AGrazie" className="btn-primary text-lg">{locale === 'it' ? 'Consulenza gratuita→' : 'Free consultation→'}</a>
+            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20AurumPress&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20AurumPress.%0A%0AGrazie" className="btn-primary text-lg" data-track="click_cta" data-track-label="cta_aurumpress">{locale === 'it' ? 'Consulenza gratuita→' : 'Free consultation→'}</a>
           </div>
         </div>
       </section>
@@ -258,7 +260,7 @@ export default async function AurumPressPage() {
             ].map((p) => (
               <Link key={p.name} href={p.href} className="card-modern overflow-hidden group hover:-translate-y-1 transition-transform duration-300">
                 <div className="h-40 relative overflow-hidden">
-                  <Image src={p.image} alt={p.name} fill className="object-contain p-4 group-hover:scale-105 transition-transform duration-500" />
+                  <Image src={p.image} alt={`${p.name} — ${p.desc}`} fill className="object-contain p-4 group-hover:scale-105 transition-transform duration-500" />
                 </div>
                 <div className="p-5">
                   <h3 className="font-bold text-dark-800 group-hover:text-cyan-500 transition-colors">{p.name}</h3>

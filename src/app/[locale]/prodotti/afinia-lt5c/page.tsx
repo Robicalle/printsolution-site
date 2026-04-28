@@ -7,7 +7,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
   const isIt = locale === 'it';
   return {
-    title: isIt ? "Afinia LT5C — Stampante Etichette Toner LED Industriale" : "Afinia LT5C - LED Toner Label Printer",
+    title: isIt ? "Afinia LT5C: Stampante Etichette Toner LED Industriale" : "Afinia LT5C: Industrial LED Toner Colour Label Printer",
     description: isIt
       ? "Afinia LT5C: stampante etichette a toner LED. Resistenza immediata all\'acqua, ideale per ambienti umidi e industriali. Print Solution"
       : "Afinia LT5C: LED toner label printer. Instant water resistance, ideal for humid and industrial environments. Print Solution",
@@ -19,7 +19,7 @@ export async function generateMetadata(): Promise<Metadata> {
     "stampante etichette industriale",
   ],
     openGraph: {
-      title: isIt ? "Afinia LT5C — Stampante Etichette Toner LED Industriale | Print Solution" : "Afinia LT5C - LED Toner Label Printer | Print Solution",
+      title: isIt ? "Afinia LT5C: Stampante Etichette Toner LED Industriale | Print Solution" : "Afinia LT5C: Industrial LED Toner Colour Label Printer | Print Solution",
       description: isIt
         ? "Afinia LT5C: stampante etichette a toner LED. Resistenza immediata all\'acqua, ideale per ambienti umidi e industriali. Print Solution"
         : "Afinia LT5C: LED toner label printer. Instant water resistance, ideal for humid and industrial environments. Print Solution",
@@ -28,7 +28,7 @@ export async function generateMetadata(): Promise<Metadata> {
       locale: isIt ? "it_IT" : "en_US",
     },
     twitter: { card: "summary_large_image" },
-    alternates: { canonical: `https://www.printsolutionsrl.it/${locale}/prodotti/afinia-lt5c` },
+    alternates: { canonical: locale === 'it' ? `https://www.printsolutionsrl.it/prodotti/afinia-lt5c` : `https://www.printsolutionsrl.it/en/prodotti/afinia-lt5c` },
   };
 }
 
@@ -43,21 +43,13 @@ const productJsonLd = {
   manufacturer: { "@type": "Organization", name: "Print Solution S.r.l." },
   offers: {
     "@type": "Offer",
+    url: "https://www.printsolutionsrl.it/prodotti/afinia-lt5c",
     availability: "https://schema.org/InStock",
     priceCurrency: "EUR",
     seller: { "@type": "Organization", name: "Print Solution S.r.l." },
   },
 };
 
-const breadcrumbJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.printsolutionsrl.it" },
-    { "@type": "ListItem", position: 2, name: "Etichette", item: "https://www.printsolutionsrl.it/soluzioni/etichette" },
-    { "@type": "ListItem", position: 3, name: "Afinia LT5C", item: "https://www.printsolutionsrl.it/prodotti/afinia-lt5c" },
-  ],
-};
 
 function getSpecs(l: string) { return l === 'it' ? [
   ["Tecnologia", "Toner LED elettrofotografica CMYK"],
@@ -145,6 +137,16 @@ const features = [
 
 export default async function AfiniaLT5CPage() {
   const locale = await getLocale();
+  const isIt = locale === 'it';
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.printsolutionsrl.it" },
+      { "@type": "ListItem", position: 2, name: isIt ? "Prodotti" : "Products", item: isIt ? "https://www.printsolutionsrl.it/prodotti" : "https://www.printsolutionsrl.it/en/prodotti" },
+      { "@type": "ListItem", position: 3, name: "Afinia LT5C", item: isIt ? "https://www.printsolutionsrl.it/prodotti/afinia-lt5c" : "https://www.printsolutionsrl.it/en/prodotti/afinia-lt5c" },
+    ],
+  };
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }} />
@@ -164,7 +166,7 @@ export default async function AfiniaLT5CPage() {
                 {locale === 'it' ? "Stampante etichette a toner LED con resistenza immediata all'acqua. Tecnologia elettrofotografica CMYK con fusore integrato: le etichette escono pronte all'uso, senza tempi di asciugatura. Ideale per ambienti umidi e industriali." : "LED toner label printer with instant water resistance. Electrophotographic CMYK technology with integrated fuser: labels come out ready to use, with no drying time. Ideal for humid and industrial environments."}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20Afinia%20LT5C&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20Afinia%20LT5C.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">{locale === 'it' ? 'Consulenza gratuita→' : 'Free consultation→'}</a>
+                <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20Afinia%20LT5C&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20Afinia%20LT5C.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full" data-track="click_cta" data-track-label="cta_afinia_lt5c">{locale === 'it' ? 'Consulenza gratuita→' : 'Free consultation→'}</a>
               </div>
           </div>
         </div>
@@ -260,7 +262,7 @@ export default async function AfiniaLT5CPage() {
             {locale === 'it' ? 'Scopri come la LT5C può semplificare la tua produzione con etichette immediatamente resistenti. Contattaci per una consulenza gratuita.' : 'Discover how the LT5C can simplify your production with instantly durable labels. Contact us for a free consultation.'}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20Afinia%20LT5C&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20Afinia%20LT5C.%0A%0AGrazie" className="btn-primary text-lg">{locale === 'it' ? 'Consulenza gratuita→' : 'Free consultation→'}</a>
+            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20Afinia%20LT5C&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20Afinia%20LT5C.%0A%0AGrazie" className="btn-primary text-lg" data-track="click_cta" data-track-label="cta_afinia_lt5c">{locale === 'it' ? 'Consulenza gratuita→' : 'Free consultation→'}</a>
           </div>
         </div>
       </section>
@@ -277,7 +279,7 @@ export default async function AfiniaLT5CPage() {
             ].map((p) => (
               <Link key={p.name} href={p.href} className="card-modern overflow-hidden group hover:-translate-y-1 transition-transform duration-300">
                 <div className="h-40 relative overflow-hidden">
-                  <Image src={p.image} alt={p.name} fill className="object-contain p-4 group-hover:scale-105 transition-transform duration-500" />
+                  <Image src={p.image} alt={`${p.name} — ${p.desc}`} fill className="object-contain p-4 group-hover:scale-105 transition-transform duration-500" />
                 </div>
                 <div className="p-5">
                   <h3 className="font-bold text-dark-800 group-hover:text-cyan-500 transition-colors">{p.name}</h3>

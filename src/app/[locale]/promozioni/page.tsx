@@ -23,7 +23,7 @@ export async function generateMetadata(): Promise<Metadata> {
       locale: it ? "it_IT" : "en_US",
     },
     twitter: { card: "summary_large_image" },
-    alternates: { canonical: `https://www.printsolutionsrl.it/${locale}/promozioni` },
+    alternates: { canonical: locale === 'it' ? `https://www.printsolutionsrl.it/promozioni` : `https://www.printsolutionsrl.it/en/promozioni` },
   };
 }
 

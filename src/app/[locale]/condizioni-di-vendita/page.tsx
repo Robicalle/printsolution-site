@@ -1,10 +1,21 @@
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import { getLocale } from "next-intl/server";
 
-export const metadata: Metadata = {
-  title: "Condizioni di Vendita | Print Solution",
-  description: "Condizioni generali di vendita e uso del sito Print Solution S.r.l.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getLocale();
+  const it = locale === 'it';
+  return {
+    title: it ? "Condizioni di Vendita | Print Solution" : "Terms of Sale | Print Solution",
+    description: it
+      ? "Condizioni generali di vendita e uso del sito Print Solution S.r.l."
+      : "General terms of sale and use of the Print Solution S.r.l. website.",
+    // Contenuto solo in italiano: la versione EN non va indicizzata
+    robots: it ? "index, follow" : "noindex, follow",
+    alternates: {
+      canonical: 'https://www.printsolutionsrl.it/condizioni-di-vendita',
+    },
+  };
+}
 
 export default async function CondizioniPage() {
   const locale = await getLocale();

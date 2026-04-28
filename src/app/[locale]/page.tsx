@@ -29,10 +29,11 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     twitter: { card: "summary_large_image" },
     alternates: {
-      canonical: `https://www.printsolutionsrl.it/${locale}`,
+      canonical: locale === 'it' ? 'https://www.printsolutionsrl.it' : 'https://www.printsolutionsrl.it/en',
       languages: {
-        'it': 'https://www.printsolutionsrl.it/it',
+        'it': 'https://www.printsolutionsrl.it',
         'en': 'https://www.printsolutionsrl.it/en',
+        'x-default': 'https://www.printsolutionsrl.it',
       },
     },
   };

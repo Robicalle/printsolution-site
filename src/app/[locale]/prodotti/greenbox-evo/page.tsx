@@ -3,12 +3,13 @@ import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import SpecsAccordion from "@/components/SpecsAccordion";
+import ProductFaqSection from "@/components/ProductFaqSection";
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
   const isIt = locale === 'it';
   return {
-    title: isIt ? "GreenBox EVO - Stampante Single-Pass" : "GreenBox EVO - Single-Pass Packaging Printer",
+    title: isIt ? "GreenBox EVO: Stampante Single-Pass per Packaging Digitale" : "GreenBox EVO: Single-Pass Digital Packaging Printer",
     description: isIt
       ? "GreenBox EVO: stampante single-pass per packaging. Stampa CMYK diretta su cartone e carta, 30 m/min, inchiostri eco. Print Solution"
       : "GreenBox EVO: single-pass packaging printer. Direct CMYK on cardboard and paper, 30 m/min, eco-friendly inks. Print Solution",
@@ -20,7 +21,7 @@ export async function generateMetadata(): Promise<Metadata> {
     "stampante single-pass packaging",
   ],
     openGraph: {
-      title: isIt ? "GreenBox EVO - Stampante Single-Pass | Print Solution" : "GreenBox EVO - Single-Pass Packaging Printer | Print Solution",
+      title: isIt ? "GreenBox EVO: Stampante Single-Pass per Packaging Digitale | Print Solution" : "GreenBox EVO: Single-Pass Digital Packaging Printer | Print Solution",
       description: isIt
         ? "GreenBox EVO: stampante single-pass per packaging. Stampa CMYK diretta su cartone e carta, 30 m/min, inchiostri eco. Print Solution"
         : "GreenBox EVO: single-pass packaging printer. Direct CMYK on cardboard and paper, 30 m/min, eco-friendly inks. Print Solution",
@@ -29,7 +30,7 @@ export async function generateMetadata(): Promise<Metadata> {
       locale: isIt ? "it_IT" : "en_US",
     },
     twitter: { card: "summary_large_image" },
-    alternates: { canonical: `https://www.printsolutionsrl.it/${locale}/prodotti/greenbox-evo` },
+    alternates: { canonical: locale === 'it' ? `https://www.printsolutionsrl.it/prodotti/greenbox-evo` : `https://www.printsolutionsrl.it/en/prodotti/greenbox-evo` },
   };
 }
 
@@ -37,28 +38,20 @@ const greenboxJsonLd = {
   "@context": "https://schema.org",
   "@type": "Product",
   name: "GreenBox EVO",
-  brand: { "@type": "Brand", name: "Print Solution" },
+  brand: { "@type": "Brand", name: "GreenBox" },
   description:
     "Stampante digitale inkjet single-pass CMYK per packaging, shopper e scatole. Testina HP Pagewide, 30m/min, 1200x1200 dpi. Inchiostri pigmentati a base acqua.",
   image: "https://www.printsolutionsrl.it/images/products/greenbox-evo-site-nobg.png",
   manufacturer: { "@type": "Organization", name: "Print Solution S.r.l." },
   offers: {
     "@type": "Offer",
+    url: "https://www.printsolutionsrl.it/prodotti/greenbox-evo",
     availability: "https://schema.org/InStock",
     priceCurrency: "EUR",
     seller: { "@type": "Organization", name: "Print Solution S.r.l." },
   },
 };
 
-const breadcrumbJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.printsolutionsrl.it" },
-    { "@type": "ListItem", position: 2, name: "Prodotti", item: "https://www.printsolutionsrl.it/soluzioni/packaging" },
-    { "@type": "ListItem", position: 3, name: "GreenBox EVO", item: "https://www.printsolutionsrl.it/prodotti/greenbox-evo" },
-  ],
-};
 
 function getSpecs(l: string) { return l === 'it' ? [
   ["Tecnologia", "Inkjet single-pass CMYK"],
@@ -161,10 +154,47 @@ export default async function () {
   const locale = await getLocale();
   const it = locale === 'it';
   const features = getFeatures(locale);
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.printsolutionsrl.it" },
+      { "@type": "ListItem", position: 2, name: it ? "Prodotti" : "Products", item: it ? "https://www.printsolutionsrl.it/prodotti" : "https://www.printsolutionsrl.it/en/prodotti" },
+      { "@type": "ListItem", position: 3, name: "GreenBox EVO", item: it ? "https://www.printsolutionsrl.it/prodotti/greenbox-evo" : "https://www.printsolutionsrl.it/en/prodotti/greenbox-evo" },
+    ],
+  };
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: it ? [
+      {
+        "@type": "Question",
+        name: "Cos'è la GreenBox Evo?",
+        acceptedAnswer: { "@type": "Answer", text: "La GreenBox Evo è una stampante digitale per cartone ondulato a singolo passaggio, progettata per la stampa diretta su scatole e imballaggi." },
+      },
+      {
+        "@type": "Question",
+        name: "Che risoluzione raggiunge la GreenBox Evo?",
+        acceptedAnswer: { "@type": "Answer", text: "La GreenBox Evo raggiunge una risoluzione di 600x600 dpi per una qualità di stampa fotografica su cartone." },
+      },
+    ] : [
+      {
+        "@type": "Question",
+        name: "What is the GreenBox Evo?",
+        acceptedAnswer: { "@type": "Answer", text: "The GreenBox Evo is a single-pass digital printer for corrugated cardboard, designed for direct printing on boxes and packaging." },
+      },
+      {
+        "@type": "Question",
+        name: "What resolution does the GreenBox Evo achieve?",
+        acceptedAnswer: { "@type": "Answer", text: "The GreenBox Evo achieves a resolution of 600x600 dpi for photographic print quality on cardboard." },
+      },
+    ],
+  };
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(greenboxJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       {/* Hero */}
       <section className="relative text-white pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden min-h-[60vh] flex items-center">
         <video autoPlay muted loop playsInline aria-hidden="true" className="absolute inset-0 w-full h-full object-cover">
@@ -181,7 +211,7 @@ export default async function () {
                   : 'CMYK single-pass inkjet digital printer for cardboard, paper and jute. The ideal entry point into the world of digital packaging printing.'}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20GreenBox%20EVO&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20GreenBox%20EVO.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">{it ? 'Consulenza gratuita→' : 'Free consultation→'}</a>
+                <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20GreenBox%20EVO&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20GreenBox%20EVO.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full" data-track="click_cta" data-track-label="cta_greenbox_evo">{it ? 'Consulenza gratuita→' : 'Free consultation→'}</a>
               </div>
           </div>
         </div>
@@ -260,6 +290,9 @@ export default async function () {
       {/* Specifiche Tecniche */}
       <SpecsAccordion specs={getSpecs(locale)} locale={locale} />
 
+      {/* FAQ */}
+      <ProductFaqSection items={(faqJsonLd.mainEntity as any[]).map((q: any) => ({ question: q.name, answer: q.acceptedAnswer.text }))} locale={locale} />
+
       {/* CTA */}
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-surface-50">
         <div className="container-custom text-center">
@@ -270,7 +303,7 @@ export default async function () {
               : 'Bring your materials and test the GreenBox EVO in our demo room in Sesto San Giovanni.'}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20GreenBox%20EVO&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20GreenBox%20EVO.%0A%0AGrazie" className="btn-primary text-lg">{it ? 'Consulenza gratuita→' : 'Free consultation→'}</a>
+            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20GreenBox%20EVO&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20GreenBox%20EVO.%0A%0AGrazie" className="btn-primary text-lg" data-track="click_cta" data-track-label="cta_greenbox_evo">{it ? 'Consulenza gratuita→' : 'Free consultation→'}</a>
           </div>
         </div>
       </section>
@@ -287,7 +320,7 @@ export default async function () {
             ].map((p) => (
               <Link key={p.name} href={p.href} className="card-modern overflow-hidden group hover:-translate-y-1 transition-transform duration-300">
                 <div className="h-40 relative overflow-hidden">
-                  <Image src={p.image} alt={p.name} fill className="object-contain p-4 group-hover:scale-105 transition-transform duration-500" />
+                  <Image src={p.image} alt={`${p.name} — ${p.desc}`} fill className="object-contain p-4 group-hover:scale-105 transition-transform duration-500" />
                 </div>
                 <div className="p-5">
                   <h3 className="font-bold text-dark-800 group-hover:text-cyan-500 transition-colors">{p.name}</h3>

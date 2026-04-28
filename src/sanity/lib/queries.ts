@@ -13,12 +13,18 @@ export const productBySlugQuery = groq`*[_type == "product" && slug.current == $
 }`;
 
 // Blog
-export const postsQuery = groq`*[_type == "post"] | order(publishedAt desc) {
-  _id, _updatedAt, title, slug, author, category, "coverImage": coverImage{asset, hotspot, crop, alt}, excerpt, publishedAt,
+export const postsQuery = groq`*[_type == "post" && publishedAt <= now()] | order(publishedAt desc) {
+  _id, _updatedAt, title, title_en, slug, author, category, "coverImage": coverImage{asset, hotspot, crop, alt}, excerpt, excerpt_en, publishedAt,
   "seoTitle": seo.title, "seoDescription": seo.description
 }`;
 
-export const postBySlugQuery = groq`*[_type == "post" && slug.current == $slug][0]`;
+export const postBySlugQuery = groq`*[_type == "post" && slug.current == $slug][0]{
+  ...,
+  body,
+  body_en,
+  faq,
+  faq_en
+}`;
 
 // Pagine
 export const pageBySlugQuery = groq`*[_type == "page" && slug.current == $slug][0]`;

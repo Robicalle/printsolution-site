@@ -14,10 +14,11 @@ export async function generateMetadata(): Promise<Metadata> {
       ? "Scopri tutta la gamma di stampanti digitali per packaging ed etichette di Print Solution."
       : "Discover the full range of digital printers for packaging and labels from Print Solution.",
     alternates: {
-      canonical: `https://www.printsolutionsrl.it/${locale}/prodotti`,
+      canonical: locale === 'it' ? `https://www.printsolutionsrl.it/prodotti` : `https://www.printsolutionsrl.it/en/prodotti`,
       languages: {
-        'it': 'https://www.printsolutionsrl.it/it/prodotti',
+        'it': 'https://www.printsolutionsrl.it/prodotti',
         'en': 'https://www.printsolutionsrl.it/en/prodotti',
+        'x-default': 'https://www.printsolutionsrl.it/prodotti',
       },
     },
   };

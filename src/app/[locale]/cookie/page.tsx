@@ -10,7 +10,7 @@ export async function generateMetadata(): Promise<Metadata> {
       locale === "it"
         ? "Informativa estesa sull'uso dei cookie di Print Solution S.r.l. ai sensi del GDPR e delle Linee Guida del Garante Privacy."
         : "Extended cookie policy of Print Solution S.r.l. pursuant to GDPR and the Italian Data Protection Authority guidelines.",
-    alternates: { canonical: `https://www.printsolutionsrl.it/${locale}/cookie` },
+    alternates: { canonical: locale === 'it' ? `https://www.printsolutionsrl.it/cookie` : `https://www.printsolutionsrl.it/en/cookie` },
   };
 }
 

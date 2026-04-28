@@ -24,7 +24,7 @@ export async function generateMetadata(): Promise<Metadata> {
       locale: it ? "it_IT" : "en_US",
     },
     twitter: { card: "summary_large_image" },
-    alternates: { canonical: `https://www.printsolutionsrl.it/${locale}/usato` },
+    alternates: { canonical: locale === 'it' ? `https://www.printsolutionsrl.it/usato` : `https://www.printsolutionsrl.it/en/usato` },
   };
 }
 

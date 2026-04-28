@@ -51,10 +51,33 @@ export function CartProvider({ children }: { children: ReactNode }) {
       return [...prev, { ...item, quantity: qty }];
     });
     setIsOpen(true);
+    // GA4 add_to_cart
+    if (typeof window !== "undefined" && (window as any).gtag) {
+      (window as any).gtag("event", "add_to_cart", {
+        product_name: item.name,
+        product_id: item.id,
+        product_category: item.category ?? "",
+        value: item.price * qty,
+        currency: "EUR",
+      });
+    }
   }, []);
 
   const removeItem = useCallback((id: string) => {
-    setItems((prev) => prev.filter((i) => i.id !== id));
+    setItems((prev) => {
+      const item = prev.find((i) => i.id === id);
+      // GA4 remove_from_cart
+      if (item && typeof window !== "undefined" && (window as any).gtag) {
+        (window as any).gtag("event", "remove_from_cart", {
+          product_name: item.name,
+          product_id: item.id,
+          product_category: item.category ?? "",
+          value: item.price * item.quantity,
+          currency: "EUR",
+        });
+      }
+      return prev.filter((i) => i.id !== id);
+    });
   }, []);
 
   const updateQuantity = useCallback((id: string, quantity: number) => {

@@ -7,7 +7,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
   const isIt = locale === 'it';
   return {
-    title: isIt ? "Afinia DLF-220L / DLF-350L — Fustellatori Digitali per Etichette" : "Afinia DLF - Digital Plotter Die-Cutter",
+    title: isIt ? "Afinia DLF: Fustellatore Digitale per Etichette in Bobina" : "Afinia DLF: Digital Die-Cutter for Label Rolls",
     description: isIt
       ? "Afinia DLF: fustellatore digitale a plotter per etichette. Taglio da file, nessuna fustella fisica. Laminazione in linea. Print Solution"
       : "Afinia DLF: digital plotter die-cutter for labels. Cut from file, no physical dies. Inline lamination. Print Solution",
@@ -20,7 +20,7 @@ export async function generateMetadata(): Promise<Metadata> {
     "digital label finisher",
   ],
     openGraph: {
-      title: isIt ? "Afinia DLF-220L / DLF-350L — Fustellatori Digitali per Etichette | Print Solution" : "Afinia DLF - Digital Plotter Die-Cutter | Print Solution",
+      title: isIt ? "Afinia DLF: Fustellatore Digitale per Etichette in Bobina | Print Solution" : "Afinia DLF: Digital Die-Cutter for Label Rolls | Print Solution",
       description: isIt
         ? "Afinia DLF: fustellatore digitale a plotter per etichette. Taglio da file, nessuna fustella fisica. Laminazione in linea. Print Solution"
         : "Afinia DLF: digital plotter die-cutter for labels. Cut from file, no physical dies. Inline lamination. Print Solution",
@@ -29,7 +29,7 @@ export async function generateMetadata(): Promise<Metadata> {
       locale: isIt ? "it_IT" : "en_US",
     },
     twitter: { card: "summary_large_image" },
-    alternates: { canonical: `https://www.printsolutionsrl.it/${locale}/prodotti/afinia-dlf` },
+    alternates: { canonical: locale === 'it' ? `https://www.printsolutionsrl.it/prodotti/afinia-dlf` : `https://www.printsolutionsrl.it/en/prodotti/afinia-dlf` },
   };
 }
 
@@ -44,21 +44,13 @@ const productJsonLd = {
   manufacturer: { "@type": "Organization", name: "Print Solution S.r.l." },
   offers: {
     "@type": "Offer",
+    url: "https://www.printsolutionsrl.it/prodotti/afinia-dlf",
     availability: "https://schema.org/InStock",
     priceCurrency: "EUR",
     seller: { "@type": "Organization", name: "Print Solution S.r.l." },
   },
 };
 
-const breadcrumbJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.printsolutionsrl.it" },
-    { "@type": "ListItem", position: 2, name: "Etichette", item: "https://www.printsolutionsrl.it/soluzioni/etichette" },
-    { "@type": "ListItem", position: 3, name: "DLF-220L / DLF-350L", item: "https://www.printsolutionsrl.it/prodotti/afinia-dlf" },
-  ],
-};
 
 function getSpecs(l: string) { return l === 'it' ? [
   ["Tecnologia di taglio", "Plotter digitale (senza fustelle fisiche)"],
@@ -141,6 +133,16 @@ const features = [
 
 export default async function () {
   const locale = await getLocale();
+  const isIt = locale === 'it';
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.printsolutionsrl.it" },
+      { "@type": "ListItem", position: 2, name: isIt ? "Prodotti" : "Products", item: isIt ? "https://www.printsolutionsrl.it/prodotti" : "https://www.printsolutionsrl.it/en/prodotti" },
+      { "@type": "ListItem", position: 3, name: "DLF-220L / DLF-350L", item: isIt ? "https://www.printsolutionsrl.it/prodotti/afinia-dlf" : "https://www.printsolutionsrl.it/en/prodotti/afinia-dlf" },
+    ],
+  };
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }} />
@@ -166,6 +168,8 @@ export default async function () {
                 <a
                   href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Info%20Afinia%20DLF-220L%20DLF-350L&body=Buongiorno%2C%0A%0AVorrei%20ricevere%20informazioni%20sui%20fustellatori%20digitali%20DLF-220L%2FDLF-350L.%0A%0AGrazie"
                   className="btn-primary text-lg"
+                  data-track="click_cta"
+                  data-track-label="cta_afinia_dlf"
                 >
                   {locale === 'it' ? 'Richiedi Informazioni' : 'Request Information'}
                 </a>
@@ -279,7 +283,7 @@ export default async function () {
             ].map((p) => (
               <Link key={p.name} href={p.href} className="card-modern overflow-hidden group hover:-translate-y-1 transition-transform duration-300">
                 <div className="h-40 relative overflow-hidden">
-                  <Image src={p.image} alt={p.name} fill className="object-contain p-4 group-hover:scale-105 transition-transform duration-500" />
+                  <Image src={p.image} alt={`${p.name} — ${p.desc}`} fill className="object-contain p-4 group-hover:scale-105 transition-transform duration-500" />
                 </div>
                 <div className="p-5">
                   <h3 className="font-bold text-dark-800 group-hover:text-cyan-500 transition-colors">{p.name}</h3>

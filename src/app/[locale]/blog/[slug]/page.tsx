@@ -9,6 +9,8 @@ import Image from "next/image";
 import { PortableText } from "@portabletext/react";
 import PreviewBanner from "@/components/PreviewBanner";
 
+export const revalidate = 60;
+
 export async function generateStaticParams() {
   try {
     const posts = await getAllPosts();
@@ -26,33 +28,36 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
+  const locale = await getLocale();
+  const en = locale === 'en';
   try {
     const post = await getPostBySlug(slug);
     if (!post) return {};
+    const title = (en && post.seo_en?.title) ? post.seo_en.title : (post.seo?.title || (en && post.title_en ? post.title_en : post.title));
+    const description = (en && post.seo_en?.description) ? post.seo_en.description : (post.seo?.description || (en && post.excerpt_en ? post.excerpt_en : post.excerpt));
+    const coverImgUrl = post.coverImage ? urlForImage(post.coverImage)?.width(1200).height(630).url() || "" : "";
     return {
-      title: post.seo?.title || post.title,
-      description: post.seo?.description || post.excerpt,
+      title,
+      description,
+      keywords: post.seo?.keywords || [],
       openGraph: {
-        title: post.seo?.title || post.title,
-        description: post.seo?.description || post.excerpt,
+        title,
+        description,
         type: "article",
-        ...(post.coverImage && {
-          images: [urlForImage(post.coverImage)?.width(1200).height(630).url() || ""],
-        }),
+        ...(coverImgUrl && { images: [coverImgUrl] }),
       },
       twitter: {
         card: "summary_large_image",
-        title: post.seo?.title || post.title,
-        description: post.seo?.description || post.excerpt,
-        ...(post.coverImage && {
-          images: [urlForImage(post.coverImage)?.width(1200).height(630).url() || ""],
-        }),
+        title,
+        description,
+        ...(coverImgUrl && { images: [coverImgUrl] }),
       },
       alternates: {
-        canonical: `https://www.printsolutionsrl.it/${(await getLocale())}/blog/${slug}`,
+        canonical: `https://www.printsolutionsrl.it/blog/${slug}`,
         languages: {
-          'it': `https://www.printsolutionsrl.it/it/blog/${slug}`,
+          'it': `https://www.printsolutionsrl.it/blog/${slug}`,
           'en': `https://www.printsolutionsrl.it/en/blog/${slug}`,
+          'x-default': `https://www.printsolutionsrl.it/blog/${slug}`,
         },
       },
     };
@@ -200,10 +205,13 @@ export default async function BlogPostPage({
       )
     : null;
 
+  const displayTitle = (!it && post.title_en) ? post.title_en : post.title;
+  const displayExcerpt = (!it && post.excerpt_en) ? post.excerpt_en : post.excerpt;
+
   const articleJsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: post.title,
+    headline: displayTitle,
     datePublished: post.publishedAt || undefined,
     dateModified: post._updatedAt || post.publishedAt || undefined,
     author: post.author
@@ -215,7 +223,7 @@ export default async function BlogPostPage({
       logo: { "@type": "ImageObject", url: "https://www.printsolutionsrl.it/logo.png" },
     },
     image: coverUrl || "https://www.printsolutionsrl.it/images/hero-boxes.webp",
-    description: post.excerpt || post.seo?.description || "",
+    description: displayExcerpt || post.seo?.description || "",
   };
 
   const breadcrumbJsonLd = {
@@ -224,22 +232,36 @@ export default async function BlogPostPage({
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Home", item: "https://www.printsolutionsrl.it" },
       { "@type": "ListItem", position: 2, name: "Blog", item: "https://www.printsolutionsrl.it/blog" },
-      { "@type": "ListItem", position: 3, name: post.title, item: `https://www.printsolutionsrl.it/blog/${slug}` },
+      { "@type": "ListItem", position: 3, name: displayTitle, item: `https://www.printsolutionsrl.it/blog/${slug}` },
     ],
   };
+
+  const faqSource = (!it && post.faq_en?.length) ? post.faq_en : post.faq;
+  const faqJsonLd = faqSource?.length
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: faqSource.map((f: any) => ({
+          "@type": "Question",
+          name: f.question,
+          acceptedAnswer: { "@type": "Answer", text: f.answer },
+        })),
+      }
+    : null;
 
   return (
     <>
       {isPreview && <PreviewBanner />}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+      {faqJsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />}
       {/* Hero */}
       <section className="relative bg-hero-gradient text-white pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
         <div className="absolute top-20 right-0 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl" />
         <div className="container-custom px-4 sm:px-6 lg:px-8 relative">
           <p className="text-cyan-300 text-sm mb-3 uppercase tracking-widest font-medium">Blog</p>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight max-w-3xl">
-            {post.title}
+            {displayTitle}
           </h1>
           <div className="mt-4 flex items-center gap-4 text-sm text-gray-300">
             {post.category && (
@@ -259,7 +281,7 @@ export default async function BlogPostPage({
           <div className="w-full max-w-3xl mx-auto rounded-2xl overflow-hidden shadow-lg bg-white flex items-center justify-center p-6">
             <Image
               src={coverUrl}
-              alt={post.title}
+              alt={displayTitle}
               width={1200}
               height={600}
               className="object-contain w-full h-auto"
@@ -272,15 +294,15 @@ export default async function BlogPostPage({
       {/* Article body */}
       <article className="section-padding bg-white">
         <div className="container-custom max-w-3xl">
-          {post.excerpt && (
+          {displayExcerpt && (
             <p className="text-xl text-gray-500 mb-8 leading-relaxed italic">
-              {post.excerpt}
+              {displayExcerpt}
             </p>
           )}
 
           {post.body ? (
             <div className="prose prose-lg max-w-none text-gray-600 leading-relaxed">
-              <PortableText value={post.body} components={portableTextComponents} />
+              <PortableText value={(locale === 'en' && post.body_en) ? post.body_en : post.body} components={portableTextComponents} />
             </div>
           ) : (
             <p className="text-gray-400">

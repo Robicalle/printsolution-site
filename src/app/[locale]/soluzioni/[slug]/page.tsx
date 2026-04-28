@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getLocale } from "next-intl/server";
 import { getSolutionBySlug, getAllSolutions } from "@/sanity/lib/fetchers";
+import { urlForImage } from "@/sanity/lib/image";
 import PageRenderer from "@/components/page-builder/PageRenderer";
 
 export const revalidate = 60;
@@ -37,12 +38,16 @@ export async function generateMetadata({
       openGraph: {
         title: `${title} | Print Solution`,
         description,
-        images: ["/images/hero-boxes.webp"],
+        images: [
+          solution.image
+            ? urlForImage(solution.image)?.width(1200).height(630).url() || "/images/hero-boxes.webp"
+            : "/images/hero-boxes.webp"
+        ],
         type: "website",
         locale: it ? "it_IT" : "en_US",
       },
       twitter: { card: "summary_large_image" },
-      alternates: { canonical: `https://www.printsolutionsrl.it/${locale}/soluzioni/${slug}` },
+      alternates: { canonical: locale === 'it' ? `https://www.printsolutionsrl.it/soluzioni/${slug}` : `https://www.printsolutionsrl.it/en/soluzioni/${slug}` },
     };
   } catch {
     return {};

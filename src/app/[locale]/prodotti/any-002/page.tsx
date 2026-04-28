@@ -7,7 +7,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
   const isIt = locale === 'it';
   return {
-    title: isIt ? "Anytron ANY-002 – {locale === 'it' ? 'Stampa + Fustella Etichette' : 'Print + Die-Cut Labels'}" : "Anytron ANY-002 - Label Printer with Integrated Die-Cutter",
+    title: isIt ? "Anytron ANY-002: Stampante Etichette con Fustella Integrata" : "Anytron ANY-002: Label Printer with Integrated Die-Cutter",
     description: isIt
       ? "Anytron ANY-002: sistema stampa laser + fustellatura per etichette on-demand. 5.000 etichette in 2 ore, 1200 dpi. Print Solution"
       : "Anytron ANY-002: laser print + die-cut system for on-demand labels. 5,000 labels in 2 hours, 1200 dpi. Print Solution",
@@ -19,7 +19,7 @@ export async function generateMetadata(): Promise<Metadata> {
     "stampante toner etichette",
   ],
     openGraph: {
-      title: isIt ? "Anytron ANY-002 – {locale === 'it' ? 'Stampa + Fustella Etichette' : 'Print + Die-Cut Labels'} | Print Solution" : "Anytron ANY-002 - Label Printer with Integrated Die-Cutter | Print Solution",
+      title: isIt ? "Anytron ANY-002: Stampante Etichette con Fustella Integrata | Print Solution" : "Anytron ANY-002: Label Printer with Integrated Die-Cutter | Print Solution",
       description: isIt
         ? "Anytron ANY-002: sistema stampa laser + fustellatura per etichette on-demand. 5.000 etichette in 2 ore, 1200 dpi. Print Solution"
         : "Anytron ANY-002: laser print + die-cut system for on-demand labels. 5,000 labels in 2 hours, 1200 dpi. Print Solution",
@@ -28,7 +28,7 @@ export async function generateMetadata(): Promise<Metadata> {
       locale: isIt ? "it_IT" : "en_US",
     },
     twitter: { card: "summary_large_image" },
-    alternates: { canonical: `https://www.printsolutionsrl.it/${locale}/prodotti/any-002` },
+    alternates: { canonical: locale === 'it' ? `https://www.printsolutionsrl.it/prodotti/any-002` : `https://www.printsolutionsrl.it/en/prodotti/any-002` },
   };
 }
 
@@ -43,21 +43,13 @@ const productJsonLd = {
   manufacturer: { "@type": "Organization", name: "Print Solution S.r.l." },
   offers: {
     "@type": "Offer",
+    url: "https://www.printsolutionsrl.it/prodotti/any-002",
     availability: "https://schema.org/InStock",
     priceCurrency: "EUR",
     seller: { "@type": "Organization", name: "Print Solution S.r.l." },
   },
 };
 
-const breadcrumbJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.printsolutionsrl.it" },
-    { "@type": "ListItem", position: 2, name: "Etichette", item: "https://www.printsolutionsrl.it/soluzioni/etichette" },
-    { "@type": "ListItem", position: 3, name: "Anytron ANY-002", item: "https://www.printsolutionsrl.it/prodotti/any-002" },
-  ],
-};
 
 function getSpecs(l: string) { return l === 'it' ? [
   ["Motore di stampa", "Laser digitale LED"],
@@ -127,6 +119,16 @@ const features = [
 
 export default async function Any002Page() {
   const locale = await getLocale();
+  const isIt = locale === 'it';
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.printsolutionsrl.it" },
+      { "@type": "ListItem", position: 2, name: isIt ? "Prodotti" : "Products", item: isIt ? "https://www.printsolutionsrl.it/prodotti" : "https://www.printsolutionsrl.it/en/prodotti" },
+      { "@type": "ListItem", position: 3, name: "Anytron ANY-002", item: isIt ? "https://www.printsolutionsrl.it/prodotti/any-002" : "https://www.printsolutionsrl.it/en/prodotti/any-002" },
+    ],
+  };
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }} />
@@ -154,6 +156,8 @@ export default async function Any002Page() {
                 <a
                   href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Info%20Anytron%20ANY-002&body=Buongiorno%2C%0A%0AVorrei%20ricevere%20informazioni%20sulla%20Anytron%20ANY-002.%0A%0AGrazie"
                   className="btn-primary text-lg"
+                  data-track="click_cta"
+                  data-track-label="cta_any002"
                 >
                   {locale === 'it' ? 'Richiedi Informazioni' : 'Request Information'}
                 </a>
@@ -286,7 +290,7 @@ export default async function Any002Page() {
             ].map((p) => (
               <Link key={p.name} href={p.href} className="card-modern overflow-hidden group hover:-translate-y-1 transition-transform duration-300">
                 <div className="h-40 relative overflow-hidden">
-                  <Image src={p.image} alt={p.name} fill className="object-contain p-4 group-hover:scale-105 transition-transform duration-500" />
+                  <Image src={p.image} alt={`${p.name} — ${p.desc}`} fill className="object-contain p-4 group-hover:scale-105 transition-transform duration-500" />
                 </div>
                 <div className="p-5">
                   <h3 className="font-bold text-dark-800 group-hover:text-cyan-500 transition-colors">{p.name}</h3>

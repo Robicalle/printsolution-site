@@ -209,7 +209,7 @@ export default async function () {
       <section className="bg-white pt-8 lg:pt-10 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">
           <div className="relative w-full aspect-[16/9] rounded-3xl overflow-hidden">
-            <Image src="/images/products/afinia-x350-site.webp" alt="Product photo" fill className="object-contain p-6" />
+            <Image src="/images/products/afinia-x350-site.webp" alt="Afinia X350 — stampante etichette industriale pigmento 45 m/min" fill className="object-contain p-6" />
           </div>
         </div>
       </section>

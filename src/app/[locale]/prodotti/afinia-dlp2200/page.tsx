@@ -159,7 +159,7 @@ export default async function AfiniaDLP2200Page() {
 
       {/* Hero */}
       <section className="relative text-white pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden min-h-[60vh] flex items-center">
-        <Image src="/images/hero-labels.webp" alt="Hero background" fill className="object-cover" priority />
+        <Image src="/images/hero-labels.webp" alt="Afinia DLP-2200 digital label press" fill className="object-cover" priority />
         <div className="absolute inset-0 bg-gradient-to-r from-dark-800/90 via-dark-800/70 to-dark-800/40" />
         <div className="container-custom px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-2xl">
@@ -179,7 +179,7 @@ export default async function AfiniaDLP2200Page() {
       <section className="bg-white pt-8 lg:pt-10 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">
           <div className="relative w-full aspect-[16/9] rounded-3xl overflow-hidden">
-            <Image src="/images/products/afinia-dlp2200.avif" alt="Product photo" fill className="object-contain p-6" />
+            <Image src="/images/products/afinia-dlp2200.avif" alt="Afinia DLP-2200 — pressa digitale etichette stampa laminazione fustellatura" fill className="object-contain p-6" />
           </div>
         </div>
       </section>

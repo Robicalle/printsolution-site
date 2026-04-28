@@ -24,7 +24,7 @@ export async function generateMetadata(): Promise<Metadata> {
       description: isIt
         ? "GreenBox Print Book: stampante per labbratura libri con tecnologia HP PageWide. Single-pass, 30 m/min, 1200 dpi. Print Solution"
         : "GreenBox Print Book: book edge printer with HP PageWide technology. Single-pass, 30 m/min, 1200 dpi. Print Solution",
-      images: ["/images/products/greenbox-evo-site-nobg.png"],
+      images: ["/images/products/greenbox-printbook.jpg"],
       type: "website",
       locale: isIt ? "it_IT" : "en_US",
     },
@@ -40,7 +40,7 @@ const productJsonLd = {
   brand: { "@type": "Brand", name: "GreenBox" },
   description:
     "Soluzione digitale per la labbratura dei libri basata su GreenBox 2. Stampa inkjet HP PageWide single-pass, inchiostri a base acqua, 30 m/min, 1200x1200 dpi. Industria 4.0 ready.",
-  image: "https://www.printsolutionsrl.it/images/products/greenbox-evo-site-nobg.png",
+  image: "https://www.printsolutionsrl.it/images/products/greenbox-printbook.jpg",
   manufacturer: { "@type": "Organization", name: "Print Solution S.r.l." },
   offers: {
     "@type": "Offer",

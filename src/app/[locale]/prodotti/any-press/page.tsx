@@ -177,7 +177,7 @@ export default async function AnyPressPage() {
       <section className="bg-white pt-8 lg:pt-10 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">
           <div className="relative w-full aspect-[16/9] rounded-3xl overflow-hidden">
-            <Image src="/images/products/any-press.avif" alt="Product photo" fill className="object-contain p-6" />
+            <Image src="/images/products/any-press.avif" alt="Any-Press — stampante laser LED 5 colori CMYK bianco per etichette" fill className="object-contain p-6" />
           </div>
         </div>
       </section>

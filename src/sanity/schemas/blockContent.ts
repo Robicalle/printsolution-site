@@ -140,6 +140,25 @@ export default defineType({
         },
       },
     }),
+    // Custom: Product Mention (inline callout card)
+    defineArrayMember({
+      name: "productMention",
+      title: "🖨 Prodotto Menzionato",
+      type: "object",
+      fields: [
+        { name: "name", title: "Nome Prodotto", type: "string", validation: (r: any) => r.required() },
+        { name: "desc", title: "Descrizione (IT)", type: "string" },
+        { name: "desc_en", title: "Descrizione (EN)", type: "string" },
+        { name: "href", title: "URL Prodotto (es. /prodotti/ab2500)", type: "string" },
+        { name: "image", title: "Immagine (percorso)", type: "string" },
+      ],
+      preview: {
+        select: { title: "name", subtitle: "href" },
+        prepare({ title, subtitle }: any) {
+          return { title: `🖨 ${title || "Prodotto menzionato"}`, subtitle };
+        },
+      },
+    }),
     // Custom: Video Embed
     defineArrayMember({
       name: "videoEmbed",

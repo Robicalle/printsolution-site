@@ -23,7 +23,8 @@ export const postBySlugQuery = groq`*[_type == "post" && slug.current == $slug][
   body,
   body_en,
   faq,
-  faq_en
+  faq_en,
+  relatedProducts
 }`;
 
 // Pagine

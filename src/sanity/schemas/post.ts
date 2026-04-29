@@ -107,6 +107,31 @@ export default defineType({
         preview: { select: { title: "question" } },
       }],
     }),
+    defineField({
+      name: "relatedProducts",
+      title: "Prodotti Correlati",
+      description: "Fino a 3 prodotti mostrati in fondo all'articolo e come callout inline nel testo",
+      type: "array",
+      validation: (r) => r.max(3).warning("Massimo 3 prodotti correlati"),
+      of: [{
+        type: "object",
+        name: "relatedProduct",
+        title: "Prodotto",
+        fields: [
+          { name: "name", title: "Nome Prodotto", type: "string", validation: (r) => r.required() },
+          { name: "desc", title: "Descrizione breve (IT)", type: "string" },
+          { name: "desc_en", title: "Descrizione breve (EN)", type: "string" },
+          { name: "href", title: "URL (es. /prodotti/ab2500)", type: "string", validation: (r) => r.required() },
+          { name: "image", title: "Immagine (percorso es. /images/products/ab2500-nobg.png)", type: "string" },
+        ],
+        preview: {
+          select: { title: "name", subtitle: "href" },
+          prepare({ title, subtitle }: any) {
+            return { title: `🖨 ${title || "Prodotto"}`, subtitle };
+          },
+        },
+      }],
+    }),
     defineField({ name: "publishedAt", title: "Data Pubblicazione", type: "datetime" }),
     defineField({
       name: "order",

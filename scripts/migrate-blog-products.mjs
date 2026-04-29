@@ -86,20 +86,6 @@ const P = {
     href: '/prodotti/afinia-dc350',
     image: '/images/products/afinia-dc350.png',
   },
-  packprinterUV: {
-    name: 'PackPrinter UV',
-    desc: 'Stampante inkjet UV per packaging e superfici rigide',
-    desc_en: 'UV inkjet printer for packaging and rigid surfaces',
-    href: '/prodotti/packprinter-uv',
-    image: '/images/products/packprinter-uv-front-nobg.png',
-  },
-  robotjet: {
-    name: 'RobotJet',
-    desc: 'Sistema inkjet robotizzato per stampa su packaging di ogni formato',
-    desc_en: 'Robotic inkjet system for printing on packaging of any format',
-    href: '/prodotti/robotjet',
-    image: '/images/products/robotjet.png',
-  },
 };
 
 // ── Mappatura post → prodotti correlati ─────────────────────────────────────
@@ -113,12 +99,12 @@ const POST_PRODUCTS = {
   'etichette-adesive-materiali-finiture':                         [P.afiniaL901, P.afiniaX350, P.afiniaDC350],
   'hot-foil-stamping-cose-quando-usarlo':                         [P.aurumpress, P.afiniaX350],
   'packaging-ecommerce-costi-reali':                              [P.ab2500, P.greenboxEvo, P.edm650x],
-  'packaging-personalizzato-vantaggi-pmi':                        [P.greenboxEvo, P.edm650x, P.packprinterUV],
-  'stampa-cartone-ondulato-guida-completa':                       [P.greenboxEvo, P.edm650x, P.packprinterUV],
-  'stampa-digitale-cartone-ondulato-vs-flessografia':             [P.greenboxEvo, P.edm650x, P.packprinterUV],
-  'stampa-digitale-vs-offset-piccoli-lotti':                      [P.greenboxEvo, P.edm650x, P.packprinterUV],
+  'packaging-personalizzato-vantaggi-pmi':                        [P.greenboxEvo, P.edm650x],
+  'stampa-cartone-ondulato-guida-completa':                       [P.greenboxEvo, P.edm650x],
+  'stampa-digitale-cartone-ondulato-vs-flessografia':             [P.greenboxEvo, P.edm650x],
+  'stampa-digitale-vs-offset-piccoli-lotti':                      [P.greenboxEvo, P.edm650x],
   'stampante-etichette-colori-bobina-guida':                      [P.afiniaL901, P.afiniaX350, P.afiniaDC350],
-  'stampante-inkjet-industriale-come-scegliere':                  [P.greenboxEvo, P.edm650x, P.robotjet],
+  'stampante-inkjet-industriale-come-scegliere':                  [P.greenboxEvo, P.edm650x],
   'tendenze-packaging-2026':                                      [P.greenboxEvo, P.edm650x, P.ab2500],
   'come-gfc-stampa-ha-trasformato-packaging-personalizzato-stampa-digitale': [P.edm650x, P.greenboxEvo],
 };

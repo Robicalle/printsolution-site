@@ -12,7 +12,6 @@ export default function robots(): MetadataRoute.Robots {
           "/api/",
           "/en/api/",
           "/_next/static/",
-          "/videos/",
         ],
       },
     ],

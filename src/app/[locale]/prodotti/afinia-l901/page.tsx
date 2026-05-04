@@ -188,6 +188,9 @@ export default async function () {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([
+        { "@context":"https://schema.org","@type":"VideoObject","name":"Afinia L901 — Stampante Etichette Colori Memjet 1600 dpi in Azione","description":"Demo Afinia L901: stampante etichette a colori Memjet ad alta velocità. 1600 dpi, CMYKK, fino a 22 m/min per etichette in bobina.","thumbnailUrl":"https://www.printsolutionsrl.it/images/posters/afinia-l901-yt1.jpg","uploadDate":"2024-01-01","contentUrl":"https://www.printsolutionsrl.it/videos/afinia-l901-yt1.mp4","publisher":{"@type":"Organization","name":"Print Solution S.r.l.","url":"https://www.printsolutionsrl.it"} }
+      ]) }} />
 
       {/* Hero */}
       <section className="relative text-white pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden min-h-[60vh] flex items-center">

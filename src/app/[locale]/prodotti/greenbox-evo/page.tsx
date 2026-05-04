@@ -195,6 +195,10 @@ export default async function () {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(greenboxJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([
+        { "@context":"https://schema.org","@type":"VideoObject","name":"GreenBox EVO — Stampa Digitale Single-Pass su Packaging in Cartone","description":"Dimostrazione della GreenBox EVO: stampante inkjet single-pass per packaging in cartone ondulato. Stampa CMYK diretta, 30 m/min, senza clichè.","thumbnailUrl":"https://www.printsolutionsrl.it/images/posters/greenbox-evo-1.jpg","uploadDate":"2024-01-01","contentUrl":"https://www.printsolutionsrl.it/videos/greenbox-evo-1.mp4","publisher":{"@type":"Organization","name":"Print Solution S.r.l.","url":"https://www.printsolutionsrl.it"} },
+        { "@context":"https://schema.org","@type":"VideoObject","name":"GreenBox EVO — Demo Stampa su Corrugato e Packaging Personalizzato","description":"Video dimostrativo GreenBox EVO: stampa single-pass su cartone ondulato per packaging personalizzato, scatole e display.","thumbnailUrl":"https://www.printsolutionsrl.it/images/posters/greenbox-evo-2.jpg","uploadDate":"2024-01-01","contentUrl":"https://www.printsolutionsrl.it/videos/greenbox-evo-2.mp4","publisher":{"@type":"Organization","name":"Print Solution S.r.l.","url":"https://www.printsolutionsrl.it"} }
+      ]) }} />
       {/* Hero */}
       <section className="relative text-white pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden min-h-[60vh] flex items-center">
         <video autoPlay muted loop playsInline aria-hidden="true" className="absolute inset-0 w-full h-full object-cover">

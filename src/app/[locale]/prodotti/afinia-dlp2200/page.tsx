@@ -156,6 +156,9 @@ export default async function AfiniaDLP2200Page() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([
+        { "@context":"https://schema.org","@type":"VideoObject","name":"Afinia DLP2200 — Demo Labbratura Libri e Book Edge Printing","description":"Demo Afinia DLP2200: macchina per labbratura libri e stampa bordi. Personalizzazione digitale dei tagli dei libri ad alta risoluzione.","thumbnailUrl":"https://www.printsolutionsrl.it/images/posters/afinia-dlp2200-yt1.jpg","uploadDate":"2024-01-01","contentUrl":"https://www.printsolutionsrl.it/videos/afinia-dlp2200-yt1.mp4","publisher":{"@type":"Organization","name":"Print Solution S.r.l.","url":"https://www.printsolutionsrl.it"} }
+      ]) }} />
 
       {/* Hero */}
       <section className="relative text-white pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden min-h-[60vh] flex items-center">

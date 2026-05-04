@@ -183,6 +183,9 @@ export default async function () {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ab2500JsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([
+        { "@context":"https://schema.org","@type":"VideoObject","name":"Anypack AB2500 — Box Maker Automatico: Produzione Scatole Su Misura","description":"Demo Anypack AB2500: box maker automatico per scatole in cartone ondulato su misura on-demand. 500-600 pz/ora, cambio formato in 10 secondi.","thumbnailUrl":"https://www.printsolutionsrl.it/images/posters/ab2500-2.jpg","uploadDate":"2024-01-01","contentUrl":"https://www.printsolutionsrl.it/videos/ab2500-2.mp4","publisher":{"@type":"Organization","name":"Print Solution S.r.l.","url":"https://www.printsolutionsrl.it"} }
+      ]) }} />
       {/* Hero */}
       <section className="relative text-white pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden min-h-[60vh] flex items-center">
         <video autoPlay muted loop playsInline aria-hidden="true" className="absolute inset-0 w-full h-full object-cover">

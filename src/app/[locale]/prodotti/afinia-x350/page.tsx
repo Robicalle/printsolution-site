@@ -184,6 +184,10 @@ export default async function () {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([
+        { "@context":"https://schema.org","@type":"VideoObject","name":"Afinia X350 — Stampante Etichette Industriale a Pigmento","description":"Demo Afinia X350: stampante etichette industriale ad alta velocità con inchiostri pigmentati. Fino a 45 m/min, resistente acqua e UV.","thumbnailUrl":"https://www.printsolutionsrl.it/images/posters/afinia-x350-1.jpg","uploadDate":"2024-01-01","contentUrl":"https://www.printsolutionsrl.it/videos/afinia-x350-1.mp4","publisher":{"@type":"Organization","name":"Print Solution S.r.l.","url":"https://www.printsolutionsrl.it"} },
+        { "@context":"https://schema.org","@type":"VideoObject","name":"Afinia X350 — Stampa Etichette Resistenti ad Alta Velocità","description":"Afinia X350 in azione: produzione etichette industriali durature con inchiostri pigmentati a 45 m/min.","thumbnailUrl":"https://www.printsolutionsrl.it/images/posters/afinia-x350-yt1.jpg","uploadDate":"2024-01-01","contentUrl":"https://www.printsolutionsrl.it/videos/afinia-x350-yt1.mp4","publisher":{"@type":"Organization","name":"Print Solution S.r.l.","url":"https://www.printsolutionsrl.it"} }
+      ]) }} />
 
       {/* Hero */}
       <section className="relative text-white pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden min-h-[60vh] flex items-center">

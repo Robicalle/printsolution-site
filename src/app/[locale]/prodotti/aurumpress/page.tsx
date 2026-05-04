@@ -123,6 +123,10 @@ export default async function AurumPressPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(aurumpressJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([
+        { "@context":"https://schema.org","@type":"VideoObject","name":"AurumPress — Hot Foil Stamping su Packaging Premium","description":"Demo AurumPress: stampa a caldo digitale con foil oro, argento e olografici su packaging premium, etichette e cartone.","thumbnailUrl":"https://www.printsolutionsrl.it/images/posters/aurumpress-1.jpg","uploadDate":"2024-01-01","contentUrl":"https://www.printsolutionsrl.it/videos/aurumpress-1.mp4","publisher":{"@type":"Organization","name":"Print Solution S.r.l.","url":"https://www.printsolutionsrl.it"} },
+        { "@context":"https://schema.org","@type":"VideoObject","name":"AurumPress — Nobilitazione Packaging con Foil Metallizzato","description":"AurumPress in funzione: nobilitazione packaging on-demand con foil dorato e argentato per lusso e premium packaging.","thumbnailUrl":"https://www.printsolutionsrl.it/images/posters/aurumpress-2.jpg","uploadDate":"2024-01-01","contentUrl":"https://www.printsolutionsrl.it/videos/aurumpress-2.mp4","publisher":{"@type":"Organization","name":"Print Solution S.r.l.","url":"https://www.printsolutionsrl.it"} }
+      ]) }} />
       {/* Hero */}
       <section className="relative text-white pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden min-h-[60vh] flex items-center">
         <video autoPlay muted loop playsInline aria-hidden="true" className="absolute inset-0 w-full h-full object-cover">

@@ -137,6 +137,7 @@ export default async function LocaleLayout({
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#f97316" />
+        <meta name="google-site-verification" content="upL-dBSwnBUH3NTUiMQIvha8Wsjj28r7hJcCpujcxw0" />
         <meta name="format-detection" content="telephone=no" />
         <GoogleTagManagerHead gtmId={siteSettings?.tracking?.gtmId} />
         <link rel="preconnect" href="https://api.anthropic.com" />

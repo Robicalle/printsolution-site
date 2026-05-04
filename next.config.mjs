@@ -152,6 +152,8 @@ const nextConfig = {
       { source: '/en/prodotti/ap-380e', destination: '/en/prodotti', permanent: true },
       { source: '/en/prodotti/ap550e', destination: '/en/prodotti', permanent: true },
       { source: '/en/prodotti/easybox', destination: '/en/prodotti', permanent: true },
+      { source: '/en/prodotti/afinia-fp-230', destination: '/en/prodotti', permanent: true },
+      { source: '/en/prodotti/robotjet-book-edge-printer', destination: '/en/prodotti/robotjet', permanent: true },
       // --- EN: Old shop pages ---
       { source: '/en/shop/consumabili-any-002', destination: '/en/shop', permanent: true },
       { source: '/en/shop/lx2000-consumables', destination: '/en/shop', permanent: true },
@@ -161,6 +163,7 @@ const nextConfig = {
       { source: '/en/shop/consumabili-i700', destination: '/en/shop', permanent: true },
       { source: '/en/shop/consumabili-vp700', destination: '/en/shop', permanent: true },
       { source: '/en/shop/consumabili-printbox42', destination: '/en/shop', permanent: true },
+      { source: '/en/shop/consumabili-ns-pro-evo', destination: '/en/shop', permanent: true },
 
       // --- EN: Shop old typo ---
       { source: '/en/shop/consumabil-lt5c', destination: '/en/shop/consumabili-lt5c', permanent: true },

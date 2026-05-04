@@ -97,6 +97,8 @@ const nextConfig = {
       { source: '/prodotti/greenbox', destination: '/prodotti/greenbox-evo', permanent: true },
       { source: '/prodotti/edm-650', destination: '/prodotti/edm-650x', permanent: true },
 
+      // --- IT: Old product pages missing ---
+      { source: '/prodotti/easybox', destination: '/prodotti', permanent: true },
       // --- IT: Old shop pages with same slug (already exist, just safety) ---
       // /shop/consumabili-greenbox, /shop/consumabili-cx1000, etc. → same slug, no redirect needed
       // /shop/consumabil-lt5c (old typo) → correct
@@ -133,15 +135,32 @@ const nextConfig = {
 
       // --- EN: Old product pages that DON'T exist in new site ---
       { source: '/en/prodotti/anypack-ab2500', destination: '/en/prodotti/ab2500', permanent: true },
+      { source: '/en/prodotti/anypack-ab2500f', destination: '/en/prodotti/ab2500', permanent: true },
       { source: '/en/prodotti/dp-se-autoprinter', destination: '/en/prodotti', permanent: true },
       { source: '/en/prodotti/dp-se-dvd', destination: '/en/prodotti', permanent: true },
       { source: '/en/prodotti/dp-se-blu-ray', destination: '/en/prodotti', permanent: true },
       { source: '/en/prodotti/dp-4102-xrp-blu-ray', destination: '/en/prodotti', permanent: true },
+      { source: '/en/prodotti/dp-4102-xrp-disc-publisher', destination: '/en/prodotti', permanent: true },
       { source: '/en/prodotti/digital-print-cup', destination: '/en/prodotti', permanent: true },
       { source: '/en/prodotti/digital-print-cup-water-based', destination: '/en/prodotti', permanent: true },
       { source: '/en/prodotti/ns-multi', destination: '/en/prodotti', permanent: true },
       { source: '/en/prodotti/greenbox', destination: '/en/prodotti/greenbox-evo', permanent: true },
       { source: '/en/prodotti/edm-650', destination: '/en/prodotti/edm-650x', permanent: true },
+      { source: '/en/prodotti/imark3550', destination: '/en/prodotti', permanent: true },
+      { source: '/en/prodotti/dtm-lx4000e-2', destination: '/en/prodotti', permanent: true },
+      { source: '/en/prodotti/lt5', destination: '/en/prodotti', permanent: true },
+      { source: '/en/prodotti/ap-380e', destination: '/en/prodotti', permanent: true },
+      { source: '/en/prodotti/ap550e', destination: '/en/prodotti', permanent: true },
+      { source: '/en/prodotti/easybox', destination: '/en/prodotti', permanent: true },
+      // --- EN: Old shop pages ---
+      { source: '/en/shop/consumabili-any-002', destination: '/en/shop', permanent: true },
+      { source: '/en/shop/lx2000-consumables', destination: '/en/shop', permanent: true },
+      { source: '/en/shop/cx1000-consumables', destination: '/en/shop', permanent: true },
+      { source: '/en/shop/consumabili-ns-multi-lg', destination: '/en/shop', permanent: true },
+      { source: '/en/shop/consumabili-l901', destination: '/en/shop', permanent: true },
+      { source: '/en/shop/consumabili-i700', destination: '/en/shop', permanent: true },
+      { source: '/en/shop/consumabili-vp700', destination: '/en/shop', permanent: true },
+      { source: '/en/shop/consumabili-printbox42', destination: '/en/shop', permanent: true },
 
       // --- EN: Shop old typo ---
       { source: '/en/shop/consumabil-lt5c', destination: '/en/shop/consumabili-lt5c', permanent: true },

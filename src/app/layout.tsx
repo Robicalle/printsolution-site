@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
   },
   verification: {
-    google: "GOOGLE_SEARCH_CONSOLE_VERIFICATION_CODE",
+    google: "upL-dBSwnBUH3NTUiMQIvha8Wsjj28r7hJcCpujcxw0",
   },
   alternates: {
     canonical: "/",

@@ -100,6 +100,7 @@ export default defineType({
           rows: 3,
           validation: (r) => r.max(160).warning("Massimo 160 caratteri per SEO"),
         },
+        { name: "keywords", title: "Keywords (IT)", type: "array", of: [{ type: "string" }] },
       ],
     }),
     defineField({

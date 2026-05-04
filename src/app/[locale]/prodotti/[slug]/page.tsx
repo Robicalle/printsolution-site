@@ -31,9 +31,11 @@ export async function generateMetadata({
     const seo = it ? product.seo : (product.seo_en || product.seo);
     const title = seo?.title || (it ? product.name : (product.name_en || product.name));
     const description = seo?.description || `${product.name} — Print Solution`;
+    const keywords = product.seo?.keywords || [];
     return {
       title,
       description,
+      keywords,
       openGraph: {
         title: `${title} | Print Solution`,
         description,

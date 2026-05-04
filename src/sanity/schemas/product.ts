@@ -121,6 +121,7 @@ export default defineType({
           validation: (r) => r.max(160).warning("Massimo 160 caratteri per SEO"),
         },
         { name: "image", title: "OG Image", type: "image" },
+        { name: "keywords", title: "Keywords (IT)", type: "array", of: [{ type: "string" }] },
       ],
     }),
     defineField({

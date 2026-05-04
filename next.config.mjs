@@ -105,12 +105,17 @@ const nextConfig = {
       // --- IT: Blog/news posts ---
       { source: '/post/:slug', destination: '/blog', permanent: true },
 
+      // --- IT: Missing pages ---
+      { source: '/assistenza', destination: '/contatti', permanent: true },
+
       // --- EN: Pages ---
       { source: '/en/home-en', destination: '/en', permanent: true },
       { source: '/en/newseventi', destination: '/en/news', permanent: true },
       { source: '/en/contacts', destination: '/en/contatti', permanent: true },
       { source: '/en/about', destination: '/en/chi-siamo', permanent: true },
       { source: '/en/privacy-policy', destination: '/en/privacy', permanent: true },
+      { source: '/en/privacypolicy', destination: '/en/privacy', permanent: true },
+      { source: '/en/service', destination: '/en/contatti', permanent: true },
       { source: '/en/terms-an-conditions', destination: '/en/condizioni-di-vendita', permanent: true },
       { source: '/en/video', destination: '/en', permanent: true },
       { source: '/en/search', destination: '/en', permanent: true },
@@ -124,6 +129,7 @@ const nextConfig = {
       { source: '/en/products/label-applicators', destination: '/en/soluzioni/etichette', permanent: true },
       { source: '/en/products/:slug', destination: '/en/prodotti', permanent: true },
       { source: '/en/categoria/:slug', destination: '/en/prodotti', permanent: true },
+      { source: '/en/cartella-prodotti/:slug', destination: '/en/prodotti', permanent: true },
 
       // --- EN: Old product pages that DON'T exist in new site ---
       { source: '/en/prodotti/anypack-ab2500', destination: '/en/prodotti/ab2500', permanent: true },

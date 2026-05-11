@@ -279,16 +279,16 @@ export default async function GreenBox3Page() {
       </section>
 
       {/* Foto prodotto */}
-      <section className="bg-white pt-8 lg:pt-10 px-4 sm:px-6 lg:px-8">
+      <section className="bg-white pt-4 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <div className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden">
+          <div className="relative w-full aspect-[16/9] rounded-3xl overflow-hidden">
             <Image src="/images/products/greenbox-3-nobg.png" alt="GreenBox 3" fill className="object-contain p-2" priority />
           </div>
         </div>
       </section>
 
       {/* Descrizione */}
-      <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
+      <section className="px-4 sm:px-6 lg:px-8 pt-6 pb-10 lg:pt-8 lg:pb-16 bg-white">
         <div className="container-custom max-w-4xl">
           <h2 className="text-3xl font-bold text-dark-800 mb-6">
             {it ? 'Stampante Digitale per Scatole e Packaging In-House' : 'Digital Printer for In-House Box & Packaging'}

@@ -262,48 +262,16 @@ export default async function GreenBox3Page() {
         <div className="absolute inset-0 bg-gradient-to-r from-dark-800/90 via-dark-800/70 to-dark-800/40" />
         <div className="container-custom px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-2xl">
-            <div className="flex items-center gap-3 mb-4">
-              <p className="text-cyan-300 text-sm uppercase tracking-widest font-medium">{it ? 'Prodotti' : 'Products'}</p>
-              <span className="px-3 py-1 bg-green-500/20 border border-green-400/30 rounded-full text-green-300 text-xs font-semibold uppercase tracking-widest">
-                {it ? 'Novità 2026' : 'New 2026'}
-              </span>
-            </div>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-4">
-              GreenBox 3
-              <span className="block text-2xl sm:text-3xl font-medium text-cyan-300 mt-2">
-                {it ? 'Stampante per Scatole Single-Pass CMYK' : 'Single-Pass CMYK Box Printer'}
-              </span>
-            </h1>
+            <p className="text-cyan-300 text-sm mb-3 uppercase tracking-widest font-medium">{it ? 'Prodotti' : 'Products'}</p>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">GreenBox 3</h1>
             <p className="text-lg text-gray-300/90 leading-relaxed mb-8">
               {it
-                ? 'La stampante per scatole entry level pensata per le PMI che vogliono portare la stampa del packaging in-house. Single-pass CMYK, 28 m/min, formato fino a 100×150 cm. Costi di stampa ridotti del 40% rispetto all\'outsourcing.'
-                : 'The entry-level box printer designed for SMEs bringing packaging printing in-house. Single-pass CMYK, 28 m/min, format up to 100×150 cm. Print costs reduced by 40% vs outsourcing.'}
+                ? 'Stampante inkjet single-pass CMYK per scatole in cartone ondulato e shopper in carta. Stampa diretta su packaging in-house — senza clichè, senza setup.'
+                : 'Single-pass CMYK inkjet printer for corrugated boxes and paper shoppers. Direct in-house packaging printing — no plates, no setup.'}
             </p>
-            <div className="flex flex-wrap gap-3 mb-8">
-              {[
-                it ? '28 m/min' : '28 m/min',
-                it ? '1200 dpi' : '1200 dpi',
-                it ? 'Foglio 100 cm' : '100 cm sheet',
-                it ? 'Costi -40%' : '-40% costs',
-                it ? '4.0 Ready' : '4.0 Ready',
-              ].map((badge) => (
-                <span key={badge} className="px-3 py-1 bg-white/10 rounded-full text-sm text-gray-200 font-medium">
-                  {badge}
-                </span>
-              ))}
-            </div>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href={`mailto:info@printsolutionsrl.it?subject=${encodeURIComponent(it ? 'Richiesta Consulenza GreenBox 3' : 'GreenBox 3 Consultation Request')}&body=${encodeURIComponent(it ? 'Buongiorno,\n\nVorrei richiedere una consulenza gratuita sulla GreenBox 3.\n\nGrazie' : 'Hello,\n\nI would like to request a free consultation about GreenBox 3.\n\nThank you')}`}
-                className="btn-primary text-lg !px-8 !py-4 !rounded-full"
-              >
-                {it ? 'Consulenza gratuita →' : 'Free consultation →'}
-              </a>
-              <a
-                href={`tel:+390249439417`}
-                className="btn-secondary text-lg !px-8 !py-4 !rounded-full border-white/20 text-white hover:bg-white/10"
-              >
-                {it ? 'Chiamaci ora' : 'Call us now'}
+              <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20GreenBox%203&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20sulla%20GreenBox%203.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full">
+                {it ? 'Consulenza gratuita→' : 'Free consultation→'}
               </a>
             </div>
           </div>
@@ -311,26 +279,10 @@ export default async function GreenBox3Page() {
       </section>
 
       {/* Foto prodotto */}
-      <section className="bg-white pt-10 pb-4 px-4 sm:px-6 lg:px-8">
+      <section className="bg-white pt-8 lg:pt-10 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden bg-gray-50">
-              <Image
-                src="/images/products/greenbox-3.jpg"
-                alt={it ? "GreenBox 3 — stampante digitale single-pass per scatole" : "GreenBox 3 — digital single-pass printer for boxes"}
-                fill
-                className="object-contain p-6"
-                priority
-              />
-            </div>
-            <div className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden bg-gray-100">
-              <Image
-                src="/images/products/greenbox-3-b.jpg"
-                alt={it ? "GreenBox 3 — dettaglio piano nastro trasportatore" : "GreenBox 3 — conveyor belt detail"}
-                fill
-                className="object-contain p-6"
-              />
-            </div>
+          <div className="relative w-full aspect-[16/9] rounded-3xl overflow-hidden">
+            <Image src="/images/products/greenbox-3-nobg.png" alt="GreenBox 3" fill className="object-contain p-6" priority />
           </div>
         </div>
       </section>
@@ -339,9 +291,7 @@ export default async function GreenBox3Page() {
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
         <div className="container-custom max-w-4xl">
           <h2 className="text-3xl font-bold text-dark-800 mb-6">
-            {it
-              ? 'GreenBox 3: la Nuova Stampante per Scatole e Packaging Digitale 2026'
-              : 'GreenBox 3: the New Digital Box & Packaging Printer 2026'}
+            {it ? 'Stampante Digitale per Scatole e Packaging In-House' : 'Digital Printer for In-House Box & Packaging'}
           </h2>
           <p className="text-gray-500 leading-relaxed mb-4">
             {it
@@ -350,8 +300,8 @@ export default async function GreenBox3Page() {
           </p>
           <p className="text-gray-500 leading-relaxed mb-4">
             {it
-              ? 'Il nuovo sistema di gestione del nastro trasportatore dedicato garantisce la massima aderenza del supporto durante la stampa, anche su cartoni ondulati di grande formato fino a 100 cm di larghezza e 15 cm di spessore. Ideale per scatole da vino, packaging calzature, beverage, cosmetica, e-commerce e retail.'
-              : 'The new dedicated conveyor belt management system ensures maximum substrate adhesion during printing, even on large-format corrugated boards up to 100 cm wide and 15 cm thick. Ideal for wine boxes, footwear packaging, beverages, cosmetics, e-commerce and retail.'}
+              ? 'Il sistema di gestione del nastro trasportatore dedicato garantisce la massima aderenza del supporto durante la stampa, anche su cartoni ondulati di grande formato fino a 100 cm di larghezza e 15 cm di spessore. Ideale per scatole da vino, packaging calzature, beverage, cosmetica, e-commerce e retail.'
+              : 'The dedicated conveyor belt management system ensures maximum substrate adhesion during printing, even on large-format corrugated boards up to 100 cm wide and 15 cm thick. Ideal for wine boxes, footwear packaging, beverages, cosmetics, e-commerce and retail.'}
           </p>
           <p className="text-gray-500 leading-relaxed mb-4">
             {it
@@ -366,12 +316,32 @@ export default async function GreenBox3Page() {
         </div>
       </section>
 
-      {/* Features */}
-      <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-surface-50">
+      {/* Video */}
+      <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
         <div className="container-custom">
-          <h2 className="text-3xl font-bold text-dark-800 mb-8 text-center">
-            {it ? 'Vantaggi Principali' : 'Key Benefits'}
-          </h2>
+          <div className="text-center mb-12">
+            <p className="text-cyan-500 font-semibold text-sm uppercase tracking-widest mb-4">Video</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-dark-800">{it ? 'GreenBox 3 in Azione' : 'GreenBox 3 in Action'}</h2>
+          </div>
+          <div className="swipe-gallery md:grid-cols-2 gap-8 max-w-5xl mx-auto scrollbar-hide">
+            <div className="aspect-video rounded-2xl overflow-hidden shadow-lg">
+              <video controls playsInline preload="none" poster="/images/posters/greenbox-evo-1.jpg" className="w-full h-full rounded-2xl">
+                <source src="/videos/greenbox-evo-1.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <div className="aspect-video rounded-2xl overflow-hidden shadow-lg">
+              <video controls playsInline preload="none" poster="/images/posters/greenbox-evo-2.jpg" className="w-full h-full rounded-2xl">
+                <source src="/videos/greenbox-evo-2.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Features */}
+      <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
+        <div className="container-custom">
+          <h2 className="text-3xl font-bold text-dark-800 mb-8 text-center">{it ? 'Vantaggi Principali' : 'Key Benefits'}</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((f) => (
               <div key={f.title} className="card-modern p-8 hover:-translate-y-1 transition-transform duration-300">
@@ -386,62 +356,24 @@ export default async function GreenBox3Page() {
         </div>
       </section>
 
-      {/* Settori */}
-      <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
-        <div className="container-custom max-w-4xl">
-          <h2 className="text-3xl font-bold text-dark-800 mb-4 text-center">
-            {it ? 'Settori di Applicazione' : 'Application Sectors'}
-          </h2>
-          <p className="text-center text-gray-500 mb-10">
-            {it
-              ? 'La GreenBox 3 è progettata per chi produce packaging su misura nei settori più esigenti.'
-              : 'GreenBox 3 is designed for those producing custom packaging in the most demanding sectors.'}
-          </p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-            {(it
-              ? ['🍷 Vino & Beverage', '👟 Calzature & Moda', '💄 Cosmetica', '📦 E-commerce', '🛍️ Retail Packaging', '🌿 Food & Bio']
-              : ['🍷 Wine & Beverages', '👟 Footwear & Fashion', '💄 Cosmetics', '📦 E-commerce', '🛍️ Retail Packaging', '🌿 Food & Bio']
-            ).map((s) => (
-              <div key={s} className="flex items-center gap-3 bg-gray-50 rounded-2xl px-5 py-4 text-sm font-medium text-dark-800">
-                {s}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Specifiche Tecniche */}
       <SpecsAccordion specs={getSpecs(locale)} locale={locale} />
 
       {/* FAQ */}
-      <ProductFaqSection
-        items={(faqJsonLd.mainEntity as any[]).map((q: any) => ({
-          question: q.name,
-          answer: q.acceptedAnswer.text,
-        }))}
-        locale={locale}
-      />
+      <ProductFaqSection items={(faqJsonLd.mainEntity as any[]).map((q: any) => ({ question: q.name, answer: q.acceptedAnswer.text }))} locale={locale} />
 
       {/* CTA */}
-      <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-hero-gradient text-white">
+      <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-surface-50">
         <div className="container-custom text-center">
-          <h2 className="text-3xl font-bold mb-4">
-            {it ? 'Scopri la GreenBox 3 nella Nostra Sala Demo' : 'See GreenBox 3 in Our Demo Room'}
-          </h2>
-          <p className="text-gray-300 max-w-xl mx-auto mb-8">
+          <h2 className="text-3xl font-bold text-dark-800 mb-6">{it ? 'Stampa Scatole e Packaging con la GreenBox 3' : 'Print Boxes & Packaging with GreenBox 3'}</h2>
+          <p className="text-gray-500 max-w-xl mx-auto mb-8">
             {it
-              ? 'Porta i tuoi materiali e testa la GreenBox 3 direttamente nella nostra sala demo a Sesto San Giovanni. La macchina è operativa — vieni a vedere la qualità di stampa dal vivo.'
-              : 'Bring your materials and test GreenBox 3 directly in our demo room in Sesto San Giovanni. The machine is operational — come and see the print quality live.'}
+              ? 'Porta i tuoi materiali — scatole in cartone o shopper — e testa la GreenBox 3 nella nostra sala demo a Sesto San Giovanni.'
+              : 'Bring your materials — cardboard boxes or shoppers — and test GreenBox 3 in our demo room in Sesto San Giovanni.'}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href={`mailto:info@printsolutionsrl.it?subject=${encodeURIComponent(it ? 'Prenota Demo GreenBox 3' : 'Book GreenBox 3 Demo')}`}
-              className="btn-primary text-lg"
-            >
-              {it ? 'Prenota una demo →' : 'Book a demo →'}
-            </a>
-            <a href="tel:+390249439417" className="btn-secondary text-lg border-white/20 text-white hover:bg-white/10">
-              +39 02 49 43 9417
+            <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20GreenBox%203&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20sulla%20GreenBox%203.%0A%0AGrazie" className="btn-primary text-lg">
+              {it ? 'Consulenza gratuita→' : 'Free consultation→'}
             </a>
           </div>
         </div>
@@ -450,42 +382,16 @@ export default async function GreenBox3Page() {
       {/* Prodotti Correlati */}
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
         <div className="container-custom">
-          <h2 className="text-2xl font-bold text-dark-800 mb-8 text-center">
-            {it ? 'Prodotti Correlati' : 'Related Products'}
-          </h2>
+          <h2 className="text-2xl font-bold text-dark-800 mb-8 text-center">{it ? 'Prodotti Correlati' : 'Related Products'}</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              {
-                name: "GreenBox EVO",
-                desc: it ? "Modello avanzato — produttività e versatilità superiori per chi ha volumi maggiori" : "Advanced model — higher productivity and versatility for larger volumes",
-                href: "/prodotti/greenbox-evo",
-                image: "/images/products/greenbox-evo-front-nobg.png",
-              },
-              {
-                name: "EDM-650X",
-                desc: it ? "Stampante single-pass grande formato ad alta produttività" : "High-productivity large-format single-pass printer",
-                href: "/prodotti/edm-650x",
-                image: "/images/products/edm-650x-2hd-nobg-v4.png",
-              },
-              {
-                name: "Anypack AB2500",
-                desc: it ? "Box maker automatico — abbinabile alla GreenBox 3" : "Automatic box maker — combinable with GreenBox 3",
-                href: "/prodotti/ab2500",
-                image: "/images/products/ab2500-hero-nobg.png",
-              },
+              { name: "GreenBox EVO", desc: it ? "Modello avanzato per volumi e produttività superiori" : "Advanced model for higher volumes and productivity", href: "/prodotti/greenbox-evo", image: "/images/products/greenbox-evo-front-nobg.png" },
+              { name: "EDM-650X", desc: it ? "Stampante single-pass grande formato ad alta produttività" : "High-productivity large-format single-pass printer", href: "/prodotti/edm-650x", image: "/images/products/edm-650x-2hd-nobg-v4.png" },
+              { name: "Anypack AB2500", desc: it ? "Box maker automatico — abbinabile alla GreenBox 3" : "Automatic box maker — combinable with GreenBox 3", href: "/prodotti/ab2500", image: "/images/products/ab2500-hero-nobg.png" },
             ].map((p) => (
-              <Link
-                key={p.name}
-                href={p.href}
-                className="card-modern overflow-hidden group hover:-translate-y-1 transition-transform duration-300"
-              >
+              <Link key={p.name} href={p.href} className="card-modern overflow-hidden group hover:-translate-y-1 transition-transform duration-300">
                 <div className="h-40 relative overflow-hidden">
-                  <Image
-                    src={p.image}
-                    alt={`${p.name} — ${p.desc}`}
-                    fill
-                    className="object-contain p-4 group-hover:scale-105 transition-transform duration-500"
-                  />
+                  <Image src={p.image} alt={`${p.name} — ${p.desc}`} fill className="object-contain p-4 group-hover:scale-105 transition-transform duration-500" />
                 </div>
                 <div className="p-5">
                   <h3 className="font-bold text-dark-800 group-hover:text-cyan-500 transition-colors">{p.name}</h3>

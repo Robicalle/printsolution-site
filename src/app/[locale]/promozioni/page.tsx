@@ -120,12 +120,10 @@ export default async function PromozioniPage() {
                   'Prezzo lancio 2026',
                   'Certificata 4.0 Ready',
                   'Incentivi fiscali applicabili',
-                  'Consegna e installazione incluse',
                 ] : [
                   '2026 launch price',
                   '4.0 Ready certified',
                   'Fiscal incentives applicable',
-                  'Delivery & installation included',
                 ]).map((h) => (
                   <span key={h} className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-green-50 text-green-700 text-sm font-medium">
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">

@@ -146,8 +146,8 @@ function getFeatures(l: string) {
       ),
       title: it ? "Costi Stampa -40%" : "-40% Print Costs",
       desc: it
-        ? "La GreenBox 3 riduce i costi di stampa fino al 40% rispetto alla stampa esterna in outsourcing, rendendo la personalizzazione del packaging conveniente dal primo pezzo."
-        : "GreenBox 3 reduces print costs by up to 40% compared to outsourced printing, making packaging personalisation cost-effective from the very first piece.",
+        ? "La GreenBox 3 riduce i costi di stampa fino al 40% rispetto a GreenBox 2, rendendo la personalizzazione del packaging conveniente dal primo pezzo."
+        : "GreenBox 3 reduces print costs by up to 40% compared to GreenBox 2, making packaging personalisation cost-effective from the very first piece.",
     },
     {
       icon: (
@@ -305,8 +305,8 @@ export default async function GreenBox3Page() {
           </p>
           <p className="text-gray-500 leading-relaxed mb-4">
             {it
-              ? 'Gli inchiostri pigmentati CMYK a base acqua garantiscono colori brillanti e resistenti, senza solventi e senza odori. Il sistema di erogazione riduce i costi di stampa fino al 40% rispetto alla stampa esterna in outsourcing, con cartucce da 237–498 ml per colore per minimizzare i tempi di sostituzione.'
-              : 'CMYK water-based pigment inks deliver bright, resistant colours — solvent-free and odourless. The dispensing system reduces print costs by up to 40% compared to outsourced printing, with 237–498 ml cartridges per colour to minimise replacement time.'}
+              ? 'Gli inchiostri pigmentati CMYK a base acqua garantiscono colori brillanti e resistenti, senza solventi e senza odori. Il sistema di erogazione riduce i costi di stampa fino al 40% rispetto a GreenBox 2, con cartucce da 237–498 ml per colore per minimizzare i tempi di sostituzione.'
+              : 'CMYK water-based pigment inks deliver bright, resistant colours — solvent-free and odourless. The dispensing system reduces print costs by up to 40% compared to GreenBox 2, with 237–498 ml cartridges per colour to minimise replacement time.'}
           </p>
           <p className="text-gray-500 leading-relaxed">
             {it

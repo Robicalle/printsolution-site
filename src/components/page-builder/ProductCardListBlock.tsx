@@ -38,8 +38,8 @@ export default function ProductCardListBlock({ block, locale }: Props) {
                   {p.image && p.href ? (
                     <Link href={p.href} className="block w-full h-full group/img">
                       <Image src={p.image} alt={p.name} fill className={`${p.imageClass || 'object-contain p-6'} transition-transform duration-300 group-hover/img:scale-105`} />
-                      <div className="absolute inset-0 bg-cyan-500/0 group-hover/img:bg-cyan-500/5 transition-colors duration-300 rounded-2xl flex items-end justify-center pb-6 opacity-0 group-hover/img:opacity-100">
-                        <span className="bg-white/90 backdrop-blur-sm text-cyan-600 font-semibold text-sm px-4 py-2 rounded-full shadow-lg">
+                      <div className="absolute inset-0 bg-cyan-500/0 group-hover/img:bg-cyan-500/5 transition-colors duration-300 rounded-2xl flex items-end justify-center pb-6">
+                        <span className="bg-white/90 backdrop-blur-sm text-cyan-600 font-semibold text-sm px-4 py-2 rounded-full shadow-lg group-hover/img:shadow-cyan-200 transition-shadow duration-300">
                           {it ? 'Scopri' : 'Discover'} {p.name} →
                         </span>
                       </div>

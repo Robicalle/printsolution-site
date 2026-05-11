@@ -168,8 +168,8 @@ function getFeatures(l: string) {
       ),
       title: it ? "Inchiostri a Base Acqua" : "Water-Based Inks",
       desc: it
-        ? "Inchiostri pigmentati CMYK a base acqua, resistenti e senza solventi. Adatti al packaging alimentare e alla cosmetica. Colori brillanti e duraturi."
-        : "Pigmented CMYK water-based inks, resistant and solvent-free. Suitable for food and cosmetics packaging. Bright, long-lasting colours.",
+        ? "Inchiostri pigmentati CMYK a base acqua, resistenti e senza solventi. Colori brillanti e duraturi su cartone ondulato e carta."
+        : "Pigmented CMYK water-based inks, resistant and solvent-free. Bright, long-lasting colours on corrugated board and paper.",
     },
     {
       icon: (
@@ -323,15 +323,10 @@ export default async function GreenBox3Page() {
             <p className="text-cyan-500 font-semibold text-sm uppercase tracking-widest mb-4">Video</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-dark-800">{it ? 'GreenBox 3 in Azione' : 'GreenBox 3 in Action'}</h2>
           </div>
-          <div className="swipe-gallery md:grid-cols-2 gap-8 max-w-5xl mx-auto scrollbar-hide">
+          <div className="max-w-3xl mx-auto">
             <div className="aspect-video rounded-2xl overflow-hidden shadow-lg">
-              <video controls playsInline preload="none" poster="/images/posters/greenbox-evo-1.jpg" className="w-full h-full rounded-2xl">
-                <source src="/videos/greenbox-evo-1.mp4" type="video/mp4" />
-              </video>
-            </div>
-            <div className="aspect-video rounded-2xl overflow-hidden shadow-lg">
-              <video controls playsInline preload="none" poster="/images/posters/greenbox-evo-2.jpg" className="w-full h-full rounded-2xl">
-                <source src="/videos/greenbox-evo-2.mp4" type="video/mp4" />
+              <video controls playsInline preload="none" className="w-full h-full rounded-2xl">
+                <source src="/videos/greenbox-3-hero.mp4" type="video/mp4" />
               </video>
             </div>
           </div>

@@ -13,8 +13,8 @@ export async function generateMetadata(): Promise<Metadata> {
       ? "GreenBox 3 — Stampante per Scatole Single-Pass CMYK | Print Solution"
       : "GreenBox 3 — Single-Pass CMYK Box Printer | Print Solution",
     description: isIt
-      ? "GreenBox 3: stampante per scatole inkjet single-pass CMYK, novità 2026. 28 m/min, 1200 dpi, foglio fino a 100 cm, spessore 15 cm, costi stampa -40%. 4.0 Ready. Da €29.900 + IVA."
-      : "GreenBox 3: single-pass CMYK inkjet box printer, new 2026. 28 m/min, 1200 dpi, sheet up to 100 cm, 15 cm thickness, -40% print costs. 4.0 Ready. From €29,900.",
+      ? "GreenBox 3: stampante per scatole inkjet single-pass CMYK entry level, novità 2026. 28 m/min, 1200 dpi, foglio fino a 100 cm, spessore 15 cm, costi stampa -40%. 4.0 Ready."
+      : "GreenBox 3: entry-level single-pass CMYK inkjet box printer, new 2026. 28 m/min, 1200 dpi, sheet up to 100 cm, 15 cm thickness, -40% print costs. 4.0 Ready.",
     keywords: [
       "GreenBox 3",
       "greenbox 3 prezzo",
@@ -37,8 +37,8 @@ export async function generateMetadata(): Promise<Metadata> {
         ? "GreenBox 3 | Stampante Digitale Single-Pass per Scatole — Novità 2026"
         : "GreenBox 3 | Digital Single-Pass Printer for Boxes — New 2026",
       description: isIt
-        ? "La nuova GreenBox 3: stampa diretta su scatole, cartoni e shopper. Single-pass CMYK, 28 m/min, foglio fino a 100 cm, costi -40%. Disponibile da €29.900."
-        : "The new GreenBox 3: direct printing on boxes, cardboard and shoppers. Single-pass CMYK, 28 m/min, sheet up to 100 cm, -40% costs. Available from €29,900.",
+        ? "GreenBox 3: stampa diretta su scatole, cartoni e shopper. Entry level single-pass CMYK, 28 m/min, foglio fino a 100 cm, costi -40%."
+        : "GreenBox 3: direct printing on boxes, cardboard and shoppers. Entry-level single-pass CMYK, 28 m/min, sheet up to 100 cm, -40% costs.",
       images: ["/images/products/greenbox-3.jpg"],
       type: "website",
       locale: isIt ? "it_IT" : "en_US",
@@ -68,8 +68,6 @@ const greenbox3JsonLd = {
   offers: {
     "@type": "Offer",
     url: "https://www.printsolutionsrl.it/prodotti/greenbox-3",
-    price: "29900",
-    priceCurrency: "EUR",
     availability: "https://schema.org/InStock",
     seller: { "@type": "Organization", name: "Print Solution S.r.l." },
   },
@@ -214,12 +212,12 @@ export default async function GreenBox3Page() {
       {
         "@type": "Question",
         name: "Quanto costa la GreenBox 3?",
-        acceptedAnswer: { "@type": "Answer", text: "La GreenBox 3 ha un prezzo di listino di €29.900 + IVA. Grazie agli incentivi Industria 4.0 del 2026, il costo reale può ridursi fino al 43% tramite la deduzione fiscale." },
+        acceptedAnswer: { "@type": "Answer", text: "Per informazioni sul prezzo della GreenBox 3 contatta il nostro team: info@printsolutionsrl.it oppure chiama il +39 02 49 43 9417. Grazie agli incentivi Industria 4.0 del 2026, il costo reale può ridursi sensibilmente tramite la deduzione fiscale." },
       },
       {
         "@type": "Question",
         name: "Che differenza c'è tra GreenBox 3 e GreenBox EVO?",
-        acceptedAnswer: { "@type": "Answer", text: "La GreenBox 3 (€29.900) è il modello entry level: la scelta ideale per le PMI che iniziano a stampare il packaging in-house, con ottima qualità, costi accessibili e rientro dell'investimento rapido. La GreenBox EVO (€39.000) è il modello avanzato, pensato per chi ha volumi più elevati e cerca la massima produttività e versatilità. Entrambe stampano su scatole in cartone ondulato e shopper in carta." },
+        acceptedAnswer: { "@type": "Answer", text: "La GreenBox 3 è il modello entry level: la scelta ideale per le PMI che iniziano a stampare il packaging in-house, con ottima qualità, costi accessibili e rientro dell'investimento rapido. La GreenBox EVO è il modello avanzato, pensato per chi ha volumi più elevati e cerca la massima produttività e versatilità. Entrambe stampano su scatole in cartone ondulato e shopper in carta." },
       },
       {
         "@type": "Question",
@@ -240,7 +238,7 @@ export default async function GreenBox3Page() {
       {
         "@type": "Question",
         name: "How much does the GreenBox 3 cost?",
-        acceptedAnswer: { "@type": "Answer", text: "The GreenBox 3 has a list price of €29,900 + VAT. Thanks to the 2026 Industry 4.0 incentives, the real cost can be reduced by up to 43% through the tax deduction." },
+        acceptedAnswer: { "@type": "Answer", text: "For GreenBox 3 pricing, contact our team: info@printsolutionsrl.it or call +39 02 49 43 9417. Thanks to 2026 Industry 4.0 incentives, the real cost can be significantly reduced through the tax deduction." },
       },
       {
         "@type": "Question",
@@ -310,28 +308,6 @@ export default async function GreenBox3Page() {
         </div>
       </section>
 
-      {/* Prezzo in evidenza */}
-      <section className="bg-gradient-to-r from-green-600 to-cyan-600 py-6 px-4">
-        <div className="container-custom flex flex-col sm:flex-row items-center justify-center gap-4 text-white text-center">
-          <div>
-            <span className="text-3xl font-extrabold">€ 29.900</span>
-            <span className="text-sm ml-2 opacity-80">+ IVA</span>
-          </div>
-          <div className="hidden sm:block h-8 w-px bg-white/30" />
-          <p className="text-sm opacity-90 max-w-sm">
-            {it
-              ? 'Con incentivi 4.0: costo reale a partire da ~€ 17.000. Finanziamento disponibile.'
-              : 'With 4.0 incentives: real cost from ~€17,000. Financing available.'}
-          </p>
-          <a
-            href="mailto:info@printsolutionsrl.it?subject=Preventivo%20GreenBox%203"
-            className="shrink-0 px-5 py-2 bg-white text-green-700 font-bold rounded-full text-sm hover:bg-gray-100 transition-colors"
-          >
-            {it ? 'Richiedi preventivo →' : 'Request quote →'}
-          </a>
-        </div>
-      </section>
-
       {/* Foto prodotto */}
       <section className="bg-white pt-10 pb-4 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">
@@ -382,8 +358,8 @@ export default async function GreenBox3Page() {
           </p>
           <p className="text-gray-500 leading-relaxed">
             {it
-              ? 'Certificata Industria 4.0 Ready e compatibile con gli incentivi fiscali 2026, la GreenBox 3 è acquistabile a €29.900 + IVA. Con la maggiorazione fiscale al 180% prevista per i beni strumentali 4.0, il costo netto reale può scendere a circa €17.000, rendendo l\'investimento ancora più accessibile per le PMI.'
-              : 'Industry 4.0 Ready certified and eligible for 2026 fiscal incentives, the GreenBox 3 is available at €29,900 + VAT. With the 180% fiscal enhancement for 4.0 capital goods, the real net cost can drop to approximately €17,000, making the investment even more accessible for SMEs.'}
+              ? 'Certificata Industria 4.0 Ready e compatibile con gli incentivi fiscali 2026, la GreenBox 3 è pensata per chi vuole avviare la stampa in-house con un investimento accessibile. Con la maggiorazione fiscale al 180% prevista per i beni strumentali 4.0, il rientro dell\'investimento è rapido già dai primi mesi di utilizzo.'
+              : 'Industry 4.0 Ready certified and eligible for 2026 fiscal incentives, GreenBox 3 is designed for businesses starting in-house printing with an accessible investment. With the 180% fiscal enhancement for 4.0 capital goods, the return on investment is fast from the first months of use.'}
           </p>
         </div>
       </section>

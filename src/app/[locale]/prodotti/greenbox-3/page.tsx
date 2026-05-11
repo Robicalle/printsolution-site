@@ -257,7 +257,7 @@ export default async function GreenBox3Page() {
       {/* Hero */}
       <section className="relative text-white pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden min-h-[60vh] flex items-center">
         <video autoPlay muted loop playsInline aria-hidden="true" className="absolute inset-0 w-full h-full object-cover">
-          <source src="/videos/packaging-hero.mp4" type="video/mp4" />
+          <source src="/videos/greenbox-3-hero.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-gradient-to-r from-dark-800/90 via-dark-800/70 to-dark-800/40" />
         <div className="container-custom px-4 sm:px-6 lg:px-8 relative z-10">
@@ -280,9 +280,9 @@ export default async function GreenBox3Page() {
 
       {/* Foto prodotto */}
       <section className="bg-white pt-8 lg:pt-10 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-5xl mx-auto">
-          <div className="relative w-full aspect-[16/9] rounded-3xl overflow-hidden">
-            <Image src="/images/products/greenbox-3-nobg.png" alt="GreenBox 3" fill className="object-contain p-6" priority />
+        <div className="max-w-6xl mx-auto">
+          <div className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden">
+            <Image src="/images/products/greenbox-3-nobg.png" alt="GreenBox 3" fill className="object-contain p-2" priority />
           </div>
         </div>
       </section>

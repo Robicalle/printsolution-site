@@ -99,10 +99,20 @@ const nextConfig = {
 
       // --- IT: Old product pages missing ---
       { source: '/prodotti/easybox', destination: '/prodotti', permanent: true },
-      // --- IT: Old shop pages with same slug (already exist, just safety) ---
-      // /shop/consumabili-greenbox, /shop/consumabili-cx1000, etc. → same slug, no redirect needed
-      // /shop/consumabil-lt5c (old typo) → correct
+      { source: '/prodotti/ap-380e', destination: '/prodotti', permanent: true },
+      { source: '/prodotti/imark3550', destination: '/prodotti', permanent: true },
+      { source: '/prodotti/i-mark-5070', destination: '/prodotti', permanent: true },
+      { source: '/prodotti/widcnc-r120-pro', destination: '/prodotti', permanent: true },
+
+      // --- IT: Old shop pages ---
       { source: '/shop/consumabil-lt5c', destination: '/shop/consumabili-lt5c', permanent: true },
+      { source: '/shop/consumabili-l701', destination: '/shop', permanent: true },
+      { source: '/shop/consumabili-lx900', destination: '/shop', permanent: true },
+      { source: '/shop/consumabili-lx500', destination: '/shop', permanent: true },
+      { source: '/shop/consumabili-serie-dp41xx', destination: '/shop', permanent: true },
+
+      // --- IT: Cookie policy old URL ---
+      { source: '/cookie-policy', destination: '/cookie', permanent: true },
 
       // --- IT: Blog/news posts ---
       { source: '/post/:slug', destination: '/blog', permanent: true },
@@ -154,8 +164,18 @@ const nextConfig = {
       { source: '/en/prodotti/easybox', destination: '/en/prodotti', permanent: true },
       { source: '/en/prodotti/afinia-fp-230', destination: '/en/prodotti', permanent: true },
       { source: '/en/prodotti/robotjet-book-edge-printer', destination: '/en/prodotti/robotjet', permanent: true },
+      { source: '/en/prodotti/widcnc-r120-pro', destination: '/en/prodotti', permanent: true },
+      { source: '/en/prodotti/i-mark-5070', destination: '/en/prodotti', permanent: true },
+
       // --- EN: Old shop pages ---
       { source: '/en/shop/consumabili-any-002', destination: '/en/shop', permanent: true },
+      { source: '/en/shop/consumabili-l701', destination: '/en/shop', permanent: true },
+      { source: '/en/shop/consumabili-lx900', destination: '/en/shop', permanent: true },
+      { source: '/en/shop/consumabili-lx500', destination: '/en/shop', permanent: true },
+      { source: '/en/shop/consumabili-serie-dp41xx', destination: '/en/shop', permanent: true },
+
+      // --- EN: Cookie policy old URL ---
+      { source: '/en/cookie-policy', destination: '/en/cookie', permanent: true },
       { source: '/en/shop/lx2000-consumables', destination: '/en/shop', permanent: true },
       { source: '/en/shop/cx1000-consumables', destination: '/en/shop', permanent: true },
       { source: '/en/shop/consumabili-ns-multi-lg', destination: '/en/shop', permanent: true },

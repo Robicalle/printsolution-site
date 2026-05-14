@@ -54,8 +54,8 @@ export default async function PromozioniPage() {
             </div>
             <p className="text-gray-600 text-lg leading-relaxed">
               {it
-                ? 'Approfitta del prezzo di lancio su GreenBox 3, la nuova stampante per scatole entry level di Print Solution. Offerta valida fino a esaurimento disponibilità.'
-                : 'Take advantage of the launch price on GreenBox 3, the new entry-level box printer by Print Solution. Offer valid while stocks last.'}
+                ? 'Approfitta del prezzo di lancio su GreenBox 3, la nuova stampante per scatole e shopper entry level di Print Solution. Offerta valida fino a esaurimento disponibilità.'
+                : 'Take advantage of the launch price on GreenBox 3, the new entry-level box and shopper printer by Print Solution. Offer valid while stocks last.'}
             </p>
           </div>
         </div>
@@ -98,7 +98,7 @@ export default async function PromozioniPage() {
               <p className="text-cyan-500 font-semibold text-sm uppercase tracking-widest mb-2">Print Solution</p>
               <h2 className="text-3xl lg:text-4xl font-bold text-dark-800 mb-2">GreenBox 3</h2>
               <p className="text-gray-500 font-medium mb-6">
-                {it ? 'Stampante per Scatole Single-Pass CMYK — Entry Level' : 'Single-Pass CMYK Box Printer — Entry Level'}
+                {it ? 'Stampante per Scatole e Shopper Single-Pass CMYK — Entry Level' : 'Single-Pass CMYK Box & Shopper Printer — Entry Level'}
               </p>
 
               {/* Price */}
@@ -110,8 +110,8 @@ export default async function PromozioniPage() {
 
               <p className="text-gray-500 leading-relaxed mb-6">
                 {it
-                  ? 'La stampante per scatole entry level di Print Solution: ideale per le PMI che vogliono portare la stampa del packaging in-house per la prima volta. Single-pass CMYK con testina HP, 28 m/min, 1200 dpi, foglio fino a 100 cm, spessore fino a 15 cm. Costi stampa -40% vs GreenBox 2.'
-                  : "Print Solution's entry-level box printer: ideal for SMEs bringing packaging printing in-house for the first time. Single-pass CMYK with HP printhead, 28 m/min, 1200 dpi, sheet up to 100 cm, thickness up to 15 cm. -40% print costs vs GreenBox 2."}
+                  ? 'La stampante per scatole e shopper entry level di Print Solution: ideale per le PMI che vogliono portare la stampa del packaging in-house per la prima volta. Single-pass CMYK con testina HP, 28 m/min, 1200 dpi, foglio fino a 100 cm, spessore fino a 15 cm. Costi stampa -40% vs GreenBox 2.'
+                  : "Print Solution's entry-level box and shopper printer: ideal for SMEs bringing packaging printing in-house for the first time. Single-pass CMYK with HP printhead, 28 m/min, 1200 dpi, sheet up to 100 cm, thickness up to 15 cm. -40% print costs vs GreenBox 2."}
               </p>
 
               {/* Highlights */}

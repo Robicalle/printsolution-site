@@ -17,8 +17,11 @@ export default function SolutionCategoryListBlock({ block, locale }: Props) {
 
         {/* Featured first category — large hero card */}
         {featured && (
-          <div className={`relative rounded-3xl overflow-hidden bg-gradient-to-br ${featured.color || "from-cyan-500 to-cyan-600"}`}>
-            <div className="absolute inset-0 bg-black/10" />
+          <Link
+            href={featured.href}
+            className={`group relative rounded-3xl overflow-hidden bg-gradient-to-br ${featured.color || "from-cyan-500 to-cyan-600"} block cursor-pointer`}
+          >
+            <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors duration-300" />
             <div className="absolute top-0 right-0 w-80 h-80 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
             <div className="relative grid md:grid-cols-2 items-stretch min-h-[380px]">
               {/* Text side */}
@@ -30,13 +33,10 @@ export default function SolutionCategoryListBlock({ block, locale }: Props) {
                 <p className="text-white/80 leading-relaxed mb-8 max-w-md text-base">
                   {it ? featured.desc : (featured.desc_en || featured.desc)}
                 </p>
-                <Link
-                  href={featured.href}
-                  className="self-start inline-flex items-center px-7 py-3.5 bg-white text-gray-900 font-bold rounded-full hover:bg-yellow-400 hover:text-dark-800 transition-all duration-300 shadow-lg"
-                >
+                <span className="self-start inline-flex items-center px-7 py-3.5 bg-white text-gray-900 font-bold rounded-full group-hover:bg-yellow-400 group-hover:text-dark-800 transition-all duration-300 shadow-lg">
                   {it ? "Scopri " : "Discover "}
                   {it ? featured.name : (featured.name_en || featured.name)} →
-                </Link>
+                </span>
               </div>
               {/* Image side */}
               <div className="relative hidden md:flex items-center justify-center">
@@ -47,21 +47,22 @@ export default function SolutionCategoryListBlock({ block, locale }: Props) {
                       src={featured.image}
                       alt={featured.name || ""}
                       fill
-                      className="object-contain p-8"
+                      className="object-contain p-8 group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
                 )}
               </div>
             </div>
-          </div>
+          </Link>
         )}
 
         {/* Remaining categories — 2-column grid */}
         <div className="grid sm:grid-cols-2 gap-6">
           {rest.map((cat: any) => (
-            <div
+            <Link
               key={cat._key || cat.name}
-              className="group relative rounded-3xl overflow-hidden border border-gray-100 bg-surface-50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col"
+              href={cat.href}
+              className="group relative rounded-3xl overflow-hidden border border-gray-100 bg-surface-50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col cursor-pointer"
             >
               {/* Colored top accent strip */}
               <div className={`h-1.5 bg-gradient-to-r ${cat.color || "from-cyan-500 to-cyan-600"} flex-shrink-0`} />
@@ -93,15 +94,12 @@ export default function SolutionCategoryListBlock({ block, locale }: Props) {
                   {it ? cat.desc : (cat.desc_en || cat.desc)}
                 </p>
 
-                <Link
-                  href={cat.href}
-                  className={`self-start inline-flex items-center px-5 py-2.5 bg-gradient-to-r ${cat.color || "from-cyan-500 to-cyan-600"} text-white text-sm font-semibold rounded-full hover:shadow-md hover:opacity-90 transition-all`}
-                >
+                <span className={`self-start inline-flex items-center px-5 py-2.5 bg-gradient-to-r ${cat.color || "from-cyan-500 to-cyan-600"} text-white text-sm font-semibold rounded-full group-hover:shadow-md group-hover:opacity-90 transition-all`}>
                   {it ? "Scopri " : "Discover "}
                   {it ? cat.name : (cat.name_en || cat.name)} →
-                </Link>
+                </span>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 

@@ -38,9 +38,8 @@ export default function SolutionCategoryListBlock({ block, locale }: Props) {
                   {it ? featured.name : (featured.name_en || featured.name)} →
                 </span>
               </div>
-              {/* Image side */}
-              <div className="relative hidden md:flex items-center justify-center">
-                <div className="absolute inset-0 bg-white/5" />
+              {/* Image side — white background */}
+              <div className="relative hidden md:flex items-center justify-center bg-white">
                 {featured.image && (
                   <div className="relative w-full h-72">
                     <Image

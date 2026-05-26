@@ -129,7 +129,7 @@ export default async function BlogPage() {
                   className="card-modern overflow-hidden group hover:-translate-y-1 transition-transform duration-300"
                 >
                   <div
-                    className="aspect-[2/1] relative bg-gray-100 flex items-center justify-center overflow-hidden"
+                    className="aspect-[2/1] relative bg-white flex items-center justify-center overflow-hidden"
                   >
                     {coverUrl ? (
                       <Image
@@ -137,7 +137,7 @@ export default async function BlogPage() {
                         alt={post.coverImage?.alt || post.title}
                         fill
                         sizes="(max-width: 768px) 100vw, 33vw"
-                        className="object-cover group-hover:scale-105 transition-transform duration-300"
+                        className="object-contain p-4 group-hover:scale-105 transition-transform duration-300"
                         loading="lazy"
                       />
                     ) : (

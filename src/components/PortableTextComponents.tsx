@@ -120,17 +120,29 @@ export const portableTextComponents: PortableTextComponents = {
       );
     },
     videoEmbed: ({ value }: any) => {
-      const embedUrl = getVideoEmbedUrl(value?.url || "");
-      if (!embedUrl) return null;
+      const url = value?.url || "";
+      const isDirectVideo = url.match(/\.(mp4|webm|ogg)(\?.*)?$/i) || url.includes("cdn.sanity.io/files");
+      const embedUrl = isDirectVideo ? null : getVideoEmbedUrl(url);
+      if (!url) return null;
       return (
         <figure className="my-8">
-          <div className="aspect-video rounded-xl overflow-hidden shadow-lg">
-            <iframe
-              src={embedUrl}
-              className="w-full h-full"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
+          <div className="aspect-video rounded-xl overflow-hidden shadow-lg bg-black">
+            {isDirectVideo ? (
+              <video
+                src={url}
+                className="w-full h-full"
+                controls
+                playsInline
+                preload="metadata"
+              />
+            ) : embedUrl ? (
+              <iframe
+                src={embedUrl}
+                className="w-full h-full"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            ) : null}
           </div>
           {value?.caption && (
             <figcaption className="text-center text-sm text-gray-400 mt-2">{value.caption}</figcaption>

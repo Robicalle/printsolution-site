@@ -4,42 +4,38 @@ import { NextRequest, NextResponse } from "next/server";
 const SECRET = process.env.SANITY_REVALIDATE_SECRET;
 
 // Map Sanity document types to paths to revalidate
+// Note: Italian locale uses no URL prefix, English uses /en/
 function getPathsForType(type: string, slug?: string): string[] {
   const paths: string[] = [];
-  const locales = ["it", "en"];
 
   switch (type) {
     case "product":
-      for (const l of locales) {
-        paths.push(`/${l}/prodotti`);
-        if (slug) paths.push(`/${l}/prodotti/${slug}`);
-      }
+      paths.push("/prodotti");
+      if (slug) paths.push(`/prodotti/${slug}`);
+      paths.push("/en/prodotti");
+      if (slug) paths.push(`/en/prodotti/${slug}`);
       break;
     case "post":
-      for (const l of locales) {
-        paths.push(`/${l}/blog`);
-        if (slug) paths.push(`/${l}/blog/${slug}`);
-      }
+      paths.push("/blog");
+      if (slug) paths.push(`/blog/${slug}`);
+      paths.push("/en/blog");
+      if (slug) paths.push(`/en/blog/${slug}`);
       break;
     case "solution":
-      for (const l of locales) {
-        paths.push(`/${l}/soluzioni`);
-        if (slug) paths.push(`/${l}/soluzioni/${slug}`);
-      }
+      paths.push("/soluzioni");
+      if (slug) paths.push(`/soluzioni/${slug}`);
+      paths.push("/en/soluzioni");
+      if (slug) paths.push(`/en/soluzioni/${slug}`);
       break;
     case "shopProduct":
-      for (const l of locales) {
-        paths.push(`/${l}/shop`);
-      }
+      paths.push("/shop");
+      paths.push("/en/shop");
       break;
     case "faq":
-      // FAQ might appear on multiple pages
-      for (const l of locales) {
-        paths.push(`/${l}`);
-      }
+      paths.push("/");
+      paths.push("/en");
       break;
     case "siteSettings":
-      // Revalidate everything
       paths.push("/");
       break;
     default:

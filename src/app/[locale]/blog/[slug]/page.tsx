@@ -381,22 +381,6 @@ export default async function BlogPostPage({
         </div>
       </section>
 
-      {/* Cover image */}
-      {coverUrl && (
-        <div className="container-custom -mt-10 mb-8 relative z-10">
-          <div className="w-full max-w-3xl mx-auto rounded-2xl overflow-hidden shadow-lg bg-white flex items-center justify-center p-6">
-            <Image
-              src={coverUrl}
-              alt={displayTitle}
-              width={1200}
-              height={600}
-              className="object-contain w-full h-auto"
-              priority
-            />
-          </div>
-        </div>
-      )}
-
       {/* Article body */}
       <article className="section-padding bg-white">
         <div className="container-custom max-w-3xl">

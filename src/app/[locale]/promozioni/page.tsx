@@ -54,26 +54,26 @@ export default async function PromozioniPage() {
             </div>
             <p className="text-gray-600 text-lg leading-relaxed">
               {it
-                ? 'Approfitta del prezzo di lancio su GreenBox 3, la nuova stampante per scatole e shopper entry level di Print Solution. Offerta valida fino a esaurimento disponibilità.'
-                : 'Take advantage of the launch price on GreenBox 3, the new entry-level box and shopper printer by Print Solution. Offer valid while stocks last.'}
+                ? 'Approfitta del prezzo di lancio su ThunderBox, la nuova stampante per scatole e shopper entry level di Print Solution. Offerta valida fino a esaurimento disponibilità.'
+                : 'Take advantage of the launch price on ThunderBox, the new entry-level box and shopper printer by Print Solution. Offer valid while stocks last.'}
             </p>
           </div>
         </div>
       </section>
 
-      {/* GreenBox 3 promo card */}
+      {/* ThunderBox promo card */}
       <section className="section-padding bg-white">
         <div className="container-custom px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-center">
 
             {/* Image */}
             <div className="w-full lg:w-1/2">
-              <Link href="/prodotti/greenbox-3" className="block">
+              <Link href="/prodotti/thunderbox" className="block">
                 <div className="relative rounded-2xl overflow-hidden shadow-xl group bg-gray-50">
                   <div className="aspect-[4/3] relative">
                     <Image
-                      src="/images/products/greenbox-3-machine.jpg"
-                      alt="GreenBox 3"
+                      src="/images/products/thunderbox-machine.jpg"
+                      alt="ThunderBox"
                       fill
                       className="object-contain p-4 group-hover:scale-105 transition-transform duration-700"
                       priority
@@ -86,7 +86,7 @@ export default async function PromozioniPage() {
                   </div>
                   <div className="absolute bottom-4 right-4">
                     <span className="bg-white/90 backdrop-blur-sm text-cyan-600 font-semibold text-sm px-4 py-2 rounded-full shadow-lg">
-                      {it ? 'Scopri GreenBox 3 →' : 'Discover GreenBox 3 →'}
+                      {it ? 'Scopri ThunderBox →' : 'Discover ThunderBox →'}
                     </span>
                   </div>
                 </div>
@@ -96,7 +96,7 @@ export default async function PromozioniPage() {
             {/* Content */}
             <div className="w-full lg:w-1/2">
               <p className="text-cyan-500 font-semibold text-sm uppercase tracking-widest mb-2">Print Solution</p>
-              <h2 className="text-3xl lg:text-4xl font-bold text-dark-800 mb-2">GreenBox 3</h2>
+              <h2 className="text-3xl lg:text-4xl font-bold text-dark-800 mb-2">ThunderBox</h2>
               <p className="text-gray-500 font-medium mb-6">
                 {it ? 'Stampante per Scatole e Shopper Single-Pass CMYK — Entry Level' : 'Single-Pass CMYK Box & Shopper Printer — Entry Level'}
               </p>
@@ -174,7 +174,7 @@ export default async function PromozioniPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
                 </a>
-                <Link href="/prodotti/greenbox-3" className="btn-secondary inline-flex items-center !rounded-full !px-8 !py-3">
+                <Link href="/prodotti/thunderbox" className="btn-secondary inline-flex items-center !rounded-full !px-8 !py-3">
                   {it ? 'Scheda prodotto' : 'Product page'}
                 </Link>
               </div>
@@ -190,7 +190,7 @@ export default async function PromozioniPage() {
             <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl" />
             <div className="relative">
               <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-                {it ? 'Vuoi vedere la GreenBox 3 dal vivo?' : 'Want to see GreenBox 3 in person?'}
+                {it ? 'Vuoi vedere la ThunderBox dal vivo?' : 'Want to see ThunderBox in person?'}
               </h2>
               <p className="text-white/90 max-w-2xl mx-auto mb-8 text-lg">
                 {it

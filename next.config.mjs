@@ -85,6 +85,10 @@ const nextConfig = {
       { source: '/categoria/book-edge-printers', destination: '/soluzioni/labbratura', permanent: true },
       { source: '/categoria/:slug', destination: '/prodotti', permanent: true },
 
+      // --- ThunderBox (ex GreenBox 3) ---
+      { source: '/prodotti/greenbox-3', destination: '/prodotti/thunderbox', permanent: true },
+      { source: '/en/prodotti/greenbox-3', destination: '/en/prodotti/thunderbox', permanent: true },
+
       // --- IT: Old product pages that DON'T exist in new site ---
       { source: '/prodotti/anypack-ab2500', destination: '/prodotti/ab2500', permanent: true },
       { source: '/prodotti/dp-se-autoprinter', destination: '/prodotti', permanent: true },

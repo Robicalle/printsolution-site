@@ -59,7 +59,7 @@ function getSpecs(l: string) { return l === 'it' ? [
   ["Risoluzione", "1200 × 1200 dpi"],
   ["Velocità di stampa", "Fino a 30 m/min"],
   ["Larghezza stampa", "Fino a 30 cm"],
-  ["Larghezza supporto", "Fino a 80 cm"],
+  ["Larghezza supporto", "Fino a 70 cm"],
   ["Spessore max supporto", "Fino a 12 cm"],
   ["Inchiostri", "Pigmentati a base acqua, taniche 3L/colore"],
   ["Piano", "Aspirato con pompa a vuoto"],

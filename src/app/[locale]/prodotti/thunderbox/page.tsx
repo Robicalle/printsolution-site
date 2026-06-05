@@ -39,7 +39,7 @@ export async function generateMetadata(): Promise<Metadata> {
       description: isIt
         ? "ThunderBox: stampa diretta su scatole, cartoni e shopper. Entry level single-pass CMYK, 28 m/min, foglio fino a 100 cm, costi -40%."
         : "ThunderBox: direct printing on boxes, cardboard and shoppers. Entry-level single-pass CMYK, 28 m/min, sheet up to 100 cm, -40% costs.",
-      images: ["/images/products/greenbox-3-machine.jpg"],
+      images: ["/images/products/thunderbox-machine.jpg"],
       type: "website",
       locale: isIt ? "it_IT" : "en_US",
     },
@@ -63,7 +63,7 @@ const thunderboxJsonLd = {
   name: "ThunderBox",
   brand: { "@type": "Brand", name: "GreenBox" },
   description: "Stampante digitale inkjet single-pass CMYK per scatole in cartone ondulato e shopper in carta. 28 m/min, 1200×1200 dpi, foglio fino a 100 cm di larghezza, spessore fino a 15 cm. Costi stampa -40%. 4.0 Ready.",
-  image: "https://www.printsolutionsrl.it/images/products/greenbox-3-machine.jpg",
+  image: "https://www.printsolutionsrl.it/images/products/thunderbox-machine.jpg",
   manufacturer: { "@type": "Organization", name: "Print Solution S.r.l." },
   offers: {
     "@type": "Offer",
@@ -257,7 +257,7 @@ export default async function ThunderBoxPage() {
       {/* Hero */}
       <section className="relative text-white pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden min-h-[60vh] flex items-center">
         <video autoPlay muted loop playsInline aria-hidden="true" className="absolute inset-0 w-full h-full object-cover">
-          <source src="/videos/greenbox-3-hero.mp4" type="video/mp4" />
+          <source src="/videos/thunderbox-hero.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-gradient-to-r from-dark-800/90 via-dark-800/70 to-dark-800/40" />
         <div className="container-custom px-4 sm:px-6 lg:px-8 relative z-10">
@@ -282,7 +282,7 @@ export default async function ThunderBoxPage() {
       <section className="bg-white pt-4 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="relative w-full aspect-[16/9] rounded-3xl overflow-hidden">
-            <Image src="/images/products/greenbox-3-machine.jpg" alt="ThunderBox" fill className="object-contain p-4" priority />
+            <Image src="/images/products/thunderbox-machine.jpg" alt="ThunderBox" fill className="object-contain p-4" priority />
           </div>
         </div>
       </section>
@@ -326,7 +326,7 @@ export default async function ThunderBoxPage() {
           <div className="max-w-3xl mx-auto">
             <div className="aspect-video rounded-2xl overflow-hidden shadow-lg">
               <video controls playsInline preload="none" className="w-full h-full rounded-2xl">
-                <source src="/videos/greenbox-3-hero.mp4" type="video/mp4" />
+                <source src="/videos/thunderbox-hero.mp4" type="video/mp4" />
               </video>
             </div>
           </div>

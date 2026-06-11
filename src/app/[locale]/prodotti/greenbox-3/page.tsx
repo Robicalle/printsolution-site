@@ -62,7 +62,7 @@ const greenbox3JsonLd = {
   "@type": "Product",
   name: "GreenBox 3",
   brand: { "@type": "Brand", name: "GreenBox" },
-  description: "Stampante digitale inkjet single-pass CMYK per scatole in cartone ondulato e shopper in carta. 28 m/min, 1200×1200 dpi, foglio fino a 100 cm di larghezza, spessore fino a 15 cm. Costi stampa -40%. 4.0 Ready.",
+  description: "Stampante digitale inkjet single-pass CMYK per scatole in cartone ondulato e shopper in carta. 28 m/min, fino a 1200×1200 dpi, foglio fino a 100 cm di larghezza, spessore fino a 15 cm. Costi stampa -40%. 4.0 Ready.",
   image: "https://www.printsolutionsrl.it/images/products/greenbox-3.jpg",
   manufacturer: { "@type": "Organization", name: "Print Solution S.r.l." },
   offers: {
@@ -97,7 +97,7 @@ function getSpecs(l: string) {
     ["Technology", "Single-pass CMYK inkjet"],
     ["Ink type", "Pigmented water-based CMYK"],
     ["Cartridge capacity", "C 237 ml | M 233 ml | Y 225 ml | K 498 ml"],
-    ["Resolution", "Up to 1200 × 1200 dpi"],
+    ["Resolution", "Up to Fino a 1200 × 1200 dpi"],
     ["Print speed", "Up to 28 m/min"],
     ["Print width", "297 mm (single-pass)"],
     ["Print length", "Up to 150 cm"],
@@ -207,7 +207,7 @@ export default async function GreenBox3Page() {
       {
         "@type": "Question",
         name: "Cos'è la GreenBox 3?",
-        acceptedAnswer: { "@type": "Answer", text: "La GreenBox 3 è la nuova stampante digitale inkjet single-pass CMYK per scatole in cartone ondulato e shopper in carta. Novità 2026, raggiunge 28 m/min con risoluzione 1200×1200 dpi e supporta fogli fino a 100 cm di larghezza e 15 cm di spessore." },
+        acceptedAnswer: { "@type": "Answer", text: "La GreenBox 3 è la nuova stampante digitale inkjet single-pass CMYK per scatole in cartone ondulato e shopper in carta. Novità 2026, raggiunge 28 m/min con risoluzione fino a 1200×1200 dpi e supporta fogli fino a 100 cm di larghezza e 15 cm di spessore." },
       },
       {
         "@type": "Question",
@@ -233,7 +233,7 @@ export default async function GreenBox3Page() {
       {
         "@type": "Question",
         name: "What is the GreenBox 3?",
-        acceptedAnswer: { "@type": "Answer", text: "The GreenBox 3 is the new single-pass CMYK inkjet digital printer for corrugated boxes and paper shoppers. New in 2026, it reaches 28 m/min at 1200×1200 dpi resolution and handles sheets up to 100 cm wide and 15 cm thick." },
+        acceptedAnswer: { "@type": "Answer", text: "The GreenBox 3 is the new single-pass CMYK inkjet digital printer for corrugated boxes and paper shoppers. New in 2026, it reaches 28 m/min at fino a 1200×1200 dpi resolution and handles sheets up to 100 cm wide and 15 cm thick." },
       },
       {
         "@type": "Question",
@@ -295,8 +295,8 @@ export default async function GreenBox3Page() {
           </h2>
           <p className="text-gray-500 leading-relaxed mb-4">
             {it
-              ? 'La GreenBox 3 è la stampante per scatole entry level di Print Solution: la soluzione ideale per le PMI che vogliono portare la stampa del packaging in-house per la prima volta, con un investimento accessibile e ritorni rapidi. Con tecnologia inkjet single-pass e testina HP, raggiunge velocità fino a 28 m/min con risoluzione 1200×1200 dpi e qualità fotografica su ogni supporto.'
-              : 'GreenBox 3 is Print Solution\'s entry-level box printer: the ideal solution for SMEs bringing packaging printing in-house for the first time, with an accessible investment and fast returns. With HP single-pass inkjet technology, it reaches speeds up to 28 m/min at 1200×1200 dpi with photographic quality on every substrate.'}
+              ? 'La GreenBox 3 è la stampante per scatole entry level di Print Solution: la soluzione ideale per le PMI che vogliono portare la stampa del packaging in-house per la prima volta, con un investimento accessibile e ritorni rapidi. Con tecnologia inkjet single-pass e testina HP, raggiunge velocità fino a 28 m/min con risoluzione fino a 1200×1200 dpi e qualità fotografica su ogni supporto.'
+              : 'GreenBox 3 is Print Solution\'s entry-level box printer: the ideal solution for SMEs bringing packaging printing in-house for the first time, with an accessible investment and fast returns. With HP single-pass inkjet technology, it reaches speeds up to 28 m/min at fino a 1200×1200 dpi with photographic quality on every substrate.'}
           </p>
           <p className="text-gray-500 leading-relaxed mb-4">
             {it

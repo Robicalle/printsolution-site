@@ -53,7 +53,7 @@ const productJsonLd = {
 
 function getSpecs(l: string) { return l === 'it' ? [
   ["Tecnologia", "Toner LED elettrofotografica CMYK"],
-  ["Risoluzione", "1200 × 1200 dpi"],
+  ["Risoluzione", "Fino a 1200 × 1200 dpi"],
   ["Resistenza", "Immediata all'acqua e abrasione"],
   ["Asciugatura", "Non necessaria (fusione toner)"],
   ["Alimentazione supporto", "Da rotolo"],
@@ -65,7 +65,7 @@ function getSpecs(l: string) { return l === 'it' ? [
 ] : [
   ["Technology", "Electrophotographic LED laser, 5 colors"],
   ["Colors", "CMYK + White"],
-  ["Resolution", "1200 × 1200 dpi"],
+  ["Resolution", "Fino a 1200 × 1200 dpi"],
   ["Print speed", "Up to 5 m/min"],
   ["Max media width", "220 mm (8.66 inches)"],
   ["Media thickness", "0.08-0.3 mm (with liner)"],
@@ -189,7 +189,7 @@ export default async function AfiniaLT5CPage() {
             La Afinia LT5C è una stampante etichette industriale basata su tecnologia toner LED elettrofotografica CMYK. A differenza delle stampanti inkjet, il toner viene fuso direttamente sulla superficie del supporto attraverso un fusore integrato, producendo etichette immediatamente resistenti all&apos;acqua, all&apos;abrasione e agli agenti chimici senza alcun tempo di asciugatura.
           </p>
           <p className="text-gray-500 leading-relaxed mb-4">
-            Con una risoluzione di 1200 × 1200 dpi e cartucce toner ad alta resa, la LT5C offre un costo per etichetta competitivo, specialmente su volumi medi e produzioni regolari. L&apos;alimentazione diretta da rotolo consente produzioni continue senza interruzioni, mentre la tecnologia elettrofotografica garantisce una qualità di stampa costante su ogni singola etichetta.
+            Con una risoluzione di Fino a 1200 × 1200 dpi e cartucce toner ad alta resa, la LT5C offre un costo per etichetta competitivo, specialmente su volumi medi e produzioni regolari. L&apos;alimentazione diretta da rotolo consente produzioni continue senza interruzioni, mentre la tecnologia elettrofotografica garantisce una qualità di stampa costante su ogni singola etichetta.
           </p>
           <p className="text-gray-500 leading-relaxed">
             La LT5C è la scelta ideale per ambienti umidi e industriali dove le etichette sono esposte a condensa, liquidi o condizioni ambientali difficili. Le etichette possono essere applicate, laminate o fustellate immediatamente dopo la stampa, eliminando i colli di bottiglia nel flusso produttivo e accelerando il time-to-market dei prodotti etichettati.
@@ -197,7 +197,7 @@ export default async function AfiniaLT5CPage() {
             The Afinia LT5C is an industrial label printer based on CMYK electrophotographic LED toner technology. Unlike inkjet printers, the toner is fused directly onto the media surface through an integrated fuser, producing labels that are immediately resistant to water, abrasion and chemicals with no drying time.
           </p>
           <p className="text-gray-500 leading-relaxed mb-4">
-            With a resolution of 1200 × 1200 dpi and high-yield toner cartridges, the LT5C delivers a competitive cost per label, especially on medium volumes and regular production runs. Direct roll feed enables continuous production without interruptions, while electrophotographic technology ensures consistent print quality on every single label.
+            With a resolution of Fino a 1200 × 1200 dpi and high-yield toner cartridges, the LT5C delivers a competitive cost per label, especially on medium volumes and regular production runs. Direct roll feed enables continuous production without interruptions, while electrophotographic technology ensures consistent print quality on every single label.
           </p>
           <p className="text-gray-500 leading-relaxed">
             The LT5C is the ideal choice for humid and industrial environments where labels are exposed to condensation, liquids or harsh conditions. Labels can be applied, laminated or die-cut immediately after printing, eliminating bottlenecks in the production workflow and accelerating time-to-market.

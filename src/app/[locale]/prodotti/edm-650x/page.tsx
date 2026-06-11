@@ -40,7 +40,7 @@ const edm650xJsonLd = {
   name: "EDM-650X",
   brand: { "@type": "Brand", name: "EDM" },
   description:
-    "Stampante digitale inkjet single-pass per carta e cartone ondulato. Da 2 a 6 teste HP, fino a 30m/min, 1200x1200 dpi. Inchiostri a base acqua.",
+    "Stampante digitale inkjet single-pass per carta e cartone ondulato. Da 2 a 6 teste HP, fino a 30m/min, fino a 1200x1200 dpi. Inchiostri a base acqua.",
   image: "https://www.printsolutionsrl.it/images/products/edm-650x-2hd.jpg",
   manufacturer: { "@type": "Organization", name: "Print Solution S.r.l." },
   offers: {
@@ -56,7 +56,7 @@ const edm650xJsonLd = {
 function getSpecs(l: string) { return l === 'it' ? [
   ["Tecnologia", "Inkjet single-pass CMYK"],
   ["Teste di stampa", "Da 2 a 6 teste HP (30 cm ciascuna)"],
-  ["Risoluzione", "1200 × 1200 dpi"],
+  ["Risoluzione", "Fino a 1200 × 1200 dpi"],
   ["Velocità di stampa", "Fino a 30 m/min"],
   ["Larghezza stampa", "Da 60 a 180 cm"],
   ["Passaggio carta", "Da 120 a 250 cm"],
@@ -69,7 +69,7 @@ function getSpecs(l: string) { return l === 'it' ? [
 ] : [
   ["Technology", "HP Pagewide single-pass inkjet"],
   ["Printheads", "From 2 to 6 HP heads (30 cm each)"],
-  ["Resolution", "1200 × 1200 dpi"],
+  ["Resolution", "Fino a 1200 × 1200 dpi"],
   ["Print speed", "Up to 30 m/min"],
   ["Print width", "From 60 to 180 cm"],
   ["Paper pass-through", "From 120 to 250 cm"],
@@ -319,8 +319,8 @@ export default async function () {
               </p>
               <p className="text-gray-500 leading-relaxed mb-6">
                 {it
-                  ? 'Velocità fino a 30 m/min per produzioni industriali continue. Stessa qualità di stampa a 1200×1200 dpi in un formato pensato per grandi tirature.'
-                  : 'Speed up to 30 m/min for continuous industrial production. Same 1200×1200 dpi print quality in a format designed for high-volume runs.'}
+                  ? 'Velocità fino a 30 m/min per produzioni industriali continue. Stessa qualità di stampa a fino a 1200×1200 dpi in un formato pensato per grandi tirature.'
+                  : 'Speed up to 30 m/min for continuous industrial production. Same fino a 1200×1200 dpi print quality in a format designed for high-volume runs.'}
               </p>
               <div className="bg-surface-50 rounded-xl p-5">
                 <p className="text-sm font-medium text-gray-600 mb-2">{it ? 'Le versioni da 3 a 6 teste offrono:' : 'The 3 to 6-head versions offer:'}</p>

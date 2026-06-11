@@ -39,7 +39,7 @@ const productJsonLd = {
   name: "GreenBox Print Book",
   brand: { "@type": "Brand", name: "GreenBox" },
   description:
-    "Soluzione digitale per la labbratura dei libri basata su GreenBox 2. Stampa inkjet HP PageWide single-pass, inchiostri a base acqua, 30 m/min, 1200x1200 dpi. Industria 4.0 ready.",
+    "Soluzione digitale per la labbratura dei libri basata su GreenBox 2. Stampa inkjet HP PageWide single-pass, inchiostri a base acqua, 30 m/min, fino a 1200x1200 dpi. Industria 4.0 ready.",
   image: "https://www.printsolutionsrl.it/images/products/greenbox-printbook.jpg",
   manufacturer: { "@type": "Organization", name: "Print Solution S.r.l." },
   offers: {
@@ -57,7 +57,7 @@ function getSpecsLocal(l: string): [string, string][] { return l === 'it' ? [
   ["Tipo di inchiostro", "Base acqua pigmentato, 4 cartucce CMYK"],
   ["Testina di stampa", "HP single-pass di ultima generazione"],
   ["Capacità inchiostri", "C 250 ml, M 250 ml, Y 250 ml, K 500 ml"],
-  ["Risoluzione di stampa", "Fino a 1200×1200 dpi"],
+  ["Risoluzione di stampa", "fino a 1200×1200 dpi"],
   ["Velocità di stampa", "Fino a 30 m/min"],
   ["Area di stampa", "297 mm (passaggio singolo), larghezza max 90 cm"],
   ["Passaggio carta/cartone", "Spessore max 11 cm, larghezza max 100 cm, lunghezza max 160 cm"],
@@ -73,7 +73,7 @@ function getSpecsLocal(l: string): [string, string][] { return l === 'it' ? [
   ["Ink type", "Pigmented water-based, 4 CMYK cartridges"],
   ["Printhead", "Latest generation HP single-pass"],
   ["Ink capacity", "C 250 ml, M 250 ml, Y 250 ml, K 500 ml"],
-  ["Print resolution", "Up to 1200×1200 dpi"],
+  ["Print resolution", "Up to fino a 1200×1200 dpi"],
   ["Print speed", "Up to 30 m/min"],
   ["Print area", "297 mm (single pass), max width 90 cm"],
   ["Paper/cardboard passage", "Max thickness 11 cm, max width 100 cm, max length 160 cm"],
@@ -174,7 +174,7 @@ export default async function GreenBoxPrintBookPage() {
                 <span className="bg-gradient-to-r from-green-400 to-cyan-400 bg-clip-text text-transparent">Print Book</span>
               </h1>
               <p className="text-lg text-gray-300/90 leading-relaxed mb-8">
-                {locale === 'it' ? 'La soluzione digitale per la labbratura dei libri. Stampa inkjet HP single-pass a base acqua, 30 m/min, 1200×1200 dpi. Industria 4.0 ready.' : 'The digital solution for book edge printing. HP single-pass inkjet with water-based inks, 30 m/min, 1200×1200 dpi. Industry 4.0 ready.'}
+                {locale === 'it' ? 'La soluzione digitale per la labbratura dei libri. Stampa inkjet HP single-pass a base acqua, 30 m/min, fino a 1200×1200 dpi. Industria 4.0 ready.' : 'The digital solution for book edge printing. HP single-pass inkjet with water-based inks, 30 m/min, fino a 1200×1200 dpi. Industry 4.0 ready.'}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20GreenBox%20Print%20Book&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20GreenBox%20Print%20Book.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full" data-track="click_cta" data-track-label="cta_greenbox_printbook">{locale === 'it' ? 'Consulenza gratuita→' : 'Free consultation→'}</a>
@@ -217,7 +217,7 @@ export default async function GreenBoxPrintBookPage() {
             The 297 mm printhead, mounted on a sliding rail with 80 cm travel, allows precise centering of the print area. The micrometric system with digital display enables accurate height adjustment, with vertical travel up to 30 cm.
           </p>
           <p className="text-gray-500 leading-relaxed">
-            With a speed of 30 m/min and 1200×1200 dpi resolution, the GreenBox Print Book delivers exceptional print quality with vivid and durable colors. Water-based inks ensure resistance to weathering, rubbing and water.
+            With a speed of 30 m/min and fino a 1200×1200 dpi resolution, the GreenBox Print Book delivers exceptional print quality with vivid and durable colors. Water-based inks ensure resistance to weathering, rubbing and water.
           </p></>)}
         </div>
       </section>

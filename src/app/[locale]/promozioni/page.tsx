@@ -138,7 +138,7 @@ export default async function PromozioniPage() {
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
                 {(it ? [
                   '28 m/min single-pass',
-                  '1200 × 1200 dpi',
+                  'Fino a 1200 × 1200 dpi',
                   'Foglio fino a 100 cm',
                   'Spessore fino a 15 cm',
                   'Testina HP inkjet',
@@ -147,7 +147,7 @@ export default async function PromozioniPage() {
                   '4.0 Ready — incentivi 2026',
                 ] : [
                   '28 m/min single-pass',
-                  '1200 × 1200 dpi',
+                  'Fino a 1200 × 1200 dpi',
                   'Sheet up to 100 cm',
                   'Thickness up to 15 cm',
                   'HP inkjet printhead',

@@ -40,7 +40,7 @@ const greenboxJsonLd = {
   name: "GreenBox EVO",
   brand: { "@type": "Brand", name: "GreenBox" },
   description:
-    "Stampante digitale inkjet single-pass CMYK per packaging, shopper e scatole. Testina HP Pagewide, 30m/min, 1200x1200 dpi. Inchiostri pigmentati a base acqua.",
+    "Stampante digitale inkjet single-pass CMYK per packaging, shopper e scatole. Testina HP Pagewide, 30m/min, fino a 1200x1200 dpi. Inchiostri pigmentati a base acqua.",
   image: "https://www.printsolutionsrl.it/images/products/greenbox-evo-site-nobg.png",
   manufacturer: { "@type": "Organization", name: "Print Solution S.r.l." },
   offers: {
@@ -56,7 +56,7 @@ const greenboxJsonLd = {
 function getSpecs(l: string) { return l === 'it' ? [
   ["Tecnologia", "Inkjet single-pass CMYK"],
   ["Testina di stampa", "HP Pagewide, 30 cm"],
-  ["Risoluzione", "1200 × 1200 dpi"],
+  ["Risoluzione", "Fino a 1200 × 1200 dpi"],
   ["Velocità di stampa", "Fino a 30 m/min"],
   ["Larghezza stampa", "Fino a 30 cm"],
   ["Larghezza supporto", "Fino a 70 cm"],
@@ -69,7 +69,7 @@ function getSpecs(l: string) { return l === 'it' ? [
   ["Alimentazione", "230V AC monofase"],
 ] : [
   ["Technology", "HP Pagewide single-pass inkjet"],
-  ["Resolution", "1200 × 1200 dpi"],
+  ["Resolution", "Fino a 1200 × 1200 dpi"],
   ["Colors", "CMYK"],
   ["Max print width", "310 mm"],
   ["Max speed", "Up to 30 m/min"],
@@ -236,8 +236,8 @@ export default async function () {
           <h2 className="text-3xl font-bold text-dark-800 mb-6">{it ? 'Stampa Digitale su Packaging, Senza Compromessi' : 'Digital Printing on Packaging, No Compromises'}</h2>
           <p className="text-gray-500 leading-relaxed mb-4">
             {it
-              ? <>La GreenBox EVO è una stampante inkjet single-pass progettata per chi vuole entrare nel mercato della stampa digitale su packaging con un investimento accessibile ma senza rinunciare alla qualità. Dotata di testina HP Pagewide da 30 cm, raggiunge velocità fino a 30 metri al minuto con risoluzione 1200×1200 dpi.</>
-              : 'The GreenBox EVO is a single-pass inkjet printer designed for companies looking to enter the digital packaging printing market with an affordable investment and no compromise on quality. Equipped with a 30 cm HP Pagewide printhead, it reaches speeds of up to 30 metres per minute at 1200×1200 dpi resolution.'}
+              ? <>La GreenBox EVO è una stampante inkjet single-pass progettata per chi vuole entrare nel mercato della stampa digitale su packaging con un investimento accessibile ma senza rinunciare alla qualità. Dotata di testina HP Pagewide da 30 cm, raggiunge velocità fino a 30 metri al minuto con risoluzione fino a 1200×1200 dpi.</>
+              : 'The GreenBox EVO is a single-pass inkjet printer designed for companies looking to enter the digital packaging printing market with an affordable investment and no compromise on quality. Equipped with a 30 cm HP Pagewide printhead, it reaches speeds of up to 30 metres per minute at fino a 1200×1200 dpi resolution.'}
           </p>
           <p className="text-gray-500 leading-relaxed mb-4">
             {it

@@ -60,7 +60,7 @@ function getSpecs(l: string) { return l === 'it' ? [
 
 ] : [
   ["Technology", "Digital thermal foil stamping"],
-  ["Resolution", "1200 × 1200 dpi"],
+  ["Resolution", "Fino a 1200 × 1200 dpi"],
   ["Max print width", "330 mm (A3+)"],
   ["Speed", "Up to 5 m/min"],
   ["Foils", "Gold, silver, colors, holographic"],

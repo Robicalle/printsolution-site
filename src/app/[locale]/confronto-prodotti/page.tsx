@@ -42,8 +42,8 @@ function getCategories(locale: string): Category[] {
       description: locale === 'it' ? "Macchine per la produzione di scatole e stampa su cartone ondulato" : "Machines for box production and corrugated cardboard printing",
       color: "from-amber-500 to-orange-600",
       products: [
-        { name: "EDM-650X", href: "/prodotti/edm-650x", image: "/images/products/edm-650x-2hd-nobg.png", tecnologia: "Inkjet single-pass CMYK", velocita: locale === 'it' ? "Fino a 30 m/min" : "Up to 30 m/min", formatoMax: locale === 'it' ? "Fino a 180 cm" : "Up to 180 cm", risoluzione: "1200 × 1200 dpi", prezzo: p },
-        { name: "GreenBox EVO", href: "/prodotti/greenbox-evo", image: "/images/products/greenbox-evo-front-nobg.png", tecnologia: "Inkjet single-pass CMYK", velocita: locale === 'it' ? "Fino a 30 m/min" : "Up to 30 m/min", formatoMax: locale === 'it' ? "Fino a 30 cm stampa / 80 cm supporto" : "Up to 30 cm print / 80 cm media", risoluzione: "1200 × 1200 dpi", prezzo: p },
+        { name: "EDM-650X", href: "/prodotti/edm-650x", image: "/images/products/edm-650x-2hd-nobg.png", tecnologia: "Inkjet single-pass CMYK", velocita: locale === 'it' ? "Fino a 30 m/min" : "Up to 30 m/min", formatoMax: locale === 'it' ? "Fino a 180 cm" : "Up to 180 cm", risoluzione: "Fino a 1200 × 1200 dpi", prezzo: p },
+        { name: "GreenBox EVO", href: "/prodotti/greenbox-evo", image: "/images/products/greenbox-evo-front-nobg.png", tecnologia: "Inkjet single-pass CMYK", velocita: locale === 'it' ? "Fino a 30 m/min" : "Up to 30 m/min", formatoMax: locale === 'it' ? "Fino a 30 cm stampa / 80 cm supporto" : "Up to 30 cm print / 80 cm media", risoluzione: "Fino a 1200 × 1200 dpi", prezzo: p },
         { name: "PackPrinter UV", href: "/prodotti/packprinter-uv", image: "/images/products/packprinter-uv-front-nobg.png", tecnologia: "UV single-pass CMYKW", velocita: locale === 'it' ? "Fino a 50 m/min" : "Up to 50 m/min", formatoMax: locale === 'it' ? "Da 12 a 118 cm" : "From 12 to 118 cm", risoluzione: "600 × 1200 dpi", prezzo: p },
         { name: "AB2500", href: "/prodotti/ab2500", image: "/images/products/ab2500-new-nobg.png", tecnologia: locale === 'it' ? "Box maker automatico" : "Automatic box maker", velocita: locale === 'it' ? "500-600 scatole/ora" : "500-600 boxes/hour", formatoMax: locale === 'it' ? "Cartone 1-7 mm" : "Board 1-7 mm", risoluzione: "N/A", prezzo: p },
       ],
@@ -56,9 +56,9 @@ function getCategories(locale: string): Category[] {
       products: [
         { name: "Afinia X350", href: "/prodotti/afinia-x350", image: "/images/products/afinia-x350.webp", tecnologia: "Inkjet pigmentato (Memjet)", velocita: locale === 'it' ? "Fino a 45 m/min" : "Up to 45 m/min", formatoMax: locale === 'it' ? "350 mm bobina" : "350 mm roll", risoluzione: "1600 × 1600 dpi", prezzo: p },
         { name: "Afinia L901", href: "/prodotti/afinia-l901", image: "/images/products/afinia-l901.png", tecnologia: "Memjet Waterfall Inkjet", velocita: "—", formatoMax: "216 mm", risoluzione: "1600 dpi", prezzo: p },
-        { name: "Afinia LT5C", href: "/prodotti/afinia-lt5c", image: "/images/products/afinia-lt5c.avif", tecnologia: "Toner LED CMYK", velocita: "—", formatoMax: "—", risoluzione: "1200 × 1200 dpi", prezzo: p },
+        { name: "Afinia LT5C", href: "/prodotti/afinia-lt5c", image: "/images/products/afinia-lt5c.avif", tecnologia: "Toner LED CMYK", velocita: "—", formatoMax: "—", risoluzione: "Fino a 1200 × 1200 dpi", prezzo: p },
         { name: "Anytron ANY-002", href: "/prodotti/any-002", image: "/images/products/any-002.avif", tecnologia: locale === 'it' ? "Laser LED + fustella" : "LED Laser + die-cutter", velocita: locale === 'it' ? "Fino a 9 m/min" : "Up to 9 m/min", formatoMax: locale === 'it' ? "1,2 m per etichetta" : "1.2 m per label", risoluzione: "1200 dpi", prezzo: p },
-        { name: "Any-Press", href: "/prodotti/any-press", image: "/images/products/any-press.avif", tecnologia: "Laser LED CMYKW", velocita: "5 m/min", formatoMax: "324 mm", risoluzione: "1200 × 1200 dpi", prezzo: p },
+        { name: "Any-Press", href: "/prodotti/any-press", image: "/images/products/any-press.avif", tecnologia: "Laser LED CMYKW", velocita: "5 m/min", formatoMax: "324 mm", risoluzione: "Fino a 1200 × 1200 dpi", prezzo: p },
         { name: "Afinia DLP-2200", href: "/prodotti/afinia-dlp2200", image: "/images/products/afinia-dlp2200.avif", tecnologia: "Digital Label Press (Memjet)", velocita: "9-18 m/min", formatoMax: "229 mm", risoluzione: "1600 dpi CMYKK", prezzo: p },
       ],
     },
@@ -80,7 +80,7 @@ function getCategories(locale: string): Category[] {
       color: "from-emerald-500 to-teal-600",
       products: [
         { name: "Robotjet", href: "/prodotti/robotjet", image: "/images/posters/robotjet-1.jpg", tecnologia: "Inkjet CMYK (HP A3)", velocita: "0-15 m/min", formatoMax: locale === 'it' ? "218 mm stampa / 350 mm altezza" : "218 mm print / 350 mm height", risoluzione: "1200 dpi", prezzo: p },
-        { name: "GreenBox Print Book", href: "/prodotti/greenbox-print-book", image: "/images/products/greenbox-printbook.jpg", tecnologia: "Inkjet HP PageWide", velocita: locale === 'it' ? "Fino a 30 m/min" : "Up to 30 m/min", formatoMax: locale === 'it' ? "297 mm (passaggio singolo)" : "297 mm (single pass)", risoluzione: "1200 × 1200 dpi", prezzo: p },
+        { name: "GreenBox Print Book", href: "/prodotti/greenbox-print-book", image: "/images/products/greenbox-printbook.jpg", tecnologia: "Inkjet HP PageWide", velocita: locale === 'it' ? "Fino a 30 m/min" : "Up to 30 m/min", formatoMax: locale === 'it' ? "297 mm (passaggio singolo)" : "297 mm (single pass)", risoluzione: "Fino a 1200 × 1200 dpi", prezzo: p },
       ],
     },
   ];

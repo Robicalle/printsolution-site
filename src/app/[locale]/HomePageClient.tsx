@@ -192,7 +192,7 @@ function FeaturedProducts({ locale }: { locale: string }) {
       name: "Anypack AB2500",
       subtitle: locale === 'it' ? "Box Maker Automatico" : "Automatic Box Maker",
       desc: locale === 'it' ? "Macchina all-in-one per la creazione di scatole in cartone ondulato: taglio, scanalatura, cordonatura e incollaggio in un'unica operazione." : "All-in-one machine for creating corrugated cardboard boxes: cutting, slotting, creasing and gluing in a single operation.",
-      specs: locale === 'it' ? ["500-600 scatole/ora", "Cartone da 1 a 17mm", "Incollaggio a caldo e freddo", "Cambio formato in 10 secondi"] : ["500–600 boxes/hour", "1 to 17 mm cardboard", "Hot and cold gluing", "Format change in 10 seconds"],
+      specs: locale === 'it' ? ["500-600 scatole/ora", "Cartone da 1,5 a 10 mm", "Incollaggio a caldo e freddo", "Cambio formato in 10 secondi"] : ["500–600 boxes/hour", "1.5 to 10 mm cardboard", "Hot and cold gluing", "Format change in 10 seconds"],
       href: "/prodotti/ab2500",
       image: "/images/products/ab2500-hero-nobg.png",
       accent: "cyan",

@@ -7,22 +7,22 @@ export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
   const isIt = locale === 'it';
   return {
-    title: isIt ? "AurumPress: Stampante Hot Foil Digitale per Etichette Premium" : "AurumPress: Digital Hot Foil Stamping Machine for Premium Labels",
+    title: isIt ? "AurumPress: Stampante Hot Foil per Etichette Premium" : "AurumPress: Hot Foil Stamping Machine for Premium Labels",
     description: isIt
-      ? "AurumPress: stampa a caldo digitale con foil oro, argento e olografici. Nobilitazione on-demand per packaging di lusso. Print Solution"
-      : "AurumPress: digital hot foil stamping with gold, silver and holographic foils. On-demand luxury packaging. Print Solution",
+      ? "AurumPress: stampa a caldo con foil oro, argento e olografici. Nobilitazione on-demand per packaging di lusso. Print Solution"
+      : "AurumPress: hot foil stamping with gold, silver and holographic foils. On-demand luxury packaging. Print Solution",
     keywords: [
-    "stampa a caldo digitale",
-    "hot foil digitale",
-    "nobilitazione digitale",
+    "stampa a caldo",
+    "hot foil",
+    
     "AurumPress",
     "stampa foil packaging",
   ],
     openGraph: {
-      title: isIt ? "AurumPress: Stampante Hot Foil Digitale per Etichette Premium | Print Solution" : "AurumPress: Digital Hot Foil Stamping Machine for Premium Labels | Print Solution",
+      title: isIt ? "AurumPress: Stampante Hot Foil per Etichette Premium | Print Solution" : "AurumPress: Hot Foil Stamping Machine for Premium Labels | Print Solution",
       description: isIt
-        ? "AurumPress: stampa a caldo digitale con foil oro, argento e olografici. Nobilitazione on-demand per packaging di lusso. Print Solution"
-        : "AurumPress: digital hot foil stamping with gold, silver and holographic foils. On-demand luxury packaging. Print Solution",
+        ? "AurumPress: stampa a caldo con foil oro, argento e olografici. Nobilitazione on-demand per packaging di lusso. Print Solution"
+        : "AurumPress: hot foil stamping with gold, silver and holographic foils. On-demand luxury packaging. Print Solution",
       images: ["/images/products/aurumpress.jpg"],
       type: "website",
       locale: isIt ? "it_IT" : "en_US",
@@ -38,7 +38,7 @@ const aurumpressJsonLd = {
   name: "AurumPress",
   brand: { "@type": "Brand", name: "AurumPress" },
   description:
-    "Stampatrice termica per foil metallizzati, argentati, colori pastello e trasparente lucido. Stampa a caldo digitale per nobilitazione packaging.",
+    "Stampatrice termica per foil metallizzati, argentati, colori pastello e trasparente lucido. Stampa a caldo per nobilitazione packaging.",
   image: "https://www.printsolutionsrl.it/images/products/aurumpress.jpg",
   manufacturer: { "@type": "Organization", name: "Print Solution S.r.l." },
   offers: {
@@ -59,7 +59,7 @@ function getSpecs(l: string) { return l === 'it' ? [
   ["Supporti", "Cartone, carta, packaging rigido"],
 
 ] : [
-  ["Technology", "Digital thermal foil stamping"],
+  ["Technology", "Thermal foil stamping"],
   ["Resolution", "Fino a 1200 × 1200 dpi"],
   ["Max print width", "330 mm (A3+)"],
   ["Speed", "Up to 5 m/min"],
@@ -124,7 +124,7 @@ export default async function AurumPressPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(aurumpressJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([
-        { "@context":"https://schema.org","@type":"VideoObject","name":"AurumPress — Hot Foil Stamping su Packaging Premium","description":"Demo AurumPress: stampa a caldo digitale con foil oro, argento e olografici su packaging premium, etichette e cartone.","thumbnailUrl":"https://www.printsolutionsrl.it/images/posters/aurumpress-1.jpg","uploadDate":"2024-01-01","contentUrl":"https://www.printsolutionsrl.it/videos/aurumpress-1.mp4","publisher":{"@type":"Organization","name":"Print Solution S.r.l.","url":"https://www.printsolutionsrl.it"} },
+        { "@context":"https://schema.org","@type":"VideoObject","name":"AurumPress — Hot Foil Stamping su Packaging Premium","description":"Demo AurumPress: stampa a caldo con foil oro, argento e olografici su packaging premium, etichette e cartone.","thumbnailUrl":"https://www.printsolutionsrl.it/images/posters/aurumpress-1.jpg","uploadDate":"2024-01-01","contentUrl":"https://www.printsolutionsrl.it/videos/aurumpress-1.mp4","publisher":{"@type":"Organization","name":"Print Solution S.r.l.","url":"https://www.printsolutionsrl.it"} },
         { "@context":"https://schema.org","@type":"VideoObject","name":"AurumPress — Nobilitazione Packaging con Foil Metallizzato","description":"AurumPress in funzione: nobilitazione packaging on-demand con foil dorato e argentato per lusso e premium packaging.","thumbnailUrl":"https://www.printsolutionsrl.it/images/posters/aurumpress-2.jpg","uploadDate":"2024-01-01","contentUrl":"https://www.printsolutionsrl.it/videos/aurumpress-2.mp4","publisher":{"@type":"Organization","name":"Print Solution S.r.l.","url":"https://www.printsolutionsrl.it"} }
       ]) }} />
       {/* Hero */}

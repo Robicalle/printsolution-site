@@ -57,7 +57,7 @@ function getSpecs(l: string) { return l === 'it' ? [
   ["Operazioni", "Taglio, scanalatura, cordonatura, incollaggio"],
   ["Produttività", "500-600 scatole/ora"],
   ["Cambio formato", "10 secondi"],
-  ["Spessore cartone", "Da 1 a 7 mm"],
+  ["Spessore cartone", "Da 1 a 17 mm"],
   ["Incollaggio", "A caldo e a freddo"],
   ["Automazione", "Completamente automatico"],
 
@@ -66,7 +66,7 @@ function getSpecs(l: string) { return l === 'it' ? [
   ["Operations", "Cutting, creasing, scoring, gluing"],
   ["Throughput", "500-600 boxes/hour"],
   ["Format changeover", "10 seconds"],
-  ["Cardboard thickness", "From 1 to 7 mm"],
+  ["Cardboard thickness", "From 1 to 17 mm"],
   ["Gluing", "Hot and cold"],
   ["Automation", "Fully automatic"],
 ]; }
@@ -105,8 +105,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75" />
       </svg>
     ),
-    title: "Cartone da 1 a 7mm", titleEn: "Cardboard 1 to 7mm",
-    desc: "Lavora con un ampio range di spessori, dal cartone leggero fino a 7mm per imballi pesanti.", descEn: "Works with a wide range of thicknesses, from lightweight cardboard up to 7mm for heavy-duty packaging.",
+    title: "Cartone da 1 a 17mm", titleEn: "Cardboard 1 to 17mm",
+    desc: "Lavora con un ampio range di spessori, dal cartone leggero fino a 17mm per imballi pesanti.", descEn: "Works with a wide range of thicknesses, from lightweight cardboard up to 17mm for heavy-duty packaging.",
   },
   {
     icon: (
@@ -226,7 +226,7 @@ export default async function () {
           </p>
           <p className="text-gray-500 leading-relaxed mb-4">
             Il cambio formato avviene in soli 10 secondi, eliminando i tempi morti e massimizzando l&apos;efficienza
-            produttiva. La macchina lavora con cartone da 1 a 7mm di spessore, adattandosi sia a imballi leggeri
+            produttiva. La macchina lavora con cartone da 1 a 17mm di spessore, adattandosi sia a imballi leggeri
             che a scatole per spedizioni pesanti.
           </p>
           <p className="text-gray-500 leading-relaxed">
@@ -240,7 +240,7 @@ export default async function () {
           </p>
           <p className="text-gray-500 leading-relaxed mb-4">
             Format changeover takes just 10 seconds, eliminating downtime and maximising production efficiency.
-            The machine handles cardboard from 1 to 7 mm thick, suiting both lightweight packaging
+            The machine handles cardboard from 1 to 17 mm thick, suiting both lightweight packaging
             and heavy-duty shipping boxes.
           </p>
           <p className="text-gray-500 leading-relaxed">

@@ -84,6 +84,12 @@ function Hero({ locale }: { locale: string }) {
             <p className="text-base sm:text-lg lg:text-xl text-gray-300/90 mb-8 lg:mb-12 leading-relaxed max-w-2xl opacity-0 animate-fade-up-delay-2">
               {locale === 'it' ? 'Scatole personalizzate, etichette professionali: tecnologia, competenza e assistenza per la tua azienda.' : 'Custom boxes, professional labels: technology, expertise and support for your business.'}
             </p>
+            <p className="sr-only">
+              {locale === 'it'
+                ? 'Print Solution S.r.l. è il distributore italiano di riferimento per stampanti digitali per packaging ed etichette. Dal 2010 vendiamo e assistiamo box maker automatici, stampanti single-pass per cartone ondulato e etichettatrici inkjet industriali. Sede e sala demo a Sesto San Giovanni, Milano. Serviamo oltre 1.500 aziende in più di 20 paesi. Marchi distribuiti: Anypack, GreenBox, Afinia, EDM.'
+                : 'Print Solution S.r.l. is Italy\'s leading distributor of digital printers for packaging and labels. Since 2010 we sell and service automatic box makers, single-pass corrugated cardboard printers and industrial inkjet label printers. Showroom and demo room near Milan, Italy. We serve over 1,500 companies in 20+ countries. Brands: Anypack, GreenBox, Afinia, EDM.'
+              }
+            </p>
             <div className="flex flex-row gap-3 sm:gap-5 opacity-0 animate-fade-up-delay-2">
               <Link href="/soluzioni" className="inline-flex items-center justify-center px-6 sm:px-10 py-3.5 sm:py-5 bg-cyan-500 hover:bg-cyan-400 text-white font-semibold rounded-full transition-all text-base sm:text-xl">
                 {locale === 'it' ? 'Le Nostre Soluzioni →' : 'Our Solutions →'}

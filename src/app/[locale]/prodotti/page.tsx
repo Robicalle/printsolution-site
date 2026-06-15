@@ -9,10 +9,12 @@ export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
   const it = locale === "it";
   return {
-    title: it ? "Tutti i Prodotti | Print Solution" : "All Products | Print Solution",
+    title: it
+      ? "Stampanti per Packaging ed Etichette | Print Solution"
+      : "Packaging & Label Printers | Print Solution",
     description: it
-      ? "Scopri tutta la gamma di stampanti digitali per packaging ed etichette di Print Solution."
-      : "Discover the full range of digital printers for packaging and labels from Print Solution.",
+      ? "Tutta la gamma di stampanti digitali Print Solution: box maker automatici, stampanti per cartone ondulato, etichettatrici inkjet e laser. Demo gratuita a Milano."
+      : "Full range of Print Solution digital printers: automatic box makers, corrugated cardboard printers, inkjet and laser label printers. Free demo near Milan.",
     alternates: {
       canonical: locale === 'it' ? `https://www.printsolutionsrl.it/prodotti` : `https://www.printsolutionsrl.it/en/prodotti`,
       languages: {

@@ -8,21 +8,21 @@ export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
   return {
     title: locale === 'it'
-      ? "Print Solution — Soluzioni Digitali per la stampa di Labelling e Packaging"
-      : "Print Solution — Digital Solutions for Labelling and Packaging Printing",
+      ? "Print Solution — Stampanti per Packaging ed Etichette dal 2010"
+      : "Print Solution — Digital Packaging & Label Printers | Italy",
     description: locale === 'it'
-      ? "Stampa digitale packaging, etichettatura industriale e consumabili. Dal 2010, Print Solution è il punto di riferimento italiano per soluzioni di stampa digitale."
-      : "Digital packaging printing, industrial labelling and consumables. Since 2010, Print Solution has been Italy's reference point for digital printing solutions.",
+      ? "Stampanti digitali per scatole personalizzate, etichette a colori e packaging industriale. Box maker automatici, sistemi single-pass e inkjet. Demo gratuita a Sesto San Giovanni (MI)."
+      : "Digital printers for custom boxes, colour labels and industrial packaging. Automatic box makers, single-pass and inkjet systems. Free demo near Milan, Italy.",
     keywords: locale === 'it'
       ? ["stampa digitale packaging", "etichettatura industriale", "Print Solution", "stampante packaging", "stampa etichette industriale", "box maker automatico"]
       : ["digital packaging printing", "industrial labelling", "Print Solution", "packaging printer", "industrial label printing", "automatic box maker"],
     openGraph: {
       title: locale === 'it'
-        ? "Print Solution — Soluzioni Digitali per la stampa di Labelling e Packaging"
-        : "Print Solution — Digital Solutions for Labelling and Packaging Printing",
+        ? "Print Solution — Stampanti per Packaging ed Etichette dal 2010"
+        : "Print Solution — Digital Packaging & Label Printers | Italy",
       description: locale === 'it'
-        ? "Stampa digitale packaging, etichettatura industriale e consumabili. Dal 2010, il punto di riferimento italiano per la stampa digitale."
-        : "Digital packaging printing, industrial labelling and consumables. Since 2010, Italy's reference point for digital printing.",
+        ? "Stampanti digitali per scatole personalizzate, etichette a colori e packaging industriale. Box maker automatici, sistemi single-pass e inkjet. Demo gratuita a Sesto San Giovanni (MI)."
+        : "Digital printers for custom boxes, colour labels and industrial packaging. Automatic box makers, single-pass and inkjet systems. Free demo near Milan, Italy.",
       images: ["/images/hero-boxes.webp"],
       type: "website",
       locale: locale === 'it' ? "it_IT" : "en_US",
@@ -60,10 +60,18 @@ const homepageJsonLd = {
     "https://www.linkedin.com/company/print-solution-srl",
   ],
   knowsAbout: [
-    "stampanti digitali etichette",
-    "packaging digitale",
-    "stampanti inkjet industriali",
-    "consumabili stampa digitale",
+    "stampanti digitali per packaging",
+    "box maker automatici",
+    "stampa single-pass cartone ondulato",
+    "etichette a colori inkjet",
+    "stampanti per etichette in bobina",
+    "packaging personalizzato on-demand",
+    "stampa digitale fustellatura",
+    "etichettatrici industriali",
+    "GreenBox corrugated printer",
+    "Anypack box maker",
+    "Afinia label printer",
+    "digital packaging Italy",
   ],
 };
 

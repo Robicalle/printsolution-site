@@ -6,10 +6,12 @@ import { getSiteSettings } from "@/sanity/lib/fetchers";
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
   return {
-    title: locale === 'it' ? "Contatti" : "Contact Us",
+    title: locale === 'it'
+      ? "Contatti — Demo Gratuita a Milano | Print Solution"
+      : "Contact Us — Free Demo near Milan | Print Solution",
     description: locale === 'it'
-      ? "Contatta Print Solution: richiedi informazioni, consulenza gratuita o visita la sala demo a Sesto San Giovanni (MI). Tel. +39 02 4943 9417."
-      : "Contact Print Solution: request information, free consultation or visit our demo room in Sesto San Giovanni (MI). Tel. +39 02 4943 9417.",
+      ? "Visita la sala demo di Print Solution a Sesto San Giovanni (MI): stampanti per packaging, box maker e etichettatrici in funzione. Consulenza gratuita. Tel. +39 02 4943 9417."
+      : "Visit Print Solution's demo room in Sesto San Giovanni (MI): packaging printers, box makers and label printers in action. Free consultation. Tel. +39 02 4943 9417.",
     keywords: locale === 'it'
       ? ["contatti Print Solution", "demo stampante packaging", "sala demo stampa digitale", "Sesto San Giovanni"]
       : ["contact Print Solution", "packaging printer demo", "digital printing demo room", "Sesto San Giovanni"],

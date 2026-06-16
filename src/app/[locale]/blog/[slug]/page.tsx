@@ -437,11 +437,11 @@ export default async function BlogPostPage({
                   className="card-modern overflow-hidden group hover:-translate-y-1 transition-transform duration-300 bg-white"
                 >
                   {p.image && (
-                    <div className="h-48 relative overflow-hidden bg-gray-50">
+                    <div className="h-40 relative overflow-hidden bg-gray-50">
                       <img
                         src={p.image}
                         alt={p.name}
-                        className="absolute inset-0 w-full h-full object-contain p-3 group-hover:scale-105 transition-transform duration-500"
+                        className="absolute inset-0 w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-500"
                         loading="lazy"
                       />
                     </div>

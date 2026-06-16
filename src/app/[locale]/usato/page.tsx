@@ -32,6 +32,45 @@ function getProducts(locale: string) {
   const it = locale === 'it';
   return [
     {
+      name: "UniNet iColor 700 + Scorpio Plus",
+      subtitle: it ? "Bundle Stampante Etichette + Finitura — Offerta Esclusiva" : "Label Printer + Finisher Bundle — Exclusive Offer",
+      badge: it ? "BUNDLE OFFERTA" : "BUNDLE DEAL",
+      badgeColor: "bg-cyan-600",
+      price: "€ 6.500",
+      desc: it
+        ? "Bundle completo per la stampa e finitura professionale di etichette in-house. UniNet iColor 700 è una stampante digitale LED per etichette a colori ad alta velocità con tecnologia single-pass CMYK; abbinata al Scorpio Plus, sistema di finitura desktop per plastificazione, fustellatura e rebobinatura. Tutto il necessario per produrre etichette finite professionali direttamente in azienda."
+        : "Complete bundle for in-house professional label printing and finishing. The UniNet iColor 700 is a high-speed LED digital label printer with single-pass CMYK technology; paired with the Scorpio Plus, a desktop finishing system for lamination, die-cutting and rewinding. Everything you need to produce professionally finished labels directly in-house.",
+      specs: it ? [
+        "LED CMYK single-pass — 1200×600 dpi",
+        "Velocità 5 mt/min",
+        "Larghezza supporti 76,2 – 216 mm",
+        "Stampa bianco opaco",
+        "Supporta etichette prefustellate e in continuo",
+        "Scorpio Plus: plastificazione + fustellatura",
+        "Scorpio Plus: ribobinatura automatica",
+        "Soluzione completa stampa → finitura",
+      ] : [
+        "LED CMYK single-pass — 1200×600 dpi",
+        "Speed 5 m/min",
+        "Media width 76.2 – 216 mm",
+        "Prints white ink",
+        "Supports die-cut and continuous labels",
+        "Scorpio Plus: lamination + die-cutting",
+        "Scorpio Plus: automatic rewinding",
+        "Complete print-to-finish solution",
+      ],
+      highlights: it ? [
+        "Bundle completo pronto all'uso",
+        "Stampa + finitura in-house",
+        "Prezzo eccezionale € 6.500",
+      ] : [
+        "Complete ready-to-use bundle",
+        "Print + finish in-house",
+        "Exceptional price € 6,500",
+      ],
+      image: "/images/products/uninet-icolor700-scorpio.jpg",
+    },
+    {
       name: it ? "EDM-650X Usata" : "EDM-650X Pre-Owned",
       subtitle: it ? "Stampante Single-Pass — Usato Garantito" : "Single-Pass Printer — Certified Pre-Owned",
       badge: it ? "USATO GARANTITO" : "CERTIFIED PRE-OWNED",
@@ -212,6 +251,12 @@ export default async function UsatoPage() {
                     {p.name}
                   </h2>
                   <p className="text-cyan-500 font-semibold mb-4">{p.subtitle}</p>
+                  {'price' in p && p.price && (
+                    <div className="inline-flex items-center gap-2 bg-cyan-50 border border-cyan-200 rounded-xl px-5 py-3 mb-5">
+                      <span className="text-3xl font-extrabold text-cyan-700">{p.price}</span>
+                      <span className="text-sm text-cyan-600 font-medium">{locale === 'it' ? '+ IVA · bundle completo' : '+ VAT · complete bundle'}</span>
+                    </div>
+                  )}
                   <p className="text-gray-500 leading-relaxed mb-6">{p.desc}</p>
 
                   {/* Highlights */}

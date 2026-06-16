@@ -7,29 +7,40 @@ export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
   const isIt = locale === 'it';
   return {
-    title: isIt ? "Any-Press: Stampante Laser LED 5 Colori CMYK+Bianco" : "Any-Press: 5-Colour LED Laser Label Printer CMYK+White",
+    title: isIt ? "Any-Press | Stampante Laser LED CMYK+Bianco per Etichette e Packaging — Print Solution" : "Any-Press | LED Laser Printer CMYK+White for Labels & Flexible Packaging — Print Solution",
     description: isIt
-      ? "Any-Press: stampante laser LED 5 colori CMYK+Bianco per etichette e packaging flessibile. 1200 dpi. Print Solution"
-      : "Any-Press: 5-colour LED laser printer CMYK+White for labels and flexible packaging. 1200 dpi. Print Solution",
+      ? "Any-Press: stampa etichette e packaging flessibile in-house con laser LED 5 colori CMYK+Bianco. 1200 dpi, 5 m/min, zero lastre. Dal primo pezzo, senza minimi d'ordine. Scopri le specifiche."
+      : "Any-Press: in-house label and flexible packaging printing with 5-colour LED laser CMYK+White. 1200 dpi, 5 m/min, no plates. From the first piece, no minimum order. Discover specs.",
     keywords: [
-    "Any-Press",
-    "stampante laser LED",
-    "CMYK bianco",
-    "etichette kraft",
-    "packaging flessibile",
-    "toner bianco",
-  ],
+      "Any-Press",
+      "any laser",
+      "stampante laser LED",
+      "stampante laser etichette",
+      "CMYK bianco",
+      "toner bianco etichette",
+      "etichette kraft",
+      "packaging flessibile",
+      "stampante etichette packaging",
+      "stampa etichette in-house",
+    ],
     openGraph: {
-      title: isIt ? "Any-Press: Stampante Laser LED 5 Colori CMYK+Bianco | Print Solution" : "Any-Press: 5-Colour LED Laser Label Printer CMYK+White | Print Solution",
+      title: isIt ? "Any-Press | Stampante Laser LED CMYK+Bianco per Etichette e Packaging — Print Solution" : "Any-Press | LED Laser Printer CMYK+White for Labels & Flexible Packaging — Print Solution",
       description: isIt
-        ? "Any-Press: stampante laser LED 5 colori CMYK+Bianco per etichette e packaging flessibile. 1200 dpi. Print Solution"
-        : "Any-Press: 5-colour LED laser printer CMYK+White for labels and flexible packaging. 1200 dpi. Print Solution",
+        ? "Any-Press: stampa etichette e packaging flessibile in-house con laser LED 5 colori CMYK+Bianco. 1200 dpi, 5 m/min, zero lastre. Dal primo pezzo, senza minimi d'ordine."
+        : "Any-Press: in-house label and flexible packaging printing with 5-colour LED laser CMYK+White. 1200 dpi, 5 m/min, no plates. From the first piece, no minimum order.",
       images: ["/images/products/any-press.avif"],
       type: "website",
       locale: isIt ? "it_IT" : "en_US",
     },
     twitter: { card: "summary_large_image" },
-    alternates: { canonical: locale === 'it' ? `https://www.printsolutionsrl.it/prodotti/any-press` : `https://www.printsolutionsrl.it/en/prodotti/any-press` },
+    alternates: {
+      canonical: locale === 'it' ? `https://www.printsolutionsrl.it/prodotti/any-press` : `https://www.printsolutionsrl.it/en/prodotti/any-press`,
+      languages: {
+        'it': `https://www.printsolutionsrl.it/prodotti/any-press`,
+        'en': `https://www.printsolutionsrl.it/en/prodotti/any-press`,
+        'x-default': `https://www.printsolutionsrl.it/prodotti/any-press`,
+      },
+    },
   };
 }
 
@@ -180,7 +191,7 @@ export default async function AnyPressPage() {
       <section className="bg-white pt-8 lg:pt-10 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">
           <div className="relative w-full aspect-[16/9] rounded-3xl overflow-hidden">
-            <Image src="/images/products/any-press.avif" alt="Any-Press — stampante laser LED 5 colori CMYK bianco per etichette" fill className="object-contain p-6" />
+            <Image src="/images/products/any-press.avif" alt="Any-Press — stampante laser LED 5 colori CMYK bianco per etichette" fill className="object-contain p-6" priority />
           </div>
         </div>
       </section>

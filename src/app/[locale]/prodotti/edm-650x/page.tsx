@@ -9,28 +9,43 @@ export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
   const isIt = locale === 'it';
   return {
-    title: isIt ? "EDM-650X: Stampante Inkjet Single-Pass Cartone Ondulato" : "EDM-650X: Single-Pass Inkjet Printer for Corrugated Cardboard",
+    title: isIt ? "EDM-650X | Stampa Packaging su Cartone Ondulato In-House • Inkjet Single-Pass Scalabile — Print Solution" : "EDM-650X | In-House Corrugated Packaging Printer • Scalable Single-Pass Inkjet — Print Solution",
     description: isIt
-      ? "EDM-650X: stampante inkjet single-pass per cartone ondulato. Da 2 a 6 teste HP, fino a 30 m/min, 1200 dpi. Print Solution"
-      : "EDM-650X: single-pass inkjet printer for corrugated cardboard. 2 to 6 HP heads, up to 30 m/min, 1200 dpi. Print Solution",
+      ? "Porta la produzione packaging in-house con EDM-650X: stampa inkjet single-pass su cartone ondulato, 6 configurazioni scalabili, fino a 30 m/min, 1200 dpi. Industry 4.0 Ready. Zero lastre, dal primo pezzo, senza minimi d'ordine."
+      : "Bring packaging production in-house with EDM-650X: single-pass inkjet on corrugated cardboard, 6 scalable configurations, up to 30 m/min, 1200 dpi. Industry 4.0 Ready. No plates, from the first piece, no minimum order.",
     keywords: [
-    "stampante cartone ondulato",
-    "stampa inkjet cartone",
-    "stampa digitale cartone ondulato",
-    "EDM-650X",
-    "stampante single-pass",
-  ],
+      "EDM-650X",
+      "EDM650X",
+      "stampante packaging digitale",
+      "stampante cartone ondulato",
+      "stampa inkjet cartone ondulato",
+      "stampa cartone ondulato in-house",
+      "stampante inkjet single-pass cartone",
+      "stampa digitale cartone ondulato",
+      "stampa packaging industriale",
+      "stampante inkjet industriale cartone",
+      "stampa diretta su cartone",
+      "packaging in-house",
+      "industry 4.0 packaging",
+    ],
     openGraph: {
-      title: isIt ? "EDM-650X: Stampante Inkjet Single-Pass Cartone Ondulato | Print Solution" : "EDM-650X: Single-Pass Inkjet Printer for Corrugated Cardboard | Print Solution",
+      title: isIt ? "EDM-650X | Stampa Packaging su Cartone Ondulato In-House • Inkjet Single-Pass Scalabile — Print Solution" : "EDM-650X | In-House Corrugated Packaging Printer • Scalable Single-Pass Inkjet — Print Solution",
       description: isIt
-        ? "EDM-650X: stampante inkjet single-pass per cartone ondulato. Da 2 a 6 teste HP, fino a 30 m/min, 1200 dpi. Print Solution"
-        : "EDM-650X: single-pass inkjet printer for corrugated cardboard. 2 to 6 HP heads, up to 30 m/min, 1200 dpi. Print Solution",
+        ? "Porta la produzione packaging in-house con EDM-650X: stampa inkjet single-pass su cartone ondulato, 6 configurazioni scalabili, fino a 30 m/min, 1200 dpi. Industry 4.0 Ready. Zero lastre, dal primo pezzo."
+        : "Bring packaging production in-house with EDM-650X: single-pass inkjet on corrugated cardboard, 6 scalable configurations, up to 30 m/min, 1200 dpi. Industry 4.0 Ready. No plates, from the first piece.",
       images: ["/images/products/edm-650x-photo.avif"],
       type: "website",
       locale: isIt ? "it_IT" : "en_US",
     },
     twitter: { card: "summary_large_image" },
-    alternates: { canonical: locale === 'it' ? `https://www.printsolutionsrl.it/prodotti/edm-650x` : `https://www.printsolutionsrl.it/en/prodotti/edm-650x` },
+    alternates: {
+      canonical: locale === 'it' ? `https://www.printsolutionsrl.it/prodotti/edm-650x` : `https://www.printsolutionsrl.it/en/prodotti/edm-650x`,
+      languages: {
+        'it': `https://www.printsolutionsrl.it/prodotti/edm-650x`,
+        'en': `https://www.printsolutionsrl.it/en/prodotti/edm-650x`,
+        'x-default': `https://www.printsolutionsrl.it/prodotti/edm-650x`,
+      },
+    },
   };
 }
 
@@ -245,11 +260,11 @@ export default async function () {
       {/* Descrizione */}
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
         <div className="container-custom max-w-4xl">
-          <h2 className="text-3xl font-bold text-dark-800 mb-6">{it ? 'Stampa Industriale su Grande Formato' : 'Industrial Large Format Printing'}</h2>
+          <h2 className="text-3xl font-bold text-dark-800 mb-6">{it ? 'Stampante Packaging Digitale su Cartone Ondulato: Qualità Industriale' : 'Digital Packaging Printer for Corrugated Cardboard: Industrial Quality'}</h2>
           <p className="text-gray-500 leading-relaxed mb-4">
             {it
-              ? 'La EDM-650X è la soluzione professionale per la stampa digitale inkjet su carta e cartone a fogli stesi. Progettata per volumi industriali, combina la tecnologia single-pass con teste di stampa HP di ultima generazione per garantire velocità e qualità senza precedenti nel settore.'
-              : 'The EDM-650X is the professional solution for digital inkjet printing on paper and corrugated board sheets. Designed for industrial volumes, it combines single-pass technology with latest-generation HP printheads to deliver unprecedented speed and quality in the sector.'}
+              ? 'La EDM-650X è la stampante packaging digitale inkjet single-pass per cartone ondulato e carta a fogli stesi. Progettata per volumi industriali, combina la tecnologia single-pass con teste di stampa HP di ultima generazione per garantire velocità di stampa diretta su cartone senza precedenti nel settore.'
+              : 'The EDM-650X is the single-pass digital packaging printer for corrugated cardboard and flat-sheet paper. Designed for industrial volumes, it combines single-pass technology with latest-generation HP printheads to deliver unprecedented direct-on-cardboard printing speeds in the sector.'}
           </p>
           <p className="text-gray-500 leading-relaxed mb-4">
             {it

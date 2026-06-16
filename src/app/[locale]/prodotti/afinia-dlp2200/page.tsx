@@ -28,7 +28,14 @@ export async function generateMetadata(): Promise<Metadata> {
       locale: isIt ? "it_IT" : "en_US",
     },
     twitter: { card: "summary_large_image" },
-    alternates: { canonical: locale === 'it' ? `https://www.printsolutionsrl.it/prodotti/afinia-dlp2200` : `https://www.printsolutionsrl.it/en/prodotti/afinia-dlp2200` },
+    alternates: {
+      canonical: locale === 'it' ? `https://www.printsolutionsrl.it/prodotti/afinia-dlp2200` : `https://www.printsolutionsrl.it/en/prodotti/afinia-dlp2200`,
+      languages: {
+        'it': `https://www.printsolutionsrl.it/prodotti/afinia-dlp2200`,
+        'en': `https://www.printsolutionsrl.it/en/prodotti/afinia-dlp2200`,
+        'x-default': `https://www.printsolutionsrl.it/prodotti/afinia-dlp2200`,
+      },
+    },
   };
 }
 

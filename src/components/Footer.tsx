@@ -50,6 +50,10 @@ export default function Footer() {
               <li><Link href="/soluzioni/labbratura" className="hover:text-white transition-colors duration-200 inline-block py-2 min-h-[44px]">{t("bookEdging")}</Link></li>
               <li><Link href="/soluzioni/consumabili" className="hover:text-white transition-colors duration-200 inline-block py-2 min-h-[44px]">{t("consumables")}</Link></li>
             </ul>
+            <div className="mt-4 pt-3 border-t border-white/5 space-y-0 text-sm">
+              <Link href="/blog" className="block hover:text-white transition-colors duration-200 py-2">📰 {t("blog")}</Link>
+              <Link href="/chi-siamo" className="block hover:text-white transition-colors duration-200 py-2">{t("aboutUs")}</Link>
+            </div>
           </div>
 
           {/* Prodotti */}
@@ -75,6 +79,15 @@ export default function Footer() {
             <div className="mt-4 pt-3 border-t border-white/5 space-y-0 text-sm">
               <Link href="/promozioni" className="block hover:text-white transition-colors duration-200 text-cyan-400 py-2">🏷️ {t("promotions")}</Link>
               <Link href="/usato" className="block hover:text-white transition-colors duration-200 text-orange-400 py-2">♻️ {t("usedGuaranteed")}</Link>
+            </div>
+            <div className="mt-4 pt-3 border-t border-white/5 text-sm">
+              <p className="text-gray-600 uppercase text-xs tracking-wider mb-2">{t("brands")}</p>
+              <ul className="space-y-0 columns-2 gap-x-8">
+                <li><Link href="/brand/greenbox" className="hover:text-white transition-colors duration-200 inline-block py-1">GreenBox</Link></li>
+                <li><Link href="/brand/anypack" className="hover:text-white transition-colors duration-200 inline-block py-1">AnyPack</Link></li>
+                <li><Link href="/brand/dtm-print" className="hover:text-white transition-colors duration-200 inline-block py-1">DTM Print</Link></li>
+                <li><Link href="/brand/afinia-label" className="hover:text-white transition-colors duration-200 inline-block py-1">Afinia Label</Link></li>
+              </ul>
             </div>
           </div>
 

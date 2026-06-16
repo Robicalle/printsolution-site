@@ -29,7 +29,14 @@ export async function generateMetadata(): Promise<Metadata> {
       locale: isIt ? "it_IT" : "en_US",
     },
     twitter: { card: "summary_large_image" },
-    alternates: { canonical: locale === 'it' ? `https://www.printsolutionsrl.it/prodotti/greenbox-print-book` : `https://www.printsolutionsrl.it/en/prodotti/greenbox-print-book` },
+    alternates: {
+      canonical: locale === 'it' ? `https://www.printsolutionsrl.it/prodotti/greenbox-print-book` : `https://www.printsolutionsrl.it/en/prodotti/greenbox-print-book`,
+      languages: {
+        'it': `https://www.printsolutionsrl.it/prodotti/greenbox-print-book`,
+        'en': `https://www.printsolutionsrl.it/en/prodotti/greenbox-print-book`,
+        'x-default': `https://www.printsolutionsrl.it/prodotti/greenbox-print-book`,
+      },
+    },
   };
 }
 
@@ -187,7 +194,7 @@ export default async function GreenBoxPrintBookPage() {
       <section className="bg-white pt-8 lg:pt-10 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">
           <div className="relative w-full aspect-[16/9] rounded-3xl overflow-hidden">
-            <Image src="/images/products/greenbox-printbook.jpg" alt="GreenBox Print Book" fill className="object-contain p-6" />
+            <Image src="/images/products/greenbox-printbook.jpg" alt="GreenBox Print Book" fill className="object-contain p-6" priority />
           </div>
         </div>
       </section>

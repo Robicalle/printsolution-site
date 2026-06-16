@@ -49,7 +49,14 @@ export async function generateMetadata({
         locale: it ? "it_IT" : "en_US",
       },
       twitter: { card: "summary_large_image" },
-      alternates: { canonical: locale === 'it' ? `https://www.printsolutionsrl.it/soluzioni/${slug}` : `https://www.printsolutionsrl.it/en/soluzioni/${slug}` },
+      alternates: {
+        canonical: locale === 'it' ? `https://www.printsolutionsrl.it/soluzioni/${slug}` : `https://www.printsolutionsrl.it/en/soluzioni/${slug}`,
+        languages: {
+          'it': `https://www.printsolutionsrl.it/soluzioni/${slug}`,
+          'en': `https://www.printsolutionsrl.it/en/soluzioni/${slug}`,
+          'x-default': `https://www.printsolutionsrl.it/soluzioni/${slug}`,
+        },
+      },
     };
   } catch {
     return {};

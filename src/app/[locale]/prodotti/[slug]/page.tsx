@@ -44,7 +44,14 @@ export async function generateMetadata({
         locale: it ? "it_IT" : "en_US",
       },
       twitter: { card: "summary_large_image" },
-      alternates: { canonical: locale === 'it' ? `https://www.printsolutionsrl.it/prodotti/${slug}` : `https://www.printsolutionsrl.it/en/prodotti/${slug}` },
+      alternates: {
+        canonical: locale === 'it' ? `https://www.printsolutionsrl.it/prodotti/${slug}` : `https://www.printsolutionsrl.it/en/prodotti/${slug}`,
+        languages: {
+          'it': `https://www.printsolutionsrl.it/prodotti/${slug}`,
+          'en': `https://www.printsolutionsrl.it/en/prodotti/${slug}`,
+          'x-default': `https://www.printsolutionsrl.it/prodotti/${slug}`,
+        },
+      },
     };
   } catch {
     return {};

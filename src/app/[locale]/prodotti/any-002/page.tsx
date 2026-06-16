@@ -7,28 +7,38 @@ export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
   const isIt = locale === 'it';
   return {
-    title: isIt ? "Anytron ANY-002: Stampante Etichette con Fustella Integrata" : "Anytron ANY-002: Label Printer with Integrated Die-Cutter",
+    title: isIt ? "Anytron ANY-002 | Stampante Etichette in Bobina Laser Toner — Print Solution" : "Anytron ANY-002 | Laser Toner Roll Label Printer — Print Solution",
     description: isIt
-      ? "Anytron ANY-002: sistema stampa laser + fustellatura per etichette on-demand. 5.000 etichette in 2 ore, 1200 dpi. Print Solution"
-      : "Anytron ANY-002: laser print + die-cut system for on-demand labels. 5,000 labels in 2 hours, 1200 dpi. Print Solution",
+      ? "Anytron ANY-002: stampante etichette in bobina laser toner a colori. 1200 dpi, fino a 5.000 etichette in 2 ore, toner resistente ad acqua e abrasioni. Stampa etichette adesive on-demand. Print Solution."
+      : "Anytron ANY-002: colour laser toner roll label printer. 1200 dpi, up to 5,000 labels in 2 hours, toner resistant to water and abrasion. On-demand label printing. Print Solution.",
     keywords: [
-    "Anytron ANY-002",
-    "stampante etichette laser",
-    "fustellatrice etichette",
-    "stampa etichette on-demand",
-    "stampante toner etichette",
-  ],
+      "Anytron ANY-002",
+      "stampante etichette in bobina",
+      "stampante per etichette in bobina",
+      "stampante etichette laser",
+      "stampante etichette toner",
+      "stampante etichette adesive on-demand",
+      "stampa etichette on-demand",
+      "stampante toner etichette bobina",
+    ],
     openGraph: {
-      title: isIt ? "Anytron ANY-002: Stampante Etichette con Fustella Integrata | Print Solution" : "Anytron ANY-002: Label Printer with Integrated Die-Cutter | Print Solution",
+      title: isIt ? "Anytron ANY-002 | Stampante Etichette in Bobina Laser Toner — Print Solution" : "Anytron ANY-002 | Laser Toner Roll Label Printer — Print Solution",
       description: isIt
-        ? "Anytron ANY-002: sistema stampa laser + fustellatura per etichette on-demand. 5.000 etichette in 2 ore, 1200 dpi. Print Solution"
-        : "Anytron ANY-002: laser print + die-cut system for on-demand labels. 5,000 labels in 2 hours, 1200 dpi. Print Solution",
+        ? "Anytron ANY-002: stampante etichette in bobina laser toner a colori. 1200 dpi, fino a 5.000 etichette in 2 ore, toner resistente ad acqua e abrasioni. Stampa etichette adesive on-demand. Print Solution."
+        : "Anytron ANY-002: colour laser toner roll label printer. 1200 dpi, up to 5,000 labels in 2 hours, toner resistant to water and abrasion. On-demand label printing. Print Solution.",
       images: ["/images/products/any-002.avif"],
       type: "website",
       locale: isIt ? "it_IT" : "en_US",
     },
     twitter: { card: "summary_large_image" },
-    alternates: { canonical: locale === 'it' ? `https://www.printsolutionsrl.it/prodotti/any-002` : `https://www.printsolutionsrl.it/en/prodotti/any-002` },
+    alternates: {
+      canonical: locale === 'it' ? `https://www.printsolutionsrl.it/prodotti/any-002` : `https://www.printsolutionsrl.it/en/prodotti/any-002`,
+      languages: {
+        'it': `https://www.printsolutionsrl.it/prodotti/any-002`,
+        'en': `https://www.printsolutionsrl.it/en/prodotti/any-002`,
+        'x-default': `https://www.printsolutionsrl.it/prodotti/any-002`,
+      },
+    },
   };
 }
 
@@ -38,7 +48,7 @@ const productJsonLd = {
   name: "Anytron ANY-002",
   brand: { "@type": "Brand", name: "Anytron" },
   description:
-    "Sistema completo stampa laser digitale + fustellatura per etichette on-demand. Toner resistente, 1200 dpi, 9 m/min.",
+    "Stampante etichette in bobina laser toner a colori. 1200 dpi, fino a 5.000 etichette in 2 ore, toner resistente ad acqua e abrasioni.",
   image: "https://www.printsolutionsrl.it/images/products/any-002.avif",
   manufacturer: { "@type": "Organization", name: "Print Solution S.r.l." },
   offers: {
@@ -77,7 +87,7 @@ function getSpecs(l: string) { return l === 'it' ? [
   ["Colors", "4 colors (CMYK)"],
   ["Max print width", "104 mm"],
   ["Throughput", "Up to 5,000 labels in 2 hours"],
-  ["Die-cutting", "Integrated semi-rotary"],
+  ["Rewinding", "Integrated"],
   ["Lamination", "Optional inline"],
   ["Rewinding", "Integrated"],
   ["Toner", "CMYK – K 11,000 pag / CMY 11,500 pag (5% A4 coverage)"],
@@ -156,7 +166,7 @@ export default async function Any002Page() {
                 <span className="bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent">ANY-002</span>
               </h1>
               <p className="text-xl text-gray-300 leading-relaxed mb-8 max-w-lg">
-                {locale === 'it' ? (<>Sistema completo stampa laser + fustellatura. Fino a <strong className="text-white">5.000 etichette in 2 ore</strong> con toner resistente ad acqua, calore e abrasioni.</>) : (<>Complete laser printing + die-cutting system. Up to <strong className="text-white">5,000 labels in 2 hours</strong> with toner resistant to water, heat and abrasion.</>)}
+                {locale === 'it' ? (<>Stampante etichette in bobina laser toner a colori. Fino a <strong className="text-white">5.000 etichette in 2 ore</strong> con toner resistente ad acqua, calore e abrasioni.</>) : (<>Colour laser toner roll label printer. Up to <strong className="text-white">5,000 labels in 2 hours</strong> with toner resistant to water, heat and abrasion.</>)}
               </p>
               <div className="flex flex-wrap gap-4">
                 <a
@@ -176,7 +186,7 @@ export default async function Any002Page() {
       <section className="bg-white pt-8 lg:pt-10 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">
           <div className="relative w-full aspect-[16/9] rounded-3xl overflow-hidden">
-            <Image src="/images/products/any-002.avif" alt="Anytron ANY-002" fill className="object-contain p-6" />
+            <Image src="/images/products/any-002.avif" alt="Anytron ANY-002" fill className="object-contain p-6" priority />
           </div>
         </div>
       </section>
@@ -184,7 +194,7 @@ export default async function Any002Page() {
       {/* Descrizione */}
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
         <div className="container-custom max-w-4xl">
-          <h2 className="text-3xl font-bold text-dark-800 mb-6">{locale === 'it' ? 'Stampa Laser Digitale per Etichette On-Demand' : 'Digital Laser Printing for On-Demand Labels'}</h2>
+          <h2 className="text-3xl font-bold text-dark-800 mb-6">{locale === 'it' ? 'Stampante Etichette in Bobina Laser Toner: Qualità Professionale On-Demand' : 'Laser Toner Roll Label Printer: Professional Quality On-Demand'}</h2>
           {locale === 'it' ? (<><p className="text-gray-500 leading-relaxed mb-4">
             La Anytron ANY-002 è una stampante laser a colori progettata specificamente per la produzione di etichette 
             in piccoli e medi lotti. Con una risoluzione di 1200 dpi e una velocità fino a 9 m/min, è in grado di 

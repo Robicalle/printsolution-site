@@ -28,7 +28,14 @@ export async function generateMetadata(): Promise<Metadata> {
       locale: isIt ? "it_IT" : "en_US",
     },
     twitter: { card: "summary_large_image" },
-    alternates: { canonical: locale === 'it' ? `https://www.printsolutionsrl.it/prodotti/robotjet` : `https://www.printsolutionsrl.it/en/prodotti/robotjet` },
+    alternates: {
+      canonical: locale === 'it' ? `https://www.printsolutionsrl.it/prodotti/robotjet` : `https://www.printsolutionsrl.it/en/prodotti/robotjet`,
+      languages: {
+        'it': `https://www.printsolutionsrl.it/prodotti/robotjet`,
+        'en': `https://www.printsolutionsrl.it/en/prodotti/robotjet`,
+        'x-default': `https://www.printsolutionsrl.it/prodotti/robotjet`,
+      },
+    },
   };
 }
 

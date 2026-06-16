@@ -28,7 +28,14 @@ export async function generateMetadata(): Promise<Metadata> {
       locale: isIt ? "it_IT" : "en_US",
     },
     twitter: { card: "summary_large_image" },
-    alternates: { canonical: locale === 'it' ? `https://www.printsolutionsrl.it/prodotti/afinia-lt5c` : `https://www.printsolutionsrl.it/en/prodotti/afinia-lt5c` },
+    alternates: {
+      canonical: locale === 'it' ? `https://www.printsolutionsrl.it/prodotti/afinia-lt5c` : `https://www.printsolutionsrl.it/en/prodotti/afinia-lt5c`,
+      languages: {
+        'it': `https://www.printsolutionsrl.it/prodotti/afinia-lt5c`,
+        'en': `https://www.printsolutionsrl.it/en/prodotti/afinia-lt5c`,
+        'x-default': `https://www.printsolutionsrl.it/prodotti/afinia-lt5c`,
+      },
+    },
   };
 }
 
@@ -176,7 +183,7 @@ export default async function AfiniaLT5CPage() {
       <section className="bg-white pt-8 lg:pt-10 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">
           <div className="relative w-full aspect-[16/9] rounded-3xl overflow-hidden">
-            <Image src="/images/products/afinia-lt5c.avif" alt="Afinia LT5C — stampante etichette toner LED resistente acqua" fill className="object-contain p-6" />
+            <Image src="/images/products/afinia-lt5c.avif" alt="Afinia LT5C — stampante etichette toner LED resistente acqua" fill className="object-contain p-6" priority />
           </div>
         </div>
       </section>

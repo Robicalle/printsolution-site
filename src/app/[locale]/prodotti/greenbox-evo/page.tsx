@@ -9,28 +9,46 @@ export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
   const isIt = locale === 'it';
   return {
-    title: isIt ? "GreenBox EVO: Stampante Single-Pass per Packaging Digitale" : "GreenBox EVO: Single-Pass Digital Packaging Printer",
+    title: isIt ? "GreenBox EVO | Stampante per Scatole, Shopper e Packaging In-House • Inkjet Single-Pass CMYK — Print Solution" : "GreenBox EVO | Box, Shopper & Packaging Printer In-House • Single-Pass CMYK Inkjet — Print Solution",
     description: isIt
-      ? "GreenBox EVO: stampante single-pass per packaging. Stampa CMYK diretta su cartone e carta, 30 m/min, inchiostri eco. Print Solution"
-      : "GreenBox EVO: single-pass packaging printer. Direct CMYK on cardboard and paper, 30 m/min, eco-friendly inks. Print Solution",
+      ? "GreenBox EVO: stampante per scatole, shopper carta e packaging direttamente in azienda. Inkjet single-pass CMYK, 30 m/min, 1200 dpi, inchiostri pigmentati a base acqua. Dal primo pezzo, zero minimi d'ordine."
+      : "GreenBox EVO: printer for boxes, paper shoppers and packaging directly in-house. Single-pass CMYK inkjet, 30 m/min, 1200 dpi, water-based pigment inks. From the first piece, no minimum order.",
     keywords: [
-    "stampante etichette colori",
-    "stampa etichette bobina",
-    "stampante etichette industriale",
-    "GreenBox EVO",
-    "stampante single-pass packaging",
-  ],
+      "GreenBox EVO",
+      "stampante per scatole",
+      "stampante per scatole personalizzate",
+      "stampante packaging digitale",
+      "stampa shopper carta",
+      "stampa shopper digitale",
+      "shopper carta personalizzate",
+      "stampante per shopper",
+      "stampa borse carta personalizzate",
+      "stampa digitale cartone ondulato",
+      "stampante inkjet packaging",
+      "stampante packaging in-house",
+      "stampa packaging in azienda",
+      "greenbox evo industry 4.0",
+      "stampante per shopper in carta",
+      "stampa su scatole in-house",
+    ],
     openGraph: {
-      title: isIt ? "GreenBox EVO: Stampante Single-Pass per Packaging Digitale | Print Solution" : "GreenBox EVO: Single-Pass Digital Packaging Printer | Print Solution",
+      title: isIt ? "GreenBox EVO | Stampa Packaging, Shopper Carta e Cotone In-House • Inkjet Single-Pass CMYK — Print Solution" : "GreenBox EVO | In-House Packaging & Paper Shopper Printer • Single-Pass CMYK Inkjet — Print Solution",
       description: isIt
-        ? "GreenBox EVO: stampante single-pass per packaging. Stampa CMYK diretta su cartone e carta, 30 m/min, inchiostri eco. Print Solution"
-        : "GreenBox EVO: single-pass packaging printer. Direct CMYK on cardboard and paper, 30 m/min, eco-friendly inks. Print Solution",
+        ? "GreenBox EVO: stampa packaging, shopper carta e cotone direttamente in azienda. Inkjet single-pass CMYK, 30 m/min, 1200 dpi, inchiostri pigmentati eco-compatibili. Industry 4.0 Ready. Dal primo pezzo, zero minimi d'ordine."
+        : "GreenBox EVO: print packaging, paper and cotton shoppers directly in-house. Single-pass CMYK inkjet, 30 m/min, 1200 dpi, eco-compatible pigment inks. Industry 4.0 Ready. From the first piece, no minimum order.",
       images: ["/images/products/greenbox-evo-site-nobg.png"],
       type: "website",
       locale: isIt ? "it_IT" : "en_US",
     },
     twitter: { card: "summary_large_image" },
-    alternates: { canonical: locale === 'it' ? `https://www.printsolutionsrl.it/prodotti/greenbox-evo` : `https://www.printsolutionsrl.it/en/prodotti/greenbox-evo` },
+    alternates: {
+      canonical: locale === 'it' ? `https://www.printsolutionsrl.it/prodotti/greenbox-evo` : `https://www.printsolutionsrl.it/en/prodotti/greenbox-evo`,
+      languages: {
+        'it': `https://www.printsolutionsrl.it/prodotti/greenbox-evo`,
+        'en': `https://www.printsolutionsrl.it/en/prodotti/greenbox-evo`,
+        'x-default': `https://www.printsolutionsrl.it/prodotti/greenbox-evo`,
+      },
+    },
   };
 }
 
@@ -74,7 +92,7 @@ function getSpecs(l: string) { return l === 'it' ? [
   ["Max print width", "310 mm"],
   ["Max speed", "Up to 30 m/min"],
   ["Inks", "Pigmented water-based"],
-  ["Compatible media", "Cardboard, paper, kraft, jute"],
+  ["Compatible media", "Cardboard, corrugated, paper shoppers, cotton bags, kraft, jute"],
   ["Head maintenance", "Automatic"],
 ]; }
 
@@ -175,18 +193,33 @@ export default async function () {
       {
         "@type": "Question",
         name: "Che risoluzione raggiunge la GreenBox Evo?",
-        acceptedAnswer: { "@type": "Answer", text: "La GreenBox Evo raggiunge una risoluzione di 600x600 dpi per una qualità di stampa fotografica su cartone." },
+        acceptedAnswer: { "@type": "Answer", text: "La GreenBox Evo raggiunge una risoluzione di 1200x1200 dpi per una qualità di stampa fotografica su cartone, shopper e borse." },
+      },
+      {
+        "@type": "Question",
+        name: "La GreenBox EVO stampa su shopper di carta e cotone?",
+        acceptedAnswer: { "@type": "Answer", text: "Sì, la GreenBox EVO stampa direttamente su shopper di carta, borse in cotone, juta e kraft. La stampa è CMYK diretta senza clichè, ideale per personalizzazioni on-demand anche in piccole tirature." },
+      },
+      {
+        "@type": "Question",
+        name: "Posso stampare shopper personalizzati con logo con la GreenBox EVO?",
+        acceptedAnswer: { "@type": "Answer", text: "Sì. La GreenBox EVO permette la stampa di shopper carta e cotone personalizzati con logo a colori CMYK, senza minimi di tiratura e senza costi di setup. Ideale per tipografie, print shop e aziende che vogliono produrre shopper brandizzati in autonomia." },
       },
     ] : [
       {
         "@type": "Question",
         name: "What is the GreenBox Evo?",
-        acceptedAnswer: { "@type": "Answer", text: "The GreenBox Evo is a single-pass digital printer for corrugated cardboard, designed for direct printing on boxes and packaging." },
+        acceptedAnswer: { "@type": "Answer", text: "The GreenBox Evo is a single-pass digital printer for corrugated cardboard, paper shoppers and cotton bags, designed for direct CMYK printing without plates or setup costs." },
+      },
+      {
+        "@type": "Question",
+        name: "Can the GreenBox EVO print on paper and cotton shoppers?",
+        acceptedAnswer: { "@type": "Answer", text: "Yes, the GreenBox EVO prints directly on paper shoppers, cotton bags, jute and kraft. Direct CMYK printing with no plates, ideal for on-demand personalisation in short runs." },
       },
       {
         "@type": "Question",
         name: "What resolution does the GreenBox Evo achieve?",
-        acceptedAnswer: { "@type": "Answer", text: "The GreenBox Evo achieves a resolution of 600x600 dpi for photographic print quality on cardboard." },
+        acceptedAnswer: { "@type": "Answer", text: "The GreenBox Evo achieves a resolution of 1200x1200 dpi for photographic print quality on cardboard, shoppers and bags." },
       },
     ],
   };
@@ -211,8 +244,8 @@ export default async function () {
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">GreenBox EVO</h1>
               <p className="text-lg text-gray-300/90 leading-relaxed mb-8">
                 {it
-                  ? <>Stampante digitale inkjet single-pass CMYK per cartone, carta e juta. L&apos;entry point ideale nel mondo della stampa digitale su packaging.</>
-                  : 'CMYK single-pass inkjet digital printer for cardboard, paper and jute. The ideal entry point into the world of digital packaging printing.'}
+                  ? <>Stampante digitale inkjet single-pass CMYK per cartone, carta, juta e shopper. Stampa diretta su packaging e borse personalizzate — senza clichè, senza setup.</>
+                  : 'CMYK single-pass inkjet digital printer for cardboard, paper, jute and shoppers. Direct printing on packaging and custom bags — no plates, no setup.'}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20GreenBox%20EVO&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20GreenBox%20EVO.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full" data-track="click_cta" data-track-label="cta_greenbox_evo">{it ? 'Consulenza gratuita→' : 'Free consultation→'}</a>
@@ -225,7 +258,7 @@ export default async function () {
       <section className="bg-white pt-8 lg:pt-10 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">
           <div className="relative w-full aspect-[16/9] rounded-3xl overflow-hidden">
-            <Image src="/images/products/greenbox-evo-site-nobg.png" alt="GreenBox EVO" fill className="object-contain p-6" />
+            <Image src="/images/products/greenbox-evo-site-nobg.png" alt="GreenBox EVO" fill className="object-contain p-6" priority />
           </div>
         </div>
       </section>
@@ -233,11 +266,16 @@ export default async function () {
       {/* Descrizione */}
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
         <div className="container-custom max-w-4xl">
-          <h2 className="text-3xl font-bold text-dark-800 mb-6">{it ? 'Stampa Digitale su Packaging, Senza Compromessi' : 'Digital Printing on Packaging, No Compromises'}</h2>
+          <h2 className="text-3xl font-bold text-dark-800 mb-6">{it ? 'Stampante Digitale per Packaging, Shopper Carta e Cotone' : 'Digital Printer for Packaging, Paper and Cotton Shoppers'}</h2>
           <p className="text-gray-500 leading-relaxed mb-4">
             {it
-              ? <>La GreenBox EVO è una stampante inkjet single-pass progettata per chi vuole entrare nel mercato della stampa digitale su packaging con un investimento accessibile ma senza rinunciare alla qualità. Dotata di testina HP Pagewide da 30 cm, raggiunge velocità fino a 30 metri al minuto con risoluzione fino a 1200×1200 dpi.</>
-              : 'The GreenBox EVO is a single-pass inkjet printer designed for companies looking to enter the digital packaging printing market with an affordable investment and no compromise on quality. Equipped with a 30 cm HP Pagewide printhead, it reaches speeds of up to 30 metres per minute at fino a 1200×1200 dpi resolution.'}
+              ? <>La GreenBox EVO è la stampante digitale inkjet single-pass ideale per chi vuole stampare packaging, shopper di carta e borse in cotone personalizzati con un investimento accessibile e qualità professionale. Dotata di testina HP Pagewide da 30 cm, raggiunge velocità fino a 30 metri al minuto con risoluzione 1200×1200 dpi.</>
+              : 'The GreenBox EVO is the ideal single-pass digital inkjet printer for companies looking to print custom packaging, paper shoppers and cotton bags at an accessible investment with no compromise on professional quality. Equipped with a 30 cm HP Pagewide printhead, it reaches speeds of up to 30 metres per minute at 1200×1200 dpi resolution.'}
+          </p>
+          <p className="text-gray-500 leading-relaxed mb-4">
+            {it
+              ? <>Perfetta per tipografie e print shop che vogliono offrire shopper carta e cotone personalizzati on-demand: stampa CMYK diretta sul materiale, senza clichè né costi di setup, dal primo pezzo. Ideale per boutique, negozi e brand che cercano packaging e shopper brandizzati in piccole tirature.</>
+              : 'Perfect for print shops looking to offer custom paper and cotton shoppers on demand: direct CMYK printing with no plates or setup costs, from the very first piece. Ideal for boutiques, retailers and brands seeking branded packaging and shoppers in short runs.'}
           </p>
           <p className="text-gray-500 leading-relaxed mb-4">
             {it
@@ -300,11 +338,11 @@ export default async function () {
       {/* CTA */}
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-surface-50">
         <div className="container-custom text-center">
-          <h2 className="text-3xl font-bold text-dark-800 mb-6">{it ? 'Inizia a Stampare il Tuo Packaging' : 'Start Printing Your Packaging'}</h2>
+          <h2 className="text-3xl font-bold text-dark-800 mb-6">{it ? 'Stampa Packaging e Shopper con la GreenBox EVO' : 'Print Packaging & Shoppers with GreenBox EVO'}</h2>
           <p className="text-gray-500 max-w-xl mx-auto mb-8">
             {it
-              ? 'Porta i tuoi materiali e testa la GreenBox EVO nella nostra sala demo a Sesto San Giovanni.'
-              : 'Bring your materials and test the GreenBox EVO in our demo room in Sesto San Giovanni.'}
+              ? 'Porta i tuoi materiali — cartone, shopper carta o cotone — e testa la GreenBox EVO nella nostra sala demo a Sesto San Giovanni.'
+              : 'Bring your materials — cardboard, paper or cotton shoppers — and test the GreenBox EVO in our demo room in Sesto San Giovanni.'}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20GreenBox%20EVO&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20GreenBox%20EVO.%0A%0AGrazie" className="btn-primary text-lg" data-track="click_cta" data-track-label="cta_greenbox_evo">{it ? 'Consulenza gratuita→' : 'Free consultation→'}</a>

@@ -28,7 +28,14 @@ export async function generateMetadata(): Promise<Metadata> {
       locale: isIt ? "it_IT" : "en_US",
     },
     twitter: { card: "summary_large_image" },
-    alternates: { canonical: locale === 'it' ? `https://www.printsolutionsrl.it/prodotti/packprinter-uv` : `https://www.printsolutionsrl.it/en/prodotti/packprinter-uv` },
+    alternates: {
+      canonical: locale === 'it' ? `https://www.printsolutionsrl.it/prodotti/packprinter-uv` : `https://www.printsolutionsrl.it/en/prodotti/packprinter-uv`,
+      languages: {
+        'it': `https://www.printsolutionsrl.it/prodotti/packprinter-uv`,
+        'en': `https://www.printsolutionsrl.it/en/prodotti/packprinter-uv`,
+        'x-default': `https://www.printsolutionsrl.it/prodotti/packprinter-uv`,
+      },
+    },
   };
 }
 
@@ -188,7 +195,7 @@ export default async function PackPrinterUVPage() {
       <section className="bg-white pt-8 lg:pt-10 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">
           <div className="relative w-full aspect-[16/9] rounded-3xl overflow-hidden">
-            <Image src="/images/products/packprinter-uv.avif" alt="PackPrinter UV" fill className="object-contain p-6" />
+            <Image src="/images/products/packprinter-uv.avif" alt="PackPrinter UV" fill className="object-contain p-6" priority />
           </div>
         </div>
       </section>

@@ -8,28 +8,38 @@ export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
   const isIt = locale === 'it';
   return {
-    title: isIt ? "Afinia X350: Stampante Etichette Roll-to-Roll Pigmento" : "Afinia X350: Roll-to-Roll Pigment Colour Label Printer",
+    title: isIt ? "Afinia X350 | Stampante Etichette in Bobina Pigmento 45 m/min — Print Solution" : "Afinia X350 | Roll-to-Roll Pigment Label Printer 45 m/min — Print Solution",
     description: isIt
-      ? "Afinia X350: stampante etichette industriale ad alta velocità. Fino a 45 m/min, 1600 dpi, inchiostri pigmentati. Print Solution"
-      : "Afinia X350: high-speed industrial label printer. Up to 45 m/min, 1600 dpi, pigmented inks. Print Solution",
+      ? "Afinia X350: stampante etichette in bobina industriale con inchiostri pigmentati. Fino a 45 m/min, 1600 dpi, resistente ad acqua e UV. La stampante per etichette a bobina più veloce della categoria. Print Solution."
+      : "Afinia X350: industrial roll-to-roll label printer with pigmented inks. Up to 45 m/min, 1600 dpi, water and UV resistant. The fastest roll label printer in its category. Print Solution.",
     keywords: [
-    "Afinia X350",
-    "stampante etichette alta velocità",
-    "roll to roll",
-    "inchiostri pigmentati",
-    "stampa etichette industriale",
-  ],
+      "Afinia X350",
+      "stampante etichette in bobina",
+      "stampante per etichette a bobina",
+      "stampante etichette industriale",
+      "stampante etichette roll to roll",
+      "stampante etichette pigmento",
+      "etichette resistenti acqua",
+      "stampa etichette bobina industriale",
+    ],
     openGraph: {
-      title: isIt ? "Afinia X350: Stampante Etichette Roll-to-Roll Pigmento | Print Solution" : "Afinia X350: Roll-to-Roll Pigment Colour Label Printer | Print Solution",
+      title: isIt ? "Afinia X350 | Stampante Etichette in Bobina Pigmento 45 m/min — Print Solution" : "Afinia X350 | Roll-to-Roll Pigment Label Printer 45 m/min — Print Solution",
       description: isIt
-        ? "Afinia X350: stampante etichette industriale ad alta velocità. Fino a 45 m/min, 1600 dpi, inchiostri pigmentati. Print Solution"
-        : "Afinia X350: high-speed industrial label printer. Up to 45 m/min, 1600 dpi, pigmented inks. Print Solution",
+        ? "Afinia X350: stampante etichette in bobina industriale con inchiostri pigmentati. Fino a 45 m/min, 1600 dpi, resistente ad acqua e UV. La stampante per etichette a bobina più veloce della categoria. Print Solution."
+        : "Afinia X350: industrial roll-to-roll label printer with pigmented inks. Up to 45 m/min, 1600 dpi, water and UV resistant. The fastest roll label printer in its category. Print Solution.",
       images: ["/images/products/afinia-x350-full.png"],
       type: "website",
       locale: isIt ? "it_IT" : "en_US",
     },
     twitter: { card: "summary_large_image" },
-    alternates: { canonical: locale === 'it' ? `https://www.printsolutionsrl.it/prodotti/afinia-x350` : `https://www.printsolutionsrl.it/en/prodotti/afinia-x350` },
+    alternates: {
+      canonical: locale === 'it' ? `https://www.printsolutionsrl.it/prodotti/afinia-x350` : `https://www.printsolutionsrl.it/en/prodotti/afinia-x350`,
+      languages: {
+        'it': `https://www.printsolutionsrl.it/prodotti/afinia-x350`,
+        'en': `https://www.printsolutionsrl.it/en/prodotti/afinia-x350`,
+        'x-default': `https://www.printsolutionsrl.it/prodotti/afinia-x350`,
+      },
+    },
   };
 }
 
@@ -213,7 +223,7 @@ export default async function () {
       <section className="bg-white pt-8 lg:pt-10 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">
           <div className="relative w-full aspect-[16/9] rounded-3xl overflow-hidden">
-            <Image src="/images/products/afinia-x350-site.webp" alt="Afinia X350 — stampante etichette industriale pigmento 45 m/min" fill className="object-contain p-6" />
+            <Image src="/images/products/afinia-x350-site.webp" alt="Afinia X350 — stampante etichette industriale pigmento 45 m/min" fill className="object-contain p-6" priority />
           </div>
         </div>
       </section>
@@ -221,7 +231,7 @@ export default async function () {
       {/* Descrizione */}
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
         <div className="container-custom max-w-4xl">
-          <h2 className="text-3xl font-bold text-dark-800 mb-6">{locale === 'it' ? 'Stampa Industriale Roll-to-Roll fino a 45 Metri al Minuto' : 'Industrial Roll-to-Roll Printing at up to 45 Meters per Minute'}</h2>
+          <h2 className="text-3xl font-bold text-dark-800 mb-6">{locale === 'it' ? 'Stampante Etichette in Bobina Industriale: 45 Metri al Minuto con Pigmento' : 'Industrial Roll-to-Roll Label Printer: 45 Metres per Minute with Pigment Inks'}</h2>
           {locale === 'it' ? (<><p className="text-gray-500 leading-relaxed mb-4">
             La Afinia X350 è una stampante digitale roll-to-roll progettata per la produzione industriale di etichette e packaging flessibile. Con una velocità di stampa fino a 45 m/min e una risoluzione di 1600 × 1600 dpi, rappresenta la soluzione più veloce della sua categoria, capace di mantenere una qualità costante anche alle massime velocità grazie alla tecnologia Memjet DuraFlex.
           </p>

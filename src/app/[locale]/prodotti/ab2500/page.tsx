@@ -9,28 +9,40 @@ export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
   const isIt = locale === 'it';
   return {
-    title: isIt ? "Anypack AB2500: Box Maker Automatico per Scatole Su Misura" : "Anypack AB2500: Automatic Box Maker for Custom Corrugated Boxes",
+    title: isIt ? "Anypack AB2500 | Box Maker Automatico: Scatole On-Demand — Print Solution" : "Anypack AB2500 | Automatic Box Maker: Custom Boxes On-Demand — Print Solution",
     description: isIt
-      ? "Anypack AB2500: box maker automatico per scatole in cartone ondulato. 500-600 pezzi/ora, cambio formato in 10 sec. Print Solution"
-      : "Anypack AB2500: automatic box maker for corrugated cardboard. 500-600 boxes/hour, format change in 10 sec. Print Solution",
+      ? "Anypack AB2500: box maker automatico per scatole in cartone ondulato su misura. 500-600 pz/ora, cambio formato in 10 sec, fustellatura e incollaggio integrati. Print Solution."
+      : "Anypack AB2500: automatic box maker for custom corrugated cardboard boxes on-demand. 500-600 boxes/hour, format change in 10 sec, integrated die-cutting and gluing. Print Solution.",
     keywords: [
-    "box maker automatico",
-    "macchina produzione scatole",
-    "Anypack AB2500",
-    "scatole cartone ondulato",
-    "box maker on-demand",
-  ],
+      "box maker automatico",
+      "automatic box maker",
+      "box maker machine",
+      "Anypack AB2500",
+      "scatole cartone ondulato su misura",
+      "corrugated box maker",
+      "box on demand machine",
+      "custom box machine",
+      "automated box maker",
+      "macchina produzione scatole",
+    ],
     openGraph: {
-      title: isIt ? "Anypack AB2500: Box Maker Automatico per Scatole Su Misura | Print Solution" : "Anypack AB2500: Automatic Box Maker for Custom Corrugated Boxes | Print Solution",
+      title: isIt ? "Anypack AB2500 | Box Maker Automatico: Scatole On-Demand — Print Solution" : "Anypack AB2500 | Automatic Box Maker: Custom Boxes On-Demand — Print Solution",
       description: isIt
-        ? "Anypack AB2500: box maker automatico per scatole in cartone ondulato. 500-600 pezzi/ora, cambio formato in 10 sec. Print Solution"
-        : "Anypack AB2500: automatic box maker for corrugated cardboard. 500-600 boxes/hour, format change in 10 sec. Print Solution",
+        ? "Anypack AB2500: box maker automatico per scatole in cartone ondulato su misura. 500-600 pz/ora, cambio formato in 10 sec, fustellatura e incollaggio integrati. Print Solution."
+        : "Anypack AB2500: automatic box maker for custom corrugated cardboard boxes on-demand. 500-600 boxes/hour, format change in 10 sec, integrated die-cutting and gluing. Print Solution.",
       images: ["/images/products/ab2500.png"],
       type: "website",
       locale: isIt ? "it_IT" : "en_US",
     },
     twitter: { card: "summary_large_image" },
-    alternates: { canonical: locale === 'it' ? `https://www.printsolutionsrl.it/prodotti/ab2500` : `https://www.printsolutionsrl.it/en/prodotti/ab2500` },
+    alternates: {
+      canonical: locale === 'it' ? `https://www.printsolutionsrl.it/prodotti/ab2500` : `https://www.printsolutionsrl.it/en/prodotti/ab2500`,
+      languages: {
+        'it': `https://www.printsolutionsrl.it/prodotti/ab2500`,
+        'en': `https://www.printsolutionsrl.it/en/prodotti/ab2500`,
+        'x-default': `https://www.printsolutionsrl.it/prodotti/ab2500`,
+      },
+    },
   };
 }
 
@@ -210,7 +222,7 @@ export default async function () {
       <section className="bg-white pt-8 lg:pt-10 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">
           <div className="relative w-full aspect-[16/9] rounded-3xl overflow-hidden">
-            <Image src="/images/products/ab2500-hero-nobg.png" alt="Anypack AB2500" fill className="object-contain p-6" />
+            <Image src="/images/products/ab2500-hero-nobg.png" alt="Anypack AB2500" fill className="object-contain p-6" priority />
           </div>
         </div>
       </section>
@@ -218,7 +230,7 @@ export default async function () {
       {/* Descrizione */}
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
         <div className="container-custom max-w-4xl">
-          <h2 className="text-3xl font-bold text-dark-800 mb-6">{locale === 'it' ? 'Produzione Automatica di Scatole' : 'Automatic Box Production'}</h2>
+          <h2 className="text-3xl font-bold text-dark-800 mb-6">{locale === 'it' ? 'Box Maker Automatico: Scatole Su Misura On-Demand in Cartone Ondulato' : 'Automatic Box Maker: Custom Corrugated Boxes On-Demand'}</h2>
           {locale === 'it' ? (<><p className="text-gray-500 leading-relaxed mb-4">
             L&apos;Anypack AB2500 è un box maker completamente automatico che esegue taglio, scanalatura, cordonatura
             e incollaggio in un&apos;unica operazione. Progettato per la produzione industriale di scatole in cartone

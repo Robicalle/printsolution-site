@@ -29,7 +29,14 @@ export async function generateMetadata(): Promise<Metadata> {
       locale: isIt ? "it_IT" : "en_US",
     },
     twitter: { card: "summary_large_image" },
-    alternates: { canonical: locale === 'it' ? `https://www.printsolutionsrl.it/prodotti/afinia-dc350` : `https://www.printsolutionsrl.it/en/prodotti/afinia-dc350` },
+    alternates: {
+      canonical: locale === 'it' ? `https://www.printsolutionsrl.it/prodotti/afinia-dc350` : `https://www.printsolutionsrl.it/en/prodotti/afinia-dc350`,
+      languages: {
+        'it': `https://www.printsolutionsrl.it/prodotti/afinia-dc350`,
+        'en': `https://www.printsolutionsrl.it/en/prodotti/afinia-dc350`,
+        'x-default': `https://www.printsolutionsrl.it/prodotti/afinia-dc350`,
+      },
+    },
   };
 }
 

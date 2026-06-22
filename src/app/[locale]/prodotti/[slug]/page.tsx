@@ -65,9 +65,45 @@ export default async function ProductDynamicPage({
 }) {
   const { slug } = await params;
   const locale = await getLocale();
+  const it = locale === "it";
   const product = await getProductBySlug(slug);
 
   if (!product || !product.sezioniPagina?.length) notFound();
 
-  return <PageRenderer sections={product.sezioniPagina} locale={locale} />;
+  const base = it ? "https://www.printsolutionsrl.it" : "https://www.printsolutionsrl.it/en";
+  const seo = it ? product.seo : (product.seo_en || product.seo);
+
+  const productJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: it ? product.name : (product.name_en || product.name),
+    description: seo?.description || product.description || "",
+    brand: { "@type": "Brand", name: "Print Solution" },
+    manufacturer: { "@type": "Organization", name: "Print Solution S.r.l.", url: "https://www.printsolutionsrl.it" },
+    offers: {
+      "@type": "Offer",
+      url: `${base}/prodotti/${slug}`,
+      availability: "https://schema.org/InStock",
+      priceCurrency: "EUR",
+      seller: { "@type": "Organization", name: "Print Solution S.r.l." },
+    },
+  };
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: base },
+      { "@type": "ListItem", position: 2, name: it ? "Prodotti" : "Products", item: `${base}/prodotti` },
+      { "@type": "ListItem", position: 3, name: it ? product.name : (product.name_en || product.name), item: `${base}/prodotti/${slug}` },
+    ],
+  };
+
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+      <PageRenderer sections={product.sezioniPagina} locale={locale} />
+    </>
+  );
 }

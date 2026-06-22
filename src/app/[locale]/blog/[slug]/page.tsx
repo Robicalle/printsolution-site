@@ -44,6 +44,7 @@ export async function generateMetadata({
         title,
         description,
         type: "article",
+        locale: en ? "en_US" : "it_IT",
         ...(coverImgUrl && { images: [coverImgUrl] }),
       },
       twitter: {
@@ -53,7 +54,7 @@ export async function generateMetadata({
         ...(coverImgUrl && { images: [coverImgUrl] }),
       },
       alternates: {
-        canonical: `https://www.printsolutionsrl.it/blog/${slug}`,
+        canonical: en ? `https://www.printsolutionsrl.it/en/blog/${slug}` : `https://www.printsolutionsrl.it/blog/${slug}`,
         languages: {
           'it': `https://www.printsolutionsrl.it/blog/${slug}`,
           'en': `https://www.printsolutionsrl.it/en/blog/${slug}`,
@@ -329,13 +330,14 @@ export default async function BlogPostPage({
     description: displayExcerpt || post.seo?.description || "",
   };
 
+  const base = it ? "https://www.printsolutionsrl.it" : "https://www.printsolutionsrl.it/en";
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.printsolutionsrl.it" },
-      { "@type": "ListItem", position: 2, name: "Blog", item: "https://www.printsolutionsrl.it/blog" },
-      { "@type": "ListItem", position: 3, name: displayTitle, item: `https://www.printsolutionsrl.it/blog/${slug}` },
+      { "@type": "ListItem", position: 1, name: "Home", item: base },
+      { "@type": "ListItem", position: 2, name: "Blog", item: `${base}/blog` },
+      { "@type": "ListItem", position: 3, name: displayTitle, item: `${base}/blog/${slug}` },
     ],
   };
 

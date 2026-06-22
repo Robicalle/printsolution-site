@@ -46,8 +46,23 @@ export default async function ProdottiPage() {
     grouped[cat].push(p);
   }
 
+  const itemListJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: it ? "Stampanti per Packaging ed Etichette" : "Packaging & Label Printers",
+    url: it ? "https://www.printsolutionsrl.it/prodotti" : "https://www.printsolutionsrl.it/en/prodotti",
+    numberOfItems: products.length,
+    itemListElement: products.map((p: any, i: number) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: p.name,
+      url: `https://www.printsolutionsrl.it/${it ? "" : "en/"}prodotti/${p.slug?.current || p.slug}`,
+    })),
+  };
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }} />
       {/* Hero with background image */}
       <section className="relative text-white pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
         <Image

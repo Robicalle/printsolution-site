@@ -12,7 +12,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
   const it = locale === 'it';
   return {
-    title: it ? "Blog | Print Solution" : "Blog | Print Solution",
+    title: "Blog",
     description: it
       ? "Articoli e guide sulla stampa digitale per packaging, etichette a colori e cartone ondulato. Approfondimenti tecnici da Print Solution."
       : "Articles and guides on digital printing for packaging, colour labels and corrugated cardboard. Technical insights from Print Solution.",

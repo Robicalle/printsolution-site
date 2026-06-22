@@ -8,7 +8,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
   return {
     title: locale === 'it'
-      ? "Print Solution — Stampanti per Packaging ed Etichette dal 2010"
+      ? "Stampanti per Packaging ed Etichette dal 2010"
       : "Digital Packaging & Label Printers Italy",
     description: locale === 'it'
       ? "Stampanti digitali per scatole personalizzate, etichette a colori e packaging industriale. Box maker automatici, sistemi single-pass e inkjet. Demo gratuita a Sesto San Giovanni (MI)."

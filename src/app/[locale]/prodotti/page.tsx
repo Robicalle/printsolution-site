@@ -10,8 +10,8 @@ export async function generateMetadata(): Promise<Metadata> {
   const it = locale === "it";
   return {
     title: it
-      ? "Stampanti per Packaging ed Etichette | Print Solution"
-      : "Packaging & Label Printers | Print Solution",
+      ? "Stampanti per Packaging ed Etichette"
+      : "Packaging & Label Printers",
     description: it
       ? "Tutta la gamma di stampanti digitali Print Solution: box maker automatici, stampanti per cartone ondulato, etichettatrici inkjet e laser. Demo gratuita a Milano."
       : "Full range of Print Solution digital printers: automatic box makers, corrugated cardboard printers, inkjet and laser label printers. Free demo near Milan.",

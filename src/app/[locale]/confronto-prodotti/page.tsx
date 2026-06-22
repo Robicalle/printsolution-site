@@ -6,7 +6,7 @@ import { getLocale } from "next-intl/server";
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
   return {
-    title: locale === 'it' ? "Confronto Prodotti — Print Solution" : "Product Comparison — Print Solution",
+    title: locale === 'it' ? "Confronto Prodotti — Stampanti e Macchine" : "Product Comparison — Printers & Machines",
     description: locale === 'it'
       ? "Confronta tutte le stampanti e macchine Print Solution: tecnologia, velocità, formato, risoluzione e prezzo."
       : "Compare all Print Solution printers and machines: technology, speed, format, resolution and price.",

@@ -7,8 +7,8 @@ export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
   return {
     title: locale === 'it'
-      ? "Contatti — Demo Gratuita a Milano | Print Solution"
-      : "Contact Us — Free Demo near Milan | Print Solution",
+      ? "Contatti — Demo Gratuita a Milano"
+      : "Contact Us — Free Demo near Milan",
     description: locale === 'it'
       ? "Visita la sala demo di Print Solution a Sesto San Giovanni (MI): stampanti per packaging, box maker e etichettatrici in funzione. Consulenza gratuita. Tel. +39 02 4943 9417."
       : "Visit Print Solution's demo room in Sesto San Giovanni (MI): packaging printers, box makers and label printers in action. Free consultation. Tel. +39 02 4943 9417.",

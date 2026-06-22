@@ -9,7 +9,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: locale === 'it'
       ? "Print Solution — Stampanti per Packaging ed Etichette dal 2010"
-      : "Print Solution — Digital Packaging & Label Printers | Italy",
+      : "Digital Packaging & Label Printers Italy | Print Solution",
     description: locale === 'it'
       ? "Stampanti digitali per scatole personalizzate, etichette a colori e packaging industriale. Box maker automatici, sistemi single-pass e inkjet. Demo gratuita a Sesto San Giovanni (MI)."
       : "Digital printers for custom boxes, colour labels and industrial packaging. Automatic box makers, single-pass and inkjet systems. Free demo near Milan, Italy.",
@@ -19,7 +19,7 @@ export async function generateMetadata(): Promise<Metadata> {
     openGraph: {
       title: locale === 'it'
         ? "Print Solution — Stampanti per Packaging ed Etichette dal 2010"
-        : "Print Solution — Digital Packaging & Label Printers | Italy",
+        : "Digital Packaging & Label Printers Italy | Print Solution",
       description: locale === 'it'
         ? "Stampanti digitali per scatole personalizzate, etichette a colori e packaging industriale. Box maker automatici, sistemi single-pass e inkjet. Demo gratuita a Sesto San Giovanni (MI)."
         : "Digital printers for custom boxes, colour labels and industrial packaging. Automatic box makers, single-pass and inkjet systems. Free demo near Milan, Italy.",

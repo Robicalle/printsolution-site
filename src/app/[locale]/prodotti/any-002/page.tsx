@@ -8,7 +8,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
   const isIt = locale === 'it';
   return {
-    title: isIt ? "Anytron ANY-002 | Stampante Etichette in Bobina Laser Toner — Print Solution" : "Anytron ANY-002 | Laser Toner Roll Label Printer — Print Solution",
+    title: isIt ? "Anytron ANY-002 — Stampante Etichette Laser" : "Anytron ANY-002 — Laser Toner Label Printer",
     description: isIt
       ? "Anytron ANY-002: stampante etichette in bobina laser toner a colori. 1200 dpi, fino a 5.000 etichette in 2 ore, toner resistente ad acqua e abrasioni. Stampa etichette adesive on-demand. Print Solution."
       : "Anytron ANY-002: colour laser toner roll label printer. 1200 dpi, up to 5,000 labels in 2 hours, toner resistant to water and abrasion. On-demand label printing. Print Solution.",

@@ -7,7 +7,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
   const isIt = locale === 'it';
   return {
-    title: isIt ? "PackPrinter UV: Stampante UV Single-Pass per Packaging" : "PackPrinter UV: UV Single-Pass Packaging Printer",
+    title: isIt ? "PackPrinter UV — Stampante UV Single-Pass" : "PackPrinter UV — Single-Pass UV Printer",
     description: isIt
       ? "PackPrinter UV: stampante UV single-pass CMYK+Bianco fino a 50 m/min. Stampa su PVC, vetro, cartone, legno. Print Solution"
       : "PackPrinter UV: UV single-pass printer CMYK+White up to 50 m/min. Print on PVC, glass, cardboard, wood. Print Solution",

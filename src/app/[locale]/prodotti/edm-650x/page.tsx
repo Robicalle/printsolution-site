@@ -9,7 +9,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
   const isIt = locale === 'it';
   return {
-    title: isIt ? "EDM-650X | Stampa Packaging su Cartone Ondulato In-House • Inkjet Single-Pass Scalabile — Print Solution" : "EDM-650X | In-House Corrugated Packaging Printer • Scalable Single-Pass Inkjet — Print Solution",
+    title: isIt ? "EDM-650X — Stampante Single-Pass per Cartone" : "EDM-650X — Single-Pass Corrugated Printer",
     description: isIt
       ? "Porta la produzione packaging in-house con EDM-650X: stampa inkjet single-pass su cartone ondulato, 6 configurazioni scalabili, fino a 30 m/min, 1200 dpi. Industry 4.0 Ready. Zero lastre, dal primo pezzo, senza minimi d'ordine."
       : "Bring packaging production in-house with EDM-650X: single-pass inkjet on corrugated cardboard, 6 scalable configurations, up to 30 m/min, 1200 dpi. Industry 4.0 Ready. No plates, from the first piece, no minimum order.",

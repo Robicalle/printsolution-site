@@ -8,7 +8,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
   const isIt = locale === 'it';
   return {
-    title: isIt ? "GreenBox Print Book: Stampante Digitale per Labbratura Libri" : "GreenBox Print Book: Digital Book Edge Printer",
+    title: isIt ? "GreenBox Print Book — Stampante per Labbratura Libri" : "GreenBox Print Book — Digital Book Edge Printer",
     description: isIt
       ? "GreenBox Print Book: stampante per labbratura libri con tecnologia HP PageWide. Single-pass, 30 m/min, 1200 dpi. Print Solution"
       : "GreenBox Print Book: book edge printer with HP PageWide technology. Single-pass, 30 m/min, 1200 dpi. Print Solution",

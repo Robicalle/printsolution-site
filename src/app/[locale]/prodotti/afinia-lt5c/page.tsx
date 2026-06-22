@@ -8,7 +8,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
   const isIt = locale === 'it';
   return {
-    title: isIt ? "Afinia LT5C: Stampante Etichette Toner LED Industriale" : "Afinia LT5C: Industrial LED Toner Colour Label Printer",
+    title: isIt ? "Afinia LT5C — Stampante Etichette Toner LED" : "Afinia LT5C — LED Toner Label Printer",
     description: isIt
       ? "Afinia LT5C: stampante etichette a toner LED. Resistenza immediata all\'acqua, ideale per ambienti umidi e industriali. Print Solution"
       : "Afinia LT5C: LED toner label printer. Instant water resistance, ideal for humid and industrial environments. Print Solution",

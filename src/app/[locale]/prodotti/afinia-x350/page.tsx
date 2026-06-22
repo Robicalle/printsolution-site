@@ -8,7 +8,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
   const isIt = locale === 'it';
   return {
-    title: isIt ? "Afinia X350 | Stampante Etichette in Bobina Pigmento 45 m/min — Print Solution" : "Afinia X350 | Roll-to-Roll Pigment Label Printer 45 m/min — Print Solution",
+    title: isIt ? "Afinia X350 — Stampante Etichette in Bobina" : "Afinia X350 — Roll Label Printer",
     description: isIt
       ? "Afinia X350: stampante etichette in bobina industriale con inchiostri pigmentati. Fino a 45 m/min, 1600 dpi, resistente ad acqua e UV. La stampante per etichette a bobina più veloce della categoria. Print Solution."
       : "Afinia X350: industrial roll-to-roll label printer with pigmented inks. Up to 45 m/min, 1600 dpi, water and UV resistant. The fastest roll label printer in its category. Print Solution.",

@@ -8,7 +8,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
   const isIt = locale === 'it';
   return {
-    title: isIt ? "Afinia DLP-2200: Digital Label Press Completa per Etichette" : "Afinia DLP-2200: Complete Digital Label Press",
+    title: isIt ? "Afinia DLP-2200 — Digital Label Press" : "Afinia DLP-2200 — Complete Digital Label Press",
     description: isIt
       ? "Afinia DLP-2200: pressa digitale per etichette completa. Stampa, laminazione, fustellatura e riavvolgimento. 25.000+ etichette/ora. Print Solution"
       : "Afinia DLP-2200: complete digital label press. Print, laminate, die-cut and rewind. 25,000+ labels/hour. Print Solution",

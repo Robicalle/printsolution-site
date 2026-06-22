@@ -8,7 +8,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
   const isIt = locale === 'it';
   return {
-    title: isIt ? "Afinia DLF: Fustellatore Digitale per Etichette in Bobina" : "Afinia DLF: Digital Die-Cutter for Label Rolls",
+    title: isIt ? "Afinia DLF — Fustellatore Digitale Etichette" : "Afinia DLF — Digital Label Die-Cutter",
     description: isIt
       ? "Afinia DLF: fustellatore digitale a plotter per etichette. Taglio da file, nessuna fustella fisica. Laminazione in linea. Print Solution"
       : "Afinia DLF: digital plotter die-cutter for labels. Cut from file, no physical dies. Inline lamination. Print Solution",

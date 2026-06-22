@@ -9,7 +9,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
   const isIt = locale === 'it';
   return {
-    title: isIt ? "Anypack AB2500 | Box Maker Automatico: Scatole On-Demand — Print Solution" : "Anypack AB2500 | Automatic Box Maker: Custom Boxes On-Demand — Print Solution",
+    title: isIt ? "Anypack AB2500 — Box Maker Automatico" : "Anypack AB2500 — Automatic Box Maker",
     description: isIt
       ? "Anypack AB2500: box maker automatico per scatole in cartone ondulato su misura. 500-600 pz/ora, cambio formato in 10 sec, fustellatura e incollaggio integrati. Print Solution."
       : "Anypack AB2500: automatic box maker for custom corrugated cardboard boxes on-demand. 500-600 boxes/hour, format change in 10 sec, integrated die-cutting and gluing. Print Solution.",

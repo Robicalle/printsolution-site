@@ -10,8 +10,8 @@ export async function generateMetadata(): Promise<Metadata> {
   const isIt = locale === 'it';
   return {
     title: isIt
-      ? "GreenBox 3 — Stampante per Scatole Single-Pass CMYK | Print Solution"
-      : "GreenBox 3 — Single-Pass CMYK Box Printer | Print Solution",
+      ? "GreenBox 3 — Stampante Single-Pass per Scatole"
+      : "GreenBox 3 — Single-Pass Box Printer",
     description: isIt
       ? "GreenBox 3: stampante per scatole inkjet single-pass CMYK entry level, novità 2026. 28 m/min, 1200 dpi, foglio fino a 100 cm, spessore 15 cm, costi stampa -40%. 4.0 Ready."
       : "GreenBox 3: entry-level single-pass CMYK inkjet box printer, new 2026. 28 m/min, 1200 dpi, sheet up to 100 cm, 15 cm thickness, -40% print costs. 4.0 Ready.",

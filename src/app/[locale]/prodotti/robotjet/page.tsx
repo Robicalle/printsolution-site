@@ -8,7 +8,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
   const isIt = locale === 'it';
   return {
-    title: isIt ? "Robotjet: Stampante per Labbratura Libri Book Edge Printer" : "Robotjet: Book Edge Printer for Library & Publishing",
+    title: isIt ? "Robotjet — Stampante per Labbratura Libri" : "Robotjet — Book Edge Printer",
     description: isIt
       ? "Robotjet: stampante per labbratura libri, quaderni e agende. 400 pezzi/ora, CMYK inkjet 1200 dpi. Print Solution"
       : "Robotjet: book edge printer for books, notebooks and diaries. 400 pieces/hour, CMYK inkjet 1200 dpi. Print Solution",

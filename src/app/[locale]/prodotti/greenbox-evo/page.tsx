@@ -9,7 +9,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
   const isIt = locale === 'it';
   return {
-    title: isIt ? "GreenBox EVO | Stampante per Scatole, Shopper e Packaging In-House • Inkjet Single-Pass CMYK — Print Solution" : "GreenBox EVO | Box, Shopper & Packaging Printer In-House • Single-Pass CMYK Inkjet — Print Solution",
+    title: isIt ? "GreenBox EVO — Stampante per Scatole e Shopper" : "GreenBox EVO — Box & Shopper Printer",
     description: isIt
       ? "GreenBox EVO: stampante per scatole, shopper carta e packaging direttamente in azienda. Inkjet single-pass CMYK, 30 m/min, 1200 dpi, inchiostri pigmentati a base acqua. Dal primo pezzo, zero minimi d'ordine."
       : "GreenBox EVO: printer for boxes, paper shoppers and packaging directly in-house. Single-pass CMYK inkjet, 30 m/min, 1200 dpi, water-based pigment inks. From the first piece, no minimum order.",

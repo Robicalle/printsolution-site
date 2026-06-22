@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import { getLocale } from "next-intl/server";
+import ProductFaqSection from "@/components/ProductFaqSection";
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
@@ -130,6 +131,21 @@ const features = [
 export default async function Any002Page() {
   const locale = await getLocale();
   const isIt = locale === 'it';
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: isIt ? [
+      { "@type": "Question", name: "Quante etichette produce all'ora l'Anytron ANY-002?", acceptedAnswer: { "@type": "Answer", text: "L'ANY-002 produce fino a 5.000 etichette in circa 2 ore, pari a circa 2.500 etichette all'ora in formato standard. La velocità massima di stampa è di 9 m/min." } },
+      { "@type": "Question", name: "Le etichette stampate con la ANY-002 resistono all'acqua?", acceptedAnswer: { "@type": "Answer", text: "Sì. La tecnologia toner elettrofotografico garantisce una resistenza immediata all'acqua e all'abrasione, senza necessità di laminazione aggiuntiva per uso normale." } },
+      { "@type": "Question", name: "Qual è la larghezza massima di stampa?", acceptedAnswer: { "@type": "Answer", text: "La larghezza massima di stampa è 104 mm, compatibile con i formati standard di etichette adesive per uso logistico, alimentare e cosmetico." } },
+      { "@type": "Question", name: "Quanto inchiostro (toner) contiene la bobina?", acceptedAnswer: { "@type": "Answer", text: "La bobina di supporto può essere fino a 200 metri rilanciabile. I toner CMYK si sostituiscono singolarmente, riducendo i costi operativi." } },
+    ] : [
+      { "@type": "Question", name: "How many labels per hour does the Anytron ANY-002 produce?", acceptedAnswer: { "@type": "Answer", text: "The ANY-002 produces up to 5,000 labels in approximately 2 hours — around 2,500 labels per hour in standard format. Maximum print speed is 9 m/min." } },
+      { "@type": "Question", name: "Are labels printed with the ANY-002 water-resistant?", acceptedAnswer: { "@type": "Answer", text: "Yes. Electrophotographic toner technology provides immediate resistance to water and abrasion without the need for additional lamination for standard use." } },
+      { "@type": "Question", name: "What is the maximum print width?", acceptedAnswer: { "@type": "Answer", text: "The maximum print width is 104 mm, compatible with standard adhesive label formats for logistics, food and cosmetics applications." } },
+      { "@type": "Question", name: "How large is the media roll?", acceptedAnswer: { "@type": "Answer", text: "The media roll can be up to 200 metres (rewindable). CMYK toners are replaced individually, reducing operating costs." } },
+    ],
+  };
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -149,6 +165,7 @@ export default async function Any002Page() {
         { "@context":"https://schema.org","@type":"VideoObject","name":"ANY-002 — Demo Stampa Digitale Packaging: Video 3","description":"ANY-002 demo 3: alta qualità di stampa digitale su materiali da packaging diversi.","thumbnailUrl":"https://www.printsolutionsrl.it/images/posters/any-002-3.jpg","uploadDate":"2024-01-01","contentUrl":"https://www.printsolutionsrl.it/videos/any-002-3.mp4","publisher":{"@type":"Organization","name":"Print Solution S.r.l.","url":"https://www.printsolutionsrl.it"} },
         { "@context":"https://schema.org","@type":"VideoObject","name":"ANY-002 — Linea Completa Stampa Packaging: Demo 4","description":"ANY-002 demo 4: linea completa di stampa digitale per packaging industriale personalizzato.","thumbnailUrl":"https://www.printsolutionsrl.it/images/posters/any-002-4.jpg","uploadDate":"2024-01-01","contentUrl":"https://www.printsolutionsrl.it/videos/any-002-4.mp4","publisher":{"@type":"Organization","name":"Print Solution S.r.l.","url":"https://www.printsolutionsrl.it"} }
       ]) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
 
       {/* Hero */}
       <section className="relative text-white pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden min-h-[60vh] flex items-center">
@@ -317,6 +334,8 @@ export default async function Any002Page() {
           </div>
         </div>
       </section>
+
+      <ProductFaqSection items={(faqJsonLd.mainEntity as any[]).map((q: any) => ({ question: q.name, answer: q.acceptedAnswer.text }))} locale={locale} />
 
       {/* CTA */}
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-surface-50">

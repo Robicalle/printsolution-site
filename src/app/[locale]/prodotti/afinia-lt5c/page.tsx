@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import { getLocale } from "next-intl/server";
+import ProductFaqSection from "@/components/ProductFaqSection";
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
@@ -145,6 +146,21 @@ const features = [
 export default async function AfiniaLT5CPage() {
   const locale = await getLocale();
   const isIt = locale === 'it';
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: isIt ? [
+      { "@type": "Question", name: "Perché il toner LED è migliore dell'inkjet per ambienti umidi?", acceptedAnswer: { "@type": "Answer", text: "Il toner viene fuso fisicamente sulla superficie dell'etichetta dal fusore integrato. Il risultato è una resistenza immediata all'acqua e all'abrasione senza necessità di laminazione o asciugatura, a differenza degli inchiostri inkjet che richiedono tempo di asciugatura o rivestimento." } },
+      { "@type": "Question", name: "La Afinia LT5C stampa il bianco?", acceptedAnswer: { "@type": "Answer", text: "Sì. La LT5C include il toner bianco (CMYK+W), che permette di stampare su etichette trasparenti o colorate ottenendo colori opachi e vivaci anche su supporti scuri." } },
+      { "@type": "Question", name: "È adatta per etichette alimentari e farmaceutiche?", acceptedAnswer: { "@type": "Answer", text: "Sì. La tecnologia toner a secco è conforme ai requisiti di resistenza richiesti dal settore alimentare e farmaceutico, con etichette che resistono a umidità, freddo e contatto con superfici bagnate." } },
+      { "@type": "Question", name: "Quali supporti accetta la LT5C?", acceptedAnswer: { "@type": "Answer", text: "La LT5C stampa su bobine di etichette adesive in carta, poliestere, PP e altri materiali sintetici. Supporta diverse larghezze di nastro fino al massimo consentito dal modello." } },
+    ] : [
+      { "@type": "Question", name: "Why is LED toner better than inkjet for humid environments?", acceptedAnswer: { "@type": "Answer", text: "Toner is physically fused onto the label surface by the built-in fuser unit, resulting in immediate resistance to water and abrasion without needing lamination or drying time — unlike inkjet inks that require drying or coating." } },
+      { "@type": "Question", name: "Does the Afinia LT5C print white?", acceptedAnswer: { "@type": "Answer", text: "Yes. The LT5C includes white toner (CMYK+W), enabling printing on clear or coloured labels with opaque, vivid colours even on dark substrates." } },
+      { "@type": "Question", name: "Is it suitable for food and pharmaceutical labels?", acceptedAnswer: { "@type": "Answer", text: "Yes. Dry toner technology meets the durability requirements of the food and pharmaceutical sectors, producing labels that resist humidity, cold and contact with wet surfaces." } },
+      { "@type": "Question", name: "What media does the LT5C accept?", acceptedAnswer: { "@type": "Answer", text: "The LT5C prints on rolls of paper, polyester, PP and other synthetic label materials. It supports various web widths up to the model's maximum." } },
+    ],
+  };
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -158,6 +174,7 @@ export default async function AfiniaLT5CPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
 
       {/* Hero */}
       <section className="relative text-white pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden min-h-[60vh] flex items-center">
@@ -260,6 +277,8 @@ export default async function AfiniaLT5CPage() {
           </div>
         </div>
       </section>
+
+      <ProductFaqSection items={(faqJsonLd.mainEntity as any[]).map((q: any) => ({ question: q.name, answer: q.acceptedAnswer.text }))} locale={locale} />
 
       {/* CTA */}
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-surface-50">

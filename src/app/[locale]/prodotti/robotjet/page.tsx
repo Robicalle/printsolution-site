@@ -2,6 +2,7 @@ import { getLocale } from 'next-intl/server';
 import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
+import ProductFaqSection from "@/components/ProductFaqSection";
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
@@ -154,6 +155,21 @@ const features = [
 export default async function () {
   const locale = await getLocale();
   const isIt = locale === 'it';
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: isIt ? [
+      { "@type": "Question", name: "Quanti libri stampa all'ora il Robotjet?", acceptedAnswer: { "@type": "Answer", text: "Il Robotjet stampa fino a 400 pezzi all'ora, con velocità regolabile da 0 a 15 m/min. È ideale per tipografie e legatorie che gestiscono volumi medi e necessitano di flessibilità nei formati." } },
+      { "@type": "Question", name: "Che dimensioni di libri elabora il Robotjet?", acceptedAnswer: { "@type": "Answer", text: "Il Robotjet elabora libri, quaderni e agende con altezza da 90 a 350 mm e larghezza di stampa da 5 a 218 mm. La velocità è regolabile per adattarsi a supporti con diversa rigidità." } },
+      { "@type": "Question", name: "Il Robotjet usa teste di stampa HP o Epson?", acceptedAnswer: { "@type": "Answer", text: "Sì, il Robotjet è disponibile con testine HP A3 o Epson I3200, entrambe con risoluzione massima di 1200 dpi e tecnologia inkjet a pigmentati a base acqua." } },
+      { "@type": "Question", name: "Che formati di file accetta il Robotjet?", acceptedAnswer: { "@type": "Answer", text: "Il Robotjet accetta file JPG e PDF direttamente, con compatibilità Windows 7/10/11. Non sono necessari software RIP aggiuntivi per la maggior parte delle applicazioni standard." } },
+    ] : [
+      { "@type": "Question", name: "How many books per hour does the Robotjet print?", acceptedAnswer: { "@type": "Answer", text: "The Robotjet prints up to 400 pieces per hour, with adjustable speed from 0 to 15 m/min. It is ideal for print shops and binderies handling medium volumes with varying formats." } },
+      { "@type": "Question", name: "What book sizes does the Robotjet handle?", acceptedAnswer: { "@type": "Answer", text: "The Robotjet handles books, notebooks and diaries with heights from 90 to 350 mm and print widths from 5 to 218 mm. Speed is adjustable to suit substrates of different stiffness." } },
+      { "@type": "Question", name: "Does the Robotjet use HP or Epson printheads?", acceptedAnswer: { "@type": "Answer", text: "Yes, the Robotjet is available with HP A3 or Epson I3200 printheads, both at a maximum resolution of 1200 dpi using water-based pigmented inkjet technology." } },
+      { "@type": "Question", name: "What file formats does the Robotjet accept?", acceptedAnswer: { "@type": "Answer", text: "The Robotjet accepts JPG and PDF files directly, with Windows 7/10/11 compatibility. No additional RIP software is required for most standard applications." } },
+    ],
+  };
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -167,6 +183,7 @@ export default async function () {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       {/* Hero */}
       <section className="relative text-white pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden min-h-[60vh] flex items-center">
         <Image src="/images/hero-dark.webp" alt="" fill className="object-cover" priority />
@@ -278,6 +295,8 @@ export default async function () {
           </div>
         </div>
       </section>
+
+      <ProductFaqSection items={(faqJsonLd.mainEntity as any[]).map((q: any) => ({ question: q.name, answer: q.acceptedAnswer.text }))} locale={locale} />
 
       {/* CTA */}
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-surface-50">

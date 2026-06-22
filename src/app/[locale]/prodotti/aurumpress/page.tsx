@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import { getLocale } from "next-intl/server";
+import ProductFaqSection from "@/components/ProductFaqSection";
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
@@ -117,6 +118,21 @@ const features = [
 export default async function AurumPressPage() {
   const locale = await getLocale();
   const isIt = locale === 'it';
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: isIt ? [
+      { "@type": "Question", name: "Che cos'è il hot foil stamping con l'AurumPress?", acceptedAnswer: { "@type": "Answer", text: "L'AurumPress applica foil metallizzati (oro, argento, olografici, colori) su carta, cartone ed etichette tramite calore e pressione idraulica. Il risultato è una finitura lucida e brillante tipica del packaging di lusso." } },
+      { "@type": "Question", name: "Servono fustelle o clichè per usare l'AurumPress?", acceptedAnswer: { "@type": "Answer", text: "No. L'AurumPress lavora digitalmente: il design viene inviato direttamente dal software senza bisogno di fustelle fisiche. Puoi cambiare soggetto e quantità on-demand senza costi aggiuntivi di attrezzaggio." } },
+      { "@type": "Question", name: "Su quali materiali può stampare l'AurumPress?", acceptedAnswer: { "@type": "Answer", text: "L'AurumPress stampa su carta, cartone, etichette adesive e supporti laminati. È ideale per packaging cosmetico, vitivinicolo, confezionamento di lusso e biglietti da visita premium." } },
+      { "@type": "Question", name: "Qual è la differenza tra hot foil e stampa a freddo?", acceptedAnswer: { "@type": "Answer", text: "Il hot foil usa calore e pressione per trasferire il foil, ottenendo una lucentezza superiore e maggiore resistenza. La stampa a freddo usa adesivo UV ma offre meno brillantezza. L'AurumPress utilizza la tecnologia hot foil per risultati premium." } },
+    ] : [
+      { "@type": "Question", name: "What is hot foil stamping with the AurumPress?", acceptedAnswer: { "@type": "Answer", text: "The AurumPress applies metallic foils (gold, silver, holographic, colours) on paper, cardboard and labels using heat and hydraulic pressure. The result is the brilliant, shiny finish typical of luxury packaging." } },
+      { "@type": "Question", name: "Are dies or plates required to use the AurumPress?", acceptedAnswer: { "@type": "Answer", text: "No. The AurumPress operates digitally: designs are sent directly from software without physical dies or plates. You can change artwork and quantities on demand with no additional tooling costs." } },
+      { "@type": "Question", name: "What materials can the AurumPress print on?", acceptedAnswer: { "@type": "Answer", text: "The AurumPress prints on paper, cardboard, adhesive labels and laminated substrates. It is ideal for cosmetics, wine, luxury packaging and premium business cards." } },
+      { "@type": "Question", name: "What is the difference between hot foil and cold foil stamping?", acceptedAnswer: { "@type": "Answer", text: "Hot foil uses heat and pressure to transfer the foil, achieving superior gloss and durability. Cold foil uses UV adhesive but offers less brilliance. The AurumPress uses hot foil technology for premium results." } },
+    ],
+  };
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -134,6 +150,7 @@ export default async function AurumPressPage() {
         { "@context":"https://schema.org","@type":"VideoObject","name":"AurumPress — Hot Foil Stamping su Packaging Premium","description":"Demo AurumPress: stampa a caldo con foil oro, argento e olografici su packaging premium, etichette e cartone.","thumbnailUrl":"https://www.printsolutionsrl.it/images/posters/aurumpress-1.jpg","uploadDate":"2024-01-01","contentUrl":"https://www.printsolutionsrl.it/videos/aurumpress-1.mp4","publisher":{"@type":"Organization","name":"Print Solution S.r.l.","url":"https://www.printsolutionsrl.it"} },
         { "@context":"https://schema.org","@type":"VideoObject","name":"AurumPress — Nobilitazione Packaging con Foil Metallizzato","description":"AurumPress in funzione: nobilitazione packaging on-demand con foil dorato e argentato per lusso e premium packaging.","thumbnailUrl":"https://www.printsolutionsrl.it/images/posters/aurumpress-2.jpg","uploadDate":"2024-01-01","contentUrl":"https://www.printsolutionsrl.it/videos/aurumpress-2.mp4","publisher":{"@type":"Organization","name":"Print Solution S.r.l.","url":"https://www.printsolutionsrl.it"} }
       ]) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       {/* Hero */}
       <section className="relative text-white pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden min-h-[60vh] flex items-center">
         <video autoPlay muted loop playsInline aria-hidden="true" className="absolute inset-0 w-full h-full object-cover">
@@ -245,6 +262,8 @@ export default async function AurumPressPage() {
           </div>
         </div>
       </section>
+
+      <ProductFaqSection items={(faqJsonLd.mainEntity as any[]).map((q: any) => ({ question: q.name, answer: q.acceptedAnswer.text }))} locale={locale} />
 
       {/* CTA */}
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-surface-50">

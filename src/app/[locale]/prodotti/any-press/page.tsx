@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import { getLocale } from "next-intl/server";
+import ProductFaqSection from "@/components/ProductFaqSection";
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
@@ -150,6 +151,21 @@ const features = [
 export default async function AnyPressPage() {
   const locale = await getLocale();
   const isIt = locale === 'it';
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: isIt ? [
+      { "@type": "Question", name: "La Any-Press stampa con il toner bianco?", acceptedAnswer: { "@type": "Answer", text: "Sì. La Any-Press include il bianco come quinto colore (CMYK+W) con opacità regolabile. Questo permette di stampare su supporti trasparenti, argentati o dorati con testo e immagini completamente opachi." } },
+      { "@type": "Question", name: "Può stampare packaging flessibile come bustine e sacchetti?", acceptedAnswer: { "@type": "Answer", text: "Sì. La Any-Press è progettata per stampare sia etichette adesive in bobina che packaging flessibile come pouches, sachets e film per alimenti, purché compatibili con la tecnologia LED laser." } },
+      { "@type": "Question", name: "Serve un laminatore separato?", acceptedAnswer: { "@type": "Answer", text: "Il laminatore è opzionale (cold o hot) e può essere aggiunto in linea. Per usi standard senza necessità di protezione extra, la Any-Press funziona autonomamente." } },
+      { "@type": "Question", name: "Qual è la larghezza massima del supporto?", acceptedAnswer: { "@type": "Answer", text: "La larghezza massima del supporto è 330 mm (larghezza di stampa 324 mm), con diametro massimo del rotolo di 350 mm." } },
+    ] : [
+      { "@type": "Question", name: "Does the Any-Press print with white toner?", acceptedAnswer: { "@type": "Answer", text: "Yes. The Any-Press includes white as a fifth colour (CMYK+W) with adjustable opacity. This enables printing on clear, silver or gold substrates with fully opaque text and images." } },
+      { "@type": "Question", name: "Can it print flexible packaging such as pouches and bags?", acceptedAnswer: { "@type": "Answer", text: "Yes. The Any-Press is designed for both adhesive roll labels and flexible packaging such as pouches, sachets and food-grade film, provided they are compatible with LED laser technology." } },
+      { "@type": "Question", name: "Is a separate laminator required?", acceptedAnswer: { "@type": "Answer", text: "The laminator is optional (cold or hot) and can be added inline. For standard use without extra protection needs, the Any-Press operates as a standalone system." } },
+      { "@type": "Question", name: "What is the maximum media width?", acceptedAnswer: { "@type": "Answer", text: "The maximum media width is 330 mm (print width 324 mm), with a maximum roll diameter of 350 mm." } },
+    ],
+  };
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -166,6 +182,7 @@ export default async function AnyPressPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([
         { "@context":"https://schema.org","@type":"VideoObject","name":"ANY-Press — Demo Stampante Packaging Digitale","description":"Demo ANY-Press: soluzione di stampa digitale per packaging. Stampa diretta su materiali da imballaggio con alta qualità.","thumbnailUrl":"https://www.printsolutionsrl.it/images/posters/any-press-1.jpg","uploadDate":"2024-01-01","contentUrl":"https://www.printsolutionsrl.it/videos/any-press-1.mp4","publisher":{"@type":"Organization","name":"Print Solution S.r.l.","url":"https://www.printsolutionsrl.it"} }
       ]) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
 
       {/* Hero */}
       <section className="relative text-white pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden min-h-[60vh] flex items-center">
@@ -268,6 +285,8 @@ export default async function AnyPressPage() {
           </div>
         </div>
       </section>
+
+      <ProductFaqSection items={(faqJsonLd.mainEntity as any[]).map((q: any) => ({ question: q.name, answer: q.acceptedAnswer.text }))} locale={locale} />
 
       {/* CTA */}
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-surface-50">

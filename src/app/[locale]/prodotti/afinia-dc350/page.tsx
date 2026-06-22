@@ -2,6 +2,7 @@ import { getLocale } from 'next-intl/server';
 import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
+import ProductFaqSection from "@/components/ProductFaqSection";
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
@@ -159,6 +160,21 @@ const features = [
 export default async function () {
   const locale = await getLocale();
   const isIt = locale === 'it';
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: isIt ? [
+      { "@type": "Question", name: "Che differenza c'è tra Afinia DC250 e DC350?", acceptedAnswer: { "@type": "Answer", text: "La differenza principale è la larghezza massima del nastro: il DC250 lavora fino a 250 mm, il DC350 fino a 350 mm (13,78 pollici). Entrambi raggiungono fino a 30 m/min e supportano la fustellatura semi-rotativa." } },
+      { "@type": "Question", name: "L'Afinia DC350 può laminare in linea?", acceptedAnswer: { "@type": "Answer", text: "Sì, i modelli con opzione di laminazione integrata permettono di laminare e fustellare in un unico passaggio, riducendo i tempi di lavorazione." } },
+      { "@type": "Question", name: "Che tipo di fustelle usa l'Afinia DC350?", acceptedAnswer: { "@type": "Answer", text: "Utilizza fustelle semi-rotative magnetiche, compatibili con i formati standard del mercato delle etichette. Non sono necessari clichè tipografici." } },
+      { "@type": "Question", name: "Per quali settori è adatto l'Afinia DC350?", acceptedAnswer: { "@type": "Answer", text: "È ideale per etichettifici e tipografie che producono etichette adesive in bobina per settori food, pharma, cosmetica e logistica. Gestisce tirature medio-grandi con alta efficienza." } },
+    ] : [
+      { "@type": "Question", name: "What is the difference between Afinia DC250 and DC350?", acceptedAnswer: { "@type": "Answer", text: "The main difference is the maximum web width: the DC250 handles up to 250 mm, the DC350 up to 350 mm (13.78 inches). Both reach speeds of up to 30 m/min with semi-rotary die-cutting." } },
+      { "@type": "Question", name: "Can the Afinia DC350 laminate inline?", acceptedAnswer: { "@type": "Answer", text: "Yes, models with the optional inline laminator allow lamination and die-cutting in a single pass, reducing processing time and handling." } },
+      { "@type": "Question", name: "What type of dies does the Afinia DC350 use?", acceptedAnswer: { "@type": "Answer", text: "It uses standard magnetic semi-rotary die-cutting cylinders, compatible with most label industry formats. No letterpress plates are required." } },
+      { "@type": "Question", name: "Which industries is the Afinia DC350 suited for?", acceptedAnswer: { "@type": "Answer", text: "It is ideal for label converters producing adhesive label rolls for food, pharma, cosmetics and logistics. It handles medium-to-large runs with high efficiency." } },
+    ],
+  };
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -172,6 +188,7 @@ export default async function () {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
 
       {/* Hero */}
       <section className="relative text-white pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden min-h-[60vh] flex items-center">
@@ -324,6 +341,8 @@ export default async function () {
           </div>
         </div>
       </section>
+
+      <ProductFaqSection items={(faqJsonLd.mainEntity as any[]).map((q: any) => ({ question: q.name, answer: q.acceptedAnswer.text }))} locale={locale} />
 
       {/* CTA */}
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-surface-50">

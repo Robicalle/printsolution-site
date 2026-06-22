@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import { getLocale } from "next-intl/server";
+import ProductFaqSection from "@/components/ProductFaqSection";
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
@@ -154,6 +155,21 @@ const features = [
 export default async function GreenBoxPrintBookPage() {
   const locale = await getLocale();
   const isIt = locale === 'it';
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: isIt ? [
+      { "@type": "Question", name: "Che cos'è la labbratura di un libro?", acceptedAnswer: { "@type": "Answer", text: "La labbratura (o book edge printing) è la stampa decorativa sul dorso del blocco pagine di un libro, quaderno o agenda. Con la GreenBox Print Book si ottengono gradienti, pattern geometrici, illustrazioni e colori vivaci direttamente sul taglio del libro." } },
+      { "@type": "Question", name: "Che dimensioni di libri gestisce la GreenBox Print Book?", acceptedAnswer: { "@type": "Answer", text: "La GreenBox Print Book gestisce libri e volumi con spessore massimo 11 cm, larghezza massima 100 cm e lunghezza massima 160 cm, coprendo praticamente tutti i formati editoriali e commerciali." } },
+      { "@type": "Question", name: "Quanto è veloce la GreenBox Print Book?", acceptedAnswer: { "@type": "Answer", text: "Grazie alla testina HP PageWide single-pass, raggiunge velocità fino a 30 m/min con risoluzione massima di 1200 dpi, garantendo un'alta produttività anche per tirature elevate." } },
+      { "@type": "Question", name: "Usa inchiostri speciali per la labbratura?", acceptedAnswer: { "@type": "Answer", text: "Sì. Utilizza inchiostri pigmentati a base acqua HP PageWide, resistenti alla luce e al tocco, che garantiscono colori vividi e duraturi sul taglio dei libri senza necessità di trattamenti aggiuntivi." } },
+    ] : [
+      { "@type": "Question", name: "What is book edge printing?", acceptedAnswer: { "@type": "Answer", text: "Book edge printing (or 'fore-edge printing') is the decorative printing on the page block edge of a book, notebook or diary. With the GreenBox Print Book, you can achieve gradients, geometric patterns, illustrations and vivid colours directly on the book's cut edge." } },
+      { "@type": "Question", name: "What book sizes does the GreenBox Print Book handle?", acceptedAnswer: { "@type": "Answer", text: "The GreenBox Print Book handles volumes with a maximum thickness of 11 cm, maximum width of 100 cm and maximum length of 160 cm, covering virtually all editorial and commercial formats." } },
+      { "@type": "Question", name: "How fast is the GreenBox Print Book?", acceptedAnswer: { "@type": "Answer", text: "Thanks to the HP PageWide single-pass printhead, it reaches speeds of up to 30 m/min at a maximum resolution of 1200 dpi, ensuring high productivity even for large print runs." } },
+      { "@type": "Question", name: "Does it use special inks for book edge printing?", acceptedAnswer: { "@type": "Answer", text: "Yes. It uses HP PageWide water-based pigmented inks, light-fast and touch-dry, delivering vivid and durable colours on book edges with no additional treatments required." } },
+    ],
+  };
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -167,6 +183,7 @@ export default async function GreenBoxPrintBookPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       {/* Hero */}
       <section className="relative text-white pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden min-h-[60vh] flex items-center">
         <video autoPlay muted loop playsInline aria-hidden="true" className="absolute inset-0 w-full h-full object-cover" style={{objectPosition: "center 33%"}}>
@@ -278,6 +295,8 @@ export default async function GreenBoxPrintBookPage() {
           </div>
         </div>
       </section>
+
+      <ProductFaqSection items={(faqJsonLd.mainEntity as any[]).map((q: any) => ({ question: q.name, answer: q.acceptedAnswer.text }))} locale={locale} />
 
       {/* CTA */}
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-surface-50">

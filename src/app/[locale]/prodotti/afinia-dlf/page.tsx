@@ -2,6 +2,7 @@ import { getLocale } from 'next-intl/server';
 import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
+import ProductFaqSection from "@/components/ProductFaqSection";
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
@@ -141,6 +142,21 @@ const features = [
 export default async function () {
   const locale = await getLocale();
   const isIt = locale === 'it';
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: isIt ? [
+      { "@type": "Question", name: "Servono fustelle fisiche con l'Afinia DLF?", acceptedAnswer: { "@type": "Answer", text: "No. L'Afinia DLF usa tecnologia plotter digitale che taglia qualsiasi forma direttamente da file digitale (PDF, SVG, ecc.). Non sono necessarie fustelle fisiche, eliminando i costi e i tempi di attrezzaggio." } },
+      { "@type": "Question", name: "L'Afinia DLF può laminare in linea?", acceptedAnswer: { "@type": "Answer", text: "Sì, i modelli con suffisso 'L' (DLF-220L, DLF-350L) includono la laminazione in linea integrata, consentendo di laminare e tagliare le etichette in un unico passaggio." } },
+      { "@type": "Question", name: "Quali formati di nastro supporta l'Afinia DLF?", acceptedAnswer: { "@type": "Answer", text: "Il modello DLF-220L lavora fino a 220 mm di larghezza nastro, mentre il DLF-350L arriva fino a 350 mm. Sono compatibili con le bobine standard delle stampanti per etichette." } },
+      { "@type": "Question", name: "È adatto per tirature corte e personalizzazioni frequenti?", acceptedAnswer: { "@type": "Answer", text: "Sì, è ideale per chi cambia forma o soggetto di frequente, perché elimina i costi di fustella. Perfetto per etichettifici, print shop e produttori che lavorano con varietà di forme e versioning." } },
+    ] : [
+      { "@type": "Question", name: "Are physical dies required with the Afinia DLF?", acceptedAnswer: { "@type": "Answer", text: "No. The Afinia DLF uses digital plotter technology that cuts any shape directly from a digital file (PDF, SVG, etc.). No physical dies are needed, eliminating tooling costs and lead times." } },
+      { "@type": "Question", name: "Can the Afinia DLF laminate inline?", acceptedAnswer: { "@type": "Answer", text: "Yes, models with the 'L' suffix (DLF-220L, DLF-350L) include integrated inline lamination, allowing you to laminate and cut labels in a single pass." } },
+      { "@type": "Question", name: "Which web widths does the Afinia DLF support?", acceptedAnswer: { "@type": "Answer", text: "The DLF-220L handles up to 220 mm web width, while the DLF-350L reaches up to 350 mm. Both are compatible with standard label printer rolls." } },
+      { "@type": "Question", name: "Is it suitable for short runs and frequent personalisation?", acceptedAnswer: { "@type": "Answer", text: "Yes, it is ideal for anyone who changes label shape or artwork frequently, as it eliminates die costs. Perfect for label converters, print shops and manufacturers working with diverse shapes and versioning." } },
+    ],
+  };
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -154,6 +170,7 @@ export default async function () {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
 
       {/* Hero */}
       <section className="relative text-white pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden min-h-[60vh] flex items-center">
@@ -301,6 +318,8 @@ export default async function () {
           </div>
         </div>
       </section>
+
+      <ProductFaqSection items={(faqJsonLd.mainEntity as any[]).map((q: any) => ({ question: q.name, answer: q.acceptedAnswer.text }))} locale={locale} />
 
       {/* CTA */}
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-surface-50">

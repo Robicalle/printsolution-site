@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import { getLocale } from "next-intl/server";
+import ProductFaqSection from "@/components/ProductFaqSection";
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
@@ -150,6 +151,21 @@ const features = [
 export default async function AfiniaDLP2200Page() {
   const locale = await getLocale();
   const isIt = locale === 'it';
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: isIt ? [
+      { "@type": "Question", name: "La Afinia DLP-2200 include la fustellatura integrata?", acceptedAnswer: { "@type": "Answer", text: "Sì. La DLP-2200 è una soluzione all-in-one che integra stampa, laminazione, fustellatura digitale a plotter e riavvolgimento in un unico sistema. Non servono macchinari separati." } },
+      { "@type": "Question", name: "Quante etichette produce all'ora?", acceptedAnswer: { "@type": "Answer", text: "La DLP-2200 produce oltre 25.000 etichette formato 3×4 pollici all'ora, con velocità di stampa da 9 a 18 m/min a seconda della risoluzione selezionata." } },
+      { "@type": "Question", name: "Che risoluzione offre la DLP-2200?", acceptedAnswer: { "@type": "Answer", text: "La DLP-2200 utilizza la tecnologia Memjet Waterfall con risoluzione fino a 1600 dpi full-color CMYKK (doppio nero), garantendo qualità fotografica anche su etichette piccole con testi fini." } },
+      { "@type": "Question", name: "Può stampare su materiali speciali come film o materiali sintetici?", acceptedAnswer: { "@type": "Answer", text: "Sì, la DLP-2200 è compatibile con etichette in carta, film PP, PE, poliestere e altri materiali sintetici in bobina, purché compatibili con gli inchiostri Memjet." } },
+    ] : [
+      { "@type": "Question", name: "Does the Afinia DLP-2200 include integrated die-cutting?", acceptedAnswer: { "@type": "Answer", text: "Yes. The DLP-2200 is an all-in-one solution that integrates printing, lamination, digital plotter die-cutting and rewinding in a single system. No separate finishing equipment is required." } },
+      { "@type": "Question", name: "How many labels does it produce per hour?", acceptedAnswer: { "@type": "Answer", text: "The DLP-2200 produces over 25,000 labels in 3×4 inch format per hour, with print speeds from 9 to 18 m/min depending on the selected resolution." } },
+      { "@type": "Question", name: "What resolution does the DLP-2200 offer?", acceptedAnswer: { "@type": "Answer", text: "The DLP-2200 uses Memjet Waterfall technology at up to 1600 dpi full-colour CMYKK (dual black), ensuring photographic quality even on small labels with fine text." } },
+      { "@type": "Question", name: "Can it print on special materials such as film or synthetics?", acceptedAnswer: { "@type": "Answer", text: "Yes, the DLP-2200 is compatible with paper, PP film, PE, polyester and other synthetic label materials in roll format, provided they are compatible with Memjet inks." } },
+    ],
+  };
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -166,6 +182,7 @@ export default async function AfiniaDLP2200Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([
         { "@context":"https://schema.org","@type":"VideoObject","name":"Afinia DLP2200 — Demo Labbratura Libri e Book Edge Printing","description":"Demo Afinia DLP2200: macchina per labbratura libri e stampa bordi. Personalizzazione digitale dei tagli dei libri ad alta risoluzione.","thumbnailUrl":"https://www.printsolutionsrl.it/images/posters/afinia-dlp2200-yt1.jpg","uploadDate":"2024-01-01","contentUrl":"https://www.printsolutionsrl.it/videos/afinia-dlp2200-yt1.mp4","publisher":{"@type":"Organization","name":"Print Solution S.r.l.","url":"https://www.printsolutionsrl.it"} }
       ]) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
 
       {/* Hero */}
       <section className="relative text-white pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden min-h-[60vh] flex items-center">
@@ -266,6 +283,8 @@ export default async function AfiniaDLP2200Page() {
           </div>
         </div>
       </section>
+
+      <ProductFaqSection items={(faqJsonLd.mainEntity as any[]).map((q: any) => ({ question: q.name, answer: q.acceptedAnswer.text }))} locale={locale} />
 
       {/* CTA */}
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-surface-50">

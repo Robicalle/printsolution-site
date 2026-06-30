@@ -43,7 +43,7 @@ function getProducts(locale: string) {
       specs: it ? [
         "Stampa inkjet single-pass CMYK — 1600×1600 dpi",
         "Velocità stampa e taglio fino a 18 m/min",
-        "Larghezza supporto 80 – 240 mm",
+        "Larghezza supporto 80 – 220 mm",
         "Tecnologia Sirius — 4 serbatoi 2 LT/colore",
         "NS F22: laminazione a freddo + plotter digitale",
         "NS F22: fustellatura semi-rotativa + sfrido",
@@ -51,7 +51,7 @@ function getProducts(locale: string) {
       ] : [
         "Single-pass CMYK inkjet — 1600×1600 dpi",
         "Print & cut speed up to 18 m/min",
-        "Media width 80 – 240 mm",
+        "Media width 80 – 220 mm",
         "Sirius technology — 4× 2L ink tanks per colour",
         "NS F22: cold lamination + digital plotter",
         "NS F22: semi-rotary die-cutting + waste removal",

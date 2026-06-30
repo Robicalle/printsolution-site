@@ -107,6 +107,45 @@ function getProducts(locale: string) {
       image: "/images/products/edm-650x-usato-nobg.png",
     },
     {
+      name: "SATO M10",
+      subtitle: it ? "Stampante Etichette Termica Grande Formato" : "Wide-Format Thermal Label Printer",
+      badge: it ? "DISPONIBILE" : "AVAILABLE",
+      badgeColor: "bg-cyan-600",
+      price: "€ 2.000",
+      desc: it
+        ? "Stampante per etichette industriale SATO M10 a trasferimento termico e termico diretto, progettata per la stampa di etichette di grande formato in ambienti produttivi. Testina da 10,5″, risoluzione 305 dpi e velocità fino a 127 mm/s. Ideale per etichette logistiche, chimiche e di sicurezza, targhe e cartellini di grande dimensione. Macchina revisionata."
+        : "SATO M10 industrial label printer with thermal transfer and direct thermal technology, designed for printing large-format labels in production environments. 10.5″ printhead, 305 dpi resolution and speeds up to 127 mm/s. Ideal for logistics, chemical and safety labels, tags and large-format markings. Refurbished machine.",
+      specs: it ? [
+        "Trasferimento termico e termico diretto",
+        "Risoluzione 305 dpi (12 dot/mm)",
+        "Velocità di stampa 127 mm/s (5 ips)",
+        "Larghezza di stampa fino a 266 mm (10,5″)",
+        "Larghezza supporti 128 – 297 mm",
+        "Ideale per etichette di grande formato",
+        "Processore RISC a 32 bit",
+        "Per ambienti produttivi industriali",
+      ] : [
+        "Thermal transfer & direct thermal",
+        "Resolution 305 dpi (12 dots/mm)",
+        "Print speed 127 mm/s (5 ips)",
+        "Print width up to 266 mm (10.5″)",
+        "Media width 128 – 297 mm",
+        "Ideal for large-format labels",
+        "32-bit RISC processor",
+        "Built for industrial environments",
+      ],
+      highlights: it ? [
+        "Revisionata e testata",
+        "Grande formato fino a 297 mm",
+        "Pronta all'uso",
+      ] : [
+        "Refurbished and tested",
+        "Large format up to 297 mm",
+        "Ready to use",
+      ],
+      image: "/images/products/sato-m10.png",
+    },
+    {
       name: it ? "NS Multi 800 Usata" : "NS Multi 800 Pre-Owned",
       subtitle: it ? "Stampante Single-Pass per Packaging" : "Single-Pass Printer for Packaging",
       badge: it ? "USATO GARANTITO" : "CERTIFIED PRE-OWNED",
@@ -179,45 +218,6 @@ function getProducts(locale: string) {
         "Dedicated support",
       ],
       image: "/images/products/greenbox2-scont.avif",
-    },
-    {
-      name: "SATO M10",
-      subtitle: it ? "Stampante Etichette Termica Grande Formato — Usato Garantito" : "Wide-Format Thermal Label Printer — Certified Pre-Owned",
-      badge: it ? "USATO GARANTITO" : "CERTIFIED PRE-OWNED",
-      badgeColor: "bg-orange-500",
-      price: "€ 2.000",
-      desc: it
-        ? "Stampante per etichette industriale SATO M10 a trasferimento termico e termico diretto, progettata per la stampa di etichette di grande formato in ambienti produttivi. Testina da 10,5″, risoluzione 305 dpi e velocità fino a 127 mm/s. Ideale per etichette logistiche, chimiche e di sicurezza, targhe e cartellini di grande dimensione. Macchina revisionata, garanzia 6 mesi."
-        : "SATO M10 industrial label printer with thermal transfer and direct thermal technology, designed for printing large-format labels in production environments. 10.5″ printhead, 305 dpi resolution and speeds up to 127 mm/s. Ideal for logistics, chemical and safety labels, tags and large-format markings. Refurbished machine, 6-month warranty.",
-      specs: it ? [
-        "Trasferimento termico e termico diretto",
-        "Risoluzione 305 dpi (12 dot/mm)",
-        "Velocità di stampa 127 mm/s (5 ips)",
-        "Larghezza di stampa fino a 266 mm (10,5″)",
-        "Larghezza supporti 128 – 297 mm",
-        "Ideale per etichette di grande formato",
-        "Processore RISC a 32 bit",
-        "Per ambienti produttivi industriali",
-      ] : [
-        "Thermal transfer & direct thermal",
-        "Resolution 305 dpi (12 dots/mm)",
-        "Print speed 127 mm/s (5 ips)",
-        "Print width up to 266 mm (10.5″)",
-        "Media width 128 – 297 mm",
-        "Ideal for large-format labels",
-        "32-bit RISC processor",
-        "Built for industrial environments",
-      ],
-      highlights: it ? [
-        "Revisionata e testata",
-        "garanzia 6 mesi",
-        "Grande formato fino a 297 mm",
-      ] : [
-        "Refurbished and tested",
-        "6-month warranty",
-        "Large format up to 297 mm",
-      ],
-      image: "/images/products/sato-m10.png",
     },
   ];
 }

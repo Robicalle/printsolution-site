@@ -38,14 +38,13 @@ function getProducts(locale: string) {
       badgeColor: "bg-cyan-600",
       price: "€ 18.000",
       desc: it
-        ? "NS Tiger è la linea completa New Solution per la produzione di etichette in bobina direttamente in azienda. Unisce la stampante digitale inkjet single-pass NS PRO (tecnologia Sirius, CMYK, 1600×1600 dpi) all'unità di finitura all-in-one NS F22: laminazione a freddo, plotter di taglio digitale, fustellatura semi-rotativa con cilindro magnetico, divisione in piste e rimozione sfrido. Dalla stampa all'etichetta finita in un unico flusso, con costi di stampa di soli € 0,35 al metro. Macchina revisionata."
-        : "NS Tiger is the complete New Solution line for in-house roll label production. It combines the NS PRO single-pass inkjet digital printer (Sirius technology, CMYK, 1600×1600 dpi) with the NS F22 all-in-one finishing unit: cold lamination, digital cutting plotter, semi-rotary die-cutting with magnetic cylinder, slitting and waste removal. From print to finished label in a single workflow, with printing costs of just € 0.35 per metre. Refurbished machine.",
+        ? "NS Tiger è la linea completa New Solution per la produzione di etichette in bobina direttamente in azienda. Unisce la stampante digitale inkjet single-pass NS PRO (tecnologia Sirius, CMYK, 1600×1600 dpi) all'unità di finitura all-in-one NS F22: laminazione a freddo, plotter di taglio digitale, fustellatura semi-rotativa con cilindro magnetico, divisione in piste e rimozione sfrido. Dalla stampa all'etichetta finita in un unico flusso. Macchina revisionata."
+        : "NS Tiger is the complete New Solution line for in-house roll label production. It combines the NS PRO single-pass inkjet digital printer (Sirius technology, CMYK, 1600×1600 dpi) with the NS F22 all-in-one finishing unit: cold lamination, digital cutting plotter, semi-rotary die-cutting with magnetic cylinder, slitting and waste removal. From print to finished label in a single workflow. Refurbished machine.",
       specs: it ? [
         "Stampa inkjet single-pass CMYK — 1600×1600 dpi",
         "Velocità stampa e taglio fino a 18 m/min",
         "Larghezza supporto 80 – 240 mm",
         "Tecnologia Sirius — 4 serbatoi 2 LT/colore",
-        "Costo di stampa € 0,35 al metro",
         "NS F22: laminazione a freddo + plotter digitale",
         "NS F22: fustellatura semi-rotativa + sfrido",
         "Bobina max ø600 mm — anima 76 mm",
@@ -54,7 +53,6 @@ function getProducts(locale: string) {
         "Print & cut speed up to 18 m/min",
         "Media width 80 – 240 mm",
         "Sirius technology — 4× 2L ink tanks per colour",
-        "Printing cost € 0.35 per metre",
         "NS F22: cold lamination + digital plotter",
         "NS F22: semi-rotary die-cutting + waste removal",
         "Max roll ø600 mm — 76 mm core",

@@ -33,13 +33,13 @@ function getProducts(locale: string) {
   return [
     {
       name: "NS Tiger",
-      subtitle: it ? "Linea Completa Stampa + Finitura Etichette — Usato Garantito" : "Complete Label Print + Finishing Line — Certified Pre-Owned",
-      badge: it ? "USATO GARANTITO" : "CERTIFIED PRE-OWNED",
-      badgeColor: "bg-orange-500",
+      subtitle: it ? "Linea Completa Stampa + Finitura Etichette" : "Complete Label Print + Finishing Line",
+      badge: it ? "DISPONIBILE" : "AVAILABLE",
+      badgeColor: "bg-cyan-600",
       price: "€ 18.000",
       desc: it
-        ? "NS Tiger è la linea completa New Solution per la produzione di etichette in bobina direttamente in azienda. Unisce la stampante digitale inkjet single-pass NS PRO (tecnologia Sirius, CMYK, 1600×1600 dpi) all'unità di finitura all-in-one NS F22: laminazione a freddo, plotter di taglio digitale, fustellatura semi-rotativa con cilindro magnetico, divisione in piste e rimozione sfrido. Dalla stampa all'etichetta finita in un unico flusso, con costi di stampa di soli € 0,35 al metro. Macchina revisionata, garanzia 6 mesi."
-        : "NS Tiger is the complete New Solution line for in-house roll label production. It combines the NS PRO single-pass inkjet digital printer (Sirius technology, CMYK, 1600×1600 dpi) with the NS F22 all-in-one finishing unit: cold lamination, digital cutting plotter, semi-rotary die-cutting with magnetic cylinder, slitting and waste removal. From print to finished label in a single workflow, with printing costs of just € 0.35 per metre. Refurbished machine, 6-month warranty.",
+        ? "NS Tiger è la linea completa New Solution per la produzione di etichette in bobina direttamente in azienda. Unisce la stampante digitale inkjet single-pass NS PRO (tecnologia Sirius, CMYK, 1600×1600 dpi) all'unità di finitura all-in-one NS F22: laminazione a freddo, plotter di taglio digitale, fustellatura semi-rotativa con cilindro magnetico, divisione in piste e rimozione sfrido. Dalla stampa all'etichetta finita in un unico flusso, con costi di stampa di soli € 0,35 al metro. Macchina revisionata."
+        : "NS Tiger is the complete New Solution line for in-house roll label production. It combines the NS PRO single-pass inkjet digital printer (Sirius technology, CMYK, 1600×1600 dpi) with the NS F22 all-in-one finishing unit: cold lamination, digital cutting plotter, semi-rotary die-cutting with magnetic cylinder, slitting and waste removal. From print to finished label in a single workflow, with printing costs of just € 0.35 per metre. Refurbished machine.",
       specs: it ? [
         "Stampa inkjet single-pass CMYK — 1600×1600 dpi",
         "Velocità stampa e taglio fino a 18 m/min",
@@ -61,53 +61,14 @@ function getProducts(locale: string) {
       ],
       highlights: it ? [
         "Linea completa stampa → finitura",
-        "Revisionata, garanzia 6 mesi",
+        "Revisionata e testata",
         "Costi di stampa bassissimi",
       ] : [
         "Complete print → finish line",
-        "Refurbished, 6-month warranty",
+        "Refurbished and tested",
         "Very low printing costs",
       ],
       image: "/images/products/ns-tiger.jpg",
-    },
-    {
-      name: "UniNet iColor 700 + Scorpio Plus",
-      subtitle: it ? "Bundle Stampante Etichette + Finitura — Offerta Esclusiva" : "Label Printer + Finisher Bundle — Exclusive Offer",
-      badge: it ? "BUNDLE OFFERTA" : "BUNDLE DEAL",
-      badgeColor: "bg-cyan-600",
-      price: "€ 6.500",
-      desc: it
-        ? "Bundle completo per la stampa e finitura professionale di etichette in-house. UniNet iColor 700 è una stampante digitale LED per etichette a colori ad alta velocità con tecnologia single-pass CMYK; abbinata al Scorpio Plus, sistema di finitura desktop per plastificazione, fustellatura e rebobinatura. Tutto il necessario per produrre etichette finite professionali direttamente in azienda."
-        : "Complete bundle for in-house professional label printing and finishing. The UniNet iColor 700 is a high-speed LED digital label printer with single-pass CMYK technology; paired with the Scorpio Plus, a desktop finishing system for lamination, die-cutting and rewinding. Everything you need to produce professionally finished labels directly in-house.",
-      specs: it ? [
-        "LED CMYK single-pass — 1200×600 dpi",
-        "Velocità 5 mt/min",
-        "Larghezza supporti 76,2 – 216 mm",
-        "Stampa bianco opaco",
-        "Supporta etichette prefustellate e in continuo",
-        "Scorpio Plus: plastificazione + fustellatura",
-        "Scorpio Plus: ribobinatura automatica",
-        "Soluzione completa stampa → finitura",
-      ] : [
-        "LED CMYK single-pass — 1200×600 dpi",
-        "Speed 5 m/min",
-        "Media width 76.2 – 216 mm",
-        "Prints white ink",
-        "Supports die-cut and continuous labels",
-        "Scorpio Plus: lamination + die-cutting",
-        "Scorpio Plus: automatic rewinding",
-        "Complete print-to-finish solution",
-      ],
-      highlights: it ? [
-        "Bundle completo pronto all'uso",
-        "Stampa + finitura in-house",
-        "Prezzo eccezionale € 6.500",
-      ] : [
-        "Complete ready-to-use bundle",
-        "Print + finish in-house",
-        "Exceptional price € 6,500",
-      ],
-      image: "/images/products/uninet-icolor700-scorpio.jpg",
     },
     {
       name: it ? "EDM-650X Usata" : "EDM-650X Pre-Owned",

@@ -195,7 +195,7 @@ export default async function AurumPressPage() {
             differenziare il proprio prodotto con un packaging d&apos;impatto visivo e tattile.
           </p>
           <p className="text-gray-500 leading-relaxed">
-            Perfetta per scatole di lusso, confezioni regalo, packaging cosmetico, alimentare e per il settore 
+            Perfetta per scatole di lusso, confezioni regalo, packaging cosmetico e per il settore
             della moda. Una macchina che trasforma ogni confezione in un&apos;esperienza sensoriale.
           </p></>) : (<><p className="text-gray-500 leading-relaxed mb-4">
             The AurumPress is a thermal foil printer with hydraulic impression designed to add premium finishes to packaging. Using hot foil stamping technology, it applies logos, text and decorations with silver, metallic, pastel and glossy transparent foils.

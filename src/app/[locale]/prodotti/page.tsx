@@ -69,6 +69,35 @@ const heroStats = [
   { value: "100%", labelIt: "assistenza in Italia", labelEn: "support in Italy" },
 ];
 
+// Nomi macchina → pagina prodotto, per rendere cliccabili le FAQ
+const PRODUCT_LINKS: { name: string; href: string }[] = [
+  { name: "Anypack AB2500", href: "/prodotti/ab2500" },
+  { name: "Anytron ANY-002", href: "/prodotti/any-002" },
+  { name: "GreenBox EVO", href: "/prodotti/greenbox-evo" },
+  { name: "EDM-650X", href: "/prodotti/edm-650x" },
+  { name: "ThunderBox", href: "/prodotti/thunderbox" },
+  { name: "Afinia L901", href: "/prodotti/afinia-l901" },
+  { name: "Afinia X350", href: "/prodotti/afinia-x350" },
+  { name: "Afinia LT5C", href: "/prodotti/afinia-lt5c" },
+];
+
+// Trasforma i nomi macchina presenti nel testo in link alla scheda prodotto
+function linkifyAnswer(text: string) {
+  const sorted = [...PRODUCT_LINKS].sort((a, b) => b.name.length - a.name.length);
+  const escaped = sorted.map((l) => l.name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
+  const re = new RegExp(`(${escaped.join("|")})`, "g");
+  return text.split(re).map((part, i) => {
+    const match = sorted.find((l) => l.name === part);
+    return match ? (
+      <Link key={i} href={match.href} className="text-cyan-600 font-semibold hover:text-cyan-800 hover:underline">
+        {part}
+      </Link>
+    ) : (
+      <span key={i}>{part}</span>
+    );
+  });
+}
+
 export default async function ProdottiPage() {
   const locale = await getLocale();
   const it = locale === "it";
@@ -282,8 +311,11 @@ export default async function ProdottiPage() {
         </div>
       </section>
 
-      {/* FAQ */}
-      <ProductFaqSection items={faqItems} locale={locale} />
+      {/* FAQ — nomi macchina cliccabili verso la scheda prodotto */}
+      <ProductFaqSection
+        items={faqItems.map((f) => ({ question: f.question, answer: linkifyAnswer(f.answer) }))}
+        locale={locale}
+      />
     </>
   );
 }

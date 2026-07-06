@@ -1,10 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 
 interface FaqItem {
   question: string;
-  answer: string;
+  answer: ReactNode;
 }
 
 interface ProductFaqSectionProps {

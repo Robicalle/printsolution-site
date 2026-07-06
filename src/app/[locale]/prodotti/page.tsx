@@ -27,32 +27,47 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-const categoryInfo: Record<string, { it: string; en: string; descIt: string; descEn: string }> = {
+const categoryInfo: Record<string, { it: string; en: string; descIt: string; descEn: string; icon: string; color: string }> = {
   "stampanti-packaging": {
     it: "Stampanti Packaging",
     en: "Packaging Printers",
+    icon: "📦",
+    color: "from-cyan-500 to-cyan-600",
     descIt: "Stampanti digitali single-pass per stampare direttamente su cartone ondulato, scatole, shopper e packaging di grande formato — senza clichè e senza minimi d'ordine. Ideali per scatolifici, e-commerce e print shop che producono packaging personalizzato on-demand.",
     descEn: "Single-pass digital printers for printing directly on corrugated cardboard, boxes, shoppers and large-format packaging — with no plates and no minimum order. Ideal for box makers, e-commerce and print shops producing custom packaging on demand.",
   },
   "stampanti-etichette": {
     it: "Stampanti Etichette",
     en: "Label Printers",
+    icon: "🏷️",
+    color: "from-emerald-500 to-emerald-600",
     descIt: "Etichettatrici digitali inkjet e laser a colori per etichette adesive in bobina, con o senza bianco. Adatte a food & beverage, cosmetica, chimica e vino, per tirature medie e piccole senza costi di setup.",
     descEn: "Inkjet and laser colour label printers for roll adhesive labels, with or without white. Suited to food & beverage, cosmetics, chemicals and wine, for medium and short runs with no setup costs.",
   },
   finishing: {
     it: "Finishing & Accessori",
     en: "Finishing & Accessories",
+    icon: "✂️",
+    color: "from-amber-500 to-amber-600",
     descIt: "Sistemi di finitura per completare la produzione di etichette e packaging: laminazione, fustellatura semi-rotativa e digitale, taglio, ribobinatura e nobilitazione a caldo.",
     descEn: "Finishing systems to complete label and packaging production: lamination, semi-rotary and digital die-cutting, slitting, rewinding and hot foil embellishment.",
   },
   labbratura: {
     it: "Labbratura Libri",
     en: "Book Edge Printing",
+    icon: "📚",
+    color: "from-violet-500 to-violet-600",
     descIt: "Stampanti dedicate alla labbratura, la decorazione a colori del taglio di libri, quaderni e agende. Soluzioni da tavolo e industriali per legatorie, tipografie ed editori.",
     descEn: "Printers dedicated to book edge printing, the colour decoration of the edges of books, notebooks and diaries. Desktop and industrial solutions for binderies, print shops and publishers.",
   },
 };
+
+const heroStats = [
+  { value: "20+", labelIt: "macchine in catalogo", labelEn: "machines in catalogue" },
+  { value: "4", labelIt: "categorie di stampa", labelEn: "printing categories" },
+  { value: "1", labelIt: "sala demo a Milano", labelEn: "demo room near Milan" },
+  { value: "100%", labelIt: "assistenza in Italia", labelEn: "support in Italy" },
+];
 
 export default async function ProdottiPage() {
   const locale = await getLocale();
@@ -131,7 +146,8 @@ export default async function ProdottiPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
-      {/* Hero with background image */}
+
+      {/* Hero with background image + stats */}
       <section className="relative text-white pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
         <Image
           src="/images/hero-machine2.webp"
@@ -140,7 +156,7 @@ export default async function ProdottiPage() {
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-dark-900/85 via-dark-900/70 to-dark-900/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-dark-900/90 via-dark-900/75 to-dark-900/45" />
         <div className="container-custom px-4 sm:px-6 lg:px-8 relative z-10">
           <p className="text-cyan-300 text-sm mb-3 uppercase tracking-widest font-medium">Print Solution</p>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight">
@@ -151,6 +167,16 @@ export default async function ProdottiPage() {
               ? "Box maker, stampanti per cartone ondulato, etichettatrici inkjet e laser, finitura e labbratura. Soluzioni complete per ogni esigenza."
               : "Box makers, corrugated cardboard printers, inkjet and laser label printers, finishing and book edge printing. Complete solutions for every need."}
           </p>
+
+          {/* Stats strip */}
+          <div className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl">
+            {heroStats.map((s) => (
+              <div key={s.value + s.labelIt} className="bg-white/10 backdrop-blur-sm rounded-2xl px-5 py-4 border border-white/10">
+                <p className="text-2xl font-bold text-cyan-300">{s.value}</p>
+                <p className="text-xs text-white/70 mt-1 leading-snug">{it ? s.labelIt : s.labelEn}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -165,53 +191,78 @@ export default async function ProdottiPage() {
         </div>
       </section>
 
-      {/* Products Grid */}
+      {/* Products by category */}
       <section className="section-padding bg-white">
-        <div className="container-custom">
-          {Object.entries(grouped).map(([cat, items]) => (
-            <div key={cat} className="mb-16 last:mb-0">
-              <h2 className="text-2xl font-bold text-dark-800 mb-3 border-b border-gray-200 pb-4">
-                {categoryInfo[cat]?.[it ? "it" : "en"] || cat}
-              </h2>
-              {categoryInfo[cat] && (
-                <p className="text-gray-500 leading-relaxed max-w-3xl mb-8">
-                  {it ? categoryInfo[cat].descIt : categoryInfo[cat].descEn}
-                </p>
-              )}
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                {items.map((p: any) => {
-                  const imgUrl = p.images?.[0]
-                    ? urlForImage(p.images[0]).width(400).url()
-                    : "/images/hero-boxes.webp";
-                  const slug = p.slug?.current || p.slug;
-                  return (
-                    <Link
-                      key={p._id}
-                      href={`/prodotti/${slug}`}
-                      className="card-modern overflow-hidden group hover:-translate-y-1 transition-transform duration-300"
-                    >
-                      <div className="h-48 relative overflow-hidden bg-surface-50">
-                        <Image
-                          src={imgUrl}
-                          alt={p.name}
-                          fill
-                          className="object-contain p-4 group-hover:scale-105 transition-transform duration-500"
-                        />
-                      </div>
-                      <div className="p-5">
-                        <h3 className="font-bold text-dark-800 group-hover:text-cyan-500 transition-colors">
-                          {p.name}
-                        </h3>
-                        {p.seoDescription && (
-                          <p className="text-sm text-gray-500 mt-1 line-clamp-2">{p.seoDescription}</p>
-                        )}
-                      </div>
-                    </Link>
-                  );
-                })}
+        <div className="container-custom space-y-16">
+          {Object.entries(grouped).map(([cat, items]) => {
+            const info = categoryInfo[cat];
+            const color = info?.color || "from-cyan-500 to-cyan-600";
+            return (
+              <div key={cat}>
+                {/* Category header */}
+                <div className="flex items-center gap-4 mb-3">
+                  {info?.icon && (
+                    <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${color} flex items-center justify-center text-2xl flex-shrink-0 shadow-md`}>
+                      {info.icon}
+                    </div>
+                  )}
+                  <h2 className="text-2xl lg:text-3xl font-bold text-dark-800">
+                    {info?.[it ? "it" : "en"] || cat}
+                  </h2>
+                </div>
+                {info && (
+                  <p className="text-gray-500 leading-relaxed max-w-3xl mb-8">
+                    {it ? info.descIt : info.descEn}
+                  </p>
+                )}
+
+                {/* Product cards */}
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {items.map((p: any) => {
+                    const imgUrl = p.images?.[0]
+                      ? urlForImage(p.images[0]).width(500).url()
+                      : "/images/hero-boxes.webp";
+                    const slug = p.slug?.current || p.slug;
+                    return (
+                      <Link
+                        key={p._id}
+                        href={`/prodotti/${slug}`}
+                        className="group relative rounded-3xl overflow-hidden border border-gray-100 bg-surface-50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col cursor-pointer"
+                      >
+                        {/* Colored top accent strip */}
+                        <div className={`h-1.5 bg-gradient-to-r ${color} flex-shrink-0`} />
+
+                        <div className="p-6 flex flex-col flex-1">
+                          {/* Product image */}
+                          <div className="relative h-44 mb-5 rounded-2xl overflow-hidden bg-white border border-gray-50">
+                            <Image
+                              src={imgUrl}
+                              alt={p.name}
+                              fill
+                              className="object-contain p-4 group-hover:scale-105 transition-transform duration-500"
+                            />
+                          </div>
+
+                          <h3 className="text-lg font-bold text-dark-800 mb-2 group-hover:text-cyan-500 transition-colors">
+                            {p.name}
+                          </h3>
+                          {p.seoDescription && (
+                            <p className="text-gray-500 text-sm leading-relaxed mb-5 flex-1 line-clamp-3">
+                              {p.seoDescription}
+                            </p>
+                          )}
+
+                          <span className={`self-start inline-flex items-center px-5 py-2.5 bg-gradient-to-r ${color} text-white text-sm font-semibold rounded-full group-hover:shadow-md group-hover:opacity-90 transition-all mt-auto`}>
+                            {it ? "Scopri" : "Discover"} →
+                          </span>
+                        </div>
+                      </Link>
+                    );
+                  })}
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </section>
 

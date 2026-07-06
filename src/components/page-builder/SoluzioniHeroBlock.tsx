@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 interface Props {
   block: any;
   locale: string;
@@ -13,10 +15,16 @@ const stats = [
 export default function SoluzioniHeroBlock({ block, locale }: Props) {
   const it = locale === "it";
   return (
-    <section className="relative bg-dark-900 text-white pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
-      <div className="absolute top-20 right-0 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 left-0 w-64 h-64 bg-magenta-500/10 rounded-full blur-3xl" />
-      <div className="container-custom px-4 sm:px-6 lg:px-8 relative">
+    <section className="relative text-white pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
+      <Image
+        src="/images/hero-machine2.webp"
+        alt={it ? "Soluzioni di stampa digitale Print Solution" : "Print Solution digital printing solutions"}
+        fill
+        className="object-cover"
+        priority
+      />
+      <div className="absolute inset-0 bg-gradient-to-r from-dark-900/90 via-dark-900/75 to-dark-900/45" />
+      <div className="container-custom px-4 sm:px-6 lg:px-8 relative z-10">
         <p className="text-cyan-300 text-sm mb-3 uppercase tracking-widest font-medium">
           {it ? block.eyebrow : (block.eyebrow_en || block.eyebrow)}
         </p>

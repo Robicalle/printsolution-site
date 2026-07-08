@@ -1,6 +1,7 @@
 import { MetadataRoute } from "next";
 import { client } from "@/sanity/lib/client";
 import { groq } from "next-sanity";
+import { getShopCategories } from "@/lib/shop-sanity";
 
 const BASE = "https://www.printsolutionsrl.it";
 
@@ -27,11 +28,11 @@ function entry(
 }
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const [products, posts, solutions, shopProducts] = await Promise.all([
+  const [products, posts, solutions, shopCategories] = await Promise.all([
     client.fetch(groq`*[_type == "product"]{ "slug": slug.current, _updatedAt }`).catch(() => []),
     client.fetch(groq`*[_type == "post" && publishedAt <= now()]{ "slug": slug.current, _updatedAt, publishedAt }`).catch(() => []),
     client.fetch(groq`*[_type == "solution"]{ "slug": slug.current, _updatedAt }`).catch(() => []),
-    client.fetch(groq`*[_type == "shopProduct"]{ category, _updatedAt }`).catch(() => []),
+    getShopCategories().catch(() => []),
   ]);
 
   const entries: MetadataRoute.Sitemap = [];
@@ -86,13 +87,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }));
   }
 
-  // ── Shop categories ───────────────────────────────────────────────────────
-  const shopCats = new Set<string>();
-  for (const sp of shopProducts || []) {
-    if (sp.category) shopCats.add(sp.category);
-  }
-  for (const cat of shopCats) {
-    entries.push(entry(`/shop/${cat}`, { priority: 0.8, freq: "weekly" }));
+  // ── Shop categories (usa gli slug reali: consumabili-<modello>) ────────────
+  for (const cat of shopCategories || []) {
+    if (!cat.slug) continue;
+    entries.push(entry(`/shop/${cat.slug}`, { priority: 0.8, freq: "weekly" }));
   }
 
   return entries;

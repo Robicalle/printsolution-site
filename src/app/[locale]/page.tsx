@@ -8,20 +8,20 @@ export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
   return {
     title: locale === 'it'
-      ? "Stampanti per Packaging ed Etichette dal 2010"
+      ? "Stampa Digitale per Packaging ed Etichette"
       : "Digital Packaging & Label Printers Italy",
     description: locale === 'it'
-      ? "Stampanti digitali per scatole personalizzate, etichette a colori e packaging industriale. Box maker automatici, sistemi single-pass e inkjet. Demo gratuita a Sesto San Giovanni (MI)."
+      ? "Print Solution: dal 2010 distributore di soluzioni di stampa digitale per packaging ed etichette. Oltre 1.500 aziende in 20+ Paesi. Demo gratuita al Demo Center di Sesto San Giovanni."
       : "Digital printers for custom boxes, colour labels and industrial packaging. Automatic box makers, single-pass and inkjet systems. Free demo near Milan, Italy.",
     keywords: locale === 'it'
       ? ["stampa digitale packaging", "etichettatura industriale", "Print Solution", "stampante packaging", "stampa etichette industriale", "box maker automatico"]
       : ["digital packaging printing", "industrial labelling", "Print Solution", "packaging printer", "industrial label printing", "automatic box maker"],
     openGraph: {
       title: locale === 'it'
-        ? "Print Solution — Stampanti per Packaging ed Etichette dal 2010"
+        ? "Stampa Digitale per Packaging ed Etichette | Print Solution"
         : "Digital Packaging & Label Printers Italy",
       description: locale === 'it'
-        ? "Stampanti digitali per scatole personalizzate, etichette a colori e packaging industriale. Box maker automatici, sistemi single-pass e inkjet. Demo gratuita a Sesto San Giovanni (MI)."
+        ? "Print Solution: dal 2010 distributore di soluzioni di stampa digitale per packaging ed etichette. Oltre 1.500 aziende in 20+ Paesi. Demo gratuita al Demo Center di Sesto San Giovanni."
         : "Digital printers for custom boxes, colour labels and industrial packaging. Automatic box makers, single-pass and inkjet systems. Free demo near Milan, Italy.",
       images: ["/images/hero-boxes.webp"],
       type: "website",

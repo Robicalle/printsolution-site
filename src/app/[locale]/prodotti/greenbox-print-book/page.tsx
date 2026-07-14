@@ -10,7 +10,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: isIt ? "GreenBox Print Book — Stampante per Labbratura Libri" : "GreenBox Print Book — Digital Book Edge Printer",
     description: isIt
-      ? "GreenBox Print Book: stampante per labbratura libri con tecnologia HP PageWide. Single-pass, 30 m/min, 1200 dpi. Print Solution"
+      ? "GreenBox Print Book: labbratura e nobilitazione digitale del taglio di libri, agende e quaderni per editoria e legatorie. Stampa CMYK single-pass HP PageWide, 30 m/min, 1200 dpi."
       : "GreenBox Print Book: book edge printer with HP PageWide technology. Single-pass, 30 m/min, 1200 dpi. Print Solution",
     keywords: [
     "labbratura libri",
@@ -23,7 +23,7 @@ export async function generateMetadata(): Promise<Metadata> {
     openGraph: {
       title: isIt ? "GreenBox Print Book: Stampante Digitale per Labbratura Libri | Print Solution" : "GreenBox Print Book: Digital Book Edge Printer | Print Solution",
       description: isIt
-        ? "GreenBox Print Book: stampante per labbratura libri con tecnologia HP PageWide. Single-pass, 30 m/min, 1200 dpi. Print Solution"
+        ? "GreenBox Print Book: labbratura e nobilitazione digitale del taglio di libri, agende e quaderni per editoria e legatorie. Stampa CMYK single-pass HP PageWide, 30 m/min, 1200 dpi."
         : "GreenBox Print Book: book edge printer with HP PageWide technology. Single-pass, 30 m/min, 1200 dpi. Print Solution",
       images: ["/images/products/greenbox-printbook.jpg"],
       type: "website",

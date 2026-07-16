@@ -83,6 +83,39 @@ export default defineType({
       description: "Blocchi page builder per la pagina soluzione dinamica",
     }),
     defineField({
+      name: "faq",
+      title: "FAQ (IT)",
+      type: "array",
+      description: "Domande frequenti — usate per il FAQPage schema (AI Overview). Riutilizzabile su ogni soluzione.",
+      of: [
+        {
+          type: "object",
+          name: "solutionFaqItem",
+          fields: [
+            { name: "question", title: "Domanda", type: "string" },
+            { name: "answer", title: "Risposta", type: "text", rows: 3 },
+          ],
+          preview: { select: { title: "question" } },
+        },
+      ],
+    }),
+    defineField({
+      name: "faq_en",
+      title: "FAQ (EN)",
+      type: "array",
+      of: [
+        {
+          type: "object",
+          name: "solutionFaqItemEn",
+          fields: [
+            { name: "question", title: "Question", type: "string" },
+            { name: "answer", title: "Answer", type: "text", rows: 3 },
+          ],
+          preview: { select: { title: "question" } },
+        },
+      ],
+    }),
+    defineField({
       name: "seo",
       title: "SEO (IT)",
       type: "object",

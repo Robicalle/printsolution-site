@@ -148,7 +148,7 @@ export default async function LocaleLayout({
         <meta name="google-site-verification" content="upL-dBSwnBUH3NTUiMQIvha8Wsjj28r7hJcCpujcxw0" />
         <meta name="format-detection" content="telephone=no" />
         <GoogleTagManagerHead gtmId={siteSettings?.tracking?.gtmId} />
-        <link rel="preconnect" href="https://api.anthropic.com" />
+        {/* La chat AI chiama Anthropic solo lato server (/api/chat): nessun preconnect client necessario */}
         <link rel="preconnect" href="https://www.youtube.com" />
         <link rel="preconnect" href="https://i.ytimg.com" />
         {/* hreflang gestito pagina per pagina tramite alternates.languages in generateMetadata */}

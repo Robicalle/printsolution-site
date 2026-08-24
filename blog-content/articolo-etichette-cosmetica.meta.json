@@ -1,0 +1,48 @@
+{
+  "title": "Etichette per cosmetica: normativa, requisiti e come stamparle in azienda",
+  "slug": "etichette-cosmetica-normativa-stampa-azienda",
+  "category": "etichette",
+  "author": "Print Solution S.r.l.",
+  "excerpt": "Le etichette cosmetiche uniscono conformità (Reg. CE 1223/2009, INCI, PAO) e immagine premium. Ecco cosa devono contenere e perché conviene stamparle in azienda, anche in piccole tirature.",
+  "publishedAt": "2026-08-28T07:00:00.000Z",
+  "seo": {
+    "title": "Etichette per cosmetica: normativa e stampa in azienda",
+    "description": "Etichette per cosmetica a norma (Reg. CE 1223/2009): INCI, PAO e lotto. Stamparle in azienda in piccole tirature, su supporti trasparenti premium.",
+    "keywords": [
+      "etichette cosmetica",
+      "etichette cosmetici",
+      "stampa etichette cosmetici",
+      "normativa etichette cosmetiche",
+      "etichette INCI",
+      "etichette prodotti cosmetici"
+    ]
+  },
+  "faq": [
+    {
+      "question": "Quali informazioni sono obbligatorie su un'etichetta cosmetica?",
+      "answer": "Secondo il Regolamento (CE) 1223/2009, tra le altre: nome e indirizzo della persona responsabile, contenuto nominale, data di durata minima o simbolo PAO, precauzioni d'impiego, numero di lotto, funzione del prodotto ed elenco ingredienti (INCI). I requisiti vanno verificati caso per caso con un consulente regolatorio."
+    },
+    {
+      "question": "Le etichette cosmetiche resistono a creme, oli e acqua?",
+      "answer": "Con i supporti e le tecnologie adatte sì: film resistenti all'acqua e stampe a toner reggono contatto con prodotti, umidità e sfregamento tipici dell'ambiente bagno. È consigliabile testarle sulle proprie confezioni e condizioni d'uso."
+    },
+    {
+      "question": "Posso stampare etichette trasparenti per l'effetto \"no-label look\"?",
+      "answer": "Sì. Con una tecnologia che stampa anche il bianco coprente, come il toner LED, si stampano etichette su film trasparente mantenendo colori pieni e leggibilità — la base dell'effetto \"no-label look\" molto usato in cosmetica."
+    }
+  ],
+  "relatedProducts": [
+    {
+      "name": "Afinia X350",
+      "desc": "Stampante inkjet Memjet a base acqua per etichette a colori brillanti e ad alta risoluzione",
+      "href": "/prodotti/afinia-x350",
+      "image": "/images/products/afinia-x350-full.png"
+    },
+    {
+      "name": "Any-Press",
+      "desc": "Stampante laser LED a toner (CMYK+Bianco) per etichette resistenti e supporti trasparenti",
+      "href": "/prodotti/any-press",
+      "image": "/images/products/any-press.avif"
+    }
+  ]
+}

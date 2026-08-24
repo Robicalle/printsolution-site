@@ -1,0 +1,48 @@
+{
+  "title": "Etichette per vino, birra e beverage: come stamparle in azienda",
+  "slug": "etichette-vino-birra-beverage-stampa-azienda",
+  "category": "etichette",
+  "author": "Print Solution S.r.l.",
+  "excerpt": "Vino, birra artigianale e distillati hanno esigenze uniche: piccole tirature, edizioni limitate, finiture premium e resistenza al freddo. Ecco perché conviene stampare le etichette beverage in azienda con la stampa digitale.",
+  "publishedAt": "2026-08-25T07:00:00.000Z",
+  "seo": {
+    "title": "Etichette per vino, birra e beverage: stampa in azienda",
+    "description": "Etichette per vino, birra e beverage: stamparle in azienda in piccole tirature, edizioni numerate, finiture premium e resistenti a freddo e umidità.",
+    "keywords": [
+      "etichette vino",
+      "etichette birra",
+      "stampa etichette vino",
+      "etichette beverage",
+      "etichette birra artigianale",
+      "etichette per bottiglie"
+    ]
+  },
+  "faq": [
+    {
+      "question": "Posso stampare etichette per vino o birra in piccole tirature?",
+      "answer": "Sì. La stampa digitale non ha costi di avviamento, quindi anche poche centinaia di etichette per una nuova annata, una cuvée o una cotta di birra artigianale sono economicamente sostenibili — proprio dove l'offset e la flexo non sono competitivi."
+    },
+    {
+      "question": "Le etichette resistono al ghiaccio e all'umidità del frigo o del secchiello?",
+      "answer": "Dipende da supporto e tecnologia. Con i materiali adatti (adesivi e film resistenti all'acqua) e tecnologie come il toner, si ottengono etichette che reggono condensa, immersione e manipolazione. La cosa migliore è testarle sulle proprie bottiglie e condizioni reali."
+    },
+    {
+      "question": "Posso numerare le bottiglie o gestire edizioni limitate?",
+      "answer": "Sì. La stampa digitale a dato variabile permette di stampare numeri progressivi, codici o grafiche diverse a ogni etichetta, senza fermare la macchina: ideale per serie limitate, bottiglie numerate e tracciabilità."
+    }
+  ],
+  "relatedProducts": [
+    {
+      "name": "Afinia X350",
+      "desc": "Stampante inkjet Memjet a base acqua per etichette a colori brillanti",
+      "href": "/prodotti/afinia-x350",
+      "image": "/images/products/afinia-x350-full.png"
+    },
+    {
+      "name": "Any-Press",
+      "desc": "Stampante laser LED a toner (CMYK+Bianco) per etichette resistenti, anche su kraft",
+      "href": "/prodotti/any-press",
+      "image": "/images/products/any-press.avif"
+    }
+  ]
+}

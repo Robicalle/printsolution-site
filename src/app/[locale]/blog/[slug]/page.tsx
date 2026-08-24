@@ -46,10 +46,22 @@ export async function generateMetadata({
     const title = (en && post.seo_en?.title) ? post.seo_en.title : (post.seo?.title || (en && post.title_en ? post.title_en : post.title));
     const description = (en && post.seo_en?.description) ? post.seo_en.description : (post.seo?.description || (en && post.excerpt_en ? post.excerpt_en : post.excerpt));
     const coverImgUrl = post.coverImage ? urlForImage(post.coverImage)?.width(1200).height(630).url() || "" : "";
+    // hreflang condizionale: l'alternate EN si emette solo se l'articolo e' tradotto.
+    // Regola generica (non una lista di slug): un articolo caricato senza _en nasce
+    // non tradotto -> sotto /en serve contenuto IT, quindi canonical verso la versione
+    // IT e noindex, e niente alternate en (in pagina e in sitemap).
+    const hasEn = !!(post.title_en || post.body_en);
+    const itUrl = `https://www.printsolutionsrl.it/blog/${slug}`;
+    const enUrl = `https://www.printsolutionsrl.it/en/blog/${slug}`;
+    const languages: Record<string, string> = hasEn
+      ? { it: itUrl, en: enUrl, "x-default": itUrl }
+      : { it: itUrl, "x-default": itUrl };
+    const untranslatedEn = en && !hasEn;
     return {
       title,
       description,
       keywords: post.seo?.keywords || [],
+      ...(untranslatedEn && { robots: { index: false, follow: true } }),
       openGraph: {
         title,
         description,
@@ -64,12 +76,8 @@ export async function generateMetadata({
         ...(coverImgUrl && { images: [coverImgUrl] }),
       },
       alternates: {
-        canonical: en ? `https://www.printsolutionsrl.it/en/blog/${slug}` : `https://www.printsolutionsrl.it/blog/${slug}`,
-        languages: {
-          'it': `https://www.printsolutionsrl.it/blog/${slug}`,
-          'en': `https://www.printsolutionsrl.it/en/blog/${slug}`,
-          'x-default': `https://www.printsolutionsrl.it/blog/${slug}`,
-        },
+        canonical: hasEn && en ? enUrl : itUrl,
+        languages,
       },
     };
   } catch {

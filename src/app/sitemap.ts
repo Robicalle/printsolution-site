@@ -10,27 +10,26 @@ function en(path: string) { return `${BASE}/en${path}`; }
 
 function entry(
   path: string,
-  opts: { priority: number; freq: MetadataRoute.Sitemap[number]["changeFrequency"]; lastMod?: Date }
+  opts: { priority: number; freq: MetadataRoute.Sitemap[number]["changeFrequency"]; lastMod?: Date; omitEn?: boolean }
 ): MetadataRoute.Sitemap[number] {
+  // omitEn: pagina senza gemella EN reale (es. articolo blog non tradotto) ->
+  // non dichiarare l'alternate 'en' nella sitemap.
+  const languages: Record<string, string> = opts.omitEn
+    ? { it: it(path), "x-default": it(path) }
+    : { it: it(path), en: en(path), "x-default": it(path) };
   return {
     url: it(path),
     lastModified: opts.lastMod ?? new Date(),
     changeFrequency: opts.freq,
     priority: opts.priority,
-    alternates: {
-      languages: {
-        it: it(path),
-        en: en(path),
-        "x-default": it(path),
-      },
-    },
+    alternates: { languages },
   };
 }
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const [products, posts, solutions, shopCategories] = await Promise.all([
     client.fetch(groq`*[_type == "product"]{ "slug": slug.current, _updatedAt }`).catch(() => []),
-    client.fetch(groq`*[_type == "post" && publishedAt <= now()]{ "slug": slug.current, _updatedAt, publishedAt }`).catch(() => []),
+    client.fetch(groq`*[_type == "post" && publishedAt <= now()]{ "slug": slug.current, _updatedAt, publishedAt, "hasEn": defined(title_en) || defined(body_en) }`).catch(() => []),
     client.fetch(groq`*[_type == "solution"]{ "slug": slug.current, _updatedAt }`).catch(() => []),
     getShopCategories().catch(() => []),
   ]);
@@ -74,6 +73,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.7,
       freq: "monthly",
       lastMod: p._updatedAt ? new Date(p._updatedAt) : undefined,
+      omitEn: !p.hasEn,
     }));
   }
 

@@ -12,9 +12,9 @@ export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
   const it = locale === 'it';
   return {
-    title: "Blog",
+    title: { absolute: "Blog Stampa Digitale: Guide su Etichette e Packaging" },
     description: it
-      ? "Articoli e guide sulla stampa digitale per packaging, etichette a colori e cartone ondulato. Approfondimenti tecnici da Print Solution."
+      ? "Guide pratiche di stampa digitale per packaging ed etichette: confronti tra macchine, normativa etichette e casi reali dal Demo Center Print Solution."
       : "Articles and guides on digital printing for packaging, colour labels and corrugated cardboard. Technical insights from Print Solution.",
     keywords: it
       ? ["blog stampa digitale", "guida packaging digitale", "stampa etichette guida", "cartone ondulato stampa"]

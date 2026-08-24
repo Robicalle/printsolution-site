@@ -32,7 +32,17 @@ export async function generateMetadata({
   const en = locale === 'en';
   try {
     const post = await getPostBySlug(slug);
-    if (!post) return {};
+    if (!post) {
+      return {
+        title: "Contenuto non trovato",
+        robots: { index: false, follow: false },
+        alternates: {
+          canonical: en
+            ? `https://www.printsolutionsrl.it/en/blog/${slug}`
+            : `https://www.printsolutionsrl.it/blog/${slug}`,
+        },
+      };
+    }
     const title = (en && post.seo_en?.title) ? post.seo_en.title : (post.seo?.title || (en && post.title_en ? post.title_en : post.title));
     const description = (en && post.seo_en?.description) ? post.seo_en.description : (post.seo?.description || (en && post.excerpt_en ? post.excerpt_en : post.excerpt));
     const coverImgUrl = post.coverImage ? urlForImage(post.coverImage)?.width(1200).height(630).url() || "" : "";

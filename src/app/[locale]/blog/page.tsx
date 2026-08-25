@@ -20,7 +20,7 @@ export async function generateMetadata(): Promise<Metadata> {
       ? ["blog stampa digitale", "guida packaging digitale", "stampa etichette guida", "cartone ondulato stampa"]
       : ["digital printing blog", "digital packaging guide", "label printing guide", "corrugated cardboard printing"],
     openGraph: {
-      title: it ? "Blog | Print Solution" : "Blog | Print Solution",
+      title: "Blog Stampa Digitale: Guide su Etichette e Packaging",
       description: it
         ? "Articoli e guide sulla stampa digitale per packaging, etichette e cartone ondulato."
         : "Articles and guides on digital printing for packaging, labels and corrugated cardboard.",

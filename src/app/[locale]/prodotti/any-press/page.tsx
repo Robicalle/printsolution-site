@@ -25,11 +25,11 @@ export async function generateMetadata(): Promise<Metadata> {
       "stampa etichette in-house",
     ],
     openGraph: {
-      title: isIt ? "Any-Press | Stampante Laser LED CMYK+Bianco per Etichette e Packaging — Print Solution" : "Any-Press | LED Laser Printer CMYK+White for Labels & Flexible Packaging — Print Solution",
+      title: isIt ? "Any-Press: stampante laser LED CMYK + Bianco" : "Any-Press: LED laser printer, CMYK + White",
       description: isIt
         ? "Any-Press: stampa etichette e packaging flessibile in-house con laser LED 5 colori CMYK+Bianco. 1200 dpi, 5 m/min, zero lastre. Dal primo pezzo, senza minimi d'ordine."
         : "Any-Press: in-house label and flexible packaging printing with 5-colour LED laser CMYK+White. 1200 dpi, 5 m/min, no plates. From the first piece, no minimum order.",
-      images: ["/images/products/any-press.avif"],
+      images: [{ url: "/images/og/any-press.jpg", width: 1200, height: 630 }],
       type: "website",
       locale: isIt ? "it_IT" : "en_US",
     },

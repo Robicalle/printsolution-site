@@ -29,11 +29,11 @@ export async function generateMetadata(): Promise<Metadata> {
       "industry 4.0 packaging",
     ],
     openGraph: {
-      title: isIt ? "EDM-650X | Stampa Packaging su Cartone Ondulato In-House • Inkjet Single-Pass Scalabile — Print Solution" : "EDM-650X | In-House Corrugated Packaging Printer • Scalable Single-Pass Inkjet — Print Solution",
+      title: isIt ? "EDM-650.X: stampa digitale su cartone ondulato" : "EDM-650.X: digital printing on corrugated board",
       description: isIt
         ? "Porta la produzione packaging in-house con EDM-650X: stampa inkjet single-pass su cartone ondulato, 6 configurazioni scalabili, fino a 30 m/min, 1200 dpi. Industry 4.0 Ready. Zero lastre, dal primo pezzo."
         : "Bring packaging production in-house with EDM-650X: single-pass inkjet on corrugated cardboard, 6 scalable configurations, up to 30 m/min, 1200 dpi. Industry 4.0 Ready. No plates, from the first piece.",
-      images: ["/images/products/edm-650x-photo.avif"],
+      images: [{ url: "/images/og/edm-650x.jpg", width: 1200, height: 630 }],
       type: "website",
       locale: isIt ? "it_IT" : "en_US",
     },

@@ -26,11 +26,11 @@ export async function generateMetadata(): Promise<Metadata> {
       "macchina produzione scatole",
     ],
     openGraph: {
-      title: isIt ? "Anypack AB2500 | Box Maker Automatico: Scatole On-Demand — Print Solution" : "Anypack AB2500 | Automatic Box Maker: Custom Boxes On-Demand — Print Solution",
+      title: isIt ? "Anypack AB2500: box maker per scatole su misura" : "Anypack AB2500: box maker for custom-size boxes",
       description: isIt
         ? "Anypack AB2500: box maker automatico per scatole in cartone ondulato su misura. 500-600 pz/ora, cambio formato in 10 sec, fustellatura e incollaggio integrati. Print Solution."
         : "Anypack AB2500: automatic box maker for custom corrugated cardboard boxes on-demand. 500-600 boxes/hour, format change in 10 sec, integrated die-cutting and gluing. Print Solution.",
-      images: ["/images/products/ab2500.png"],
+      images: [{ url: "/images/og/ab2500.jpg", width: 1200, height: 630 }],
       type: "website",
       locale: isIt ? "it_IT" : "en_US",
     },

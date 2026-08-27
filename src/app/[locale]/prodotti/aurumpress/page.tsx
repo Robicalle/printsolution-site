@@ -20,11 +20,11 @@ export async function generateMetadata(): Promise<Metadata> {
     "stampa foil packaging",
   ],
     openGraph: {
-      title: isIt ? "AurumPress: Stampante Hot Foil per Etichette Premium | Print Solution" : "AurumPress: Hot Foil Stamping Machine for Premium Labels | Print Solution",
+      title: isIt ? "AurumPress: nobilitazione a caldo con foil" : "AurumPress: hot foil finishing",
       description: isIt
         ? "AurumPress: stampa a caldo con foil oro, argento e olografici. Nobilitazione on-demand per packaging di lusso. Print Solution"
         : "AurumPress: hot foil stamping with gold, silver and holographic foils. On-demand luxury packaging. Print Solution",
-      images: ["/images/products/aurumpress.jpg"],
+      images: [{ url: "/images/og/aurumpress.jpg", width: 1200, height: 630 }],
       type: "website",
       locale: isIt ? "it_IT" : "en_US",
     },

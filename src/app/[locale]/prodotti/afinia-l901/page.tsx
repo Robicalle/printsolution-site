@@ -26,11 +26,11 @@ export async function generateMetadata(): Promise<Metadata> {
       "alternativa afinia l801",
     ],
     openGraph: {
-      title: isIt ? "Afinia L901 | Stampante Etichette Bobina Memjet 1600 dpi — Alternativa Afinia L801 — Print Solution" : "Afinia L901 | Roll Label Printer Memjet 1600 dpi — Afinia L801 Upgrade — Print Solution",
+      title: isIt ? "Afinia L901 Plus: etichette a colori in bobina" : "Afinia L901 Plus: roll-to-roll colour labels",
       description: isIt
         ? "Afinia L901: stampante etichette in bobina Memjet 1600 dpi, CMYKK, fino a 22 m/min. Testina sostituibile dall'utente, zero sprechi. Evoluzione dell'Afinia L801 — prestazioni superiori, stesso workflow. Print Solution."
         : "Afinia L901: Memjet roll label printer 1600 dpi, CMYKK, up to 22 m/min. User-replaceable printhead, zero waste. The natural upgrade from Afinia L801 — better performance, same workflow. Print Solution.",
-      images: ["/images/products/afinia-l901.png"],
+      images: [{ url: "/images/og/afinia-l901.jpg", width: 1200, height: 630 }],
       type: "website",
       locale: isIt ? "it_IT" : "en_US",
     },

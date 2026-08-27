@@ -32,11 +32,11 @@ export async function generateMetadata(): Promise<Metadata> {
       "stampa su scatole in-house",
     ],
     openGraph: {
-      title: isIt ? "GreenBox EVO | Stampa Packaging, Shopper Carta e Cotone In-House • Inkjet Single-Pass CMYK — Print Solution" : "GreenBox EVO | In-House Packaging & Paper Shopper Printer • Single-Pass CMYK Inkjet — Print Solution",
+      title: isIt ? "GreenBox EVO: stampa packaging e shopper in azienda" : "GreenBox EVO: in-house packaging and bag printing",
       description: isIt
         ? "GreenBox EVO: stampa packaging, shopper carta e cotone direttamente in azienda. Inkjet single-pass CMYK, 30 m/min, 1200 dpi, inchiostri pigmentati eco-compatibili. Industry 4.0 Ready. Dal primo pezzo, zero minimi d'ordine."
         : "GreenBox EVO: print packaging, paper and cotton shoppers directly in-house. Single-pass CMYK inkjet, 30 m/min, 1200 dpi, eco-compatible pigment inks. Industry 4.0 Ready. From the first piece, no minimum order.",
-      images: ["/images/products/greenbox-evo-site-nobg.png"],
+      images: [{ url: "/images/og/greenbox-evo.jpg", width: 1200, height: 630 }],
       type: "website",
       locale: isIt ? "it_IT" : "en_US",
     },

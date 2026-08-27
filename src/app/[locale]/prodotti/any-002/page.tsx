@@ -23,11 +23,11 @@ export async function generateMetadata(): Promise<Metadata> {
       "stampante toner etichette bobina",
     ],
     openGraph: {
-      title: isIt ? "Anytron ANY-002 | Stampante Etichette in Bobina Laser Toner — Print Solution" : "Anytron ANY-002 | Laser Toner Roll Label Printer — Print Solution",
+      title: isIt ? "Anytron ANY-002: etichette a colori in bobina" : "Anytron ANY-002: roll-to-roll colour labels",
       description: isIt
         ? "Anytron ANY-002: stampante etichette in bobina laser toner a colori. 1200 dpi, fino a 5.000 etichette in 2 ore, toner resistente ad acqua e abrasioni. Stampa etichette adesive on-demand. Print Solution."
         : "Anytron ANY-002: colour laser toner roll label printer. 1200 dpi, up to 5,000 labels in 2 hours, toner resistant to water and abrasion. On-demand label printing. Print Solution.",
-      images: ["/images/products/any-002.avif"],
+      images: [{ url: "/images/og/any-002.jpg", width: 1200, height: 630 }],
       type: "website",
       locale: isIt ? "it_IT" : "en_US",
     },

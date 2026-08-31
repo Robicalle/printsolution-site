@@ -8,6 +8,7 @@ import { urlForImage } from "@/sanity/lib/image";
 import Image from "next/image";
 import { PortableText } from "@portabletext/react";
 import PreviewBanner from "@/components/PreviewBanner";
+import { categoryLabel } from "@/lib/blog-category";
 
 export const revalidate = 60;
 
@@ -391,8 +392,8 @@ export default async function BlogPostPage({
           </h1>
           <div className="mt-4 flex items-center gap-4 text-sm text-gray-300">
             {post.category && (
-              <span className="px-3 py-1 rounded-full bg-white/10 capitalize">
-                {post.category}
+              <span className="px-3 py-1 rounded-full bg-white/10">
+                {categoryLabel(post.category, locale)}
               </span>
             )}
             {publishedDate && <span>{publishedDate}</span>}

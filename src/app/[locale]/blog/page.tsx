@@ -5,6 +5,7 @@ import { getLocale } from "next-intl/server";
 import { getAllPosts } from "@/sanity/lib/fetchers";
 import Image from "next/image";
 import { urlForImage } from "@/sanity/lib/image";
+import { categoryLabel } from "@/lib/blog-category";
 
 export const revalidate = 60;
 
@@ -161,7 +162,7 @@ export default async function BlogPage() {
                       <span
                         className={`inline-block px-2.5 py-0.5 rounded-full text-xs font-bold text-white bg-gradient-to-r ${gradient}`}
                       >
-                        {post.category || "Blog"}
+                        {categoryLabel(post.category, locale)}
                       </span>
                     </div>
                     <h3 className="text-lg font-bold text-dark-800 mb-2 group-hover:text-cyan-500 transition-colors leading-snug">

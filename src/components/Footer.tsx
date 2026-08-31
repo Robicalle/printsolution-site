@@ -48,7 +48,7 @@ export default function Footer() {
               <li><Link href="/soluzioni/etichette" className="hover:text-white transition-colors duration-200 inline-block py-2 min-h-[44px]">{t("labels")}</Link></li>
               <li><Link href="/soluzioni/shopper" className="hover:text-white transition-colors duration-200 inline-block py-2 min-h-[44px]">{t("shopperLuxury")}</Link></li>
               <li><Link href="/soluzioni/labbratura" className="hover:text-white transition-colors duration-200 inline-block py-2 min-h-[44px]">{t("bookEdging")}</Link></li>
-              <li><Link href="/soluzioni/consumabili" className="hover:text-white transition-colors duration-200 inline-block py-2 min-h-[44px]">{t("consumables")}</Link></li>
+              <li><Link href="/shop" className="hover:text-white transition-colors duration-200 inline-block py-2 min-h-[44px]">{t("consumables")}</Link></li>
             </ul>
             <div className="mt-4 pt-3 border-t border-white/5 space-y-0 text-sm">
               <Link href="/blog" className="block hover:text-white transition-colors duration-200 py-2">📰 {t("blog")}</Link>

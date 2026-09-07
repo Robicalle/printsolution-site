@@ -3,6 +3,11 @@ import { client } from "@/sanity/lib/client";
 import { groq } from "next-sanity";
 import { getShopCategories } from "@/lib/shop-sanity";
 
+// Senza questo la sitemap viene generata staticamente al build: gli articoli
+// pubblicati fra un deploy e l'altro non ci finiscono. Con l'ISR si rigenera
+// da sola ogni ora.
+export const revalidate = 3600;
+
 const BASE = "https://www.printsolutionsrl.it";
 
 function it(path: string) { return `${BASE}${path}`; }

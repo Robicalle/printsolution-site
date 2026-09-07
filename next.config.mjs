@@ -63,6 +63,18 @@ const nextConfig = {
   },
   async redirects() {
     return [
+      // === DOMINIO NUDO → WWW ===
+      // Senza questo, printsolutionsrl.it e www.printsolutionsrl.it servivano
+      // entrambi la stessa pagina con esito 200: due URL in concorrenza sugli
+      // stessi contenuti (contenuto duplicato per i motori di ricerca).
+      // Deve restare la PRIMA regola: intercetta ogni percorso prima delle altre.
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'printsolutionsrl.it' }],
+        destination: 'https://www.printsolutionsrl.it/:path*',
+        permanent: true,
+      },
+
       // === OLD SITE REDIRECTS (printsolutionsrl.it → new site) ===
       
       // --- IT: Pages ---

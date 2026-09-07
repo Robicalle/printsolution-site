@@ -38,7 +38,19 @@ export default defineType({
         ],
       },
     }),
-    defineArrayMember({ type: "image", options: { hotspot: true } }),
+    defineArrayMember({
+      type: "image",
+      options: { hotspot: true },
+      fields: [
+        {
+          name: "alt",
+          title: "Testo alternativo (accessibilità)",
+          type: "string",
+          validation: (r: any) => r.required().warning("Aggiungi un testo alternativo per accessibilità"),
+        },
+        { name: "caption", title: "Didascalia", type: "string" },
+      ],
+    }),
     // Custom: Table
     defineArrayMember({
       name: "table",

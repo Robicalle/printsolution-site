@@ -1,6 +1,21 @@
 import { defineField, defineType } from "sanity";
 import { allPageBuilderBlocks } from "./pageBuilderBlocks";
 
+// Prodotti che hanno una pagina dedicata scritta a mano in
+// src/app/[locale]/prodotti/<slug>/page.tsx. Per questi, la route statica ha la
+// precedenza su /prodotti/[slug]: le sezioni page builder e il meta title di
+// questo documento NON finiscono mai sul sito.
+// Se aggiungi o rimuovi una di quelle cartelle, aggiorna questo elenco.
+const SLUG_CON_PAGINA_NEL_CODICE = new Set([
+  "ab2500", "afinia-dc350", "afinia-dlf", "afinia-dlp2200", "afinia-l901",
+  "afinia-lt5c", "afinia-x350", "any-002", "any-press", "aurumpress",
+  "edm-650x", "greenbox-evo", "greenbox-print-book", "packprinter-uv",
+  "robotjet", "thunderbox",
+]);
+
+const haPaginaNelCodice = (doc: any) =>
+  SLUG_CON_PAGINA_NEL_CODICE.has(doc?.slug?.current);
+
 export default defineType({
   name: "product",
   title: "Prodotti",
@@ -100,7 +115,12 @@ export default defineType({
       title: "Sezioni Pagina (Page Builder)",
       type: "array",
       of: allPageBuilderBlocks,
-      description: "Blocchi page builder per la pagina prodotto dinamica",
+      readOnly: ({ document }) => haPaginaNelCodice(document),
+      description:
+        "Blocchi page builder per la pagina prodotto dinamica. " +
+        "ATTENZIONE: per i prodotti che hanno gia' una pagina dedicata nel codice " +
+        "questi blocchi NON vengono mostrati sul sito (il campo appare in sola " +
+        "lettura). Per modificare quelle pagine serve intervenire sul codice.",
     }),
     defineField({
       name: "seo",
@@ -111,6 +131,9 @@ export default defineType({
           name: "title",
           title: "Meta Title",
           type: "string",
+          description:
+            "Usato solo dalla pagina prodotto dinamica. I prodotti con pagina " +
+            "dedicata nel codice prendono il title da li'.",
           validation: (r) => r.max(60).warning("Massimo 60 caratteri per SEO"),
         },
         {
@@ -118,6 +141,9 @@ export default defineType({
           title: "Meta Description",
           type: "text",
           rows: 3,
+          description:
+            "Attenzione: questo testo e' anche la descrizione visibile sulla card " +
+            "del prodotto in /prodotti. Modificarlo cambia il catalogo.",
           validation: (r) => r.max(160).warning("Massimo 160 caratteri per SEO"),
         },
         { name: "image", title: "OG Image", type: "image" },
@@ -128,6 +154,9 @@ export default defineType({
       name: "seo_en",
       title: "SEO (EN)",
       type: "object",
+      description:
+        "Non usato per i prodotti: la query del catalogo non legge questi campi " +
+        "e le pagine prodotto in inglese prendono i testi dal codice.",
       fields: [
         {
           name: "title",

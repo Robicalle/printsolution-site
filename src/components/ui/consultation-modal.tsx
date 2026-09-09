@@ -2,6 +2,7 @@
 
 import { createContext, useContext, useState, useCallback, useEffect, ReactNode } from 'react';
 import { Turnstile } from '@marsidev/react-turnstile';
+import { gtagEvent, formLocation } from '@/components/ConversionTracking';
 
 interface ConsultationContextType {
   open: (product?: string) => void;
@@ -30,6 +31,12 @@ export function ConsultationProvider({ children }: { children: ReactNode }) {
       const href = target.getAttribute('href') || '';
       // Only intercept consultation/info mailto links to info@printsolution
       if (!href.includes('printsolution')) return;
+      // Qui si ferma la propagazione, quindi il listener globale di
+      // ConversionTracking non vedrebbe mai questi click: l'evento va emesso ora.
+      gtagEvent('contact_click', {
+        contact_method: 'email',
+        link_location: formLocation(window.location.pathname),
+      });
       e.preventDefault();
       e.stopPropagation();
       // Extract product name from subject
@@ -103,6 +110,15 @@ function ConsultationModal({ product, onClose }: { product: string; onClose: () 
     return () => { document.body.style.overflow = ''; };
   }, []);
 
+  // Apertura del modulo: serve a misurare quanti lo aprono e non lo completano.
+  // Il componente viene montato solo quando il modale si apre, quindi una volta sola.
+  useEffect(() => {
+    gtagEvent('form_start', {
+      form_location: formLocation(window.location.pathname),
+      product_interest: product || 'generico',
+    });
+  }, [product]);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!form.nome || !form.email) {
@@ -127,6 +143,14 @@ function ConsultationModal({ product, onClose }: { product: string; onClose: () 
       });
       if (res.ok) {
         setSent(true);
+        // Solo a invio accettato dal server, mai al click sul pulsante.
+        // Nessun dato personale: niente nome, email, telefono o messaggio.
+        gtagEvent('generate_lead', {
+          form_location: formLocation(window.location.pathname),
+          product_interest: form.interesse || 'generico',
+          has_phone: form.telefono.trim().length > 0,
+          has_company: form.azienda.trim().length > 0,
+        });
       } else {
         setError('Errore durante l\'invio. Riprova.');
       }

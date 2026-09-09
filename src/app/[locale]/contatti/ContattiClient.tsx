@@ -31,11 +31,14 @@ export default function ContattiClient() {
 
       if (res.ok) {
         setStatus("success");
-        // GA4 conversion tracking
+        // GA4: stessi parametri del modale di consulenza, cosi' i due moduli
+        // sono confrontabili in un solo rapporto. Nessun dato personale.
         if (typeof window !== "undefined" && (window as any).gtag) {
           (window as any).gtag("event", "generate_lead", {
-            interest: formData.interesse,
-            page_path: window.location.pathname,
+            form_location: window.location.pathname.replace(/^\/+/, "") || "home",
+            product_interest: formData.interesse || "generico",
+            has_phone: formData.telefono.trim().length > 0,
+            has_company: formData.azienda.trim().length > 0,
           });
         }
         setFormData({ nome: "", azienda: "", email: "", telefono: "", messaggio: "", interesse: "generico", privacy: false, _hp_field: "" });

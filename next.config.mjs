@@ -132,9 +132,10 @@ const nextConfig = {
       // --- IT: Old shop pages ---
       { source: '/shop/consumabil-lt5c', destination: '/shop/consumabili-lt5c', permanent: true },
       { source: '/shop/consumabili-l701', destination: '/shop', permanent: true },
-      { source: '/shop/consumabili-lx900', destination: '/shop', permanent: true },
       { source: '/shop/consumabili-lx500', destination: '/shop', permanent: true },
-      { source: '/shop/consumabili-serie-dp41xx', destination: '/shop', permanent: true },
+      // NB: consumabili-lx900 e consumabili-serie-dp41xx NON vanno reindirizzati:
+      // sono categorie vive, linkate da /shop e con prodotti a listino. Le vecchie
+      // regole le rendevano irraggiungibili (il click tornava su /shop).
 
       // --- IT: Cookie policy old URL ---
       { source: '/cookie-policy', destination: '/cookie', permanent: true },
@@ -199,11 +200,10 @@ const nextConfig = {
       { source: '/en/prodotti/i-mark-5070', destination: '/en/prodotti', permanent: true },
 
       // --- EN: Old shop pages ---
-      { source: '/en/shop/consumabili-any-002', destination: '/en/shop', permanent: true },
       { source: '/en/shop/consumabili-l701', destination: '/en/shop', permanent: true },
-      { source: '/en/shop/consumabili-lx900', destination: '/en/shop', permanent: true },
       { source: '/en/shop/consumabili-lx500', destination: '/en/shop', permanent: true },
-      { source: '/en/shop/consumabili-serie-dp41xx', destination: '/en/shop', permanent: true },
+      // NB: consumabili-any-002, consumabili-lx900 e consumabili-serie-dp41xx
+      // NON vanno reindirizzati: sono categorie vive, linkate da /en/shop.
 
       // --- EN: Cookie policy old URL ---
       { source: '/en/cookie-policy', destination: '/en/cookie', permanent: true },

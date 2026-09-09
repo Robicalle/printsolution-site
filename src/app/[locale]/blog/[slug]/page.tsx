@@ -360,7 +360,10 @@ export default async function BlogPostPage({
     ],
   };
 
-  const faqSource = (!it && post.faq_en?.length) ? post.faq_en : post.faq;
+  // Come per le pagine soluzione: in inglese solo FAQ inglesi, mai il ripiego
+  // sull'italiano. Tre articoli hanno faq senza faq_en e servivano un FAQPage
+  // in italiano su pagine dichiarate en.
+  const faqSource = it ? post.faq : (post.faq_en?.length ? post.faq_en : null);
   const faqJsonLd = faqSource?.length
     ? {
         "@context": "https://schema.org",

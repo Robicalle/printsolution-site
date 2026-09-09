@@ -75,7 +75,11 @@ export default async function SolutionDynamicPage({
   if (!solution || !solution.sezioniPagina?.length) notFound();
 
   const it = locale === "it";
-  const faqSource = (!it && solution.faq_en?.length) ? solution.faq_en : solution.faq;
+  // In inglese si usano SOLO le FAQ inglesi. Senza ripiego sull'italiano:
+  // prima la pagina /en mostrava domande e risposte in italiano sotto
+  // un'intestazione inglese, e serviva a Google un FAQPage in italiano su una
+  // pagina dichiarata en. Se faq_en e' vuoto, il blocco non viene reso affatto.
+  const faqSource = it ? solution.faq : (solution.faq_en?.length ? solution.faq_en : null);
   const faqJsonLd = faqSource?.length
     ? {
         "@context": "https://schema.org",

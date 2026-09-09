@@ -90,7 +90,12 @@ const nextConfig = {
       { source: '/cartella-prodotti/sistemi-di-taglio-e-finitura', destination: '/soluzioni/etichette', permanent: true },
       { source: '/cartella-prodotti/stampanti-per-cd-dvd', destination: '/prodotti', permanent: true },
       { source: '/cartella-prodotti/stampanti-etichette', destination: '/soluzioni/etichette', permanent: true },
+      // Tassonomie Webflow che cadevano sul catch-all generico /prodotti:
+      // meglio la pagina soluzione corrispondente.
+      { source: '/cartella-prodotti/box-maker', destination: '/soluzioni/packaging', permanent: true },
       { source: '/cartella-prodotti/:slug', destination: '/prodotti', permanent: true },
+      { source: '/categoria/stampanti-etichette', destination: '/soluzioni/etichette', permanent: true },
+      { source: '/categoria/soluzioni-digitali-per-la-labbratura-dei-libri', destination: '/soluzioni/labbratura', permanent: true },
       { source: '/categoria/box-maker', destination: '/soluzioni/packaging', permanent: true },
       { source: '/categoria/packaging-printers', destination: '/soluzioni/packaging', permanent: true },
       { source: '/categoria/label-printers', destination: '/soluzioni/etichette', permanent: true },
@@ -155,7 +160,11 @@ const nextConfig = {
       { source: '/en/products/cd-dvd-printers', destination: '/en/prodotti', permanent: true },
       { source: '/en/products/label-printers', destination: '/en/soluzioni/etichette', permanent: true },
       { source: '/en/products/label-applicators', destination: '/en/soluzioni/etichette', permanent: true },
+      { source: '/en/products/packaging-cardboard-printers-copy-2', destination: '/en/soluzioni/packaging', permanent: true },
       { source: '/en/products/:slug', destination: '/en/prodotti', permanent: true },
+      { source: '/en/categoria/box-maker', destination: '/en/soluzioni/packaging', permanent: true },
+      { source: '/en/categoria/finishing-systems', destination: '/en/soluzioni/etichette', permanent: true },
+      { source: '/en/categoria/digital-solutions-for-book-labeling', destination: '/en/soluzioni/labbratura', permanent: true },
       { source: '/en/categoria/:slug', destination: '/en/prodotti', permanent: true },
       { source: '/en/cartella-prodotti/:slug', destination: '/en/prodotti', permanent: true },
 

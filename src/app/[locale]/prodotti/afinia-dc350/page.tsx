@@ -8,7 +8,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
   const isIt = locale === 'it';
   return {
-    title: isIt ? "Afinia DC350 — Fustellatore Semi-Rotativo" : "Afinia DC350 — Semi-Rotary Label Die-Cutter",
+    title: { absolute: isIt ? "Afinia DC350 — Fustellatore per Etichette" : "Afinia DC350 — Semi-Rotary Label Die-Cutter" },
     description: isIt
       ? "Afinia DC350: fustellatore semi-rotativo per etichette con laminazione, slitting e riavvolgimento. Fino a 30 m/min. Print Solution"
       : "Afinia DC350: semi-rotary die-cutter for labels with lamination, slitting and rewinding. Up to 30 m/min. Print Solution",

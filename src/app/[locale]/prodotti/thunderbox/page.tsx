@@ -9,9 +9,11 @@ export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
   const isIt = locale === 'it';
   return {
-    title: isIt
-      ? "ThunderBox — Stampante Single-Pass per Scatole e Shopper"
-      : "ThunderBox — Single-Pass Box & Shopper Printer",
+    title: {
+      absolute: isIt
+        ? "ThunderBox — Stampante per Scatole e Shopper"
+        : "ThunderBox — Single-Pass Box & Shopper Printer",
+    },
     description: isIt
       ? "ThunderBox: stampante per scatole inkjet single-pass CMYK entry level, novità 2026. 28 m/min, 1200 dpi, foglio fino a 100 cm, spessore 15 cm, costi stampa -40%. 4.0 Ready."
       : "ThunderBox: entry-level single-pass CMYK inkjet box printer, new 2026. 28 m/min, 1200 dpi, sheet up to 100 cm, 15 cm thickness, -40% print costs. 4.0 Ready.",

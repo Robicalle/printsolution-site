@@ -8,7 +8,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
   const isIt = locale === 'it';
   return {
-    title: isIt ? "Afinia L901 — Stampante Etichette a Colori Memjet" : "Afinia L901 — Memjet Colour Label Printer",
+    title: { absolute: isIt ? "Afinia L901 — Stampante Etichette a Colori" : "Afinia L901 — Memjet Colour Label Printer" },
     description: isIt
       ? "Afinia L901: stampante etichette in bobina Memjet 1600 dpi, CMYKK, fino a 22 m/min. Testina sostituibile dall'utente, zero sprechi. Evoluzione dell'Afinia L801 — prestazioni superiori, stesso workflow. Print Solution."
       : "Afinia L901: Memjet roll label printer 1600 dpi, CMYKK, up to 22 m/min. User-replaceable printhead, zero waste. The natural upgrade from Afinia L801 — better performance, same workflow. Print Solution.",

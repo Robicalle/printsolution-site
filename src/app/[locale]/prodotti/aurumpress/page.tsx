@@ -8,7 +8,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
   const isIt = locale === 'it';
   return {
-    title: { absolute: isIt ? "AurumPress — Hot Foil per Etichette" : "AurumPress — Hot Foil Stamping Machine" },
+    title: { absolute: isIt ? "AurumPress — Hot Foil per Etichette" : "AurumPress — Hot Foil for Labels" },
     description: isIt
       ? "AurumPress: stampa a caldo con foil oro, argento e olografici. Nobilitazione on-demand per packaging di lusso. Print Solution"
       : "AurumPress: hot foil stamping with gold, silver and holographic foils. On-demand luxury packaging. Print Solution",

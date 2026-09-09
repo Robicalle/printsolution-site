@@ -8,10 +8,10 @@ export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
   const isIt = locale === 'it';
   return {
-    title: { absolute: isIt ? "Afinia L901 — Stampante Etichette a Colori" : "Afinia L901 — Memjet Colour Label Printer" },
+    title: { absolute: isIt ? "Afinia L901 Plus — Stampante Etichette a Colori" : "Afinia L901 Plus — Colour Label Printer" },
     description: isIt
-      ? "Afinia L901: stampante etichette in bobina Memjet 1600 dpi, CMYKK, fino a 22 m/min. Testina sostituibile dall'utente, zero sprechi. Evoluzione dell'Afinia L801 — prestazioni superiori, stesso workflow. Print Solution."
-      : "Afinia L901: Memjet roll label printer 1600 dpi, CMYKK, up to 22 m/min. User-replaceable printhead, zero waste. The natural upgrade from Afinia L801 — better performance, same workflow. Print Solution.",
+      ? "Afinia L901 Plus: stampante etichette in bobina Memjet 1600 dpi, CMYKK, fino a 22 m/min. Testina sostituibile dall'utente, zero sprechi. Evoluzione dell'Afinia L801 — prestazioni superiori, stesso workflow. Print Solution."
+      : "Afinia L901 Plus: Memjet roll label printer 1600 dpi, CMYKK, up to 22 m/min. User-replaceable printhead, zero waste. The natural upgrade from Afinia L801 — better performance, same workflow. Print Solution.",
     keywords: [
       "Afinia L901",
       "Afinia L801",
@@ -28,8 +28,8 @@ export async function generateMetadata(): Promise<Metadata> {
     openGraph: {
       title: isIt ? "Afinia L901 Plus: etichette a colori in bobina" : "Afinia L901 Plus: roll-to-roll colour labels",
       description: isIt
-        ? "Afinia L901: stampante etichette in bobina Memjet 1600 dpi, CMYKK, fino a 22 m/min. Testina sostituibile dall'utente, zero sprechi. Evoluzione dell'Afinia L801 — prestazioni superiori, stesso workflow. Print Solution."
-        : "Afinia L901: Memjet roll label printer 1600 dpi, CMYKK, up to 22 m/min. User-replaceable printhead, zero waste. The natural upgrade from Afinia L801 — better performance, same workflow. Print Solution.",
+        ? "Afinia L901 Plus: stampante etichette in bobina Memjet 1600 dpi, CMYKK, fino a 22 m/min. Testina sostituibile dall'utente, zero sprechi. Evoluzione dell'Afinia L801 — prestazioni superiori, stesso workflow. Print Solution."
+        : "Afinia L901 Plus: Memjet roll label printer 1600 dpi, CMYKK, up to 22 m/min. User-replaceable printhead, zero waste. The natural upgrade from Afinia L801 — better performance, same workflow. Print Solution.",
       images: [{ url: "/images/og/afinia-l901.jpg", width: 1200, height: 630 }],
       type: "website",
       locale: isIt ? "it_IT" : "en_US",
@@ -49,7 +49,7 @@ export async function generateMetadata(): Promise<Metadata> {
 const productJsonLd = {
   "@context": "https://schema.org",
   "@type": "Product",
-  name: "Afinia L901",
+  name: "Afinia L901 Plus",
   brand: { "@type": "Brand", name: "Afinia Label" },
   description:
     "Stampante etichette a colori professionale con tecnologia Memjet Waterfall. 1600 dpi, doppio nero, testina sostituibile.",
@@ -156,7 +156,7 @@ export default async function () {
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Home", item: "https://www.printsolutionsrl.it" },
       { "@type": "ListItem", position: 2, name: isIt ? "Prodotti" : "Products", item: isIt ? "https://www.printsolutionsrl.it/prodotti" : "https://www.printsolutionsrl.it/en/prodotti" },
-      { "@type": "ListItem", position: 3, name: "Afinia L901", item: isIt ? "https://www.printsolutionsrl.it/prodotti/afinia-l901" : "https://www.printsolutionsrl.it/en/prodotti/afinia-l901" },
+      { "@type": "ListItem", position: 3, name: "Afinia L901 Plus", item: isIt ? "https://www.printsolutionsrl.it/prodotti/afinia-l901" : "https://www.printsolutionsrl.it/en/prodotti/afinia-l901" },
     ],
   };
   const faqJsonLd = {

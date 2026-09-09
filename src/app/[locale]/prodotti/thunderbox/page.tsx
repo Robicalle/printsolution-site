@@ -12,7 +12,7 @@ export async function generateMetadata(): Promise<Metadata> {
     title: {
       absolute: isIt
         ? "ThunderBox — Stampante per Scatole e Shopper"
-        : "ThunderBox — Single-Pass Box & Shopper Printer",
+        : "ThunderBox — Box & Shopper Printer",
     },
     description: isIt
       ? "ThunderBox: stampante per scatole inkjet single-pass CMYK entry level, novità 2026. 28 m/min, 1200 dpi, foglio fino a 100 cm, spessore 15 cm, costi stampa -40%. 4.0 Ready."

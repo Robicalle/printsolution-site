@@ -119,6 +119,10 @@ const nextConfig = {
       { source: '/prodotti/edm-650', destination: '/prodotti/edm-650x', permanent: true },
 
       // --- IT: Old product pages missing ---
+      // Applicatori di etichette fuori catalogo: senza regola la route [slug]
+      // rispondeva 200 con pagina vuota e canonical sulla home.
+      { source: '/prodotti/ap550e', destination: '/soluzioni/etichette', permanent: true },
+      { source: '/prodotti/ap-360e', destination: '/soluzioni/etichette', permanent: true },
       { source: '/prodotti/easybox', destination: '/prodotti', permanent: true },
       { source: '/prodotti/ap-380e', destination: '/prodotti', permanent: true },
       { source: '/prodotti/imark3550', destination: '/prodotti', permanent: true },
@@ -185,6 +189,8 @@ const nextConfig = {
       { source: '/en/prodotti/dtm-lx4000e-2', destination: '/en/prodotti', permanent: true },
       { source: '/en/prodotti/lt5', destination: '/en/prodotti', permanent: true },
       { source: '/en/prodotti/ap-380e', destination: '/en/prodotti', permanent: true },
+      // Applicatore fuori catalogo: rispondeva 200 con pagina vuota.
+      { source: '/en/prodotti/ap-360e', destination: '/en/soluzioni/etichette', permanent: true },
       { source: '/en/prodotti/ap550e', destination: '/en/prodotti', permanent: true },
       { source: '/en/prodotti/easybox', destination: '/en/prodotti', permanent: true },
       { source: '/en/prodotti/afinia-fp-230', destination: '/en/prodotti', permanent: true },

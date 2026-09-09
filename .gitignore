@@ -35,3 +35,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 public/videos/*.mp4
+
+# file di backup locali (i .bak storici sono recuperabili dalla cronologia git)
+*.bak

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { getLocale } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
@@ -75,8 +76,8 @@ export default async function CondizioniPage() {
             <h2 className="text-xl font-bold text-gray-900 mb-4">Art. 5 – Trattamento dei dati personali e Cookie</h2>
             <div className="space-y-3 text-gray-600 leading-relaxed">
               <p><strong>5.1</strong> Qualsiasi informazione personale dell&apos;Utente è trattata in conformità al Regolamento 679/2016 (GDPR) e alle indicazioni del Garante Privacy.</p>
-              <p><strong>5.2</strong> L&apos;utente può visionare la modalità di trattamento dei dati personali accedendo alla <a href="/privacy" className="text-cyan-500 hover:underline">privacy policy</a> pubblicata sul Sito.</p>
-              <p><strong>5.3</strong> La modalità di trattamento dei cookie è visionabile accedendo alla <a href="/cookie" className="text-cyan-500 hover:underline">cookie policy</a> pubblicata sul Sito.</p>
+              <p><strong>5.2</strong> L&apos;utente può visionare la modalità di trattamento dei dati personali accedendo alla <Link href="/privacy" className="text-cyan-500 hover:underline">privacy policy</Link> pubblicata sul Sito.</p>
+              <p><strong>5.3</strong> La modalità di trattamento dei cookie è visionabile accedendo alla <Link href="/cookie" className="text-cyan-500 hover:underline">cookie policy</Link> pubblicata sul Sito.</p>
             </div>
           </section>
 
@@ -99,7 +100,7 @@ export default async function CondizioniPage() {
           <section>
             <h2 className="text-xl font-bold text-gray-900 mb-4">Art. 8 – Contatti</h2>
             <div className="space-y-3 text-gray-600 leading-relaxed">
-              <p>È possibile contattare il Titolare del Sito ai recapiti indicati nella pagina <a href="/contatti" className="text-cyan-500 hover:underline">Contatti</a>.</p>
+              <p>È possibile contattare il Titolare del Sito ai recapiti indicati nella pagina <Link href="/contatti" className="text-cyan-500 hover:underline">Contatti</Link>.</p>
             </div>
           </section>
         </div>

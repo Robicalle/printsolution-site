@@ -18,6 +18,7 @@ import ValuesGridBlock from "./ValuesGridBlock";
 import DemoRoomBlock from "./DemoRoomBlock";
 import TeamSectionBlock from "./TeamSectionBlock";
 import SolutionCategoryListBlock from "./SolutionCategoryListBlock";
+import ComparisonTableBlock from "./ComparisonTableBlock";
 
 interface PageRendererProps {
   sections: any[];
@@ -38,6 +39,7 @@ const blockMap: Record<string, React.ComponentType<any>> = {
   productVideo: ProductVideoBlock,
   featuresGrid: FeaturesGridBlock,
   specsTable: SpecsTableBlock,
+  comparisonTable: ComparisonTableBlock,
   relatedProducts: RelatedProductsBlock,
   simpleCta: SimpleCtaBlock,
   storyStats: StoryStatsBlock,

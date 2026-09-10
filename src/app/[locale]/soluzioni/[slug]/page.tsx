@@ -75,7 +75,11 @@ export default async function SolutionDynamicPage({
   if (!solution || !solution.sezioniPagina?.length) notFound();
 
   const it = locale === "it";
-  const faqSource = (!it && solution.faq_en?.length) ? solution.faq_en : solution.faq;
+  // In inglese si usano SOLO le FAQ inglesi. Senza ripiego sull'italiano:
+  // prima la pagina /en mostrava domande e risposte in italiano sotto
+  // un'intestazione inglese, e serviva a Google un FAQPage in italiano su una
+  // pagina dichiarata en. Se faq_en e' vuoto, il blocco non viene reso affatto.
+  const faqSource = it ? solution.faq : (solution.faq_en?.length ? solution.faq_en : null);
   const faqJsonLd = faqSource?.length
     ? {
         "@context": "https://schema.org",
@@ -95,22 +99,21 @@ export default async function SolutionDynamicPage({
       )}
       <PageRenderer sections={solution.sezioniPagina} locale={locale} />
       {faqSource?.length ? (
+        // Griglia, non accordion: le risposte sono il contenuto che convince
+        // chi sta valutando l'acquisto, quindi devono leggersi senza un click.
+        // Il JSON-LD nasce dallo stesso campo faq, quindi visibilita' e dati
+        // strutturati vengono dalla stessa fonte.
         <section className="section-padding bg-surface-50">
-          <div className="container-custom max-w-3xl">
-            <h2 className="text-2xl md:text-3xl font-bold text-dark-800 mb-8 text-center">
+          <div className="container-custom max-w-5xl">
+            <h2 className="text-2xl md:text-3xl font-bold text-dark-800 mb-10 text-center">
               {it ? "Domande Frequenti" : "Frequently Asked Questions"}
             </h2>
-            <div className="space-y-4">
+            <div className="grid md:grid-cols-2 gap-6">
               {faqSource.map((f: any, i: number) => (
-                <details key={i} className="group bg-white rounded-2xl overflow-hidden border border-gray-100">
-                  <summary className="flex items-center justify-between cursor-pointer px-6 py-5 font-semibold text-dark-800 hover:text-cyan-500 transition-colors">
-                    <span>{f.question}</span>
-                    <svg className="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform flex-shrink-0 ml-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </summary>
-                  <div className="px-6 pb-5 text-gray-500 leading-relaxed border-t border-gray-100 pt-4">{f.answer}</div>
-                </details>
+                <div key={i} className="bg-white rounded-2xl border border-gray-100 p-6">
+                  <h3 className="font-semibold text-dark-800 mb-3 leading-snug">{f.question}</h3>
+                  <p className="text-gray-500 leading-relaxed">{f.answer}</p>
+                </div>
               ))}
             </div>
           </div>

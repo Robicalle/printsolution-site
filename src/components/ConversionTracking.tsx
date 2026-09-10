@@ -3,11 +3,18 @@
 import { useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 
-// Helper GA4
-function gtagEvent(name: string, params?: Record<string, string | number>) {
+// Helper GA4. Esportato perche' lo usa anche il modale di consulenza: i click
+// sui mailto vengono intercettati la' in fase di cattura, quindi non arrivano
+// mai al listener globale di questo file.
+export function gtagEvent(name: string, params?: Record<string, string | number | boolean>) {
   if (typeof window !== "undefined" && (window as any).gtag) {
     (window as any).gtag("event", name, params);
   }
+}
+
+// Percorso normalizzato per i parametri: "/soluzioni/etichette" -> "soluzioni/etichette"
+export function formLocation(pathname: string) {
+  return pathname.replace(/^\/+/, "") || "home";
 }
 
 /**
@@ -39,17 +46,17 @@ export default function ConversionTracking() {
         "";
 
       if (href.startsWith("mailto:")) {
-        gtagEvent("click_email", {
-          email_address: href.replace("mailto:", "").split("?")[0],
-          page_path: pathname,
+        gtagEvent("contact_click", {
+          contact_method: "email",
+          link_location: formLocation(pathname),
         });
         return;
       }
 
       if (href.startsWith("tel:")) {
-        gtagEvent("click_phone", {
-          phone_number: href.replace("tel:", ""),
-          page_path: pathname,
+        gtagEvent("contact_click", {
+          contact_method: "phone",
+          link_location: formLocation(pathname),
         });
         return;
       }

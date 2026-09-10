@@ -3,6 +3,8 @@ import { useLocale } from "next-intl";
 import PageHero from "@/components/PageHero";
 import { useState } from "react";
 import { Turnstile } from "@marsidev/react-turnstile";
+import { Link } from "@/i18n/navigation";
+import { gtagEvent } from "@/components/ConversionTracking";
 
 export default function ContattiClient() {
   const locale = useLocale();
@@ -33,14 +35,12 @@ export default function ContattiClient() {
         setStatus("success");
         // GA4: stessi parametri del modale di consulenza, cosi' i due moduli
         // sono confrontabili in un solo rapporto. Nessun dato personale.
-        if (typeof window !== "undefined" && (window as any).gtag) {
-          (window as any).gtag("event", "generate_lead", {
-            form_location: window.location.pathname.replace(/^\/+/, "") || "home",
-            product_interest: formData.interesse || "generico",
-            has_phone: formData.telefono.trim().length > 0,
-            has_company: formData.azienda.trim().length > 0,
-          });
-        }
+        gtagEvent("generate_lead", {
+          form_location: window.location.pathname.replace(/^\/+/, "") || "home",
+          product_interest: formData.interesse || "generico",
+          has_phone: formData.telefono.trim().length > 0,
+          has_company: formData.azienda.trim().length > 0,
+        });
         setFormData({ nome: "", azienda: "", email: "", telefono: "", messaggio: "", interesse: "generico", privacy: false, _hp_field: "" });
         setTurnstileToken("");
       } else {
@@ -168,17 +168,17 @@ export default function ContattiClient() {
                       {locale === 'it' ? (
                         <>
                           Ho letto e accetto la{" "}
-                          <a href="/privacy" target="_blank" className="text-cyan-500 underline hover:text-cyan-400">
+                          <Link href="/privacy" target="_blank" className="text-cyan-500 underline hover:text-cyan-400">
                             Privacy Policy
-                          </a>{" "}
+                          </Link>{" "}
                           e acconsento al trattamento dei miei dati personali ai sensi del GDPR (Reg. UE 2016/679). *
                         </>
                       ) : (
                         <>
                           I have read and accept the{" "}
-                          <a href="/privacy" target="_blank" className="text-cyan-500 underline hover:text-cyan-400">
+                          <Link href="/privacy" target="_blank" className="text-cyan-500 underline hover:text-cyan-400">
                             Privacy Policy
-                          </a>{" "}
+                          </Link>{" "}
                           and consent to the processing of my personal data under GDPR (EU Reg. 2016/679). *
                         </>
                       )}

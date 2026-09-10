@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import { getLocale } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
@@ -193,9 +194,9 @@ function PrivacyIT() {
               Il Sito utilizza cookie tecnici necessari al funzionamento e cookie analitici (Google
               Analytics 4) per l&apos;analisi statistica del traffico. Per l&apos;informativa
               completa:{" "}
-              <a href="/it/cookie" className="text-cyan-600 hover:underline font-medium">
+              <Link href="/cookie" className="text-cyan-600 hover:underline font-medium">
                 Cookie Policy →
-              </a>
+              </Link>
             </p>
           </Section>
 
@@ -345,7 +346,7 @@ function PrivacyEN() {
           </Section>
 
           <Section num="3" title="Cookies">
-            <p>The Website uses technical cookies and Google Analytics 4. See our <a href="/en/cookie" className="text-cyan-600 hover:underline font-medium">Cookie Policy →</a></p>
+            <p>The Website uses technical cookies and Google Analytics 4. See our <Link href="/cookie" className="text-cyan-600 hover:underline font-medium">Cookie Policy →</Link></p>
           </Section>
 
           <Section num="4" title="Data disclosure to third parties">

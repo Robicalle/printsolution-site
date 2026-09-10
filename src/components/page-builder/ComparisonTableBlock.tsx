@@ -1,3 +1,5 @@
+import { Link } from "@/i18n/navigation";
+
 type Loc = { label?: string; label_en?: string };
 type Cell = { value?: string; value_en?: string };
 type Row = Loc & { cells?: Cell[] };
@@ -35,6 +37,9 @@ export default function ComparisonTableBlock({ block, locale }: Props) {
   const heading = it ? block.heading : block.heading_en || block.heading;
   const note = it ? block.note : block.note_en || block.note;
   const linkText = it ? block.noteLinkText : block.noteLinkText_en || block.noteLinkText;
+  // Un URL interno come "/blog/..." va passato al Link di next-intl, che
+  // aggiunge /en: scritto a mano portava il lettore inglese sulla pagina italiana.
+  const interno = !!block.noteLinkUrl?.startsWith("/") && !block.noteLinkUrl.startsWith("//");
   const testo = (o?: { label?: string; label_en?: string; value?: string; value_en?: string }) => {
     if (!o) return "—";
     const v = it ? o.label ?? o.value : (o.label_en ?? o.value_en) || (o.label ?? o.value);
@@ -97,9 +102,15 @@ export default function ComparisonTableBlock({ block, locale }: Props) {
             {block.noteLinkUrl && linkText && (
               <>
                 {note ? " " : ""}
-                <a href={block.noteLinkUrl} className="text-cyan-500 hover:text-cyan-600 underline">
-                  {linkText}
-                </a>
+                {interno ? (
+                  <Link href={block.noteLinkUrl} className="text-cyan-500 hover:text-cyan-600 underline">
+                    {linkText}
+                  </Link>
+                ) : (
+                  <a href={block.noteLinkUrl} className="text-cyan-500 hover:text-cyan-600 underline">
+                    {linkText}
+                  </a>
+                )}
               </>
             )}
           </p>

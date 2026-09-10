@@ -478,6 +478,70 @@ export const soluzioniHeroBlock = {
   preview: { select: { title: "title" }, prepare: ({ title }: any) => ({ title: `🌈 Soluzioni Hero: ${title || ""}` }) },
 };
 
+// Tabella comparativa: criteri in riga, alternative in colonna.
+// Numero di colonne libero: il componente si adatta e su mobile scorre in
+// orizzontale tenendo ferma la prima colonna, quella dei criteri.
+export const comparisonTableBlock = {
+  type: "object",
+  name: "comparisonTable",
+  title: "Tabella Comparativa",
+  fields: [
+    ...localeString("heading", "Titolo (IT)", "Titolo (EN)"),
+    defineField({ name: "bgClass", title: "BG Class", type: "string", description: "es. bg-white, bg-surface-50" }),
+    defineField({
+      name: "columnLabel",
+      title: "Intestazione prima colonna",
+      type: "string",
+      description: "Es. Criterio. Lasciando vuoto la cella resta vuota.",
+    }),
+    defineField({
+      name: "columns",
+      title: "Colonne (le alternative da confrontare)",
+      type: "array",
+      validation: (r: any) => r.min(2).warning("Una tabella comparativa ha senso da due colonne in su"),
+      of: [{
+        type: "object",
+        name: "comparisonColumn",
+        fields: [...localeString("label", "Etichetta (IT)", "Etichetta (EN)")],
+        preview: { select: { title: "label" } },
+      }],
+    }),
+    defineField({
+      name: "rows",
+      title: "Righe (i criteri)",
+      type: "array",
+      of: [{
+        type: "object",
+        name: "comparisonRow",
+        fields: [
+          ...localeString("label", "Criterio (IT)", "Criterio (EN)"),
+          defineField({
+            name: "cells",
+            title: "Valori, nello stesso ordine delle colonne",
+            type: "array",
+            description: "Usa un trattino per un dato non disponibile: meglio una cella onesta di una voce omessa.",
+            of: [{
+              type: "object",
+              name: "comparisonCell",
+              fields: [...localeString("value", "Valore (IT)", "Valore (EN)")],
+              preview: { select: { title: "value" } },
+            }],
+          }),
+        ],
+        preview: { select: { title: "label" } },
+      }],
+    }),
+    ...localeText("note", "Nota sotto la tabella (IT)", "Nota sotto la tabella (EN)"),
+  ],
+  preview: {
+    select: { title: "heading", rows: "rows", cols: "columns" },
+    prepare: ({ title, rows, cols }: any) => ({
+      title: "Tabella: " + (title || "comparativa"),
+      subtitle: (rows || []).length + " righe x " + (cols || []).length + " colonne",
+    }),
+  },
+};
+
 // All block types for use in sections arrays
 export const allPageBuilderBlocks = [
   pageHeroBlock,
@@ -502,4 +566,5 @@ export const allPageBuilderBlocks = [
   teamSectionBlock,
   solutionCategoryListBlock,
   jsonLdBlock,
+  comparisonTableBlock,
 ];

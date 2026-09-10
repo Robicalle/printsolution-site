@@ -12,6 +12,9 @@ interface Props {
     rows?: Row[];
     note?: string;
     note_en?: string;
+    noteLinkText?: string;
+    noteLinkText_en?: string;
+    noteLinkUrl?: string;
   };
   locale: string;
 }
@@ -31,6 +34,7 @@ export default function ComparisonTableBlock({ block, locale }: Props) {
 
   const heading = it ? block.heading : block.heading_en || block.heading;
   const note = it ? block.note : block.note_en || block.note;
+  const linkText = it ? block.noteLinkText : block.noteLinkText_en || block.noteLinkText;
   const testo = (o?: { label?: string; label_en?: string; value?: string; value_en?: string }) => {
     if (!o) return "—";
     const v = it ? o.label ?? o.value : (o.label_en ?? o.value_en) || (o.label ?? o.value);
@@ -87,7 +91,19 @@ export default function ComparisonTableBlock({ block, locale }: Props) {
           </table>
         </div>
 
-        {note && <p className="text-sm text-gray-400 mt-4">{note}</p>}
+        {(note || (block.noteLinkUrl && linkText)) && (
+          <p className="text-sm text-gray-400 mt-4">
+            {note}
+            {block.noteLinkUrl && linkText && (
+              <>
+                {note ? " " : ""}
+                <a href={block.noteLinkUrl} className="text-cyan-500 hover:text-cyan-600 underline">
+                  {linkText}
+                </a>
+              </>
+            )}
+          </p>
+        )}
       </div>
     </section>
   );

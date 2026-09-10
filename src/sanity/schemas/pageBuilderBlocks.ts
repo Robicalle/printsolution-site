@@ -532,6 +532,13 @@ export const comparisonTableBlock = {
       }],
     }),
     ...localeText("note", "Nota sotto la tabella (IT)", "Nota sotto la tabella (EN)"),
+    ...localeString("noteLinkText", "Testo del link nella nota (IT)", "Testo del link nella nota (EN)"),
+    defineField({
+      name: "noteLinkUrl",
+      title: "URL del link nella nota",
+      type: "string",
+      description: "Per rimandare a un approfondimento. Senza URL il testo del link non viene reso.",
+    }),
   ],
   preview: {
     select: { title: "heading", rows: "rows", cols: "columns" },

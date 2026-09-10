@@ -7,14 +7,22 @@ import { usePathname } from "next/navigation";
 // sui mailto vengono intercettati la' in fase di cattura, quindi non arrivano
 // mai al listener globale di questo file.
 export function gtagEvent(name: string, params?: Record<string, string | number | boolean>) {
-  if (typeof window !== "undefined" && (window as any).gtag) {
-    (window as any).gtag("event", name, params);
+  const w = typeof window !== "undefined" ? (window as Window & { gtag?: (...args: unknown[]) => void }) : null;
+  if (w?.gtag) {
+    w.gtag("event", name, params);
   }
 }
 
 // Percorso normalizzato per i parametri: "/soluzioni/etichette" -> "soluzioni/etichette"
 export function formLocation(pathname: string) {
   return pathname.replace(/^\/+/, "") || "home";
+}
+
+// Privacy e cookie policy: i link email servono a esercitare i diritti sui
+// dati (anche via PEC), non sono contatti commerciali. Niente modale di
+// consulenza e niente contact_click, che gonfierebbe i contatti in GA4.
+export function isLegalPage(pathname: string) {
+  return /^\/(en\/)?(privacy|cookie)(\/|$)/.test(pathname);
 }
 
 /**
@@ -46,6 +54,7 @@ export default function ConversionTracking() {
         "";
 
       if (href.startsWith("mailto:")) {
+        if (isLegalPage(pathname)) return;
         gtagEvent("contact_click", {
           contact_method: "email",
           link_location: formLocation(pathname),

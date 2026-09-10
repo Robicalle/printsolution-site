@@ -2,7 +2,7 @@
 
 import { createContext, useContext, useState, useCallback, useEffect, ReactNode } from 'react';
 import { Turnstile } from '@marsidev/react-turnstile';
-import { gtagEvent, formLocation } from '@/components/ConversionTracking';
+import { gtagEvent, formLocation, isLegalPage } from '@/components/ConversionTracking';
 
 interface ConsultationContextType {
   open: (product?: string) => void;
@@ -29,8 +29,10 @@ export function ConsultationProvider({ children }: { children: ReactNode }) {
       const target = (e.target as HTMLElement).closest('a[href^="mailto:"]') as HTMLAnchorElement | null;
       if (!target) return;
       const href = target.getAttribute('href') || '';
-      // Only intercept consultation/info mailto links to info@printsolution
-      if (!href.includes('printsolution')) return;
+      // Solo i link a info@: prima bastava che l'indirizzo contenesse
+      // "printsolution", e anche la PEC apriva la modale di consulenza.
+      if (!href.toLowerCase().startsWith('mailto:info@printsolutionsrl.it')) return;
+      if (isLegalPage(window.location.pathname)) return;
       // Qui si ferma la propagazione, quindi il listener globale di
       // ConversionTracking non vedrebbe mai questi click: l'evento va emesso ora.
       gtagEvent('contact_click', {

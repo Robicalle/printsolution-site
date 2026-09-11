@@ -1,13 +1,32 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import Link from 'next/link';
+import { useState, useSyncExternalStore } from 'react';
+import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/navigation';
 import { useConsent, ConsentState } from './ConsentManager';
 import { X, Settings, Shield, BarChart3, Megaphone } from 'lucide-react';
 
+// La scelta del visitatore sta in localStorage (la scrive ConsentManager).
+// Va letta qui in modo sincrono: prima il banner guardava il consent del
+// context, che al primo render e' sempre null perche' ConsentManager lo
+// carica in un effetto, e cosi' ricompariva a ogni visita anche a chi aveva
+// gia' scelto. Sul server si considera "gia' scelto" per non disegnare il
+// banner nell'HTML statico.
+const STORAGE_KEY = 'cookie-consent-v2';
+const noopSubscribe = () => () => {};
+const readStored = () => {
+  try {
+    return localStorage.getItem(STORAGE_KEY) !== null;
+  } catch {
+    return false;
+  }
+};
+
 export default function CookieBanner() {
-  const { consent, updateConsent } = useConsent();
-  const [visible, setVisible] = useState(false);
+  const t = useTranslations('cookieBanner');
+  const { updateConsent } = useConsent();
+  const hasStoredChoice = useSyncExternalStore(noopSubscribe, readStored, () => true);
+  const [dismissed, setDismissed] = useState(false);
   const [showPreferences, setShowPreferences] = useState(false);
   const [preferences, setPreferences] = useState<ConsentState>({
     necessary: true,
@@ -15,45 +34,28 @@ export default function CookieBanner() {
     marketing: false,
   });
 
-  useEffect(() => {
-    // Show banner only if no consent stored
-    if (consent === null) {
-      setVisible(true);
-    }
-  }, [consent]);
-
   const acceptAll = () => {
-    const fullConsent: ConsentState = {
-      necessary: true,
-      analytics: true,
-      marketing: true,
-    };
-    updateConsent(fullConsent);
-    setVisible(false);
+    updateConsent({ necessary: true, analytics: true, marketing: true });
+    setDismissed(true);
   };
 
   const rejectAll = () => {
-    const minimalConsent: ConsentState = {
-      necessary: true,
-      analytics: false,
-      marketing: false,
-    };
-    updateConsent(minimalConsent);
-    setVisible(false);
+    updateConsent({ necessary: true, analytics: false, marketing: false });
+    setDismissed(true);
   };
 
   const savePreferences = () => {
     updateConsent(preferences);
-    setVisible(false);
+    setDismissed(true);
     setShowPreferences(false);
   };
 
-  if (!visible) return null;
+  if (hasStoredChoice || dismissed) return null;
 
   return (
     <>
       <div className="fixed inset-0 z-[9998] bg-black/60 backdrop-blur-sm animate-fade-in" onClick={() => setShowPreferences(false)} />
-      
+
       <div className="fixed bottom-0 left-0 right-0 z-[9999] bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 shadow-2xl animate-slide-up">
         <div className="max-w-6xl mx-auto px-4 py-6 sm:px-6">
           {!showPreferences ? (
@@ -62,15 +64,15 @@ export default function CookieBanner() {
               <div className="flex-1">
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2 flex items-center gap-2">
                   <Shield className="w-5 h-5 text-cyan-500" />
-                  Rispettiamo la tua privacy
+                  {t('title')}
                 </h3>
                 <p className="text-sm text-gray-600 dark:text-gray-300">
-                  Utilizziamo cookie tecnici necessari e, previo consenso, cookie analitici e di marketing per migliorare la tua esperienza.
-                  Consulta la nostra{' '}
+                  {t('intro')}{' '}
+                  {t('see')}{' '}
                   <Link href="/cookie" className="text-cyan-500 underline hover:text-cyan-400">
                     Cookie Policy
                   </Link>
-                  {' '}e{' '}
+                  {' '}{t('and')}{' '}
                   <Link href="/privacy" className="text-cyan-500 underline hover:text-cyan-400">
                     Privacy Policy
                   </Link>
@@ -83,19 +85,19 @@ export default function CookieBanner() {
                   className="px-4 py-2.5 text-sm rounded-lg border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors flex items-center justify-center gap-2"
                 >
                   <Settings className="w-4 h-4" />
-                  Personalizza
+                  {t('customize')}
                 </button>
                 <button
                   onClick={rejectAll}
                   className="px-4 py-2.5 text-sm rounded-lg border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
                 >
-                  Solo necessari
+                  {t('necessaryOnly')}
                 </button>
                 <button
                   onClick={acceptAll}
                   className="px-6 py-2.5 text-sm rounded-lg bg-cyan-500 text-white font-medium hover:bg-cyan-400 transition-colors shadow-lg shadow-cyan-500/20"
                 >
-                  Accetta tutti
+                  {t('acceptAll')}
                 </button>
               </div>
             </div>
@@ -105,10 +107,11 @@ export default function CookieBanner() {
               <div className="flex items-center justify-between mb-6">
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
                   <Settings className="w-6 h-6 text-cyan-500" />
-                  Gestisci preferenze cookie
+                  {t('prefsTitle')}
                 </h3>
                 <button
                   onClick={() => setShowPreferences(false)}
+                  aria-label={t('close')}
                   className="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
                 >
                   <X className="w-5 h-5 text-gray-500" />
@@ -122,14 +125,13 @@ export default function CookieBanner() {
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-2">
                         <Shield className="w-5 h-5 text-green-500" />
-                        <h4 className="font-semibold text-gray-900 dark:text-white">Cookie necessari</h4>
+                        <h4 className="font-semibold text-gray-900 dark:text-white">{t('necessary')}</h4>
                         <span className="text-xs px-2 py-0.5 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 rounded-full">
-                          Sempre attivi
+                          {t('alwaysOn')}
                         </span>
                       </div>
                       <p className="text-sm text-gray-600 dark:text-gray-400">
-                        Essenziali per il funzionamento del sito (autenticazione, sicurezza, preferenze lingua).
-                        Non possono essere disabilitati.
+                        {t('necessaryDesc')}
                       </p>
                     </div>
                     <input
@@ -147,11 +149,10 @@ export default function CookieBanner() {
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-2">
                         <BarChart3 className="w-5 h-5 text-blue-500" />
-                        <h4 className="font-semibold text-gray-900 dark:text-white">Cookie analitici</h4>
+                        <h4 className="font-semibold text-gray-900 dark:text-white">{t('analytics')}</h4>
                       </div>
                       <p className="text-sm text-gray-600 dark:text-gray-400">
-                        Ci aiutano a capire come utilizzi il sito per migliorare l'esperienza utente.
-                        Include: Google Analytics, Microsoft Clarity, Pirsch.
+                        {t('analyticsDesc')}
                       </p>
                     </div>
                     <input
@@ -169,11 +170,10 @@ export default function CookieBanner() {
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-2">
                         <Megaphone className="w-5 h-5 text-purple-500" />
-                        <h4 className="font-semibold text-gray-900 dark:text-white">Cookie di marketing</h4>
+                        <h4 className="font-semibold text-gray-900 dark:text-white">{t('marketing')}</h4>
                       </div>
                       <p className="text-sm text-gray-600 dark:text-gray-400">
-                        Utilizzati per mostrarti contenuti e pubblicità personalizzati in base ai tuoi interessi.
-                        Include: Facebook Pixel, retargeting.
+                        {t('marketingDesc')}
                       </p>
                     </div>
                     <input
@@ -191,13 +191,13 @@ export default function CookieBanner() {
                   onClick={rejectAll}
                   className="px-5 py-2.5 text-sm rounded-lg border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
                 >
-                  Rifiuta tutto
+                  {t('rejectAll')}
                 </button>
                 <button
                   onClick={savePreferences}
                   className="px-6 py-2.5 text-sm rounded-lg bg-cyan-500 text-white font-medium hover:bg-cyan-400 transition-colors shadow-lg shadow-cyan-500/20"
                 >
-                  Salva preferenze
+                  {t('save')}
                 </button>
               </div>
             </div>

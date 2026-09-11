@@ -100,6 +100,26 @@
     "cookiePolicy": "Cookie Policy",
     "salesConditions": "Terms of Sale"
   },
+  "cookieBanner": {
+    "title": "We respect your privacy",
+    "intro": "We use necessary technical cookies and, with your consent, analytics and marketing cookies to improve your experience.",
+    "see": "See our",
+    "and": "and",
+    "customize": "Customise",
+    "necessaryOnly": "Necessary only",
+    "acceptAll": "Accept all",
+    "prefsTitle": "Manage cookie preferences",
+    "close": "Close",
+    "necessary": "Necessary cookies",
+    "alwaysOn": "Always active",
+    "necessaryDesc": "Essential for the site to work (authentication, security, language preferences). They cannot be disabled.",
+    "analytics": "Analytics cookies",
+    "analyticsDesc": "They help us understand how you use the site so we can improve the user experience. Includes: Google Analytics, Microsoft Clarity, Pirsch.",
+    "marketing": "Marketing cookies",
+    "marketingDesc": "Used to show you content and advertising tailored to your interests. Includes: Facebook Pixel, retargeting.",
+    "rejectAll": "Reject all",
+    "save": "Save preferences"
+  },
   "contact": {
     "title": "Contact Us",
     "subtitle": "We're here to help with any questions.",

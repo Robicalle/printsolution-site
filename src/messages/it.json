@@ -100,6 +100,26 @@
     "cookiePolicy": "Cookie Policy",
     "salesConditions": "Condizioni di Vendita"
   },
+  "cookieBanner": {
+    "title": "Rispettiamo la tua privacy",
+    "intro": "Utilizziamo cookie tecnici necessari e, previo consenso, cookie analitici e di marketing per migliorare la tua esperienza.",
+    "see": "Consulta la nostra",
+    "and": "e",
+    "customize": "Personalizza",
+    "necessaryOnly": "Solo necessari",
+    "acceptAll": "Accetta tutti",
+    "prefsTitle": "Gestisci preferenze cookie",
+    "close": "Chiudi",
+    "necessary": "Cookie necessari",
+    "alwaysOn": "Sempre attivi",
+    "necessaryDesc": "Essenziali per il funzionamento del sito (autenticazione, sicurezza, preferenze lingua). Non possono essere disabilitati.",
+    "analytics": "Cookie analitici",
+    "analyticsDesc": "Ci aiutano a capire come utilizzi il sito per migliorare l'esperienza utente. Include: Google Analytics, Microsoft Clarity, Pirsch.",
+    "marketing": "Cookie di marketing",
+    "marketingDesc": "Utilizzati per mostrarti contenuti e pubblicità personalizzati in base ai tuoi interessi. Include: Facebook Pixel, retargeting.",
+    "rejectAll": "Rifiuta tutto",
+    "save": "Salva preferenze"
+  },
   "contact": {
     "title": "Contattaci",
     "subtitle": "Siamo a disposizione per qualsiasi informazione.",

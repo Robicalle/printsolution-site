@@ -35,6 +35,7 @@ export default function Header() {
     { label: t("aboutUs"), href: "/chi-siamo" },
     { label: t("news"), href: "/news" },
     { label: t("blog"), href: "/blog" },
+    { label: t("support"), href: "/assistenza-tecnica" },
     { label: t("contacts"), href: "/contatti" },
     { label: t("eShop"), href: "/shop", isShop: true },
   ];
@@ -45,10 +46,14 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  useEffect(() => {
+  // Cambio pagina: chiude menu e tendine. Aggiornato durante il render invece
+  // che in un useEffect, che causava un secondo render a ogni navigazione.
+  const [prevPathname, setPrevPathname] = useState(pathname);
+  if (pathname !== prevPathname) {
+    setPrevPathname(pathname);
     setOpenDropdown(null);
     setMobileOpen(false);
-  }, [pathname]);
+  }
 
   const emailSubject = locale === "it" ? "Richiesta%20Informazioni%20Print%20Solution" : "Information%20Request%20Print%20Solution";
   const emailBody = locale === "it" ? "Buongiorno%2C%0A%0AVorrei%20ricevere%20informazioni.%0A%0AGrazie" : "Hello%2C%0A%0AI%20would%20like%20to%20receive%20information.%0A%0AThank%20you";
@@ -75,8 +80,9 @@ export default function Header() {
           />
         </Link>
 
-        {/* Desktop nav */}
-        <nav aria-label="Navigazione principale" className="hidden lg:flex items-center gap-1">
+        {/* Desktop nav: da xl (1280px). Sotto, le voci non stanno su una riga
+            e il menu usciva dallo schermo: si usa l'hamburger. */}
+        <nav aria-label="Navigazione principale" className="hidden xl:flex items-center gap-1">
           {navigation.filter((item) => !('homeOnly' in item && item.homeOnly && isHome)).map((item) =>
             'megaMenu' in item ? (
               <div
@@ -88,7 +94,7 @@ export default function Header() {
                 <button
                   aria-haspopup="true"
                   aria-expanded={openDropdown === item.label}
-                  className={`px-4 py-2.5 text-sm font-medium transition-colors duration-200 whitespace-nowrap ${
+                  className={`px-2.5 py-2.5 text-sm font-medium transition-colors duration-200 whitespace-nowrap ${
                     scrolled ? "text-gray-600 hover:text-cyan-500" : "text-white/80 hover:text-cyan-400"
                   }`}
                 >
@@ -109,7 +115,7 @@ export default function Header() {
                 <button
                   aria-haspopup="true"
                   aria-expanded={openDropdown === 'soluzioni'}
-                  className={`px-4 py-2.5 text-sm font-medium transition-colors duration-200 whitespace-nowrap inline-flex items-center ${
+                  className={`px-2.5 py-2.5 text-sm font-medium transition-colors duration-200 whitespace-nowrap inline-flex items-center ${
                     scrolled ? "text-gray-600 hover:text-cyan-500" : "text-white/80 hover:text-cyan-400"
                   }`}
                 >
@@ -151,7 +157,7 @@ export default function Header() {
               <Link
                 key={item.label}
                 href={item.href!}
-                className={`px-4 py-2.5 text-sm font-medium transition-colors duration-200 whitespace-nowrap ${
+                className={`px-2.5 py-2.5 text-sm font-medium transition-colors duration-200 whitespace-nowrap ${
                   scrolled ? "text-gray-600 hover:text-cyan-500" : "text-white/80 hover:text-cyan-400"
                 }`}
               >
@@ -164,7 +170,7 @@ export default function Header() {
         </nav>
 
         {/* Mobile toggle */}
-        <div className="lg:hidden flex items-center gap-2">
+        <div className="xl:hidden flex items-center gap-2">
           <LanguageSwitcher scrolled={scrolled || mobileOpen} />
           <button
             className={`p-2 min-w-[44px] min-h-[44px] flex items-center justify-center relative z-10 ${mobileOpen || scrolled ? "text-dark-900" : "text-white"}`}
@@ -185,7 +191,7 @@ export default function Header() {
 
       {/* Mobile menu */}
       <div
-        className={`lg:hidden fixed inset-0 top-[80px] z-[9998] bg-white transition-all duration-300 overflow-y-auto max-h-[calc(100vh-80px)] ${
+        className={`xl:hidden fixed inset-0 top-[80px] z-[9998] bg-white transition-all duration-300 overflow-y-auto max-h-[calc(100vh-80px)] ${
           mobileOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
       >

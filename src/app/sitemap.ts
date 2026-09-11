@@ -50,6 +50,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { path: "/blog",                   priority: 0.8, freq: "weekly"  },
     { path: "/chi-siamo",              priority: 0.7, freq: "monthly" },
     { path: "/contatti",               priority: 0.7, freq: "monthly" },
+    { path: "/assistenza-tecnica",     priority: 0.6, freq: "monthly" },
     { path: "/usato",                  priority: 0.6, freq: "weekly"  },
     { path: "/promozioni",             priority: 0.6, freq: "weekly"  },
     { path: "/condizioni-di-vendita",  priority: 0.3, freq: "yearly"  },

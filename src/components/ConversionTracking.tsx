@@ -53,6 +53,17 @@ export default function ConversionTracking() {
         target.textContent?.trim().slice(0, 50) ||
         "";
 
+      // Link dell'assistenza tecnica (portale PSP, telefono, email): evento a
+      // parte, cosi' i clienti in assistenza non finiscono tra i contatti commerciali.
+      const support = target.getAttribute("data-support");
+      if (support) {
+        gtagEvent("support_click", {
+          support_method: support,
+          link_location: formLocation(pathname),
+        });
+        return;
+      }
+
       if (href.startsWith("mailto:")) {
         if (isLegalPage(pathname)) return;
         gtagEvent("contact_click", {

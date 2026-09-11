@@ -53,6 +53,7 @@ export default function Footer() {
             <div className="mt-4 pt-3 border-t border-white/5 space-y-0 text-sm">
               <Link href="/blog" className="block hover:text-white transition-colors duration-200 py-2">📰 {t("blog")}</Link>
               <Link href="/chi-siamo" className="block hover:text-white transition-colors duration-200 py-2">{t("aboutUs")}</Link>
+              <Link href="/assistenza-tecnica" className="block hover:text-white transition-colors duration-200 py-2">{t("support")}</Link>
             </div>
           </div>
 

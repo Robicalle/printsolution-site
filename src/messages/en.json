@@ -170,6 +170,21 @@
     "quickReply1": "Which printer do I need?",
     "quickReply2": "Printing on corrugated board",
     "quickReply3": "Book a demo",
-    "quickReply4": "Looking for consumables"
+    "quickReply4": "Looking for consumables",
+    "errorMessage": "Sorry, something went wrong. Please try again or contact Print Solution on [+39 02 4943 9417](tel:+390249439417).",
+    "leadTitle": "Would you like us to contact you?",
+    "leadText": "Leave your details and one of our specialists will call or write to you. Meanwhile you can keep chatting.",
+    "leadName": "Full name",
+    "leadContact": "Email or phone",
+    "leadCompany": "Company (optional)",
+    "leadPrivacy": "I have read and accept the",
+    "leadPrivacyAfter": "and consent to the processing of my data so that you can contact me.",
+    "leadSend": "Send",
+    "leadSending": "Sending…",
+    "leadNo": "No thanks",
+    "leadInvalid": "Please enter a valid email address or phone number.",
+    "leadError": "Sending failed. Please try again or call us on +39 02 4943 9417.",
+    "leadThanks": "Thank you {nome}! We have received your details and will get back to you as soon as possible. Meanwhile, feel free to keep asking me questions.",
+    "leadOpen": "Would you like us to contact you? Leave your details"
   }
 }

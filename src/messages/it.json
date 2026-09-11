@@ -170,6 +170,21 @@
     "quickReply1": "Che stampante mi serve?",
     "quickReply2": "Stampa su cartone ondulato",
     "quickReply3": "Prenota una demo",
-    "quickReply4": "Cerco consumabili"
+    "quickReply4": "Cerco consumabili",
+    "errorMessage": "Mi scuso, si è verificato un errore. Riprova o contatta Print Solution al [02 4943 9417](tel:+390249439417).",
+    "leadTitle": "Vuoi essere ricontattato?",
+    "leadText": "Lasciaci un recapito: un nostro esperto ti richiama o ti scrive. Intanto puoi continuare a chattare.",
+    "leadName": "Nome e cognome",
+    "leadContact": "Email o telefono",
+    "leadCompany": "Azienda (facoltativo)",
+    "leadPrivacy": "Ho letto e accetto la",
+    "leadPrivacyAfter": "e acconsento al trattamento dei miei dati per essere ricontattato.",
+    "leadSend": "Invia",
+    "leadSending": "Invio…",
+    "leadNo": "No grazie",
+    "leadInvalid": "Inserisci un'email o un numero di telefono valido.",
+    "leadError": "Invio non riuscito. Riprova o chiamaci allo 02 4943 9417.",
+    "leadThanks": "Grazie {nome}! Abbiamo ricevuto i tuoi dati: ti ricontattiamo al più presto. Intanto, se vuoi, continua pure a farmi domande.",
+    "leadOpen": "Vuoi essere ricontattato? Lascia i tuoi dati"
   }
 }

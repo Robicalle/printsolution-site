@@ -1,14 +1,10 @@
 "use client";
 import { useState, useRef, useEffect, useCallback } from "react";
-import { useTranslations } from "next-intl";
-import ReactMarkdown from "react-markdown";
-
-// GA4 event helper
-function trackEvent(event: string, params?: Record<string, string | number>) {
-  if (typeof window !== "undefined" && (window as any).gtag) {
-    (window as any).gtag("event", event, params);
-  }
-}
+import { useLocale, useTranslations } from "next-intl";
+import ReactMarkdown, { defaultUrlTransform } from "react-markdown";
+import { Turnstile } from "@marsidev/react-turnstile";
+import { Link } from "@/i18n/navigation";
+import { gtagEvent } from "@/components/ConversionTracking";
 
 interface Message {
   role: "user" | "assistant";
@@ -17,6 +13,16 @@ interface Message {
 
 const STORAGE_KEY = "ps-chat-history";
 const MAX_MESSAGES = 50;
+
+// Riquadro "Vuoi essere ricontattato?": non all'apertura (chi vuole solo una
+// risposta veloce chiuderebbe la chat), ma dopo la seconda risposta dell'AI
+// o subito quando il visitatore chiede prezzi, preventivi o una demo.
+// "inviato" e "rifiutato" si ricordano: il riquadro non torna a ogni visita.
+type LeadStato = "nascosto" | "proposto" | "inviato" | "rifiutato";
+const LEAD_KEY = "ps-chat-lead";
+const INTENTO_RE = /prezz|cost[oi]|preventiv|listino|quanto cost|offert|demo|appuntament|price|pricing|quote|appointment/i;
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const TEL_RE = /^\+?[\d\s./()-]{6,20}$/;
 
 function loadMessages(): Message[] {
   if (typeof window === "undefined") return [];
@@ -39,8 +45,28 @@ function saveMessages(msgs: Message[]) {
   }
 }
 
+function loadLeadStato(): LeadStato {
+  if (typeof window === "undefined") return "nascosto";
+  try {
+    const v = localStorage.getItem(LEAD_KEY);
+    if (v === "inviato" || v === "rifiutato") return v;
+  } catch {
+    // ignore
+  }
+  return "nascosto";
+}
+
+function saveLeadStato(v: LeadStato) {
+  try {
+    localStorage.setItem(LEAD_KEY, v);
+  } catch {
+    // ignore
+  }
+}
+
 export default function ChatWidget() {
   const t = useTranslations("chat");
+  const locale = useLocale();
   const [open, setOpen] = useState(false);
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState<Message[]>([]);
@@ -48,6 +74,10 @@ export default function ChatWidget() {
   const [pulse, setPulse] = useState(true);
   const [hp] = useState("");
   const [hydrated, setHydrated] = useState(false);
+  const [leadStato, setLeadStato] = useState<LeadStato>("nascosto");
+  const [lead, setLead] = useState({ nome: "", contatto: "", azienda: "", privacy: false });
+  const [leadToken, setLeadToken] = useState("");
+  const [leadInvio, setLeadInvio] = useState<"idle" | "sending" | "error" | "invalid">("idle");
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const messagesContainerRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -56,6 +86,7 @@ export default function ChatWidget() {
   // Load from localStorage on mount
   useEffect(() => {
     setMessages(loadMessages());
+    setLeadStato(loadLeadStato());
     setHydrated(true);
   }, []);
 
@@ -72,10 +103,10 @@ export default function ChatWidget() {
     const container = messagesContainerRef.current;
     if (!container) return;
     const isNearBottom = container.scrollHeight - container.scrollTop - container.clientHeight < 80;
-    if (isNearBottom) {
+    if (isNearBottom || leadStato === "proposto") {
       messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
     }
-  }, [messages, loading]);
+  }, [messages, loading, leadStato]);
 
   // Track if user scrolled up manually
   const handleScroll = useCallback(() => {
@@ -93,7 +124,7 @@ export default function ChatWidget() {
   useEffect(() => {
     if (open) {
       setPulse(false);
-      trackEvent("chat_open", { event_category: "chatbot" });
+      gtagEvent("chat_open", { event_category: "chatbot" });
     }
   }, [open]);
 
@@ -101,6 +132,56 @@ export default function ChatWidget() {
     setMessages([]);
     try { localStorage.removeItem(STORAGE_KEY); } catch { /* ignore */ }
   }, []);
+
+  const proponiLead = useCallback(() => {
+    setLeadStato((s) => (s === "nascosto" ? "proposto" : s));
+  }, []);
+
+  const rifiutaLead = () => {
+    setLeadStato("rifiutato");
+    saveLeadStato("rifiutato");
+  };
+
+  const contattoValido = EMAIL_RE.test(lead.contatto.trim()) || TEL_RE.test(lead.contatto.trim());
+  const leadPronto = lead.nome.trim() !== "" && lead.contatto.trim() !== "" && lead.privacy && leadToken !== "";
+
+  const inviaLead = async () => {
+    if (!leadPronto || leadInvio === "sending") return;
+    if (!contattoValido) {
+      setLeadInvio("invalid");
+      return;
+    }
+    setLeadInvio("sending");
+    try {
+      const res = await fetch("/api/chat-lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...lead,
+          conversazione: messages.slice(-30),
+          pagina: window.location.pathname,
+          lingua: locale,
+          _hp_field: hp,
+          turnstileToken: leadToken,
+        }),
+      });
+      if (!res.ok) throw new Error(String(res.status));
+      // GA4: solo che e' arrivato un contatto dalla chat, nessun dato personale
+      gtagEvent("generate_lead", {
+        form_location: "chat",
+        product_interest: "chat",
+        has_phone: !EMAIL_RE.test(lead.contatto.trim()),
+        has_company: lead.azienda.trim().length > 0,
+      });
+      setLeadStato("inviato");
+      saveLeadStato("inviato");
+      setMessages((prev) => [...prev, { role: "assistant", content: t("leadThanks", { nome: lead.nome.trim().split(" ")[0] }) }]);
+      setLeadInvio("idle");
+    } catch {
+      setLeadInvio("error");
+      setLeadToken("");
+    }
+  };
 
   const sendMessage = useCallback(async (textOverride?: string) => {
     const text = (textOverride ?? input).trim();
@@ -110,7 +191,7 @@ export default function ChatWidget() {
     setMessages((prev) => [...prev, userMsg]);
     if (!textOverride) setInput("");
     setLoading(true);
-    trackEvent("chat_message_sent", { event_category: "chatbot", message_length: text.length });
+    gtagEvent("chat_message_sent", { event_category: "chatbot", message_length: text.length });
 
     try {
       const res = await fetch("/api/chat", {
@@ -188,19 +269,24 @@ export default function ChatWidget() {
           }
         }, 50);
       });
+
+      if (!fullText) {
+        // Il server ha risposto con un errore (o senza testo): al posto della
+        // bolla vuota, il messaggio d'errore con il numero di telefono
+        setMessages((prev) => {
+          const updated = [...prev];
+          updated[updated.length - 1] = { role: "assistant", content: t("errorMessage") };
+          return updated;
+        });
+      } else if (messages.filter((m) => m.role === "assistant").length + 1 >= 2 || INTENTO_RE.test(text)) {
+        proponiLead();
+      }
     } catch {
-      setMessages((prev) => [
-        ...prev,
-        {
-          role: "assistant",
-          content:
-            'Mi scuso, si è verificato un errore. Riprova o contatta Print Solution al <a href="tel:+390249439417">02 4943 9417</a>.',
-        },
-      ]);
+      setMessages((prev) => [...prev, { role: "assistant", content: t("errorMessage") }]);
     } finally {
       setLoading(false);
     }
-  }, [input, loading, messages, hp]);
+  }, [input, loading, messages, hp, t, proponiLead]);
 
   const quickReplies = [
     t("quickReply1"),
@@ -208,6 +294,8 @@ export default function ChatWidget() {
     t("quickReply3"),
     t("quickReply4"),
   ];
+
+  const campo = "w-full px-3 py-2 rounded-lg border border-gray-300 text-sm text-gray-700 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500";
 
   return (
     <>
@@ -269,7 +357,7 @@ export default function ChatWidget() {
                   {quickReplies.map((qr, i) => (
                     <button
                       key={i}
-                      onClick={() => { trackEvent("chat_quick_reply", { event_category: "chatbot", quick_reply: qr }); sendMessage(qr); }}
+                      onClick={() => { gtagEvent("chat_quick_reply", { event_category: "chatbot", quick_reply: qr }); sendMessage(qr); }}
                       className="px-3 py-1.5 text-xs border border-cyan-400 text-cyan-700 rounded-full hover:bg-cyan-50 hover:border-cyan-500 transition-colors"
                     >
                       {qr}
@@ -293,6 +381,10 @@ export default function ChatWidget() {
                 ) : (
                   <div className="max-w-[85%] rounded-2xl px-4 py-2.5 text-sm leading-relaxed bg-white text-gray-700 border border-gray-200 rounded-bl-sm shadow-sm chat-markdown">
                     <ReactMarkdown
+                      // react-markdown scarta i link tel: (non sono nella sua lista
+                      // di protocolli sicuri): senza questo il numero nel messaggio
+                      // d'errore non era cliccabile. Il resto passa dal filtro standard.
+                      urlTransform={(url) => (/^tel:\+?\d+$/.test(url) ? url : defaultUrlTransform(url))}
                       components={{
                         a: ({ href, children, ...props }) => (
                           <a
@@ -300,7 +392,7 @@ export default function ChatWidget() {
                             className="text-cyan-600 hover:text-cyan-700 underline"
                             target={href?.startsWith("http") ? "_blank" : undefined}
                             rel={href?.startsWith("http") ? "noopener noreferrer" : undefined}
-                            onClick={() => trackEvent("chat_link_click", { event_category: "chatbot", link_url: href || "" })}
+                            onClick={() => gtagEvent("chat_link_click", { event_category: "chatbot", link_url: href || "" })}
                             {...props}
                           >
                             {children}
@@ -340,8 +432,98 @@ export default function ChatWidget() {
                 </div>
               </div>
             )}
+
+            {/* Riquadro dati di contatto */}
+            {leadStato === "proposto" && !loading && (
+              <div className="bg-white border border-cyan-200 rounded-2xl p-3 shadow-sm text-sm" data-chat-lead>
+                <p className="font-semibold text-gray-800">{t("leadTitle")}</p>
+                <p className="text-xs text-gray-500 mt-0.5 mb-2">{t("leadText")}</p>
+                <div className="space-y-2">
+                  <input
+                    type="text"
+                    value={lead.nome}
+                    onChange={(e) => setLead({ ...lead, nome: e.target.value })}
+                    placeholder={t("leadName")}
+                    aria-label={t("leadName")}
+                    autoComplete="name"
+                    maxLength={100}
+                    className={campo}
+                  />
+                  <input
+                    type="text"
+                    value={lead.contatto}
+                    onChange={(e) => { setLead({ ...lead, contatto: e.target.value }); if (leadInvio === "invalid") setLeadInvio("idle"); }}
+                    placeholder={t("leadContact")}
+                    aria-label={t("leadContact")}
+                    autoComplete="email"
+                    maxLength={150}
+                    className={campo}
+                  />
+                  <input
+                    type="text"
+                    value={lead.azienda}
+                    onChange={(e) => setLead({ ...lead, azienda: e.target.value })}
+                    placeholder={t("leadCompany")}
+                    aria-label={t("leadCompany")}
+                    autoComplete="organization"
+                    maxLength={150}
+                    className={campo}
+                  />
+                  <label className="flex items-start gap-2 text-xs text-gray-500">
+                    <input
+                      type="checkbox"
+                      checked={lead.privacy}
+                      onChange={(e) => setLead({ ...lead, privacy: e.target.checked })}
+                      className="mt-0.5 h-4 w-4 rounded border-gray-300 text-cyan-500"
+                    />
+                    <span>
+                      {t("leadPrivacy")}{" "}
+                      <Link href="/privacy" target="_blank" className="text-cyan-600 underline">
+                        Privacy Policy
+                      </Link>{" "}
+                      {t("leadPrivacyAfter")}
+                    </span>
+                  </label>
+                  <div className="flex justify-center">
+                    <Turnstile
+                      siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!.trim()}
+                      onSuccess={(token) => setLeadToken(token)}
+                      onError={() => setLeadToken("")}
+                      onExpire={() => setLeadToken("")}
+                    />
+                  </div>
+                  {leadInvio === "invalid" && <p className="text-xs text-red-600">{t("leadInvalid")}</p>}
+                  {leadInvio === "error" && <p className="text-xs text-red-600">{t("leadError")}</p>}
+                  <div className="flex gap-2">
+                    <button
+                      onClick={inviaLead}
+                      disabled={!leadPronto || leadInvio === "sending"}
+                      className="flex-1 py-2 rounded-full bg-cyan-600 text-white font-semibold hover:bg-cyan-500 disabled:opacity-40 transition-colors"
+                    >
+                      {leadInvio === "sending" ? t("leadSending") : t("leadSend")}
+                    </button>
+                    <button
+                      onClick={rifiutaLead}
+                      className="px-4 py-2 rounded-full border border-gray-300 text-gray-600 hover:bg-gray-50 transition-colors"
+                    >
+                      {t("leadNo")}
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
             <div ref={messagesEndRef} />
           </div>
+
+          {/* Link sempre disponibile per lasciare i dati */}
+          {(leadStato === "nascosto" || leadStato === "rifiutato") && messages.length > 0 && (
+            <button
+              onClick={() => setLeadStato("proposto")}
+              className="text-xs text-cyan-700 hover:text-cyan-800 underline bg-gray-50 border-t border-gray-100 py-1.5"
+            >
+              {t("leadOpen")}
+            </button>
+          )}
 
           {/* Input */}
           <div className="border-t border-gray-200 px-3 py-3 bg-white">

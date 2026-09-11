@@ -157,6 +157,10 @@
     "backToHome": "Back to Home",
     "loading": "Loading..."
   },
+  "mobileBar": {
+    "call": "Call Us Now",
+    "consult": "Free consultation"
+  },
   "chat": {
     "title": "Virtual Assistant",
     "status": "Online",

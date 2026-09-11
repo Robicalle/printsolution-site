@@ -157,6 +157,10 @@
     "backToHome": "Torna alla Home",
     "loading": "Caricamento..."
   },
+  "mobileBar": {
+    "call": "Chiamaci",
+    "consult": "Richiedi consulenza"
+  },
   "chat": {
     "title": "Assistente Virtuale",
     "status": "Online",

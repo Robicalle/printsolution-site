@@ -5,8 +5,8 @@ import { draftMode } from "next/headers";
 import { getLocale } from "next-intl/server";
 import { getPostBySlug, getAllPosts } from "@/sanity/lib/fetchers";
 import { urlForImage } from "@/sanity/lib/image";
-import Image from "next/image";
-import { PortableText } from "@portabletext/react";
+import { PortableText, type PortableTextComponents } from "@portabletext/react";
+import type { ReactNode } from "react";
 import PreviewBanner from "@/components/PreviewBanner";
 import { categoryLabel } from "@/lib/blog-category";
 
@@ -15,8 +15,8 @@ export const revalidate = 60;
 export async function generateStaticParams() {
   try {
     const posts = await getAllPosts();
-    return (posts || []).map((p: any) => ({
-      slug: p.slug?.current || p.slug,
+    return (posts || []).map((p: { slug?: string | { current?: string } }) => ({
+      slug: typeof p.slug === "string" ? p.slug : p.slug?.current,
     }));
   } catch {
     return [];
@@ -86,11 +86,11 @@ export async function generateMetadata({
   }
 }
 
-function makePortableTextComponents(locale: string) {
+function makePortableTextComponents(locale: string): PortableTextComponents {
   const it = locale === 'it';
   return {
     types: {
-      image: ({ value }: any) => {
+      image: ({ value }) => {
         if (!value?.asset) return null;
         const url = urlForImage(value)?.width(800).url();
         return (
@@ -109,7 +109,7 @@ function makePortableTextComponents(locale: string) {
           </figure>
         );
       },
-      videoEmbed: ({ value }: any) => {
+      videoEmbed: ({ value }) => {
         if (!value?.url) return null;
         const url: string = value.url;
         const isYoutube = url.includes("youtube.com") || url.includes("youtu.be");
@@ -159,7 +159,7 @@ function makePortableTextComponents(locale: string) {
         );
       },
       // Inline product mention callout card
-      productMention: ({ value }: any) => {
+      productMention: ({ value }) => {
         if (!value?.name) return null;
         const desc = it ? value.desc : (value.desc_en || value.desc);
         return (
@@ -194,7 +194,7 @@ function makePortableTextComponents(locale: string) {
           </div>
         );
       },
-      callout: ({ value }: any) => {
+      callout: ({ value }) => {
         const styles: Record<string, string> = {
           info: "bg-blue-50 border-blue-300 text-blue-800",
           warning: "bg-yellow-50 border-yellow-300 text-yellow-800",
@@ -209,7 +209,7 @@ function makePortableTextComponents(locale: string) {
           </div>
         );
       },
-      cta: ({ value }: any) => {
+      cta: ({ value }) => {
         if (!value?.url) return null;
         const isPrimary = value.style !== "secondary";
         return (
@@ -223,8 +223,8 @@ function makePortableTextComponents(locale: string) {
           </div>
         );
       },
-      table: ({ value }: any) => {
-        const rows: any[] = value?.rows || [];
+      table: ({ value }) => {
+        const rows: { cells?: string[] }[] = value?.rows || [];
         if (!rows.length) return null;
         const hasHeader = value.hasHeader !== false;
         const header = hasHeader ? rows[0] : null;
@@ -244,7 +244,7 @@ function makePortableTextComponents(locale: string) {
                 </thead>
               )}
               <tbody>
-                {body.map((row: any, ri: number) => (
+                {body.map((row, ri) => (
                   <tr key={ri} className={ri % 2 === 0 ? "bg-white" : "bg-gray-50/50"}>
                     {(row.cells || []).map((cell: string, ci: number) => (
                       <td key={ci} className="px-4 py-3 text-gray-600 border-b border-gray-100 last:border-b-0">
@@ -260,27 +260,41 @@ function makePortableTextComponents(locale: string) {
       },
     },
     block: {
-      h2: ({ children }: any) => (
+      h2: ({ children }) => (
         <h2 className="text-2xl font-bold text-gray-800 mt-10 mb-3 border-l-4 border-cyan-500 pl-4">
           {children}
         </h2>
       ),
-      h3: ({ children }: any) => (
+      h3: ({ children }) => (
         <h3 className="text-xl font-semibold text-gray-700 mt-8 mb-2">
           {children}
         </h3>
       ),
-      normal: ({ children }: any) => (
+      normal: ({ children }) => (
         <p className="text-gray-600 leading-relaxed mb-4">{children}</p>
       ),
-      blockquote: ({ children }: any) => (
+      blockquote: ({ children }) => (
         <blockquote className="border-l-4 border-cyan-400 pl-5 my-6 italic text-gray-500 bg-cyan-50 py-3 pr-4 rounded-r-lg">
           {children}
         </blockquote>
       ),
     },
+    // Senza queste regole gli elenchi uscivano come <ul> senza classi e il
+    // reset di Tailwind toglieva i pallini: le voci sembravano righe sparse.
+    list: {
+      bullet: ({ children }: { children?: ReactNode }) => (
+        <ul className="list-disc pl-6 space-y-2 text-gray-600 mb-4 marker:text-cyan-500">{children}</ul>
+      ),
+      number: ({ children }: { children?: ReactNode }) => (
+        <ol className="list-decimal pl-6 space-y-2 text-gray-600 mb-4 marker:text-cyan-500">{children}</ol>
+      ),
+    },
+    listItem: {
+      bullet: ({ children }: { children?: ReactNode }) => <li className="leading-relaxed pl-1">{children}</li>,
+      number: ({ children }: { children?: ReactNode }) => <li className="leading-relaxed pl-1">{children}</li>,
+    },
     marks: {
-      link: ({ children, value }: any) => (
+      link: ({ children, value }) => (
         <a
           href={value?.href}
           target={value?.href?.startsWith("http") ? "_blank" : undefined}
@@ -304,7 +318,7 @@ export default async function BlogPostPage({
   const it = locale === "it";
   const { isEnabled: isPreview } = await draftMode();
 
-  let post: any = null;
+  let post: Awaited<ReturnType<typeof getPostBySlug>> | null = null;
   try {
     post = await getPostBySlug(slug, isPreview);
   } catch (e) {
@@ -329,7 +343,7 @@ export default async function BlogPostPage({
   const displayTitle = (!it && post.title_en) ? post.title_en : post.title;
   const displayExcerpt = (!it && post.excerpt_en) ? post.excerpt_en : post.excerpt;
 
-  const relatedProducts: any[] = post.relatedProducts || [];
+  const relatedProducts: ({ href: string } & Record<string, string | undefined>)[] = post.relatedProducts || [];
 
   const articleJsonLd = {
     "@context": "https://schema.org",
@@ -368,7 +382,7 @@ export default async function BlogPostPage({
     ? {
         "@context": "https://schema.org",
         "@type": "FAQPage",
-        mainEntity: faqSource.map((f: any) => ({
+        mainEntity: faqSource.map((f: { question?: string; answer?: string }) => ({
           "@type": "Question",
           name: f.question,
           acceptedAnswer: { "@type": "Answer", text: f.answer },
@@ -454,7 +468,7 @@ export default async function BlogPostPage({
                 : "Print Solution products related to this article's topic"}
             </p>
             <div className={`grid gap-6 ${relatedProducts.length === 1 ? "max-w-sm mx-auto" : relatedProducts.length === 2 ? "sm:grid-cols-2 max-w-2xl mx-auto" : "sm:grid-cols-2 lg:grid-cols-3"}`}>
-              {relatedProducts.map((p: any) => (
+              {relatedProducts.map((p) => (
                 <Link
                   key={p.href}
                   href={p.href}

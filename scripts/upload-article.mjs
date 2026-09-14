@@ -76,13 +76,17 @@ function inline(text) {
   // produce children[] con marks 'strong' e link (markDefs)
   const children = []
   const markDefs = []
-  const re = /(\*\*([^*]+)\*\*)|(\[([^\]]+)\]\(([^)]+)\))/g
+  // Il primo caso, **[testo](url)**, va prima del grassetto semplice: altrimenti
+  // il grassetto si prende tutto e il link resta testo grezzo "[t](url)".
+  const re = /(\*\*\[([^\]]+)\]\(([^)]+)\)\*\*)|(\*\*([^*]+)\*\*)|(\[([^\]]+)\]\(([^)]+)\))/g
   let last = 0, m
   const push = (t, marks) => { if (t) children.push({ _type: 'span', _key: key(), text: t, marks: marks || [] }) }
+  const link = (href) => { const mk = key(); markDefs.push({ _type: 'link', _key: mk, href }); return mk }
   while ((m = re.exec(text))) {
     push(text.slice(last, m.index))
-    if (m[2] != null) push(m[2], ['strong'])
-    else { const mk = key(); markDefs.push({ _type: 'link', _key: mk, href: m[5] }); push(m[4], [mk]) }
+    if (m[2] != null) push(m[2], ['strong', link(m[3])])
+    else if (m[5] != null) push(m[5], ['strong'])
+    else push(m[7], [link(m[8])])
     last = re.lastIndex
   }
   push(text.slice(last))
@@ -149,6 +153,10 @@ const doc = {
   relatedProducts,
   // data ancora da decidere ([[...]]): per la bozza vale oggi
   publishedAt: meta.publishedAt && !meta.publishedAt.includes('[[') ? meta.publishedAt : new Date().toISOString(),
+  // copertina: asset gia' caricato su Sanity (meta.coverImage.assetRef)
+  coverImage: meta.coverImage?.assetRef
+    ? { _type: 'image', asset: { _type: 'reference', _ref: meta.coverImage.assetRef }, alt: meta.coverImage.alt || '' }
+    : undefined,
   seo: meta.seo ? { title: meta.seo.title, description: meta.seo.description, keywords: meta.seo.keywords || [] } : undefined,
 }
 

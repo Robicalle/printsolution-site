@@ -130,7 +130,7 @@ function Solutions({ locale }: { locale: string }) {
     },
     {
       title: locale === 'it' ? "Etichette" : "Labels",
-      desc: locale === 'it' ? "Stampanti per etichette in bobina e a foglio con tecnologia inkjet e laser a colori per ogni esigenza produttiva." : "Roll-fed and sheet-fed label printers with colour inkjet and laser technology for every production need.",
+      desc: locale === 'it' ? "Stampanti per etichette in bobina con tecnologia inkjet e laser a colori per ogni esigenza produttiva." : "Roll-fed label printers with colour inkjet and laser technology for every production need.",
       href: "/soluzioni/etichette",
       image: "/images/hero-labels-nobg.png",
       gradient: "from-magenta-500 to-magenta-400",

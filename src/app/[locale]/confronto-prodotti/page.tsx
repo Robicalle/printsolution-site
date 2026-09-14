@@ -52,7 +52,7 @@ function getCategories(locale: string): Category[] {
     {
       title: locale === 'it' ? "Etichette" : "Labels",
       icon: "🏷️",
-      description: locale === 'it' ? "Stampanti per etichette in bobina e foglio, da desktop a industriale" : "Roll and sheet label printers, from desktop to industrial",
+      description: locale === 'it' ? "Stampanti per etichette in bobina, da desktop a industriale" : "Roll label printers, from desktop to industrial",
       color: "from-cyan-500 to-blue-600",
       products: [
         { name: "Afinia X350", href: "/prodotti/afinia-x350", image: "/images/products/afinia-x350.webp", tecnologia: "Inkjet pigmentato (Memjet)", velocita: locale === 'it' ? "Fino a 45 m/min" : "Up to 45 m/min", formatoMax: locale === 'it' ? "350 mm bobina" : "350 mm roll", risoluzione: "1600 × 1600 dpi", prezzo: p },

@@ -181,6 +181,20 @@ if (DRY) {
   process.exit(0)
 }
 
+// createOrReplace riscrive tutto il documento: i campi inglesi (inseriti da
+// apply-translation.mjs) andrebbero persi. Li si conserva, ma body_en ricalca
+// la struttura italiana: se il testo IT e' cambiato va rilanciata la traduzione.
+const CAMPI_EN = ['title_en', 'excerpt_en', 'body_en', 'faq_en', 'seo_en']
+try {
+  const esistente = await client.getDocument(doc._id)
+  const conservati = CAMPI_EN.filter(c => esistente?.[c] !== undefined)
+  for (const c of conservati) doc[c] = esistente[c]
+  if (conservati.length) console.log('Campi inglesi conservati:', conservati.join(', '), '- se hai cambiato il testo italiano, rilancia apply-translation.mjs')
+} catch (e) {
+  console.error('Errore Sanity:', e.message)
+  process.exit(1)
+}
+
 // Sanity: in caso di errore si stampa solo il messaggio, mai la richiesta
 // (conterrebbe il token).
 let res

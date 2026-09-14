@@ -24,7 +24,13 @@ export const postBySlugQuery = groq`*[_type == "post" && slug.current == $slug][
   body_en,
   faq,
   faq_en,
-  relatedProducts
+  // Foto della scheda: la prima della galleria del prodotto collegato (la
+  // stessa del catalogo /prodotti), cosi' e' uguale in tutti gli articoli.
+  // Il percorso "image" scritto a mano resta solo come riserva.
+  relatedProducts[]{
+    ...,
+    "productImage": *[_type == "product" && "/prodotti/" + slug.current == ^.href][0].images[0]
+  }
 }`;
 
 // Pagine

@@ -343,7 +343,22 @@ export default async function BlogPostPage({
   const displayTitle = (!it && post.title_en) ? post.title_en : post.title;
   const displayExcerpt = (!it && post.excerpt_en) ? post.excerpt_en : post.excerpt;
 
-  const relatedProducts: ({ href: string } & Record<string, string | undefined>)[] = post.relatedProducts || [];
+  // Foto della scheda: prima quella del prodotto in Sanity (productImage, dalla
+  // query), poi il percorso scritto a mano nell'articolo come riserva.
+  type RelatedProduct = {
+    href: string;
+    name?: string;
+    desc?: string;
+    desc_en?: string;
+    image?: string;
+    productImage?: { asset?: { _ref?: string } };
+  };
+  const relatedProducts = ((post.relatedProducts || []) as RelatedProduct[]).map((p) => ({
+    ...p,
+    src: p.productImage?.asset
+      ? urlForImage(p.productImage as Parameters<typeof urlForImage>[0])?.width(600).url()
+      : p.image,
+  }));
 
   const articleJsonLd = {
     "@context": "https://schema.org",
@@ -474,10 +489,10 @@ export default async function BlogPostPage({
                   href={p.href}
                   className="card-modern overflow-hidden group hover:-translate-y-1 transition-transform duration-300 bg-white"
                 >
-                  {p.image && (
-                    <div className="h-40 relative overflow-hidden bg-gray-50">
+                  {p.src && (
+                    <div className="h-40 relative overflow-hidden bg-white">
                       <img
-                        src={p.image}
+                        src={p.src}
                         alt={p.name}
                         className="absolute inset-0 w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-500"
                         loading="lazy"

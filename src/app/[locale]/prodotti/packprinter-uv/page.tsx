@@ -207,8 +207,8 @@ export default async function PackPrinterUVPage() {
           <h2 className="text-3xl font-bold text-dark-800 mb-6">{it ? 'Stampa UV su Qualsiasi Materiale' : 'UV Printing on Any Material'}</h2>
           <p className="text-gray-500 leading-relaxed mb-4">
             {it
-              ? <>PackPrinter UV è la stampante digitale single-pass che rivoluziona la stampa su packaging e materiali sintetici. Grazie alla testina all&apos;avanguardia con inchiostri UV, stampa a 5 colori (CMYK + Bianco) su materiali porosi e non porosi con prestazioni eccezionali.</>
-              : 'PackPrinter UV is the single-pass digital printer that revolutionises printing on packaging and synthetic materials. With its cutting-edge printhead and UV inks, it prints in 5 colours (CMYK + White) on porous and non-porous materials with exceptional performance.'}
+              ? <>PackPrinter UV è la stampante digitale single-pass per packaging e materiali sintetici. Con testina e inchiostri UV stampa a 5 colori (CMYK + Bianco) su materiali porosi e non porosi.</>
+              : 'PackPrinter UV is the single-pass digital printer for packaging and synthetic materials. With its UV printhead and inks it prints in 5 colours (CMYK + White) on porous and non-porous materials.'}
           </p>
           <p className="text-gray-500 leading-relaxed mb-4">
             {it

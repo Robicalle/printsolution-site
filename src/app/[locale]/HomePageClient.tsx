@@ -228,7 +228,7 @@ function FeaturedProducts({ locale }: { locale: string }) {
       <div className="container-custom" ref={ref}>
         <div className={`text-center mb-16 transition duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <p className="text-cyan-700 font-semibold text-sm mb-4">{locale === 'it' ? 'I nostri prodotti' : 'Our products'}</p>
-          <h2 className="text-4xl sm:text-5xl font-bold text-dark-800 tracking-tight">{locale === 'it' ? 'Tecnologie di Punta' : 'Cutting-Edge Technology'}</h2>
+          <h2 className="text-4xl sm:text-5xl font-bold text-dark-800 tracking-tight">{locale === 'it' ? 'Macchine in evidenza' : 'Featured machines'}</h2>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {products.map((p, i) => (

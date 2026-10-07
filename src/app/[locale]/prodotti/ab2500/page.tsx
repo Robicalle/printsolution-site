@@ -309,7 +309,7 @@ export default async function () {
         <div className="container-custom text-center">
           <h2 className="text-3xl font-bold text-dark-800 mb-6">{locale === 'it' ? 'Automatizza la Produzione di Scatole' : 'Automate Your Box Production'}</h2>
           <p className="text-gray-500 max-w-xl mx-auto mb-8">
-            {locale === 'it' ? "Scopri come l'AB2500 può rivoluzionare la tua linea di produzione. Vieni a vederla nella nostra sala demo." : "Discover how the AB2500 can revolutionise your production line. Come see it in our demo room."}
+            {locale === 'it' ? "Vieni a vedere l'AB2500 al lavoro nella nostra sala demo, con le tue misure di scatola." : "See the AB2500 at work in our demo room, with your own box sizes."}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20Anypack%20AB2500&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20Anypack%20AB2500.%0A%0AGrazie" className="btn-primary text-lg" data-track="click_cta" data-track-label="cta_ab2500">{locale === 'it' ? 'Consulenza gratuita→' : 'Free consultation→'}</a>

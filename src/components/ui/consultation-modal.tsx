@@ -193,7 +193,7 @@ function ConsultationModal({ product, onClose }: { product: string; onClose: () 
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 13l4 4L19 7" />
               </svg>
             </div>
-            <h3 className="text-lg font-bold text-dark-800 dark:text-white mb-2">Richiesta inviata!</h3>
+            <h3 className="text-lg font-bold text-dark-800 dark:text-white mb-2">Richiesta inviata</h3>
             <p className="text-gray-500 mb-6">Ti ricontatteremo il prima possibile.</p>
             <button onClick={onClose} className="btn-primary">Chiudi</button>
           </div>

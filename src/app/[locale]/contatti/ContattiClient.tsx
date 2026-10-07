@@ -69,7 +69,7 @@ export default function ContattiClient() {
               {status === "success" ? (
                 <div className="card-modern p-8 text-center">
                   <span className="text-5xl block mb-4">✅</span>
-                  <h3 className="text-xl font-bold text-dark-800 mb-2">{locale === 'it' ? 'Messaggio Inviato!' : 'Message Sent!'}</h3>
+                  <h3 className="text-xl font-bold text-dark-800 mb-2">{locale === 'it' ? 'Messaggio inviato' : 'Message sent'}</h3>
                   <p className="text-gray-500">
                     {locale === 'it' ? 'Grazie per averci contattato. Ti risponderemo il prima possibile.' : 'Thank you for contacting us. We will reply as soon as possible.'}
                   </p>

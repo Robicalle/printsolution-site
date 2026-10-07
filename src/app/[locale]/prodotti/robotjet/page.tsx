@@ -194,7 +194,7 @@ export default async function () {
             <p className="text-gray-300 text-sm mb-3 uppercase tracking-widest font-medium">{locale === 'it' ? 'Prodotti' : 'Products'}</p>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">Robotjet Book Edge Printer</h1>
               <p className="text-lg text-gray-300/90 leading-relaxed mb-8">
-                {locale === 'it' ? 'Stampante digitale rivoluzionaria per la labbratura di libri, quaderni, agende e block notes. 400 pezzi/ora, CMYK single-pass con teste HP A3, risoluzione fino a 1200 dpi.' : 'Revolutionary digital printer for book edge printing on books, notebooks, planners and notepads. 400 pcs/hour, CMYK single-pass with HP A3 printheads, up to 1200 dpi resolution.'}
+                {locale === 'it' ? 'Stampante digitale per la labbratura di libri, quaderni, agende e block notes. 400 pezzi/ora, CMYK single-pass con teste HP A3, risoluzione fino a 1200 dpi.' : 'Digital printer for book edge printing on books, notebooks, planners and notepads. 400 pcs/hour, CMYK single-pass with HP A3 printheads, up to 1200 dpi resolution.'}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20Robotjet&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20di%20Robotjet.%0A%0AGrazie" className="btn-primary text-lg !px-8 !py-4 !rounded-full" data-track="click_cta" data-track-label="cta_robotjet">{locale === 'it' ? 'Consulenza gratuita→' : 'Free consultation→'}</a>

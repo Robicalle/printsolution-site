@@ -13,7 +13,7 @@ export default function DemoRoomBlock({ block, locale }: Props) {
       <div className="grid md:grid-cols-2 gap-8 items-center">
         <div>
           {block.eyebrow && (
-            <p className="text-magenta-500 font-semibold text-sm mb-4">
+            <p className="text-magenta-600 font-semibold text-sm mb-4">
               {it ? block.eyebrow : (block.eyebrow_en || block.eyebrow)}
             </p>
           )}
@@ -31,7 +31,7 @@ export default function DemoRoomBlock({ block, locale }: Props) {
             </a>
           )}
         </div>
-        <div className="bg-gradient-to-br from-cyan-500 to-magenta-500 rounded-2xl h-64 flex items-center justify-center">
+        <div className="bg-gradient-to-br from-cyan-650 to-magenta-600 rounded-2xl h-64 flex items-center justify-center">
           <div className="text-center text-white">
             <span className="text-6xl block mb-2 opacity-50">🏢</span>
             <p className="font-semibold">{it ? 'Sala Demo' : 'Demo Room'}</p>

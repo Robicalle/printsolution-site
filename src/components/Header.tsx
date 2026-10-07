@@ -95,7 +95,7 @@ export default function Header() {
                   aria-haspopup="true"
                   aria-expanded={openDropdown === item.label}
                   className={`px-2.5 py-2.5 text-sm font-medium transition-colors duration-200 whitespace-nowrap ${
-                    scrolled ? "text-gray-600 hover:text-cyan-500" : "text-white/80 hover:text-cyan-400"
+                    scrolled ? "text-gray-600 hover:text-cyan-700" : "text-white/80 hover:text-cyan-400"
                   }`}
                 >
                   {item.label}
@@ -116,7 +116,7 @@ export default function Header() {
                   aria-haspopup="true"
                   aria-expanded={openDropdown === 'soluzioni'}
                   className={`px-2.5 py-2.5 text-sm font-medium transition-colors duration-200 whitespace-nowrap inline-flex items-center ${
-                    scrolled ? "text-gray-600 hover:text-cyan-500" : "text-white/80 hover:text-cyan-400"
+                    scrolled ? "text-gray-600 hover:text-cyan-700" : "text-white/80 hover:text-cyan-400"
                   }`}
                 >
                   {item.label}
@@ -134,7 +134,7 @@ export default function Header() {
                       <Link
                         key={child.href}
                         href={child.href}
-                        className="block px-5 py-3 text-sm text-gray-700 hover:bg-cyan-50 hover:text-cyan-600 transition-colors rounded-xl mx-2"
+                        className="block px-5 py-3 text-sm text-gray-700 hover:bg-cyan-50 hover:text-cyan-700 transition-colors rounded-xl mx-2"
                       >
                         <span className="font-medium">{child.label}</span>
                         {"desc" in child && (
@@ -149,7 +149,7 @@ export default function Header() {
               <Link
                 key={item.label}
                 href={item.href!}
-                className="ml-1 px-4 py-2 text-sm font-semibold rounded-full transition-all duration-300 bg-gradient-to-r from-cyan-500 to-blue-600 text-white hover:from-cyan-400 hover:to-blue-500 hover:shadow-md hover:shadow-cyan-500/25 whitespace-nowrap"
+                className="ml-1 px-4 py-2 text-sm font-semibold rounded-full transition-all duration-300 btn-solid hover:shadow-md hover:shadow-cyan-500/25 whitespace-nowrap"
               >
                 🛒 {item.label}
               </Link>
@@ -158,7 +158,7 @@ export default function Header() {
                 key={item.label}
                 href={item.href!}
                 className={`px-2.5 py-2.5 text-sm font-medium transition-colors duration-200 whitespace-nowrap ${
-                  scrolled ? "text-gray-600 hover:text-cyan-500" : "text-white/80 hover:text-cyan-400"
+                  scrolled ? "text-gray-600 hover:text-cyan-700" : "text-white/80 hover:text-cyan-400"
                 }`}
               >
                 {item.label}
@@ -200,7 +200,7 @@ export default function Header() {
             'megaMenu' in item ? (
               <div key={item.label}>
                 <button
-                  className="w-full flex items-center justify-between py-3 min-h-[44px] text-gray-700 hover:text-cyan-500 text-lg border-b border-gray-50"
+                  className="w-full flex items-center justify-between py-3 min-h-[44px] text-gray-700 hover:text-cyan-700 text-lg border-b border-gray-50"
                   onClick={() => setMobileProductsOpen(!mobileProductsOpen)}
                 >
                   {item.label}
@@ -219,7 +219,7 @@ export default function Header() {
                   <Link
                     key={child.href}
                     href={child.href}
-                    className="block py-3 pl-0 min-h-[44px] flex items-center text-gray-700 hover:text-cyan-500 text-lg border-b border-gray-50"
+                    className="block py-3 pl-0 min-h-[44px] flex items-center text-gray-700 hover:text-cyan-700 text-lg border-b border-gray-50"
                     onClick={() => setMobileOpen(false)}
                   >
                     {child.label}
@@ -230,7 +230,7 @@ export default function Header() {
               <Link
                 key={item.label}
                 href={item.href!}
-                className="block py-3 min-h-[44px] flex items-center text-gray-700 hover:text-cyan-500 text-lg border-b border-gray-50"
+                className="block py-3 min-h-[44px] flex items-center text-gray-700 hover:text-cyan-700 text-lg border-b border-gray-50"
                 onClick={() => setMobileOpen(false)}
               >
                 {item.label}
@@ -240,12 +240,12 @@ export default function Header() {
           {/* Mobile CTA buttons */}
           <div className="mt-6 px-0">
             <Link href="/shop"
-               className="block w-full text-center py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold rounded-full shadow-lg text-lg"
+               className="block w-full text-center py-4 btn-solid font-bold rounded-full shadow-lg text-lg"
                onClick={() => setMobileOpen(false)}>
               🛒 {t("eShopConsumables")}
             </Link>
             <a href={`mailto:info@printsolutionsrl.it?subject=${emailSubject}&body=${emailBody}`}
-               className="block w-full text-center py-4 mt-3 bg-gradient-to-r from-cyan-500 to-cyan-600 text-white font-semibold rounded-full shadow-lg text-lg"
+               className="block w-full text-center py-4 mt-3 btn-solid font-semibold rounded-full shadow-lg text-lg"
                onClick={() => setMobileOpen(false)}>
               {t("requestDemo")} →
             </a>

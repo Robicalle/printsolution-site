@@ -242,7 +242,7 @@ export default async function AnyPressPage() {
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
         <div className="container-custom">
           <div className="text-center mb-12">
-            <p className="text-cyan-500 font-semibold text-sm mb-4">Video</p>
+            <p className="text-cyan-700 font-semibold text-sm mb-4">Video</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-dark-800">{locale === 'it' ? 'Any-Press in Azione' : 'Any-Press in Action'}</h2>
           </div>
           <div className="max-w-3xl mx-auto">
@@ -262,7 +262,7 @@ export default async function AnyPressPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((f) => (
               <div key={f.title} className="card-modern p-8 hover:-translate-y-1 transition-transform duration-300">
-                <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-orange-500 to-yellow-500 flex items-center justify-center text-white mb-5">
+                <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-magenta-600 to-magenta-700 flex items-center justify-center text-white mb-5">
                   {f.icon}
                 </div>
                 <h3 className="text-lg font-bold text-dark-800 mb-2">{locale === 'it' ? f.title : (f.titleEn || f.title)}</h3>
@@ -317,7 +317,7 @@ export default async function AnyPressPage() {
                   <Image src={p.image} alt={`${p.name} — ${p.desc}`} fill className="object-contain p-4 group-hover:scale-105 transition-transform duration-500" />
                 </div>
                 <div className="p-5">
-                  <h3 className="font-bold text-dark-800 group-hover:text-cyan-500 transition-colors">{p.name}</h3>
+                  <h3 className="font-bold text-dark-800 group-hover:text-cyan-700 transition-colors">{p.name}</h3>
                   <p className="text-sm text-gray-500 mt-1">{p.desc}</p>
                 </div>
               </Link>

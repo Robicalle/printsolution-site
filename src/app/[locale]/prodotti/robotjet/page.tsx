@@ -191,7 +191,7 @@ export default async function () {
         <div className="absolute inset-0 bg-gradient-to-r from-dark-800/90 via-dark-800/70 to-dark-800/40" />
         <div className="container-custom px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-2xl">
-            <p className="text-purple-300 text-sm mb-3 uppercase tracking-widest font-medium">{locale === 'it' ? 'Prodotti' : 'Products'}</p>
+            <p className="text-gray-300 text-sm mb-3 uppercase tracking-widest font-medium">{locale === 'it' ? 'Prodotti' : 'Products'}</p>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">Robotjet Book Edge Printer</h1>
               <p className="text-lg text-gray-300/90 leading-relaxed mb-8">
                 {locale === 'it' ? 'Stampante digitale rivoluzionaria per la labbratura di libri, quaderni, agende e block notes. 400 pezzi/ora, CMYK single-pass con teste HP A3, risoluzione fino a 1200 dpi.' : 'Revolutionary digital printer for book edge printing on books, notebooks, planners and notepads. 400 pcs/hour, CMYK single-pass with HP A3 printheads, up to 1200 dpi resolution.'}
@@ -247,7 +247,7 @@ export default async function () {
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
         <div className="container-custom">
           <div className="text-center mb-12">
-            <p className="text-purple-500 font-semibold text-sm mb-4">Video</p>
+            <p className="text-dark-800 font-semibold text-sm mb-4">Video</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-dark-800">{locale === 'it' ? 'Robotjet in Azione' : 'Robotjet in Action'}</h2>
           </div>
           <div className="swipe-gallery md:grid-cols-2 gap-8 max-w-5xl mx-auto scrollbar-hide">
@@ -272,7 +272,7 @@ export default async function () {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((f) => (
               <div key={f.title} className="card-modern p-8 hover:-translate-y-1 transition-transform duration-300">
-                <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center text-white mb-5">
+                <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-dark-800 to-dark-900 flex items-center justify-center text-white mb-5">
                   {f.icon}
                 </div>
                 <h3 className="text-lg font-bold text-dark-800 mb-2">{locale === 'it' ? f.title : (f.titleEn || f.title)}</h3>
@@ -325,7 +325,7 @@ export default async function () {
                   <Image src="/images/products/greenbox-printbook.jpg" alt="GreenBox Print Book" fill className="object-contain p-4 group-hover:scale-105 transition-transform duration-500" />
                 </div>
                 <div className="p-5">
-                  <h3 className="font-bold text-dark-800 group-hover:text-cyan-500 transition-colors">GreenBox Print Book</h3>
+                  <h3 className="font-bold text-dark-800 group-hover:text-cyan-700 transition-colors">GreenBox Print Book</h3>
                   <p className="text-sm text-gray-500 mt-1">{locale === 'it' ? 'Labbratura digitale libri' : 'Digital book edge printing'}</p>
                 </div>
               </Link>

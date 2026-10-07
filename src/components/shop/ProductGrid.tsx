@@ -84,7 +84,7 @@ function ProductCard({ product, categoryName }: { product: Product; categoryName
 
       {/* Info */}
       <div className="p-5 flex flex-col flex-1">
-        <p className="text-xs text-cyan-500 font-semibold tracking-wide mb-1.5">{product.sku}</p>
+        <p className="text-xs text-cyan-700 font-semibold tracking-wide mb-1.5">{product.sku}</p>
         <h3 className="font-semibold text-gray-900 mb-3 leading-snug flex-1 text-sm">{product.name}</h3>
         
         <div className="mt-auto">

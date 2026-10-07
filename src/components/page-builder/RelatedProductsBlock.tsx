@@ -22,7 +22,7 @@ export default function RelatedProductsBlock({ block, locale }: Props) {
                 <Image src={p.image} alt={p.name} fill className="object-contain p-4 group-hover:scale-105 transition-transform duration-500" />
               </div>
               <div className="p-5">
-                <h3 className="font-bold text-dark-800 group-hover:text-cyan-500 transition-colors">{p.name}</h3>
+                <h3 className="font-bold text-dark-800 group-hover:text-cyan-700 transition-colors">{p.name}</h3>
                 <p className="text-sm text-gray-500 mt-1">
                   {it ? p.desc : (p.desc_en || p.desc)}
                 </p>

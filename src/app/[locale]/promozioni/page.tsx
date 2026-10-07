@@ -85,7 +85,7 @@ export default async function PromozioniPage() {
                     </span>
                   </div>
                   <div className="absolute bottom-4 right-4">
-                    <span className="bg-white/90 backdrop-blur-sm text-cyan-600 font-semibold text-sm px-4 py-2 rounded-full shadow-lg">
+                    <span className="bg-white/90 backdrop-blur-sm text-cyan-700 font-semibold text-sm px-4 py-2 rounded-full shadow-lg">
                       {it ? 'Scopri ThunderBox →' : 'Discover ThunderBox →'}
                     </span>
                   </div>
@@ -95,7 +95,7 @@ export default async function PromozioniPage() {
 
             {/* Content */}
             <div className="w-full lg:w-1/2">
-              <p className="text-cyan-500 font-semibold text-sm uppercase tracking-widest mb-2">Print Solution</p>
+              <p className="text-cyan-700 font-semibold text-sm uppercase tracking-widest mb-2">Print Solution</p>
               <h2 className="text-3xl lg:text-4xl font-bold text-dark-800 mb-2">ThunderBox</h2>
               <p className="text-gray-500 font-medium mb-6">
                 {it ? 'Stampante per Scatole e Shopper Single-Pass CMYK — Entry Level' : 'Single-Pass CMYK Box & Shopper Printer — Entry Level'}
@@ -156,7 +156,7 @@ export default async function PromozioniPage() {
                   '4.0 Ready — 2026 incentives',
                 ]).map((spec) => (
                   <li key={spec} className="flex items-start text-sm text-gray-600">
-                    <svg className="w-5 h-5 text-cyan-500 mr-2 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg className="w-5 h-5 text-cyan-700 mr-2 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
                     {spec}

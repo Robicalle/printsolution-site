@@ -64,7 +64,7 @@ export default function BottomNavBar() {
               key={item.href}
               href={item.href}
               className={`flex flex-col items-center gap-0.5 min-w-[60px] py-1 transition-colors ${
-                isActive ? "text-cyan-600" : "text-gray-400"
+                isActive ? "text-cyan-700" : "text-gray-400"
               }`}
             >
               <span className={isActive ? "[&>svg]:stroke-[2.5]" : ""}>{item.icon}</span>

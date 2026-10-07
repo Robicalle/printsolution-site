@@ -148,7 +148,7 @@ export default async function SolutionDynamicPage({
                 <Link
                   key={s._id}
                   href={`/soluzioni/${s.slug.current}`}
-                  className="px-5 py-2.5 rounded-full border border-gray-200 text-dark-800 font-medium hover:border-cyan-500 hover:text-cyan-500 transition-colors"
+                  className="px-5 py-2.5 rounded-full border border-gray-200 text-dark-800 font-medium hover:border-cyan-500 hover:text-cyan-700 transition-colors"
                 >
                   {it ? s.title : (s.title_en || s.title)}
                 </Link>

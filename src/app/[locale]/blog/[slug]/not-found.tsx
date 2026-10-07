@@ -7,7 +7,7 @@ export default function BlogPostNotFound() {
   return (
     <section className="section-padding">
       <div className="container-custom max-w-2xl text-center py-16">
-        <p className="text-cyan-500 text-6xl font-bold mb-4">404</p>
+        <p className="text-cyan-700 text-6xl font-bold mb-4">404</p>
         <h1 className="text-2xl md:text-3xl font-bold text-dark-800 mb-4">
           Articolo non trovato
         </h1>
@@ -18,7 +18,7 @@ export default function BlogPostNotFound() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
             href="/blog"
-            className="inline-flex items-center justify-center px-8 py-3 bg-cyan-500 text-white font-semibold rounded-full hover:bg-cyan-400 transition-colors"
+            className="inline-flex items-center justify-center px-8 py-3 bg-cyan-650 text-white font-semibold rounded-full hover:bg-cyan-700 transition-colors"
           >
             Tutti gli articoli
           </Link>

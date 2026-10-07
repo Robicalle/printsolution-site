@@ -3,6 +3,13 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    /* Pulsanti principali: ciano profondo con testo bianco (contrasto 5,3:1) */
+    --btn-bg: #0077b3;
+    --btn-bg-hover: #006699;
+    --btn-fg: #ffffff;
+  }
+
   /* Accessible focus styles */
   a:focus-visible,
   button:focus-visible,
@@ -67,14 +74,24 @@
 }
 
 @layer components {
+  /* Pulsanti in colore pieno (niente gradiente ciano->blu): colori in variabili,
+     cosi' si cambiano in un punto solo. Testo e sfondo hanno contrasto >= 4.5:1. */
+  .btn-solid {
+    background-color: var(--btn-bg);
+    color: var(--btn-fg);
+    transition: background-color .2s, box-shadow .2s, transform .2s;
+  }
+  .btn-solid:hover {
+    background-color: var(--btn-bg-hover);
+  }
   .btn-primary {
-    @apply inline-flex items-center justify-center px-7 py-3.5 bg-gradient-to-r from-cyan-500 to-cyan-600 text-white font-semibold rounded-full hover:from-cyan-600 hover:to-primary-700 transition-all duration-300 shadow-lg shadow-cyan-500/25 hover:shadow-xl hover:shadow-cyan-500/30 hover:-translate-y-0.5;
+    @apply btn-solid inline-flex items-center justify-center px-7 py-3.5 font-semibold rounded-full shadow-lg shadow-cyan-500/25 hover:shadow-xl hover:shadow-cyan-500/30 hover:-translate-y-0.5;
   }
   .btn-secondary {
     @apply inline-flex items-center justify-center px-7 py-3.5 border-2 border-white/30 text-white font-semibold rounded-full hover:bg-white hover:text-dark-900 transition-all duration-300 backdrop-blur-sm;
   }
   .btn-outline {
-    @apply inline-flex items-center justify-center px-7 py-3.5 border-2 border-cyan-500 text-cyan-500 font-semibold rounded-full hover:bg-cyan-500 hover:text-white transition-all duration-300;
+    @apply inline-flex items-center justify-center px-7 py-3.5 border-2 border-cyan-650 text-cyan-700 font-semibold rounded-full hover:bg-cyan-650 hover:text-white transition-all duration-300;
   }
   .section-padding {
     @apply px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24;

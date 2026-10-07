@@ -176,12 +176,12 @@ export default async function Any002Page() {
         <div className="absolute inset-0 bg-gradient-to-r from-dark-800/90 via-dark-800/70 to-dark-800/40" />
         <div className="container-custom px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-2xl">
-              <span className="inline-block px-4 py-1.5 rounded-full text-xs font-bold bg-gradient-to-r from-violet-500 to-violet-600 text-white mb-6">
+              <span className="inline-block px-4 py-1.5 rounded-full text-xs font-bold bg-gradient-to-r from-magenta-600 to-magenta-700 text-white mb-6">
                 {locale === 'it' ? 'Stampa' : 'Printing'}
               </span>
               <h1 className="text-4xl lg:text-6xl font-bold tracking-tight mb-6">
                 Anytron<br />
-                <span className="bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent">ANY-002</span>
+                <span className="bg-gradient-to-r from-magenta-400 to-cyan-400 bg-clip-text text-transparent">ANY-002</span>
               </h1>
               <p className="text-xl text-gray-300 leading-relaxed mb-8 max-w-lg">
                 {locale === 'it' ? (<>Stampante etichette in bobina laser toner a colori. Fino a <strong className="text-white">5.000 etichette in 2 ore</strong> con toner resistente ad acqua, calore e abrasioni.</>) : (<>Colour laser toner roll label printer. Up to <strong className="text-white">5,000 labels in 2 hours</strong> with toner resistant to water, heat and abrasion.</>)}
@@ -242,7 +242,7 @@ export default async function Any002Page() {
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
         <div className="container-custom">
           <div className="text-center mb-8">
-            <p className="text-violet-500 font-semibold text-sm mb-4">Video</p>
+            <p className="text-magenta-600 font-semibold text-sm mb-4">Video</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-dark-800">{locale === 'it' ? 'ANY-002 in Azione' : 'ANY-002 in Action'}</h2>
           </div>
           <div className="swipe-gallery md:grid-cols-2 gap-8 max-w-5xl mx-auto scrollbar-hide">
@@ -292,7 +292,7 @@ export default async function Any002Page() {
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
         <div className="container-custom max-w-4xl">
           <div className="text-center mb-16">
-            <p className="text-violet-500 font-semibold text-sm mb-4">{locale === 'it' ? 'Dettagli' : 'Details'}</p>
+            <p className="text-magenta-600 font-semibold text-sm mb-4">{locale === 'it' ? 'Dettagli' : 'Details'}</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-dark-800 tracking-tight">
               {locale === 'it' ? 'Specifiche Tecniche' : 'Technical Specifications'}
             </h2>
@@ -327,7 +327,7 @@ export default async function Any002Page() {
                   <Image src={p.image} alt={`${p.name} — ${p.desc}`} fill className="object-contain p-4 group-hover:scale-105 transition-transform duration-500" />
                 </div>
                 <div className="p-5">
-                  <h3 className="font-bold text-dark-800 group-hover:text-cyan-500 transition-colors">{p.name}</h3>
+                  <h3 className="font-bold text-dark-800 group-hover:text-cyan-700 transition-colors">{p.name}</h3>
                   <p className="text-sm text-gray-500 mt-1">{p.desc}</p>
                 </div>
               </Link>
@@ -352,7 +352,7 @@ export default async function Any002Page() {
               </p>
               <a
                 href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20Anytron%20ANY-002&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20della%20Anytron%20ANY-002.%0A%0AGrazie"
-                className="inline-flex items-center justify-center px-8 py-4 bg-white text-cyan-600 font-bold rounded-full hover:bg-yellow-400 hover:text-dark-800 transition-all duration-300 shadow-lg text-lg"
+                className="inline-flex items-center justify-center px-8 py-4 bg-white text-cyan-700 font-bold rounded-full hover:bg-yellow-400 hover:text-dark-800 transition-all duration-300 shadow-lg text-lg"
               >
                 {locale === 'it' ? 'Consulenza gratuita' : 'Free consultation'}
               </a>

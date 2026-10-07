@@ -10,7 +10,7 @@ export default function ConsumablesCategoryListBlock({ block, locale }: Props) {
     <section className="section-padding bg-white">
       <div className="container-custom">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <p className="text-cyan-500 font-semibold text-sm mb-4">
+          <p className="text-cyan-700 font-semibold text-sm mb-4">
             {it ? block.sectionEyebrow : (block.sectionEyebrow_en || block.sectionEyebrow)}
           </p>
           <h2 className="text-3xl sm:text-4xl font-bold text-dark-800 tracking-tight mb-6">
@@ -25,7 +25,7 @@ export default function ConsumablesCategoryListBlock({ block, locale }: Props) {
           {(block.categories || []).map((cat: any) => (
             <div key={cat.title} className="card-modern p-8 lg:p-10">
               <div className="flex items-start gap-4 mb-6">
-                <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${cat.gradient || 'from-cyan-500 to-cyan-600'} flex items-center justify-center text-2xl flex-shrink-0`}>
+                <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${cat.gradient || 'from-cyan-650 to-cyan-700'} flex items-center justify-center text-2xl flex-shrink-0`}>
                   {cat.icon}
                 </div>
                 <div>

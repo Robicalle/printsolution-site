@@ -21,7 +21,7 @@ export default function CtaBannerBlock({ block, locale }: Props) {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               {block.buttonUrl && (
-                <a href={block.buttonUrl} className="inline-flex items-center justify-center px-8 py-4 bg-white text-cyan-600 font-bold rounded-full hover:bg-yellow-400 hover:text-dark-800 transition-all duration-300 shadow-lg text-lg">
+                <a href={block.buttonUrl} className="inline-flex items-center justify-center px-8 py-4 bg-white text-cyan-700 font-bold rounded-full hover:bg-yellow-400 hover:text-dark-800 transition-all duration-300 shadow-lg text-lg">
                   {it ? block.buttonText : (block.buttonText_en || block.buttonText)}
                 </a>
               )}

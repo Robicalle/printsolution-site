@@ -62,7 +62,7 @@ export default function QuickViewModal({ product, categoryName, onClose }: { pro
         </div>
 
         <div className="p-6">
-          <p className="text-xs text-cyan-500 font-semibold tracking-wide mb-1">SKU: {product.sku}</p>
+          <p className="text-xs text-cyan-700 font-semibold tracking-wide mb-1">SKU: {product.sku}</p>
           <h3 className="text-lg font-bold text-gray-900 mb-2">{product.name}</h3>
           {color && <span className="inline-block px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full mb-3">{color}</span>}
           <p className="text-3xl font-bold text-gray-900 mb-4 tabular-nums">€{product.price.toFixed(2)} <span className="text-sm text-gray-400 font-normal">+ IVA</span></p>

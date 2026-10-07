@@ -162,13 +162,13 @@ export default function ContattiClient() {
                       required
                       checked={formData.privacy}
                       onChange={(e) => setFormData({ ...formData, privacy: e.target.checked })}
-                      className="mt-1 h-4 w-4 rounded border-gray-300 text-cyan-500 focus:ring-cyan-500/20"
+                      className="mt-1 h-4 w-4 rounded border-gray-300 text-cyan-700 focus:ring-cyan-500/20"
                     />
                     <label htmlFor="privacy" className="text-sm text-gray-500">
                       {locale === 'it' ? (
                         <>
                           Ho letto e accetto la{" "}
-                          <Link href="/privacy" target="_blank" className="text-cyan-500 underline hover:text-cyan-400">
+                          <Link href="/privacy" target="_blank" className="text-cyan-700 underline hover:text-cyan-400">
                             Privacy Policy
                           </Link>{" "}
                           e acconsento al trattamento dei miei dati personali ai sensi del GDPR (Reg. UE 2016/679). *
@@ -176,7 +176,7 @@ export default function ContattiClient() {
                       ) : (
                         <>
                           I have read and accept the{" "}
-                          <Link href="/privacy" target="_blank" className="text-cyan-500 underline hover:text-cyan-400">
+                          <Link href="/privacy" target="_blank" className="text-cyan-700 underline hover:text-cyan-400">
                             Privacy Policy
                           </Link>{" "}
                           and consent to the processing of my personal data under GDPR (EU Reg. 2016/679). *
@@ -248,13 +248,13 @@ export default function ContattiClient() {
                     },
                   ].map((c) => (
                     <div key={c.title} className="flex items-start gap-4 bg-surface-50 rounded-xl p-4">
-                      <div className="w-10 h-10 rounded-full bg-cyan-500/10 text-cyan-500 flex items-center justify-center flex-shrink-0">
+                      <div className="w-10 h-10 rounded-full bg-cyan-500/10 text-cyan-700 flex items-center justify-center flex-shrink-0">
                         {c.icon}
                       </div>
                       <div>
                         <p className="font-semibold text-dark-800 text-sm">{c.title}</p>
                         {c.href ? (
-                          <a href={c.href} className="text-gray-500 text-sm hover:text-cyan-500 transition-colors">
+                          <a href={c.href} className="text-gray-500 text-sm hover:text-cyan-700 transition-colors">
                             {c.content}
                           </a>
                         ) : (

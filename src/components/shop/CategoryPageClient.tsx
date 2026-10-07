@@ -65,14 +65,14 @@ export default function CategoryPageClient({ category, allCategories }: { catego
         <section className="pt-28 pb-8 px-4">
           <div className="container-custom">
             <nav className="flex items-center gap-2 text-sm text-gray-500 mb-6">
-              <Link href="/" className="hover:text-cyan-500 transition-colors">Home</Link>
+              <Link href="/" className="hover:text-cyan-700 transition-colors">Home</Link>
               <span>›</span>
-              <Link href="/shop" className="hover:text-cyan-500 transition-colors">Shop</Link>
+              <Link href="/shop" className="hover:text-cyan-700 transition-colors">Shop</Link>
               <span>›</span>
               <span className="text-gray-900 font-medium">{category.name}</span>
             </nav>
             <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
-              Consumabili <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600">{category.name}</span>
+              Consumabili <span className="text-cyan-700">{category.name}</span>
             </h1>
             <p className="text-lg text-gray-600">{category.description}</p>
           </div>
@@ -115,7 +115,7 @@ export default function CategoryPageClient({ category, allCategories }: { catego
                       href={`/shop/${cat.slug}`}
                       className={`whitespace-nowrap px-3 py-1.5 text-xs rounded-full border transition-colors ${
                         cat.slug === category.slug
-                          ? "bg-cyan-500 text-white border-cyan-500"
+                          ? "bg-cyan-650 text-white border-cyan-500"
                           : "bg-white text-gray-600 border-gray-200 hover:border-cyan-300"
                       }`}
                     >
@@ -142,7 +142,7 @@ export default function CategoryPageClient({ category, allCategories }: { catego
                       onClick={() => toggleFilter(colorFilters, setColorFilters, f.key)}
                       className={`px-3 py-1 text-xs rounded-full border transition-colors cursor-pointer ${
                         colorFilters.includes(f.key)
-                          ? "bg-cyan-500 text-white border-cyan-500"
+                          ? "bg-cyan-650 text-white border-cyan-500"
                           : "bg-gray-50 text-gray-600 border-gray-200 hover:border-cyan-300"
                       }`}
                     >
@@ -156,7 +156,7 @@ export default function CategoryPageClient({ category, allCategories }: { catego
                       onClick={() => toggleFilter(typeFilters, setTypeFilters, f.key)}
                       className={`px-3 py-1 text-xs rounded-full border transition-colors cursor-pointer ${
                         typeFilters.includes(f.key)
-                          ? "bg-cyan-500 text-white border-cyan-500"
+                          ? "bg-cyan-650 text-white border-cyan-500"
                           : "bg-gray-50 text-gray-600 border-gray-200 hover:border-cyan-300"
                       }`}
                     >
@@ -260,7 +260,7 @@ function ProductCardWithQuickView({ product, categoryName, onQuickView }: { prod
         </div>
       </div>
       <div className="p-5 flex flex-col flex-1">
-        <p className="text-xs text-cyan-500 font-semibold tracking-wide mb-1.5">{product.sku}</p>
+        <p className="text-xs text-cyan-700 font-semibold tracking-wide mb-1.5">{product.sku}</p>
         <h3 className="font-semibold text-gray-900 mb-3 leading-snug flex-1 text-sm">{product.name}</h3>
         <div className="mt-auto">
           <p className="text-2xl font-bold text-gray-900 mb-4 tabular-nums">€{product.price.toFixed(2)}<span className="text-xs text-gray-400 font-normal ml-1.5">+ IVA</span></p>

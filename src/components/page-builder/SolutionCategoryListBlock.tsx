@@ -1,5 +1,6 @@
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
+import { coloreConTestoBianco, testoSu } from "./colori";
 
 interface Props {
   block: any;
@@ -19,7 +20,7 @@ export default function SolutionCategoryListBlock({ block, locale }: Props) {
         {featured && (
           <Link
             href={featured.href}
-            className={`group relative rounded-3xl overflow-hidden bg-gradient-to-br ${featured.color || "from-cyan-500 to-cyan-600"} block cursor-pointer`}
+            className={`group relative rounded-3xl overflow-hidden bg-gradient-to-br ${coloreConTestoBianco(featured.color) || "from-cyan-650 to-cyan-700"} block cursor-pointer`}
           >
             <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors duration-300" />
             <div className="absolute top-0 right-0 w-80 h-80 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
@@ -64,12 +65,12 @@ export default function SolutionCategoryListBlock({ block, locale }: Props) {
               className="group relative rounded-3xl overflow-hidden border border-gray-100 bg-surface-50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col cursor-pointer"
             >
               {/* Colored top accent strip */}
-              <div className={`h-1.5 bg-gradient-to-r ${cat.color || "from-cyan-500 to-cyan-600"} flex-shrink-0`} />
+              <div className={`h-1.5 bg-gradient-to-r ${cat.color || "from-cyan-650 to-cyan-700"} flex-shrink-0`} />
 
               <div className="p-8 flex flex-col flex-1">
                 {/* Icon + title */}
                 <div className="flex items-center gap-4 mb-6">
-                  <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${cat.color || "from-cyan-500 to-cyan-600"} flex items-center justify-center text-2xl flex-shrink-0 shadow-md`}>
+                  <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${cat.color || "from-cyan-650 to-cyan-700"} flex items-center justify-center text-2xl flex-shrink-0 shadow-md`}>
                     {cat.icon}
                   </div>
                   <h2 className="text-xl font-bold text-dark-800 leading-tight">
@@ -93,7 +94,7 @@ export default function SolutionCategoryListBlock({ block, locale }: Props) {
                   {it ? cat.desc : (cat.desc_en || cat.desc)}
                 </p>
 
-                <span className={`self-start inline-flex items-center px-5 py-2.5 bg-gradient-to-r ${cat.color || "from-cyan-500 to-cyan-600"} text-white text-sm font-semibold rounded-full group-hover:shadow-md group-hover:opacity-90 transition-all`}>
+                <span className={`self-start inline-flex items-center px-5 py-2.5 bg-gradient-to-r ${coloreConTestoBianco(cat.color) || "from-cyan-650 to-cyan-700"} ${testoSu(cat.color)} text-sm font-semibold rounded-full group-hover:shadow-md group-hover:opacity-90 transition-all`}>
                   {it ? "Scopri " : "Discover "}
                   {it ? cat.name : (cat.name_en || cat.name)} →
                 </span>

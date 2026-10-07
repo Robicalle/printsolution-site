@@ -31,7 +31,7 @@ export default function ProductFaqSection({ items, locale = "it" }: ProductFaqSe
               className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden"
             >
               <button
-                className="w-full flex items-center justify-between px-6 py-5 text-left font-semibold text-dark-800 hover:text-cyan-500 transition-colors"
+                className="w-full flex items-center justify-between px-6 py-5 text-left font-semibold text-dark-800 hover:text-cyan-700 transition-colors"
                 onClick={() => setOpenIndex(openIndex === i ? null : i)}
                 aria-expanded={openIndex === i}
               >

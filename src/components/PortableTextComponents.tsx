@@ -29,7 +29,7 @@ export const portableTextComponents: PortableTextComponents = {
     strong: ({ children }) => <strong className="font-bold text-dark-800">{children}</strong>,
     em: ({ children }) => <em>{children}</em>,
     link: ({ children, value }) => (
-      <a href={value?.href} className="text-cyan-500 hover:text-cyan-600 underline" target={value?.href?.startsWith("http") ? "_blank" : undefined} rel={value?.href?.startsWith("http") ? "noopener noreferrer" : undefined}>
+      <a href={value?.href} className="text-cyan-700 hover:text-cyan-700 underline" target={value?.href?.startsWith("http") ? "_blank" : undefined} rel={value?.href?.startsWith("http") ? "noopener noreferrer" : undefined}>
         {children}
       </a>
     ),
@@ -110,7 +110,7 @@ export const portableTextComponents: PortableTextComponents = {
             rel={value?.url?.startsWith("http") ? "noopener noreferrer" : undefined}
             className={`inline-block px-8 py-3 rounded-full font-semibold transition-all duration-300 ${
               isPrimary
-                ? "bg-gradient-to-r from-cyan-500 to-blue-600 text-white hover:shadow-lg hover:shadow-cyan-500/30"
+                ? "btn-solid hover:shadow-lg hover:shadow-cyan-500/30"
                 : "bg-white text-gray-800 border-2 border-gray-200 hover:border-cyan-400"
             }`}
           >

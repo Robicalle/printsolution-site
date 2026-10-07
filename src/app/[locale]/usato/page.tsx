@@ -35,7 +35,7 @@ function getProducts(locale: string) {
       name: "NS Tiger",
       subtitle: it ? "Linea Completa Stampa + Finitura Etichette" : "Complete Label Print + Finishing Line",
       badge: it ? "DISPONIBILE" : "AVAILABLE",
-      badgeColor: "bg-cyan-600",
+      badgeColor: "bg-cyan-650",
       price: "€ 18.000",
       desc: it
         ? "NS Tiger è la linea completa New Solution per la produzione di etichette in bobina direttamente in azienda. Unisce la stampante digitale inkjet single-pass NS PRO (tecnologia Sirius, CMYK, 1600×1600 dpi) all'unità di finitura all-in-one NS F22: laminazione a freddo, plotter di taglio digitale, fustellatura semi-rotativa con cilindro magnetico, divisione in piste e rimozione sfrido. Dalla stampa all'etichetta finita in un unico flusso. Macchina revisionata."
@@ -72,7 +72,7 @@ function getProducts(locale: string) {
       name: it ? "EDM-650X Usata" : "EDM-650X Pre-Owned",
       subtitle: it ? "Stampante Single-Pass — Usato Garantito" : "Single-Pass Printer — Certified Pre-Owned",
       badge: it ? "USATO GARANTITO" : "CERTIFIED PRE-OWNED",
-      badgeColor: "bg-orange-500",
+      badgeColor: "bg-orange-700",
       desc: it
         ? "Macchina in ottime condizioni generali, revisionata, garanzia 6 mesi. Completa di primo kit di inchiostri, testa di stampa e manuale d'uso in italiano. Acquistabile anche con possibilità di subentro noleggio lungo termine."
         : "Machine in excellent overall condition, fully refurbished, with 6-month warranty. Includes starter ink kit, printhead, and user manual. Also available with long-term lease transfer option.",
@@ -110,7 +110,7 @@ function getProducts(locale: string) {
       name: "SATO M10",
       subtitle: it ? "Stampante Etichette Termica Grande Formato" : "Wide-Format Thermal Label Printer",
       badge: it ? "DISPONIBILE" : "AVAILABLE",
-      badgeColor: "bg-cyan-600",
+      badgeColor: "bg-cyan-650",
       price: "€ 2.000",
       desc: it
         ? "Stampante per etichette industriale SATO M10 a trasferimento termico e termico diretto, progettata per la stampa di etichette di grande formato in ambienti produttivi. Testina da 10,5″, risoluzione 305 dpi e velocità fino a 127 mm/s. Ideale per etichette logistiche, chimiche e di sicurezza, targhe e cartellini di grande dimensione. Macchina revisionata."
@@ -149,7 +149,7 @@ function getProducts(locale: string) {
       name: it ? "NS Multi 800 Usata" : "NS Multi 800 Pre-Owned",
       subtitle: it ? "Stampante Single-Pass per Packaging" : "Single-Pass Printer for Packaging",
       badge: it ? "USATO GARANTITO" : "CERTIFIED PRE-OWNED",
-      badgeColor: "bg-orange-500",
+      badgeColor: "bg-orange-700",
       desc: it
         ? "Macchina in ottime condizioni generali, software e firmware aggiornati, garanzia 6 mesi. Completa di primo kit di inchiostri, testa di stampa e manuale d'uso in italiano. Acquistabile anche con formula noleggio lungo termine."
         : "Machine in excellent overall condition, updated software and firmware, 6-month warranty. Includes starter ink kit, printhead, and user manual. Also available with long-term lease option.",
@@ -187,7 +187,7 @@ function getProducts(locale: string) {
       name: "GreenBox 2",
       subtitle: it ? "Stampante Digitale per Packaging" : "Digital Printer for Packaging",
       badge: it ? "USATO GARANTITO" : "CERTIFIED PRE-OWNED",
-      badgeColor: "bg-orange-500",
+      badgeColor: "bg-orange-700",
       desc: it
         ? "Stampante digitale per packaging con inchiostri ecologici resistenti all'acqua. Ideale per stampa diretta su cartone, carta e materiali per packaging. Soluzione economica per entrare nel mondo della stampa diretta su packaging."
         : "Digital printer for packaging with eco-friendly water-resistant inks. Ideal for direct printing on cardboard, paper, and packaging materials. Cost-effective solution to enter the world of direct-to-packaging printing.",
@@ -287,11 +287,11 @@ export default async function UsatoPage() {
                   <h2 className="text-3xl lg:text-4xl font-bold text-dark-800 mb-2">
                     {p.name}
                   </h2>
-                  <p className="text-cyan-500 font-semibold mb-4">{p.subtitle}</p>
+                  <p className="text-cyan-700 font-semibold mb-4">{p.subtitle}</p>
                   {'price' in p && p.price && (
                     <div className="inline-flex items-center gap-2 bg-cyan-50 border border-cyan-200 rounded-xl px-5 py-3 mb-5">
                       <span className="text-3xl font-extrabold text-cyan-700">{p.price}</span>
-                      <span className="text-sm text-cyan-600 font-medium">{locale === 'it' ? '+ IVA' : '+ VAT'}</span>
+                      <span className="text-sm text-cyan-700 font-medium">{locale === 'it' ? '+ IVA' : '+ VAT'}</span>
                     </div>
                   )}
                   <p className="text-gray-500 leading-relaxed mb-6">{p.desc}</p>
@@ -315,7 +315,7 @@ export default async function UsatoPage() {
                   <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
                     {p.specs.map((spec) => (
                       <li key={spec} className="flex items-start text-sm text-gray-600">
-                        <svg className="w-5 h-5 text-cyan-500 mr-2 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg className="w-5 h-5 text-cyan-700 mr-2 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.5 12.75l6 6 9-13.5" />
                         </svg>
                         {spec}
@@ -342,18 +342,18 @@ export default async function UsatoPage() {
       {/* CTA */}
       <section className="section-padding bg-surface-50">
         <div className="container-custom px-4 sm:px-6 lg:px-8">
-          <div className="relative rounded-3xl bg-gradient-to-r from-orange-500 via-orange-400 to-yellow-400 p-12 sm:p-16 text-white text-center overflow-hidden">
+          <div className="relative rounded-3xl bg-gradient-to-r from-orange-500 via-orange-400 to-yellow-400 p-12 sm:p-16 text-dark-900 text-center overflow-hidden">
             <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl" />
             <div className="relative">
               <h2 className="text-3xl sm:text-4xl font-bold mb-4">
                 {it ? 'Hai una macchina da permutare?' : 'Have a machine to trade in?'}
               </h2>
-              <p className="text-white/90 max-w-2xl mx-auto mb-8 text-lg">
+              <p className="text-dark-900/85 max-w-2xl mx-auto mb-8 text-lg">
                 {it
                   ? 'Valutiamo il tuo usato per una permuta con le nostre macchine nuove. Contattaci per una valutazione gratuita.'
                   : 'We evaluate your used equipment for trade-in towards our new machines. Contact us for a free assessment.'}
               </p>
-              <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Informazioni%20Print%20Solution&body=Buongiorno%2C%0A%0AVorrei%20ricevere%20informazioni.%0A%0AGrazie" className="inline-flex items-center justify-center px-8 py-4 bg-white text-orange-600 font-bold rounded-full hover:bg-yellow-50 transition-all duration-300 shadow-lg text-lg">{it ? 'Contattaci per una Valutazione' : 'Contact Us for an Assessment'}</a>
+              <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Informazioni%20Print%20Solution&body=Buongiorno%2C%0A%0AVorrei%20ricevere%20informazioni.%0A%0AGrazie" className="inline-flex items-center justify-center px-8 py-4 bg-white text-orange-700 font-bold rounded-full hover:bg-yellow-50 transition-all duration-300 shadow-lg text-lg">{it ? 'Contattaci per una Valutazione' : 'Contact Us for an Assessment'}</a>
             </div>
           </div>
         </div>

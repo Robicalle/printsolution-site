@@ -12,7 +12,7 @@ export default function StoryStatsBlock({ block, locale }: Props) {
     <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
       <div>
         {block.eyebrow && (
-          <p className="text-cyan-500 font-semibold text-sm mb-4">
+          <p className="text-cyan-700 font-semibold text-sm mb-4">
             {it ? block.eyebrow : (block.eyebrow_en || block.eyebrow)}
           </p>
         )}
@@ -29,7 +29,7 @@ export default function StoryStatsBlock({ block, locale }: Props) {
         <div className="grid grid-cols-2 gap-6">
           {(block.stats || []).map((s: any) => (
             <div key={s.value} className="bg-white rounded-2xl p-5 shadow-card">
-              <p className="text-2xl font-bold text-cyan-500">{s.value}</p>
+              <p className="text-2xl font-bold text-cyan-700">{s.value}</p>
               <p className="text-gray-500 text-sm mt-1">
                 {it ? s.label : (s.label_en || s.label)}
               </p>

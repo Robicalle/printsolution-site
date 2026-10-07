@@ -42,19 +42,19 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 const categoryGradients: Record<string, string> = {
-  packaging: "from-cyan-500 to-cyan-600",
-  etichette: "from-magenta-500 to-magenta-600",
+  packaging: "from-cyan-650 to-cyan-700",
+  etichette: "from-magenta-600 to-magenta-700",
   stampa: "from-yellow-500 to-yellow-600",
   finiture: "from-yellow-500 to-yellow-600",
   trend: "from-yellow-500 to-yellow-600",
-  labels: "from-magenta-500 to-magenta-600",
+  labels: "from-magenta-600 to-magenta-700",
   printing: "from-yellow-500 to-yellow-600",
   finishing: "from-yellow-500 to-yellow-600",
 };
 
 function getGradient(category?: string) {
-  if (!category) return "from-cyan-500 to-cyan-600";
-  return categoryGradients[category.toLowerCase()] || "from-cyan-500 to-cyan-600";
+  if (!category) return "from-cyan-650 to-cyan-700";
+  return categoryGradients[category.toLowerCase()] || "from-cyan-650 to-cyan-700";
 }
 
 function formatDate(dateStr: string, locale: string) {
@@ -165,7 +165,7 @@ export default async function BlogPage() {
                         {categoryLabel(post.category, locale)}
                       </span>
                     </div>
-                    <h3 className="text-lg font-bold text-dark-800 mb-2 group-hover:text-cyan-500 transition-colors leading-snug">
+                    <h3 className="text-lg font-bold text-dark-800 mb-2 group-hover:text-cyan-700 transition-colors leading-snug">
                       {(locale === 'en' && post.title_en) ? post.title_en : post.title}
                     </h3>
                     <p className="text-gray-500 text-sm leading-relaxed mb-4 line-clamp-3">
@@ -175,7 +175,7 @@ export default async function BlogPage() {
                       <span className="text-gray-500 text-sm">
                         {post.publishedAt ? formatDate(post.publishedAt, locale) : ""}
                       </span>
-                      <span className="text-cyan-500 text-sm font-semibold group-hover:underline">
+                      <span className="text-cyan-700 text-sm font-semibold group-hover:underline">
                         {locale === "it" ? "Leggi →" : "Read →"}
                       </span>
                     </div>

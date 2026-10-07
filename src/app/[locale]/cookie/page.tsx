@@ -20,11 +20,11 @@ function Section({ num, title, icon, children }: { num: string; title: string; i
   return (
     <section className="mb-10">
       <div className="flex items-start gap-4 mb-4">
-        <span className="flex-shrink-0 w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500 to-cyan-600 text-white flex items-center justify-center shadow-sm text-base">
+        <span className="flex-shrink-0 w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-650 to-cyan-700 text-white flex items-center justify-center shadow-sm text-base">
           {icon}
         </span>
         <div className="pt-1">
-          <span className="text-xs font-semibold text-cyan-500 uppercase tracking-wider">Art. {num}</span>
+          <span className="text-xs font-semibold text-cyan-700 uppercase tracking-wider">Art. {num}</span>
           <h3 className="text-xl font-bold text-gray-800">{title}</h3>
         </div>
       </div>
@@ -109,7 +109,7 @@ function CookieIT() {
             </div>
             <div className="divide-y divide-gray-100">
               <InfoRow label="Titolare del Trattamento" value="Print Solution S.r.l." />
-              <InfoRow label="Email di contatto" value={<a href="mailto:info@printsolutionsrl.it" className="text-cyan-600 hover:underline">info@printsolutionsrl.it</a>} />
+              <InfoRow label="Email di contatto" value={<a href="mailto:info@printsolutionsrl.it" className="text-cyan-700 hover:underline">info@printsolutionsrl.it</a>} />
               <InfoRow label="Ultimo aggiornamento" value={<Pill>📅 Aprile 2026</Pill>} />
               <InfoRow label="Normativa di riferimento" value={
                 <span className="flex flex-wrap gap-1">
@@ -236,7 +236,7 @@ function CookieIT() {
                 <p className="font-semibold text-gray-700 mb-2">5.3 Opt-out Google Analytics</p>
                 <p>
                   Componente aggiuntivo del browser:{" "}
-                  <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer" className="text-cyan-600 hover:underline font-medium">
+                  <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer" className="text-cyan-700 hover:underline font-medium">
                     tools.google.com/dlpage/gaoptout →
                   </a>
                 </p>
@@ -254,21 +254,21 @@ function CookieIT() {
                 <span className="text-xl">📧</span>
                 <div>
                   <p className="text-xs text-gray-400 uppercase tracking-wider">Email</p>
-                  <p className="text-sm font-medium text-cyan-600">info@printsolutionsrl.it</p>
+                  <p className="text-sm font-medium text-cyan-700">info@printsolutionsrl.it</p>
                 </div>
               </a>
               <a href="mailto:printsolutionsrl@pec.it" className="flex items-center gap-3 bg-gray-50 rounded-xl p-4 border border-gray-100 hover:border-cyan-200 transition-colors">
                 <span className="text-xl">📮</span>
                 <div>
                   <p className="text-xs text-gray-400 uppercase tracking-wider">PEC</p>
-                  <p className="text-sm font-medium text-cyan-600">printsolutionsrl@pec.it</p>
+                  <p className="text-sm font-medium text-cyan-700">printsolutionsrl@pec.it</p>
                 </div>
               </a>
             </div>
             <p className="text-sm text-gray-500">
               Ha inoltre il diritto di proporre reclamo al Garante per la protezione dei dati
               personali:{" "}
-              <a href="https://www.garanteprivacy.it" target="_blank" rel="noopener noreferrer" className="text-cyan-600 hover:underline">
+              <a href="https://www.garanteprivacy.it" target="_blank" rel="noopener noreferrer" className="text-cyan-700 hover:underline">
                 www.garanteprivacy.it
               </a>.
             </p>
@@ -307,7 +307,7 @@ function CookieEN() {
             </div>
             <div className="divide-y divide-gray-100">
               <InfoRow label="Data Controller" value="Print Solution S.r.l." />
-              <InfoRow label="Contact email" value={<a href="mailto:info@printsolutionsrl.it" className="text-cyan-600 hover:underline">info@printsolutionsrl.it</a>} />
+              <InfoRow label="Contact email" value={<a href="mailto:info@printsolutionsrl.it" className="text-cyan-700 hover:underline">info@printsolutionsrl.it</a>} />
               <InfoRow label="Last updated" value={<Pill>📅 April 2026</Pill>} />
               <InfoRow label="Legal reference" value={<span className="flex flex-wrap gap-1"><Pill>GDPR EU 2016/679</Pill><Pill>Italian DPA Guidelines 2021</Pill></span>} />
             </div>
@@ -386,7 +386,7 @@ function CookieEN() {
                 </div>
               ))}
             </div>
-            <p>Google Analytics opt-out: <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer" className="text-cyan-600 hover:underline font-medium">tools.google.com/dlpage/gaoptout →</a></p>
+            <p>Google Analytics opt-out: <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer" className="text-cyan-700 hover:underline font-medium">tools.google.com/dlpage/gaoptout →</a></p>
           </Section>
 
           <Section num="6" icon="⚖️" title="Your rights">
@@ -395,18 +395,18 @@ function CookieEN() {
                 <span className="text-xl">📧</span>
                 <div>
                   <p className="text-xs text-gray-400 uppercase tracking-wider">Email</p>
-                  <p className="text-sm font-medium text-cyan-600">info@printsolutionsrl.it</p>
+                  <p className="text-sm font-medium text-cyan-700">info@printsolutionsrl.it</p>
                 </div>
               </a>
               <a href="mailto:printsolutionsrl@pec.it" className="flex items-center gap-3 bg-gray-50 rounded-xl p-4 border border-gray-100 hover:border-cyan-200 transition-colors">
                 <span className="text-xl">📮</span>
                 <div>
                   <p className="text-xs text-gray-400 uppercase tracking-wider">PEC</p>
-                  <p className="text-sm font-medium text-cyan-600">printsolutionsrl@pec.it</p>
+                  <p className="text-sm font-medium text-cyan-700">printsolutionsrl@pec.it</p>
                 </div>
               </a>
             </div>
-            <p className="text-sm text-gray-500">You may also lodge a complaint with the Italian Data Protection Authority: <a href="https://www.garanteprivacy.it" target="_blank" rel="noopener noreferrer" className="text-cyan-600 hover:underline">www.garanteprivacy.it</a>.</p>
+            <p className="text-sm text-gray-500">You may also lodge a complaint with the Italian Data Protection Authority: <a href="https://www.garanteprivacy.it" target="_blank" rel="noopener noreferrer" className="text-cyan-700 hover:underline">www.garanteprivacy.it</a>.</p>
           </Section>
 
           <Section num="7" icon="🔄" title="Updates">

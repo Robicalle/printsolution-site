@@ -77,7 +77,7 @@ function Hero({ locale }: { locale: string }) {
             <div className="mb-6 lg:mb-10" />
             <h1 className="text-3xl sm:text-5xl lg:text-7xl xl:text-[5.5rem] font-bold leading-[1.05] sm:leading-[0.95] tracking-tight mb-6 lg:mb-10 opacity-0 animate-fade-up-delay">
               {locale === 'it' ? 'Soluzioni Digitali per' : 'Digital Solutions for'}{" "}
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-emerald-400 to-lime-400">
+              <span className="text-cyan-400">
                 {locale === 'it' ? 'la stampa di Labelling e Packaging' : 'Labelling and Packaging Printing'}
               </span>
             </h1>
@@ -91,7 +91,7 @@ function Hero({ locale }: { locale: string }) {
               }
             </p>
             <div className="flex flex-row gap-3 sm:gap-5 opacity-0 animate-fade-up-delay-2">
-              <Link href="/soluzioni" className="inline-flex items-center justify-center px-6 sm:px-10 py-3.5 sm:py-5 bg-cyan-500 hover:bg-cyan-400 text-white font-semibold rounded-full transition-all text-base sm:text-xl">
+              <Link href="/soluzioni" className="inline-flex items-center justify-center px-6 sm:px-10 py-3.5 sm:py-5 bg-cyan-650 hover:bg-cyan-700 text-white font-semibold rounded-full transition-all text-base sm:text-xl">
                 {locale === 'it' ? 'Le Nostre Soluzioni →' : 'Our Solutions →'}
               </Link>
             </div>
@@ -141,16 +141,16 @@ function Solutions({ locale }: { locale: string }) {
       desc: locale === 'it' ? "Stampa hot foil e digitale per shopper e packaging premium con finiture metalliche." : "Hot foil and digital printing for premium shoppers and packaging with metallic finishes.",
       href: "/soluzioni/shopper",
       image: "/images/shopper-nobg.png",
-      gradient: "from-amber-500 to-amber-400",
-      accentBorder: "border-l-amber-500",
+      gradient: "from-yellow-500 to-yellow-400",
+      accentBorder: "border-l-yellow-500",
     },
     {
       title: locale === 'it' ? "Labbratura Libri" : "Book Edge Printing",
       desc: locale === 'it' ? "Stampa digitale sui bordi di libri, quaderni e block notes per personalizzazioni uniche e di alta qualità." : "Digital printing on book edges, notebooks and notepads for unique, high-quality customisation.",
       href: "/soluzioni/labbratura",
       image: "/images/products/book-edge-detail1.png",
-      gradient: "from-violet-500 to-violet-400",
-      accentBorder: "border-l-violet-500",
+      gradient: "from-dark-800 to-dark-900",
+      accentBorder: "border-l-dark-800",
     },
   ];
 
@@ -158,7 +158,7 @@ function Solutions({ locale }: { locale: string }) {
     <section className="section-padding bg-surface-50">
       <div className="container-custom" ref={ref}>
         <div className={`text-center mb-16 transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <p className="text-cyan-500 font-semibold text-sm mb-4">{locale === 'it' ? 'Cosa facciamo' : 'What we do'}</p>
+          <p className="text-cyan-700 font-semibold text-sm mb-4">{locale === 'it' ? 'Cosa facciamo' : 'What we do'}</p>
           <h2 className="text-4xl sm:text-5xl font-bold text-dark-800 tracking-tight">{locale === 'it' ? 'Le Nostre Soluzioni' : 'Our Solutions'}</h2>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8 max-w-5xl mx-auto">
@@ -172,11 +172,11 @@ function Solutions({ locale }: { locale: string }) {
               <div className="w-full aspect-[4/3] rounded-2xl overflow-hidden mb-6 shadow-lg group-hover:scale-[1.03] transition-transform duration-300 bg-white relative">
                 <Image src={s.image} alt={s.title} fill className="object-contain p-3" sizes="(max-width: 768px) 50vw, 25vw" />
               </div>
-              <h3 className="text-xl font-bold text-dark-800 mb-3 group-hover:text-cyan-500 transition-colors">
+              <h3 className="text-xl font-bold text-dark-800 mb-3 group-hover:text-cyan-700 transition-colors">
                 {s.title}
               </h3>
               <p className="text-gray-500 text-[15px] leading-relaxed mb-6 flex-grow">{s.desc}</p>
-              <span className="inline-flex items-center text-cyan-500 text-sm font-semibold group-hover:gap-3 gap-2 transition-all mt-auto">
+              <span className="inline-flex items-center text-cyan-700 text-sm font-semibold group-hover:gap-3 gap-2 transition-all mt-auto">
                 {locale === 'it' ? 'Scopri di più' : 'Learn more'}
                 <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -227,7 +227,7 @@ function FeaturedProducts({ locale }: { locale: string }) {
     <section className="section-padding bg-white">
       <div className="container-custom" ref={ref}>
         <div className={`text-center mb-16 transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <p className="text-cyan-500 font-semibold text-sm mb-4">{locale === 'it' ? 'I nostri prodotti' : 'Our products'}</p>
+          <p className="text-cyan-700 font-semibold text-sm mb-4">{locale === 'it' ? 'I nostri prodotti' : 'Our products'}</p>
           <h2 className="text-4xl sm:text-5xl font-bold text-dark-800 tracking-tight">{locale === 'it' ? 'Tecnologie di Punta' : 'Cutting-Edge Technology'}</h2>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -247,7 +247,7 @@ function FeaturedProducts({ locale }: { locale: string }) {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent group-hover:from-black/60 transition-all duration-500" />
                 <div className="absolute bottom-4 left-6">
-                  <span className="inline-block px-3 py-1 rounded-full text-xs font-bold text-white bg-cyan-500">
+                  <span className="inline-block px-3 py-1 rounded-full text-xs font-bold text-white bg-cyan-650">
                     {p.subtitle}
                   </span>
                 </div>
@@ -265,7 +265,7 @@ function FeaturedProducts({ locale }: { locale: string }) {
                     </li>
                   ))}
                 </ul>
-                <Link href={p.href} className="inline-flex items-center text-cyan-500 font-semibold text-sm hover:gap-3 gap-2 transition-all group/link">
+                <Link href={p.href} className="inline-flex items-center text-cyan-700 font-semibold text-sm hover:gap-3 gap-2 transition-all group/link">
                   {locale === 'it' ? 'Scopri di più' : 'Learn more'}
                   <svg className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -287,7 +287,7 @@ function WhyUs({ locale }: { locale: string }) {
     { value: 1500, suffix: "+", label: locale === 'it' ? "Clienti soddisfatti" : "Satisfied customers", color: "from-cyan-400 to-cyan-500" },
     { value: 15, suffix: "+", label: locale === 'it' ? "Anni di esperienza" : "Years of experience", color: "from-magenta-400 to-magenta-500" },
     { value: 20, suffix: "+", label: locale === 'it' ? "Paesi serviti" : "Countries served", color: "from-yellow-400 to-yellow-500" },
-    { value: 150, suffix: "+", label: locale === 'it' ? "Prodotti a catalogo" : "Products in catalogue", color: "from-green-400 to-green-500" },
+    { value: 150, suffix: "+", label: locale === 'it' ? "Prodotti a catalogo" : "Products in catalogue", color: "from-white to-gray-200" },
   ];
   return (
     <section className="section-padding bg-dark-900 text-white relative overflow-hidden">
@@ -300,7 +300,7 @@ function WhyUs({ locale }: { locale: string }) {
         <div className={`text-center mb-16 transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <p className="text-cyan-400 font-semibold text-sm mb-4">{locale === 'it' ? 'Perché sceglierci' : 'Why choose us'}</p>
           <h2 className="text-4xl sm:text-5xl font-bold tracking-tight">
-            {locale === 'it' ? 'Numeri che ' : 'Numbers that '}<span className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-emerald-400 to-lime-400">{locale === 'it' ? 'parlano' : 'speak'}</span>
+            {locale === 'it' ? 'Numeri che ' : 'Numbers that '}<span className="text-cyan-400">{locale === 'it' ? 'parlano' : 'speak'}</span>
           </h2>
         </div>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
@@ -426,7 +426,7 @@ function DemoCTA({ locale }: { locale: string }) {
               {locale === 'it' ? 'Vieni a toccare con mano le nostre soluzioni. La nostra sala demo a Sesto San Giovanni è attrezzata con tutti i prodotti in funzione.' : 'Come and experience our solutions first-hand. Our demo room in Sesto San Giovanni is equipped with all products up and running.'}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20Print%20Solution&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita.%0A%0AGrazie" className="inline-flex items-center justify-center px-8 py-4 bg-white text-cyan-600 font-bold rounded-full hover:bg-yellow-400 hover:text-dark-800 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 text-lg">
+              <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20Print%20Solution&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita.%0A%0AGrazie" className="inline-flex items-center justify-center px-8 py-4 bg-white text-cyan-700 font-bold rounded-full hover:bg-yellow-400 hover:text-dark-800 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 text-lg">
                 {locale === 'it' ? 'Consulenza gratuita→' : 'Free consultation→'}
               </a>
               <a href="tel:+390249439417" className="inline-flex items-center justify-center px-8 py-4 border-2 border-white/30 text-white font-semibold rounded-full hover:bg-white/10 transition-all duration-300 text-lg">
@@ -450,8 +450,9 @@ export default function HomePageClient() {
       {/* BrandBar removed */}
       <Solutions locale={locale} />
       <FeaturedProducts locale={locale} />
-      <WhyUs locale={locale} />
       <Testimonial locale={locale} />
+      {/* Sezione scura in chiusura, accanto alla CTA: non piu' isolata a meta' pagina */}
+      <WhyUs locale={locale} />
       <DemoCTA locale={locale} />
     </>
   );

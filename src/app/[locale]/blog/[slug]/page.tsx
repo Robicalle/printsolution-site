@@ -175,7 +175,7 @@ function makePortableTextComponents(locale: string): PortableTextComponents {
               </div>
             )}
             <div className="flex-1 min-w-0">
-              <p className="text-[10px] text-cyan-600 font-semibold uppercase tracking-widest mb-0.5">
+              <p className="text-[10px] text-cyan-700 font-semibold uppercase tracking-widest mb-0.5">
                 {it ? "Prodotto menzionato" : "Featured product"}
               </p>
               <h4 className="font-bold text-gray-800 text-base mb-1 leading-tight">{value.name}</h4>
@@ -283,10 +283,10 @@ function makePortableTextComponents(locale: string): PortableTextComponents {
     // reset di Tailwind toglieva i pallini: le voci sembravano righe sparse.
     list: {
       bullet: ({ children }: { children?: ReactNode }) => (
-        <ul className="list-disc pl-6 space-y-2 text-gray-600 mb-4 marker:text-cyan-500">{children}</ul>
+        <ul className="list-disc pl-6 space-y-2 text-gray-600 mb-4 marker:text-cyan-700">{children}</ul>
       ),
       number: ({ children }: { children?: ReactNode }) => (
-        <ol className="list-decimal pl-6 space-y-2 text-gray-600 mb-4 marker:text-cyan-500">{children}</ol>
+        <ol className="list-decimal pl-6 space-y-2 text-gray-600 mb-4 marker:text-cyan-700">{children}</ol>
       ),
     },
     listItem: {
@@ -299,7 +299,7 @@ function makePortableTextComponents(locale: string): PortableTextComponents {
           href={value?.href}
           target={value?.href?.startsWith("http") ? "_blank" : undefined}
           rel={value?.href?.startsWith("http") ? "noopener noreferrer" : undefined}
-          className="text-cyan-600 underline hover:text-cyan-800"
+          className="text-cyan-700 underline hover:text-cyan-800"
         >
           {children}
         </a>
@@ -456,7 +456,7 @@ export default async function BlogPostPage({
           <div className="mt-12 pt-8 border-t border-gray-100 flex flex-col sm:flex-row gap-4 justify-between items-center">
             <Link
               href="/blog"
-              className="text-cyan-500 font-semibold text-sm hover:underline"
+              className="text-cyan-700 font-semibold text-sm hover:underline"
             >
               {it ? "← Torna al Blog" : "← Back to Blog"}
             </Link>
@@ -500,13 +500,13 @@ export default async function BlogPostPage({
                     </div>
                   )}
                   <div className="p-5">
-                    <h3 className="font-bold text-dark-800 group-hover:text-cyan-500 transition-colors">
+                    <h3 className="font-bold text-dark-800 group-hover:text-cyan-700 transition-colors">
                       {p.name}
                     </h3>
                     <p className="text-sm text-gray-500 mt-1 line-clamp-2">
                       {it ? p.desc : (p.desc_en || p.desc)}
                     </p>
-                    <span className="inline-block mt-3 text-cyan-500 text-sm font-semibold group-hover:underline">
+                    <span className="inline-block mt-3 text-cyan-700 text-sm font-semibold group-hover:underline">
                       {it ? "Scopri di più →" : "Learn more →"}
                     </span>
                   </div>

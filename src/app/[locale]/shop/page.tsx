@@ -35,13 +35,13 @@ export default async function ShopPage() {
             🛒 E-Shop Consumabili
           </span>
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Consumabili <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600">{locale === 'it' ? 'Originali' : 'Original'}</span>
+            Consumabili <span className="text-cyan-700">{locale === 'it' ? 'Originali' : 'Original'}</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-4">
             Acquista le cartucce e i ricambi originali per la tua stampante. 
             Magazzino sempre fornito, spedizione in <strong>24/48 ore</strong>.
           </p>
-          <p className="text-sm text-gray-400">
+          <p className="text-sm text-gray-500">
             Tutti i prezzi si intendono IVA esclusa. Pagamento sicuro con carta di credito.
           </p>
         </div>
@@ -102,16 +102,16 @@ export default async function ShopPage() {
                     className="object-contain group-hover:scale-110 transition-transform duration-300 max-h-full"
                   />
                   {cat.name.toLowerCase().includes('plus') && (
-                    <span className="absolute top-3 right-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-xs font-bold px-2.5 py-1 rounded-full shadow-lg">
+                    <span className="absolute top-3 right-3 btn-solid text-xs font-bold px-2.5 py-1 rounded-full shadow-lg">
                       PLUS
                     </span>
                   )}
                 </div>
                 <div className="p-4">
-                  <h3 className="font-bold text-gray-900 group-hover:text-cyan-600 transition-colors">{cat.name}</h3>
+                  <h3 className="font-bold text-gray-900 group-hover:text-cyan-700 transition-colors">{cat.name}</h3>
                   <p className="text-sm text-gray-500 mt-1 line-clamp-2">{cat.description}</p>
                   {cat.products.length > 0 && (
-                    <p className="text-xs text-cyan-500 font-medium mt-2">{cat.products.length} prodotti disponibili</p>
+                    <p className="text-xs text-cyan-700 font-medium mt-2">{cat.products.length} prodotti disponibili</p>
                   )}
                 </div>
               </Link>

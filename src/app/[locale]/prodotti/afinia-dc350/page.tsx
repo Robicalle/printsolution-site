@@ -258,7 +258,7 @@ export default async function () {
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
         <div className="container-custom">
           <div className="text-center mb-12">
-            <p className="text-cyan-500 font-semibold text-sm mb-4">Video</p>
+            <p className="text-cyan-700 font-semibold text-sm mb-4">Video</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-dark-800">{locale === 'it' ? 'DC350 in Azione' : 'DC350 in Action'}</h2>
           </div>
           <div className="grid md:grid-cols-1 max-w-2xl mx-auto gap-8">
@@ -334,7 +334,7 @@ export default async function () {
                   <Image src={p.image} alt={`${p.name} — ${p.desc}`} fill className="object-contain p-4 group-hover:scale-105 transition-transform duration-500" />
                 </div>
                 <div className="p-5">
-                  <h3 className="font-bold text-dark-800 group-hover:text-cyan-500 transition-colors">{p.name}</h3>
+                  <h3 className="font-bold text-dark-800 group-hover:text-cyan-700 transition-colors">{p.name}</h3>
                   <p className="text-sm text-gray-500 mt-1">{p.desc}</p>
                 </div>
               </Link>
@@ -359,7 +359,7 @@ export default async function () {
               </p>
               <a
                 href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20Afinia%20DC250%20DC350&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita%20dei%20fustellatori%20DC250%2FDC350.%0A%0AGrazie"
-                className="inline-flex items-center justify-center px-8 py-4 bg-white text-cyan-600 font-bold rounded-full hover:bg-yellow-400 hover:text-dark-800 transition-all duration-300 shadow-lg text-lg"
+                className="inline-flex items-center justify-center px-8 py-4 bg-white text-cyan-700 font-bold rounded-full hover:bg-yellow-400 hover:text-dark-800 transition-all duration-300 shadow-lg text-lg"
               >
                 {locale === 'it' ? 'Consulenza gratuita' : 'Free consultation'}
               </a>

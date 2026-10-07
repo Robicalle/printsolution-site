@@ -21,7 +21,7 @@ export default function LanguageSwitcher({ scrolled }: { scrolled?: boolean }) {
         onClick={() => switchLocale("it")}
         className={`px-1.5 py-1 rounded transition-colors ${
           locale === "it"
-            ? "text-cyan-500"
+            ? (scrolled ? "text-cyan-700" : "text-cyan-400")
             : scrolled
               ? "text-gray-400 hover:text-gray-600"
               : "text-white/50 hover:text-white/80"
@@ -35,7 +35,7 @@ export default function LanguageSwitcher({ scrolled }: { scrolled?: boolean }) {
         onClick={() => switchLocale("en")}
         className={`px-1.5 py-1 rounded transition-colors ${
           locale === "en"
-            ? "text-cyan-500"
+            ? (scrolled ? "text-cyan-700" : "text-cyan-400")
             : scrolled
               ? "text-gray-400 hover:text-gray-600"
               : "text-white/50 hover:text-white/80"

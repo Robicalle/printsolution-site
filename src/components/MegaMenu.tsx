@@ -44,7 +44,7 @@ export default function MegaMenu({ open }: { open: boolean }) {
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-2">
           {categories.map((cat) => (
             <div key={cat}>
-              <h3 className="text-xs font-bold uppercase tracking-wider text-cyan-600 mb-3 px-1">{cat}</h3>
+              <h3 className="text-xs font-bold uppercase tracking-wider text-cyan-700 mb-3 px-1">{cat}</h3>
               <div className="space-y-1">
                 {megaMenuProducts
                   .filter((p) => p.category === cat)
@@ -63,7 +63,7 @@ export default function MegaMenu({ open }: { open: boolean }) {
                           sizes="56px"
                         />
                       </div>
-                      <span className="text-sm font-medium text-gray-700 group-hover:text-cyan-600 transition-colors leading-tight">
+                      <span className="text-sm font-medium text-gray-700 group-hover:text-cyan-700 transition-colors leading-tight">
                         {product.name}
                       </span>
                     </Link>
@@ -75,13 +75,13 @@ export default function MegaMenu({ open }: { open: boolean }) {
         <div className="mt-4 pt-4 border-t border-gray-100 flex items-center justify-between">
           <Link
             href="/confronto-prodotti"
-            className="text-sm font-medium text-cyan-600 hover:text-cyan-700 transition-colors"
+            className="text-sm font-medium text-cyan-700 hover:text-cyan-700 transition-colors"
           >
             📊 Confronta tutti i prodotti →
           </Link>
           <Link
             href="/shop"
-            className="text-sm font-medium text-gray-500 hover:text-cyan-600 transition-colors"
+            className="text-sm font-medium text-gray-500 hover:text-cyan-700 transition-colors"
           >
             🛒 E-Shop Consumabili →
           </Link>
@@ -101,14 +101,14 @@ export function MegaMenuMobile({ open, onNavigate }: { open: boolean; onNavigate
     <div className="pl-2 pb-2">
       {categories.map((cat) => (
         <div key={cat} className="mb-3">
-          <p className="text-xs font-bold uppercase tracking-wider text-cyan-600 mb-1 px-1">{cat}</p>
+          <p className="text-xs font-bold uppercase tracking-wider text-cyan-700 mb-1 px-1">{cat}</p>
           {megaMenuProducts
             .filter((p) => p.category === cat)
             .map((product) => (
               <Link
                 key={product.href}
                 href={product.href}
-                className="flex items-center gap-3 py-2 px-1 text-gray-700 hover:text-cyan-500"
+                className="flex items-center gap-3 py-2 px-1 text-gray-700 hover:text-cyan-700"
                 onClick={onNavigate}
               >
                 <div className="w-10 h-10 flex-shrink-0 relative bg-gray-50 rounded-lg overflow-hidden">
@@ -127,7 +127,7 @@ export function MegaMenuMobile({ open, onNavigate }: { open: boolean; onNavigate
       ))}
       <Link
         href="/confronto-prodotti"
-        className="block py-2 px-1 text-cyan-600 font-medium text-base"
+        className="block py-2 px-1 text-cyan-700 font-medium text-base"
         onClick={onNavigate}
       >
         📊 Confronta prodotti

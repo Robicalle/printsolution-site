@@ -11,7 +11,7 @@ export default function CarePackGridBlock({ block, locale }: Props) {
       <div className="container-custom">
         <div className="text-center mb-12">
           {block.eyebrow && (
-            <p className="text-magenta-500 font-semibold text-sm mb-4">
+            <p className="text-magenta-600 font-semibold text-sm mb-4">
               {it ? block.eyebrow : (block.eyebrow_en || block.eyebrow)}
             </p>
           )}

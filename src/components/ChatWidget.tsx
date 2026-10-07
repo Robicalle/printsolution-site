@@ -306,7 +306,7 @@ export default function ChatWidget() {
         className={`fixed bottom-[8rem] right-4 lg:bottom-6 lg:right-6 z-[9998] w-14 h-14 rounded-full shadow-lg flex items-center justify-center transition-all duration-300 ${
           open
             ? "bg-gray-700 hover:bg-gray-600 rotate-0"
-            : "bg-gradient-to-br from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 hover:scale-110"
+            : "btn-solid hover:scale-110"
         }`}
       >
         {pulse && !open && (
@@ -321,7 +321,7 @@ export default function ChatWidget() {
       {open && (
         <div className="fixed bottom-[11rem] right-4 lg:bottom-24 lg:right-6 z-[9999] w-[calc(100%-2rem)] max-w-sm max-h-[60vh] bg-white rounded-2xl shadow-2xl border border-gray-200 flex flex-col overflow-hidden animate-in">
           {/* Header */}
-          <div className="bg-gradient-to-r from-cyan-600 to-blue-700 text-white px-5 py-4 flex items-center gap-3">
+          <div className="btn-solid px-5 py-4 flex items-center gap-3">
             <div className="w-9 h-9 rounded-full bg-white/20 flex items-center justify-center">
               <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
@@ -389,7 +389,7 @@ export default function ChatWidget() {
                         a: ({ href, children, ...props }) => (
                           <a
                             href={href}
-                            className="text-cyan-600 hover:text-cyan-700 underline"
+                            className="text-cyan-700 hover:text-cyan-700 underline"
                             target={href?.startsWith("http") ? "_blank" : undefined}
                             rel={href?.startsWith("http") ? "noopener noreferrer" : undefined}
                             onClick={() => gtagEvent("chat_link_click", { event_category: "chatbot", link_url: href || "" })}
@@ -474,11 +474,11 @@ export default function ChatWidget() {
                       type="checkbox"
                       checked={lead.privacy}
                       onChange={(e) => setLead({ ...lead, privacy: e.target.checked })}
-                      className="mt-0.5 h-4 w-4 rounded border-gray-300 text-cyan-500"
+                      className="mt-0.5 h-4 w-4 rounded border-gray-300 text-cyan-700"
                     />
                     <span>
                       {t("leadPrivacy")}{" "}
-                      <Link href="/privacy" target="_blank" className="text-cyan-600 underline">
+                      <Link href="/privacy" target="_blank" className="text-cyan-700 underline">
                         Privacy Policy
                       </Link>{" "}
                       {t("leadPrivacyAfter")}
@@ -498,7 +498,7 @@ export default function ChatWidget() {
                     <button
                       onClick={inviaLead}
                       disabled={!leadPronto || leadInvio === "sending"}
-                      className="flex-1 py-2 rounded-full bg-cyan-600 text-white font-semibold hover:bg-cyan-500 disabled:opacity-40 transition-colors"
+                      className="flex-1 py-2 rounded-full bg-cyan-600 text-white font-semibold hover:bg-cyan-650 disabled:opacity-40 transition-colors"
                     >
                       {leadInvio === "sending" ? t("leadSending") : t("leadSend")}
                     </button>
@@ -541,7 +541,7 @@ export default function ChatWidget() {
               <button
                 onClick={() => sendMessage()}
                 disabled={loading || !input.trim()}
-                className="w-10 h-10 rounded-full bg-cyan-600 text-white flex items-center justify-center hover:bg-cyan-500 disabled:opacity-40 transition-colors"
+                className="w-10 h-10 rounded-full bg-cyan-600 text-white flex items-center justify-center hover:bg-cyan-650 disabled:opacity-40 transition-colors"
                 aria-label={t("send")}
               >
                 <svg

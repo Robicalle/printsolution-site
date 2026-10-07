@@ -20,7 +20,7 @@ export default function StickyCartBar() {
       <div className="bg-gray-900/95 backdrop-blur-md border-b border-gray-700 shadow-lg">
         <div className="container-custom flex items-center justify-between py-3 px-4">
           <div className="flex items-center gap-3">
-            <span className="bg-cyan-500 text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center">
+            <span className="bg-cyan-650 text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center">
               {totalItems}
             </span>
             <span className="text-white text-sm font-medium hidden sm:inline">
@@ -32,7 +32,7 @@ export default function StickyCartBar() {
           </div>
           <Link
             href="/shop/checkout"
-            className="px-5 py-2 bg-cyan-500 hover:bg-cyan-400 text-white text-sm font-semibold rounded-full transition-colors"
+            className="px-5 py-2 bg-cyan-650 hover:bg-cyan-700 text-white text-sm font-semibold rounded-full transition-colors"
           >
             Vai al Checkout →
           </Link>

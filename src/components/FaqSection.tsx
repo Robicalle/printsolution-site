@@ -38,11 +38,11 @@ export default async function FaqSection() {
         <div className="container-custom max-w-3xl">
           {Object.entries(grouped).map(([cat, items]) => (
             <div key={cat} className="mb-12 last:mb-0">
-              <h3 className="text-lg font-semibold text-cyan-500 uppercase tracking-widest mb-6 capitalize">{cat}</h3>
+              <h3 className="text-lg font-semibold text-cyan-700 uppercase tracking-widest mb-6 capitalize">{cat}</h3>
               <div className="space-y-4">
                 {items.map((faq: any) => (
                   <details key={faq._id} className="group bg-surface-50 rounded-2xl overflow-hidden">
-                    <summary className="flex items-center justify-between cursor-pointer px-6 py-5 font-semibold text-dark-800 hover:text-cyan-500 transition-colors">
+                    <summary className="flex items-center justify-between cursor-pointer px-6 py-5 font-semibold text-dark-800 hover:text-cyan-700 transition-colors">
                       <span>{faq.question}</span>
                       <svg className="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />

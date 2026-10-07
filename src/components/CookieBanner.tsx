@@ -63,17 +63,17 @@ export default function CookieBanner() {
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
               <div className="flex-1">
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2 flex items-center gap-2">
-                  <Shield className="w-5 h-5 text-cyan-500" />
+                  <Shield className="w-5 h-5 text-cyan-700" />
                   {t('title')}
                 </h3>
                 <p className="text-sm text-gray-600 dark:text-gray-300">
                   {t('intro')}{' '}
                   {t('see')}{' '}
-                  <Link href="/cookie" className="text-cyan-500 underline hover:text-cyan-400">
+                  <Link href="/cookie" className="text-cyan-700 underline hover:text-cyan-400">
                     Cookie Policy
                   </Link>
                   {' '}{t('and')}{' '}
-                  <Link href="/privacy" className="text-cyan-500 underline hover:text-cyan-400">
+                  <Link href="/privacy" className="text-cyan-700 underline hover:text-cyan-400">
                     Privacy Policy
                   </Link>
                   .
@@ -95,7 +95,7 @@ export default function CookieBanner() {
                 </button>
                 <button
                   onClick={acceptAll}
-                  className="px-6 py-2.5 text-sm rounded-lg bg-cyan-500 text-white font-medium hover:bg-cyan-400 transition-colors shadow-lg shadow-cyan-500/20"
+                  className="px-6 py-2.5 text-sm rounded-lg bg-cyan-650 text-white font-medium hover:bg-cyan-700 transition-colors shadow-lg shadow-cyan-500/20"
                 >
                   {t('acceptAll')}
                 </button>
@@ -106,7 +106,7 @@ export default function CookieBanner() {
             <div className="max-w-3xl mx-auto">
               <div className="flex items-center justify-between mb-6">
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
-                  <Settings className="w-6 h-6 text-cyan-500" />
+                  <Settings className="w-6 h-6 text-cyan-700" />
                   {t('prefsTitle')}
                 </h3>
                 <button
@@ -159,7 +159,7 @@ export default function CookieBanner() {
                       type="checkbox"
                       checked={preferences.analytics}
                       onChange={(e) => setPreferences({ ...preferences, analytics: e.target.checked })}
-                      className="mt-1 w-5 h-5 rounded border-gray-300 text-cyan-500 focus:ring-cyan-500"
+                      className="mt-1 w-5 h-5 rounded border-gray-300 text-cyan-700 focus:ring-cyan-500"
                     />
                   </div>
                 </div>
@@ -169,7 +169,7 @@ export default function CookieBanner() {
                   <div className="flex items-start justify-between">
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-2">
-                        <Megaphone className="w-5 h-5 text-purple-500" />
+                        <Megaphone className="w-5 h-5 text-magenta-600" />
                         <h4 className="font-semibold text-gray-900 dark:text-white">{t('marketing')}</h4>
                       </div>
                       <p className="text-sm text-gray-600 dark:text-gray-400">
@@ -180,7 +180,7 @@ export default function CookieBanner() {
                       type="checkbox"
                       checked={preferences.marketing}
                       onChange={(e) => setPreferences({ ...preferences, marketing: e.target.checked })}
-                      className="mt-1 w-5 h-5 rounded border-gray-300 text-cyan-500 focus:ring-cyan-500"
+                      className="mt-1 w-5 h-5 rounded border-gray-300 text-cyan-700 focus:ring-cyan-500"
                     />
                   </div>
                 </div>
@@ -195,7 +195,7 @@ export default function CookieBanner() {
                 </button>
                 <button
                   onClick={savePreferences}
-                  className="px-6 py-2.5 text-sm rounded-lg bg-cyan-500 text-white font-medium hover:bg-cyan-400 transition-colors shadow-lg shadow-cyan-500/20"
+                  className="px-6 py-2.5 text-sm rounded-lg bg-cyan-650 text-white font-medium hover:bg-cyan-700 transition-colors shadow-lg shadow-cyan-500/20"
                 >
                   {t('save')}
                 </button>

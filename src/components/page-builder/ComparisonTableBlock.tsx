@@ -103,11 +103,11 @@ export default function ComparisonTableBlock({ block, locale }: Props) {
               <>
                 {note ? " " : ""}
                 {interno ? (
-                  <Link href={block.noteLinkUrl} className="text-cyan-500 hover:text-cyan-600 underline">
+                  <Link href={block.noteLinkUrl} className="text-cyan-700 hover:text-cyan-700 underline">
                     {linkText}
                   </Link>
                 ) : (
-                  <a href={block.noteLinkUrl} className="text-cyan-500 hover:text-cyan-600 underline">
+                  <a href={block.noteLinkUrl} className="text-cyan-700 hover:text-cyan-700 underline">
                     {linkText}
                   </a>
                 )}

@@ -13,12 +13,14 @@ const config: Config = {
           400: '#33BBFF',
           500: '#00AAFF',
           600: '#0088CC',
+          650: '#0077B3',
           700: '#006699',
         },
         magenta: {
           400: '#FF33FF',
           500: '#E91E8C',
           600: '#CC0077',
+          700: '#A6005F',
         },
         yellow: {
           400: '#FFE033',
@@ -48,8 +50,8 @@ const config: Config = {
           600: '#CC0077',
         },
         dark: {
-          800: '#2D2D2D',
-          900: '#1A1A1A',
+          800: '#272C31',
+          900: '#161A1E',
         },
         surface: {
           50: '#FAFBFC',
@@ -62,7 +64,8 @@ const config: Config = {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'hero-gradient': 'linear-gradient(135deg, #1A1A1A 0%, #0D2B45 40%, #00AAFF 100%)',
-        'cta-gradient': 'linear-gradient(135deg, #00AAFF 0%, #E91E8C 100%)',
+        // ciano e magenta in tonalita' profonde: testo bianco leggibile (>= 5:1) su tutta la sfumatura
+        'cta-gradient': 'linear-gradient(135deg, #0077B3 0%, #CC0077 100%)',
         'card-gradient': 'linear-gradient(135deg, rgba(0,170,255,0.05) 0%, rgba(233,30,140,0.05) 100%)',
       },
       boxShadow: {

@@ -19,7 +19,7 @@ export default function MobileCTABar() {
       </a>
       <a
         href={`mailto:info@printsolutionsrl.it?subject=${emailSubject}&body=${emailBody}`}
-        className="flex-1 flex items-center justify-center gap-2 h-11 bg-gradient-to-r from-cyan-500 to-cyan-600 text-white font-semibold rounded-full text-sm shadow-lg"
+        className="flex-1 flex items-center justify-center gap-2 h-11 btn-solid font-semibold rounded-full text-sm shadow-lg"
         data-track="click_cta" data-track-label="mobile_bar_consulenza"
       >
         ✉️ {t("consult")}

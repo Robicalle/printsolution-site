@@ -27,12 +27,12 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-const categoryInfo: Record<string, { it: string; en: string; descIt: string; descEn: string; icon: string; color: string }> = {
+const categoryInfo: Record<string, { it: string; en: string; descIt: string; descEn: string; icon: string; color: string; textOn?: string }> = {
   "stampanti-packaging": {
     it: "Stampanti Packaging",
     en: "Packaging Printers",
     icon: "📦",
-    color: "from-cyan-500 to-cyan-600",
+    color: "from-cyan-650 to-cyan-700",
     descIt: "Stampanti digitali single-pass per stampare direttamente su cartone ondulato, scatole, shopper e packaging di grande formato — senza clichè e senza minimi d'ordine. Ideali per scatolifici, e-commerce e print shop che producono packaging personalizzato on-demand.",
     descEn: "Single-pass digital printers for printing directly on corrugated cardboard, boxes, shoppers and large-format packaging — with no plates and no minimum order. Ideal for box makers, e-commerce and print shops producing custom packaging on demand.",
   },
@@ -40,7 +40,7 @@ const categoryInfo: Record<string, { it: string; en: string; descIt: string; des
     it: "Stampanti Etichette",
     en: "Label Printers",
     icon: "🏷️",
-    color: "from-emerald-500 to-emerald-600",
+    color: "from-magenta-600 to-magenta-700",
     descIt: "Etichettatrici digitali inkjet e laser a colori per etichette adesive in bobina, con o senza bianco. Adatte a food & beverage, cosmetica, chimica e vino, per tirature medie e piccole senza costi di setup.",
     descEn: "Inkjet and laser colour label printers for roll adhesive labels, with or without white. Suited to food & beverage, cosmetics, chemicals and wine, for medium and short runs with no setup costs.",
   },
@@ -48,7 +48,8 @@ const categoryInfo: Record<string, { it: string; en: string; descIt: string; des
     it: "Finishing & Accessori",
     en: "Finishing & Accessories",
     icon: "✂️",
-    color: "from-amber-500 to-amber-600",
+    color: "from-yellow-500 to-yellow-600",
+    textOn: "text-dark-900",
     descIt: "Sistemi di finitura per completare la produzione di etichette e packaging: laminazione, fustellatura semi-rotativa e digitale, taglio, ribobinatura e nobilitazione a caldo.",
     descEn: "Finishing systems to complete label and packaging production: lamination, semi-rotary and digital die-cutting, slitting, rewinding and hot foil embellishment.",
   },
@@ -56,7 +57,7 @@ const categoryInfo: Record<string, { it: string; en: string; descIt: string; des
     it: "Labbratura Libri",
     en: "Book Edge Printing",
     icon: "📚",
-    color: "from-violet-500 to-violet-600",
+    color: "from-dark-800 to-dark-900",
     descIt: "Stampanti dedicate alla labbratura, la decorazione a colori del taglio di libri, quaderni e agende. Soluzioni da tavolo e industriali per legatorie, tipografie ed editori.",
     descEn: "Printers dedicated to book edge printing, the colour decoration of the edges of books, notebooks and diaries. Desktop and industrial solutions for binderies, print shops and publishers.",
   },
@@ -89,7 +90,7 @@ function linkifyAnswer(text: string) {
   return text.split(re).map((part, i) => {
     const match = sorted.find((l) => l.name === part);
     return match ? (
-      <Link key={i} href={match.href} className="text-cyan-600 font-semibold hover:text-cyan-800 hover:underline">
+      <Link key={i} href={match.href} className="text-cyan-700 font-semibold hover:text-cyan-800 hover:underline">
         {part}
       </Link>
     ) : (
@@ -225,7 +226,7 @@ export default async function ProdottiPage() {
         <div className="container-custom space-y-16">
           {Object.entries(grouped).map(([cat, items]) => {
             const info = categoryInfo[cat];
-            const color = info?.color || "from-cyan-500 to-cyan-600";
+            const color = info?.color || "from-cyan-650 to-cyan-700";
             return (
               <div key={cat}>
                 {/* Category header */}
@@ -272,7 +273,7 @@ export default async function ProdottiPage() {
                             />
                           </div>
 
-                          <h3 className="text-lg font-bold text-dark-800 mb-2 group-hover:text-cyan-500 transition-colors">
+                          <h3 className="text-lg font-bold text-dark-800 mb-2 group-hover:text-cyan-700 transition-colors">
                             {p.name}
                           </h3>
                           {p.seoDescription && (
@@ -281,7 +282,7 @@ export default async function ProdottiPage() {
                             </p>
                           )}
 
-                          <span className={`self-start inline-flex items-center px-5 py-2.5 bg-gradient-to-r ${color} text-white text-sm font-semibold rounded-full group-hover:shadow-md group-hover:opacity-90 transition-all mt-auto`}>
+                          <span className={`self-start inline-flex items-center px-5 py-2.5 bg-gradient-to-r ${color} ${info?.textOn || 'text-white'} text-sm font-semibold rounded-full group-hover:shadow-md group-hover:opacity-90 transition-all mt-auto`}>
                             {it ? "Scopri" : "Discover"} →
                           </span>
                         </div>
@@ -304,8 +305,8 @@ export default async function ProdottiPage() {
             </h2>
             <p className="text-gray-600 leading-relaxed">
               {it
-                ? <>La scelta dipende da cosa stampi (scatole, etichette, shopper), dai volumi e dai materiali. Abbiamo preparato delle guide pratiche per orientarti: consulta <Link href="/blog/stampante-per-scatole-quale-scegliere-2026" className="text-cyan-600 underline hover:text-cyan-800">quale stampante scegliere per le scatole</Link> e la <Link href="/blog/stampante-etichette-colori-bobina-guida" className="text-cyan-600 underline hover:text-cyan-800">guida alle stampanti per etichette a colori</Link>. Per soluzioni complete per settore, visita la sezione <Link href="/soluzioni" className="text-cyan-600 underline hover:text-cyan-800">Soluzioni</Link>.</>
-                : <>The right choice depends on what you print (boxes, labels, shoppers), your volumes and materials. We have prepared practical guides to help you: read <Link href="/blog/stampante-per-scatole-quale-scegliere-2026" className="text-cyan-600 underline hover:text-cyan-800">which printer to choose for boxes</Link> and the <Link href="/blog/stampante-etichette-colori-bobina-guida" className="text-cyan-600 underline hover:text-cyan-800">colour label printers guide</Link>. For complete solutions by sector, visit the <Link href="/soluzioni" className="text-cyan-600 underline hover:text-cyan-800">Solutions</Link> section.</>}
+                ? <>La scelta dipende da cosa stampi (scatole, etichette, shopper), dai volumi e dai materiali. Abbiamo preparato delle guide pratiche per orientarti: consulta <Link href="/blog/stampante-per-scatole-quale-scegliere-2026" className="text-cyan-700 underline hover:text-cyan-800">quale stampante scegliere per le scatole</Link> e la <Link href="/blog/stampante-etichette-colori-bobina-guida" className="text-cyan-700 underline hover:text-cyan-800">guida alle stampanti per etichette a colori</Link>. Per soluzioni complete per settore, visita la sezione <Link href="/soluzioni" className="text-cyan-700 underline hover:text-cyan-800">Soluzioni</Link>.</>
+                : <>The right choice depends on what you print (boxes, labels, shoppers), your volumes and materials. We have prepared practical guides to help you: read <Link href="/blog/stampante-per-scatole-quale-scegliere-2026" className="text-cyan-700 underline hover:text-cyan-800">which printer to choose for boxes</Link> and the <Link href="/blog/stampante-etichette-colori-bobina-guida" className="text-cyan-700 underline hover:text-cyan-800">colour label printers guide</Link>. For complete solutions by sector, visit the <Link href="/soluzioni" className="text-cyan-700 underline hover:text-cyan-800">Solutions</Link> section.</>}
             </p>
           </div>
         </div>

@@ -23,7 +23,7 @@ export default function Footer() {
               height={53}
               className="h-9 w-auto mb-6 brightness-200"
             />
-            <p className="text-sm leading-relaxed text-gray-500 max-w-xs">
+            <p className="text-sm leading-relaxed text-gray-400 max-w-xs">
               {t("description")}
             </p>
             <div className="flex gap-4 mt-8">
@@ -95,7 +95,7 @@ export default function Footer() {
           {/* Contatti */}
           <div>
             <h3 className="text-white font-semibold mb-6 text-sm uppercase tracking-wider">{t("contacts")}</h3>
-            <address className="not-italic text-sm space-y-3 text-gray-500">
+            <address className="not-italic text-sm space-y-3 text-gray-400">
               <p>Via Pisa 200, int. 23</p>
               <p>20099 Sesto San Giovanni (MI)</p>
               <div className="pt-2 space-y-2">
@@ -116,9 +116,9 @@ export default function Footer() {
 
         {/* Company info row */}
         <div className="border-t border-white/5 mt-16 pt-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm text-gray-500 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm text-gray-400 mb-8">
             <div className="flex items-start gap-3">
-              <svg className="w-5 h-5 text-cyan-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="w-5 h-5 text-cyan-700 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
               </svg>
@@ -130,7 +130,7 @@ export default function Footer() {
               </div>
             </div>
             <div className="flex items-start gap-3">
-              <svg className="w-5 h-5 text-cyan-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="w-5 h-5 text-cyan-700 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
               </svg>
               <div>
@@ -139,7 +139,7 @@ export default function Footer() {
               </div>
             </div>
             <div className="flex items-start gap-3">
-              <svg className="w-5 h-5 text-cyan-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="w-5 h-5 text-cyan-700 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
               </svg>
               <div>

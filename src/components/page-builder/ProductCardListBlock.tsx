@@ -1,5 +1,6 @@
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
+import { coloreConTestoBianco, testoSu } from "./colori";
 
 interface Props {
   block: any;
@@ -10,7 +11,7 @@ export default function ProductCardListBlock({ block, locale }: Props) {
   const it = locale === "it";
   const products = block.products || [];
   const bgClass = block.bgClass || "bg-white";
-  const eyebrowColor = block.eyebrowColor || "text-cyan-500";
+  const eyebrowColor = block.eyebrowColor || "text-cyan-700";
 
   return (
     <section className={`section-padding ${bgClass}`}>
@@ -39,7 +40,7 @@ export default function ProductCardListBlock({ block, locale }: Props) {
                     <Link href={p.href} className="block w-full h-full group/img">
                       <Image src={p.image} alt={p.name} fill className={`${p.imageClass || 'object-contain p-6'} transition-transform duration-300 group-hover/img:scale-105`} />
                       <div className="absolute inset-0 bg-cyan-500/0 group-hover/img:bg-cyan-500/5 transition-colors duration-300 rounded-2xl flex items-end justify-center pb-6">
-                        <span className="bg-white/90 backdrop-blur-sm text-cyan-600 font-semibold text-sm px-4 py-2 rounded-full shadow-lg group-hover/img:shadow-cyan-200 transition-shadow duration-300">
+                        <span className="bg-white/90 backdrop-blur-sm text-cyan-700 font-semibold text-sm px-4 py-2 rounded-full shadow-lg group-hover/img:shadow-cyan-200 transition-shadow duration-300">
                           {it ? 'Scopri' : 'Discover'} {p.name} →
                         </span>
                       </div>
@@ -52,7 +53,7 @@ export default function ProductCardListBlock({ block, locale }: Props) {
                     </div>
                   )}
                   <div className="absolute top-4 left-4">
-                    <span className={`inline-block px-4 py-1.5 rounded-full text-xs font-bold text-white bg-gradient-to-r ${p.gradient || 'from-cyan-500 to-cyan-600'} shadow-lg`}>
+                    <span className={`inline-block px-4 py-1.5 rounded-full text-xs font-bold ${testoSu(p.gradient)} bg-gradient-to-r ${coloreConTestoBianco(p.gradient) || 'from-cyan-650 to-cyan-700'} shadow-lg`}>
                       {it ? (p.tag || p.subtitle) : (p.tag_en || p.subtitle_en || p.tag || p.subtitle)}
                     </span>
                   </div>
@@ -67,12 +68,12 @@ export default function ProductCardListBlock({ block, locale }: Props) {
                     </p>
                   )}
                   {p.brand && p.brandHref && (
-                    <Link href={p.brandHref} className="text-sm text-cyan-500 font-medium hover:underline mb-4 inline-block">
+                    <Link href={p.brandHref} className="text-sm text-cyan-700 font-medium hover:underline mb-4 inline-block">
                       Brand: {p.brand} →
                     </Link>
                   )}
                   {p.brand && !p.brandHref && (
-                    <span className="text-sm text-cyan-500 font-medium mb-4 inline-block">
+                    <span className="text-sm text-cyan-700 font-medium mb-4 inline-block">
                       {p.brand}
                     </span>
                   )}

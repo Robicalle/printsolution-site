@@ -19,7 +19,7 @@ export default function CartSidebar() {
           {/* Header */}
           <div className="flex items-center justify-between p-6 border-b">
             <h2 className="text-xl font-bold text-gray-900">
-              🛒 Carrello {totalItems > 0 && <span className="text-cyan-500">({totalItems})</span>}
+              🛒 Carrello {totalItems > 0 && <span className="text-cyan-700">({totalItems})</span>}
             </h2>
             <button onClick={() => setIsOpen(false)} className="p-2 hover:bg-gray-100 rounded-full transition-colors">
               <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -34,7 +34,7 @@ export default function CartSidebar() {
               <div className="text-center py-12">
                 <div className="text-6xl mb-4">🛒</div>
                 <p className="text-gray-500 text-lg">Il carrello è vuoto</p>
-                <Link href="/shop" onClick={() => setIsOpen(false)} className="inline-block mt-4 text-cyan-500 hover:text-cyan-600 font-medium">
+                <Link href="/shop" onClick={() => setIsOpen(false)} className="inline-block mt-4 text-cyan-700 hover:text-cyan-700 font-medium">
                   Vai allo shop →
                 </Link>
               </div>
@@ -50,7 +50,7 @@ export default function CartSidebar() {
                     <div className="flex-1 min-w-0">
                       <p className="font-medium text-gray-900 text-sm truncate">{item.name}</p>
                       {item.sku && <p className="text-xs text-gray-400">{item.sku}</p>}
-                      <p className="text-cyan-600 font-bold mt-1 tabular-nums">€{item.price.toFixed(2)}</p>
+                      <p className="text-cyan-700 font-bold mt-1 tabular-nums">€{item.price.toFixed(2)}</p>
                     </div>
                     <div className="flex flex-col items-end gap-2">
                       <button onClick={() => removeItem(item.id)} className="text-gray-400 hover:text-red-500 transition-colors">
@@ -81,7 +81,7 @@ export default function CartSidebar() {
               <Link
                 href="/shop/checkout"
                 onClick={() => setIsOpen(false)}
-                className="block w-full text-center py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-[1.02] text-lg"
+                className="block w-full text-center py-4 btn-solid font-bold rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-[1.02] text-lg"
               >
                 Procedi al Checkout →
               </Link>

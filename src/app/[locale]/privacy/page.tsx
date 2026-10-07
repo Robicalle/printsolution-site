@@ -21,7 +21,7 @@ function Section({ num, title, children }: { num: string; title: string; childre
   return (
     <section className="mb-10">
       <div className="flex items-start gap-4 mb-4">
-        <span className="flex-shrink-0 w-9 h-9 rounded-full bg-cyan-500 text-white text-sm font-bold flex items-center justify-center shadow-sm">
+        <span className="flex-shrink-0 w-9 h-9 rounded-full bg-cyan-650 text-white text-sm font-bold flex items-center justify-center shadow-sm">
           {num}
         </span>
         <h3 className="text-xl font-bold text-gray-800 pt-1">{title}</h3>
@@ -92,8 +92,8 @@ function PrivacyIT() {
               <InfoRow label="Sede legale" value="Via Pisa 200, int. 23 — 20099 Sesto San Giovanni (MI)" />
               <InfoRow label="P.IVA / C.F." value="07149250966" />
               <InfoRow label="REA" value="MI – 1939367" />
-              <InfoRow label="Email" value={<a href="mailto:info@printsolutionsrl.it" className="text-cyan-600 hover:underline">info@printsolutionsrl.it</a>} />
-              <InfoRow label="PEC" value={<a href="mailto:printsolutionsrl@pec.it" className="text-cyan-600 hover:underline">printsolutionsrl@pec.it</a>} />
+              <InfoRow label="Email" value={<a href="mailto:info@printsolutionsrl.it" className="text-cyan-700 hover:underline">info@printsolutionsrl.it</a>} />
+              <InfoRow label="PEC" value={<a href="mailto:printsolutionsrl@pec.it" className="text-cyan-700 hover:underline">printsolutionsrl@pec.it</a>} />
               <InfoRow label="Sito web" value="www.printsolutionsrl.it" />
               <InfoRow label="Normativa" value={<Pill>GDPR — Reg. UE 2016/679</Pill>} />
               <InfoRow label="Ultimo aggiornamento" value={<Pill>📅 Aprile 2026</Pill>} />
@@ -122,7 +122,7 @@ function PrivacyIT() {
               <ul className="list-none space-y-1">
                 {["Indirizzo IP, tipo di browser, sistema operativo", "Pagine visitate, orari di accesso, durata della sessione", "Dati statistici aggregati tramite Google Analytics 4"].map((item) => (
                   <li key={item} className="flex items-start gap-2">
-                    <span className="text-cyan-500 mt-0.5">›</span>
+                    <span className="text-cyan-700 mt-0.5">›</span>
                     <span>{item}</span>
                   </li>
                 ))}
@@ -154,7 +154,7 @@ function PrivacyIT() {
                   "Storico ordini",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-2">
-                    <span className="text-cyan-500 mt-0.5">›</span>
+                    <span className="text-cyan-700 mt-0.5">›</span>
                     <span>{item}</span>
                   </li>
                 ))}
@@ -182,7 +182,7 @@ function PrivacyIT() {
                 Invio di newsletter previo consenso esplicito o, per clienti esistenti, su base di
                 legittimo interesse (art. 130 co. 4 D.Lgs. 196/2003). L&apos;utente può opporsi in
                 qualsiasi momento tramite il link di disiscrizione o contattando{" "}
-                <a href="mailto:info@printsolutionsrl.it" className="text-cyan-600 hover:underline">
+                <a href="mailto:info@printsolutionsrl.it" className="text-cyan-700 hover:underline">
                   info@printsolutionsrl.it
                 </a>.
               </p>
@@ -194,7 +194,7 @@ function PrivacyIT() {
               Il Sito utilizza cookie tecnici necessari al funzionamento e cookie analitici (Google
               Analytics 4) per l&apos;analisi statistica del traffico. Per l&apos;informativa
               completa:{" "}
-              <Link href="/cookie" className="text-cyan-600 hover:underline font-medium">
+              <Link href="/cookie" className="text-cyan-700 hover:underline font-medium">
                 Cookie Policy →
               </Link>
             </p>
@@ -209,7 +209,7 @@ function PrivacyIT() {
                 "Autorità pubbliche nei casi previsti dalla legge",
               ].map((item) => (
                 <li key={item} className="flex items-start gap-2">
-                  <span className="text-cyan-500 mt-0.5">›</span>
+                  <span className="text-cyan-700 mt-0.5">›</span>
                   <span>{item}</span>
                 </li>
               ))}
@@ -251,7 +251,7 @@ function PrivacyIT() {
                 { art: "Art. 77", label: "Reclamo al Garante" },
               ].map(({ art, label }) => (
                 <div key={art} className="flex items-center gap-2 bg-gray-50 rounded-lg px-3 py-2">
-                  <span className="text-xs font-mono text-cyan-600 font-semibold">{art}</span>
+                  <span className="text-xs font-mono text-cyan-700 font-semibold">{art}</span>
                   <span className="text-sm text-gray-700">{label}</span>
                 </div>
               ))}
@@ -306,8 +306,8 @@ function PrivacyEN() {
             <div className="divide-y divide-gray-100">
               <InfoRow label="Registered office" value="Via Pisa 200, int. 23 — 20099 Sesto San Giovanni (MI), Italy" />
               <InfoRow label="VAT / Tax Code" value="07149250966" />
-              <InfoRow label="Email" value={<a href="mailto:info@printsolutionsrl.it" className="text-cyan-600 hover:underline">info@printsolutionsrl.it</a>} />
-              <InfoRow label="PEC" value={<a href="mailto:printsolutionsrl@pec.it" className="text-cyan-600 hover:underline">printsolutionsrl@pec.it</a>} />
+              <InfoRow label="Email" value={<a href="mailto:info@printsolutionsrl.it" className="text-cyan-700 hover:underline">info@printsolutionsrl.it</a>} />
+              <InfoRow label="PEC" value={<a href="mailto:printsolutionsrl@pec.it" className="text-cyan-700 hover:underline">printsolutionsrl@pec.it</a>} />
               <InfoRow label="Regulation" value={<Pill>GDPR — EU Reg. 2016/679</Pill>} />
               <InfoRow label="Last updated" value={<Pill>📅 April 2026</Pill>} />
             </div>
@@ -341,12 +341,12 @@ function PrivacyEN() {
               <p>Contact data of business representatives processed for commercial relations and communications. Legal basis: legitimate interest for clients; consent for prospects. Retention: relationship duration + 5 years.</p>
             </SubSection>
             <SubSection title="2.5 Promotional communications">
-              <p>Sent with explicit consent or, for existing clients, on a legitimate interest basis. Opt out at any time via unsubscribe link or by contacting <a href="mailto:info@printsolutionsrl.it" className="text-cyan-600 hover:underline">info@printsolutionsrl.it</a>.</p>
+              <p>Sent with explicit consent or, for existing clients, on a legitimate interest basis. Opt out at any time via unsubscribe link or by contacting <a href="mailto:info@printsolutionsrl.it" className="text-cyan-700 hover:underline">info@printsolutionsrl.it</a>.</p>
             </SubSection>
           </Section>
 
           <Section num="3" title="Cookies">
-            <p>The Website uses technical cookies and Google Analytics 4. See our <Link href="/cookie" className="text-cyan-600 hover:underline font-medium">Cookie Policy →</Link></p>
+            <p>The Website uses technical cookies and Google Analytics 4. See our <Link href="/cookie" className="text-cyan-700 hover:underline font-medium">Cookie Policy →</Link></p>
           </Section>
 
           <Section num="4" title="Data disclosure to third parties">
@@ -374,7 +374,7 @@ function PrivacyEN() {
                 { art: "Art. 77", label: "Lodge a complaint" },
               ].map(({ art, label }) => (
                 <div key={art} className="flex items-center gap-2 bg-gray-50 rounded-lg px-3 py-2">
-                  <span className="text-xs font-mono text-cyan-600 font-semibold">{art}</span>
+                  <span className="text-xs font-mono text-cyan-700 font-semibold">{art}</span>
                   <span className="text-sm text-gray-700">{label}</span>
                 </div>
               ))}

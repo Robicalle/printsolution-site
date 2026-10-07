@@ -40,7 +40,7 @@ function getCategories(locale: string): Category[] {
       title: "Packaging & Box Making",
       icon: "📦",
       description: locale === 'it' ? "Macchine per la produzione di scatole e stampa su cartone ondulato" : "Machines for box production and corrugated cardboard printing",
-      color: "from-amber-500 to-orange-600",
+      color: "from-yellow-500 to-yellow-600",
       products: [
         { name: "EDM-650X", href: "/prodotti/edm-650x", image: "/images/products/edm-650x-2hd-nobg.png", tecnologia: "Inkjet single-pass CMYK", velocita: locale === 'it' ? "Fino a 30 m/min" : "Up to 30 m/min", formatoMax: locale === 'it' ? "Fino a 180 cm stampa / 300 cm supporto" : "Up to 180 cm print / 300 cm media", risoluzione: "Fino a 1200 × 1200 dpi", prezzo: p },
         { name: "GreenBox EVO", href: "/prodotti/greenbox-evo", image: "/images/products/greenbox-evo-front-nobg.png", tecnologia: "Inkjet single-pass CMYK", velocita: locale === 'it' ? "Fino a 30 m/min" : "Up to 30 m/min", formatoMax: locale === 'it' ? "Fino a 30 cm stampa / 70 cm supporto" : "Up to 30 cm print / 70 cm media", risoluzione: "Fino a 1200 × 1200 dpi", prezzo: p },
@@ -53,7 +53,7 @@ function getCategories(locale: string): Category[] {
       title: locale === 'it' ? "Etichette" : "Labels",
       icon: "🏷️",
       description: locale === 'it' ? "Stampanti per etichette in bobina, da desktop a industriale" : "Roll label printers, from desktop to industrial",
-      color: "from-cyan-500 to-blue-600",
+      color: "from-cyan-650 to-cyan-700",
       products: [
         { name: "Afinia X350", href: "/prodotti/afinia-x350", image: "/images/products/afinia-x350.webp", tecnologia: "Inkjet pigmentato (Memjet)", velocita: locale === 'it' ? "Fino a 45 m/min" : "Up to 45 m/min", formatoMax: locale === 'it' ? "350 mm bobina" : "350 mm roll", risoluzione: "1600 × 1600 dpi", prezzo: p },
         { name: "Afinia L901", href: "/prodotti/afinia-l901", image: "/images/products/afinia-l901.png", tecnologia: "Memjet Waterfall Inkjet", velocita: "—", formatoMax: "216 mm", risoluzione: "1600 dpi", prezzo: p },
@@ -67,7 +67,7 @@ function getCategories(locale: string): Category[] {
       title: locale === 'it' ? "Finitura & Post-Stampa" : "Finishing & Post-Press",
       icon: "✂️",
       description: locale === 'it' ? "Fustellatrici, plotter e macchine per la finitura delle etichette" : "Die-cutters, plotters and label finishing machines",
-      color: "from-purple-500 to-indigo-600",
+      color: "from-dark-800 to-dark-900",
       products: [
         { name: "Afinia DC350", href: "/prodotti/afinia-dc350", image: "/images/products/afinia-dc350.png", tecnologia: locale === 'it' ? "Fustellatore semi-rotativo" : "Semi-rotary die-cutter", velocita: locale === 'it' ? "Fino a 30 m/min" : "Up to 30 m/min", formatoMax: "350 mm", risoluzione: "N/A", prezzo: p },
         { name: "Afinia DLF", href: "/prodotti/afinia-dlf", image: "/images/products/afinia-dlf-220l.png", tecnologia: locale === 'it' ? "Plotter digitale (senza fustelle)" : "Digital plotter (die-free)", velocita: "—", formatoMax: "350 mm", risoluzione: "N/A", prezzo: p },
@@ -163,7 +163,7 @@ export default async function ConfrontoProdottiPage() {
                                 sizes="56px"
                               />
                             </div>
-                            <span className="font-semibold text-gray-900 group-hover:text-cyan-600 transition-colors">
+                            <span className="font-semibold text-gray-900 group-hover:text-cyan-700 transition-colors">
                               {product.name}
                             </span>
                           </Link>
@@ -191,13 +191,13 @@ export default async function ConfrontoProdottiPage() {
           <div className="flex flex-wrap justify-center gap-4">
             <Link
               href="/contatti"
-              className="px-8 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-full hover:shadow-lg hover:shadow-cyan-500/25 transition-all"
+              className="px-8 py-3 btn-solid font-semibold rounded-full hover:shadow-lg hover:shadow-cyan-500/25 transition-all"
             >
               {locale === 'it' ? 'Richiedi Consulenza' : 'Request a Consultation'}
             </Link>
             <Link
               href="/shop"
-              className="px-8 py-3 border-2 border-gray-200 text-gray-700 font-semibold rounded-full hover:border-cyan-500 hover:text-cyan-600 transition-all"
+              className="px-8 py-3 border-2 border-gray-200 text-gray-700 font-semibold rounded-full hover:border-cyan-500 hover:text-cyan-700 transition-all"
             >
               {locale === 'it' ? '🛒 E-Shop Consumabili' : '🛒 Consumables E-Shop'}
             </Link>

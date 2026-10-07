@@ -6,7 +6,7 @@ interface Props {
 export default function UseCasesGridBlock({ block, locale }: Props) {
   const it = locale === "it";
   const bgClass = block.bgClass || "bg-surface-50";
-  const eyebrowColor = block.eyebrowColor || "text-amber-500";
+  const eyebrowColor = block.eyebrowColor || "text-cyan-700";
 
   return (
     <section className={`section-padding ${bgClass}`}>

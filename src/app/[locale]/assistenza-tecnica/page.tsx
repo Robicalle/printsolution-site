@@ -99,7 +99,7 @@ export default async function AssistenzaTecnicaPage() {
                   className={
                     a.primario
                       ? "btn-primary self-start"
-                      : "self-start inline-flex items-center px-6 py-3 rounded-full border-2 border-cyan-500 text-cyan-600 font-semibold hover:bg-cyan-50 transition-colors"
+                      : "self-start inline-flex items-center px-6 py-3 rounded-full border-2 border-cyan-500 text-cyan-700 font-semibold hover:bg-cyan-50 transition-colors"
                   }
                 >
                   {a.bottone} →
@@ -118,13 +118,13 @@ export default async function AssistenzaTecnicaPage() {
           <div className="grid md:grid-cols-3 gap-6">
             <div className="rounded-2xl bg-white border border-gray-100 p-6">
               <p className="text-sm uppercase tracking-wider text-gray-400 font-semibold mb-2">{it ? "Telefono" : "Phone"}</p>
-              <a href="tel:+390249439417" data-support="phone" className="text-xl font-bold text-dark-800 hover:text-cyan-500">
+              <a href="tel:+390249439417" data-support="phone" className="text-xl font-bold text-dark-800 hover:text-cyan-700">
                 {it ? "02 4943 9417" : "+39 02 4943 9417"}
               </a>
             </div>
             <div className="rounded-2xl bg-white border border-gray-100 p-6">
               <p className="text-sm uppercase tracking-wider text-gray-400 font-semibold mb-2">Email</p>
-              <a href={`mailto:${EMAIL}`} data-support="email" className="text-xl font-bold text-dark-800 hover:text-cyan-500 break-all">
+              <a href={`mailto:${EMAIL}`} data-support="email" className="text-xl font-bold text-dark-800 hover:text-cyan-700 break-all">
                 {EMAIL}
               </a>
             </div>

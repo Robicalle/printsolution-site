@@ -1,4 +1,5 @@
 import { getLocale } from 'next-intl/server';
+import RelatedPosts from "@/components/RelatedPosts";
 import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
@@ -331,6 +332,9 @@ export default async function () {
           </div>
         </div>
       </section>
+
+      {/* Articoli del blog che citano questo prodotto (link interni per Google) */}
+      <RelatedPosts locale={locale} hrefs={["/prodotti/robotjet"]} />
     </>
   );
 }

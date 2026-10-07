@@ -4,6 +4,11 @@ import { getLocale } from "next-intl/server";
 import { getSolutionBySlug, getAllSolutions } from "@/sanity/lib/fetchers";
 import { urlForImage } from "@/sanity/lib/image";
 import PageRenderer from "@/components/page-builder/PageRenderer";
+import RelatedPosts from "@/components/RelatedPosts";
+import { Link } from "@/i18n/navigation";
+
+// categorie del blog che coincidono con una soluzione (vedi schema post)
+const BLOG_CATEGORIES = ["packaging", "etichette"];
 
 export const revalidate = 60;
 
@@ -70,11 +75,23 @@ export default async function SolutionDynamicPage({
 }) {
   const { slug } = await params;
   const locale = await getLocale();
-  const solution = await getSolutionBySlug(slug);
+  const [solution, allSolutions] = await Promise.all([
+    getSolutionBySlug(slug),
+    getAllSolutions().catch(() => []),
+  ]);
 
   if (!solution || !solution.sezioniPagina?.length) notFound();
 
   const it = locale === "it";
+  // collegamenti interni: articoli che parlano dei prodotti di questa soluzione
+  // e le altre soluzioni (es. packaging <-> shopper), cosi' Google le trova tutte
+  const productHrefs = (solution.products || [])
+    .map((p: any) => p?.slug?.current && `/prodotti/${p.slug.current}`)
+    .filter(Boolean) as string[];
+  const blogCategories = [solution.category, slug].filter((c: any) => BLOG_CATEGORIES.includes(c));
+  const otherSolutions = (allSolutions || []).filter(
+    (s: any) => s.slug?.current && s.slug.current !== slug && s.sezioniPagina?.length
+  );
   // In inglese si usano SOLO le FAQ inglesi. Senza ripiego sull'italiano:
   // prima la pagina /en mostrava domande e risposte in italiano sotto
   // un'intestazione inglese, e serviva a Google un FAQPage in italiano su una
@@ -119,6 +136,27 @@ export default async function SolutionDynamicPage({
           </div>
         </section>
       ) : null}
+      <RelatedPosts locale={locale} hrefs={productHrefs} categories={blogCategories} />
+      {otherSolutions.length > 0 && (
+        <section className="section-padding bg-white">
+          <div className="container-custom max-w-5xl text-center">
+            <h2 className="text-2xl font-bold text-dark-800 mb-8">
+              {it ? "Altre soluzioni" : "Other solutions"}
+            </h2>
+            <div className="flex flex-wrap justify-center gap-3">
+              {otherSolutions.map((s: any) => (
+                <Link
+                  key={s._id}
+                  href={`/soluzioni/${s.slug.current}`}
+                  className="px-5 py-2.5 rounded-full border border-gray-200 text-dark-800 font-medium hover:border-cyan-500 hover:text-cyan-500 transition-colors"
+                >
+                  {it ? s.title : (s.title_en || s.title)}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
     </>
   );
 }

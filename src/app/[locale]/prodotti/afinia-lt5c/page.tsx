@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import RelatedPosts from "@/components/RelatedPosts";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import { getLocale } from "next-intl/server";
@@ -316,6 +317,9 @@ export default async function AfiniaLT5CPage() {
           </div>
         </div>
       </section>
+
+      {/* Articoli del blog che citano questo prodotto (link interni per Google) */}
+      <RelatedPosts locale={locale} hrefs={["/prodotti/afinia-lt5c"]} />
     </>
   );
 }

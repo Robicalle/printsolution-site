@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { getLocale } from "next-intl/server";
 import { getProductBySlug, getAllProducts } from "@/sanity/lib/fetchers";
 import PageRenderer from "@/components/page-builder/PageRenderer";
+import RelatedPosts from "@/components/RelatedPosts";
 
 export const revalidate = 60;
 
@@ -104,6 +105,8 @@ export default async function ProductDynamicPage({
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <PageRenderer sections={product.sezioniPagina} locale={locale} />
+      {/* Articoli del blog che citano questo prodotto (link interni per Google) */}
+      <RelatedPosts locale={locale} hrefs={[`/prodotti/${slug}`]} />
     </>
   );
 }

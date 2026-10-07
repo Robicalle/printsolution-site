@@ -16,19 +16,23 @@ function en(path: string) { return `${BASE}/en${path}`; }
 function entry(
   path: string,
   opts: { priority: number; freq: MetadataRoute.Sitemap[number]["changeFrequency"]; lastMod?: Date; omitEn?: boolean }
-): MetadataRoute.Sitemap[number] {
+): MetadataRoute.Sitemap {
   // omitEn: pagina senza gemella EN reale (es. articolo blog non tradotto) ->
   // non dichiarare l'alternate 'en' nella sitemap.
   const languages: Record<string, string> = opts.omitEn
     ? { it: it(path), "x-default": it(path) }
     : { it: it(path), en: en(path), "x-default": it(path) };
-  return {
-    url: it(path),
+  const base = {
     lastModified: opts.lastMod ?? new Date(),
     changeFrequency: opts.freq,
     priority: opts.priority,
     alternates: { languages },
   };
+  // Anche la versione EN va elencata come voce propria (indicazione Google per
+  // le sitemap con hreflang): prima compariva solo come alternate della IT.
+  return opts.omitEn
+    ? [{ url: it(path), ...base }]
+    : [{ url: it(path), ...base }, { url: en(path), ...base }];
 }
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -59,13 +63,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   ];
 
   for (const p of staticPages) {
-    entries.push(entry(p.path, { priority: p.priority, freq: p.freq }));
+    entries.push(...entry(p.path, { priority: p.priority, freq: p.freq }));
   }
 
   // ── Products ──────────────────────────────────────────────────────────────
   for (const p of products || []) {
     if (!p.slug) continue;
-    entries.push(entry(`/prodotti/${p.slug}`, {
+    entries.push(...entry(`/prodotti/${p.slug}`, {
       priority: 0.85,
       freq: "monthly",
       lastMod: p._updatedAt ? new Date(p._updatedAt) : undefined,
@@ -75,7 +79,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // ── Blog posts ────────────────────────────────────────────────────────────
   for (const p of posts || []) {
     if (!p.slug) continue;
-    entries.push(entry(`/blog/${p.slug}`, {
+    entries.push(...entry(`/blog/${p.slug}`, {
       priority: 0.7,
       freq: "monthly",
       lastMod: p._updatedAt ? new Date(p._updatedAt) : undefined,
@@ -86,7 +90,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // ── Solutions ─────────────────────────────────────────────────────────────
   for (const s of solutions || []) {
     if (!s.slug) continue;
-    entries.push(entry(`/soluzioni/${s.slug}`, {
+    entries.push(...entry(`/soluzioni/${s.slug}`, {
       priority: 0.75,
       freq: "monthly",
       lastMod: s._updatedAt ? new Date(s._updatedAt) : undefined,
@@ -96,7 +100,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // ── Shop categories (usa gli slug reali: consumabili-<modello>) ────────────
   for (const cat of shopCategories || []) {
     if (!cat.slug) continue;
-    entries.push(entry(`/shop/${cat.slug}`, { priority: 0.8, freq: "weekly" }));
+    entries.push(...entry(`/shop/${cat.slug}`, { priority: 0.8, freq: "weekly" }));
   }
 
   return entries;

@@ -43,7 +43,7 @@ export const pageBuilderBySlugQuery = groq`*[_type == "page" && slug.current == 
 
 // Soluzioni
 export const solutionsQuery = groq`*[_type == "solution"] | order(coalesce(order, 999) asc, title asc) {
-  _id, _updatedAt, title, slug, description, image, order, sezioniPagina,
+  _id, _updatedAt, title, title_en, slug, description, image, order, sezioniPagina,
   "products": products[]->{ _id, name, slug, images }
 }`;
 

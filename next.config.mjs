@@ -19,6 +19,14 @@ const nextConfig = {
   },
   async headers() {
     return [
+      // Gli indirizzi tecnici *.vercel.app (anteprime e alias del progetto) non
+      // devono finire su Google: sono copie identiche del sito. Le anteprime
+      // restano consultabili, solo non indicizzabili.
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "(?<vercelhost>.*\\.vercel\\.app)" }],
+        headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }],
+      },
       {
         source: "/studio/:path*",
         headers: [
@@ -71,6 +79,14 @@ const nextConfig = {
       {
         source: '/:path*',
         has: [{ type: 'host', value: 'printsolutionsrl.it' }],
+        destination: 'https://www.printsolutionsrl.it/:path*',
+        permanent: true,
+      },
+      // Alias di produzione su Vercel: Google lo aveva trovato (compariva come
+      // pagina di provenienza in Search Console). Lo mandiamo al dominio vero.
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'website-theta-one-59.vercel.app' }],
         destination: 'https://www.printsolutionsrl.it/:path*',
         permanent: true,
       },

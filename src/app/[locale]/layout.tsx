@@ -1,4 +1,4 @@
-import { Inter } from "next/font/google";
+import { Geist } from "next/font/google";
 import { hasLocale } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
@@ -26,10 +26,10 @@ import { getSiteSettings } from "@/sanity/lib/fetchers";
 import { ConsentProvider } from "@/components/ConsentManager";
 import ConversionTracking from "@/components/ConversionTracking";
 
-const inter = Inter({
+// Geist (font variabile: tutti i pesi in un file) al posto di Inter, ottobre 2026
+const geist = Geist({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800", "900"],
-  variable: "--font-inter",
+  variable: "--font-sans",
   display: "swap",
 });
 
@@ -137,7 +137,7 @@ export default async function LocaleLayout({
     : organizationJsonLd;
 
   return (
-    <html lang={locale} className={`${inter.variable} font-inter`}>
+    <html lang={locale} className={`${geist.variable} font-sans`}>
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />

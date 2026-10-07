@@ -43,8 +43,17 @@
      In rem (uguale per tutti): con em i paragrafi piu' grandi (es. sottotitolo
      degli articoli a 20px) risultavano piu' larghi del testo e sporgevano. */
   main p {
-    max-width: 36rem;
+    max-width: 40rem;
     text-wrap: pretty;
+  }
+  /* Articoli del blog: su schermi grandi testo a 18px, cosi' la colonna (40rem,
+     circa 75 caratteri con Geist) appare piena e la pagina meno "bianca".
+     Sottotitolo e paragrafi hanno la stessa larghezza e restano allineati. */
+  @media (min-width: 1024px) {
+    main article .prose p,
+    main article .prose li {
+      font-size: 1.125rem;
+    }
   }
   /* Se il testo e' centrato, il paragrafo ristretto resta centrato */
   main .text-center p,

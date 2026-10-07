@@ -106,7 +106,7 @@ export default async function ConfrontoProdottiPage() {
   ];
 
   return (
-    <main className="pt-28 pb-20 bg-gradient-to-b from-gray-50 to-white min-h-screen">
+    <main className="pt-28 pb-20 bg-gradient-to-b from-gray-50 to-white min-h-dvh">
       <div className="container-custom px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">

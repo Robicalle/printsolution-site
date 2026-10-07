@@ -60,7 +60,7 @@ export default function CategoryPageClient({ category, allCategories }: { catego
     <>
       <StickyCartBar />
 
-      <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+      <div className="min-h-dvh bg-gradient-to-b from-gray-50 to-white">
         {/* Breadcrumb + header */}
         <section className="pt-28 pb-8 px-4">
           <div className="container-custom">

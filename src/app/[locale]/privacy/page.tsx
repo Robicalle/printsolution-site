@@ -76,7 +76,7 @@ function PrivacyIT() {
   return (
     <>
       <PageHero title="Privacy Policy" />
-      <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+      <div className="min-h-dvh bg-gradient-to-b from-gray-50 to-white">
         <div className="container-custom max-w-4xl py-16 px-4">
 
           {/* Card intestazione */}
@@ -292,7 +292,7 @@ function PrivacyEN() {
   return (
     <>
       <PageHero title="Privacy Policy" />
-      <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+      <div className="min-h-dvh bg-gradient-to-b from-gray-50 to-white">
         <div className="container-custom max-w-4xl py-16 px-4">
 
           <div className="bg-white rounded-2xl shadow-card border border-gray-100 p-6 mb-10">

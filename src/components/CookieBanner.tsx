@@ -54,9 +54,9 @@ export default function CookieBanner() {
 
   return (
     <>
-      <div className="fixed inset-0 z-[9998] bg-black/60 backdrop-blur-sm animate-fade-in" onClick={() => setShowPreferences(false)} />
+      <div className="fixed inset-0 z-[800] bg-black/60 backdrop-blur-sm animate-fade-in" onClick={() => setShowPreferences(false)} />
 
-      <div className="fixed bottom-0 left-0 right-0 z-[9999] bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 shadow-2xl animate-slide-up">
+      <div className="fixed bottom-0 left-0 right-0 z-[801] bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 shadow-2xl animate-slide-up">
         <div className="max-w-6xl mx-auto px-4 py-6 sm:px-6">
           {!showPreferences ? (
             // Simple banner

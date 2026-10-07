@@ -303,7 +303,7 @@ export default function ChatWidget() {
       <button
         onClick={() => setOpen(!open)}
         aria-label={open ? t("close") : t("open")}
-        className={`fixed bottom-[8rem] right-4 lg:bottom-6 lg:right-6 z-[9998] w-14 h-14 rounded-full shadow-lg flex items-center justify-center transition-all duration-300 ${
+        className={`fixed bottom-[8rem] right-4 lg:bottom-6 lg:right-6 z-[600] w-14 h-14 rounded-full shadow-lg flex items-center justify-center transition-all duration-300 ${
           open
             ? "bg-gray-700 hover:bg-gray-600 rotate-0"
             : "btn-solid hover:scale-110"
@@ -319,7 +319,7 @@ export default function ChatWidget() {
 
       {/* Chat Panel */}
       {open && (
-        <div className="fixed bottom-[11rem] right-4 lg:bottom-24 lg:right-6 z-[9999] w-[calc(100%-2rem)] max-w-sm max-h-[60vh] bg-white rounded-2xl shadow-2xl border border-gray-200 flex flex-col overflow-hidden animate-in">
+        <div className="fixed bottom-[11rem] right-4 lg:bottom-24 lg:right-6 z-[601] w-[calc(100%-2rem)] max-w-sm max-h-[60vh] bg-white rounded-2xl shadow-2xl border border-gray-200 flex flex-col overflow-hidden animate-in">
           {/* Header */}
           <div className="btn-solid px-5 py-4 flex items-center gap-3">
             <div className="w-9 h-9 rounded-full bg-white/20 flex items-center justify-center">
@@ -553,7 +553,7 @@ export default function ChatWidget() {
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    strokeWidth={2}
+                    strokeWidth={1.5}
                     d="M12 19V5m0 0l-7 7m7-7l7 7"
                   />
                 </svg>

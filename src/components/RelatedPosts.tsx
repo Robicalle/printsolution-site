@@ -50,7 +50,7 @@ export default async function RelatedPosts({
               <Link
                 key={post._id}
                 href={`/blog/${post.slug}`}
-                className="card-modern overflow-hidden group hover:-translate-y-1 transition-transform duration-300 bg-white"
+                className="card-modern overflow-hidden group hover:-translate-y-1 transition-transform duration-300 bg-white flex flex-col"
               >
                 {coverUrl && (
                   <div className="aspect-[2/1] relative bg-white overflow-hidden">
@@ -64,7 +64,7 @@ export default async function RelatedPosts({
                     />
                   </div>
                 )}
-                <div className="p-6">
+                <div className="p-6 flex flex-col flex-1">
                   {post.category && (
                     <p className="text-cyan-700 text-xs font-semibold uppercase tracking-widest mb-2">
                       {categoryLabel(post.category, locale)}
@@ -72,7 +72,7 @@ export default async function RelatedPosts({
                   )}
                   <h3 className="font-bold text-dark-800 mb-2 group-hover:text-cyan-700 transition-colors leading-snug">{title}</h3>
                   {excerpt && <p className="text-gray-500 text-sm leading-relaxed line-clamp-3">{excerpt}</p>}
-                  <span className="inline-block mt-4 text-cyan-700 text-sm font-semibold group-hover:underline">
+                  <span className="inline-block mt-auto pt-4 text-cyan-700 text-sm font-semibold group-hover:underline">
                     {it ? "Leggi l'articolo →" : "Read the article →"}
                   </span>
                 </div>

@@ -13,7 +13,7 @@ export default function SuccessPage() {
   }, [clearCart]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white pt-32 px-4">
+    <div className="min-h-dvh bg-gradient-to-b from-gray-50 to-white pt-32 px-4">
       <div className="container-custom max-w-2xl text-center">
         <div className="bg-white p-12 rounded-3xl shadow-sm border border-gray-100">
           <div className="text-7xl mb-6">✅</div>

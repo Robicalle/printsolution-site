@@ -27,7 +27,7 @@ export default async function ShopPage() {
   const categories = await getShopCategories();
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+    <div className="min-h-dvh bg-gradient-to-b from-gray-50 to-white">
       {/* Hero */}
       <section className="pt-32 pb-16 px-4">
         <div className="container-custom text-center">

@@ -84,6 +84,10 @@
   .btn-solid:hover {
     background-color: var(--btn-bg-hover);
   }
+  /* feedback alla pressione */
+  .btn-solid:active {
+    transform: scale(0.98);
+  }
   .btn-primary {
     @apply btn-solid inline-flex items-center justify-center px-7 py-3.5 font-semibold rounded-full shadow-lg shadow-cyan-500/25 hover:shadow-xl hover:shadow-cyan-500/30 hover:-translate-y-0.5;
   }

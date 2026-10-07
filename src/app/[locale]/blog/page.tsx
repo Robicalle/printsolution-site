@@ -127,7 +127,7 @@ export default async function BlogPage() {
                 <Link
                   key={post._id}
                   href={`/blog/${slug}`}
-                  className="card-modern overflow-hidden group hover:-translate-y-1 transition-transform duration-300"
+                  className="card-modern overflow-hidden group hover:-translate-y-1 transition-transform duration-300 flex flex-col"
                 >
                   <div
                     className="aspect-[2/1] relative bg-white flex items-center justify-center overflow-hidden"
@@ -147,7 +147,7 @@ export default async function BlogPage() {
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
-                        strokeWidth={1.2}
+                        strokeWidth={1.5}
                       >
                         <path
                           strokeLinecap="round"
@@ -157,7 +157,7 @@ export default async function BlogPage() {
                       </svg>
                     )}
                   </div>
-                  <div className="p-6">
+                  <div className="p-6 flex flex-col flex-1">
                     <div className="flex items-center gap-3 mb-3">
                       <span
                         className={`inline-block px-2.5 py-0.5 rounded-full text-xs font-bold text-white bg-gradient-to-r ${gradient}`}
@@ -171,7 +171,7 @@ export default async function BlogPage() {
                     <p className="text-gray-500 text-sm leading-relaxed mb-4 line-clamp-3">
                       {(locale === 'en' && post.excerpt_en) ? post.excerpt_en : post.excerpt}
                     </p>
-                    <div className="flex items-center justify-between">
+                    <div className="flex items-center justify-between mt-auto">
                       <span className="text-gray-500 text-sm">
                         {post.publishedAt ? formatDate(post.publishedAt, locale) : ""}
                       </span>

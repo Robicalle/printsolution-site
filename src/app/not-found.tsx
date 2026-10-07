@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function NotFound() {
   return (
     <html lang="it">
-      <body className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
+      <body className="min-h-dvh flex items-center justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
         <div className="text-center px-6 py-20 max-w-xl mx-auto">
           <p className="text-cyan-400 text-7xl font-bold mb-4">404</p>
           <h1 className="text-3xl sm:text-4xl font-bold mb-4">

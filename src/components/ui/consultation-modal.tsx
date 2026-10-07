@@ -164,7 +164,7 @@ function ConsultationModal({ product, onClose }: { product: string; onClose: () 
   };
 
   return (
-    <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4" onClick={onClose}>
+    <div className="fixed inset-0 z-[900] flex items-center justify-center p-4" onClick={onClose}>
       <div className="absolute inset-0 bg-black/50 backdrop-blur-sm transition-opacity" />
       <div 
         className="relative bg-white dark:bg-slate-900 rounded-2xl shadow-2xl w-full max-w-lg max-h-[90vh] overflow-y-auto"
@@ -180,7 +180,7 @@ function ConsultationModal({ product, onClose }: { product: string; onClose: () 
             </div>
             <button onClick={onClose} className="p-2 hover:bg-gray-100 dark:hover:bg-slate-800 rounded-full transition-colors">
               <svg className="w-5 h-5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
           </div>
@@ -190,7 +190,7 @@ function ConsultationModal({ product, onClose }: { product: string; onClose: () 
           <div className="p-8 text-center">
             <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
               <svg className="w-8 h-8 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 13l4 4L19 7" />
               </svg>
             </div>
             <h3 className="text-lg font-bold text-dark-800 dark:text-white mb-2">Richiesta inviata!</h3>

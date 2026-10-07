@@ -44,7 +44,7 @@ export default async function FaqSection() {
                   <details key={faq._id} className="group bg-surface-50 rounded-2xl overflow-hidden">
                     <summary className="flex items-center justify-between cursor-pointer px-6 py-5 font-semibold text-dark-800 hover:text-cyan-700 transition-colors">
                       <span>{faq.question}</span>
-                      <svg className="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <svg className="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                       </svg>
                     </summary>

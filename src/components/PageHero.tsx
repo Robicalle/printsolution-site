@@ -65,7 +65,7 @@ export default function PageHero({ title, subtitle, breadcrumb, videoSrc, imageS
       <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1 opacity-70 animate-bounce sm:hidden">
         <span className="text-white/60 text-xs uppercase tracking-widest font-medium">Scopri</span>
         <svg className="w-4 h-4 text-white/60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 14l-7 7m0 0l-7-7" />
         </svg>
       </div>
     </section>

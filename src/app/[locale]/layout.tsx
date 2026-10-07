@@ -167,7 +167,7 @@ export default async function LocaleLayout({
         <NextIntlClientProvider messages={messages}>
           <ConsentProvider>
             <TrackingScriptsHead />
-            <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[9999] focus:bg-cyan-650 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:text-sm">
+            <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[1000] focus:bg-cyan-650 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:text-sm">
               {locale === "it" ? "Salta al contenuto" : "Skip to content"}
             </a>
             <CartProvider>

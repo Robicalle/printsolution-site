@@ -40,7 +40,7 @@ export default function SpecsAccordion({ specs, title, titleEn, locale = "it" }:
                 <span className="text-sm font-medium text-gray-600">{label}</span>
                 <svg
                   className={`w-4 h-4 text-gray-400 transition-transform duration-200 ${openIndex === i ? "rotate-180" : ""}`}
-                  fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}
+                  fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                 </svg>

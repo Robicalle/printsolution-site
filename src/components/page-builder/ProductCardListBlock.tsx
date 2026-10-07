@@ -84,7 +84,7 @@ export default function ProductCardListBlock({ block, locale }: Props) {
                     {(it ? (p.specs || []) : (p.specs_en || p.specs || [])).map((s: string) => (
                       <li key={s} className="flex items-start text-sm text-gray-600">
                         <svg className="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                         {s}
                       </li>
@@ -93,7 +93,7 @@ export default function ProductCardListBlock({ block, locale }: Props) {
                   <div className="flex flex-wrap gap-3">
                     <a href={block.ctaSubject ? `mailto:info@printsolutionsrl.it?subject=${encodeURIComponent(block.ctaSubject)}` : "mailto:info@printsolutionsrl.it"} className="btn-primary text-sm">
                       {it ? 'Consulenza gratuita' : 'Free consultation'}
-                      <svg className="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                      <svg className="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
                     </a>
                   </div>
                 </div>

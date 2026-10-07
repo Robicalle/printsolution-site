@@ -45,7 +45,7 @@ export default function CheckoutPage() {
 
   if (items.length === 0) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white pt-32 px-4">
+      <div className="min-h-dvh bg-gradient-to-b from-gray-50 to-white pt-32 px-4">
         <div className="container-custom max-w-2xl text-center">
           <div className="text-6xl mb-6">🛒</div>
           <h1 className="text-3xl font-bold text-gray-900 mb-4">Carrello vuoto</h1>
@@ -59,7 +59,7 @@ export default function CheckoutPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white pt-28 pb-20 px-4">
+    <div className="min-h-dvh bg-gradient-to-b from-gray-50 to-white pt-28 pb-20 px-4">
       <div className="container-custom max-w-4xl">
         <nav className="flex items-center gap-2 text-sm text-gray-500 mb-8">
           <Link href="/shop" className="hover:text-cyan-700">E-Shop</Link>

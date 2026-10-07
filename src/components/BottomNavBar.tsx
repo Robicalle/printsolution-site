@@ -55,7 +55,7 @@ export default function BottomNavBar() {
   const locale = useLocale();
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 z-[9997] bg-white border-t border-gray-200 shadow-[0_-2px_10px_rgba(0,0,0,0.05)] lg:hidden">
+    <nav className="fixed bottom-0 left-0 right-0 z-[580] bg-white border-t border-gray-200 shadow-[0_-2px_10px_rgba(0,0,0,0.05)] lg:hidden">
       <div className="flex items-center justify-around h-14 pb-[env(safe-area-inset-bottom)]">
         {navItems.map((item) => {
           const isActive = item.match(pathname);

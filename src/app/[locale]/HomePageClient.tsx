@@ -298,7 +298,7 @@ function WhyUs({ locale }: { locale: string }) {
 
       <div className="container-custom relative" ref={ref}>
         <div className={`text-center mb-16 transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <p className="text-cyan-400 font-semibold text-sm uppercase tracking-widest mb-4">{locale === 'it' ? 'Perché sceglierci' : 'Why choose us'}</p>
+          <p className="text-cyan-400 font-semibold text-sm mb-4">{locale === 'it' ? 'Perché sceglierci' : 'Why choose us'}</p>
           <h2 className="text-4xl sm:text-5xl font-bold tracking-tight">
             {locale === 'it' ? 'Numeri che ' : 'Numbers that '}<span className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-emerald-400 to-lime-400">{locale === 'it' ? 'parlano' : 'speak'}</span>
           </h2>

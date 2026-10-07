@@ -18,7 +18,7 @@ export default function ProductCardListBlock({ block, locale }: Props) {
         {(block.sectionEyebrow || block.sectionHeading) && (
           <div className="text-center mb-16">
             {block.sectionEyebrow && (
-              <p className={`${eyebrowColor} font-semibold text-sm uppercase tracking-widest mb-4`}>
+              <p className={`${eyebrowColor} font-semibold text-sm mb-4`}>
                 {it ? block.sectionEyebrow : (block.sectionEyebrow_en || block.sectionEyebrow)}
               </p>
             )}

@@ -13,7 +13,7 @@ export default function UseCasesGridBlock({ block, locale }: Props) {
       <div className="container-custom">
         <div className="text-center mb-16">
           {block.eyebrow && (
-            <p className={`${eyebrowColor} font-semibold text-sm uppercase tracking-widest mb-4`}>
+            <p className={`${eyebrowColor} font-semibold text-sm mb-4`}>
               {it ? block.eyebrow : (block.eyebrow_en || block.eyebrow)}
             </p>
           )}

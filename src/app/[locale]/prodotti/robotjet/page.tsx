@@ -247,7 +247,7 @@ export default async function () {
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
         <div className="container-custom">
           <div className="text-center mb-12">
-            <p className="text-purple-500 font-semibold text-sm uppercase tracking-widest mb-4">Video</p>
+            <p className="text-purple-500 font-semibold text-sm mb-4">Video</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-dark-800">{locale === 'it' ? 'Robotjet in Azione' : 'Robotjet in Action'}</h2>
           </div>
           <div className="swipe-gallery md:grid-cols-2 gap-8 max-w-5xl mx-auto scrollbar-hide">

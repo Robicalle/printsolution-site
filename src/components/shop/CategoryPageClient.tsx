@@ -239,7 +239,7 @@ function ProductCardWithQuickView({ product, categoryName, onQuickView }: { prod
   const hasImage = product.image && !product.image.includes("placeholder");
 
   return (
-    <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-xl hover:border-gray-200 transition-all duration-300 group flex flex-col cursor-pointer" onClick={onQuickView}>
+    <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-xl hover:border-gray-200 transition duration-300 group flex flex-col cursor-pointer" onClick={onQuickView}>
       <div className="aspect-square bg-white flex items-center justify-center p-6 relative border-b border-gray-50">
         {hasImage ? (
           <Image src={product.image} alt={product.name} width={240} height={240} className="object-contain max-h-full group-hover:scale-105 transition-transform duration-300" />
@@ -266,7 +266,7 @@ function ProductCardWithQuickView({ product, categoryName, onQuickView }: { prod
           <p className="text-2xl font-bold text-gray-900 mb-4 tabular-nums">€{product.price.toFixed(2)}<span className="text-xs text-gray-400 font-normal ml-1.5">+ IVA</span></p>
           <button
             onClick={handleAdd}
-            className={`w-full py-3 rounded-xl font-semibold text-sm transition-all duration-300 cursor-pointer ${added ? "bg-green-500 text-white scale-95" : "bg-gray-900 text-white hover:bg-cyan-600 hover:shadow-lg hover:shadow-cyan-500/20"}`}
+            className={`w-full py-3 rounded-xl font-semibold text-sm transition duration-300 cursor-pointer ${added ? "bg-green-500 text-white scale-95" : "bg-gray-900 text-white hover:bg-cyan-600 hover:shadow-lg hover:shadow-cyan-500/20"}`}
           >
             {added ? "✓ Aggiunto!" : "Aggiungi al carrello"}
           </button>

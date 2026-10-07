@@ -62,7 +62,7 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-[701] transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-[701] transition duration-500 ${
         mobileOpen
           ? "bg-white shadow-lg"
           : scrolled
@@ -77,7 +77,7 @@ export default function Header() {
             alt="Print Solution S.r.l."
             width={180}
             height={60}
-            className="h-10 w-auto transition-all duration-300"
+            className="h-10 w-auto transition duration-300"
             priority
           />
         </Link>
@@ -129,7 +129,7 @@ export default function Header() {
                   </svg>
                 </button>
                 <div
-                  className={`absolute top-full left-1/2 -translate-x-1/2 pt-4 transition-all duration-300 ${
+                  className={`absolute top-full left-1/2 -translate-x-1/2 pt-4 transition duration-300 ${
                     openDropdown === item.label ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-2 pointer-events-none"
                   }`}
                 >
@@ -154,7 +154,7 @@ export default function Header() {
               <Link
                 key={item.label}
                 href={item.href!}
-                className="ml-1 px-4 py-2 text-sm font-semibold rounded-full transition-all duration-300 btn-solid hover:shadow-md hover:shadow-cyan-500/25 whitespace-nowrap"
+                className="ml-1 px-4 py-2 text-sm font-semibold rounded-full transition duration-300 btn-solid hover:shadow-md hover:shadow-cyan-500/25 whitespace-nowrap"
               >
                 🛒 {item.label}
               </Link>
@@ -199,7 +199,7 @@ export default function Header() {
 
       {/* Mobile menu */}
       <div
-        className={`xl:hidden fixed inset-0 top-[80px] z-[700] bg-white transition-all duration-300 overflow-y-auto max-h-[calc(100dvh-80px)] ${
+        className={`xl:hidden fixed inset-0 top-[80px] z-[700] bg-white transition duration-300 overflow-y-auto max-h-[calc(100dvh-80px)] ${
           mobileOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
       >

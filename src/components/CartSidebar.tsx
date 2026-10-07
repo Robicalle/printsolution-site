@@ -81,7 +81,7 @@ export default function CartSidebar() {
               <Link
                 href="/shop/checkout"
                 onClick={() => setIsOpen(false)}
-                className="block w-full text-center py-4 btn-solid font-bold rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-[1.02] text-lg"
+                className="block w-full text-center py-4 btn-solid font-bold rounded-full shadow-lg hover:shadow-xl transition hover:scale-[1.02] text-lg"
               >
                 Procedi al Checkout →
               </Link>

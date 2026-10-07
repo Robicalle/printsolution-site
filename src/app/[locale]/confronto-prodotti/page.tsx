@@ -191,13 +191,13 @@ export default async function ConfrontoProdottiPage() {
           <div className="flex flex-wrap justify-center gap-4">
             <Link
               href="/contatti"
-              className="px-8 py-3 btn-solid font-semibold rounded-full hover:shadow-lg hover:shadow-cyan-500/25 transition-all"
+              className="px-8 py-3 btn-solid font-semibold rounded-full hover:shadow-lg hover:shadow-cyan-500/25 transition"
             >
               {locale === 'it' ? 'Richiedi Consulenza' : 'Request a Consultation'}
             </Link>
             <Link
               href="/shop"
-              className="px-8 py-3 border-2 border-gray-200 text-gray-700 font-semibold rounded-full hover:border-cyan-500 hover:text-cyan-700 transition-all"
+              className="px-8 py-3 border-2 border-gray-200 text-gray-700 font-semibold rounded-full hover:border-cyan-500 hover:text-cyan-700 transition"
             >
               {locale === 'it' ? '🛒 E-Shop Consumabili' : '🛒 Consumables E-Shop'}
             </Link>

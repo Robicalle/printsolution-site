@@ -91,7 +91,7 @@ function Hero({ locale }: { locale: string }) {
               }
             </p>
             <div className="flex flex-row gap-3 sm:gap-5 opacity-0 animate-fade-up-delay-2">
-              <Link href="/soluzioni" className="inline-flex items-center justify-center px-6 sm:px-10 py-3.5 sm:py-5 bg-cyan-650 hover:bg-cyan-700 text-white font-semibold rounded-full transition-all text-base sm:text-xl">
+              <Link href="/soluzioni" className="inline-flex items-center justify-center px-6 sm:px-10 py-3.5 sm:py-5 bg-cyan-650 hover:bg-cyan-700 text-white font-semibold rounded-full transition text-base sm:text-xl">
                 {locale === 'it' ? 'Le Nostre Soluzioni →' : 'Our Solutions →'}
               </Link>
             </div>
@@ -157,7 +157,7 @@ function Solutions({ locale }: { locale: string }) {
   return (
     <section className="section-padding bg-surface-50">
       <div className="container-custom" ref={ref}>
-        <div className={`text-center mb-16 transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+        <div className={`text-center mb-16 transition duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <p className="text-cyan-700 font-semibold text-sm mb-4">{locale === 'it' ? 'Cosa facciamo' : 'What we do'}</p>
           <h2 className="text-4xl sm:text-5xl font-bold text-dark-800 tracking-tight">{locale === 'it' ? 'Le Nostre Soluzioni' : 'Our Solutions'}</h2>
         </div>
@@ -166,7 +166,7 @@ function Solutions({ locale }: { locale: string }) {
             <Link
               key={s.title}
               href={s.href}
-              className={`group card-modern p-5 sm:p-8 lg:p-10 hover:-translate-y-2 hover:shadow-2xl border-l-4 ${s.accentBorder} flex flex-col transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+              className={`group card-modern p-5 sm:p-8 lg:p-10 hover:-translate-y-2 hover:shadow-2xl border-l-4 ${s.accentBorder} flex flex-col transition duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
               style={{ transitionDelay: visible ? `${i * 150}ms` : '0ms' }}
             >
               <div className="w-full aspect-[4/3] rounded-2xl overflow-hidden mb-6 shadow-lg group-hover:scale-[1.03] transition-transform duration-300 bg-white relative">
@@ -176,7 +176,7 @@ function Solutions({ locale }: { locale: string }) {
                 {s.title}
               </h3>
               <p className="text-gray-500 text-[15px] leading-relaxed mb-6 flex-grow">{s.desc}</p>
-              <span className="inline-flex items-center text-cyan-700 text-sm font-semibold group-hover:gap-3 gap-2 transition-all mt-auto">
+              <span className="inline-flex items-center text-cyan-700 text-sm font-semibold group-hover:gap-3 gap-2 transition-[gap,color] mt-auto">
                 {locale === 'it' ? 'Scopri di più' : 'Learn more'}
                 <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -226,7 +226,7 @@ function FeaturedProducts({ locale }: { locale: string }) {
   return (
     <section className="section-padding bg-white">
       <div className="container-custom" ref={ref}>
-        <div className={`text-center mb-16 transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+        <div className={`text-center mb-16 transition duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <p className="text-cyan-700 font-semibold text-sm mb-4">{locale === 'it' ? 'I nostri prodotti' : 'Our products'}</p>
           <h2 className="text-4xl sm:text-5xl font-bold text-dark-800 tracking-tight">{locale === 'it' ? 'Tecnologie di Punta' : 'Cutting-Edge Technology'}</h2>
         </div>
@@ -234,7 +234,7 @@ function FeaturedProducts({ locale }: { locale: string }) {
           {products.map((p, i) => (
             <div
               key={p.name}
-              className={`card-modern overflow-hidden group flex flex-col transition-all duration-700 hover:shadow-2xl hover:-translate-y-2 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+              className={`card-modern overflow-hidden group flex flex-col transition duration-700 hover:shadow-2xl hover:-translate-y-2 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
               style={{ transitionDelay: visible ? `${i * 200}ms` : '0ms' }}
             >
               <div className="h-56 lg:h-64 relative overflow-hidden">
@@ -245,7 +245,7 @@ function FeaturedProducts({ locale }: { locale: string }) {
                   className="object-contain p-4 group-hover:scale-110 transition-transform duration-500 ease-out"
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent group-hover:from-black/60 transition-all duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent group-hover:from-black/60 transition duration-500" />
                 <div className="absolute bottom-4 left-6">
                   <span className="inline-block px-3 py-1 rounded-full text-xs font-bold text-white bg-cyan-650">
                     {p.subtitle}
@@ -265,7 +265,7 @@ function FeaturedProducts({ locale }: { locale: string }) {
                     </li>
                   ))}
                 </ul>
-                <Link href={p.href} className="mt-auto inline-flex items-center text-cyan-700 font-semibold text-sm hover:gap-3 gap-2 transition-all group/link">
+                <Link href={p.href} className="mt-auto inline-flex items-center text-cyan-700 font-semibold text-sm hover:gap-3 gap-2 transition-[gap,color] group/link">
                   {locale === 'it' ? 'Scopri di più' : 'Learn more'}
                   <svg className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -297,7 +297,7 @@ function WhyUs({ locale }: { locale: string }) {
       <div className="absolute top-1/2 left-1/2 w-[300px] h-[300px] bg-yellow-500/5 rounded-full blur-[100px]" />
 
       <div className="container-custom relative" ref={ref}>
-        <div className={`text-center mb-16 transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+        <div className={`text-center mb-16 transition duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <p className="text-cyan-400 font-semibold text-sm mb-4">{locale === 'it' ? 'Perché sceglierci' : 'Why choose us'}</p>
           <h2 className="text-4xl sm:text-5xl font-bold tracking-tight">
             {locale === 'it' ? 'Numeri che ' : 'Numbers that '}<span className="text-cyan-400">{locale === 'it' ? 'parlano' : 'speak'}</span>
@@ -307,7 +307,7 @@ function WhyUs({ locale }: { locale: string }) {
           {stats.map((s, i) => (
             <div
               key={s.label}
-              className={`text-center p-8 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/5 hover:bg-white/10 transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+              className={`text-center p-8 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/5 hover:bg-white/10 transition duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
               style={{ transitionDelay: visible ? `${i * 100}ms` : '0ms' }}
             >
               <p className={`text-4xl sm:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r ${s.color}`}>
@@ -374,7 +374,7 @@ function Testimonial({ locale }: { locale: string }) {
   const t = testimonials[active];
   return (
     <section className="section-padding bg-white">
-      <div className={`container-custom max-w-4xl text-center transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} ref={ref}>
+      <div className={`container-custom max-w-4xl text-center transition duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} ref={ref}>
         <div className="relative">
           <div className="text-[120px] sm:text-[160px] leading-none font-serif text-cyan-100 absolute -top-8 left-1/2 -translate-x-1/2 select-none pointer-events-none">
             &ldquo;
@@ -395,7 +395,7 @@ function Testimonial({ locale }: { locale: string }) {
             {/* Dots */}
             <div className="flex justify-center gap-2 mt-8">
               {testimonials.map((_, i) => (
-                <button key={i} onClick={() => setActive(i)} aria-label={locale === 'it' ? `Testimonianza ${i + 1}` : `Testimonial ${i + 1}`} className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${i === active ? 'bg-cyan-500 w-8' : 'bg-gray-200 hover:bg-gray-300'}`} />
+                <button key={i} onClick={() => setActive(i)} aria-label={locale === 'it' ? `Testimonianza ${i + 1}` : `Testimonial ${i + 1}`} className={`w-2.5 h-2.5 rounded-full transition duration-300 ${i === active ? 'bg-cyan-500 w-8' : 'bg-gray-200 hover:bg-gray-300'}`} />
               ))}
             </div>
           </div>
@@ -410,7 +410,7 @@ function DemoCTA({ locale }: { locale: string }) {
   const { ref, visible } = useInView();
   return (
     <section className="section-padding bg-surface-50">
-      <div className={`container-custom transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} ref={ref}>
+      <div className={`container-custom transition duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} ref={ref}>
         <div className="relative rounded-3xl bg-cta-gradient p-8 sm:p-12 lg:p-20 text-white text-center overflow-hidden">
           {/* Decorative elements */}
           <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl" />
@@ -426,10 +426,10 @@ function DemoCTA({ locale }: { locale: string }) {
               {locale === 'it' ? 'Vieni a toccare con mano le nostre soluzioni. La nostra sala demo a Sesto San Giovanni è attrezzata con tutti i prodotti in funzione.' : 'Come and experience our solutions first-hand. Our demo room in Sesto San Giovanni is equipped with all products up and running.'}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20Print%20Solution&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita.%0A%0AGrazie" className="inline-flex items-center justify-center px-8 py-4 bg-white text-cyan-700 font-bold rounded-full hover:bg-yellow-400 hover:text-dark-800 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 text-lg">
+              <a href="mailto:info@printsolutionsrl.it?subject=Richiesta%20Consulenza%20Print%20Solution&body=Buongiorno%2C%0A%0AVorrei%20richiedere%20una%20consulenza%20gratuita.%0A%0AGrazie" className="inline-flex items-center justify-center px-8 py-4 bg-white text-cyan-700 font-bold rounded-full hover:bg-yellow-400 hover:text-dark-800 transition duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 text-lg">
                 {locale === 'it' ? 'Consulenza gratuita→' : 'Free consultation→'}
               </a>
-              <a href="tel:+390249439417" className="inline-flex items-center justify-center px-8 py-4 border-2 border-white/30 text-white font-semibold rounded-full hover:bg-white/10 transition-all duration-300 text-lg">
+              <a href="tel:+390249439417" className="inline-flex items-center justify-center px-8 py-4 border-2 border-white/30 text-white font-semibold rounded-full hover:bg-white/10 transition duration-300 text-lg">
                 <svg className="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" /></svg>
                 {locale === 'it' ? 'Chiamaci Ora' : 'Call Us Now'}
               </a>

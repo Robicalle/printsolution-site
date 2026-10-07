@@ -31,10 +31,10 @@ export default function SuccessPage() {
               : 'Orders received by 12:00 PM are shipped the same day with delivery in 24/48 hours.'}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/shop" className="px-8 py-4 btn-solid font-bold rounded-full hover:shadow-lg transition-all">
+            <Link href="/shop" className="px-8 py-4 btn-solid font-bold rounded-full hover:shadow-lg transition">
               {locale === 'it' ? 'Continua gli acquisti' : 'Continue Shopping'}
             </Link>
-            <Link href="/" className="px-8 py-4 border-2 border-gray-200 text-gray-700 font-semibold rounded-full hover:border-gray-300 transition-all">
+            <Link href="/" className="px-8 py-4 border-2 border-gray-200 text-gray-700 font-semibold rounded-full hover:border-gray-300 transition">
               {locale === 'it' ? 'Torna alla Home' : 'Back to Home'}
             </Link>
           </div>

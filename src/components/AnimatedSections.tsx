@@ -19,7 +19,7 @@ function AnimatedSection({ children, index }: { children: ReactNode; index: numb
   return (
     <div
       ref={ref}
-      className={`transition-all duration-700 ease-out ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+      className={`transition duration-700 ease-out ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
       style={{ transitionDelay: visible ? `${Math.min(index * 100, 300)}ms` : "0ms" }}
     >
       {children}

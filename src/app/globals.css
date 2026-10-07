@@ -92,10 +92,10 @@
     @apply btn-solid inline-flex items-center justify-center px-7 py-3.5 font-semibold rounded-full shadow-lg shadow-cyan-500/25 hover:shadow-xl hover:shadow-cyan-500/30 hover:-translate-y-0.5;
   }
   .btn-secondary {
-    @apply inline-flex items-center justify-center px-7 py-3.5 border-2 border-white/30 text-white font-semibold rounded-full hover:bg-white hover:text-dark-900 transition-all duration-300 backdrop-blur-sm;
+    @apply inline-flex items-center justify-center px-7 py-3.5 border-2 border-white/30 text-white font-semibold rounded-full hover:bg-white hover:text-dark-900 transition duration-300 backdrop-blur-sm;
   }
   .btn-outline {
-    @apply inline-flex items-center justify-center px-7 py-3.5 border-2 border-cyan-650 text-cyan-700 font-semibold rounded-full hover:bg-cyan-650 hover:text-white transition-all duration-300;
+    @apply inline-flex items-center justify-center px-7 py-3.5 border-2 border-cyan-650 text-cyan-700 font-semibold rounded-full hover:bg-cyan-650 hover:text-white transition duration-300;
   }
   .section-padding {
     @apply px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24;
@@ -107,7 +107,7 @@
     @apply bg-white/70 backdrop-blur-xl border border-white/20;
   }
   .card-modern {
-    @apply bg-white rounded-2xl transition-all duration-500 border border-gray-100/80;
+    @apply bg-white rounded-2xl transition duration-500 border border-gray-100/80;
     box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 6px 24px rgba(0,0,0,0.06);
   }
   .card-modern:hover {
@@ -219,7 +219,10 @@
 .btn-primary,
 .btn-secondary,
 .btn-outline {
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  /* solo colori, ombra e transform: niente "all" (animava anche le dimensioni) */
+  transition-property: color, background-color, border-color, box-shadow, transform;
+  transition-duration: 0.25s;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
 }
 .btn-primary:active,
 .btn-secondary:active,

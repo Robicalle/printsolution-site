@@ -67,7 +67,7 @@ export default function AnimateOnScroll({
   return (
     <Tag
       ref={ref as React.RefObject<HTMLDivElement>}
-      className={`transition-all will-change-[opacity,transform] ${
+      className={`transition will-change-[opacity,transform] ${
         visible ? styles.visible : styles.hidden
       } ${className}`}
       style={{

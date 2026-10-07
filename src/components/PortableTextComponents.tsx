@@ -108,7 +108,7 @@ export const portableTextComponents: PortableTextComponents = {
             href={value?.url || "#"}
             target={value?.url?.startsWith("http") ? "_blank" : undefined}
             rel={value?.url?.startsWith("http") ? "noopener noreferrer" : undefined}
-            className={`inline-block px-8 py-3 rounded-full font-semibold transition-all duration-300 ${
+            className={`inline-block px-8 py-3 rounded-full font-semibold transition duration-300 ${
               isPrimary
                 ? "btn-solid hover:shadow-lg hover:shadow-cyan-500/30"
                 : "bg-white text-gray-800 border-2 border-gray-200 hover:border-cyan-400"

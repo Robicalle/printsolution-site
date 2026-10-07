@@ -208,7 +208,7 @@ function ConsultationModal({ product, onClose }: { product: string; onClose: () 
                   autoFocus
                   value={form.nome}
                   onChange={e => setForm(f => ({ ...f, nome: e.target.value }))}
-                  className="w-full px-4 py-2.5 rounded-xl border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-dark-800 dark:text-white focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all text-sm"
+                  className="w-full px-4 py-2.5 rounded-xl border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-dark-800 dark:text-white focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition text-sm"
                   placeholder="Il tuo nome"
                 />
               </div>
@@ -218,7 +218,7 @@ function ConsultationModal({ product, onClose }: { product: string; onClose: () 
                   type="text"
                   value={form.azienda}
                   onChange={e => setForm(f => ({ ...f, azienda: e.target.value }))}
-                  className="w-full px-4 py-2.5 rounded-xl border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-dark-800 dark:text-white focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all text-sm"
+                  className="w-full px-4 py-2.5 rounded-xl border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-dark-800 dark:text-white focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition text-sm"
                   placeholder="Nome azienda"
                 />
               </div>
@@ -231,7 +231,7 @@ function ConsultationModal({ product, onClose }: { product: string; onClose: () 
                   required
                   value={form.email}
                   onChange={e => setForm(f => ({ ...f, email: e.target.value }))}
-                  className="w-full px-4 py-2.5 rounded-xl border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-dark-800 dark:text-white focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all text-sm"
+                  className="w-full px-4 py-2.5 rounded-xl border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-dark-800 dark:text-white focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition text-sm"
                   placeholder="email@azienda.it"
                 />
               </div>
@@ -241,7 +241,7 @@ function ConsultationModal({ product, onClose }: { product: string; onClose: () 
                   type="tel"
                   value={form.telefono}
                   onChange={e => setForm(f => ({ ...f, telefono: e.target.value }))}
-                  className="w-full px-4 py-2.5 rounded-xl border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-dark-800 dark:text-white focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all text-sm"
+                  className="w-full px-4 py-2.5 rounded-xl border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-dark-800 dark:text-white focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition text-sm"
                   placeholder="+39 ..."
                 />
               </div>
@@ -263,7 +263,7 @@ function ConsultationModal({ product, onClose }: { product: string; onClose: () 
                 value={form.messaggio}
                 onChange={e => setForm(f => ({ ...f, messaggio: e.target.value }))}
                 rows={3}
-                className="w-full px-4 py-2.5 rounded-xl border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-dark-800 dark:text-white focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all text-sm resize-none"
+                className="w-full px-4 py-2.5 rounded-xl border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-dark-800 dark:text-white focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition text-sm resize-none"
                 placeholder="Descrivi brevemente le tue esigenze..."
               />
             </div>

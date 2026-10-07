@@ -34,7 +34,7 @@ export default function SolutionCategoryListBlock({ block, locale }: Props) {
                 <p className="text-white/80 leading-relaxed mb-8 max-w-md text-base">
                   {it ? featured.desc : (featured.desc_en || featured.desc)}
                 </p>
-                <span className="self-start inline-flex items-center px-7 py-3.5 bg-white text-gray-900 font-bold rounded-full group-hover:bg-yellow-400 group-hover:text-dark-800 transition-all duration-300 shadow-lg">
+                <span className="self-start inline-flex items-center px-7 py-3.5 bg-white text-gray-900 font-bold rounded-full group-hover:bg-yellow-400 group-hover:text-dark-800 transition duration-300 shadow-lg">
                   {it ? "Scopri " : "Discover "}
                   {it ? featured.name : (featured.name_en || featured.name)} →
                 </span>
@@ -62,7 +62,7 @@ export default function SolutionCategoryListBlock({ block, locale }: Props) {
             <Link
               key={cat._key || cat.name}
               href={cat.href}
-              className="group relative rounded-3xl overflow-hidden border border-gray-100 bg-surface-50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col cursor-pointer"
+              className="group relative rounded-3xl overflow-hidden border border-gray-100 bg-surface-50 hover:shadow-xl hover:-translate-y-1 transition duration-300 flex flex-col cursor-pointer"
             >
               {/* Colored top accent strip */}
               <div className={`h-1.5 bg-gradient-to-r ${cat.color || "from-cyan-650 to-cyan-700"} flex-shrink-0`} />
@@ -94,7 +94,7 @@ export default function SolutionCategoryListBlock({ block, locale }: Props) {
                   {it ? cat.desc : (cat.desc_en || cat.desc)}
                 </p>
 
-                <span className={`self-start inline-flex items-center px-5 py-2.5 bg-gradient-to-r ${coloreConTestoBianco(cat.color) || "from-cyan-650 to-cyan-700"} ${testoSu(cat.color)} text-sm font-semibold rounded-full group-hover:shadow-md group-hover:opacity-90 transition-all`}>
+                <span className={`self-start inline-flex items-center px-5 py-2.5 bg-gradient-to-r ${coloreConTestoBianco(cat.color) || "from-cyan-650 to-cyan-700"} ${testoSu(cat.color)} text-sm font-semibold rounded-full group-hover:shadow-md group-hover:opacity-90 transition`}>
                   {it ? "Scopri " : "Discover "}
                   {it ? cat.name : (cat.name_en || cat.name)} →
                 </span>

@@ -199,7 +199,7 @@ export default async function PromozioniPage() {
               </p>
               <a
                 href="mailto:info@printsolutionsrl.it?subject=Prenotazione%20Demo%20GreenBox%203&body=Buongiorno%2C%0A%0AVorrei%20prenotare%20una%20demo%20della%20GreenBox%203.%0A%0AGrazie"
-                className="inline-flex items-center justify-center px-8 py-4 bg-white text-cyan-700 font-bold rounded-full hover:bg-cyan-50 transition-all duration-300 shadow-lg text-lg"
+                className="inline-flex items-center justify-center px-8 py-4 bg-white text-cyan-700 font-bold rounded-full hover:bg-cyan-50 transition duration-300 shadow-lg text-lg"
               >
                 {it ? 'Prenota una Demo' : 'Book a Demo'}
               </a>

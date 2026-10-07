@@ -91,7 +91,7 @@ export default async function ShopPage() {
               <Link
                 key={cat.slug}
                 href={`/shop/${cat.slug}`}
-                className="group bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg hover:border-cyan-200 transition-all duration-300 hover:-translate-y-1"
+                className="group bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg hover:border-cyan-200 transition duration-300 hover:-translate-y-1"
               >
                 <div className="relative aspect-[4/3] bg-gradient-to-br from-gray-100 to-gray-50 flex items-center justify-center p-4 overflow-hidden">
                   <Image

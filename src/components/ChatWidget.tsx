@@ -303,7 +303,7 @@ export default function ChatWidget() {
       <button
         onClick={() => setOpen(!open)}
         aria-label={open ? t("close") : t("open")}
-        className={`fixed bottom-[8rem] right-4 lg:bottom-6 lg:right-6 z-[600] w-14 h-14 rounded-full shadow-lg flex items-center justify-center transition-all duration-300 ${
+        className={`fixed bottom-[8rem] right-4 lg:bottom-6 lg:right-6 z-[600] w-14 h-14 rounded-full shadow-lg flex items-center justify-center transition duration-300 ${
           open
             ? "bg-gray-700 hover:bg-gray-600 rotate-0"
             : "btn-solid hover:scale-110"

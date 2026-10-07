@@ -55,7 +55,7 @@ function ProductCard({ product, categoryName }: { product: Product; categoryName
   const hasImage = product.image && !product.image.includes("placeholder");
 
   return (
-    <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-xl hover:border-gray-200 transition-all duration-300 group flex flex-col">
+    <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-xl hover:border-gray-200 transition duration-300 group flex flex-col">
       {/* Image */}
       <div className="aspect-square bg-white flex items-center justify-center p-6 relative border-b border-gray-50">
         {hasImage ? (
@@ -95,7 +95,7 @@ function ProductCard({ product, categoryName }: { product: Product; categoryName
           
           <button
             onClick={handleAdd}
-            className={`w-full py-3 rounded-xl font-semibold text-sm transition-all duration-300 cursor-pointer ${
+            className={`w-full py-3 rounded-xl font-semibold text-sm transition duration-300 cursor-pointer ${
               added
                 ? "bg-green-500 text-white scale-95"
                 : "bg-gray-900 text-white hover:bg-cyan-600 hover:shadow-lg hover:shadow-cyan-500/20"

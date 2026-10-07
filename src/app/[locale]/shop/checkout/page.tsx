@@ -50,7 +50,7 @@ export default function CheckoutPage() {
           <div className="text-6xl mb-6">🛒</div>
           <h1 className="text-3xl font-bold text-gray-900 mb-4">Carrello vuoto</h1>
           <p className="text-gray-500 mb-8">Non hai ancora aggiunto prodotti al carrello.</p>
-          <Link href="/shop" className="inline-block px-8 py-4 btn-solid font-bold rounded-full hover:shadow-lg transition-all">
+          <Link href="/shop" className="inline-block px-8 py-4 btn-solid font-bold rounded-full hover:shadow-lg transition">
             Vai allo Shop →
           </Link>
         </div>
@@ -121,7 +121,7 @@ export default function CheckoutPage() {
             <button
               onClick={handleCheckout}
               disabled={loading}
-              className="w-full mt-6 py-4 btn-solid font-bold rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed text-lg"
+              className="w-full mt-6 py-4 btn-solid font-bold rounded-full shadow-lg hover:shadow-xl transition hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed text-lg"
             >
               {loading ? (
                 <span className="flex items-center justify-center gap-2">

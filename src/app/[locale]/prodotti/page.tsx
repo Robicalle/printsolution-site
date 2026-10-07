@@ -257,7 +257,7 @@ export default async function ProdottiPage() {
                       <Link
                         key={p._id}
                         href={`/prodotti/${slug}`}
-                        className="group relative rounded-3xl overflow-hidden border border-gray-100 bg-surface-50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col cursor-pointer"
+                        className="group relative rounded-3xl overflow-hidden border border-gray-100 bg-surface-50 hover:shadow-xl hover:-translate-y-1 transition duration-300 flex flex-col cursor-pointer"
                       >
                         {/* Colored top accent strip */}
                         <div className={`h-1.5 bg-gradient-to-r ${color} flex-shrink-0`} />
@@ -282,7 +282,7 @@ export default async function ProdottiPage() {
                             </p>
                           )}
 
-                          <span className={`self-start inline-flex items-center px-5 py-2.5 bg-gradient-to-r ${color} ${info?.textOn || 'text-white'} text-sm font-semibold rounded-full group-hover:shadow-md group-hover:opacity-90 transition-all mt-auto`}>
+                          <span className={`self-start inline-flex items-center px-5 py-2.5 bg-gradient-to-r ${color} ${info?.textOn || 'text-white'} text-sm font-semibold rounded-full group-hover:shadow-md group-hover:opacity-90 transition mt-auto`}>
                             {it ? "Scopri" : "Discover"} →
                           </span>
                         </div>

@@ -68,7 +68,7 @@ export default function QuickViewModal({ product, categoryName, onClose }: { pro
           <p className="text-3xl font-bold text-gray-900 mb-4 tabular-nums">€{product.price.toFixed(2)} <span className="text-sm text-gray-400 font-normal">+ IVA</span></p>
           <button
             onClick={handleAdd}
-            className={`w-full py-3.5 rounded-xl font-semibold text-sm transition-all duration-300 cursor-pointer ${added ? "bg-green-500 text-white" : "bg-gray-900 text-white hover:bg-cyan-600"}`}
+            className={`w-full py-3.5 rounded-xl font-semibold text-sm transition duration-300 cursor-pointer ${added ? "bg-green-500 text-white" : "bg-gray-900 text-white hover:bg-cyan-600"}`}
           >
             {added ? "✓ Aggiunto al carrello!" : "Aggiungi al carrello"}
           </button>

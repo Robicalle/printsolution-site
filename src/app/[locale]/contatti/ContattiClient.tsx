@@ -96,7 +96,7 @@ export default function ContattiClient() {
                       <input
                         type="text" required value={formData.nome}
                         onChange={(e) => setFormData({ ...formData, nome: e.target.value })}
-                        className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 transition-all text-sm"
+                        className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 transition text-sm"
                         placeholder={locale === 'it' ? "Mario Rossi" : "John Smith"}
                       />
                     </div>
@@ -105,7 +105,7 @@ export default function ContattiClient() {
                       <input
                         type="text" value={formData.azienda}
                         onChange={(e) => setFormData({ ...formData, azienda: e.target.value })}
-                        className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 transition-all text-sm"
+                        className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 transition text-sm"
                         placeholder={locale === 'it' ? "La Mia Azienda S.r.l." : "My Company Ltd."}
                       />
                     </div>
@@ -116,7 +116,7 @@ export default function ContattiClient() {
                       <input
                         type="email" required value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 transition-all text-sm"
+                        className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 transition text-sm"
                         placeholder={locale === 'it' ? "mario@azienda.it" : "john@company.com"}
                       />
                     </div>
@@ -125,7 +125,7 @@ export default function ContattiClient() {
                       <input
                         type="tel" value={formData.telefono}
                         onChange={(e) => setFormData({ ...formData, telefono: e.target.value })}
-                        className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 transition-all text-sm"
+                        className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 transition text-sm"
                         placeholder="+39 02 1234567"
                       />
                     </div>
@@ -135,7 +135,7 @@ export default function ContattiClient() {
                     <select
                       value={formData.interesse}
                       onChange={(e) => setFormData({ ...formData, interesse: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 transition-all text-sm bg-white"
+                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 transition text-sm bg-white"
                     >
                       <option value="generico">{locale === 'it' ? 'Informazioni generali' : 'General information'}</option>
                       <option value="packaging">{locale === 'it' ? 'Soluzioni Packaging' : 'Packaging Solutions'}</option>
@@ -151,7 +151,7 @@ export default function ContattiClient() {
                     <textarea
                       required rows={5} value={formData.messaggio}
                       onChange={(e) => setFormData({ ...formData, messaggio: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 transition-all text-sm resize-none"
+                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 transition text-sm resize-none"
                       placeholder={locale === 'it' ? "Descrivi le tue esigenze..." : "Describe your requirements..."}
                     />
                   </div>

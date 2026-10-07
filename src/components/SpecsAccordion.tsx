@@ -46,7 +46,7 @@ export default function SpecsAccordion({ specs, title, titleEn, locale = "it" }:
                 </svg>
               </button>
               <div
-                className={`overflow-hidden transition-all duration-200 ${openIndex === i ? "max-h-40 pb-4" : "max-h-0"}`}
+                className={`overflow-hidden transition-[max-height,padding] duration-200 ${openIndex === i ? "max-h-40 pb-4" : "max-h-0"}`}
               >
                 <div className="px-5">
                   <span className="text-sm font-bold text-dark-800">{value}</span>

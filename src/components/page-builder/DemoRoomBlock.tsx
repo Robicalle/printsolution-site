@@ -13,7 +13,7 @@ export default function DemoRoomBlock({ block, locale }: Props) {
       <div className="grid md:grid-cols-2 gap-8 items-center">
         <div>
           {block.eyebrow && (
-            <p className="text-magenta-500 font-semibold text-sm uppercase tracking-widest mb-4">
+            <p className="text-magenta-500 font-semibold text-sm mb-4">
               {it ? block.eyebrow : (block.eyebrow_en || block.eyebrow)}
             </p>
           )}

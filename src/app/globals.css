@@ -29,6 +29,31 @@
   body {
     @apply font-sans text-dark-800 antialiased bg-white;
   }
+
+  /* Tipografia (audit redesign, ottobre 2026) */
+  /* Titoli senza parole orfane sull'ultima riga */
+  h1, h2, h3 {
+    text-wrap: balance;
+  }
+  /* H2 un po' piu' compatti; le classi tracking-* di Tailwind restano prioritarie */
+  h2 {
+    letter-spacing: -0.015em;
+  }
+  /* Righe di testo leggibili: circa 65-70 caratteri invece di 90-108.
+     In em e non in ch: in Inter "1ch" (larghezza dello zero) vale piu' di una lettera media. */
+  main p {
+    max-width: 32em;
+    text-wrap: pretty;
+  }
+  /* Se il testo e' centrato, il paragrafo ristretto resta centrato */
+  main .text-center p,
+  main p.text-center {
+    margin-inline: auto;
+  }
+  /* Cifre incolonnate nelle tabelle (specifiche tecniche, confronti) */
+  td, th {
+    font-variant-numeric: tabular-nums;
+  }
 }
 
 @layer components {

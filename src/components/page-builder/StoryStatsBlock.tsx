@@ -12,7 +12,7 @@ export default function StoryStatsBlock({ block, locale }: Props) {
     <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
       <div>
         {block.eyebrow && (
-          <p className="text-cyan-500 font-semibold text-sm uppercase tracking-widest mb-4">
+          <p className="text-cyan-500 font-semibold text-sm mb-4">
             {it ? block.eyebrow : (block.eyebrow_en || block.eyebrow)}
           </p>
         )}

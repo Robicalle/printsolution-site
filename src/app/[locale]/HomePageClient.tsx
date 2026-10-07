@@ -158,7 +158,7 @@ function Solutions({ locale }: { locale: string }) {
     <section className="section-padding bg-surface-50">
       <div className="container-custom" ref={ref}>
         <div className={`text-center mb-16 transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <p className="text-cyan-500 font-semibold text-sm uppercase tracking-widest mb-4">{locale === 'it' ? 'Cosa facciamo' : 'What we do'}</p>
+          <p className="text-cyan-500 font-semibold text-sm mb-4">{locale === 'it' ? 'Cosa facciamo' : 'What we do'}</p>
           <h2 className="text-4xl sm:text-5xl font-bold text-dark-800 tracking-tight">{locale === 'it' ? 'Le Nostre Soluzioni' : 'Our Solutions'}</h2>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8 max-w-5xl mx-auto">
@@ -227,7 +227,7 @@ function FeaturedProducts({ locale }: { locale: string }) {
     <section className="section-padding bg-white">
       <div className="container-custom" ref={ref}>
         <div className={`text-center mb-16 transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <p className="text-cyan-500 font-semibold text-sm uppercase tracking-widest mb-4">{locale === 'it' ? 'I nostri prodotti' : 'Our products'}</p>
+          <p className="text-cyan-500 font-semibold text-sm mb-4">{locale === 'it' ? 'I nostri prodotti' : 'Our products'}</p>
           <h2 className="text-4xl sm:text-5xl font-bold text-dark-800 tracking-tight">{locale === 'it' ? 'Tecnologie di Punta' : 'Cutting-Edge Technology'}</h2>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

@@ -258,7 +258,7 @@ export default async function () {
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
         <div className="container-custom">
           <div className="text-center mb-12">
-            <p className="text-cyan-500 font-semibold text-sm uppercase tracking-widest mb-4">Video</p>
+            <p className="text-cyan-500 font-semibold text-sm mb-4">Video</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-dark-800">{locale === 'it' ? 'DC350 in Azione' : 'DC350 in Action'}</h2>
           </div>
           <div className="grid md:grid-cols-1 max-w-2xl mx-auto gap-8">
@@ -291,7 +291,7 @@ export default async function () {
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-surface-50">
         <div className="container-custom max-w-5xl">
           <div className="text-center mb-16">
-            <p className="text-yellow-500 font-semibold text-sm uppercase tracking-widest mb-4">{locale === 'it' ? 'Confronto' : 'Comparison'}</p>
+            <p className="text-yellow-500 font-semibold text-sm mb-4">{locale === 'it' ? 'Confronto' : 'Comparison'}</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-dark-800 tracking-tight">
               DC250 vs DC350
             </h2>

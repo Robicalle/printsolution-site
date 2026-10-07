@@ -263,7 +263,7 @@ function ProductCardWithQuickView({ product, categoryName, onQuickView }: { prod
         <p className="text-xs text-cyan-500 font-semibold tracking-wide mb-1.5">{product.sku}</p>
         <h3 className="font-semibold text-gray-900 mb-3 leading-snug flex-1 text-sm">{product.name}</h3>
         <div className="mt-auto">
-          <p className="text-2xl font-bold text-gray-900 mb-4">€{product.price.toFixed(2)}<span className="text-xs text-gray-400 font-normal ml-1.5">+ IVA</span></p>
+          <p className="text-2xl font-bold text-gray-900 mb-4 tabular-nums">€{product.price.toFixed(2)}<span className="text-xs text-gray-400 font-normal ml-1.5">+ IVA</span></p>
           <button
             onClick={handleAdd}
             className={`w-full py-3 rounded-xl font-semibold text-sm transition-all duration-300 cursor-pointer ${added ? "bg-green-500 text-white scale-95" : "bg-gray-900 text-white hover:bg-cyan-600 hover:shadow-lg hover:shadow-cyan-500/20"}`}

@@ -26,7 +26,7 @@ export default function StickyCartBar() {
             <span className="text-white text-sm font-medium hidden sm:inline">
               {totalItems} {totalItems === 1 ? "articolo" : "articoli"} nel carrello
             </span>
-            <span className="text-cyan-400 font-bold text-sm">
+            <span className="text-cyan-400 font-bold text-sm tabular-nums">
               €{totalPrice.toFixed(2)} <span className="text-gray-400 font-normal text-xs">+ IVA</span>
             </span>
           </div>

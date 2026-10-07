@@ -83,8 +83,8 @@ export default function CheckoutPage() {
                   <p className="text-sm text-gray-500 mt-1">Quantità: {item.quantity}</p>
                 </div>
                 <div className="text-right">
-                  <p className="font-bold text-gray-900">€{(item.price * item.quantity).toFixed(2)}</p>
-                  <p className="text-xs text-gray-400">€{item.price.toFixed(2)} cad.</p>
+                  <p className="font-bold text-gray-900 tabular-nums">€{(item.price * item.quantity).toFixed(2)}</p>
+                  <p className="text-xs text-gray-400 tabular-nums">€{item.price.toFixed(2)} cad.</p>
                 </div>
               </div>
             ))}
@@ -97,18 +97,18 @@ export default function CheckoutPage() {
             <div className="space-y-3 text-sm">
               <div className="flex justify-between">
                 <span className="text-gray-500">{locale === 'it' ? 'Subtotale' : 'Subtotal'}</span>
-                <span className="font-medium">€{totalPrice.toFixed(2)}</span>
+                <span className="font-medium tabular-nums">€{totalPrice.toFixed(2)}</span>
               </div>
               <div className="flex justify-between">
                 <span className="text-gray-500">IVA (22%)</span>
-                <span className="font-medium">€{(totalPrice * 0.22).toFixed(2)}</span>
+                <span className="font-medium tabular-nums">€{(totalPrice * 0.22).toFixed(2)}</span>
               </div>
               <div className="flex justify-between">
                 <span className="text-gray-500">{locale === 'it' ? 'Spedizione' : 'Shipping'}</span>
                 <span className="font-medium text-green-600">Calcolata al checkout</span>
               </div>
               <hr />
-              <div className="flex justify-between text-lg font-bold">
+              <div className="flex justify-between text-lg font-bold tabular-nums">
                 <span>{locale === 'it' ? 'Totale' : 'Total'}</span>
                 <span>€{(totalPrice * 1.22).toFixed(2)}</span>
               </div>

@@ -10,7 +10,7 @@ export default function ConsumablesCategoryListBlock({ block, locale }: Props) {
     <section className="section-padding bg-white">
       <div className="container-custom">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <p className="text-cyan-500 font-semibold text-sm uppercase tracking-widest mb-4">
+          <p className="text-cyan-500 font-semibold text-sm mb-4">
             {it ? block.sectionEyebrow : (block.sectionEyebrow_en || block.sectionEyebrow)}
           </p>
           <h2 className="text-3xl sm:text-4xl font-bold text-dark-800 tracking-tight mb-6">

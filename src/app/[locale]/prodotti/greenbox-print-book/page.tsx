@@ -251,7 +251,7 @@ export default async function GreenBoxPrintBookPage() {
       <section className="px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-white">
         <div className="container-custom">
           <div className="text-center mb-12">
-            <p className="text-cyan-500 font-semibold text-sm uppercase tracking-widest mb-4">Video</p>
+            <p className="text-cyan-500 font-semibold text-sm mb-4">Video</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-dark-800">{locale === 'it' ? 'GreenBox Print Book in Azione' : 'GreenBox Print Book in Action'}</h2>
           </div>
           <div className="max-w-3xl mx-auto">

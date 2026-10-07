@@ -11,7 +11,7 @@ export default function ProductVideoBlock({ block, locale }: Props) {
       <div className="container-custom">
         <div className="text-center mb-8">
           {block.eyebrow && (
-            <p className="text-cyan-500 font-semibold text-sm uppercase tracking-widest mb-4">
+            <p className="text-cyan-500 font-semibold text-sm mb-4">
               {it ? block.eyebrow : (block.eyebrow_en || block.eyebrow)}
             </p>
           )}

@@ -40,9 +40,10 @@
     letter-spacing: -0.015em;
   }
   /* Righe di testo leggibili: circa 65-70 caratteri invece di 90-108.
-     In em e non in ch: in Inter "1ch" (larghezza dello zero) vale piu' di una lettera media. */
+     In rem (uguale per tutti): con em i paragrafi piu' grandi (es. sottotitolo
+     degli articoli a 20px) risultavano piu' larghi del testo e sporgevano. */
   main p {
-    max-width: 32em;
+    max-width: 36rem;
     text-wrap: pretty;
   }
   /* Se il testo e' centrato, il paragrafo ristretto resta centrato */
